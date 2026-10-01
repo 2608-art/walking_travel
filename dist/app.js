@@ -52,6 +52,7 @@
     if (p.hours.breaks?.length) text += ' · 브레이크 ' + p.hours.breaks.map((b) => b.join('–')).join(', ');
     if (p.hours.lastEntry) text += ' · 공식 입장 ' + p.hours.lastEntry + '까지';
     if (p.hours.lastOrder) text += ' · 주문 ' + p.hours.lastOrder + '까지';
+    if (!p.hours.lastEntry && !p.hours.lastOrder) text += ' · 앱 권장 입장 ' + hhmm(toMin(p.hours.close) - 60) + ' 이전(제한 아님)';
     return text;
   }
   function detailHtml(p) {
@@ -138,6 +139,7 @@
     if (deadline && m > toMin(deadline)) return { kind: 'bad', title: '공식 마감 경과', detail: (h.lastEntry ? '입장' : '주문') + ' 마감 ' + deadline + '을 지났습니다.' };
     if (h.breaks?.some(([a,b]) => m >= toMin(a) && m < toMin(b))) return { kind: 'bad', title: '브레이크타임 중', detail: '운영 재개 시각을 확인해 시간을 옮겨 주세요.' };
     const duration = Number(entry.duration) || 60;
+    if (h.breaks?.some(([a]) => m < toMin(a) && m + duration > toMin(a))) return { kind: 'warn', title: '체류 중 브레이크타임', detail: '예상 체류가 브레이크타임과 겹칩니다. 이용 가능 시간을 확인하세요.' };
     if (m + duration > toMin(h.close)) return { kind: 'warn', title: '예상 체류가 폐관을 넘어요', detail: '체류시간을 줄이거나 더 일찍 방문해 주세요.' };
     const soft = !deadline && m > toMin(h.close) - 60 ? ' · 폐관 1시간 전 입장은 앱의 권장일 뿐 제한이 아닙니다.' : '';
     return { kind: 'ok', title: '운영시간상 방문 가능', detail: (h.note || '방문일 변동을 확인하세요.') + soft };
