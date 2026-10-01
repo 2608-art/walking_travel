@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123348">
+  <meta name="description" content="목포의 장소를 지도에서 보고, 내 속도에 맞는 하루 계획을 만드세요.">
+  <title>한걸음 목포 · 내 속도로 짜는 하루</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./vendor/leaflet.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./vendor/leaflet.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <header class="site-header">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">↗</span><span>한걸음 <strong>목포</strong></span></div>
+      <span class="header-tag">내 속도로 짜는 하루</span>
+      <span id="connection" class="connection" aria-live="polite">연결 확인 중</span>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <nav class="bottom-nav" aria-label="주요 메뉴">
+      <button type="button" data-nav="home"><span aria-hidden="true">⌖</span> 여행지</button>
+      <button type="button" data-nav="plan"><span aria-hidden="true">▤</span> 계획표</button>
+      <button type="button" data-nav="saved"><span aria-hidden="true">▣</span> 저장한 계획</button>
+    </nav>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

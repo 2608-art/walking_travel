@@ -1,0 +1,14 @@
+{
+  "name": "한걸음 목포 · 여행 계획",
+  "short_name": "한걸음",
+  "description": "목포 여행지를 보고 내 속도로 하루 계획을 만드세요.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f8f8",
+  "theme_color": "#123348",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

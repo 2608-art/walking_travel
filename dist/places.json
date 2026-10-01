@@ -1,0 +1,1481 @@
+{
+  "updated": "2026-10-01",
+  "region": "목포",
+  "places": [
+    {
+      "id": "p1",
+      "name": "유달산",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 노적봉길 45 일대. 등산 구역이라 대표 주소로 표시",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+노적봉길+45+유달산",
+      "hours": null
+    },
+    {
+      "id": "p2",
+      "name": "노적봉",
+      "category": "spot",
+      "lat": 34.7879739,
+      "lon": 126.3820996,
+      "locationText": "유달산 동쪽 원도심, 약 34.787974, 126.382100",
+      "source": "https://www.openstreetmap.org/?mlat=34.7879739&mlon=126.3820996#map=18/34.7879739/126.3820996",
+      "hours": null
+    },
+    {
+      "id": "p3",
+      "name": "목포해상케이블카 북항승강장",
+      "category": "spot",
+      "lat": 34.7994941,
+      "lon": 126.3699919,
+      "locationText": "목포시 해양대학로 240, 약 34.799494, 126.369992",
+      "source": "https://www.openstreetmap.org/?mlat=34.7994941&mlon=126.3699919#map=18/34.7994941/126.3699919",
+      "hours": null
+    },
+    {
+      "id": "p4",
+      "name": "목포해상케이블카 유달산승강장",
+      "category": "spot",
+      "lat": 34.7878522,
+      "lon": 126.3749897,
+      "locationText": "유달산 정상부 노적봉등반로 쪽, 약 34.787852, 126.374990",
+      "source": "https://www.openstreetmap.org/?mlat=34.7878522&mlon=126.3749897#map=18/34.7878522/126.3749897",
+      "hours": null
+    },
+    {
+      "id": "p5",
+      "name": "목포해상케이블카 고하도승강장",
+      "category": "spot",
+      "lat": 34.774446,
+      "lon": 126.3607355,
+      "locationText": "목포시 고하도안길 186, 약 34.774446, 126.360736",
+      "source": "https://www.openstreetmap.org/?mlat=34.7744460&mlon=126.3607355#map=18/34.7744460/126.3607355",
+      "hours": null
+    },
+    {
+      "id": "p6",
+      "name": "고하도 전망대·해안데크",
+      "category": "spot",
+      "lat": 34.7779243,
+      "lon": 126.3592348,
+      "locationText": "목포시 고하도안길 234 일대. 전망대 약 34.777924, 126.359235",
+      "source": "https://www.openstreetmap.org/?mlat=34.7779243&mlon=126.3592348#map=18/34.7779243/126.3592348",
+      "hours": null
+    },
+    {
+      "id": "p7",
+      "name": "갓바위·해상보행교",
+      "category": "spot",
+      "lat": 34.7919401,
+      "lon": 126.4255319,
+      "locationText": "목포시 남농로 166-1 일대. 갓바위 약 34.791940, 126.425532",
+      "source": "https://www.openstreetmap.org/?mlat=34.7919401&mlon=126.4255319#map=18/34.7919401/126.4255319",
+      "hours": null
+    },
+    {
+      "id": "p8",
+      "name": "목포근대역사관 1관",
+      "category": "spot",
+      "lat": 34.7875870369,
+      "lon": 126.3820943332,
+      "locationText": "목포시 영산로29번길 6, 약 34.787587, 126.382094",
+      "source": "https://www.openstreetmap.org/?mlat=34.7875870369&mlon=126.3820943332#map=18/34.7875870369/126.3820943332",
+      "hours": {
+        "open": "09:00",
+        "close": "18:00",
+        "lastEntry": "17:00",
+        "closedWeekdays": [
+          1
+        ],
+        "note": "월요일·1월 1일 휴관. 특별휴무 확인 필요.",
+        "source": "https://www.mokpo.go.kr/tour/tourguide/information/admission"
+      }
+    },
+    {
+      "id": "p9",
+      "name": "목포근대역사관 2관",
+      "category": "spot",
+      "lat": 34.78596374,
+      "lon": 126.3814912,
+      "locationText": "목포시 번화로 18, 약 34.785964, 126.381491",
+      "source": "https://www.openstreetmap.org/?mlat=34.78596374&mlon=126.3814912#map=18/34.78596374/126.3814912",
+      "hours": null
+    },
+    {
+      "id": "p10",
+      "name": "서산동 시화골목",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 보리마당로 27 일대",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+보리마당로+27+서산동+시화골목",
+      "hours": null
+    },
+    {
+      "id": "p11",
+      "name": "보리마당",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 유달로56번안길 14-2 일대",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+유달로56번안길+14-2+보리마당",
+      "hours": null
+    },
+    {
+      "id": "p12",
+      "name": "연희네슈퍼",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 해안로127번길 14-2",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+해안로127번길+14-2+연희네슈퍼",
+      "hours": null
+    },
+    {
+      "id": "p13",
+      "name": "목포진 역사공원",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 목포진길11번길 1-5",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+목포진길11번길+1-5+목포진+역사공원",
+      "hours": null
+    },
+    {
+      "id": "p14",
+      "name": "평화광장",
+      "category": "spot",
+      "lat": 34.7960696,
+      "lon": 126.4330925,
+      "locationText": "목포시 평화로·미항로 해안 일대, 광장 중심부 약 34.796070, 126.433093",
+      "source": "https://www.openstreetmap.org/?mlat=34.7960696&mlon=126.4330925#map=18/34.7960696/126.4330925",
+      "hours": null
+    },
+    {
+      "id": "p15",
+      "name": "춤추는 바다분수",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 미항로 115 앞 바다",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+미항로+115+춤추는+바다분수",
+      "hours": null
+    },
+    {
+      "id": "p16",
+      "name": "목포자연사박물관",
+      "category": "spot",
+      "lat": 34.7937272,
+      "lon": 126.4210673,
+      "locationText": "목포시 남농로 135, 약 34.793727, 126.421067",
+      "source": "https://www.openstreetmap.org/?mlat=34.7937272&mlon=126.4210673#map=18/34.7937272/126.4210673",
+      "hours": {
+        "open": "09:00",
+        "close": "18:00",
+        "lastEntry": "17:00",
+        "closedWeekdays": [
+          1
+        ],
+        "note": "월요일 휴관. 공휴일·연휴에는 대체휴관 확인 필요.",
+        "source": "https://www.mokpo.go.kr/tour/tourguide/information/admission"
+      }
+    },
+    {
+      "id": "p17",
+      "name": "성옥기념관",
+      "category": "spot",
+      "lat": 34.786971,
+      "lon": 126.379837,
+      "locationText": "목포시 영산로 11, 약 34.786971, 126.379837",
+      "source": "https://www.openstreetmap.org/?mlat=34.786971&mlon=126.379837#map=18/34.786971/126.379837",
+      "hours": null
+    },
+    {
+      "id": "p18",
+      "name": "유달산 조각공원",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 유달로 221",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+유달로+221+유달산+조각공원",
+      "hours": null
+    },
+    {
+      "id": "p19",
+      "name": "목포스카이워크",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 해양대학로 59",
+      "source": "https://naver.me/FeOPaNfx",
+      "hours": {
+        "open": "09:00",
+        "close": "21:00",
+        "note": "공식 마지막 입장 미확인. 현장 통제 확인 필요.",
+        "source": "https://m.mokpo.go.kr/www/introduce/thanksgiving/notice_closure"
+      }
+    },
+    {
+      "id": "p20",
+      "name": "목포문예역사관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 남농로 149",
+      "source": "https://naver.me/5bVqSKu6",
+      "hours": {
+        "open": "09:00",
+        "close": "18:00",
+        "closedWeekdays": [
+          1
+        ],
+        "note": "독립 입장 마감 미확인. 통합권 조건 확인 필요.",
+        "source": "https://www.mpcc1897.or.kr/base/culturalSpace/read?culturalSpaceNo=18&menuLevel=3&menuNo=25"
+      }
+    },
+    {
+      "id": "p21",
+      "name": "목포생활도자박물관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 남농로 117",
+      "source": "https://naver.me/FeXMZ7TA",
+      "hours": {
+        "open": "09:00",
+        "close": "18:00",
+        "closedWeekdays": [
+          1
+        ],
+        "note": "체험실은 17:00까지. 예약·마감 별도 확인.",
+        "source": "https://www.mokpo.go.kr/tour/attraction/area?idx=7455&mode=view"
+      }
+    },
+    {
+      "id": "p22",
+      "name": "목포대중음악의전당",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 해안로249번길 34",
+      "source": "https://naver.me/Gubwgd3w",
+      "hours": {
+        "open": "09:00",
+        "close": "18:00",
+        "closedWeekdays": [
+          1
+        ],
+        "note": "공식 마지막 입장 미확인. 특별휴관 확인 필요.",
+        "source": "https://biz.mokpo.go.kr/www/introduce/new_year/notice_closure"
+      }
+    },
+    {
+      "id": "p23",
+      "name": "목포모자아트갤러리(옛 갑자옥모자점)",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 해안로229번길 20-2는 대표 주소",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+해안로229번길+20-2+목포모자아트갤러리",
+      "hours": null
+    },
+    {
+      "id": "p24",
+      "name": "목포삼학도크루즈",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 삼학로92번길 104",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+삼학로92번길+104+삼학도크루즈",
+      "hours": null
+    },
+    {
+      "id": "p25",
+      "name": "수중유산박물관(옛 국립해양유물전시관)",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 남농로 136",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+남농로+136+수중유산박물관",
+      "hours": null
+    },
+    {
+      "id": "p26",
+      "name": "삼학도 공원·이난영공원",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "삼학도 산책 구역; 대표 경유점 이난영공원 목포시 삼학로92번길 25",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+삼학로92번길+25+이난영공원",
+      "hours": null
+    },
+    {
+      "id": "p27",
+      "name": "외달도",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 달동 외달도; 방문 시작점은 외달도 여객선 기항지, 해수풀장 주소 외달도길 72",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포+외달도+선착장",
+      "hours": null
+    },
+    {
+      "id": "p28",
+      "name": "달리도",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 달동 달리도; 방문 시작점은 달리도 여객선 기항지",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포+달리도+선착장",
+      "hours": null
+    },
+    {
+      "id": "p29",
+      "name": "노적봉예술공원미술관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "유달로 116 · 장소 핀",
+      "source": "https://place.map.kakao.com/1340827479",
+      "hours": null
+    },
+    {
+      "id": "p30",
+      "name": "김대중노벨평화상기념관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "삼학로92번길 68 · 장소 핀",
+      "source": "https://place.map.kakao.com/19963793",
+      "hours": null
+    },
+    {
+      "id": "p31",
+      "name": "소년 김대중 공부방",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포진길11번길 6-4 · 장소 핀",
+      "source": "https://place.map.kakao.com/844830816",
+      "hours": null
+    },
+    {
+      "id": "p32",
+      "name": "목포어린이바다과학관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "삼학로92번길 98 · 장소 핀",
+      "source": "https://place.map.kakao.com/18875303",
+      "hours": null
+    },
+    {
+      "id": "p33",
+      "name": "목포문학관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "남농로 95 · 장소 핀",
+      "source": "https://place.map.kakao.com/9824720",
+      "hours": null
+    },
+    {
+      "id": "p34",
+      "name": "국립호남권생물자원관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "고하도안길 99 · 장소 핀",
+      "source": "https://place.map.kakao.com/189188588",
+      "hours": null
+    },
+    {
+      "id": "p35",
+      "name": "목포문화예술회관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "남농로 102 · 장소 핀",
+      "source": "https://place.map.kakao.com/10332302",
+      "hours": null
+    },
+    {
+      "id": "p36",
+      "name": "북항 노을공원",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "산정동 1110-8 · 공원 핀",
+      "source": "https://place.map.kakao.com/27289320",
+      "hours": null
+    },
+    {
+      "id": "p37",
+      "name": "유달유원지",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "죽교동 465-142 일대 · 유원지 핀",
+      "source": "https://place.map.kakao.com/8040367",
+      "hours": null
+    },
+    {
+      "id": "p38",
+      "name": "양을산산림욕장",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "상동 산 34-3 · 산림욕장 핀",
+      "source": "https://place.map.kakao.com/27110615",
+      "hours": null
+    },
+    {
+      "id": "p39",
+      "name": "유달산 낙조대",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "죽교동 산 37-18 · 낙조대 핀",
+      "source": "https://place.map.kakao.com/8206926",
+      "hours": null
+    },
+    {
+      "id": "p40",
+      "name": "옥단이길",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "카카오맵 대표점 죽교동 · 노선 이름 핀",
+      "source": "https://place.map.kakao.com/611595972",
+      "hours": null
+    },
+    {
+      "id": "p41",
+      "name": "노라노미술관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "마인계터로40번길 2-6 · 장소 핀",
+      "source": "https://place.map.kakao.com/779248704",
+      "hours": null
+    },
+    {
+      "id": "p42",
+      "name": "남농기념관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "남농로 119 · 장소 핀",
+      "source": "https://place.map.kakao.com/8227591",
+      "hours": null
+    },
+    {
+      "id": "p43",
+      "name": "옥공예전시관",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "남농로 83 · 장소 핀",
+      "source": "https://place.map.kakao.com/18097810",
+      "hours": null
+    },
+    {
+      "id": "p44",
+      "name": "장좌도",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 장좌도; 방문 시작점은 장좌도 여객선 기항지",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포+장좌도+선착장",
+      "hours": null
+    },
+    {
+      "id": "p45",
+      "name": "율도(눌도)",
+      "category": "spot",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 율도; 방문 시작점은 율도 여객선 기항지",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포+율도+선착장",
+      "hours": null
+    },
+    {
+      "id": "p46",
+      "name": "영란횟집",
+      "category": "food",
+      "lat": 34.7861717,
+      "lon": 126.3840577,
+      "locationText": "목포시 번화로 42-1",
+      "source": "https://www.openstreetmap.org/?mlat=34.7861717&mlon=126.3840577#map=18/34.7861717/126.3840577",
+      "hours": null
+    },
+    {
+      "id": "p47",
+      "name": "초원음식점(초원식당)",
+      "category": "food",
+      "lat": 34.7868061,
+      "lon": 126.3834355,
+      "locationText": "목포시 영산로 42",
+      "source": "https://www.openstreetmap.org/?mlat=34.7868061&mlon=126.3834355#map=18/34.7868061/126.3834355",
+      "hours": {
+        "open": "09:30",
+        "close": "19:30",
+        "breaks": [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        "lastOrder": "19:00",
+        "note": "점심 주문 마감 14:30. 날짜별 영업 확인 필요.",
+        "source": "https://www.diningcode.com/profile.php?rid=UDC5XmLS66Eg"
+      }
+    },
+    {
+      "id": "p48",
+      "name": "장터식당 본점",
+      "category": "food",
+      "lat": 34.784875,
+      "lon": 126.3834,
+      "locationText": "목포시 영산로40번길 23",
+      "source": "https://www.openstreetmap.org/?mlat=34.784875&mlon=126.3834#map=18/34.784875/126.3834",
+      "hours": {
+        "open": "11:30",
+        "close": "20:00",
+        "breaks": [
+          [
+            "15:00",
+            "17:30"
+          ]
+        ],
+        "lastOrder": "19:30",
+        "note": "주간 휴무·당일 영업 확인 필요.",
+        "source": "https://www.diningcode.com/profile.php?rid=Cr9J91gdeE25"
+      }
+    },
+    {
+      "id": "p49",
+      "name": "인동주마을",
+      "category": "food",
+      "lat": 34.8039251,
+      "lon": 126.4366888,
+      "locationText": "목포시 복산길12번길 5",
+      "source": "https://www.openstreetmap.org/?mlat=34.8039251&mlon=126.4366888#map=18/34.8039251/126.4366888",
+      "hours": null
+    },
+    {
+      "id": "p50",
+      "name": "하당먹거리",
+      "category": "food",
+      "lat": 34.8054514,
+      "lon": 126.4306439,
+      "locationText": "목포시 신흥로 98",
+      "source": "https://www.openstreetmap.org/?mlat=34.8054514&mlon=126.4306439#map=18/34.8054514/126.4306439",
+      "hours": null
+    },
+    {
+      "id": "p51",
+      "name": "성식당(수강로 본점 후보)",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 수강로4번길 6",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포시+수강로4번길+6+성식당",
+      "hours": null
+    },
+    {
+      "id": "p52",
+      "name": "은빛바다회센터(율석수산)",
+      "category": "food",
+      "lat": 34.8047995,
+      "lon": 126.3660911,
+      "locationText": "목포시 북항로 186-1",
+      "source": "https://www.openstreetmap.org/?mlat=34.8047995&mlon=126.3660911#map=18/34.8047995/126.3660911",
+      "hours": null
+    },
+    {
+      "id": "p53",
+      "name": "연희네포차(항구포차 9호)",
+      "category": "food",
+      "lat": 34.7812872,
+      "lon": 126.3880262,
+      "locationText": "목포시 삼학로92번길 104",
+      "source": "https://www.openstreetmap.org/?mlat=34.7812872&mlon=126.3880262#map=18/34.7812872/126.3880262",
+      "hours": null
+    },
+    {
+      "id": "p54",
+      "name": "목포관광오리탕(시내본점)",
+      "category": "food",
+      "lat": 34.7941123,
+      "lon": 126.3856697,
+      "locationText": "목포시 호남로64번길 1",
+      "source": "https://www.openstreetmap.org/?mlat=34.7941123&mlon=126.3856697#map=18/34.7941123/126.3856697",
+      "hours": null
+    },
+    {
+      "id": "p55",
+      "name": "해빔",
+      "category": "food",
+      "lat": 34.7946403,
+      "lon": 126.4300707,
+      "locationText": "목포시 미항로 83",
+      "source": "https://www.openstreetmap.org/?mlat=34.7946403&mlon=126.4300707#map=18/34.7946403/126.4300707",
+      "hours": {
+        "open": "11:00",
+        "close": "20:00",
+        "breaks": [
+          [
+            "15:00",
+            "16:30"
+          ]
+        ],
+        "lastOrder": "19:30",
+        "note": "주말 종료·주문 마감은 다름. 당일 확인 필요.",
+        "source": "https://www.diningcode.com/profile.php?rid=UkGylKAoTRkI"
+      }
+    },
+    {
+      "id": "p56",
+      "name": "어락",
+      "category": "food",
+      "lat": 34.7953938,
+      "lon": 126.4301471,
+      "locationText": "목포시 평화로 45",
+      "source": "https://www.openstreetmap.org/?mlat=34.7953938&mlon=126.4301471#map=18/34.7953938/126.4301471",
+      "hours": null
+    },
+    {
+      "id": "p57",
+      "name": "대명춘",
+      "category": "food",
+      "lat": 34.7901961,
+      "lon": 126.3851487,
+      "locationText": "목포시 노적봉길 4",
+      "source": "https://www.openstreetmap.org/?mlat=34.7901961&mlon=126.3851487#map=18/34.7901961/126.3851487",
+      "hours": null
+    },
+    {
+      "id": "p58",
+      "name": "솜리치킨 목포점",
+      "category": "food",
+      "lat": 34.8046204,
+      "lon": 126.4315684,
+      "locationText": "목포시 옥암로46번길 22-1",
+      "source": "https://www.openstreetmap.org/?mlat=34.8046204&mlon=126.4315684#map=18/34.8046204/126.4315684",
+      "hours": null
+    },
+    {
+      "id": "p59",
+      "name": "카와루라멘",
+      "category": "food",
+      "lat": 34.8067147,
+      "lon": 126.3749201,
+      "locationText": "목포시 원산로69번길 17",
+      "source": "https://www.openstreetmap.org/?mlat=34.8067147&mlon=126.3749201#map=18/34.8067147/126.3749201",
+      "hours": {
+        "open": "11:00",
+        "close": "20:30",
+        "breaks": [
+          [
+            "14:50",
+            "17:00"
+          ]
+        ],
+        "lastOrder": "20:00",
+        "note": "점심 주문 마감 14:20. 당일 확인 필요.",
+        "source": "https://www.diningcode.com/profile.php?rid=PC1EN9MY0W2g"
+      }
+    },
+    {
+      "id": "p60",
+      "name": "너구리식당",
+      "category": "food",
+      "lat": 34.8028999,
+      "lon": 126.369913,
+      "locationText": "목포시 죽교천로122번길 9",
+      "source": "https://www.openstreetmap.org/?mlat=34.8028999&mlon=126.369913#map=18/34.8028999/126.369913",
+      "hours": null
+    },
+    {
+      "id": "p61",
+      "name": "유달콩물(호남로 본점)",
+      "category": "food",
+      "lat": 34.7923417,
+      "lon": 126.3843625,
+      "locationText": "목포시 호남로58번길 23-1",
+      "source": "https://www.openstreetmap.org/?mlat=34.7923417&mlon=126.3843625#map=18/34.7923417/126.3843625",
+      "hours": null
+    },
+    {
+      "id": "p62",
+      "name": "소래기냉면",
+      "category": "food",
+      "lat": 34.7944851,
+      "lon": 126.4296963,
+      "locationText": "목포시 미항로 81",
+      "source": "https://www.openstreetmap.org/?mlat=34.7944851&mlon=126.4296963#map=18/34.7944851/126.4296963",
+      "hours": null
+    },
+    {
+      "id": "p63",
+      "name": "김정림선지해장국",
+      "category": "food",
+      "lat": 34.7866417,
+      "lon": 126.3840639,
+      "locationText": "목포시 번화로 41-3",
+      "source": "https://www.openstreetmap.org/?mlat=34.7866417&mlon=126.3840639#map=18/34.7866417/126.3840639",
+      "hours": null
+    },
+    {
+      "id": "p64",
+      "name": "정성김밥",
+      "category": "food",
+      "lat": 34.7858388,
+      "lon": 126.3831243,
+      "locationText": "목포시 영산로40번길 12-4",
+      "source": "https://www.openstreetmap.org/?mlat=34.7858388&mlon=126.3831243#map=18/34.7858388/126.3831243",
+      "hours": null
+    },
+    {
+      "id": "p65",
+      "name": "원조제일돌곱창",
+      "category": "food",
+      "lat": 34.7847044,
+      "lon": 126.3824181,
+      "locationText": "목포시 해안로173번길 28",
+      "source": "https://www.openstreetmap.org/?mlat=34.7847044&mlon=126.3824181#map=18/34.7847044/126.3824181",
+      "hours": null
+    },
+    {
+      "id": "p66",
+      "name": "야드레보쌈",
+      "category": "food",
+      "lat": 34.7980583,
+      "lon": 126.426025,
+      "locationText": "목포시 하당남부로 10",
+      "source": "https://www.openstreetmap.org/?mlat=34.7980583&mlon=126.426025#map=18/34.7980583/126.426025",
+      "hours": null
+    },
+    {
+      "id": "p67",
+      "name": "왕새우직판장 본점",
+      "category": "food",
+      "lat": 34.8082039,
+      "lon": 126.3726474,
+      "locationText": "목포시 고하대로 686",
+      "source": "https://www.openstreetmap.org/?mlat=34.8082039&mlon=126.3726474#map=18/34.8082039/126.3726474",
+      "hours": null
+    },
+    {
+      "id": "p68",
+      "name": "조선쫄복탕",
+      "category": "food",
+      "lat": 34.7807647,
+      "lon": 126.3765937,
+      "locationText": "목포시 해안로 115 조선쫄복탕",
+      "source": "https://www.openstreetmap.org/?mlat=34.7807647&mlon=126.3765937#map=18/34.7807647/126.3765937",
+      "hours": null
+    },
+    {
+      "id": "p69",
+      "name": "춘광식당",
+      "category": "food",
+      "lat": 34.7900832,
+      "lon": 126.3903124,
+      "locationText": "목포시 삼학로 43",
+      "source": "https://www.openstreetmap.org/?mlat=34.7900832&mlon=126.3903124#map=18/34.7900832/126.3903124",
+      "hours": null
+    },
+    {
+      "id": "p70",
+      "name": "원조신선횟집",
+      "category": "food",
+      "lat": 34.8084163,
+      "lon": 126.4251624,
+      "locationText": "목포시 비파로108번길 15",
+      "source": "https://www.openstreetmap.org/?mlat=34.8084163&mlon=126.4251624#map=18/34.8084163/126.4251624",
+      "hours": null
+    },
+    {
+      "id": "p71",
+      "name": "관우식당",
+      "category": "food",
+      "lat": 34.7949669,
+      "lon": 126.3919577,
+      "locationText": "목포시 산정안로 14-3",
+      "source": "https://www.openstreetmap.org/?mlat=34.7949669&mlon=126.3919577#map=18/34.7949669/126.3919577",
+      "hours": null
+    },
+    {
+      "id": "p72",
+      "name": "미달이네집밥",
+      "category": "food",
+      "lat": 34.7922305,
+      "lon": 126.4023374,
+      "locationText": "목포시 용당로 52",
+      "source": "https://www.openstreetmap.org/?mlat=34.7922305&mlon=126.4023374#map=18/34.7922305/126.4023374",
+      "hours": null
+    },
+    {
+      "id": "p73",
+      "name": "서해반점",
+      "category": "food",
+      "lat": 34.8037745,
+      "lon": 126.3760005,
+      "locationText": "목포시 청호로 137",
+      "source": "https://www.openstreetmap.org/?mlat=34.8037745&mlon=126.3760005#map=18/34.8037745/126.3760005",
+      "hours": null
+    },
+    {
+      "id": "p74",
+      "name": "88포장마차(원형로)",
+      "category": "food",
+      "lat": 34.7978383,
+      "lon": 126.4312028,
+      "locationText": "목포시 원형로 13",
+      "source": "https://www.openstreetmap.org/?mlat=34.7978383&mlon=126.4312028#map=18/34.7978383/126.4312028",
+      "hours": null
+    },
+    {
+      "id": "p75",
+      "name": "꼬미꼬미",
+      "category": "food",
+      "lat": 34.8090562,
+      "lon": 126.376591,
+      "locationText": "목포시 원산중앙로 41-1",
+      "source": "https://www.openstreetmap.org/?mlat=34.8090562&mlon=126.376591#map=18/34.8090562/126.376591",
+      "hours": null
+    },
+    {
+      "id": "p76",
+      "name": "용당반점",
+      "category": "food",
+      "lat": 34.802525,
+      "lon": 126.3967126,
+      "locationText": "목포시 영산로270번길 19",
+      "source": "https://www.openstreetmap.org/?mlat=34.802525&mlon=126.3967126#map=18/34.802525/126.3967126",
+      "hours": null
+    },
+    {
+      "id": "p77",
+      "name": "오두막집",
+      "category": "food",
+      "lat": 34.8019249,
+      "lon": 126.419746,
+      "locationText": "목포시 입암로42번길 8",
+      "source": "https://www.openstreetmap.org/?mlat=34.8019249&mlon=126.419746#map=18/34.8019249/126.419746",
+      "hours": null
+    },
+    {
+      "id": "p78",
+      "name": "만났지식당",
+      "category": "food",
+      "lat": 34.8047215,
+      "lon": 126.3951433,
+      "locationText": "목포시 동부로 8",
+      "source": "https://www.openstreetmap.org/?mlat=34.8047215&mlon=126.3951433#map=18/34.8047215/126.3951433",
+      "hours": null
+    },
+    {
+      "id": "p79",
+      "name": "찬의여왕 식당",
+      "category": "food",
+      "lat": 34.81281,
+      "lon": 126.4157316,
+      "locationText": "목포시 상리로9번길 9",
+      "source": "https://www.openstreetmap.org/?mlat=34.81281&mlon=126.4157316#map=18/34.81281/126.4157316",
+      "hours": null
+    },
+    {
+      "id": "p80",
+      "name": "어채",
+      "category": "food",
+      "lat": 34.8062876,
+      "lon": 126.3979783,
+      "locationText": "목포시 소영길 34",
+      "source": "https://www.openstreetmap.org/?mlat=34.8062876&mlon=126.3979783#map=18/34.8062876/126.3979783",
+      "hours": null
+    },
+    {
+      "id": "p81",
+      "name": "음식점·종류",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포 주소",
+      "source": null,
+      "hours": null
+    },
+    {
+      "id": "p82",
+      "name": "에스타시옹1913",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "해안로177번길 13, 1층",
+      "source": "https://place.map.kakao.com/1973808759",
+      "hours": null
+    },
+    {
+      "id": "p83",
+      "name": "그때그짜장집",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "영산로346번길 5",
+      "source": "https://place.map.kakao.com/24132962",
+      "hours": null
+    },
+    {
+      "id": "p84",
+      "name": "라멘집아저씨",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "노적봉길 18-1, 2층",
+      "source": "https://place.map.kakao.com/1847592020",
+      "hours": null
+    },
+    {
+      "id": "p85",
+      "name": "예향밥상",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "수문로20번길 7-3, 1층",
+      "source": "https://place.map.kakao.com/1291032205",
+      "hours": null
+    },
+    {
+      "id": "p86",
+      "name": "금강뻘낙지장어요리전문점",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "호남로64번길 9, 1층",
+      "source": "https://place.map.kakao.com/1185637896",
+      "hours": null
+    },
+    {
+      "id": "p87",
+      "name": "형제꼬막짬뽕",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "원산중앙로 59",
+      "source": "https://place.map.kakao.com/327095738",
+      "hours": null
+    },
+    {
+      "id": "p88",
+      "name": "삼학만두",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "삼학로113번길 14",
+      "source": "https://place.map.kakao.com/1004446411",
+      "hours": null
+    },
+    {
+      "id": "p89",
+      "name": "압해도뻘낙지",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "북항로166번길 5, 1층",
+      "source": "https://place.map.kakao.com/1291738759",
+      "hours": null
+    },
+    {
+      "id": "p90",
+      "name": "청호식당",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "산정안로 13, 1층",
+      "source": "https://place.map.kakao.com/21247123",
+      "hours": null
+    },
+    {
+      "id": "p91",
+      "name": "이가네고기국수",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "용두로 1, 1층",
+      "source": "https://place.map.kakao.com/686447395",
+      "hours": null
+    },
+    {
+      "id": "p92",
+      "name": "구라파소년",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "통일대로75번길 27, 1층",
+      "source": "https://place.map.kakao.com/27197255",
+      "hours": null
+    },
+    {
+      "id": "p93",
+      "name": "트라이팟",
+      "category": "food",
+      "lat": null,
+      "lon": null,
+      "locationText": "당가두로14번길 28, 1층",
+      "source": "https://place.map.kakao.com/670031710",
+      "hours": null
+    },
+    {
+      "id": "p94",
+      "name": "화신연쇄점",
+      "category": "cafe",
+      "lat": 34.7884179,
+      "lon": 126.3866014,
+      "locationText": "목포시 번화로 75",
+      "source": "https://www.openstreetmap.org/?mlat=34.7884179&mlon=126.3866014#map=18/34.7884179/126.3866014",
+      "hours": null
+    },
+    {
+      "id": "p95",
+      "name": "송자르트",
+      "category": "cafe",
+      "lat": 34.7840345,
+      "lon": 126.3822672,
+      "locationText": "목포시 해안로173번길 15-3",
+      "source": "https://www.openstreetmap.org/?mlat=34.7840345&mlon=126.3822672#map=18/34.7840345/126.3822672",
+      "hours": null
+    },
+    {
+      "id": "p96",
+      "name": "유달동의로망스",
+      "category": "cafe",
+      "lat": 34.7862431,
+      "lon": 126.3815469,
+      "locationText": "목포시 번화로 19",
+      "source": "https://www.openstreetmap.org/?mlat=34.7862431&mlon=126.3815469#map=18/34.7862431/126.3815469",
+      "hours": null
+    },
+    {
+      "id": "p97",
+      "name": "무가보",
+      "category": "cafe",
+      "lat": 34.7870468,
+      "lon": 126.381114,
+      "locationText": "목포시 영산로 19-1",
+      "source": "https://www.openstreetmap.org/?mlat=34.7870468&mlon=126.381114#map=18/34.7870468/126.381114",
+      "hours": null
+    },
+    {
+      "id": "p98",
+      "name": "달몬트",
+      "category": "cafe",
+      "lat": 34.7805019,
+      "lon": 126.3732844,
+      "locationText": "목포시 해안로 79",
+      "source": "https://www.openstreetmap.org/?mlat=34.7805019&mlon=126.3732844#map=18/34.7805019/126.3732844",
+      "hours": null
+    },
+    {
+      "id": "p99",
+      "name": "쿠레레",
+      "category": "cafe",
+      "lat": 34.7867043,
+      "lon": 126.385215,
+      "locationText": "목포시 해안로229번길 19",
+      "source": "https://www.openstreetmap.org/?mlat=34.7867043&mlon=126.385215#map=18/34.7867043/126.385215",
+      "hours": null
+    },
+    {
+      "id": "p100",
+      "name": "석산(SUKSAN)",
+      "category": "cafe",
+      "lat": 34.8019423,
+      "lon": 126.3658809,
+      "locationText": "목포시 고하대로 588",
+      "source": "https://www.openstreetmap.org/?mlat=34.8019423&mlon=126.3658809#map=18/34.8019423/126.3658809",
+      "hours": null
+    },
+    {
+      "id": "p101",
+      "name": "오리진 커피 로스터스",
+      "category": "cafe",
+      "lat": 34.7942531,
+      "lon": 126.4291939,
+      "locationText": "목포시 미항로 75",
+      "source": "https://www.openstreetmap.org/?mlat=34.7942531&mlon=126.4291939#map=18/34.7942531/126.4291939",
+      "hours": null
+    },
+    {
+      "id": "p102",
+      "name": "커피창고로(평화광장점)",
+      "category": "cafe",
+      "lat": 34.7956475,
+      "lon": 126.4306203,
+      "locationText": "목포시 평화로 51",
+      "source": "https://www.openstreetmap.org/?mlat=34.7956475&mlon=126.4306203#map=18/34.7956475/126.4306203",
+      "hours": null
+    },
+    {
+      "id": "p103",
+      "name": "혹호",
+      "category": "cafe",
+      "lat": 34.7912584,
+      "lon": 126.3852995,
+      "locationText": "목포시 수문로 5 2층",
+      "source": "https://www.openstreetmap.org/?mlat=34.7912584&mlon=126.3852995#map=18/34.7912584/126.3852995",
+      "hours": null
+    },
+    {
+      "id": "p104",
+      "name": "인스파이어링 커피",
+      "category": "cafe",
+      "lat": 34.7923312,
+      "lon": 126.3847631,
+      "locationText": "목포시 호남로64번길 22-1",
+      "source": "https://www.openstreetmap.org/?mlat=34.7923312&mlon=126.3847631#map=18/34.7923312/126.3847631",
+      "hours": null
+    },
+    {
+      "id": "p105",
+      "name": "카페",
+      "category": "cafe",
+      "lat": null,
+      "lon": null,
+      "locationText": "식사 메뉴 구분",
+      "source": null,
+      "hours": null
+    },
+    {
+      "id": "p106",
+      "name": "아르볼",
+      "category": "cafe",
+      "lat": null,
+      "lon": null,
+      "locationText": "식사 메뉴 미확인; 커피 중심",
+      "source": "https://place.map.kakao.com/12718697",
+      "hours": null
+    },
+    {
+      "id": "p107",
+      "name": "브릭레인",
+      "category": "cafe",
+      "lat": null,
+      "lon": null,
+      "locationText": "식사 가능: 브런치·파스타·샌드위치 · 메뉴 자료",
+      "source": "https://www.diningcode.com/profile.php?rid=URE6sIFyhJsh",
+      "hours": null
+    },
+    {
+      "id": "p108",
+      "name": "더왈츠",
+      "category": "cafe",
+      "lat": null,
+      "lon": null,
+      "locationText": "식사 메뉴 미확인; 차·커피·요거트 중심",
+      "source": "https://place.map.kakao.com/1867691013",
+      "hours": null
+    },
+    {
+      "id": "p109",
+      "name": "산들소리찻집",
+      "category": "cafe",
+      "lat": null,
+      "lon": null,
+      "locationText": "차·떡 중심; 밥 메뉴 현행 판매 미확인",
+      "source": "https://place.map.kakao.com/25986349",
+      "hours": null
+    },
+    {
+      "id": "p110",
+      "name": "손소영갤러리앤카페",
+      "category": "cafe",
+      "lat": null,
+      "lon": null,
+      "locationText": "식사 메뉴 미확인; 전시·음료 중심",
+      "source": "https://place.map.kakao.com/255509985",
+      "hours": null
+    },
+    {
+      "id": "p111",
+      "name": "아마빌레",
+      "category": "cafe",
+      "lat": null,
+      "lon": null,
+      "locationText": "식사 메뉴 미확인; 크로플 등 디저트 중심",
+      "source": "https://place.map.kakao.com/167721123",
+      "hours": null
+    },
+    {
+      "id": "p112",
+      "name": "티하우스클리프",
+      "category": "cafe",
+      "lat": null,
+      "lon": null,
+      "locationText": "식사 메뉴 미확인; 차 중심",
+      "source": "https://place.map.kakao.com/312240721",
+      "hours": null
+    },
+    {
+      "id": "p113",
+      "name": "기찻길315",
+      "category": "cafe",
+      "lat": null,
+      "lon": null,
+      "locationText": "식사 메뉴 미확인; 음료·케이크·크로플 중심 · 메뉴 자료",
+      "source": "https://www.diningcode.com/profile.php?rid=0UgxrBa40H05",
+      "hours": null
+    },
+    {
+      "id": "p114",
+      "name": "라니카이",
+      "category": "cafe",
+      "lat": null,
+      "lon": null,
+      "locationText": "식사 가능: 피자·수프 · 메뉴 자료",
+      "source": "https://www.diningcode.com/profile.php?rid=jLRyO4PgwPYl",
+      "hours": null
+    },
+    {
+      "id": "p115",
+      "name": "고호의 책방",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 영산로75번길 12, 1층",
+      "source": "https://place.map.kakao.com/670295720",
+      "hours": null
+    },
+    {
+      "id": "p116",
+      "name": "목포종합수산시장",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "자료상 해안로 265-4, 카카오맵 대표 주소 267",
+      "source": "https://place.map.kakao.com/11071825",
+      "hours": null
+    },
+    {
+      "id": "p117",
+      "name": "씨엘비베이커리(원도심점)",
+      "category": "shop",
+      "lat": 34.7903825,
+      "lon": 126.3845095,
+      "locationText": "목포시 영산로75번길 14",
+      "source": "https://www.openstreetmap.org/?mlat=34.7903825&mlon=126.3845095#map=18/34.7903825/126.3845095",
+      "hours": null
+    },
+    {
+      "id": "p118",
+      "name": "코롬방제과점",
+      "category": "shop",
+      "lat": 34.789985,
+      "lon": 126.3844209,
+      "locationText": "목포시 영산로75번길 7",
+      "source": "https://www.openstreetmap.org/?mlat=34.789985&mlon=126.3844209#map=18/34.789985/126.3844209",
+      "hours": null
+    },
+    {
+      "id": "p119",
+      "name": "작은낙",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 노적봉길 30-2",
+      "source": "https://place.map.kakao.com/44914102",
+      "hours": null
+    },
+    {
+      "id": "p120",
+      "name": "물망초",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포시 영산로 95-2, 2층",
+      "source": "https://place.map.kakao.com/1370733185",
+      "hours": null
+    },
+    {
+      "id": "p121",
+      "name": "한마을떡",
+      "category": "shop",
+      "lat": 34.7866691,
+      "lon": 126.3803534,
+      "locationText": "목포시 영산로 14-2",
+      "source": "https://www.openstreetmap.org/?mlat=34.7866691&mlon=126.3803534#map=18/34.7866691/126.3803534",
+      "hours": null
+    },
+    {
+      "id": "p122",
+      "name": "목포쫀드기 본점",
+      "category": "shop",
+      "lat": 34.7858834,
+      "lon": 126.382364,
+      "locationText": "목포시 해안로173번길 40",
+      "source": "https://www.openstreetmap.org/?mlat=34.7858834&mlon=126.382364#map=18/34.7858834/126.382364",
+      "hours": null
+    },
+    {
+      "id": "p123",
+      "name": "청호시장",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "석현로 28 · 시장 핀",
+      "source": "https://place.map.kakao.com/18525680",
+      "hours": null
+    },
+    {
+      "id": "p124",
+      "name": "목포동부시장",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "영산로257번길 15 · 시장 핀",
+      "source": "https://place.map.kakao.com/18524586",
+      "hours": null
+    },
+    {
+      "id": "p125",
+      "name": "목포자유시장",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "자유로 122 · 시장 핀",
+      "source": "https://place.map.kakao.com/8539105",
+      "hours": null
+    },
+    {
+      "id": "p126",
+      "name": "나비팩토리",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "마파지로 31-1, 1층 · 공방 핀",
+      "source": "https://place.map.kakao.com/1057690951",
+      "hours": null
+    },
+    {
+      "id": "p127",
+      "name": "가죽공방 모닉",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "옥암로96번길 28, 1층 · 공방 핀",
+      "source": "https://place.map.kakao.com/949428998",
+      "hours": null
+    },
+    {
+      "id": "p128",
+      "name": "비팡이네",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포 캐릭터 굿즈·기념품·문구",
+      "source": "https://place.map.kakao.com/73467697",
+      "hours": null
+    },
+    {
+      "id": "p129",
+      "name": "유유랜드",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "공방·소품샵, 체험은 예약 확인",
+      "source": "https://place.map.kakao.com/329471471",
+      "hours": null
+    },
+    {
+      "id": "p130",
+      "name": "포도책방(목포점)",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "공유 독립서점·굿즈",
+      "source": "https://place.map.kakao.com/709180966",
+      "hours": null
+    },
+    {
+      "id": "p131",
+      "name": "구보책방",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "독립서점",
+      "source": "https://place.map.kakao.com/512744607",
+      "hours": null
+    },
+    {
+      "id": "p132",
+      "name": "오늘의 페이지",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "독립서점·북카페",
+      "source": "https://place.map.kakao.com/810143349",
+      "hours": null
+    },
+    {
+      "id": "p133",
+      "name": "웨이브",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "카페·업사이클 공예품 판매·레진 체험",
+      "source": "https://place.map.kakao.com/1923792264",
+      "hours": null
+    },
+    {
+      "id": "p134",
+      "name": "마음길디자인(마음길상점)",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "디자인 문구·목포 기념품",
+      "source": "https://map.daum.net/?itemId=688386939",
+      "hours": null
+    },
+    {
+      "id": "p135",
+      "name": "김은주공방",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "목포 수공예 기념품",
+      "source": "https://place.map.kakao.com/91568348",
+      "hours": null
+    },
+    {
+      "id": "p136",
+      "name": "푼푼",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "문방구·소품",
+      "source": "https://place.map.kakao.com/1980686180",
+      "hours": null
+    },
+    {
+      "id": "p137",
+      "name": "지구별서점(소목포)",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "환경 주제 독립서점",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포+지구별서점+수문로+63",
+      "hours": null
+    },
+    {
+      "id": "p138",
+      "name": "꽃핀자리잡화점",
+      "category": "shop",
+      "lat": null,
+      "lon": null,
+      "locationText": "잡화점; 문구·여행 소품 여부 미확인",
+      "source": "https://www.google.com/maps/search/?api=1&query=목포+꽃핀자리잡화점+연산백련로21번길+8-11",
+      "hours": null
+    }
+  ]
+}
