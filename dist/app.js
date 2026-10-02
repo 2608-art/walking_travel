@@ -10,8 +10,29 @@
   ];
   const STORAGE_DRAFT = 'hangeoreum-draft-v1';
   const STORAGE_SAVED = 'hangeoreum-saved-v1';
+  const KAKAO_KEY = String(window.HANGEORUM_KAKAO_JS_KEY || '').trim();
+  let kakaoReady;
+  function loadKakao() {
+    if (!KAKAO_KEY) return Promise.resolve(false);
+    if (!kakaoReady) kakaoReady = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = 'https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&libraries=services&appkey=' + encodeURIComponent(KAKAO_KEY);
+      script.onload = () => kakao.maps.load(() => resolve(true));
+      script.onerror = () => reject(new Error('카카오맵 SDK를 불러오지 못했습니다.'));
+      document.head.appendChild(script);
+    });
+    return kakaoReady;
+  }
+  const kakaoLevel = (zoom) => Math.max(1, Math.min(14, 18 - zoom));
+  const kakaoZoom = (level) => 18 - level;
+  const kakaoPoint = (lat, lon) => new kakao.maps.LatLng(lat, lon);
   const $ = (selector) => document.querySelector(selector);
   const esc = (v) => String(v == null ? '' : v).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const TURTLE_BASE = './assets/mascot/turtle-base-ui.png';
+  const TURTLE_POSES = Object.fromEntries(['map','walk','bus','discover','think','memo','rest'].map((pose) => [pose, './assets/mascot/turtle-' + pose + '.png']));
+  function turtlePose(pose, label, extraClass = '') {
+    return '<img class="turtle-pose turtle-pose--' + pose + (extraClass ? ' ' + extraClass : '') + '" src="' + (TURTLE_POSES[pose] || TURTLE_BASE) + '" alt="' + esc(label) + '" loading="lazy">';
+  }
   const load = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch { return fallback; } };
   const save = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch { toast('저장 공간이 부족하거나 차단되었습니다.'); return false; } };
   const today = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
@@ -23,11 +44,24 @@
   const getPlace = (id) => state.places.find((p) => p.id === id);
   const coord = (p) => p && Number.isFinite(p.lat) && Number.isFinite(p.lon);
   const km = (a, b) => { if (!coord(a) || !coord(b)) return null; const r = Math.PI / 180, dy = (b.lat - a.lat) * r, dx = (b.lon - a.lon) * r * Math.cos((a.lat+b.lat) / 2 * r); return 111.2 * Math.hypot(dx, dy); };
+  const routeCache = new Map();
+  async function getRoute(mode, origin, target) {
+    if (!coord(origin) || !coord(target)) throw new Error('장소 좌표가 없습니다.');
+    const params = new URLSearchParams({mode,start_x:origin.lon,start_y:origin.lat,end_x:target.lon,end_y:target.lat});
+    const cacheKey = params.toString();
+    if (!routeCache.has(cacheKey)) routeCache.set(cacheKey, fetch('/api/route?' + cacheKey, {cache:'no-store'}).then(async (response) => {
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || '경로를 조회하지 못했습니다.');
+      if (data.status !== 'OK' || !data.routes?.length) throw new Error('이 구간의 경로가 없습니다.');
+      return data.routes;
+    }).catch((error) => { routeCache.delete(cacheKey); throw error; }));
+    return routeCache.get(cacheKey);
+  }
   let toastTimer;
   function toast(message) { const el = $('#toast'); if (!el) return; el.textContent = message; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 3600); }
   const state = {
     places: [], view: 'home', region: 'mokpo', category: 'all', selected: null,
-    mapCenter: MOKPO, mapZoom: 13, map: null, mapLine: null,
+    mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null,
     draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 목포 하루', date: today(), start: '09:00', origin: null, entries: {} },
     saved: load(STORAGE_SAVED, []),
     route: { date: today(), start: '10:00', end: '18:00', origin: 'station', must: '', results: [], selected: -1 },
@@ -63,7 +97,8 @@
       '<div class="detail-actions"><button class="btn btn-primary btn-sm" id="add-place-plan">계획표에 넣기</button>' + (p.source ? '<a class="btn btn-outline btn-sm" href="' + esc(p.source) + '" target="_blank" rel="noopener noreferrer">위치·출처 보기</a>' : '') + '</div><p class="small" style="margin:12px 0 0">자료 확인일 2026-10-01 · 실제 출입문과 임시휴무는 방문 전 확인하세요.</p></div>';
   }
   function renderHome() {
-    $('#main').innerHTML = '<section class="page destination-page"><div class="destination-head"><div class="eyebrow">한걸음 여행지</div><h1>어디로 떠나세요?</h1><p>여행지를 선택해 지도를 보고, 내 속도에 맞는 하루를 계획해 보세요.</p></div><div class="destination-grid">' + REGIONS.filter((x) => x.ready).map((x) => '<button type="button" class="destination-tile" data-region="' + esc(x.id) + '" aria-label="' + esc(x.name) + ' 여행지 소개 보기"><img src="' + esc(x.image) + '" alt="" loading="eager"><span class="destination-shade"></span><span class="destination-copy"><strong>' + esc(x.name) + '</strong><small>' + esc(x.teaser) + '</small></span><span class="destination-arrow" aria-hidden="true">↗</span></button>').join('') + '</div></section>';
+    const available = REGIONS.filter((x) => x.ready);
+    $('#main').innerHTML = '<section class="page destination-page"><div class="destination-head"><div><div class="eyebrow">한걸음 여행지</div><h1>여행지</h1></div><img class="destination-mascot" src="' + TURTLE_BASE + '" alt="가방을 메고 여행을 떠나는 거북이"></div><div class="destination-grid ' + (available.length === 1 ? 'is-single' : '') + '">' + available.map((x) => '<button type="button" class="destination-tile" data-region="' + esc(x.id) + '" aria-label="' + esc(x.name) + ' 여행지 소개 보기"><img src="' + esc(x.image) + '" alt="" loading="eager"><span class="destination-shade"></span><span class="destination-copy"><small>' + esc(x.teaser) + '</small><strong>' + esc(x.name) + '</strong></span><span class="destination-arrow" aria-hidden="true">↗</span></button>').join('') + '</div></section>';
     document.querySelectorAll('[data-region]').forEach((b) => b.onclick = () => { const region = REGIONS.find((x) => x.id === b.dataset.region); if (region) showRegionIntro(region); });
   }
   function showRegionIntro(region) {
@@ -80,19 +115,42 @@
       '</div><div class="map-column"><div class="map-frame"><div id="map"></div><div class="map-tools"><button class="btn btn-sm btn-outline" type="button" id="recenter">' + esc(region.name) + '로 돌아가기</button></div><div class="map-caption">' + (region.ready ? '지도 핀은 대표 위치입니다. 출입구·보행 경로는 별도 확인이 필요할 수 있어요.' : '아직 검증된 장소 핀이 없습니다.') + '</div></div>' +
       '<div class="filter-strip" aria-label="장소 유형">' + CATEGORIES.map(([id, label, icon]) => '<button type="button" class="filter-chip ' + (state.category === id ? 'active' : '') + '" data-category="' + id + '" aria-pressed="' + (state.category === id) + '"><span aria-hidden="true">' + icon + '</span> ' + label + '</button>').join('') + '</div>' +
       '<div class="results-title"><span>' + esc(categoryName(state.category)) + ' · ' + list.length + '곳</span><span>지도 핀 ' + list.filter(coord).length + '곳</span></div><div class="place-list">' + list.map((p) => '<button type="button" class="place-row" data-place="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>' + esc(p.locationText || '위치 확인 필요') + '</small></button>').join('') + '</div><div id="place-detail">' + (state.selected ? detailHtml(getPlace(state.selected)) : '') + '</div></div></div></section>';
+    $('.page-head')?.insertAdjacentHTML('beforeend', turtlePose('map', '지도를 살펴보는 거북이', 'turtle-page-corner'));
     initHomeMap(list);
     $('#region-back').onclick = () => nav('home');
     $('#go-plan').onclick = () => nav('plan'); $('#go-routes').onclick = () => nav('routes');
-    $('#recenter').onclick = () => { state.map?.setView(region.center, 13); state.mapCenter = region.center; state.mapZoom = 13; };
+    $('#recenter').onclick = () => { if (state.mapProvider === 'kakao') { state.map?.setCenter(kakaoPoint(...region.center)); state.map?.setLevel(kakaoLevel(13)); } else state.map?.setView(region.center, 13); state.mapCenter = region.center; state.mapZoom = 13; };
     $('#map-search-form').onsubmit = searchMap;
     document.querySelectorAll('[data-category]').forEach((b) => b.onclick = () => { state.category = b.dataset.category; state.selected = null; renderRegionMap(); });
     document.querySelectorAll('[data-place]').forEach((b) => b.onclick = () => selectPlace(b.dataset.place));
     bindDetail();
   }
-  function initHomeMap(list) {
-    if (!window.L || !navigator.onLine) { $('#map').innerHTML = '<div class="empty-state" style="margin:20px">지도는 인터넷에 연결하면 볼 수 있습니다.</div>'; return; }
+  async function initHomeMap(list) {
+    const container = $('#map');
+    if (!navigator.onLine) { container.innerHTML = '<div class="empty-state" style="margin:20px">지도는 인터넷에 연결하면 볼 수 있습니다.</div>'; return; }
+    if (KAKAO_KEY) {
+      try {
+        await loadKakao();
+        if (container !== $('#map')) return;
+        const map = new kakao.maps.Map(container, { center: kakaoPoint(...state.mapCenter), level: kakaoLevel(state.mapZoom) });
+        state.map = map; state.mapProvider = 'kakao';
+        map.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
+        const colors = { spot: '#0c8f71', food: '#cc6d39', cafe: '#8262b4', shop: '#336fa0' };
+        list.filter(coord).forEach((p) => {
+          const dot = document.createElement('div');
+          dot.className = 'kakao-place-pin'; dot.style.backgroundColor = colors[p.category] || '#123348';
+          dot.title = p.name; dot.setAttribute('aria-label', p.name);
+          const marker = new kakao.maps.CustomOverlay({ position: kakaoPoint(p.lat, p.lon), content: dot, yAnchor: .5 });
+          marker.setMap(map); dot.onclick = () => selectPlace(p.id);
+        });
+        kakao.maps.event.addListener(map, 'idle', () => { state.mapCenter = [map.getCenter().getLat(), map.getCenter().getLng()]; state.mapZoom = kakaoZoom(map.getLevel()); });
+        setTimeout(() => map.relayout(), 50);
+        return;
+      } catch { toast('카카오맵 연결에 실패해 기존 지도를 표시합니다. 키와 등록 도메인을 확인해 주세요.'); }
+    }
+    if (!window.L) return;
     const map = L.map('map', { zoomControl: false }).setView(state.mapCenter, state.mapZoom);
-    state.map = map;
+    state.map = map; state.mapProvider = 'leaflet';
     L.control.zoom({ position: 'bottomright' }).addTo(map);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
     const colors = { spot: '#0c8f71', food: '#cc6d39', cafe: '#8262b4', shop: '#336fa0' };
@@ -105,7 +163,10 @@
   }
   function selectPlace(id) {
     state.selected = id; const p = getPlace(id); if (!p) return;
-    if (coord(p) && state.map) state.map.flyTo([p.lat, p.lon], Math.max(state.map.getZoom(), 15), { duration: .5 });
+    if (coord(p) && state.map) {
+      if (state.mapProvider === 'kakao') { state.map.setLevel(Math.min(state.map.getLevel(), kakaoLevel(15))); state.map.panTo(kakaoPoint(p.lat, p.lon)); }
+      else state.map.flyTo([p.lat, p.lon], Math.max(state.map.getZoom(), 15), { duration: .5 });
+    }
     $('#place-detail').innerHTML = detailHtml(p); bindDetail(); $('#place-detail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
   function bindDetail() {
@@ -118,6 +179,16 @@
     if (match) { selectPlace(match.id); return; }
     if (!navigator.onLine) { toast('위치 검색은 인터넷이 필요합니다.'); return; }
     try {
+      if (KAKAO_KEY && await loadKakao()) {
+        const places = new kakao.maps.services.Places();
+        const geocoder = new kakao.maps.services.Geocoder();
+        const find = (method) => new Promise((resolve) => method(q, (results, status) => resolve(status === kakao.maps.services.Status.OK ? results[0] : null)));
+        const hit = await find(places.keywordSearch.bind(places)) || await find(geocoder.addressSearch.bind(geocoder));
+        if (!hit) { toast('검색 결과를 찾지 못했습니다.'); return; }
+        const lat = Number(hit.y), lon = Number(hit.x);
+        state.map?.setLevel(kakaoLevel(15)); state.map?.panTo(kakaoPoint(lat, lon));
+        toast('검색한 위치로 지도를 옮겼습니다.'); return;
+      }
       const u = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=' + encodeURIComponent(q);
       const res = await fetch(u); const hits = await res.json();
       if (!hits.length) { toast('검색 결과를 찾지 못했습니다.'); return; }
@@ -171,6 +242,7 @@
       '<div class="planner-grid"><div><div class="card"><label class="field-label" for="plan-title">계획 이름</label><input class="text-field" id="plan-title" value="' + esc(d.title) + '" maxlength="80"><div class="form-grid" style="margin-top:14px"><div class="field-group"><label class="field-label" for="plan-date">날짜</label><input class="text-field" type="date" id="plan-date" value="' + esc(d.date) + '"></div><div class="field-group"><label class="field-label" for="plan-start">시작 시각</label><input class="text-field" type="time" id="plan-start" value="' + esc(d.start) + '"></div><div class="field-group"><label class="field-label">계획 범위</label><div class="notice">' + esc(d.start) + '부터 자정까지</div></div></div></div>' +
       '<div class="slot-list">' + slots.map((m) => slotHtml(m, d.entries[m])).join('') + '</div></div>' +
       '<aside class="card plan-aside"><div class="eyebrow">계획 안내</div><h3>내 일정은 내 속도로</h3><p>장소에서 일찍 나오거나 오래 머물러도 괜찮아요. 다음 장소로 출발할 때 버튼을 누르면 그 시각 기준으로 다시 확인합니다.</p><div class="notice">운영시간·브레이크·공식 입장/주문 마감을 확인합니다. <strong>폐관 1시간 전 입장</strong>은 권장 안내이며 자동 삭제 기준이 아닙니다.</div><p class="small" style="margin:14px 0 0">장소 정보 기준 2026-10-01. 임시휴무와 실제 출입구는 방문 전에 다시 확인하세요.</p></aside></div></section>';
+    $('.plan-aside')?.insertAdjacentHTML('afterbegin', turtlePose('memo', '계획을 적는 거북이', 'turtle-aside'));
     $('#plan-back').onclick = () => nav('region');
     $('#save-plan').onclick = savePlan;
     $('#new-plan').onclick = () => openModal('<h2>새 계획을 시작할까요?</h2><p>현재 계획은 저장하지 않았다면 복구할 수 없습니다.</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="confirm-new">새 계획</button></div>', () => { $('#confirm-new').onclick = () => { state.draft = { id: null, title: '나의 목포 하루', date: today(), start: '09:00', origin: null, entries: {} }; persistDraft(); closeModal(); renderPlan(); }; });
@@ -230,13 +302,30 @@
     if (!navigator.onLine || !window.L) { toast('지도에서 위치를 찍으려면 인터넷이 필요합니다.'); return; }
     const name = $('#custom-name').value, locationText = $('#custom-location').value, duration = $('#entry-duration').value, memo = $('#entry-memo').value;
     const pin = state.pinSelection;
-    openModal('<h2>지도에서 위치 찍기</h2><p>지도 위를 눌러 장소 위치를 선택하세요. 실제 건물 출입구인지 확인해 주세요.</p><div class="pin-map-wrap"><div id="pin-map"></div></div><p id="picked-coord" class="small">' + (pin ? pin.lat.toFixed(5) + ', ' + pin.lon.toFixed(5) : '아직 위치를 찍지 않았습니다.') + '</p><div class="modal-actions"><button class="btn btn-outline" id="pin-back">돌아가기</button><button class="btn btn-primary" id="pin-done" ' + (pin ? '' : 'disabled') + '>위치 사용</button></div>', () => {
+    openModal('<h2>지도에서 위치 찍기</h2><p>지도 위를 눌러 장소 위치를 선택하세요. 실제 건물 출입구인지 확인해 주세요.</p><div class="pin-map-wrap"><div id="pin-map"></div></div><p id="picked-coord" class="small">' + (pin ? pin.lat.toFixed(5) + ', ' + pin.lon.toFixed(5) : '아직 위치를 찍지 않았습니다.') + '</p><div class="modal-actions"><button class="btn btn-outline" id="pin-back">돌아가기</button><button class="btn btn-primary" id="pin-done" ' + (pin ? '' : 'disabled') + '>위치 사용</button></div>', async () => {
+      const back = () => { openSlotEditor(minute); $('#custom-name').value = name; $('#custom-location').value = locationText; $('#entry-duration').value = duration; $('#entry-memo').value = memo; };
+      $('#pin-back').onclick = back; $('#pin-done').onclick = back;
+      if (KAKAO_KEY) {
+        try {
+          await loadKakao();
+          if (!$('#pin-map')) return;
+          const map = new kakao.maps.Map($('#pin-map'), {center: kakaoPoint(...(pin ? [pin.lat, pin.lon] : MOKPO)), level: kakaoLevel(14)});
+          let marker = pin ? new kakao.maps.Marker({position:kakaoPoint(pin.lat,pin.lon),map}) : null;
+          kakao.maps.event.addListener(map,'click',(e) => {
+            const lat = e.latLng.getLat(), lon = e.latLng.getLng();
+            state.pinSelection = {lat,lon}; marker?.setMap(null);
+            marker = new kakao.maps.Marker({position:e.latLng,map});
+            $('#picked-coord').textContent = lat.toFixed(5) + ', ' + lon.toFixed(5); $('#pin-done').disabled = false;
+          });
+          setTimeout(() => map.relayout(),60);
+          return;
+        } catch { toast('카카오맵 연결에 실패해 기존 지도를 표시합니다.'); }
+      }
       const map = L.map('pin-map').setView(pin ? [pin.lat,pin.lon] : MOKPO, 14);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom:19, attribution:'&copy; OpenStreetMap contributors' }).addTo(map);
       let marker = pin ? L.circleMarker([pin.lat,pin.lon],{radius:9,color:'#087a61'}).addTo(map) : null;
       map.on('click', (e) => { state.pinSelection = {lat:e.latlng.lat,lon:e.latlng.lng}; marker?.remove(); marker = L.circleMarker(e.latlng,{radius:9,color:'#087a61',fillColor:'#71e0bc',fillOpacity:1}).addTo(map); $('#picked-coord').textContent = e.latlng.lat.toFixed(5) + ', ' + e.latlng.lng.toFixed(5); $('#pin-done').disabled = false; });
-      const back = () => { openSlotEditor(minute); $('#custom-name').value = name; $('#custom-location').value = locationText; $('#entry-duration').value = duration; $('#entry-memo').value = memo; };
-      $('#pin-back').onclick = back; $('#pin-done').onclick = back; setTimeout(() => map.invalidateSize(),60);
+      setTimeout(() => map.invalidateSize(),60);
     });
   }
   function changePlanStart(value) {
@@ -290,7 +379,7 @@
     if (state.route.origin === 'current' && state.route.current) return state.route.current;
     return getPlace(state.route.origin) || STATION;
   }
-  function makeRoutes() {
+  async function makeRoutes() {
     const r = state.route, start = toMin(r.start), end = toMin(r.end);
     if (end <= start) return [];
     const origin = routeOrigin();
@@ -306,12 +395,14 @@
       let minute = start, prior = origin, rows = [], hard = false;
       for (const p of chain) {
         const direct = km(prior,p) || 0;
-        const walkEstimate = Math.max(10, Math.ceil(direct * 1.4 / 4 * 60 / 5) * 5);
+        let walkEstimate = Math.max(10, Math.ceil(direct * 1.4 / 4 * 60 / 5) * 5);
+        let actual = false;
+        try { walkEstimate = (await getRoute('walk',prior,p))[0].minutes; actual = true; } catch { /* API가 없는 구간은 추정으로 명시 */ }
         minute += walkEstimate;
         const visit = Math.ceil(minute / 5) * 5;
         const result = evaluate({placeId:p.id,duration:60},visit,r.date);
         if (result.kind === 'bad' || visit + 60 > end) { hard = true; break; }
-        rows.push({minute:visit,placeId:p.id,walkEstimate,result,direct});
+        rows.push({minute:visit,placeId:p.id,walkEstimate,result,direct,actual});
         minute = visit + 60; prior = p;
       }
       if (!hard && rows.length) routes.push({id:'route-'+i,title: chain.length > 1 ? first.name + '에서 ' + chain[1].name + '까지' : first.name + ' 둘러보기',rows});
@@ -322,15 +413,17 @@
     const r = state.route;
     const options = [STATION,...state.places.filter(coord)].map((p) => '<option value="' + esc(p.id) + '" ' + (r.origin === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
     const must = '<option value="">선택 안 함</option>' + state.places.filter(coord).map((p) => '<option value="' + esc(p.id) + '" ' + (r.must === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
-    $('#main').innerHTML = '<section class="page"><button class="back" id="routes-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">하루 동선 후보</div><h1>추천 루트</h1><p>출발 시각과 종료 시각에 맞는 후보를 비교해 보세요.</p></div></div><div class="card"><div class="form-grid"><div class="field-group"><label class="field-label" for="route-date">날짜</label><input class="text-field" type="date" id="route-date" value="' + esc(r.date) + '"></div><div class="field-group"><label class="field-label" for="route-start">시작 시각</label><input class="text-field" type="time" id="route-start" value="' + esc(r.start) + '"></div><div class="field-group"><label class="field-label" for="route-end">종료 시각</label><input class="text-field" type="time" id="route-end" value="' + esc(r.end) + '"></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-origin">출발 지점</label><select class="select-field" id="route-origin">' + options + (r.current ? '<option value="current" ' + (r.origin === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select><button class="btn btn-outline btn-sm" id="use-location" style="margin-top:8px">현재 위치 사용</button></div><div class="field-group"><label class="field-label" for="route-must">꼭 가고 싶은 장소</label><select class="select-field" id="route-must">' + must + '</select></div></div><div class="modal-actions"><button class="btn btn-primary" id="make-routes">코스 찾기</button></div></div><div class="notice warn" style="margin-top:18px">이 버전의 코스는 직선 거리에서 추정한 도보 이동시간으로 만든 <strong>동선 후보</strong>입니다. 실제 보행 경로와 버스 시각은 검증되지 않아 확정 안내로 제공하지 않습니다.</div><div id="route-results" class="route-results"></div></section>';
+    $('#main').innerHTML = '<section class="page"><button class="back" id="routes-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">하루 동선 후보</div><h1>추천 루트</h1><p>출발 시각과 종료 시각에 맞는 후보를 비교해 보세요.</p></div></div><div class="card"><div class="form-grid"><div class="field-group"><label class="field-label" for="route-date">날짜</label><input class="text-field" type="date" id="route-date" value="' + esc(r.date) + '"></div><div class="field-group"><label class="field-label" for="route-start">시작 시각</label><input class="text-field" type="time" id="route-start" value="' + esc(r.start) + '"></div><div class="field-group"><label class="field-label" for="route-end">종료 시각</label><input class="text-field" type="time" id="route-end" value="' + esc(r.end) + '"></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-origin">출발 지점</label><select class="select-field" id="route-origin">' + options + (r.current ? '<option value="current" ' + (r.origin === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select><button class="btn btn-outline btn-sm" id="use-location" style="margin-top:8px">현재 위치 사용</button></div><div class="field-group"><label class="field-label" for="route-must">꼭 가고 싶은 장소</label><select class="select-field" id="route-must">' + must + '</select></div></div><div class="modal-actions"><button class="btn btn-primary" id="make-routes">코스 찾기</button></div></div><div class="notice warn" style="margin-top:18px">카카오 도보 경로의 이동시간으로 동선 후보를 만듭니다. 경로가 없는 구간은 ‘추정’으로 표시합니다. 신호 대기·운영시간 변경·버스 출발 시각은 방문 전 확인하세요.</div><div id="route-results" class="route-results"></div></section>';
     $('#routes-back').onclick = () => nav('region');
     $('#use-location').onclick = () => { if (!navigator.geolocation) return toast('이 기기에서는 현재 위치를 사용할 수 없습니다.'); navigator.geolocation.getCurrentPosition((pos) => { r.current = {id:'current',name:'현재 위치',lat:pos.coords.latitude,lon:pos.coords.longitude}; r.origin = 'current'; renderRoutes(); toast('현재 위치를 출발 지점으로 설정했습니다.'); }, () => toast('위치 권한을 확인해 주세요.'), {enableHighAccuracy:false,timeout:10000}); };
-    $('#make-routes').onclick = () => { r.date = $('#route-date').value || today(); r.start = $('#route-start').value; r.end = $('#route-end').value; r.origin = $('#route-origin').value; r.must = $('#route-must').value; if (toMin(r.end) <= toMin(r.start)) { toast('종료 시각은 시작 시각보다 뒤여야 합니다.'); return; } r.results = makeRoutes(); r.selected = r.results.length ? 0 : -1; showRouteResults(); };
+    $('#make-routes').onclick = async () => { r.date = $('#route-date').value || today(); r.start = $('#route-start').value; r.end = $('#route-end').value; r.origin = $('#route-origin').value; r.must = $('#route-must').value; if (toMin(r.end) <= toMin(r.start)) { toast('종료 시각은 시작 시각보다 뒤여야 합니다.'); return; } const button = $('#make-routes'); button.disabled = true; button.textContent = '경로 조회 중…'; $('#route-results').innerHTML = '<div class="turtle-loading">' + turtlePose('map', '지도를 살펴보는 거북이') + '<span>코스를 찾고 있어요.</span></div>'; r.results = await makeRoutes(); r.selected = r.results.length ? 0 : -1; showRouteResults(); button.disabled = false; button.textContent = '코스 찾기'; };
     if (r.results.length) showRouteResults();
   }
   function showRouteResults() {
     const r = state.route, root = $('#route-results');
-    root.innerHTML = r.results.length ? '<div class="section-label">추천 코스 ' + r.results.length + '개</div><div class="route-tabs">' + r.results.map((x,i) => '<button class="filter-chip ' + (i === r.selected ? 'active' : '') + '" data-route-tab="' + i + '">' + esc(x.title) + '</button>').join('') + '</div><div class="card">' + r.results[r.selected].rows.map((x) => '<div class="place-row"><strong>' + esc(hhmm(x.minute)) + ' · ' + esc(getPlace(x.placeId)?.name) + '</strong><small>앞 장소에서 도보 약 ' + x.walkEstimate + '분 추정 · ' + esc(x.result.title) + '</small></div>').join('') + '<p class="small">도보 추정은 실제 보행 길이나 신호 대기를 반영하지 않습니다. 출입구와 임시 휴무를 확인하세요.</p><button class="btn btn-primary" id="import-route">시간계획표에 넣기</button></div>' : '<div class="card empty-state"><h3>이 시간대에 추천할 코스가 없습니다.</h3><p>운영시간상 맞는 장소가 부족합니다. 시간대를 바꾸거나 지도를 보고 직접 계획을 만들어 보세요.</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
+    root.innerHTML = r.results.length ? '<div class="section-label">추천 코스 ' + r.results.length + '개</div><div class="route-tabs">' + r.results.map((x,i) => '<button class="filter-chip ' + (i === r.selected ? 'active' : '') + '" data-route-tab="' + i + '">' + esc(x.title) + '</button>').join('') + '</div><div class="card">' + r.results[r.selected].rows.map((x) => '<div class="place-row"><strong>' + esc(hhmm(x.minute)) + ' · ' + esc(getPlace(x.placeId)?.name) + '</strong><small>앞 장소에서 도보 약 ' + x.walkEstimate + '분 ' + (x.actual ? '(카카오 경로)' : '(직선거리 추정)') + ' · ' + esc(x.result.title) + '</small></div>').join('') + '<p class="small">이동시간은 신호 대기와 실제 출입구를 완전히 반영하지 않을 수 있습니다. 임시 휴무도 확인하세요.</p><button class="btn btn-primary" id="import-route">시간계획표에 넣기</button></div>' : '<div class="card empty-state"><h3>이 시간대에 추천할 코스가 없습니다.</h3><p>운영시간상 맞는 장소가 부족합니다. 시간대를 바꾸거나 지도를 보고 직접 계획을 만들어 보세요.</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
+    if (r.results.length) root.querySelector('.section-label')?.insertAdjacentHTML('afterbegin', turtlePose('discover', '코스를 발견한 거북이', 'turtle-route-result'));
+    else root.querySelector('.empty-state')?.insertAdjacentHTML('afterbegin', turtlePose('think', '다른 길을 생각하는 거북이', 'turtle-empty'));
     root.querySelectorAll('[data-route-tab]').forEach((b) => b.onclick = () => { r.selected = Number(b.dataset.routeTab); showRouteResults(); });
     if ($('#import-route')) $('#import-route').onclick = importRoute;
     if ($('#go-own-plan')) $('#go-own-plan').onclick = () => nav('plan');
@@ -349,20 +442,67 @@
     const now = new Date(); const nowMinutes = now.getHours() * 60 + now.getMinutes();
     const direct = km(origin,target); const walk = direct == null ? null : Math.max(10,Math.ceil(direct*1.4/4*60/5)*5);
     const arrival = nowMinutes + (walk || 0);
-    state.journey = {minute, origin, target, walk, direct, arrival, result:evaluate(entry,arrival,today())};
+    state.journey = {minute, origin, target, walk, direct, arrival, result:evaluate(entry,arrival,today()), mode:'walk', route:null, loading:false, error:''};
     nav('routeMap');
+    loadJourneyRoute(state.journey);
+  }
+  async function loadJourneyRoute(j) {
+    if (!coord(j.origin) || !coord(j.target)) return;
+    j.loading = true; j.error = ''; j.route = null;
+    if (state.view === 'routeMap' && state.journey === j) renderRouteMap();
+    try {
+      const routes = await getRoute(j.mode,j.origin,j.target);
+      j.route = routes[0];
+      j.arrival = new Date().getHours() * 60 + new Date().getMinutes() + j.route.minutes;
+      j.result = evaluate(state.draft.entries[j.minute],j.arrival,today());
+    } catch (error) { j.error = error.message; }
+    j.loading = false;
+    if (state.view === 'routeMap' && state.journey === j) renderRouteMap();
+  }
+  async function initJourneyMap(j) {
+    if (KAKAO_KEY) {
+      try {
+        await loadKakao();
+        if (!$('#journey-map')) return;
+        const map = new kakao.maps.Map($('#journey-map'), {
+          center: kakaoPoint((j.origin.lat+j.target.lat)/2,(j.origin.lon+j.target.lon)/2),
+          level: kakaoLevel(14)
+        });
+        new kakao.maps.Marker({position:kakaoPoint(j.origin.lat,j.origin.lon),map});
+        new kakao.maps.Marker({position:kakaoPoint(j.target.lat,j.target.lon),map});
+        const routePoints = j.route?.points?.length > 1 ? j.route.points.map(([lon,lat]) => kakaoPoint(lat,lon)) : [kakaoPoint(j.origin.lat,j.origin.lon),kakaoPoint(j.target.lat,j.target.lon)];
+        new kakao.maps.Polyline({map,path:routePoints,strokeWeight:4,strokeColor:j.route ? '#0c8f71' : '#718b94',strokeOpacity:.9,strokeStyle:j.route ? 'solid' : 'dash'});
+        const bounds = new kakao.maps.LatLngBounds();
+        bounds.extend(kakaoPoint(j.origin.lat,j.origin.lon)); bounds.extend(kakaoPoint(j.target.lat,j.target.lon));
+        map.setBounds(bounds);
+        setTimeout(() => map.relayout(),50);
+        return;
+      } catch { toast('카카오맵 연결에 실패해 기존 지도를 표시합니다.'); }
+    }
+    const map = L.map('journey-map').setView([(j.origin.lat+j.target.lat)/2,(j.origin.lon+j.target.lon)/2],14);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+    L.circleMarker([j.origin.lat,j.origin.lon],{radius:8,color:'#155170'}).addTo(map).bindTooltip('출발');
+    L.circleMarker([j.target.lat,j.target.lon],{radius:8,color:'#0c8f71'}).addTo(map).bindTooltip('도착');
+    L.polyline(j.route?.points?.length > 1 ? j.route.points.map(([lon,lat]) => [lat,lon]) : [[j.origin.lat,j.origin.lon],[j.target.lat,j.target.lon]],{color:j.route ? '#0c8f71' : '#718b94',dashArray:j.route ? undefined : '5,9'}).addTo(map);
+    map.fitBounds([[j.origin.lat,j.origin.lon],[j.target.lat,j.target.lon]],{padding:[40,40],maxZoom:15});
+    setTimeout(() => map.invalidateSize(),50);
   }
   function renderRouteMap() {
     const j = state.journey; if (!j) { nav('plan'); return; }
     const dest = entryLabel(state.draft.entries[j.minute]);
     const canMap = navigator.onLine && window.L && coord(j.origin) && coord(j.target);
-    $('#main').innerHTML = '<section class="page"><button class="back" id="journey-back">← 시간계획표</button><div class="page-head"><div><div class="eyebrow">지금 이동하기</div><h1>' + esc(dest) + '</h1><p>현재 시각에 출발하는 것으로 운영시간을 다시 확인했습니다.</p></div></div><div class="card"><div class="toolbar"><strong>' + esc(j.origin?.name || '이전 장소') + ' → ' + esc(dest) + '</strong>' + pillFor(j.result) + '</div><p>' + esc(j.result.detail) + '</p>' + (j.walk != null ? '<p>도보 이동 약 ' + j.walk + '분 추정 · 예상 도착 ' + esc(hhmm(j.arrival)) + '</p>' : '<p>위치 좌표가 없어 이동시간을 추정할 수 없습니다.</p>') + '<p class="small">도보 추정은 직선 거리를 환산한 값입니다. 실제 길과 출입구는 지도 길찾기에서 확인하세요.</p></div><div class="map-frame journey-map" style="margin-top:16px"><div id="journey-map">' + (canMap ? '' : '<div class="empty-state">지도는 온라인이고 두 장소의 위치가 있을 때 볼 수 있습니다.</div>') + '</div></div><div class="top-actions" style="margin-top:16px">' + (coord(j.origin) && coord(j.target) ? '<a id="open-walk" class="btn btn-primary" target="_blank" rel="noopener noreferrer">실제 도보 길찾기 열기</a>' : '') + '<button class="btn btn-outline" id="journey-refresh">지금 다시 확인</button></div></section>';
+    const routeInfo = j.loading ? '<p>카카오 경로 조회 중…</p>' : j.route ? '<p><strong>' + (j.mode === 'walk' ? '도보' : '대중교통') + ' 약 ' + j.route.minutes + '분 · ' + (j.route.meters / 1000).toFixed(1) + 'km (카카오 경로)</strong>' + (j.mode === 'walk' ? ' · 예상 도착 ' + esc(hhmm(j.arrival)) : ' · 실제 버스 출발·도착 시각은 별도 확인') + '</p>' : '<p>실제 경로를 표시할 수 없습니다. 직선거리 기준 도보 약 ' + (j.walk ?? '?') + '분 추정입니다.</p><p class="small">' + esc(j.error) + '</p>';
+    const steps = j.mode === 'transit' && j.route?.steps?.length ? '<div class="route-steps">' + j.route.steps.map((step) => '<div class="route-step"><strong>' + esc(step.vehicle || (step.type === 'WALKING' ? '도보' : step.type)) + '</strong><span>' + esc(step.guidance) + ' · 약 ' + esc(step.minutes) + '분</span></div>').join('') + '</div>' : '';
+    $('#main').innerHTML = '<section class="page"><button class="back" id="journey-back">← 시간계획표</button><div class="page-head"><div><div class="eyebrow">지금 이동하기</div><h1>' + esc(dest) + '</h1><p>현재 시각을 기준으로 운영시간을 다시 확인했습니다.</p></div></div><div class="card"><div class="toolbar"><strong>' + esc(j.origin?.name || '이전 장소') + ' → ' + esc(dest) + '</strong>' + pillFor(j.result) + '</div><p>' + esc(j.result.detail) + '</p><div class="route-tabs"><button class="filter-chip ' + (j.mode === 'walk' ? 'active' : '') + '" data-journey-mode="walk">도보</button><button class="filter-chip ' + (j.mode === 'transit' ? 'active' : '') + '" data-journey-mode="transit">대중교통</button></div>' + routeInfo + steps + '<p class="small">대중교통 경로는 지정한 날짜·출발 시각의 실제 운행을 보증하지 않습니다. 버스 시각과 출입구는 출발 전 확인하세요.</p></div><div class="map-frame journey-map" style="margin-top:16px"><div id="journey-map">' + (canMap ? '' : '<div class="empty-state">지도는 온라인이고 두 장소의 위치가 있을 때 볼 수 있습니다.</div>') + '</div></div><div class="top-actions" style="margin-top:16px">' + (coord(j.origin) && coord(j.target) ? '<a id="open-walk" class="btn btn-primary" target="_blank" rel="noopener noreferrer">카카오맵에서 길찾기</a>' : '') + '<button class="btn btn-outline" id="journey-refresh">지금 다시 확인</button></div></section>';
+    $('#main .card')?.insertAdjacentHTML('afterbegin', turtlePose(j.mode === 'walk' ? 'walk' : 'bus', j.mode === 'walk' ? '걷는 거북이' : '버스를 기다리는 거북이', 'turtle-journey'));
     $('#journey-back').onclick = () => nav('plan'); $('#journey-refresh').onclick = () => showJourney(j.minute);
-    if ($('#open-walk')) $('#open-walk').href = 'https://www.google.com/maps/dir/?api=1&origin=' + encodeURIComponent(j.origin.lat + ',' + j.origin.lon) + '&destination=' + encodeURIComponent(j.target.lat + ',' + j.target.lon) + '&travelmode=walking';
-    if (canMap) { const map = L.map('journey-map').setView([(j.origin.lat+j.target.lat)/2,(j.origin.lon+j.target.lon)/2],14); L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map); L.circleMarker([j.origin.lat,j.origin.lon],{radius:8,color:'#155170'}).addTo(map).bindTooltip('출발'); L.circleMarker([j.target.lat,j.target.lon],{radius:8,color:'#0c8f71'}).addTo(map).bindTooltip('도착'); L.polyline([[j.origin.lat,j.origin.lon],[j.target.lat,j.target.lon]],{color:'#718b94',dashArray:'5,9'}).addTo(map); map.fitBounds([[j.origin.lat,j.origin.lon],[j.target.lat,j.target.lon]],{padding:[40,40],maxZoom:15}); setTimeout(() => map.invalidateSize(),50); }
+    document.querySelectorAll('[data-journey-mode]').forEach((button) => button.onclick = () => { if (j.mode === button.dataset.journeyMode) return; j.mode = button.dataset.journeyMode; loadJourneyRoute(j); });
+    if ($('#open-walk')) $('#open-walk').href = j.route?.url?.startsWith('https://map.kakao.com/') ? j.route.url : 'https://map.kakao.com/link/to/' + encodeURIComponent(dest) + ',' + j.target.lat + ',' + j.target.lon;
+    if (canMap) initJourneyMap(j);
   }
   function renderSaved() {
     $('#main').innerHTML = '<section class="page"><button class="back" id="saved-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">이 기기에 보관</div><h1>저장한 계획</h1><p>인터넷이 없어도 장소와 메모를 글로 볼 수 있습니다.</p></div><div class="top-actions"><button class="btn btn-outline" id="export-plans">파일로 내보내기</button><button class="btn btn-outline" id="import-plans">파일 가져오기</button><input id="import-file" type="file" accept="application/json,.json" hidden></div></div><div class="saved-list">' + (state.saved.length ? state.saved.map((p) => '<div class="card saved-card"><div><div class="eyebrow">' + esc(p.date || '') + '</div><h3>' + esc(p.title || '이름 없는 계획') + '</h3><p>' + Object.keys(p.entries || {}).length + '개 장소 · ' + esc(p.start || '') + ' 시작</p></div><div class="top-actions"><button class="btn btn-primary btn-sm" data-open-saved="' + esc(p.id) + '">열기</button><button class="btn btn-outline btn-sm" data-text-saved="' + esc(p.id) + '">글로 보기</button><button class="btn btn-danger btn-sm" data-delete-saved="' + esc(p.id) + '">삭제</button></div></div>').join('') : '<div class="card empty-state">저장한 계획이 없습니다. 계획표에서 저장해 주세요.</div>') + '</div><div class="notice" style="margin-top:16px">계획은 이 브라우저에만 저장됩니다. 브라우저 데이터를 지우거나 기기를 바꾸면 사라질 수 있으니 파일로 내보내 두세요.</div></section>';
+    if (!state.saved.length) $('.saved-list .empty-state')?.insertAdjacentHTML('afterbegin', turtlePose('rest', '잠시 쉬는 거북이', 'turtle-empty'));
     $('#saved-back').onclick = () => nav('home');
     document.querySelectorAll('[data-open-saved]').forEach((b) => b.onclick = () => { const p = state.saved.find((x) => x.id === b.dataset.openSaved); if (p) { state.draft = JSON.parse(JSON.stringify(p)); persistDraft(); nav('plan'); } });
     document.querySelectorAll('[data-text-saved]').forEach((b) => b.onclick = () => { const p = state.saved.find((x) => x.id === b.dataset.textSaved); if (!p) return; const lines = Object.entries(p.entries || {}).sort((a,b) => Number(a[0])-Number(b[0])).map(([m,e]) => '<div class="place-row"><strong>' + esc(hhmm(Number(m))) + ' · ' + esc(entryLabel(e)) + '</strong><small>' + esc(e.locationText || entryPlace(e)?.locationText || '') + (e.memo ? ' · ' + esc(e.memo) : '') + '</small></div>').join(''); openModal('<h2>' + esc(p.title) + '</h2><p>' + esc(p.date) + ' · ' + esc(p.start) + ' 시작</p><div class="saved-text">' + (lines || '<p>등록한 장소가 없습니다.</p>') + '</div><div class="modal-actions"><button class="btn btn-primary" data-close>닫기</button></div>'); });
