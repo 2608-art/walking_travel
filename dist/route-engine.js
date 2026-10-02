@@ -198,7 +198,47 @@
     }
     return direct;
   }
-  const api={THEMES,THEME_PRESETS,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive};
+  async function generateThemeDay(input) {
+    const plans = [
+      {start:'10:00',end:'21:00',mealTimes:['12:30','18:00']},
+      {start:'11:00',end:'21:00',mealTimes:['13:00','18:30']},
+      {start:'10:00',end:'20:00',mealTimes:['12:30']},
+      {start:'11:00',end:'20:00',mealTimes:['13:00']},
+      {start:'10:00',end:'19:00',mealTimes:[]},
+      {start:'11:00',end:'19:00',mealTimes:[]}
+    ];
+    let best=null, bestScore=-Infinity;
+    for (const plan of plans) {
+      // 날짜별 후보 탐색은 저장한 장소 정보와 보수적 도보 추정치만 사용한다.
+      const routes=await generate({...input,...plan,routeProvider:null,variants:1});
+      for (const route of routes) {
+        const meals=route.rows.filter((row) => row.kind === 'meal').length;
+        const unknown=route.rows.filter((row) => row.result.kind === 'unknown').length;
+        const score=route.rows.length*3 + meals*5 - unknown + (route.endArrival-route.start)/120;
+        if (score > bestScore) { best=route; bestScore=score; }
+      }
+    }
+    if (!best) {
+      // 박물관 휴관일처럼 테마 후보가 적은 날은 열린 원도심 장소와 함께 엮는다.
+      let fallbackScore=-Infinity;
+      for (const plan of plans) {
+        const routes=await generate({...input,...plan,theme:'balanced',routeProvider:null,variants:3});
+        for (const route of routes) {
+          const themed=route.rows.filter((row) => input.theme === 'history' ? HISTORY_IDS.has(row.placeId) :
+            input.theme === 'sea' ? SEA_IDS.has(row.placeId) : input.theme === 'shops' ? SHOP_IDS.has(row.placeId) :
+            input.theme === 'food' ? input.places.find((p) => p.id === row.placeId)?.category === 'food' :
+            input.places.find((p) => p.id === row.placeId)?.category === 'cafe').length;
+          const score=themed*10+route.rows.length+route.rows.filter((row)=>row.kind === 'meal').length*3;
+          if (themed >= 1 && score>fallbackScore) { best={...route,theme:input.theme}; fallbackScore=score; }
+        }
+      }
+    }
+    if (!best) return [];
+    // 방문과 귀환이 끝나는 실제 시각까지만 시간표에 담는다.
+    return [{...best,id:'theme-day',title:(THEMES.find((item) => item.id === input.theme)?.name || '테마')+' 하루 코스',end:round5(best.endArrival),autoSchedule:true,
+      plannedMeals:best.rows.filter((row) => row.kind === 'meal').map((row) => row.minute)}];
+  }
+  const api={THEMES,THEME_PRESETS,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive,generateThemeDay};
   if (typeof module !== 'undefined' && module.exports) module.exports=api;
   if (typeof window !== 'undefined') window.HangeoreumRouteEngine=api;
 })();
