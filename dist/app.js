@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const MOKPO = [34.7913, 126.3854];
-  const REGIONS = [{id:'mokpo',name:'목포',center:MOKPO,ready:true}];
+  const REGIONS = [{id:'mokpo',name:'목포',center:MOKPO,ready:true,image:'./mokpo-card.webp',teaser:'유달산과 바다가 만나는 항구 도시',description:'유달산과 항구가 어우러진 목포. 근대역사거리와 해상케이블카가 기다려요.'}];
   const STATION = { id: 'station', name: '목포역', lat: 34.7914, lon: 126.3859 };
   const CATEGORIES = [
     ['all', '전체', '◉'], ['spot', '가볼 만한 곳', '✦'],
@@ -38,8 +38,9 @@
   function nav(view) { state.view = view; render(); window.scrollTo(0, 0); }
   function render() {
     statusConnection();
-    document.querySelectorAll('[data-nav]').forEach((b) => { const active = b.dataset.nav === state.view; b.classList.toggle('active', active); b.setAttribute('aria-current', active ? 'page' : 'false'); });
+    document.querySelectorAll('[data-nav]').forEach((b) => { const active = b.dataset.nav === state.view || (b.dataset.nav === 'home' && state.view === 'region'); b.classList.toggle('active', active); b.setAttribute('aria-current', active ? 'page' : 'false'); });
     if (state.view === 'home') renderHome();
+    else if (state.view === 'region') renderRegionMap();
     else if (state.view === 'plan') renderPlan();
     else if (state.view === 'routes') renderRoutes();
     else if (state.view === 'saved') renderSaved();
@@ -61,21 +62,29 @@
       '<div class="detail-actions"><button class="btn btn-primary btn-sm" id="add-place-plan">계획표에 넣기</button>' + (p.source ? '<a class="btn btn-outline btn-sm" href="' + esc(p.source) + '" target="_blank" rel="noopener noreferrer">위치·출처 보기</a>' : '') + '</div><p class="small" style="margin:12px 0 0">자료 확인일 2026-10-01 · 실제 출입문과 임시휴무는 방문 전 확인하세요.</p></div>';
   }
   function renderHome() {
+    $('#main').innerHTML = '<section class="page destination-page"><div class="destination-head"><div class="eyebrow">한걸음 여행지</div><h1>어디로 떠나세요?</h1><p>여행지를 선택해 지도를 보고, 내 속도에 맞는 하루를 계획해 보세요.</p></div><div class="destination-grid">' + REGIONS.filter((x) => x.ready).map((x) => '<button type="button" class="destination-tile" data-region="' + esc(x.id) + '" aria-label="' + esc(x.name) + ' 여행지 소개 보기"><img src="' + esc(x.image) + '" alt="" loading="eager"><span class="destination-shade"></span><span class="destination-copy"><strong>' + esc(x.name) + '</strong><small>' + esc(x.teaser) + '</small></span><span class="destination-arrow" aria-hidden="true">↗</span></button>').join('') + '</div></section>';
+    document.querySelectorAll('[data-region]').forEach((b) => b.onclick = () => { const region = REGIONS.find((x) => x.id === b.dataset.region); if (region) showRegionIntro(region); });
+  }
+  function showRegionIntro(region) {
+    openModal('<div class="destination-dialog-image"><img src="' + esc(region.image) + '" alt="유달산, 해상케이블카와 항구를 그린 ' + esc(region.name) + ' 일러스트"></div><div class="eyebrow" style="margin-top:18px">여행지 소개</div><h2>' + esc(region.name) + '</h2><p>' + esc(region.description) + '</p><div class="modal-actions"><button class="btn btn-outline" data-close>닫기</button><button class="btn btn-primary" id="choose-region">선택</button></div>', () => {
+      $('#choose-region').onclick = () => { state.region = region.id; state.mapCenter = region.center; state.mapZoom = 13; state.selected = null; state.category = 'all'; closeModal(); nav('region'); };
+    });
+  }
+  function renderRegionMap() {
     const region = REGIONS.find((x) => x.id === state.region) || REGIONS[0];
     const list = (region.ready ? state.places : []).filter((p) => state.category === 'all' || p.category === state.category);
-    $('#main').innerHTML = '<section class="page"><div class="region-switch"><div><div class="eyebrow">여행지 선택</div><h1>어디로 떠나세요?</h1></div><div class="region-tabs" role="tablist" aria-label="여행 지역">' + REGIONS.map((x) => '<button type="button" role="tab" class="region-tab ' + (x.id === region.id ? 'active' : '') + '" aria-selected="' + (x.id === region.id) + '" data-region="' + x.id + '">' + esc(x.name) + (x.ready ? '' : '<small>준비 중</small>') + '</button>').join('') + '</div></div><div class="home-layout"><div class="left-panel">' +
-      '<div class="card region-card"><div class="eyebrow">' + esc(region.name) + ' 여행</div><h2>' + (region.ready ? '내 속도로 짜는 하루' : '장소 자료를 준비 중이에요') + '</h2><p>' + (region.ready ? '원하는 장소를 살펴보고 내 속도에 맞는 계획을 만들어 보세요.' : '지도는 볼 수 있습니다. 검증된 장소와 교통 자료가 준비되면 코스 기능을 열겠습니다.') + '</p></div>' +
+    $('#main').innerHTML = '<section class="page"><button class="back" id="region-back">← 여행지 선택</button><div class="page-head"><div><div class="eyebrow">선택한 여행지</div><h1>' + esc(region.name) + ' 지도</h1><p>장소를 살펴보고 계획을 시작해 보세요.</p></div></div><div class="home-layout"><div class="left-panel">' +
       '<div class="card home-search"><label class="field-label" for="map-search">장소 또는 주소 검색</label><form id="map-search-form" class="search-row"><input id="map-search" class="text-field" autocomplete="off" placeholder="목포역, 평화광장, 주소"><button class="btn btn-primary" type="submit">검색</button></form><p class="small" style="margin:8px 0 0">앱 장소를 먼저 찾고, 없으면 지도 검색으로 이동합니다.</p></div>' +
       '<div class="action-grid home-actions"><button type="button" class="action-tile" id="go-plan" ' + (region.ready ? '' : 'disabled') + '><span class="action-symbol">▤</span><strong>계획</strong><small>한 칸씩 직접 짜기</small></button><button type="button" class="action-tile" id="go-routes" ' + (region.ready ? '' : 'disabled') + '><span class="action-symbol">↗</span><strong>추천 루트</strong><small>여러 동선 비교하기</small></button></div>' +
       '</div><div class="map-column"><div class="map-frame"><div id="map"></div><div class="map-tools"><button class="btn btn-sm btn-outline" type="button" id="recenter">' + esc(region.name) + '로 돌아가기</button></div><div class="map-caption">' + (region.ready ? '지도 핀은 대표 위치입니다. 출입구·보행 경로는 별도 확인이 필요할 수 있어요.' : '아직 검증된 장소 핀이 없습니다.') + '</div></div>' +
       '<div class="filter-strip" aria-label="장소 유형">' + CATEGORIES.map(([id, label, icon]) => '<button type="button" class="filter-chip ' + (state.category === id ? 'active' : '') + '" data-category="' + id + '" aria-pressed="' + (state.category === id) + '"><span aria-hidden="true">' + icon + '</span> ' + label + '</button>').join('') + '</div>' +
       '<div class="results-title"><span>' + esc(categoryName(state.category)) + ' · ' + list.length + '곳</span><span>지도 핀 ' + list.filter(coord).length + '곳</span></div><div class="place-list">' + list.map((p) => '<button type="button" class="place-row" data-place="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>' + esc(p.locationText || '위치 확인 필요') + '</small></button>').join('') + '</div><div id="place-detail">' + (state.selected ? detailHtml(getPlace(state.selected)) : '') + '</div></div></div></section>';
     initHomeMap(list);
-    document.querySelectorAll('[data-region]').forEach((b) => b.onclick = () => { const next = REGIONS.find((x) => x.id === b.dataset.region); if (!next) return; state.region = next.id; state.mapCenter = next.center; state.mapZoom = 13; state.selected = null; state.category = 'all'; renderHome(); });
+    $('#region-back').onclick = () => nav('home');
     $('#go-plan').onclick = () => nav('plan'); $('#go-routes').onclick = () => nav('routes');
     $('#recenter').onclick = () => { state.map?.setView(region.center, 13); state.mapCenter = region.center; state.mapZoom = 13; };
     $('#map-search-form').onsubmit = searchMap;
-    document.querySelectorAll('[data-category]').forEach((b) => b.onclick = () => { state.category = b.dataset.category; state.selected = null; renderHome(); });
+    document.querySelectorAll('[data-category]').forEach((b) => b.onclick = () => { state.category = b.dataset.category; state.selected = null; renderRegionMap(); });
     document.querySelectorAll('[data-place]').forEach((b) => b.onclick = () => selectPlace(b.dataset.place));
     bindDetail();
   }
@@ -161,7 +170,7 @@
       '<div class="planner-grid"><div><div class="card"><label class="field-label" for="plan-title">계획 이름</label><input class="text-field" id="plan-title" value="' + esc(d.title) + '" maxlength="80"><div class="form-grid" style="margin-top:14px"><div class="field-group"><label class="field-label" for="plan-date">날짜</label><input class="text-field" type="date" id="plan-date" value="' + esc(d.date) + '"></div><div class="field-group"><label class="field-label" for="plan-start">시작 시각</label><input class="text-field" type="time" id="plan-start" value="' + esc(d.start) + '"></div><div class="field-group"><label class="field-label">계획 범위</label><div class="notice">' + esc(d.start) + '부터 자정까지</div></div></div></div>' +
       '<div class="slot-list">' + slots.map((m) => slotHtml(m, d.entries[m])).join('') + '</div></div>' +
       '<aside class="card plan-aside"><div class="eyebrow">계획 안내</div><h3>내 일정은 내 속도로</h3><p>장소에서 일찍 나오거나 오래 머물러도 괜찮아요. 다음 장소로 출발할 때 버튼을 누르면 그 시각 기준으로 다시 확인합니다.</p><div class="notice">운영시간·브레이크·공식 입장/주문 마감을 확인합니다. <strong>폐관 1시간 전 입장</strong>은 권장 안내이며 자동 삭제 기준이 아닙니다.</div><p class="small" style="margin:14px 0 0">장소 정보 기준 2026-10-01. 임시휴무와 실제 출입구는 방문 전에 다시 확인하세요.</p></aside></div></section>';
-    $('#plan-back').onclick = () => nav('home');
+    $('#plan-back').onclick = () => nav('region');
     $('#save-plan').onclick = savePlan;
     $('#new-plan').onclick = () => openModal('<h2>새 계획을 시작할까요?</h2><p>현재 계획은 저장하지 않았다면 복구할 수 없습니다.</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="confirm-new">새 계획</button></div>', () => { $('#confirm-new').onclick = () => { state.draft = { id: null, title: '나의 목포 하루', date: today(), start: '09:00', origin: null, entries: {} }; persistDraft(); closeModal(); renderPlan(); }; });
     $('#plan-title').onchange = (e) => { d.title = e.target.value.trim() || '나의 목포 하루'; persistDraft(); };
@@ -313,7 +322,7 @@
     const options = [STATION,...state.places.filter(coord)].map((p) => '<option value="' + esc(p.id) + '" ' + (r.origin === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
     const must = '<option value="">선택 안 함</option>' + state.places.filter(coord).map((p) => '<option value="' + esc(p.id) + '" ' + (r.must === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
     $('#main').innerHTML = '<section class="page"><button class="back" id="routes-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">하루 동선 후보</div><h1>추천 루트</h1><p>출발 시각과 종료 시각에 맞는 후보를 비교해 보세요.</p></div></div><div class="card"><div class="form-grid"><div class="field-group"><label class="field-label" for="route-date">날짜</label><input class="text-field" type="date" id="route-date" value="' + esc(r.date) + '"></div><div class="field-group"><label class="field-label" for="route-start">시작 시각</label><input class="text-field" type="time" id="route-start" value="' + esc(r.start) + '"></div><div class="field-group"><label class="field-label" for="route-end">종료 시각</label><input class="text-field" type="time" id="route-end" value="' + esc(r.end) + '"></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-origin">출발 지점</label><select class="select-field" id="route-origin">' + options + (r.current ? '<option value="current" ' + (r.origin === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select><button class="btn btn-outline btn-sm" id="use-location" style="margin-top:8px">현재 위치 사용</button></div><div class="field-group"><label class="field-label" for="route-must">꼭 가고 싶은 장소</label><select class="select-field" id="route-must">' + must + '</select></div></div><div class="modal-actions"><button class="btn btn-primary" id="make-routes">코스 찾기</button></div></div><div class="notice warn" style="margin-top:18px">이 버전의 코스는 직선 거리에서 추정한 도보 이동시간으로 만든 <strong>동선 후보</strong>입니다. 실제 보행 경로와 버스 시각은 검증되지 않아 확정 안내로 제공하지 않습니다.</div><div id="route-results" class="route-results"></div></section>';
-    $('#routes-back').onclick = () => nav('home');
+    $('#routes-back').onclick = () => nav('region');
     $('#use-location').onclick = () => { if (!navigator.geolocation) return toast('이 기기에서는 현재 위치를 사용할 수 없습니다.'); navigator.geolocation.getCurrentPosition((pos) => { r.current = {id:'current',name:'현재 위치',lat:pos.coords.latitude,lon:pos.coords.longitude}; r.origin = 'current'; renderRoutes(); toast('현재 위치를 출발 지점으로 설정했습니다.'); }, () => toast('위치 권한을 확인해 주세요.'), {enableHighAccuracy:false,timeout:10000}); };
     $('#make-routes').onclick = () => { r.date = $('#route-date').value || today(); r.start = $('#route-start').value; r.end = $('#route-end').value; r.origin = $('#route-origin').value; r.must = $('#route-must').value; if (toMin(r.end) <= toMin(r.start)) { toast('종료 시각은 시작 시각보다 뒤여야 합니다.'); return; } r.results = makeRoutes(); r.selected = r.results.length ? 0 : -1; showRouteResults(); };
     if (r.results.length) showRouteResults();
