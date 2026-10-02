@@ -26,9 +26,9 @@ async function check(input) {
     assert(route.rows.length >= 2);
     assert(route.walkMeters <= 8000);
     assert(route.endArrival <= route.end);
-    assert(route.endWalk.meters <= 1600 && route.endWalk.minutes <= 25);
+    assert(route.endWalk.meters <= 1600 && route.endWalk.minutes <= 30);
     for (const row of route.rows) {
-      assert(row.walkMeters <= 1600 && row.walkEstimate <= 25);
+      assert(row.walkMeters <= 1600 && row.walkEstimate <= 30);
       assert(row.minute >= route.start && row.minute+row.duration <= route.end);
       assert.notEqual(row.result.kind,'bad');
     }

@@ -14,6 +14,13 @@
     {id:'food', name:'음식'},
     {id:'cafe', name:'카페'}
   ];
+  const THEME_PRESETS = {
+    history:{originId:'station',destinationId:'station',description:'목포역에서 근대역사거리와 원도심 골목을 걷는 코스'},
+    sea:{originId:'p7',destinationId:'p14',description:'갓바위에서 출발해 박물관권을 거쳐 평화광장으로 걷는 코스'},
+    shops:{originId:'station',destinationId:'station',description:'목포역 근처의 책방과 소품샵을 잇는 코스'},
+    food:{originId:'station',destinationId:'station',description:'원도심 음식점과 간식집을 엮는 코스'},
+    cafe:{originId:'station',destinationId:'station',description:'원도심 카페와 쉬어 갈 곳을 엮는 코스'}
+  };
   const minutes = (value) => value === '24:00' ? 1440 : Number(value.slice(0,2)) * 60 + Number(value.slice(3,5));
   const round5 = (value) => Math.ceil(value / 5) * 5;
   const distanceKm = (a,b) => {
@@ -122,7 +129,7 @@
         for (const {p} of candidates) {
           if (rows.length >= 3 && origin.id !== destination.id && distanceKm(p,destination) > distanceKm(prior,destination)+.25) continue;
           const walk = await leg(prior,p);
-          if (walk.meters > 1600 || walk.minutes > 25 || walked+walk.meters > 8000) continue;
+          if (walk.meters > 1600 || walk.minutes > 30 || walked+walk.meters > 8000) continue;
           const arrival = round5(now+walk.minutes+3);
           const visit = mealDue ? nextMeal : arrival;
           const duration = stay(p,mealDue);
@@ -154,7 +161,7 @@
       const themeCount=thematicRows + (theme === 'sea' ? Number(SEA_IDS.has(origin.id))+Number(SEA_IDS.has(destination.id) && origin.id !== destination.id) : 0);
       if (missed.length || rows.length < 2 || (requiredPlaceId && !used.has(requiredPlaceId)) || (theme !== 'balanced' && (thematicRows < 1 || themeCount < (end-start >= 240 ? 2 : 1)))) continue;
       const finalLeg=await leg(prior,destination);
-      if (finalLeg.meters > 1600 || finalLeg.minutes > 25 || walked+finalLeg.meters > 8000 || now+finalLeg.minutes > end) continue;
+      if (finalLeg.meters > 1600 || finalLeg.minutes > 30 || walked+finalLeg.meters > 8000 || now+finalLeg.minutes > end) continue;
       const signature=rows.map((x) => x.placeId).join(',');
       if (routes.some((x) => x.signature === signature)) continue;
       const label = variant === 0 ? '가까운 곳부터' : variant === 1 ? '골목과 쉼표' : '다른 순서로';
@@ -164,7 +171,34 @@
     }
     return routes;
   }
-  const api={THEMES,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate};
+  async function generateAdaptive(input) {
+    const direct=await generate(input);
+    if (direct.length || input.theme !== 'balanced' || input.requiredPlaceId || input.origin.id === input.destination.id ||
+        distanceKm(input.origin,input.destination) > 2.8) return direct;
+    const anchors=input.places.filter((p) => hasCoord(p) && !EXCLUDED_IDS.has(p.id) &&
+      p.id !== input.origin.id && p.id !== input.destination.id && p.category !== 'food' &&
+      distanceKm(p,input.destination) <= 1.0 && distanceKm(input.origin,p) <= 2.8)
+      .sort((a,b) => distanceKm(a,input.destination)-distanceKm(b,input.destination)).slice(0,8);
+    for (const anchor of anchors) {
+      const tail=estimate(anchor,input.destination);
+      if (tail.meters > 1600 || tail.minutes > 30) continue;
+      // 추가 후보 탐색은 API를 소모하지 않으며, 모든 구간을 추정으로 표시한다.
+      const variants=await generate({...input,destination:anchor,routeProvider:null,variants:1});
+      for (const route of variants) {
+        const visit=round5(route.endArrival), duration=stay(anchor,false);
+        const result=input.validate(anchor,visit,duration,input.date);
+        if (result.kind === 'bad' || (result.kind === 'warn' && /체류 중 브레이크|폐관을 넘/.test(result.title))) continue;
+        if (visit+duration+tail.minutes > route.end || route.walkMeters+tail.meters > 8000) continue;
+        const row={minute:visit,placeId:anchor.id,duration,walkEstimate:route.endWalk.minutes,
+          walkMeters:route.endWalk.meters,actual:route.endWalk.actual,result,kind:'visit'};
+        return [{...route,rows:[...route.rows,row],walkMeters:route.walkMeters+tail.meters,
+          endWalk:tail,endArrival:visit+duration+tail.minutes,destinationName:input.destination.name,
+          signature:route.signature+','+anchor.id,title:'도착지로 이어 걷기'}];
+      }
+    }
+    return direct;
+  }
+  const api={THEMES,THEME_PRESETS,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive};
   if (typeof module !== 'undefined' && module.exports) module.exports=api;
   if (typeof window !== 'undefined') window.HangeoreumRouteEngine=api;
 })();
