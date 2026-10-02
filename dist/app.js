@@ -38,6 +38,7 @@
   function nav(view) { state.view = view; render(); window.scrollTo(0, 0); }
   function render() {
     statusConnection();
+    document.body.classList.toggle('destination-home', state.view === 'home');
     document.querySelectorAll('[data-nav]').forEach((b) => { const active = b.dataset.nav === state.view || (b.dataset.nav === 'home' && state.view === 'region'); b.classList.toggle('active', active); b.setAttribute('aria-current', active ? 'page' : 'false'); });
     if (state.view === 'home') renderHome();
     else if (state.view === 'region') renderRegionMap();

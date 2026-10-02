@@ -1,4 +1,4 @@
-const CACHE = 'hangeoreum-mokpo-v2';
+const CACHE = 'hangeoreum-mokpo-v3';
 const SHELL = ['./','./index.html','./styles.css','./app.js','./places.json','./mokpo-card.webp','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./vendor/leaflet.css','./vendor/leaflet.js'];
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL)).then(() => self.skipWaiting()));
