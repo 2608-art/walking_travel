@@ -1,5 +1,5 @@
-const CACHE = 'hangeoreum-mokpo-v7';
-const SHELL = ['./','./index.html','./styles.css','./mascot.css','./app.js','./map-config.js','./places.json','./mokpo-card.webp','./assets/mascot/turtle-base-ui.png','./assets/mascot/turtle-map.png','./assets/mascot/turtle-walk.png','./assets/mascot/turtle-bus.png','./assets/mascot/turtle-discover.png','./assets/mascot/turtle-think.png','./assets/mascot/turtle-memo.png','./assets/mascot/turtle-rest.png','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./vendor/leaflet.css','./vendor/leaflet.js'];
+const CACHE = 'hangeoreum-mokpo-v11';
+const SHELL = ['./','./index.html','./styles.css','./mascot.css','./route-engine.js','./app.js','./map-config.js','./places.json','./mokpo-card.webp','./assets/mascot/turtle-base-ui.png','./assets/mascot/turtle-map.png','./assets/mascot/turtle-bus.png','./assets/mascot/turtle-discover.png','./assets/mascot/turtle-think.png','./assets/mascot/turtle-memo.png','./assets/mascot/turtle-rest.png','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./vendor/leaflet.css','./vendor/leaflet.js'];
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL)).then(() => self.skipWaiting()));
 });

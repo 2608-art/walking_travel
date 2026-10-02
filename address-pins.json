@@ -1,0 +1,366 @@
+{
+  "가죽공방 모닉": {
+    "query": "목포시 옥암로96번길 28",
+    "lat": 34.8087123530019,
+    "lon": 126.429310850479,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "고호의 책방": {
+    "query": "목포시 영산로75번길 12",
+    "lat": 34.7901725269957,
+    "lon": 126.384565502935,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "구보책방": {
+    "query": "목포시 해안로259번길 41-2",
+    "lat": 34.7897234713702,
+    "lon": 126.386158167343,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "나비팩토리": {
+    "query": "목포시 마파지로 31-1",
+    "lat": 34.8003410639614,
+    "lon": 126.383475856225,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "목포스카이워크": {
+    "query": "목포시 해양대학로 59",
+    "lat": 34.787740159993,
+    "lon": 126.367327994875,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "물망초": {
+    "query": "목포시 영산로 95-2",
+    "lat": 34.791173399165,
+    "lon": 126.385646337825,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "비팡이네": {
+    "query": "목포시 영산로59번길 3-1",
+    "lat": 34.7883253177167,
+    "lon": 126.3842669595,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "연희네슈퍼": {
+    "query": "목포시 해안로127번길 14-2",
+    "lat": 34.7817485458983,
+    "lon": 126.377320775326,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "오늘의 페이지": {
+    "query": "목포시 동부로52번길 38-3",
+    "lat": 34.8098740049163,
+    "lon": 126.396126196074,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "웨이브": {
+    "query": "목포시 수문로 15-2",
+    "lat": 34.7915770360113,
+    "lon": 126.384182038601,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "유유랜드": {
+    "query": "목포시 번화로 6-4",
+    "lat": 34.785953683146,
+    "lon": 126.380205685076,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "작은낙": {
+    "query": "목포시 노적봉길 30-2",
+    "lat": 34.7898579652613,
+    "lon": 126.382204057386,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "포도책방(목포점)": {
+    "query": "목포시 수강로4번길 19",
+    "lat": 34.7868345787772,
+    "lon": 126.387248228785,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "국립호남권생물자원관": {
+    "query": "목포시 고하도안길 99",
+    "lat": 34.7669417683597,
+    "lon": 126.366391254665,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "그때그짜장집": {
+    "query": "목포시 영산로346번길 5",
+    "lat": 34.8054457026118,
+    "lon": 126.40352395774,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "금강뻘낙지장어요리전문점": {
+    "query": "목포시 호남로64번길 9",
+    "lat": 34.7933397683158,
+    "lon": 126.385405070905,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "기찻길315": {
+    "query": "목포시 용당로264번길 16",
+    "lat": 34.8097103593623,
+    "lon": 126.400675766743,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "김대중노벨평화상기념관": {
+    "query": "목포시 삼학로92번길 68",
+    "lat": 34.7828488775046,
+    "lon": 126.392230150843,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "남농기념관": {
+    "query": "목포시 남농로 119",
+    "lat": 34.7929461779763,
+    "lon": 126.419642854986,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "노라노미술관": {
+    "query": "목포시 마인계터로40번길 2-6",
+    "lat": 34.7901536760616,
+    "lon": 126.382232227113,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "노적봉예술공원미술관": {
+    "query": "목포시 유달로 116",
+    "lat": 34.7879607542073,
+    "lon": 126.381166579185,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "더왈츠": {
+    "query": "목포시 하당로 36",
+    "lat": 34.7980328571561,
+    "lon": 126.421764377615,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "라니카이": {
+    "query": "목포시 북항로 188",
+    "lat": 34.805019611719,
+    "lon": 126.366010050467,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "라멘집아저씨": {
+    "query": "목포시 노적봉길 18-1",
+    "lat": 34.7900432414466,
+    "lon": 126.383545185562,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "목포대중음악의전당": {
+    "query": "목포시 해안로249번길 34",
+    "lat": 34.7888584837708,
+    "lon": 126.386192438233,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "목포동부시장": {
+    "query": "목포시 영산로257번길 15",
+    "lat": 34.8043935252561,
+    "lon": 126.393027711263,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "목포문예역사관": {
+    "query": "목포시 남농로 149",
+    "lat": 34.7939620484178,
+    "lon": 126.422275435022,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "목포문학관": {
+    "query": "목포시 남농로 95",
+    "lat": 34.7928511077107,
+    "lon": 126.416970314199,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "목포문화예술회관": {
+    "query": "목포시 남농로 102",
+    "lat": 34.792231252009,
+    "lon": 126.418975879533,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "목포삼학도크루즈": {
+    "query": "목포시 삼학로92번길 104",
+    "lat": 34.7808112710447,
+    "lon": 126.388200095342,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "목포생활도자박물관": {
+    "query": "목포시 남농로 117",
+    "lat": 34.7936384961219,
+    "lon": 126.41950098258,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "목포어린이바다과학관": {
+    "query": "목포시 삼학로92번길 98",
+    "lat": 34.7820060120605,
+    "lon": 126.388833786002,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "브릭레인": {
+    "query": "목포시 노적봉길 17",
+    "lat": 34.7898545538832,
+    "lon": 126.38361138227,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "산들소리찻집": {
+    "query": "목포시 후광대로105번안길 2",
+    "lat": 34.8128788545858,
+    "lon": 126.442902781354,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "삼학만두": {
+    "query": "목포시 삼학로113번길 14",
+    "lat": 34.7885604160049,
+    "lon": 126.396617465029,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "성식당(수강로 본점 후보)": {
+    "query": "목포시 수강로4번길 6",
+    "lat": 34.7856320875281,
+    "lon": 126.386509040475,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "소년 김대중 공부방": {
+    "query": "목포시 목포진길11번길 6-4",
+    "lat": 34.7851747982116,
+    "lon": 126.384935094289,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "손소영갤러리앤카페": {
+    "query": "목포시 번화로 62-1",
+    "lat": 34.7873190147345,
+    "lon": 126.385750965278,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "수중유산박물관(옛 국립해양유물전시관)": {
+    "query": "목포시 남농로 136",
+    "lat": 34.7924636507902,
+    "lon": 126.421231140314,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "아르볼": {
+    "query": "목포시 영산로565번길 9",
+    "lat": 34.8158354803685,
+    "lon": 126.41886147481,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "아마빌레": {
+    "query": "목포시 산정로238번길 4-1",
+    "lat": 34.8090610165841,
+    "lon": 126.388971371793,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "압해도뻘낙지": {
+    "query": "목포시 북항로166번길 5",
+    "lat": 34.8038106311187,
+    "lon": 126.36784057972,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "에스타시옹1913": {
+    "query": "목포시 해안로177번길 13",
+    "lat": 34.7836096056421,
+    "lon": 126.382725685256,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "예향밥상": {
+    "query": "목포시 수문로20번길 7-3",
+    "lat": 34.7925798709282,
+    "lon": 126.38331597102,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "옥공예전시관": {
+    "query": "목포시 남농로 83",
+    "lat": 34.7927461694509,
+    "lon": 126.415933021749,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "유달산 조각공원": {
+    "query": "목포시 유달로 221",
+    "lat": 34.794371272285,
+    "lon": 126.373724064521,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "이가네고기국수": {
+    "query": "목포시 용두로 1",
+    "lat": 34.7991980708005,
+    "lon": 126.395927810068,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "청호시장": {
+    "query": "목포시 석현로 28",
+    "lat": 34.8153813745818,
+    "lon": 126.424592994158,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "청호식당": {
+    "query": "목포시 산정안로 13",
+    "lat": 34.7949724531511,
+    "lon": 126.391682161646,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "트라이팟": {
+    "query": "목포시 당가두로14번길 28",
+    "lat": 34.8062294967277,
+    "lon": 126.437391838471,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "티하우스클리프": {
+    "query": "목포시 후광대로105번안길 33-7",
+    "lat": 34.8119044888832,
+    "lon": 126.443247160571,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  },
+  "형제꼬막짬뽕": {
+    "query": "목포시 원산중앙로 59",
+    "lat": 34.8102819963473,
+    "lon": 126.378072878332,
+    "basis": "Kakao road address",
+    "source": "https://developers.kakao.com/docs/ko/local/dev-guide"
+  }
+}
