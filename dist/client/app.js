@@ -48,6 +48,9 @@
   const findByName = (name) => state.places.find((p) => p.name === name);
   const getPlace = (id) => state.places.find((p) => p.id === id);
   const coord = (p) => p && Number.isFinite(p.lat) && Number.isFinite(p.lon);
+  const pinPoint = (p) => coord(p) ? [p.lat, p.lon] :
+    p && Number.isFinite(p.mapLat) && Number.isFinite(p.mapLon) ? [p.mapLat, p.mapLon] : null;
+  const hasPin = (p) => !!pinPoint(p);
   const km = (a, b) => coord(a) && coord(b) ? routeEngine.distanceKm(a,b) : null;
   const routeCache = new Map();
   const mealChoicesCache = new WeakMap();
@@ -127,9 +130,9 @@
   }
   function detailHtml(p) {
     return '<div class="detail-card card"><div class="detail-header"><div><span class="pill">' + esc(categoryIcon(p.category) + ' ' + categoryName(p.category)) + '</span><h2 style="margin-top:9px">' + esc(p.name) + '</h2></div><button class="btn btn-sm btn-outline" id="close-detail" aria-label="장소 정보 닫기">닫기</button></div>' +
-      '<p>' + esc(p.locationText || '위치 설명 없음') + '</p>' + (p.rating != null ? '<p class="small">카카오맵 평점 ' + esc(p.rating.toFixed(1)) + ' / 5 · 별점 평가 ' + esc(p.ratingCount) + '건 (2026-10-01 조사)</p>' : '') +
+      '<p>' + esc(p.locationText || '위치 설명 없음') + '</p>' + (p.mapPinBasis ? '<p class="small">지도 표시점: ' + esc(p.mapPinBasis) + ' (방문·도보 경로 시작점은 별도 확인)</p>' : '') + (p.rating != null ? '<p class="small">카카오맵 평점 ' + esc(p.rating.toFixed(1)) + ' / 5 · 별점 평가 ' + esc(p.ratingCount) + '건 (2026-10-01 조사)</p>' : '') +
       '<div class="notice ' + (p.hours ? '' : 'warn') + '">' + esc(placeTimeText(p)) + (p.hours?.note ? '<br>' + esc(p.hours.note) : '') + '</div>' + scheduleHtml(p) +
-      '<div class="detail-actions"><button class="btn btn-primary btn-sm" id="add-place-plan">계획표에 넣기</button>' + (p.source ? '<a class="btn btn-outline btn-sm" href="' + esc(p.source) + '" target="_blank" rel="noopener noreferrer">장소·위치 보기</a>' : '') + '</div><p class="small" style="margin:12px 0 0">기본 조사 2026-10-01' + (p.mapWeekChecked ? ' · 카카오맵 주간표 재확인 ' + esc(p.mapWeekChecked) : '') + (p.diningWeekChecked ? ' · 다이닝코드 주간표 재확인 ' + esc(p.diningWeekChecked) : '') + ' · 주소 좌표는 건물 대표 위치이며 출입문과 다를 수 있습니다. 당일 변경을 확인하세요.</p></div>';
+      '<div class="detail-actions"><button class="btn btn-primary btn-sm" id="add-place-plan">계획표에 넣기</button>' + (p.source ? '<a class="btn btn-outline btn-sm" href="' + esc(p.source) + '" target="_blank" rel="noopener noreferrer">장소·위치 보기</a>' : '') + '</div><p class="small" style="margin:12px 0 0">기본 조사 2026-10-01' + (p.mapWeekChecked ? ' · 카카오맵 주간표 재확인 ' + esc(p.mapWeekChecked) : '') + (p.diningWeekChecked ? ' · 다이닝코드 주간표 재확인 ' + esc(p.diningWeekChecked) : '') + (p.mapPinBasis ? ' · 지도 핀은 구역·시설의 대표점이며 실제 출입구와 다를 수 있습니다.' : ' · 주소 좌표는 건물 대표 위치이며 출입문과 다를 수 있습니다.') + ' 당일 변경을 확인하세요.</p></div>';
   }
   function renderHome() {
     const available = REGIONS.filter((x) => x.ready);
@@ -153,7 +156,7 @@
       '<div class="action-grid home-actions"><button type="button" class="action-tile" id="go-plan" ' + (region.ready ? '' : 'disabled') + '><span class="action-symbol">▤</span><strong>계획</strong><small>한 칸씩 직접 짜기</small></button><button type="button" class="action-tile" id="go-routes" ' + (region.ready ? '' : 'disabled') + '><span class="action-symbol">↗</span><strong>추천 루트</strong><small>여러 동선 비교하기</small></button></div>' +
       '</div><div class="map-column"><div class="map-frame"><div id="map"></div><div class="map-tools"><button class="btn btn-sm btn-outline" type="button" id="recenter">' + esc(region.name) + '로 돌아가기</button></div><div class="map-caption">' + (region.ready ? '지도 핀은 대표 위치입니다. 출입구·보행 경로는 별도 확인이 필요할 수 있어요.' : '아직 검증된 장소 핀이 없습니다.') + '</div></div>' +
       '<div class="filter-strip" aria-label="장소 유형 여러 개 선택 가능">' + CATEGORIES.map(([id, label, icon]) => { const active = id === 'all' ? !state.categories.size : state.categories.has(id); return '<button type="button" class="filter-chip ' + (active ? 'active' : '') + '" data-category="' + id + '" aria-pressed="' + active + '"><span aria-hidden="true">' + icon + '</span> ' + label + '</button>'; }).join('') + '</div><p class="small filter-hint">여러 분류를 함께 선택할 수 있어요.</p>' +
-      '<div class="results-title"><span>' + esc(resultLabel) + ' · ' + list.length + '곳</span><span id="pin-count">지도 핀 ' + list.filter(coord).length + '곳</span></div><div class="place-list">' + list.map((p) => '<button type="button" class="place-row" data-place="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>' + esc(p.locationText || '위치 확인 필요') + (p.rating != null ? ' · 카카오 ' + p.rating.toFixed(1) + ' (' + p.ratingCount + ')' : '') + '</small></button>').join('') + '</div><div id="place-detail">' + (state.selected ? detailHtml(getPlace(state.selected)) : '') + '</div></div></div></section>';
+      '<div class="results-title"><span>' + esc(resultLabel) + ' · ' + list.length + '곳</span><span id="pin-count">지도 핀 ' + list.filter(hasPin).length + '곳</span></div><div class="place-list">' + list.map((p) => '<button type="button" class="place-row" data-place="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>' + esc(p.locationText || '위치 확인 필요') + (p.rating != null ? ' · 카카오 ' + p.rating.toFixed(1) + ' (' + p.ratingCount + ')' : '') + '</small></button>').join('') + '</div><div id="place-detail">' + (state.selected ? detailHtml(getPlace(state.selected)) : '') + '</div></div></div></section>';
     $('.page-head')?.insertAdjacentHTML('beforeend', turtlePose('map', '지도를 살펴보는 거북이', 'turtle-page-corner'));
     initHomeMap(list);
     $('#region-back').onclick = () => nav('home');
@@ -166,6 +169,7 @@
   }
   async function initHomeMap(list) {
     const container = $('#map');
+    const pinned = list.filter(hasPin);
     if (!navigator.onLine) { container.innerHTML = '<div class="empty-state" style="margin:20px">지도는 인터넷에 연결하면 볼 수 있습니다.</div>'; return; }
     if (KAKAO_KEY) {
       try {
@@ -175,14 +179,20 @@
         state.map = map; state.mapProvider = 'kakao';
         map.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
         const colors = CATEGORY_COLORS;
-        list.filter(coord).forEach((p) => {
+        pinned.forEach((p) => {
+          const point = pinPoint(p);
           const dot = document.createElement('div');
           dot.className = 'kakao-place-pin'; dot.style.backgroundColor = colors[p.category] || '#123348';
           dot.title = p.name; dot.setAttribute('aria-label', p.name);
-          const marker = new kakao.maps.CustomOverlay({ position: kakaoPoint(p.lat, p.lon), content: dot, yAnchor: .5 });
+          const marker = new kakao.maps.CustomOverlay({ position: kakaoPoint(...point), content: dot, yAnchor: .5 });
           marker.setMap(map); dot.onclick = () => selectPlace(p.id);
         });
         geocodeAddressPlaces(list, map, colors, container);
+        if (state.categories.size && pinned.length) {
+          const bounds = new kakao.maps.LatLngBounds();
+          pinned.forEach((p) => bounds.extend(kakaoPoint(...pinPoint(p))));
+          map.setBounds(bounds);
+        }
         kakao.maps.event.addListener(map, 'idle', () => { if (container !== $('#map')) return; state.mapCenter = [map.getCenter().getLat(), map.getCenter().getLng()]; state.mapZoom = kakaoZoom(map.getLevel()); });
         setTimeout(() => map.relayout(), 50);
         return;
@@ -194,16 +204,17 @@
     L.control.zoom({ position: 'bottomright' }).addTo(map);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
     const colors = CATEGORY_COLORS;
-    list.filter(coord).forEach((p) => {
-      const marker = L.circleMarker([p.lat, p.lon], { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
+    pinned.forEach((p) => {
+      const marker = L.circleMarker(pinPoint(p), { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
       marker.bindTooltip(esc(p.name)); marker.on('click', () => selectPlace(p.id));
     });
+    if (state.categories.size && pinned.length) map.fitBounds(pinned.map(pinPoint), { padding: [25, 25], maxZoom: 14 });
     map.on('moveend', () => { state.mapCenter = [map.getCenter().lat, map.getCenter().lng]; state.mapZoom = map.getZoom(); });
     setTimeout(() => map.invalidateSize(), 50);
   }
   async function geocodeAddressPlaces(list, map, colors, container) {
     const geocoder = new kakao.maps.services.Geocoder();
-    for (const p of list.filter((item) => !coord(item) && item.addressQuery)) {
+    for (const p of list.filter((item) => !hasPin(item) && item.addressQuery)) {
       if (container !== $('#map')) return;
       let hit = geocodeCache[p.addressQuery];
       if (!hit) {
@@ -224,14 +235,15 @@
       dot.title = p.name + ' · 건물 주소 위치'; dot.setAttribute('aria-label', dot.title);
       new kakao.maps.CustomOverlay({ position: kakaoPoint(lat, lon), content: dot, yAnchor: .5, map });
       dot.onclick = () => selectPlace(p.id);
-      if ($('#pin-count')) $('#pin-count').textContent = '지도 핀 ' + list.filter(coord).length + '곳';
+      if ($('#pin-count')) $('#pin-count').textContent = '지도 핀 ' + list.filter(hasPin).length + '곳';
     }
   }
   function selectPlace(id) {
     state.selected = id; const p = getPlace(id); if (!p) return;
-    if (coord(p) && state.map) {
-      if (state.mapProvider === 'kakao') { state.map.setLevel(Math.min(state.map.getLevel(), kakaoLevel(15))); state.map.panTo(kakaoPoint(p.lat, p.lon)); }
-      else state.map.flyTo([p.lat, p.lon], Math.max(state.map.getZoom(), 15), { duration: .5 });
+    const point = pinPoint(p);
+    if (point && state.map) {
+      if (state.mapProvider === 'kakao') { state.map.setLevel(Math.min(state.map.getLevel(), kakaoLevel(15))); state.map.panTo(kakaoPoint(...point)); }
+      else state.map.flyTo(point, Math.max(state.map.getZoom(), 15), { duration: .5 });
     }
     $('#place-detail').innerHTML = detailHtml(p); bindDetail(); $('#place-detail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
@@ -949,6 +961,6 @@
   document.querySelectorAll('[data-nav]').forEach((b) => b.onclick = () => nav(b.dataset.nav));
   window.addEventListener('online', () => { statusConnection(); render(); });
   window.addEventListener('offline', () => { statusConnection(); render(); });
-  fetch('./places.json?v=8').then((r) => { if (!r.ok) throw Error(); return r.json(); }).then((data) => { state.places = data.places || []; render(); }).catch(() => { state.places = []; render(); toast('장소 자료를 불러오지 못했습니다. 저장한 계획은 볼 수 있습니다.'); });
+  fetch('./places.json?v=10', {cache:'no-store'}).then((r) => { if (!r.ok) throw Error(); return r.json(); }).then((data) => { state.places = data.places || []; render(); }).catch(() => { state.places = []; render(); toast('장소 자료를 불러오지 못했습니다. 저장한 계획은 볼 수 있습니다.'); });
   if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
 })();

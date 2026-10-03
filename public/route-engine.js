@@ -201,8 +201,11 @@
   }
   const validResult = (result) => result.kind !== 'bad' &&
     !(result.kind === 'warn' && /체류 중 브레이크|폐관을 넘/.test(result.title));
-  const validLeg = (walk) => walk.meters <= 1600 && walk.minutes <= 30;
+  const validLeg = (walk) => walk.meters <= 1600 && (walk.mode==='bus' ? walk.actual && walk.walkMinutes<=30 && walk.minutes<=90 : walk.minutes <= 30);
   const pointLeg = (a,b) => distanceKm(a,b) < .015 ? {meters:0,minutes:0,actual:true,points:[]} : estimate(a,b);
+  const samePoint=(a,b)=>a && b && a.lat===b.lat && a.lon===b.lon;
+  const inputLeg=(a,b,input)=>input.busConnection && samePoint(a,input.busConnection.from) && samePoint(b,input.busConnection.to) ? input.busConnection.leg : pointLeg(a,b);
+  const themedPlace=(p,theme)=>theme==='history' ? HISTORY_IDS.has(p.id) : theme==='sea' ? SEA_IDS.has(p.id) : theme==='shops' ? SHOP_IDS.has(p.id) : theme==='food' ? p.category==='food' : theme==='cafe' ? p.category==='cafe' : false;
 
   // 초기 탐색·대체 탐색·최종 API 확인에 동일한 시간표 규칙을 적용한다.
   function scheduleVisits(order,input,walks) {
@@ -211,28 +214,37 @@
     const rows=[];
     let prior=origin, now=start, walked=0;
     for (let i=0;i<order.length;i++) {
-      const p=order[i], walk=walks ? walks[i] : pointLeg(prior,p), duration=stay(p,false);
+      const p=order[i], template=input.scheduledRows?.[i], walk=walks ? walks[i] : inputLeg(prior,p,input);
+      const kind=template?.kind || (input.theme==='food' && p.category==='food' ? 'meal' : input.theme==='cafe' && p.category==='cafe' ? 'cafe' : 'visit');
+      const duration=template?.duration || stay(p,kind==='meal');
       if (!validLeg(walk)) return null;
       let minute=round5(now+walk.minutes+3), result;
+      const fixed=input.fixedMeals && template && ['meal','cafe'].includes(kind) ? template.minute : null;
+      if(fixed!=null && minute>fixed) return null;
+      if(fixed!=null) minute=fixed;
+      if(!template && kind==='meal') minute=Math.max(minute,11*60);
+      const priorMeal=rows.filter(row=>row.kind===kind).at(-1);
+      if(!template && priorMeal && ['meal','cafe'].includes(kind)) minute=Math.max(minute,priorMeal.minute+(kind==='meal'?180:100));
       // 개점 전에는 최대 90분의 여유를 허용한다. 빈 시간은 화면에 표시한다.
-      const latest=Math.min(minute+90,end-duration);
+      const latest=Math.min(fixed ?? minute+90,end-duration);
       for (;minute<=latest;minute+=5) {
         result=validate(p,minute,duration,date);
-        if (allowedAt(p,minute,false,date) && validResult(result)) break;
+        if (allowedAt(p,minute,kind==='meal',date) && validResult(result)) break;
       }
       if (minute>latest) return null;
       rows.push({placeId:p.id,minute,duration,walkEstimate:walk.minutes,walkMeters:walk.meters,
-        actual:walk.actual,walkPoints:walk.points || [],result,kind:'visit'});
+        actual:walk.actual,walkPoints:walk.points || [],result,kind,mode:walk.mode || 'walk',busLeg:walk.mode==='bus'?walk:null});
       now=minute+duration; walked+=walk.meters; prior=p;
     }
-    const endWalk=walks ? walks[order.length] : pointLeg(prior,destination);
+    const endWalk=walks ? walks[order.length] : inputLeg(prior,destination,input);
     if (!validLeg(endWalk) || now+endWalk.minutes>end || walked+endWalk.meters>8000) return null;
     if (requiredPlaceId && ![origin.id,destination.id,...order.map(p=>p.id)].includes(requiredPlaceId)) return null;
     return {theme:input.theme || 'balanced',rows,start,end,walkMeters:walked+endWalk.meters,
       endWalk,endArrival:now+endWalk.minutes,originName:origin.name,destinationName:destination.name,
+      transport:rows.some(row=>row.mode==='bus') || endWalk.mode==='bus' ? 'walk-bus' : 'walk',
       signature:order.map(p=>p.id).join(',')};
   }
-  function shortestConnection(from,to,pool,blocked=new Set()) {
+  function shortestConnection(from,to,pool,blocked=new Set(),input={}) {
     const nodes=[from,...pool.filter(p=>p.id!==from.id && p.id!==to.id && !blocked.has(p.id)),to];
     const target=nodes.length-1, costs=nodes.map(()=>Infinity), previous=[], done=new Set();
     costs[0]=0;
@@ -248,7 +260,7 @@
       done.add(current);
       for (let i=1;i<nodes.length;i++) {
         if (done.has(i)) continue;
-        const walk=pointLeg(nodes[current],nodes[i]);
+        const walk=inputLeg(nodes[current],nodes[i],input);
         if (!validLeg(walk)) continue;
         // 거리가 같으면 불필요한 중간 방문을 늘리지 않는다.
         const cost=costs[current]+walk.meters+5;
@@ -263,7 +275,8 @@
     const pool=places.filter(p=>{
       if (!hasCoord(p) || EXCLUDED_IDS.has(p.id) || p.id===origin.id || p.id===destination.id) return false;
       if (p.id===requiredPlaceId || p.id===input.preferredPlaceId) return true;
-      if (['food','cafe'].includes(p.category)) return false;
+      if(input.busConnection && [input.busConnection.from.id,input.busConnection.to.id].includes(p.id)) return true;
+      if (['food','cafe'].includes(p.category) && !themedPlace(p,input.theme)) return false;
       if (close) return distanceKm(origin,p)<=1.3;
       if (focus==='start') return distanceKm(origin,p)<=1.3;
       if (focus==='end') return distanceKm(destination,p)<=1.3;
@@ -282,7 +295,7 @@
     const endpoints=required ? [origin,required,destination] : [origin,destination];
     let skeleton=[], prior=origin;
     for(const endpoint of endpoints.slice(1)) {
-      const connection=shortestConnection(prior,endpoint,available,new Set(skeleton.map(p=>p.id)));
+      const connection=shortestConnection(prior,endpoint,available,new Set(skeleton.map(p=>p.id)),input);
       if(!connection) return [];
       skeleton.push(...connection);prior=endpoint;
     }
@@ -296,6 +309,7 @@
         const points=[origin,...order,destination], options=[];
         for(const p of available) {
           if(order.some(x=>x.id===p.id)) continue;
+          if(['food','cafe'].includes(p.category) && order.filter(x=>x.category===p.category).length >= (p.category==='food'?2:3)) continue;
           for(let i=0;i<points.length-1;i++) {
             const extra=distanceKm(points[i],p)+distanceKm(p,points[i+1])-distanceKm(points[i],points[i+1]);
             options.push({p,i,extra,near:distanceKm(focus==='end'?destination:origin,p)});
@@ -304,6 +318,7 @@
         options.sort((a,b)=>
           (step===skeleton.length && variant>0 ? Number(firstChoices.has(a.p.id))-Number(firstChoices.has(b.p.id)) : 0) ||
           Number(b.p.id===input.preferredPlaceId)-Number(a.p.id===input.preferredPlaceId) ||
+          Number(themedPlace(b.p,input.theme))-Number(themedPlace(a.p,input.theme)) ||
           (focus==='through' || close ? a.extra-b.extra : a.near-b.near) ||
           a.extra-b.extra || a.near-b.near || a.p.id.localeCompare(b.p.id));
         let next=null;
@@ -332,8 +347,57 @@
     }
     return results;
   }
+  async function confirmRoute(route,input,cache=new Map()) {
+    if(!input.routeProvider) return route;
+    const order=route.rows.map(row=>input.places.find(p=>p.id===row.placeId));
+    const points=[input.origin,...order,input.destination], walks=[];
+    for(let i=0;i<points.length-1;i++) {
+      const a=points[i],b=points[i+1],key=[a.id,a.lat,a.lon,b.id,b.lat,b.lon].join(':');
+      const existing=i<route.rows.length ? route.rows[i].busLeg : route.endWalk.mode==='bus' ? route.endWalk : null;
+      if(existing) {walks.push(existing);continue;}
+      if(!cache.has(key)) {
+        let walk=pointLeg(a,b);
+        if(walk.meters) try {
+          const actual=await input.routeProvider(a,b);
+          if(actual?.meters>0 && actual?.minutes>0) walk={...actual,actual:true};
+        } catch { /* API 연결 실패는 추정 구간으로 표시한다. */ }
+        cache.set(key,walk);
+      }
+      walks.push(cache.get(key));
+    }
+    const scheduled=scheduleVisits(order,{...input,scheduledRows:route.rows,fixedMeals:!!route.chosenMeals?.length},walks);
+    return scheduled ? {...route,...scheduled} : null;
+  }
+  async function busFallback(input,cache=new Map()) {
+    if(!input.busProvider || distanceKm(input.origin,input.destination)<.2) return [];
+    const pool=input.places.filter(p=>hasCoord(p)&&!EXCLUDED_IDS.has(p.id)&&!['food','cafe'].includes(p.category));
+    const nearby=point=>[point,...pool.filter(p=>p.id!==point.id&&distanceKm(point,p)<1)
+      .sort((a,b)=>distanceKm(point,a)-distanceKm(point,b)).slice(0,2)];
+    const pairs=nearby(input.origin).flatMap(from=>nearby(input.destination).map(to=>({from,to})))
+      .filter(pair=>distanceKm(pair.from,pair.to)>1 && !(samePoint(pair.from,input.origin)&&samePoint(pair.to,input.destination)))
+      .sort((a,b)=>(distanceKm(input.origin,a.from)+distanceKm(a.to,input.destination))-(distanceKm(input.origin,b.from)+distanceKm(b.to,input.destination)));
+    for(const pair of pairs) {
+      let options;
+      try {options=await input.busProvider(pair.from,pair.to);} catch {return [];}
+      for(const bus of options || []) {
+        if(!bus.steps?.some(s=>s.type==='BUS') || bus.steps.some(s=>!['BUS','WALK','WALKING'].includes(s.type))) continue;
+        if(!Number.isFinite(bus.walkMeters)||!Number.isFinite(bus.walkMinutes)||!(bus.minutes>0)) continue;
+        const leg={mode:'bus',actual:true,meters:bus.walkMeters,walkMinutes:bus.walkMinutes,minutes:bus.minutes+10,
+          travelMeters:bus.meters,points:bus.points || [],steps:bus.steps,waitBuffer:10};
+        if(!validLeg(leg)) continue;
+        const connected={...input,busConnection:{...pair,leg}};
+        for(const focus of ['through','start','end']) for(const proposed of makeGeographicRoutes(connected,focus)) {
+          if(proposed.transport!=='walk-bus') continue;
+          const checked=await confirmRoute(proposed,connected,cache);
+          if(checked) return [{...checked,requestedFocus:input.routeFocus || 'through',fallbackFocus:focus!==(input.routeFocus || 'through')?focus:null,
+            busFallback:true,title:'도보 + 버스 연결'}];
+        }
+      }
+    }
+    return [];
+  }
   async function generateAdaptive(input) {
-    if ((input.theme && input.theme!=='balanced') || input.mealTimes?.length) return generate(input);
+    if (input.mealTimes?.length) return generate(input);
     if(!hasCoord(input.origin)||!hasCoord(input.destination) ||
       !(minutes(input.start)>=0 && minutes(input.end)<=1440 && minutes(input.start)<minutes(input.end))) return [];
     const requested=input.routeFocus || 'through';
@@ -342,31 +406,13 @@
     for(const focus of focuses) {
       const proposed=makeGeographicRoutes(input,focus), checked=[];
       for(const route of proposed) {
-        const order=route.rows.map(row=>input.places.find(p=>p.id===row.placeId));
-        let result=route;
-        if(input.routeProvider) {
-          const points=[input.origin,...order,input.destination], walks=[];
-          for(let i=0;i<points.length-1;i++) {
-            const a=points[i],b=points[i+1],key=[a.id,a.lat,a.lon,b.id,b.lat,b.lon].join(':');
-            if(!cache.has(key)) {
-              let walk=pointLeg(a,b);
-              if(walk.meters) try {
-                const actual=await input.routeProvider(a,b);
-                if(actual?.meters>0 && actual?.minutes>0) walk={...actual,actual:true};
-              } catch { /* 최종 결과에서도 추정 여부를 유지한다. */ }
-              cache.set(key,walk);
-            }
-            walks.push(cache.get(key));
-          }
-          const actual=scheduleVisits(order,input,walks);
-          if(!actual) continue;
-          result={...route,...actual};
-        }
+        const result=await confirmRoute(route,input,cache);
+        if(!result) continue;
         checked.push({...result,requestedFocus:requested,fallbackFocus:focus!==requested?focus:null});
       }
       if(checked.length) return checked;
     }
-    return [];
+    return busFallback(input,cache);
   }
   async function reverseRoundTrip({route,places,origin,date,validate,routeProvider,requiredPlaceId=''}) {
     if (!hasCoord(origin) || route.rows.length < 2) return null;

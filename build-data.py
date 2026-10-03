@@ -9,6 +9,8 @@ SOURCE = ROOT / "docs" / "지역" / "목포" / "장소.md"
 TARGET = Path(__file__).resolve().parent / "dist" / "places.json"
 ADDRESS_PINS = Path(__file__).resolve().parent / "address-pins.json"
 verified_pins = json.loads(ADDRESS_PINS.read_text(encoding="utf-8")) if ADDRESS_PINS.exists() else {}
+MAP_PINS = Path(__file__).resolve().parent / "map-representative-pins.json"
+representative_pins = json.loads(MAP_PINS.read_text(encoding="utf-8"))
 
 
 def plain(value):
@@ -143,6 +145,45 @@ DINING_WEEK = {
     "목포쫀드기 본점": "10/3(토)~9(금) 매일 08:30~19:00. 주문 마감 미표시",
 }
 
+# Give every non-food place one primary browsing category. Filter buttons may
+# combine these categories in the app; the original research sections remain
+# unchanged so the source notes retain their meaning.
+CATEGORY_GROUPS = {
+    "outdoors": (
+        "유달산", "노적봉", "고하도 전망대·해안데크", "갓바위·해상보행교",
+        "서산동 시화골목", "보리마당", "목포진 역사공원", "평화광장",
+        "유달산 조각공원", "삼학도 공원·이난영공원", "외달도", "달리도",
+        "북항 노을공원", "유달유원지", "양을산산림욕장", "유달산 낙조대",
+        "옥단이길", "장좌도", "율도(눌도)",
+    ),
+    "culture": (
+        "목포근대역사관 1관", "목포근대역사관 2관", "연희네슈퍼",
+        "목포자연사박물관", "성옥기념관", "목포문예역사관",
+        "목포생활도자박물관", "목포대중음악의전당",
+        "목포모자아트갤러리(옛 갑자옥모자점)",
+        "수중유산박물관(옛 국립해양유물전시관)", "노적봉예술공원미술관",
+        "김대중노벨평화상기념관", "소년 김대중 공부방",
+        "목포어린이바다과학관", "목포문학관", "국립호남권생물자원관",
+        "목포문화예술회관", "노라노미술관", "남농기념관", "옥공예전시관",
+    ),
+    "experience": (
+        "목포해상케이블카 북항승강장", "목포해상케이블카 유달산승강장",
+        "목포해상케이블카 고하도승강장", "춤추는 바다분수",
+        "목포스카이워크", "목포삼학도크루즈",
+    ),
+    "market": (
+        "목포종합수산시장", "씨엘비베이커리(원도심점)", "코롬방제과점",
+        "한마을떡", "목포쫀드기 본점", "청호시장", "목포동부시장",
+    ),
+    "books": (
+        "고호의 책방", "작은낙", "물망초", "나비팩토리", "가죽공방 모닉",
+        "비팡이네", "유유랜드", "포도책방(목포점)", "구보책방",
+        "오늘의 페이지", "웨이브",
+    ),
+}
+CATEGORY_BY_NAME = {name: category for category, names in CATEGORY_GROUPS.items() for name in names}
+assert len(CATEGORY_BY_NAME) == sum(len(names) for names in CATEGORY_GROUPS.values()), "Duplicate place category"
+
 section = ""
 subsection = ""
 places = {}
@@ -192,13 +233,17 @@ for line in SOURCE.read_text(encoding="utf-8").splitlines():
     pin = verified_pins.get(name)
     if lat is None and pin and pin.get("query") == address_query:
         lat, lon = pin["lat"], pin["lon"]
+    map_pin = representative_pins.get(name) if lat is None else None
     places[name] = {
         "id": f"p{len(places)+1}",
         "name": name,
-        "category": section,
+        "category": CATEGORY_BY_NAME[name] if section in ("spot", "shop") else section,
         "lat": lat,
         "lon": lon,
         "pinBasis": "verifiedAddress" if pin and pin.get("query") == address_query else ("source" if lat is not None else None),
+        "mapLat": map_pin["lat"] if map_pin else None,
+        "mapLon": map_pin["lon"] if map_pin else None,
+        "mapPinBasis": map_pin["basis"] if map_pin else None,
         "locationText": location,
         "addressQuery": address_query if lat is None else None,
         "mapSource": map_link,
@@ -207,6 +252,9 @@ for line in SOURCE.read_text(encoding="utf-8").splitlines():
         "ratingCount": rating_count,
         "hours": HOURS.get(name),
     }
+
+assert set(representative_pins) <= set(places), "Unknown representative map pin"
+assert all(34.7 <= pin["lat"] <= 34.9 and 126.2 <= pin["lon"] <= 126.6 for pin in representative_pins.values()), "Representative pin outside Mokpo"
 
 in_hours = False
 for line in SOURCE.read_text(encoding="utf-8").splitlines():
@@ -248,5 +296,5 @@ for name in ("목포해상케이블카 북항승강장", "목포해상케이블�
     place["closureText"] = "고정 정기휴무 공지 없음. 기상·안전상 예고 없이 조기 마감 또는 휴장 가능. 061-244-2600으로 당일 확인."
     place["scheduleSource"] = "https://www.mmcablecar.com/"
 
-TARGET.write_text(json.dumps({"updated": "2026-10-03", "region": "목포", "places": list(places.values())}, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Wrote {len(places)} places ({sum(p['lat'] is not None for p in places.values())} pins) to {TARGET}")
+TARGET.write_text(json.dumps({"updated": "2026-10-04", "region": "목포", "places": list(places.values())}, ensure_ascii=False, indent=2), encoding="utf-8")
+print(f"Wrote {len(places)} places ({sum(p['lat'] is not None or p['mapLat'] is not None for p in places.values())} map pins) to {TARGET}")
