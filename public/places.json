@@ -5,7 +5,7 @@
     {
       "id": "p1",
       "name": "유달산",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -24,7 +24,7 @@
     {
       "id": "p2",
       "name": "노적봉",
-      "category": "spot",
+      "category": "outdoors",
       "lat": 34.7879739,
       "lon": 126.3820996,
       "pinBasis": "source",
@@ -43,7 +43,7 @@
     {
       "id": "p3",
       "name": "목포해상케이블카 북항승강장",
-      "category": "spot",
+      "category": "experience",
       "lat": 34.7994941,
       "lon": 126.3699919,
       "pinBasis": "source",
@@ -62,7 +62,7 @@
     {
       "id": "p4",
       "name": "목포해상케이블카 유달산승강장",
-      "category": "spot",
+      "category": "experience",
       "lat": 34.7878522,
       "lon": 126.3749897,
       "pinBasis": "source",
@@ -81,7 +81,7 @@
     {
       "id": "p5",
       "name": "목포해상케이블카 고하도승강장",
-      "category": "spot",
+      "category": "experience",
       "lat": 34.774446,
       "lon": 126.3607355,
       "pinBasis": "source",
@@ -100,7 +100,7 @@
     {
       "id": "p6",
       "name": "고하도 전망대·해안데크",
-      "category": "spot",
+      "category": "outdoors",
       "lat": 34.7779243,
       "lon": 126.3592348,
       "pinBasis": "source",
@@ -119,7 +119,7 @@
     {
       "id": "p7",
       "name": "갓바위·해상보행교",
-      "category": "spot",
+      "category": "outdoors",
       "lat": 34.7919401,
       "lon": 126.4255319,
       "pinBasis": "source",
@@ -138,7 +138,7 @@
     {
       "id": "p8",
       "name": "목포근대역사관 1관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7875870369,
       "lon": 126.3820943332,
       "pinBasis": "source",
@@ -166,7 +166,7 @@
     {
       "id": "p9",
       "name": "목포근대역사관 2관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.78596374,
       "lon": 126.3814912,
       "pinBasis": "source",
@@ -193,7 +193,7 @@
     {
       "id": "p10",
       "name": "서산동 시화골목",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -212,7 +212,7 @@
     {
       "id": "p11",
       "name": "보리마당",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -231,7 +231,7 @@
     {
       "id": "p12",
       "name": "연희네슈퍼",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7817485458983,
       "lon": 126.377320775326,
       "pinBasis": "verifiedAddress",
@@ -250,7 +250,7 @@
     {
       "id": "p13",
       "name": "목포진 역사공원",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -269,7 +269,7 @@
     {
       "id": "p14",
       "name": "평화광장",
-      "category": "spot",
+      "category": "outdoors",
       "lat": 34.7960696,
       "lon": 126.4330925,
       "pinBasis": "source",
@@ -288,7 +288,7 @@
     {
       "id": "p15",
       "name": "춤추는 바다분수",
-      "category": "spot",
+      "category": "experience",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -307,7 +307,7 @@
     {
       "id": "p16",
       "name": "목포자연사박물관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7937272,
       "lon": 126.4210673,
       "pinBasis": "source",
@@ -335,7 +335,7 @@
     {
       "id": "p17",
       "name": "성옥기념관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.786971,
       "lon": 126.379837,
       "pinBasis": "source",
@@ -354,7 +354,7 @@
     {
       "id": "p18",
       "name": "유달산 조각공원",
-      "category": "spot",
+      "category": "outdoors",
       "lat": 34.794371272285,
       "lon": 126.373724064521,
       "pinBasis": "verifiedAddress",
@@ -373,7 +373,7 @@
     {
       "id": "p19",
       "name": "목포스카이워크",
-      "category": "spot",
+      "category": "experience",
       "lat": 34.787740159993,
       "lon": 126.367327994875,
       "pinBasis": "verifiedAddress",
@@ -397,7 +397,7 @@
     {
       "id": "p20",
       "name": "목포문예역사관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7939620484178,
       "lon": 126.422275435022,
       "pinBasis": "verifiedAddress",
@@ -424,7 +424,7 @@
     {
       "id": "p21",
       "name": "목포생활도자박물관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7936384961219,
       "lon": 126.41950098258,
       "pinBasis": "verifiedAddress",
@@ -451,7 +451,7 @@
     {
       "id": "p22",
       "name": "목포대중음악의전당",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7888584837708,
       "lon": 126.386192438233,
       "pinBasis": "verifiedAddress",
@@ -478,7 +478,7 @@
     {
       "id": "p23",
       "name": "목포모자아트갤러리(옛 갑자옥모자점)",
-      "category": "spot",
+      "category": "culture",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -497,7 +497,7 @@
     {
       "id": "p24",
       "name": "목포삼학도크루즈",
-      "category": "spot",
+      "category": "experience",
       "lat": 34.7808112710447,
       "lon": 126.388200095342,
       "pinBasis": "verifiedAddress",
@@ -516,7 +516,7 @@
     {
       "id": "p25",
       "name": "수중유산박물관(옛 국립해양유물전시관)",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7924636507902,
       "lon": 126.421231140314,
       "pinBasis": "verifiedAddress",
@@ -535,7 +535,7 @@
     {
       "id": "p26",
       "name": "삼학도 공원·이난영공원",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -554,7 +554,7 @@
     {
       "id": "p27",
       "name": "외달도",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -573,7 +573,7 @@
     {
       "id": "p28",
       "name": "달리도",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -592,7 +592,7 @@
     {
       "id": "p29",
       "name": "노적봉예술공원미술관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7879607542073,
       "lon": 126.381166579185,
       "pinBasis": "verifiedAddress",
@@ -627,7 +627,7 @@
     {
       "id": "p30",
       "name": "김대중노벨평화상기념관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7828488775046,
       "lon": 126.392230150843,
       "pinBasis": "verifiedAddress",
@@ -649,7 +649,7 @@
     {
       "id": "p31",
       "name": "소년 김대중 공부방",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7851747982116,
       "lon": 126.384935094289,
       "pinBasis": "verifiedAddress",
@@ -671,7 +671,7 @@
     {
       "id": "p32",
       "name": "목포어린이바다과학관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7820060120605,
       "lon": 126.388833786002,
       "pinBasis": "verifiedAddress",
@@ -693,7 +693,7 @@
     {
       "id": "p33",
       "name": "목포문학관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7928511077107,
       "lon": 126.416970314199,
       "pinBasis": "verifiedAddress",
@@ -715,7 +715,7 @@
     {
       "id": "p34",
       "name": "국립호남권생물자원관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7669417683597,
       "lon": 126.366391254665,
       "pinBasis": "verifiedAddress",
@@ -737,7 +737,7 @@
     {
       "id": "p35",
       "name": "목포문화예술회관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.792231252009,
       "lon": 126.418975879533,
       "pinBasis": "verifiedAddress",
@@ -759,7 +759,7 @@
     {
       "id": "p36",
       "name": "북항 노을공원",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -778,7 +778,7 @@
     {
       "id": "p37",
       "name": "유달유원지",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -797,7 +797,7 @@
     {
       "id": "p38",
       "name": "양을산산림욕장",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -816,7 +816,7 @@
     {
       "id": "p39",
       "name": "유달산 낙조대",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -835,7 +835,7 @@
     {
       "id": "p40",
       "name": "옥단이길",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -854,7 +854,7 @@
     {
       "id": "p41",
       "name": "노라노미술관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7901536760616,
       "lon": 126.382232227113,
       "pinBasis": "verifiedAddress",
@@ -873,7 +873,7 @@
     {
       "id": "p42",
       "name": "남농기념관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7929461779763,
       "lon": 126.419642854986,
       "pinBasis": "verifiedAddress",
@@ -895,7 +895,7 @@
     {
       "id": "p43",
       "name": "옥공예전시관",
-      "category": "spot",
+      "category": "culture",
       "lat": 34.7927461694509,
       "lon": 126.415933021749,
       "pinBasis": "verifiedAddress",
@@ -914,7 +914,7 @@
     {
       "id": "p44",
       "name": "장좌도",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -933,7 +933,7 @@
     {
       "id": "p45",
       "name": "율도(눌도)",
-      "category": "spot",
+      "category": "outdoors",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -2526,7 +2526,7 @@
     {
       "id": "p113",
       "name": "고호의 책방",
-      "category": "shop",
+      "category": "books",
       "lat": 34.7901725269957,
       "lon": 126.384565502935,
       "pinBasis": "verifiedAddress",
@@ -2548,7 +2548,7 @@
     {
       "id": "p114",
       "name": "목포종합수산시장",
-      "category": "shop",
+      "category": "market",
       "lat": null,
       "lon": null,
       "pinBasis": null,
@@ -2570,7 +2570,7 @@
     {
       "id": "p115",
       "name": "씨엘비베이커리(원도심점)",
-      "category": "shop",
+      "category": "market",
       "lat": 34.7903825,
       "lon": 126.3845095,
       "pinBasis": "source",
@@ -2589,7 +2589,7 @@
     {
       "id": "p116",
       "name": "코롬방제과점",
-      "category": "shop",
+      "category": "market",
       "lat": 34.789985,
       "lon": 126.3844209,
       "pinBasis": "source",
@@ -2608,7 +2608,7 @@
     {
       "id": "p117",
       "name": "작은낙",
-      "category": "shop",
+      "category": "books",
       "lat": 34.7898579652613,
       "lon": 126.382204057386,
       "pinBasis": "verifiedAddress",
@@ -2630,7 +2630,7 @@
     {
       "id": "p118",
       "name": "물망초",
-      "category": "shop",
+      "category": "books",
       "lat": 34.791173399165,
       "lon": 126.385646337825,
       "pinBasis": "verifiedAddress",
@@ -2652,7 +2652,7 @@
     {
       "id": "p119",
       "name": "한마을떡",
-      "category": "shop",
+      "category": "market",
       "lat": 34.7866691,
       "lon": 126.3803534,
       "pinBasis": "source",
@@ -2674,7 +2674,7 @@
     {
       "id": "p120",
       "name": "목포쫀드기 본점",
-      "category": "shop",
+      "category": "market",
       "lat": 34.7858834,
       "lon": 126.382364,
       "pinBasis": "source",
@@ -2696,7 +2696,7 @@
     {
       "id": "p121",
       "name": "청호시장",
-      "category": "shop",
+      "category": "market",
       "lat": 34.8153813745818,
       "lon": 126.424592994158,
       "pinBasis": "verifiedAddress",
@@ -2718,7 +2718,7 @@
     {
       "id": "p122",
       "name": "목포동부시장",
-      "category": "shop",
+      "category": "market",
       "lat": 34.8043935252561,
       "lon": 126.393027711263,
       "pinBasis": "verifiedAddress",
@@ -2740,7 +2740,7 @@
     {
       "id": "p123",
       "name": "나비팩토리",
-      "category": "shop",
+      "category": "books",
       "lat": 34.8003410639614,
       "lon": 126.383475856225,
       "pinBasis": "verifiedAddress",
@@ -2762,7 +2762,7 @@
     {
       "id": "p124",
       "name": "가죽공방 모닉",
-      "category": "shop",
+      "category": "books",
       "lat": 34.8087123530019,
       "lon": 126.429310850479,
       "pinBasis": "verifiedAddress",
@@ -2784,7 +2784,7 @@
     {
       "id": "p125",
       "name": "비팡이네",
-      "category": "shop",
+      "category": "books",
       "lat": 34.7883253177167,
       "lon": 126.3842669595,
       "pinBasis": "verifiedAddress",
@@ -2806,7 +2806,7 @@
     {
       "id": "p126",
       "name": "유유랜드",
-      "category": "shop",
+      "category": "books",
       "lat": 34.785953683146,
       "lon": 126.380205685076,
       "pinBasis": "verifiedAddress",
@@ -2836,7 +2836,7 @@
     {
       "id": "p127",
       "name": "포도책방(목포점)",
-      "category": "shop",
+      "category": "books",
       "lat": 34.7868345787772,
       "lon": 126.387248228785,
       "pinBasis": "verifiedAddress",
@@ -2858,7 +2858,7 @@
     {
       "id": "p128",
       "name": "구보책방",
-      "category": "shop",
+      "category": "books",
       "lat": 34.7897234713702,
       "lon": 126.386158167343,
       "pinBasis": "verifiedAddress",
@@ -2877,7 +2877,7 @@
     {
       "id": "p129",
       "name": "오늘의 페이지",
-      "category": "shop",
+      "category": "books",
       "lat": 34.8098740049163,
       "lon": 126.396126196074,
       "pinBasis": "verifiedAddress",
@@ -2908,7 +2908,7 @@
     {
       "id": "p130",
       "name": "웨이브",
-      "category": "shop",
+      "category": "books",
       "lat": 34.7915770360113,
       "lon": 126.384182038601,
       "pinBasis": "verifiedAddress",

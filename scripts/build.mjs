@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const root=fs.realpathSync('.');
+const output=path.resolve(root,'dist');
+if(path.dirname(output)!==root || path.basename(output)!=='dist') throw Error('Unsafe output path');
+fs.rmSync(output,{recursive:true,force:true});
+fs.mkdirSync(path.join(output,'server'),{recursive:true});
+fs.mkdirSync(path.join(output,'.openai'),{recursive:true});
+fs.cpSync('public',path.join(output,'client'),{recursive:true});
+const data=JSON.parse(fs.readFileSync('public/places.json','utf8')).places;
+data.push({id:'station',lat:34.7914,lon:126.3859});
+const points=Object.fromEntries(data.filter(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lon)).map(p=>[p.id,[p.lon.toFixed(7),p.lat.toFixed(7)]]));
+const source=fs.readFileSync('worker/index.js','utf8').replace('/* REGISTERED_POINTS */ {}',JSON.stringify(points));
+fs.writeFileSync(path.join(output,'server/index.js'),source);
+fs.copyFileSync('.openai/hosting.json',path.join(output,'.openai/hosting.json'));
+console.log('Built latest UI, address search, registered-only route persistence.');

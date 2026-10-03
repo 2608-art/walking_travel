@@ -28,6 +28,22 @@ WALK_LOCKS = [threading.Lock() for _ in range(64)]
 CALLS_LOCK = threading.Lock()
 
 
+def registered_points():
+    """저장 자격은 클라이언트 플래그가 아닌 앱 원본 장소 데이터로 판정한다."""
+    places = json.loads((DIST / "places.json").read_text(encoding="utf-8"))["places"]
+    places.append({"id": "station", "lat": 34.7914, "lon": 126.3859})
+    return {p["id"]: (f'{p["lon"]:.7f}', f'{p["lat"]:.7f}') for p in places
+            if isinstance(p.get("lat"), (int, float)) and isinstance(p.get("lon"), (int, float))}
+
+
+REGISTERED_POINTS = registered_points()
+
+
+def can_persist_walk(coords, start_id, end_id):
+    return (REGISTERED_POINTS.get(start_id) == (coords["start_x"], coords["start_y"])
+            and REGISTERED_POINTS.get(end_id) == (coords["end_x"], coords["end_y"]))
+
+
 def walk_cache_key(coords):
     # 방향에 따라 경로가 다를 수 있으므로 출발→도착 순서를 유지한다.
     return "|".join(coords[name] for name in ("start_x", "start_y", "end_x", "end_y"))
@@ -43,13 +59,17 @@ def open_walk_cache():
     return connection
 
 
-def cached_walk_route(coords):
+def cached_walk_route(coords, start_id="", end_id=""):
+    if not can_persist_walk(coords, start_id, end_id):
+        return None
     with closing(open_walk_cache()) as connection:
         row = connection.execute("SELECT response FROM walk_routes WHERE route_key = ?", (walk_cache_key(coords),)).fetchone()
     return json.loads(zlib.decompress(row[0])) if row else None
 
 
-def save_walk_route(coords, result):
+def save_walk_route(coords, result, start_id="", end_id=""):
+    if not can_persist_walk(coords, start_id, end_id):
+        return
     payload = zlib.compress(json.dumps(result, ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
     with closing(open_walk_cache()) as connection:
         connection.execute("INSERT OR IGNORE INTO walk_routes (route_key, response) VALUES (?, ?)",
@@ -105,6 +125,11 @@ def summarize(mode, data):
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(DIST), **kwargs)
+
+    def log_request(self, code="-", size="-"):
+        # 주소 검색어와 임시 좌표가 서버 접근 로그에 남지 않도록 쿼리를 제외한다.
+        self.log_message('"%s %s %s" %s %s', self.command, urlsplit(self.path).path,
+                         self.request_version, str(code), str(size))
 
     def send_json(self, status, body):
         data = json.dumps(body, ensure_ascii=False).encode("utf-8")
@@ -169,11 +194,17 @@ class Handler(SimpleHTTPRequestHandler):
         except (KeyError, ValueError, OverflowError):
             return self.send_json(400, {"error": "국내 출발지·도착지 좌표가 필요합니다."})
         if mode == "walk":
+            start_id = values.get("start_id", [""])[0]
+            end_id = values.get("end_id", [""])[0]
+            if not can_persist_walk(coords, start_id, end_id):
+                # 임의 주소/현재 위치는 기존 공통 캐시도 읽지 않고 요청 시 계산한다.
+                status, result = fetch_kakao_route(mode, coords)
+                return self.send_json(status, result)
             # 같은 구간의 동시 요청을 한 번의 API 조회와 한 번의 저장으로 합친다.
             lock = WALK_LOCKS[hash(walk_cache_key(coords)) % len(WALK_LOCKS)]
             with lock:
                 try:
-                    saved = cached_walk_route(coords)
+                    saved = cached_walk_route(coords, start_id, end_id)
                 except (sqlite3.Error, OSError, ValueError, zlib.error, json.JSONDecodeError):
                     return self.send_json(500, {"error": "저장된 도보 경로를 읽지 못했습니다."})
                 if saved is not None:
@@ -181,7 +212,7 @@ class Handler(SimpleHTTPRequestHandler):
                 status, result = fetch_kakao_route(mode, coords)
                 if status == 200 and result.get("status") == "OK" and result.get("routes"):
                     try:
-                        save_walk_route(coords, result)
+                        save_walk_route(coords, result, start_id, end_id)
                     except (sqlite3.Error, OSError):
                         return self.send_json(500, {"error": "도보 경로를 저장하지 못했습니다."})
                 return self.send_json(status, result)
