@@ -26,6 +26,7 @@ let calls=0;
 globalThis.fetch=async url=>{
   calls++;
   if(url.includes('/local/search/')) return Response.json({documents:[{x:'126.3853',y:'34.7911',address_name:'시험 주소'}]});
+  if(url.includes('/publictraffic')) return Response.json({status:'OK',routes:[{properties:{totalTime:1974,totalDistance:7228},steps:[{properties:{type:'BUS',guidance:'22-1 버스',distance:6785,time:1486,vehicles:[{name:'22-1'}]}}]}]});
   return Response.json({status:'OK',route:{properties:{totalTime:600,totalDistance:600},legs:[{steps:[{path:{points:[[126.3859,34.7914],[destination.lon,destination.lat]]}}]}]}});
 };
 try {
@@ -41,5 +42,11 @@ try {
   db.prepare("UPDATE api_usage SET calls=200 WHERE day_kind LIKE '%:walk'").run();
   assert.equal((await api({...parameters,start_id:'custom'})).status,429);
   assert.equal((await api(parameters)).status,200,'한도 뒤에도 등록 캐시 재사용');
-  console.log('PASS: hosted API, registered-only D1 cache, deduplication, custom addresses, quota, assets.');
+  const transit=await (await api({...parameters,mode:'transit'})).json();
+  assert.equal(transit.routes[0].walkMeters,443);
+  assert.equal(transit.routes[0].walkMinutes,8);
+  assert.equal(transit.routes[0].steps[0].meters,6785);
+  assert.equal(transit.routes[0].steps[0].type,'BUS');
+  assert.equal(count(),1,'버스 경로는 영구 저장 제외');
+  console.log('PASS: hosted API, registered-only D1 cache, deduplication, custom addresses, quota, assets, bus access walking.');
 } finally {globalThis.fetch=upstream;db.close();}

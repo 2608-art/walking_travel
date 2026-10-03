@@ -28,10 +28,15 @@ function summarize(mode,data) {
   return {status:'OK',routes:source.map(route=>{
     const p=route.properties || {};
     const steps=mode==='transit' ? route.steps || [] : (route.legs || []).flatMap(leg=>leg.steps || []);
+    const vehicles=steps.filter(step=>!['WALK','WALKING'].includes(step.properties?.type));
+    const vehicleMeters=vehicles.reduce((sum,step)=>sum+(step.properties?.distance || 0),0);
+    const vehicleSeconds=vehicles.reduce((sum,step)=>sum+(step.properties?.time || 0),0);
     return {minutes:Math.max(1,Math.round((p.totalTime || 0)/60)),meters:p.totalDistance || 0,
+      walkMeters:mode==='transit' ? Math.max(0,(p.totalDistance || 0)-vehicleMeters) : p.totalDistance || 0,
+      walkMinutes:mode==='transit' ? Math.max(0,Math.round(((p.totalTime || 0)-vehicleSeconds)/60)) : Math.max(1,Math.round((p.totalTime || 0)/60)),
       transfers:p.transfers || 0,fare:p.fare?.value ?? null,
       points:steps.flatMap(step=>step.path?.points || []).filter(point=>Array.isArray(point)&&point.length===2).slice(0,5000),
-      steps:mode==='transit' ? steps.map(step=>({type:step.properties?.type || '',guidance:step.properties?.guidance || '',minutes:Math.round((step.properties?.time || 0)/60),vehicle:(step.properties?.vehicles || []).map(v=>v.name).filter(Boolean).join(', ')})) : [],
+      steps:mode==='transit' ? steps.map(step=>({type:step.properties?.type || '',guidance:step.properties?.guidance || '',minutes:Math.round((step.properties?.time || 0)/60),meters:step.properties?.distance || 0,vehicle:(step.properties?.vehicles || []).map(v=>v.name).filter(Boolean).join(', ')})) : [],
       url:mode==='walk' ? p.landingUrl : data.properties?.landingURL};
   })};
 }

@@ -63,7 +63,7 @@
     const startId=registeredRouteId(origin), endId=registeredRouteId(target);
     const params = new URLSearchParams({mode,start_x:origin.lon,start_y:origin.lat,end_x:target.lon,end_y:target.lat,start_id:startId,end_id:endId});
     const cacheKey = params.toString();
-    const persistent=!!(startId && endId);
+    const persistent=mode==='walk' && !!(startId && endId);
     for (const [key, entry] of routeCache) if (entry.expiresAt <= Date.now()) routeCache.delete(key);
     if (!routeCache.has(cacheKey)) {
       // 임의 주소는 짧은 메모리 재사용만 허용하고 새 코스 생성 때 비운다.
@@ -86,7 +86,7 @@
     mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null,
     draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end: '24:00', origin: null, theme:'balanced', mealTimes:[], entries: {}, pending:[] },
     saved: load(STORAGE_SAVED, []),
-    route: { date: today(), start: '10:00', end: '24:00', origin: 'station', destination:'station', mode:'custom', theme:'history', must: '', mustOptional:false, focus:'through', results: [], baseResults:[], selected: -1 },
+    route: { date: today(), start: '10:00', end: '24:00', origin: 'station', destination:'station', mode:'custom', theme:'first', must: '', mustOptional:false, focus:'through', results: [], baseResults:[], selected: -1 },
     pinMode: false, pinSelection: null, searchResults: []
   };
   const geocodeCache = load(STORAGE_GEOCODES, {});
@@ -563,16 +563,19 @@
     const origin=preset ? (getPlace(preset.originId) || STATION) : routeOrigin();
     const destination=preset ? (getPlace(preset.destinationId) || STATION) : routeDestination();
     const validateRoute=(p,minute,duration,date) => evaluate({placeId:p.id,duration},minute,date);
+    let apiAvailable=true;
+    const providers={
+      routeProvider:async (a,b) => { if (!apiAvailable) throw Error('도보 API 연결 불가'); try { const route=(await getRoute('walk',a,b))[0]; return {meters:route.meters,minutes:route.minutes,points:route.points || []}; } catch (error) { if (/조회하지 못|연결하지 못|503|502|429|안전 한도|Unexpected token/.test(error.message)) apiAvailable=false; throw error; } },
+      busProvider:async (a,b) => getRoute('transit',a,b)
+    };
     if (preset) {
-      const routes=await routeEngine.generateThemeDay({places:state.places,origin,destination,date:r.date,theme:r.theme,validate:validateRoute});
+      const routes=await routeEngine.generateThemeDay({places:state.places,origin,destination,date:r.date,theme:r.theme,validate:validateRoute,...providers});
       return routes.map((route) => ({...route,originId:origin.id,destinationId:destination.id,originPoint:origin,destinationPoint:destination}));
     }
-    let apiAvailable=true;
     const input={places:state.places,origin,destination,
       start:r.start,end:r.end,date:r.date,theme:'balanced',mealTimes:[],routeFocus:r.focus,
       requiredPlaceId:r.must && !r.mustOptional ? r.must : '',preferredPlaceId:r.must && r.mustOptional ? r.must : '',
-      validate:validateRoute,
-       routeProvider:async (a,b) => { if (!apiAvailable) throw Error('도보 API 연결 불가'); try { const route=(await getRoute('walk',a,b))[0]; return {meters:route.meters,minutes:route.minutes,points:route.points || []}; } catch (error) { if (/조회하지 못|연결하지 못|503|502|429|안전 한도|Unexpected token/.test(error.message)) apiAvailable=false; throw error; } }};
+      validate:validateRoute,...providers};
     const routes=await routeEngine.generateAdaptive(input);
     return routes.map((route) => ({...route,
       originId:origin.id,destinationId:destination.id,originPoint:origin,destinationPoint:destination}));
@@ -592,7 +595,7 @@
     const destinationOptions = [STATION,...endpointPlaces].map((p) => '<option value="' + esc(p.id) + '" ' + (r.destination === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
     const must = '<option value="">선택 안 함</option>' + state.places.filter((p) => coord(p) && !routeEngine.EXCLUDED_IDS.has(p.id)).map((p) => '<option value="' + esc(p.id) + '" ' + (r.must === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
     const themeOptions=routeEngine.THEMES.map((t) => '<option value="' + t.id + '" ' + (r.theme === t.id ? 'selected' : '') + '>' + t.name + '</option>').join('');
-    $('#main').innerHTML = '<section class="page"><button class="back" id="routes-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">하루 동선 후보</div><h1>추천 루트</h1><p>출발지에서 도착지까지 가까운 곳을 이어 주세요. 식사는 원하는 시각에 맞춥니다.</p></div></div><div class="card"><div class="form-grid"><div class="field-group"><label class="field-label" for="route-date">날짜</label><input class="text-field" type="date" id="route-date" value="' + esc(r.date) + '"></div><div class="field-group"><label class="field-label" for="route-start">시작 시각</label><input class="text-field" type="time" id="route-start" value="' + esc(r.start) + '"></div><div class="field-group"><label class="field-label" for="route-end">끝낼 시각</label><input class="text-field" type="time" id="route-end" value="' + esc(r.end === '24:00' ? '23:59' : r.end) + '" ' + (r.end === '24:00' ? 'disabled' : '') + '><label class="check-line"><input type="checkbox" id="route-midnight" ' + (r.end === '24:00' ? 'checked' : '') + '> 자정까지</label></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-origin">시작 위치</label><select class="select-field" id="route-origin">' + options + (r.current ? '<option value="current" ' + (r.origin === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select><button class="btn btn-outline btn-sm" id="use-location" style="margin-top:8px">현재 위치 사용</button></div><div class="field-group"><label class="field-label" for="route-destination">도착 위치</label><select class="select-field" id="route-destination">' + destinationOptions + (r.current ? '<option value="current" ' + (r.destination === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-theme">여행 테마</label><select class="select-field" id="route-theme">' + themeOptions + '</select></div><div class="field-group"><label class="field-label" for="route-must">꼭 가고 싶은 장소</label><select class="select-field" id="route-must">' + must + '</select></div></div><div class="form-grid meal-grid" style="margin-top:14px">' + '' + '</div><p class="small" style="margin:10px 0 0">식사 시각은 비워둘 수 있습니다. 입력한 시각에는 음식점 또는 카페만 넣습니다.</p><div class="modal-actions"><button class="btn btn-primary" id="make-routes">코스 찾기</button></div></div><div class="notice warn" style="margin-top:18px">한 구간 1.6km·30분, 하루 누적 8km를 넘지 않는 도보 코스입니다. 확인되지 않은 영업시간과 추정 이동 구간은 따로 표시합니다. 케이블카를 도보 이동으로 계산하지 않습니다.</div><div id="route-results" class="route-results"></div></section>';
+    $('#main').innerHTML = '<section class="page"><button class="back" id="routes-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">하루 동선 후보</div><h1>추천 루트</h1><p>출발지에서 도착지까지 가까운 곳을 이어 주세요. 식사는 원하는 시각에 맞춥니다.</p></div></div><div class="card"><div class="form-grid"><div class="field-group"><label class="field-label" for="route-date">날짜</label><input class="text-field" type="date" id="route-date" value="' + esc(r.date) + '"></div><div class="field-group"><label class="field-label" for="route-start">시작 시각</label><input class="text-field" type="time" id="route-start" value="' + esc(r.start) + '"></div><div class="field-group"><label class="field-label" for="route-end">끝낼 시각</label><input class="text-field" type="time" id="route-end" value="' + esc(r.end === '24:00' ? '23:59' : r.end) + '" ' + (r.end === '24:00' ? 'disabled' : '') + '><label class="check-line"><input type="checkbox" id="route-midnight" ' + (r.end === '24:00' ? 'checked' : '') + '> 자정까지</label></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-origin">시작 위치</label><select class="select-field" id="route-origin">' + options + (r.current ? '<option value="current" ' + (r.origin === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select><button class="btn btn-outline btn-sm" id="use-location" style="margin-top:8px">현재 위치 사용</button></div><div class="field-group"><label class="field-label" for="route-destination">도착 위치</label><select class="select-field" id="route-destination">' + destinationOptions + (r.current ? '<option value="current" ' + (r.destination === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-theme">여행 테마</label><select class="select-field" id="route-theme">' + themeOptions + '</select></div><div class="field-group"><label class="field-label" for="route-must">꼭 가고 싶은 장소</label><select class="select-field" id="route-must">' + must + '</select></div></div><div class="form-grid meal-grid" style="margin-top:14px">' + '' + '</div><p class="small" style="margin:10px 0 0">식사 시각은 비워둘 수 있습니다. 입력한 시각에는 음식점 또는 카페만 넣습니다.</p><div class="modal-actions"><button class="btn btn-primary" id="make-routes">코스 찾기</button></div></div><div class="notice warn" style="margin-top:18px">걷기를 우선합니다. 도보로 연결하기 어려울 때만 버스를 확인합니다. 걷는 구간은 1.6km·30분, 하루 도보 합계는 8km 이내입니다. 확인되지 않은 영업시간과 추정 이동 구간은 따로 표시합니다. 케이블카를 도보 이동으로 계산하지 않습니다.</div><div id="route-results" class="route-results"></div></section>';
     setupRoutePlaceSearch('origin');
     setupRoutePlaceSearch('destination');
     setupRequiredPlaceSearch();
@@ -638,23 +641,30 @@
     };
     if (r.results.length) showRouteResults();
   }
+  function routeLegText(row) {
+    const leg=row.busLeg || row;
+    if(leg.mode==='bus') return '버스 연결 '+leg.minutes+'분 (도보 '+leg.walkMinutes+'분·대기 여유 10분 포함) · '+leg.steps.filter(s=>s.type==='BUS').map(s=>s.guidance).join(' → ');
+    return '앞 장소에서 도보 '+(row.walkEstimate ?? row.minutes)+'분 / '+((row.walkMeters ?? row.meters)/1000).toFixed(2)+'km '+(row.actual ? '(카카오 경로)' : '(보수적 추정)');
+  }
   function showRouteResults() {
     const r = state.route, root = $('#route-results');
     state.resultMap?.remove(); state.resultMap=null;
     const chosen=r.results[r.selected];
-    const emptyReason=r.mode === 'theme' ? '선택한 날짜에는 확인된 운영정보와 도보 조건을 함께 만족하는 하루 코스를 만들지 못했습니다. 다른 날짜나 테마를 선택해 주세요. 운영시간이 확인되지 않은 장소는 방문 전 확인이 필요합니다.' : r.must && !r.mustOptional ? '선택한 장소를 반드시 포함하면서 끝낼 시각까지 도착하는 도보 코스를 찾지 못했습니다. 시간이나 위치를 바꾸거나, 해당 장소의 ‘루트에 꼭 넣을 필요 없음’을 체크해 다시 찾아보세요.' : '출발·도착 위치가 멀거나 도착 시각을 맞추기 어려울 수 있습니다. 끝낼 시각을 조정하거나, 먼 권역은 대중교통으로 이동한 뒤 새 코스를 만드세요.';
+    const emptyReason=r.mode === 'theme' ? '선택한 날짜에는 운영정보와 이동 조건을 함께 만족하는 코스를 만들지 못했습니다. 다른 날짜나 테마를 선택해 주세요. 운영시간이 확인되지 않은 장소는 방문 전 확인이 필요합니다.' : r.must && !r.mustOptional ? '선택한 장소를 반드시 포함하면서 끝낼 시각까지 도착하는 코스를 찾지 못했습니다. 시간이나 위치를 바꾸거나, 해당 장소의 ‘루트에 꼭 넣을 필요 없음’을 체크해 다시 찾아보세요.' : '출발·도착 위치가 멀거나 도착 시각을 맞추기 어려울 수 있습니다. 도보와 확인 가능한 버스 연결로 코스를 완성하지 못했습니다. 끝낼 시각이나 도착 위치를 조정해 보세요.';
     const stops=chosen ? chosen.rows.map((x,i) => {
       const previous=chosen.rows[i-1];
       const freeMinutes=x.minute-(previous ? previous.minute+previous.duration : chosen.start)-x.walkEstimate;
       const gap=freeMinutes > 25 ? '<div class="route-gap">' + esc(hhmm(previous ? previous.minute+previous.duration : chosen.start)) + ' 이후 약 ' + freeMinutes + '분 빈 시간 · 자유롭게 보내거나 이동 여유로 사용하세요.</div>' : '';
-      return gap + '<div class="route-stop"><div class="route-stop-time">' + esc(hhmm(x.minute)) + '<small>~ ' + esc(hhmm(x.minute+x.duration)) + '</small><button type="button" class="route-add-one" data-add-route-stop="' + i + '" aria-label="' + esc(getPlace(x.placeId)?.name) + '만 시간계획표에 넣기">+ 넣기</button></div><div><strong>' + (x.kind === 'meal' ? '식사 · ' : x.kind === 'cafe' ? '카페 휴식 · ' : '') + esc(getPlace(x.placeId)?.name) + '</strong><p>' + esc(x.duration) + '분 체류 · 앞 장소에서 도보 ' + esc(x.walkEstimate) + '분 / ' + (x.walkMeters/1000).toFixed(2) + 'km ' + (x.actual ? '(카카오 경로)' : '(보수적 추정)') + '</p><small>' + esc(x.result.title) + (x.result.kind === 'unknown' ? ' · 영업 확인 필요' : '') + '</small></div></div>';
+      return gap + '<div class="route-stop"><div class="route-stop-time">' + esc(hhmm(x.minute)) + '<small>~ ' + esc(hhmm(x.minute+x.duration)) + '</small><button type="button" class="route-add-one" data-add-route-stop="' + i + '" aria-label="' + esc(getPlace(x.placeId)?.name) + '만 시간계획표에 넣기">+ 넣기</button></div><div><strong>' + (x.kind === 'meal' ? '식사 · ' : x.kind === 'cafe' ? '카페 휴식 · ' : '') + esc(getPlace(x.placeId)?.name) + '</strong><p>' + esc(x.duration) + '분 체류 · ' + esc(routeLegText(x)) + '</p><small>' + esc(x.result.title) + (x.result.kind === 'unknown' ? ' · 영업 확인 필요' : '') + '</small></div></div>';
     }).join('') : '';
-    const endRow=chosen ? '<div class="route-stop"><div class="route-stop-time">' + esc(hhmm(chosen.endArrival)) + '</div><div><strong>도착 · ' + esc(chosen.destinationName) + '</strong><p>마지막 장소에서 도보 ' + esc(chosen.endWalk.minutes) + '분 / ' + (chosen.endWalk.meters/1000).toFixed(2) + 'km ' + (chosen.endWalk.actual ? '(카카오 경로)' : '(보수적 추정)') + '</p></div></div>' : '';
+    const endRow=chosen ? '<div class="route-stop"><div class="route-stop-time">' + esc(hhmm(chosen.endArrival)) + '</div><div><strong>도착 · ' + esc(chosen.destinationName) + '</strong><p>' + esc(routeLegText(chosen.endWalk)) + '</p></div></div>' : '';
     const free=chosen && !chosen.autoSchedule && chosen.endArrival < chosen.end-15 ? '<div class="notice" style="margin-top:12px">' + esc(hhmm(chosen.endArrival)) + ' 도착 후 ' + esc(hhmm(chosen.end)) + '까지 자유시간입니다. 확인되지 않은 야간 영업 장소를 임의로 넣지 않았습니다.</div>' : '';
-    root.innerHTML = chosen ? '<div class="section-label">추천 코스 ' + r.results.length + '개</div><div class="route-tabs">' + r.results.map((x,i) => '<button class="filter-chip ' + (i === r.selected ? 'active' : '') + '" data-route-tab="' + i + '">' + esc(x.title) + '</button>').join('') + '</div><div class="card"><p><strong>' + esc(chosen.originName) + ' ' + esc(hhmm(chosen.start)) + ' 출발 → ' + esc(chosen.destinationName) + ' ' + esc(hhmm(chosen.end)) + '까지</strong></p><p class="small">방문 ' + chosen.rows.length + '곳 · 도보 합계 약 ' + (chosen.walkMeters/1000).toFixed(2) + 'km · ' + esc(routeEngine.THEMES.find((t) => t.id === chosen.theme)?.name || '') + '</p>' + stops + endRow + free + '<p class="small" style="margin-top:14px">영업시간 미확인 장소는 방문 전 확인하세요. 주소 좌표는 건물 대표점일 수 있으며, 이동시간에 신호와 대기는 별도로 여유를 두세요.</p><button class="btn btn-primary" id="import-route">시간계획표에 넣기</button></div>' : '<div class="card empty-state"><h3>조건에 맞는 도보 코스를 찾지 못했습니다.</h3><p>' + esc(emptyReason) + '</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
+    root.innerHTML = chosen ? '<div class="section-label">추천 코스 ' + r.results.length + '개</div><div class="route-tabs">' + r.results.map((x,i) => '<button class="filter-chip ' + (i === r.selected ? 'active' : '') + '" data-route-tab="' + i + '">' + esc(x.title) + '</button>').join('') + '</div><div class="card"><p><strong>' + esc(chosen.originName) + ' ' + esc(hhmm(chosen.start)) + ' 출발 → ' + esc(chosen.destinationName) + ' ' + esc(hhmm(chosen.end)) + '까지</strong></p><p class="small">방문 ' + chosen.rows.length + '곳 · 도보 합계 약 ' + (chosen.walkMeters/1000).toFixed(2) + 'km · ' + esc(routeEngine.THEMES.find((t) => t.id === chosen.theme)?.name || '') + '</p>' + stops + endRow + free + '<p class="small" style="margin-top:14px">영업시간 미확인 장소는 방문 전 확인하세요. 주소 좌표는 건물 대표점일 수 있으며, 이동시간에 신호와 대기는 별도로 여유를 두세요.</p><button class="btn btn-primary" id="import-route">시간계획표에 넣기</button></div>' : '<div class="card empty-state"><h3>조건에 맞는 코스를 찾지 못했습니다.</h3><p>' + esc(emptyReason) + '</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
     if (chosen) {
-      root.querySelector('.route-tabs').insertAdjacentHTML('afterend','<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="추천 코스 이동 순서 지도"></div><p class="small">숫자는 방문 순서, 화살표는 이동 방향입니다. 점선은 도보 경로 대신 두 장소의 방향을 이은 구간입니다.</p></div>');
+      root.querySelector('.route-tabs').insertAdjacentHTML('afterend','<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="추천 코스 이동 순서 지도"></div><p class="small">숫자는 방문 순서, 화살표는 이동 방향입니다. 초록 선은 도보, 파란 선은 버스 연결입니다. 점선은 경로 미확인 구간의 방향입니다.</p></div>');
       initResultMap(chosen);
+      if(chosen.transport==='walk-bus') root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<p class="notice">도보만으로 연결하기 어려워 버스를 포함했습니다. 버스 구간은 정류장까지 걷는 시간과 대기 여유 10분을 포함합니다. 실제 배차·막차는 출발 전에 확인하세요.</p>');
+      if(chosen.autoSchedule && !chosen.plannedMeals.length) root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<p class="notice">동선과 운영시간에 맞는 식사를 자동으로 넣지 못했습니다. 식사는 시간계획표에서 추가해 주세요.</p>');
       if (chosen.reverseDropped) root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<div class="notice warn" style="margin-bottom:14px">반대 방향에서는 운영시간·도보 조건에 맞추기 위해 방문지 ' + chosen.reverseDropped + '곳을 제외했습니다.</div>');
       root.querySelectorAll('[data-add-route-stop]').forEach((button) => button.onclick=() => addRouteStop(chosen.rows[Number(button.dataset.addRouteStop)]));
       if (coord(chosen.originPoint) && coord(chosen.destinationPoint) && routeEngine.distanceKm(chosen.originPoint,chosen.destinationPoint) < .015 && chosen.rows.length > 1) {
@@ -717,7 +727,7 @@
       const leg=i<route.rows.length ? route.rows[i] : route.endWalk;
       const points=leg.walkPoints || leg.points || [];
       const path=points.length > 1 ? points.map(([lon,lat]) => [lat,lon]) : [[stops[i].lat,stops[i].lon],[stops[i+1].lat,stops[i+1].lon]];
-      const line=L.polyline(path,{color:leg.actual && points.length>1 ? '#087a61' : '#6c8290',weight:4,opacity:.85,dashArray:leg.actual && points.length>1 ? null : '6,7'}).addTo(map);
+      const line=L.polyline(path,{color:leg.mode==='bus' ? '#386acb' : leg.actual && points.length>1 ? '#087a61' : '#6c8290',weight:4,opacity:.85,dashArray:leg.actual && points.length>1 ? null : '6,7'}).addTo(map);
       bounds.extend(line.getBounds());
       const pointIndex=Math.floor((path.length-1)/2), from=path[pointIndex], to=path[pointIndex+1];
       const middle=[(from[0]+to[0])/2,(from[1]+to[1])/2];
@@ -855,7 +865,7 @@
   }
   function addRouteStop(row) {
     if (!row) return;
-    const minute=row.minute, entry={placeId:row.placeId,duration:row.duration,memo:row.kind === 'meal' ? '추천 코스의 식사' : row.kind === 'cafe' ? '추천 코스의 카페 휴식' : ''};
+    const minute=row.minute, entry={placeId:row.placeId,duration:row.duration,memo:row.mode==='bus' ? routeLegText(row) : row.kind === 'meal' ? '추천 코스의 식사' : row.kind === 'cafe' ? '추천 코스의 카페 휴식' : ''};
     const d=state.draft, end=routeEngine.minutes(d.end || '24:00');
     const conflict=planConflict(minute,entry), outside=minute < toMin(d.start) || minute+entry.duration > end, otherDate=d.date !== state.route.date;
     if (conflict || outside || otherDate) {
@@ -878,7 +888,7 @@
   function importRoute() {
     const chosen = state.route.results[state.route.selected]; if (!chosen) return;
     openModal('<h2>시간계획표에 넣으시겠습니까?</h2><p>' + esc(chosen.title) + '</p><p>현재 편집 중인 계획은 새 코스로 바뀝니다. 저장이 필요하면 먼저 계획 화면에서 저장해 주세요.</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="confirm-import">넣기</button></div>', () => {
-      $('#confirm-import').onclick = () => { const entries = {}; chosen.rows.forEach((x) => { entries[x.minute] = {placeId:x.placeId,duration:x.duration,memo:x.kind === 'meal' ? (chosen.autoSchedule ? '자동 배치한 식사' : '선택한 식사시간') : x.kind === 'cafe' ? '선택한 카페 휴식' : ''}; }); state.draft = {id:null,title:chosen.title,date:state.route.date,start:chosen.autoSchedule ? hhmm(chosen.start) : state.route.start,end:chosen.autoSchedule ? hhmm(chosen.end) : state.route.end,origin:chosen.originId,destination:chosen.destinationId,currentOrigin:chosen.originId === 'current' ? chosen.originPoint : null,customOrigin:chosen.originId === 'custom' ? chosen.originPoint : null,customDestination:chosen.destinationId === 'custom' ? chosen.destinationPoint : null,theme:chosen.theme,mealTimes:(chosen.autoSchedule ? chosen.plannedMeals.map(hhmm) : chosen.rows.filter((row) => row.kind === 'meal').map((row) => hhmm(row.minute))),entries,pending:[]}; persistDraft(); closeModal(); nav('plan'); };
+      $('#confirm-import').onclick = () => { const entries = {}; chosen.rows.forEach((x) => { entries[x.minute] = {placeId:x.placeId,duration:x.duration,memo:x.mode==='bus' ? routeLegText(x) : x.kind === 'meal' ? (chosen.autoSchedule ? '자동 배치한 식사' : '선택한 식사시간') : x.kind === 'cafe' ? '선택한 카페 휴식' : ''}; }); if(chosen.endWalk.mode==='bus') { const last=entries[chosen.rows.at(-1).minute]; last.memo=[last.memo,'방문 후 도착지로 '+routeLegText(chosen.endWalk)].filter(Boolean).join(' · '); } state.draft = {id:null,title:chosen.title,date:state.route.date,start:chosen.autoSchedule ? hhmm(chosen.start) : state.route.start,end:chosen.autoSchedule ? hhmm(chosen.end) : state.route.end,origin:chosen.originId,destination:chosen.destinationId,currentOrigin:chosen.originId === 'current' ? chosen.originPoint : null,customOrigin:chosen.originId === 'custom' ? chosen.originPoint : null,customDestination:chosen.destinationId === 'custom' ? chosen.destinationPoint : null,theme:chosen.theme,mealTimes:(chosen.autoSchedule ? chosen.plannedMeals.map(hhmm) : chosen.rows.filter((row) => row.kind === 'meal').map((row) => hhmm(row.minute))),entries,pending:[]}; persistDraft(); closeModal(); nav('plan'); };
     });
   }
   function showJourney(minute) {
