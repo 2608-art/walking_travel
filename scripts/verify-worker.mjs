@@ -45,6 +45,8 @@ try {
   const transit=await (await api({...parameters,mode:'transit'})).json();
   assert.equal(transit.routes[0].walkMeters,443);
   assert.equal(transit.routes[0].walkMinutes,8);
+  assert.equal(transit.routes[0].busRideMinutes,25);
+  assert.equal(transit.routes[0].busRideSeconds,1486);
   assert.equal(transit.routes[0].steps[0].meters,6785);
   assert.equal(transit.routes[0].steps[0].type,'BUS');
   assert.equal(count(),1,'버스 경로는 영구 저장 제외');
