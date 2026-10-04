@@ -1,0 +1,371 @@
+[
+  {
+    "label": "city-390",
+    "fonts": [
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "40px",
+        "text": "목포"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "추천 루트"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "여행지"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "여행 정보"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "28px",
+        "text": "어떤 하루를 걸어볼까요?"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "28px",
+        "text": "목포에서 만나는 풍경"
+      }
+    ],
+    "images": [],
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "label": "place-390",
+    "fonts": [
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "27px",
+        "text": "목포근대역사관 1관"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "13px",
+        "text": "지도 위치"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "13px",
+        "text": "계획표 열기"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "방문 안내"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "운영시간"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "함께 둘러보기"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "25px",
+        "text": "여기서 잠깐!"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "20px",
+        "text": "같은 취향의 장소"
+      }
+    ],
+    "images": [],
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "label": "map-390",
+    "fonts": [
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "18px",
+        "text": "목포 한 바퀴"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "20px",
+        "text": "목포의 장소 130"
+      }
+    ],
+    "images": [],
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "label": "map-list-390",
+    "fonts": [
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "18px",
+        "text": "목포 한 바퀴"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "20px",
+        "text": "목포의 장소 130"
+      }
+    ],
+    "images": [],
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "label": "home-360",
+    "fonts": [
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "38px",
+        "text": "오늘,어디로 떠날까요?"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "28px",
+        "text": "마음이 머무는 곳"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "29px",
+        "text": "조금 느리게,더 가까이."
+      }
+    ],
+    "images": [],
+    "scrollWidth": 345,
+    "width": 345
+  },
+  {
+    "label": "city-360",
+    "fonts": [
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "40px",
+        "text": "목포"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "추천 루트"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "여행지"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "여행 정보"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "28px",
+        "text": "어떤 하루를 걸어볼까요?"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "28px",
+        "text": "목포에서 만나는 풍경"
+      }
+    ],
+    "images": [],
+    "scrollWidth": 345,
+    "width": 345
+  },
+  {
+    "label": "city-1280",
+    "fonts": [
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "43px",
+        "text": "목포"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "추천 루트"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "여행지"
+      },
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "14px",
+        "text": "여행 정보"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "29px",
+        "text": "어떤 하루를 걸어볼까요?"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "29px",
+        "text": "목포에서 만나는 풍경"
+      }
+    ],
+    "images": [],
+    "scrollWidth": 1265,
+    "width": 1265
+  },
+  {
+    "label": "home-1280",
+    "fonts": [
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "52px",
+        "text": "오늘,어디로 떠날까요?"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "29px",
+        "text": "마음이 머무는 곳"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "32px",
+        "text": "조금 느리게,더 가까이."
+      }
+    ],
+    "images": [],
+    "scrollWidth": 1265,
+    "width": 1265
+  },
+  {
+    "label": "home-768",
+    "fonts": [
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "52px",
+        "text": "오늘,어디로 떠날까요?"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "29px",
+        "text": "마음이 머무는 곳"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "32px",
+        "text": "조금 느리게,더 가까이."
+      }
+    ],
+    "images": [],
+    "scrollWidth": 753,
+    "width": 753
+  },
+  {
+    "label": "plan-390",
+    "fonts": [
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "24px",
+        "text": "시간계획표"
+      }
+    ],
+    "images": [
+      "./assets/mascot/turtle-memo.png"
+    ],
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "label": "saved-390",
+    "fonts": [
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "24px",
+        "text": "저장한 계획"
+      }
+    ],
+    "images": [],
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "label": "home-390-final",
+    "fonts": [
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "42px",
+        "text": "오늘,어디로 떠날까요?"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "28px",
+        "text": "마음이 머무는 곳"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "29px",
+        "text": "조금 느리게,더 가까이."
+      }
+    ],
+    "images": [],
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "label": "routes-390",
+    "fonts": [
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "24px",
+        "text": "추천 루트"
+      }
+    ],
+    "images": [],
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "label": "plan-390-loaded",
+    "fonts": [
+      {
+        "font": "Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "24px",
+        "text": "시간계획표"
+      }
+    ],
+    "images": [
+      "./assets/mascot/turtle-memo.png"
+    ],
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "label": "live-home-390",
+    "fonts": [
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "42px",
+        "text": "오늘,어디로 떠날까요?"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "28px",
+        "text": "마음이 머무는 곳"
+      },
+      {
+        "font": "\"Cafe24 Dongdong\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", \"Malgun Gothic\", sans-serif",
+        "size": "29px",
+        "text": "조금 느리게,더 가까이."
+      }
+    ],
+    "images": [],
+    "scrollWidth": 375,
+    "width": 375
+  }
+]
