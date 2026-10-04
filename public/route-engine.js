@@ -41,6 +41,12 @@
   const hasCoord = (p) => p && Number.isFinite(p.lat) && Number.isFinite(p.lon);
   const routeCategory = (p) => ['outdoors','culture','experience'].includes(p.category) ? 'spot' :
     ['market','books'].includes(p.category) ? 'shop' : p.category;
+  const busRideMinutes=route=>{
+    const value=Number.isFinite(route.busRideSeconds) && route.busRideSeconds>0 ? route.busRideSeconds/60 :
+      Number.isFinite(route.busRideMinutes) && route.busRideMinutes>0 ? route.busRideMinutes :
+      route.steps?.filter(step=>step.type==='BUS').reduce((sum,step)=>sum+(step.minutes || 0),0);
+    return value>0 ? value : null;
+  };
   function datedHours(p,date) {
     if (date < '2026-10-03' || date > '2026-10-09') return null;
     const day=Number(date.slice(-2));
@@ -247,6 +253,69 @@
       transport:rows.some(row=>row.mode==='bus') || endWalk.mode==='bus' ? 'walk-bus' : 'walk',
       signature:order.map(p=>p.id).join(',')};
   }
+  // 가까운 방문지를 지나쳤다가 먼 곳에서 되돌아오는 순서를 감점한다.
+  // 한 블록 안의 짧은 출입·왕복은 걸어온 거리 조건으로 감점하지 않는다.
+  function routeDetourPenalty(order,origin) {
+    const points=[origin,...order];
+    let penalty=0;
+    for(let i=0;i<points.length-2;i++) {
+      const a=points[i],b=points[i+1],c=points[i+2];
+      const ab=distanceKm(a,b),ac=distanceKm(a,c),bc=distanceKm(b,c);
+      if(ac<=.22 && ab>=.30 && bc>=.30) penalty+=550;
+      else if(ac<=.30 && ab>=ac+.14 && bc>=.25) penalty+=350;
+    }
+    for(let i=3;i<points.length;i++) {
+      const current=points[i];
+      if(points.slice(1,i-2).some((earlier)=>distanceKm(earlier,current)<=.12 &&
+        distanceKm(points[i-1],earlier)>=.30)) penalty+=400;
+    }
+    return penalty;
+  }
+  const routeQuality=(route,order,origin)=>route.walkMeters+routeDetourPenalty(order,origin);
+  const routePreference=(route,origin,places,theme)=>routeQuality(route,route.rows.map(row=>places.find(p=>p.id===row.placeId)),origin)
+    -400*route.rows.length-250*route.rows.filter(row=>themedPlace(places.find(p=>p.id===row.placeId),theme)).length;
+  // 같은 방문지를 유지하면서 실제 도보 구간과 방문 가능한 시각을 다시 확인한다.
+  async function improveRoute(route,input,cache) {
+    if(route.transport==='walk-bus' || route.chosenMeals?.length || route.rows.length<3) return route;
+    const byId=new Map(input.places.map(p=>[p.id,p]));
+    const templates=new Map(route.rows.map(row=>[row.placeId,row]));
+    const leg=(a,b)=>cache.get([a.id,a.lat,a.lon,b.id,b.lat,b.lon].join(':')) || pointLeg(a,b);
+    const attempted=new Set([route.signature]);
+    let best=route, confirmations=0;
+    const estimatedCount=(candidate)=>candidate.rows.filter(row=>!row.actual).length+Number(!candidate.endWalk.actual);
+    for(let pass=0;pass<2;pass++) {
+      const order=best.rows.map(row=>byId.get(row.placeId));
+      const candidates=[];
+      const add=(candidate)=>{
+        const signature=candidate.map(p=>p.id).join(',');
+        if(attempted.has(signature)) return;
+        const walks=[input.origin,...candidate].map((p,i)=>leg(p,candidate[i] || input.destination));
+        const scheduled=scheduleVisits(candidate,{...input,scheduledRows:candidate.map(p=>templates.get(p.id))},walks);
+        if(scheduled && routeQuality(scheduled,candidate,input.origin)<routeQuality(best,order,input.origin)-50)
+          candidates.push({scheduled,candidate,score:routeQuality(scheduled,candidate,input.origin)});
+      };
+      for(let i=0;i<order.length;i++) for(let j=0;j<order.length;j++) {
+        if(i===j) continue;
+        const moved=[...order], [place]=moved.splice(i,1);moved.splice(j,0,place);add(moved);
+        if(i<j) add([...order.slice(0,i),...order.slice(i,j+1).reverse(),...order.slice(j+1)]);
+      }
+      candidates.sort((a,b)=>a.score-b.score || a.scheduled.walkMeters-b.scheduled.walkMeters);
+      let improved=false;
+      for(const {scheduled,candidate} of candidates) {
+        if(confirmations>=10) return best;
+        if(attempted.has(scheduled.signature)) continue;
+        attempted.add(scheduled.signature);confirmations++;
+        const checked=await confirmRoute({...best,...scheduled},input,cache);
+        if(!checked) continue;
+        if(estimatedCount(checked)>estimatedCount(best)) continue;
+        if(routeQuality(checked,candidate,input.origin)<routeQuality(best,order,input.origin)-50) {
+          best={...checked,routeQualityAdjusted:true};improved=true;break;
+        }
+      }
+      if(!improved) break;
+    }
+    return best;
+  }
   function shortestConnection(from,to,pool,blocked=new Set(),input={}) {
     const nodes=[from,...pool.filter(p=>p.id!==from.id && p.id!==to.id && !blocked.has(p.id)),to];
     const target=nodes.length-1, costs=nodes.map(()=>Infinity), previous=[], done=new Set();
@@ -345,13 +414,13 @@
         }
         if(!improved) break;
       }
-      if(route.rows.length<2 || results.some(r=>r.signature===route.signature)) continue;
+      if(route.rows.length<(input.theme==='balanced'?1:2) || results.some(r=>r.signature===route.signature)) continue;
       results.push({...route,id:'route-'+focus+'-'+variant,title:variant===0?'가까운 길부터':variant===1?'다른 출발 순서':'다른 길로',routeFocus:focus});
     }
     return results;
   }
   async function confirmRoute(route,input,cache=new Map()) {
-    if(!input.routeProvider) return route;
+    if(!input.routeProvider) return null;
     const order=route.rows.map(row=>input.places.find(p=>p.id===row.placeId));
     const points=[input.origin,...order,input.destination], walks=[];
     for(let i=0;i<points.length-1;i++) {
@@ -368,14 +437,19 @@
       }
       walks.push(cache.get(key));
     }
+    if(walks.some(walk=>!walk.actual)) return null;
     const scheduled=scheduleVisits(order,{...input,scheduledRows:route.rows,fixedMeals:!!route.chosenMeals?.length},walks);
     return scheduled ? {...route,...scheduled,chosenMeals:(route.chosenMeals || []).map(meal=>({...meal,minute:scheduled.rows.find(row=>row.placeId===meal.placeId)?.minute ?? meal.minute}))} : null;
+  }
+  async function verifyEditedRoute(route,input) {
+    const time=(minute)=>minute===1440 ? '24:00' : String(Math.floor(minute/60)).padStart(2,'0')+':'+String(minute%60).padStart(2,'0');
+    return confirmRoute(route,{...input,start:time(route.start),end:time(route.end)},new Map());
   }
   // 실제 경로 확인으로 일정이 밀려도 전체 코스를 즉시 버리지 않는다.
   // 같은 방문지의 순서를 먼저 탐색하고, 실패한 경우에만 선택 방문지를 줄인다.
   async function confirmOrRepairRoute(route,input,cache) {
     const confirmed=await confirmRoute(route,input,cache);
-    if(confirmed) return confirmed;
+    if(confirmed) return improveRoute(confirmed,input,cache);
     // 사용자가 고정한 식사와 버스 연결은 별도 편집 규칙을 유지한다.
     if(route.chosenMeals?.length || route.transport==='walk-bus') return null;
     const original=route.rows.map(row=>input.places.find(p=>p.id===row.placeId));
@@ -410,8 +484,8 @@
         const {order,scheduled}=candidates[0];
         attempted.add(scheduled.signature);confirmations++;
         const repaired=await confirmRoute({...route,...scheduled},input,cache);
-        if(repaired) return {...repaired,actualTimeAdjusted:true,
-          adjustedDroppedNames:original.filter(p=>!order.some(x=>x.id===p.id)).map(p=>p.name)};
+        if(repaired) return improveRoute({...repaired,actualTimeAdjusted:true,
+          adjustedDroppedNames:original.filter(p=>!order.some(x=>x.id===p.id)).map(p=>p.name)},input,cache);
       }
       if(confirmations>=24) return null;
       const reduced=new Map();
@@ -440,6 +514,8 @@
       try {options=await input.busProvider(pair.from,pair.to);} catch {return [];}
       for(const bus of options || []) {
         if(!bus.steps?.some(s=>s.type==='BUS') || bus.steps.some(s=>!['BUS','WALK','WALKING'].includes(s.type))) continue;
+        const riding=busRideMinutes(bus);
+        if(riding==null || riding>=60) continue;
         if(!Number.isFinite(bus.walkMeters)||!Number.isFinite(bus.walkMinutes)||!(bus.minutes>0)) continue;
         const leg={mode:'bus',actual:true,meters:bus.walkMeters,walkMinutes:bus.walkMinutes,minutes:bus.minutes+10,
           travelMeters:bus.meters,points:bus.points || [],steps:bus.steps,waitBuffer:10};
@@ -455,6 +531,107 @@
     }
     return [];
   }
+  // 확정 코스가 없더라도 선택한 위치와 가까운 방문지를 지도에서 검토할 수 있게 잇는다.
+  // 이 결과는 영업·도착·이동 가능 판정을 통과한 추천 코스가 아니다.
+  async function generateReviewRoute(input) {
+    const {places,origin,destination,requiredPlaceId='',date,validate,routeProvider,busProvider}=input;
+    if(!hasCoord(origin) || !hasCoord(destination)) return null;
+    const required=places.find(p=>p.id===requiredPlaceId && hasCoord(p));
+    const anchors=[origin,...(required?[required]:[]),destination];
+    const pool=places.filter(p=>hasCoord(p) && !EXCLUDED_IDS.has(p.id) &&
+      p.id!==origin.id && p.id!==destination.id && p.id!==requiredPlaceId);
+    const near=(p)=>Math.min(...anchors.map(anchor=>distanceKm(anchor,p)));
+    pool.sort((a,b)=>near(a)-near(b));
+    const themed=input.theme && input.theme!=='balanced' ? pool.filter(p=>themedPlace(p,input.theme)) : [];
+    const selected=(themed.length ? themed : pool).slice(0,2);
+    if(!themed.length) {
+      const meal=pool.find(p=>['food','cafe'].includes(p.category) && !selected.some(q=>q.id===p.id));
+      if(meal && selected.length===2 && near(meal)<=near(selected[1])+.35) selected[1]=meal;
+    }
+    let order=required && !samePoint(required,origin) && !samePoint(required,destination) ? [required] : [];
+    for(const p of selected) {
+      let best=null;
+      for(let at=0;at<=order.length;at++) {
+        const candidate=[...order];candidate.splice(at,0,p);
+        const points=[origin,...candidate,destination];
+        const score=points.slice(1).reduce((sum,point,i)=>sum+distanceKm(points[i],point)*1000,0)
+          +routeDetourPenalty(candidate,origin);
+        if(!best || score<best.score) best={candidate,score};
+      }
+      order=best.candidate;
+    }
+    const issues=[];
+    if(requiredPlaceId && !required)
+      issues.push('꼭 가고 싶은 장소의 위치를 확인하지 못해 지도에 연결하지 않았습니다.');
+    if(input.theme && input.theme!=='balanced' && !themed.length)
+      issues.push('선택한 테마에 맞는 등록 장소의 위치를 확인하지 못해 가까운 다른 장소를 표시했습니다.');
+    const transitCache=new Map();
+    async function transit(a,b) {
+      const key=[a.id,a.lat,a.lon,b.id,b.lat,b.lon].join(':');
+      if(!transitCache.has(key)) {
+        let routes=[];
+        if(busProvider) try { routes=await busProvider(a,b) || []; } catch { /* 미확인으로 남긴다. */ }
+        transitCache.set(key,routes.filter(route=>route.steps?.some(step=>step.type==='BUS')));
+      }
+      return transitCache.get(key);
+    }
+    const relevant=pool.filter(p=>['food','cafe','outdoors','culture','experience'].includes(p.category));
+    for(const anchor of anchors.filter((p,i)=>anchors.findIndex(q=>samePoint(p,q))===i)) {
+      const closest=[...relevant].sort((a,b)=>distanceKm(anchor,a)-distanceKm(anchor,b))[0];
+      if(!closest || distanceKm(anchor,closest)<=1.3) continue;
+      const rides=await transit(anchor,closest);
+      const known=rides.map(busRideMinutes).filter(Number.isFinite);
+      if(known.length && Math.min(...known)>=60)
+        issues.push(anchor.name+'에서 가까운 방문지까지 버스 탑승만 60분 이상이라 뚜벅이 여행 권역을 벗어납니다.');
+      else if(!known.length) issues.push(anchor.name+'에서 주변 방문지까지의 버스 탑승시간을 확인하지 못했습니다.');
+    }
+    const points=[origin,...order,destination],legs=[];
+    for(let i=0;i<points.length-1;i++) {
+      const a=points[i],b=points[i+1],direct=distanceKm(a,b);
+      if(direct<.015) {legs.push({meters:0,minutes:0,actual:true,points:[]});continue;}
+      let walk=null;
+      if(direct<=1.3 && routeProvider) try {
+        const actual=await routeProvider(a,b);
+        if(actual?.meters>0 && actual?.minutes>0) walk={...actual,actual:true};
+      } catch { /* 아래에서 추정 이동으로 표시한다. */ }
+      if(walk && walk.meters<=1600 && walk.minutes<=30) {legs.push(walk);continue;}
+      const rides=direct>1.3 || walk?.meters>1600 || walk?.minutes>30 ? await transit(a,b) : [];
+      const bus=rides.sort((x,y)=>x.minutes-y.minutes)[0];
+      if(bus) {
+        legs.push({mode:'bus',actual:true,meters:bus.walkMeters || 0,walkMinutes:bus.walkMinutes || 0,
+          minutes:bus.minutes+10,points:bus.points || [],steps:bus.steps,busRideMinutes:busRideMinutes(bus)});
+      } else legs.push(walk || estimate(a,b));
+    }
+    let now=minutes(input.start),walked=0;
+    const rows=order.map((p,i)=>{
+      const leg=legs[i],duration=stay(p,false);
+      now=round5(now+leg.minutes+3);
+      const result=validate(p,Math.min(now,1435),duration,date);
+      if(result.kind==='bad' || result.kind==='warn') issues.push(p.name+': '+result.title);
+      else if(result.kind==='unknown') issues.push(p.name+': 운영시간 확인이 필요합니다.');
+      if(leg.mode==='bus' && leg.busRideMinutes>=60) issues.push(p.name+' 이동: 버스 탑승만 약 '+Math.round(leg.busRideMinutes)+'분입니다.');
+      if(leg.mode==='bus' && leg.busRideMinutes==null) issues.push(p.name+' 이동: 버스 탑승시간을 확인하지 못했습니다.');
+      if(leg.mode!=='bus' && (leg.meters>1600 || leg.minutes>30)) issues.push(p.name+' 이동: 도보 한 구간 1.6km·30분 기준을 넘습니다.');
+      if(!leg.actual) issues.push(p.name+' 이동: 실제 보행 경로를 확인하지 못했습니다.');
+      walked+=leg.meters;
+      const row={placeId:p.id,minute:now,duration,walkEstimate:leg.minutes,walkMeters:leg.meters,
+        walkPoints:leg.points || [],actual:leg.actual,mode:leg.mode || 'walk',result,kind:'visit',busLeg:leg.mode==='bus'?leg:null};
+      now+=duration;
+      return row;
+    });
+    const endWalk=legs.at(-1),endArrival=now+endWalk.minutes;
+    walked+=endWalk.meters;
+    if(endWalk.mode==='bus' && endWalk.busRideMinutes>=60) issues.push('도착지 이동: 버스 탑승만 약 '+Math.round(endWalk.busRideMinutes)+'분입니다.');
+    if(endWalk.mode==='bus' && endWalk.busRideMinutes==null) issues.push('도착지 이동: 버스 탑승시간을 확인하지 못했습니다.');
+    if(endWalk.mode!=='bus' && (endWalk.meters>1600 || endWalk.minutes>30)) issues.push('도착지 이동: 도보 한 구간 1.6km·30분 기준을 넘습니다.');
+    if(!endWalk.actual) issues.push('도착지 이동: 실제 보행 경로를 확인하지 못했습니다.');
+    if(endArrival>minutes(input.end)) issues.push('예상 도착이 설정한 종료 시각을 넘습니다.');
+    if(walked>8000) issues.push('예상 하루 도보가 8km 기준을 넘습니다.');
+    if(!order.length) issues.push('연결할 주변 등록 장소를 찾지 못했습니다.');
+    return {review:true,title:'검토용 루트',originName:origin.name,destinationName:destination.name,
+      rows,endWalk,walkMeters:walked,start:minutes(input.start),end:minutes(input.end),endArrival,
+      issues:[...new Set(issues)],busRideLimit:60};
+  }
   async function generateAdaptive(input) {
     if (input.mealTimes?.length) return generate(input);
     if(!hasCoord(input.origin)||!hasCoord(input.destination) ||
@@ -469,7 +646,10 @@
         if(!result || checked.some(other=>other.signature===result.signature)) continue;
         checked.push({...result,requestedFocus:requested,fallbackFocus:focus!==requested?focus:null});
       }
-      if(checked.length) return checked;
+      if(checked.length) {
+        checked.sort((a,b)=>routePreference(a,input.origin,input.places,input.theme)-routePreference(b,input.origin,input.places,input.theme));
+        return checked.map((route,index)=>({...route,title:index===0?'가까운 길부터':index===1?'다른 출발 순서':'다른 길로'}));
+      }
     }
     return busFallback(input,cache);
   }
@@ -485,7 +665,7 @@
       else if (distanceKm(prior,place) <= 1.3 && routeProvider) {
         try { const actual=await routeProvider(prior,place); if (actual?.meters > 0 && actual?.minutes > 0) walk={meters:actual.meters,minutes:actual.minutes,actual:true,points:actual.points || []}; } catch { /* 추정 구간으로 표시 */ }
       }
-      if (walk.meters > 1600 || walk.minutes > 30 || walked+walk.meters > 8000) { if (original.placeId === requiredPlaceId) return null; dropped++; continue; }
+      if (!walk.actual || walk.meters > 1600 || walk.minutes > 30 || walked+walk.meters > 8000) { if (original.placeId === requiredPlaceId) return null; dropped++; continue; }
       let minute=round5(now+walk.minutes+3);
       if(route.autoSchedule && ['meal','cafe'].includes(original.kind)) {
         const previous=rows.filter(row=>row.kind===original.kind).at(-1);
@@ -505,7 +685,7 @@
       else if (distanceKm(prior,origin) <= 1.3 && routeProvider) {
         try { const actual=await routeProvider(prior,origin); if (actual?.meters > 0 && actual?.minutes > 0) finalLeg={meters:actual.meters,minutes:actual.minutes,actual:true,points:actual.points || []}; } catch { /* 추정 구간으로 표시 */ }
       }
-      if (finalLeg.meters <= 1600 && finalLeg.minutes <= 30 && walked+finalLeg.meters <= 8000 && now+finalLeg.minutes <= route.end) break;
+      if (finalLeg.actual && finalLeg.meters <= 1600 && finalLeg.minutes <= 30 && walked+finalLeg.meters <= 8000 && now+finalLeg.minutes <= route.end) break;
       const last=rows.pop(); if (last.placeId === requiredPlaceId) return null;
       walked-=last.walkMeters; dropped++; prior=rows.length ? places.find((item) => item.id === rows.at(-1).placeId) : origin;
       now=rows.length ? rows.at(-1).minute+rows.at(-1).duration : route.start;
@@ -687,7 +867,8 @@
         if(found) break;
       }
     }
-    candidates.sort((a,b)=>themedCount(b.route)-themedCount(a.route) || b.route.rows.length-a.route.rows.length || a.route.walkMeters-b.route.walkMeters);
+    candidates.sort((a,b)=>routePreference(a.route,a.context.origin,a.context.places,a.context.theme)
+      -routePreference(b.route,b.context.origin,b.context.places,b.context.theme));
     async function finish(route,context) {
       let checked=await confirmOrRepairRoute(route,context,cache);
       if(!checked || !themedCount(checked)) return null;
@@ -706,10 +887,16 @@
       return {...checked,id:'theme-day',title:(THEMES.find(t=>t.id===input.theme)?.name || '테마')+' 하루 코스',
         start:departure,end:round5(checked.endArrival),autoSchedule:true,plannedMeals:checked.rows.filter(row=>row.kind==='meal').map(row=>row.minute)};
     }
+    let best=null, evaluated=0;
     for(const {route,context} of candidates) {
       const result=await finish(route,context);
-      if(result) return [result];
+      if(!result) continue;
+      evaluated++;
+      if(!best || routePreference(result,context.origin,context.places,context.theme)<best.score)
+        best={result,score:routePreference(result,context.origin,context.places,context.theme)};
+      if(evaluated>=4) break;
     }
+    if(best) return [best.result];
     // 모든 도보 후보가 불가능한 경우에만 실제 버스 연결을 조회한다.
     const context={...input,...plans[0],maxStops:8,variants:1};
     for(const route of await busFallback(context,cache)) {
@@ -718,7 +905,7 @@
     }
     return [];
   }
-  const api={THEMES,THEME_PRESETS,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive,reverseRoundTrip,generateThemeDay,mealChoices,recommendMealTimes,restoreFixedMeals,addMeal};
+  const api={THEMES,THEME_PRESETS,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive,generateReviewRoute,verifyEditedRoute,reverseRoundTrip,generateThemeDay,mealChoices,recommendMealTimes,restoreFixedMeals,addMeal};
   if (typeof module !== 'undefined' && module.exports) module.exports=api;
   if (typeof window !== 'undefined') window.HangeoreumRouteEngine=api;
 })();
