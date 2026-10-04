@@ -268,6 +268,8 @@ small, .small { font-size: var(--type-caption); line-height: 1.65; color: var(--
 .city-turtle-note { position: absolute; top: -5px; right: 0; width: 98px; padding: 14px 6px; border: 1px solid #d5c698; border-radius: 48% 52% 45% 50%; background: #fffdf7; text-align: center; font: 400 17px/1.3 var(--font-accent); transform: rotate(3deg); }
 .city-turtle-note:after { content: ''; position: absolute; bottom: -6px; left: 18px; width: 12px; height: 12px; border-left: 1px solid #d5c698; background: var(--paper); transform: skewY(-35deg); }
 .theme-art { background-image: url('./assets/diary/route-doodles.svg'); background-size: 600% 100%; background-repeat: no-repeat; }
+.theme-discovery--custom { grid-column: 1 / -1; }
+.theme-art.theme-custom { background: #f2f4e8 url('./assets/diary/custom-route.svg') center/contain no-repeat; }
 .theme-art:before, .theme-art .ui-icon { visibility: hidden; }
 .theme-first { background-position: 0% 0; }.theme-history { background-position: 20% 0; }.theme-sea { background-position: 40% 0; }.theme-shops { background-position: 60% 0; }.theme-food { background-position: 80% 0; }.theme-cafe { background-position: 100% 0; }
 .place-page-body:before { content: ''; display: block; position: absolute; top: 10px; right: 15px; width: 39px; height: 44px; background: url('./assets/diary/flowers.svg') center/contain no-repeat; pointer-events: none; opacity: .8; }
