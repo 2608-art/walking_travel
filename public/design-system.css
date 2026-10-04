@@ -73,7 +73,8 @@ small, .small { font-size: var(--type-caption); line-height: 1.65; color: var(--
 .diary-section-head .eyebrow { font-size: var(--type-caption); margin-bottom: 6px; }
 .diary-section-head .small { font-size: var(--type-caption); }
 .site-header, .destination-home .site-header { background: #fffbf1f5; border-color: transparent; }
-.brand { font-size: 18px; font-weight: 700; letter-spacing: -.025em; }
+.brand { font-size: 18px; font-weight: 700; letter-spacing: -.025em; flex-shrink: 0; }
+.brand-logo { display: block; width: 150px; height: 50px; object-fit: contain; }
 .brand-mark, .destination-home .brand-mark { background: var(--green); border-radius: 11px; transform: none; }
 .connection, .destination-home .connection { background: var(--green-soft); border-color: var(--line); color: var(--mint-dark); font-size: 12px; }
 .btn { min-height: 48px; padding: 11px 18px; border-radius: var(--radius-control); font-size: 14px; font-weight: 600; line-height: 1.5; box-shadow: none; }
