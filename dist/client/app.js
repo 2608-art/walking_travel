@@ -723,6 +723,7 @@
     if (chosen) {
       root.querySelector('.route-tabs').insertAdjacentHTML('afterend','<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="추천 코스 이동 순서 지도"></div><p class="small">숫자는 방문 순서, 화살표는 이동 방향입니다. 초록 선은 도보, 파란 선은 버스 연결입니다. 점선은 경로 미확인 구간의 방향입니다.</p></div>');
       initResultMap(chosen);
+      if(chosen.actualTimeAdjusted) root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<p class="notice">실제 도보 시간과 운영시간에 맞춰 방문 순서를 조정했어요.' + (chosen.adjustedDroppedNames?.length ? ' 시간에 맞지 않는 선택 장소(' + esc(chosen.adjustedDroppedNames.join(', ')) + ')는 제외했어요.' : ' 출발·도착과 필수 조건은 유지했어요.') + '</p>');
       if(chosen.transport==='walk-bus') root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<p class="notice">도보만으로 연결하기 어려워 버스를 포함했습니다. 버스 구간은 정류장까지 걷는 시간과 대기 여유 10분을 포함합니다. 실제 배차·막차는 출발 전에 확인하세요.</p>');
       if(chosen.autoSchedule && !chosen.plannedMeals.length) root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<p class="notice">동선과 운영시간에 맞는 식사를 자동으로 넣지 못했습니다. 식사는 시간계획표에서 추가해 주세요.</p>');
       if (chosen.reverseDropped) root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<div class="notice warn" style="margin-bottom:14px">반대 방향에서는 운영시간·도보 조건에 맞추기 위해 방문지 ' + chosen.reverseDropped + '곳을 제외했습니다.</div>');
