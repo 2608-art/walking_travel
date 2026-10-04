@@ -239,33 +239,6 @@
     const container = $('#map');
     const pinned = list.filter(hasPin);
     if (!navigator.onLine) { container.innerHTML = '<div class="empty-state" style="margin:20px">지도는 인터넷에 연결하면 볼 수 있습니다.</div>'; return; }
-    if (KAKAO_KEY) {
-      try {
-        await loadKakao();
-        if (container !== $('#map')) return;
-        const map = new kakao.maps.Map(container, { center: kakaoPoint(...state.mapCenter), level: kakaoLevel(state.mapZoom) });
-        state.map = map; state.mapProvider = 'kakao';
-        map.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
-        const colors = CATEGORY_COLORS;
-        pinned.forEach((p) => {
-          const point = pinPoint(p);
-          const dot = document.createElement('div');
-          dot.className = 'kakao-place-pin'; dot.style.backgroundColor = colors[p.category] || '#123348';
-          dot.title = p.name; dot.setAttribute('aria-label', p.name);
-          const marker = new kakao.maps.CustomOverlay({ position: kakaoPoint(...point), content: dot, yAnchor: .5 });
-          marker.setMap(map); dot.onclick = () => selectPlace(p.id);
-        });
-        geocodeAddressPlaces(list, map, colors, container);
-        if (state.categories.size && pinned.length) {
-          const bounds = new kakao.maps.LatLngBounds();
-          pinned.forEach((p) => bounds.extend(kakaoPoint(...pinPoint(p))));
-          map.setBounds(bounds);
-        }
-        kakao.maps.event.addListener(map, 'idle', () => { if (container !== $('#map')) return; state.mapCenter = [map.getCenter().getLat(), map.getCenter().getLng()]; state.mapZoom = kakaoZoom(map.getLevel()); });
-        setTimeout(() => map.relayout(), 50);
-        return;
-      } catch { toast('카카오맵 연결에 실패해 기존 지도를 표시합니다. 키와 등록 도메인을 확인해 주세요.'); }
-    }
     if (!window.L || container !== $('#map')) return;
     const map = L.map('map', { zoomControl: false }).setView(state.mapCenter, state.mapZoom);
     state.map = map; state.mapProvider = 'leaflet';
@@ -276,6 +249,9 @@
       const marker = L.circleMarker(pinPoint(p), { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
       marker.bindTooltip(esc(p.name)); marker.on('click', () => selectPlace(p.id));
     });
+    if (KAKAO_KEY && list.some((p) => !hasPin(p) && p.addressQuery)) loadKakao().then(() => {
+      if (container === $('#map')) geocodeAddressPlaces(list, map, colors, container);
+    }).catch(() => {});
     if (state.categories.size && pinned.length) map.fitBounds(pinned.map(pinPoint), { padding: [25, 25], maxZoom: 14 });
     map.on('moveend', () => { state.mapCenter = [map.getCenter().lat, map.getCenter().lng]; state.mapZoom = map.getZoom(); });
     setTimeout(() => map.invalidateSize(), 50);
@@ -298,11 +274,8 @@
       const lat = Number(hit.y), lon = Number(hit.x);
       if (!Number.isFinite(lat) || !Number.isFinite(lon) || lat < 34.7 || lat > 34.9 || lon < 126.3 || lon > 126.6) continue;
       p.lat = lat; p.lon = lon; p.pinBasis = 'address';
-      const dot = document.createElement('div');
-      dot.className = 'kakao-place-pin'; dot.style.backgroundColor = colors[p.category] || '#123348';
-      dot.title = p.name + ' · 건물 주소 위치'; dot.setAttribute('aria-label', dot.title);
-      new kakao.maps.CustomOverlay({ position: kakaoPoint(lat, lon), content: dot, yAnchor: .5, map });
-      dot.onclick = () => selectPlace(p.id);
+      const marker = L.circleMarker([lat, lon], { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
+      marker.bindTooltip(esc(p.name + ' · 건물 주소 위치')); marker.on('click', () => selectPlace(p.id));
       if ($('#pin-count')) $('#pin-count').textContent = '지도 핀 ' + list.filter(hasPin).length + '곳';
     }
   }
@@ -323,7 +296,7 @@
         const hit = await find(places.keywordSearch.bind(places)) || await find(geocoder.addressSearch.bind(geocoder));
         if (!hit) { toast('검색 결과를 찾지 못했습니다.'); return; }
         const lat = Number(hit.y), lon = Number(hit.x);
-        state.map?.setLevel(kakaoLevel(15)); state.map?.panTo(kakaoPoint(lat, lon));
+        state.map?.flyTo([lat, lon], 15);
         toast('검색한 위치로 지도를 옮겼습니다.'); return;
       }
       const u = 'https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=' + encodeURIComponent(q);
@@ -784,7 +757,7 @@
     if (!window.L || !$('#route-result-map')) return;
     const stops=[route.originPoint,...route.rows.map((row) => getPlace(row.placeId)),route.destinationPoint];
     if (stops.some((place) => !coord(place))) return;
-    const map=L.map('route-result-map',{scrollWheelZoom:false}); state.resultMap=map;
+    const map=L.map('route-result-map',{scrollWheelZoom:true}); state.resultMap=map;
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
     const bounds=L.latLngBounds([]);
     const roundTrip=routeEngine.distanceKm(route.originPoint,route.destinationPoint) < .015;
