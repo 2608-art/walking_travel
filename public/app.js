@@ -33,6 +33,28 @@
   const kakaoPoint = (lat, lon) => new kakao.maps.LatLng(lat, lon);
   const $ = (selector) => document.querySelector(selector);
   const esc = (v) => String(v == null ? '' : v).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const ICON_PATHS = {
+    home:'M3 10 12 3l9 7M5 9v11h5v-6h4v6h5V9',
+    map:'m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2ZM9 3v16M15 5v16',
+    plan:'M7 3v4M17 3v4M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1ZM8 13h2M14 13h2M8 17h2',
+    saved:'M6 3h12v18l-6-4-6 4Z',
+    search:'M20 20l-5-5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0',
+    arrow:'M5 12h14M13 6l6 6-6 6', back:'m15 5-7 7 7 7',
+    location:'M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0ZM14 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0',
+    target:'M12 2v4M12 18v4M2 12h4M18 12h4M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0',
+    outdoors:'m3 18 6-11 4 7 3-5 5 9ZM15 4h.01M7 18v3M17 18v3',
+    sea:'M3 16q3-4 6 0t6 0 6 0M3 20q3-4 6 0t6 0 6 0M7 4v9l10-2ZM7 4l10 7',
+    culture:'m3 8 9-5 9 5ZM5 10v8M10 10v8M14 10v8M19 10v8M3 21h18M3 18h18',
+    cafe:'M4 8h12v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5ZM16 9h2a3 3 0 1 1 0 6h-2M7 3v2M11 2v3M3 22h16',
+    food:'M5 3v6c0 3 4 3 4 0V3M7 3v18M17 3c-3 3-3 8 0 8h2M19 3v18',
+    books:'M3 4c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2ZM12 6v15',
+    market:'M4 8h16l1 13H3ZM8 8V6a4 4 0 0 1 8 0v2',
+    experience:'M3 7h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4ZM15 7v2M15 12v2M15 17v2',
+    first:'M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5-3-2 5-4 1 2-5Z',
+    clock:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0M12 7v5l3 2',
+    external:'M14 3h7v7M21 3l-11 11M10 5H4v15h15v-6'
+  };
+  function uiIcon(name, extraClass='') { return '<svg class="ui-icon '+extraClass+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+(ICON_PATHS[name]||ICON_PATHS.location)+'"/></svg>'; }
   const TURTLE_BASE = './assets/mascot/turtle-base-ui.png';
   const TURTLE_POSES = Object.fromEntries(['map','walk','bus','discover','think','memo','rest'].map((pose) => [pose, './assets/mascot/turtle-' + pose + '.png']));
   function turtlePose(pose, label, extraClass = '') {
@@ -82,7 +104,7 @@
   let toastTimer;
   function toast(message) { const el = $('#toast'); if (!el) return; el.textContent = message; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 3600); }
   const state = {
-    places: [], view: 'home', region: 'mokpo', categories: new Set(), selected: null,
+    places: [], view: 'home', region: 'mokpo', categories: new Set(), selected: null, mapDisplay:'map', homeMood:'all',
     mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null,
     draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end: '24:00', origin: null, theme:'balanced', mealTimes:[], entries: {}, pending:[] },
     saved: load(STORAGE_SAVED, []),
@@ -92,12 +114,15 @@
   const geocodeCache = load(STORAGE_GEOCODES, {});
   function persistDraft() { save(STORAGE_DRAFT, state.draft); }
   function statusConnection() { const el = $('#connection'); if (!el) return; el.textContent = navigator.onLine ? '온라인' : '오프라인 · 저장한 글만'; el.classList.toggle('offline', !navigator.onLine); }
-  function nav(view) { if (state.view === 'routes' && view !== 'routes') { state.resultMap?.remove(); state.resultMap=null; } state.view = view; render(); window.scrollTo(0, 0); }
+  function nav(view) { if (state.view === 'region' && view !== 'region') { if(state.mapProvider === 'leaflet') state.map?.remove(); state.map=null; } if (state.view === 'routes' && view !== 'routes') { state.resultMap?.remove(); state.resultMap=null; } state.view = view; render(); window.scrollTo(0, 0); }
   function render() {
     statusConnection();
     document.body.classList.toggle('destination-home', state.view === 'home');
-    document.querySelectorAll('[data-nav]').forEach((b) => { const active = b.dataset.nav === state.view || (b.dataset.nav === 'home' && state.view === 'region'); b.classList.toggle('active', active); b.setAttribute('aria-current', active ? 'page' : 'false'); });
+    document.body.dataset.view = state.view;
+    document.querySelectorAll('[data-nav]').forEach((b) => { const active = b.dataset.nav === state.view || (b.dataset.nav === 'home' && state.view === 'destination') || (b.dataset.nav === 'region' && ['routes','place','routeMap'].includes(state.view)); b.classList.toggle('active', active); b.setAttribute('aria-current', active ? 'page' : 'false'); });
     if (state.view === 'home') renderHome();
+    else if (state.view === 'destination') renderDestination();
+    else if (state.view === 'place') renderPlacePage();
     else if (state.view === 'region') renderRegionMap();
     else if (state.view === 'plan') renderPlan();
     else if (state.view === 'routes') renderRoutes();
@@ -128,21 +153,65 @@
       '<div class="schedule-facts">' + rows.map(([label, value]) => '<p><strong>' + esc(label) + '</strong><br>' + esc(value) + '</p>').join('') + '</div>' +
       (p.scheduleSource ? '<a class="small" href="' + esc(p.scheduleSource) + '" target="_blank" rel="noopener noreferrer">운영정보 출처</a>' : '');
   }
-  function detailHtml(p) {
-    return '<div class="detail-card card"><div class="detail-header"><div><span class="pill">' + esc(categoryIcon(p.category) + ' ' + categoryName(p.category)) + '</span><h2 style="margin-top:9px">' + esc(p.name) + '</h2></div><button class="btn btn-sm btn-outline" id="close-detail" aria-label="장소 정보 닫기">닫기</button></div>' +
-      '<p>' + esc(p.locationText || '위치 설명 없음') + '</p>' + (p.mapPinBasis ? '<p class="small">지도 표시점: ' + esc(p.mapPinBasis) + ' (방문·도보 경로 시작점은 별도 확인)</p>' : '') + (p.rating != null ? '<p class="small">카카오맵 평점 ' + esc(p.rating.toFixed(1)) + ' / 5 · 별점 평가 ' + esc(p.ratingCount) + '건 (2026-10-01 조사)</p>' : '') +
-      '<div class="notice ' + (p.hours ? '' : 'warn') + '">' + esc(placeTimeText(p)) + (p.hours?.note ? '<br>' + esc(p.hours.note) : '') + '</div>' + scheduleHtml(p) +
-      '<div class="detail-actions"><button class="btn btn-primary btn-sm" id="add-place-plan">계획표에 넣기</button>' + (p.source ? '<a class="btn btn-outline btn-sm" href="' + esc(p.source) + '" target="_blank" rel="noopener noreferrer">장소·위치 보기</a>' : '') + '</div><p class="small" style="margin:12px 0 0">기본 조사 2026-10-01' + (p.mapWeekChecked ? ' · 카카오맵 주간표 재확인 ' + esc(p.mapWeekChecked) : '') + (p.diningWeekChecked ? ' · 다이닝코드 주간표 재확인 ' + esc(p.diningWeekChecked) : '') + (p.mapPinBasis ? ' · 지도 핀은 구역·시설의 대표점이며 실제 출입구와 다를 수 있습니다.' : ' · 주소 좌표는 건물 대표 위치이며 출입문과 다를 수 있습니다.') + ' 당일 변경을 확인하세요.</p></div>';
+  function placeVisual(p, compact = false) {
+    const media = window.HANGEORUM_PLACE_MEDIA?.[p.id];
+    const safe = media?.src && /^(\.\/assets\/|https:\/\/)/.test(media.src);
+    return '<div class="place-visual visual-' + esc(p.category) + ' ' + (compact ? 'is-thumb' : 'is-cover') + '" data-kind="' + (safe ? (media.kind === 'photo' ? 'photo' : 'illustration') : 'decoration') + '">' +
+      '<span class="place-visual-symbol" aria-hidden="true">' + uiIcon(p.category) + '</span>' +
+      (safe ? '<img src="' + esc(media.src) + '" alt="' + esc(media.alt || p.name) + '" loading="lazy">' : '') +
+      (!compact ? '<span class="media-caption">' + (safe ? (media.kind === 'photo' ? '사진' : '일러스트') + (media.credit ? ' · ' + esc(media.credit) : '') : esc(categoryName(p.category)) + ' · 유형 이미지') + '</span>' : '') + '</div>';
   }
+  const HOME_MOODS=[['all','전체'],['sea','바다'],['history','역사·골목'],['shops','책방·소품'],['cafe','여유']];
+  const THEME_ICONS={first:'first',history:'culture',sea:'sea',shops:'books',food:'food',cafe:'cafe'};
   function renderHome() {
-    const available = REGIONS.filter((x) => x.ready);
-    $('#main').innerHTML = '<section class="page destination-page"><div class="destination-head"><div><div class="eyebrow">한걸음 여행지</div><h1>여행지</h1></div><img class="destination-mascot" src="' + TURTLE_BASE + '" alt="가방을 메고 여행을 떠나는 거북이"></div><div class="destination-grid ' + (available.length === 1 ? 'is-single' : '') + '">' + available.map((x) => '<button type="button" class="destination-tile" data-region="' + esc(x.id) + '" aria-label="' + esc(x.name) + ' 여행지 소개 보기"><img src="' + esc(x.image) + '" alt="" loading="eager"><span class="destination-shade"></span><span class="destination-copy"><small>' + esc(x.teaser) + '</small><strong>' + esc(x.name) + '</strong></span><span class="destination-arrow" aria-hidden="true">↗</span></button>').join('') + '</div></section>';
-    document.querySelectorAll('[data-region]').forEach((b) => b.onclick = () => { const region = REGIONS.find((x) => x.id === b.dataset.region); if (region) showRegionIntro(region); });
+    const available=REGIONS.filter(x=>x.ready);
+    $('#main').innerHTML=`<section class="page destination-page">
+      <div class="diary-hero"><div class="hero-copy"><div class="eyebrow">나의 작은 여행 다이어리</div><h1>오늘,<br>어디로 떠날까요?</h1><p>뚜벅이 여행에 딱 맞는<br>나만의 하루를 찾아보세요.</p></div>${turtlePose('map','지도를 보며 여행을 준비하는 거북이','hero-turtle')}<span class="hero-note" aria-hidden="true">한걸음, 가볍게 떠나요</span></div>
+      <form class="destination-search" id="destination-search">${uiIcon('search')}<input id="destination-query" aria-label="여행지 또는 장소 검색" placeholder="여행지, 장소를 검색해 보세요" autocomplete="off"><button type="submit" aria-label="검색">${uiIcon('arrow')}</button></form>
+      <div class="home-moods" aria-label="여행 취향">${HOME_MOODS.map(([id,label])=>`<button type="button" data-home-mood="${id}" class="${state.homeMood===id?'active':''}" aria-pressed="${state.homeMood===id}">${label}</button>`).join('')}</div>
+      <div class="diary-section-head"><div><span class="eyebrow">한걸음의 여행지</span><h2>마음이 머무는 곳</h2></div><span class="small">지금은 목포부터</span></div>
+      <div class="home-discover-layout"><div class="destination-grid ${available.length===1?'is-single':''}">${available.map(x=>`<button type="button" class="destination-tile" data-region="${esc(x.id)}" aria-label="${esc(x.name)} 여행지 소개 보기"><div class="destination-picture"><img src="${esc(x.image)}" alt="${esc(x.name)} 풍경 일러스트" loading="eager"><span class="picture-label">전라남도</span><span class="picture-stamp" aria-hidden="true">${uiIcon(state.homeMood==='all'?'sea':THEME_ICONS[state.homeMood])}</span></div><span class="destination-copy"><strong>${esc(x.name)}</strong><small>${esc(x.teaser)}</small><span class="destination-meta">${uiIcon('map')} 6가지 테마로 만나는 목포 <span aria-hidden="true">${uiIcon('arrow')}</span></span></span></button>`).join('')}</div>
+      <aside class="home-journal"><span class="journal-label">오늘의 여행 메모</span><h2>조금 느리게,<br>더 가까이.</h2><p>끌리는 골목에 잠시 머물고,<br>바다가 보이면 쉬어 가도 좋아요.</p>${turtlePose('walk','천천히 걷는 거북이')}<span class="journal-dash" aria-hidden="true"></span><button class="text-button" id="home-plan">나의 하루 적어보기 ${uiIcon('arrow')}</button></aside></div>
+      <p class="home-footnote">한 도시씩, 차곡차곡. 걷기 좋은 여행지를 함께 채워갈게요.</p></section>`;
+    document.querySelectorAll('[data-region]').forEach(b=>b.onclick=()=>{const region=REGIONS.find(x=>x.id===b.dataset.region);if(region)showRegionIntro(region);});
+    document.querySelectorAll('[data-home-mood]').forEach(b=>b.onclick=()=>{state.homeMood=b.dataset.homeMood;renderHome();});
+    $('#home-plan').onclick=()=>nav('plan');
+    $('#destination-search').onsubmit=e=>{e.preventDefault();const q=$('#destination-query').value.trim();if(!q)return;const region=available.find(x=>x.name.includes(q)||x.teaser.includes(q));if(region){showRegionIntro(region);return;}const p=state.places.find(x=>x.name.includes(q));if(p){state.selected=p.id;state.placeTab='intro';state.placeBack='home';nav('place');}else toast('아직 등록된 여행지나 장소가 없어요. 지금은 목포를 둘러볼 수 있어요.');};
   }
-  function showRegionIntro(region) {
-    openModal('<div class="destination-dialog-image"><img src="' + esc(region.image) + '" alt="유달산, 해상케이블카와 항구를 그린 ' + esc(region.name) + ' 일러스트"></div><div class="eyebrow" style="margin-top:18px">여행지 소개</div><h2>' + esc(region.name) + '</h2><p>' + esc(region.description) + '</p><div class="modal-actions"><button class="btn btn-outline" data-close>닫기</button><button class="btn btn-primary" id="choose-region">선택</button></div>', () => {
-      $('#choose-region').onclick = () => { state.region = region.id; state.mapCenter = region.center; state.mapZoom = 13; state.selected = null; state.categories.clear(); closeModal(); nav('region'); };
-    });
+  function showRegionIntro(region) { state.region=region.id; state.destinationTab='routes'; nav('destination'); }
+  function destinationPlaceCard(p) { return '<button class="discovery-card" data-open-place="' + esc(p.id) + '">' + placeVisual(p) + '<strong>' + esc(p.name) + '</strong><small>' + esc(categoryName(p.category)) + '</small></button>'; }
+  function renderDestination() {
+    const region=REGIONS.find(x=>x.id===state.region)||REGIONS[0];
+    const tab=state.destinationTab||'routes';
+    const themes=routeEngine.THEMES.filter(x=>x.id!=='balanced').sort((a,b)=>(b.id===state.homeMood?1:0)-(a.id===state.homeMood?1:0));
+    const featured=['p1','p8','p10','p12'].map(getPlace).filter(Boolean);
+    $('#main').innerHTML=`<section class="destination-overview">
+      <div class="city-cover"><img src="${esc(region.image)}" alt="목포 풍경 일러스트"><button class="round-control city-back" id="city-back" aria-label="여행지 선택으로">‹</button><span class="cover-label">목포 풍경 일러스트</span></div>
+      <div class="city-body"><div class="city-intro"><div><span class="eyebrow">천천히 만나는 항구 도시</span><h1>${esc(region.name)}</h1><p>${esc(region.teaser)}<br>골목을 지나, 바다 곁으로.</p><span class="pill">⌖ 전라남도 목포시</span></div>${turtlePose('discover','새 여행지를 발견한 거북이')}</div>
+      <div class="city-tabs" role="tablist" aria-label="목포 여행 정보"><button role="tab" aria-selected="${tab==='routes'}" data-city-tab="routes">추천 루트</button><button role="tab" aria-selected="${tab==='places'}" data-city-tab="places">여행지</button><button role="tab" aria-selected="${tab==='info'}" data-city-tab="info">여행 정보</button></div>
+      <div class="city-content">${tab==='routes'?`<div class="diary-section-head"><h2>어떤 하루를 걸어볼까요?</h2></div><div class="theme-discovery-list">${themes.map(t=>`<button class="theme-discovery" data-discover-theme="${t.id}"><span class="theme-art theme-${t.id}" aria-hidden="true">${uiIcon(THEME_ICONS[t.id])}</span><span><strong>${esc(t.name)}</strong><small>${esc(routeEngine.THEME_PRESETS[t.id].description)}</small><em>날짜에 맞춰 하루 코스 만들기</em></span><b aria-hidden="true">›</b></button>`).join('')}</div><div class="diary-section-head"><h2>목포에서 만나는 풍경</h2><button class="text-button" data-city-tab="places">모두 보기 ›</button></div><div class="discovery-grid">${featured.map(destinationPlaceCard).join('')}</div>`:tab==='places'?`<div class="diary-section-head"><h2>한곳씩, 마음에 담기</h2><span class="small">${state.places.length}곳</span></div><div class="discovery-grid">${state.places.map(destinationPlaceCard).join('')}</div>`:`<div class="travel-note">${turtlePose('walk','산책하는 거북이')}<div><h2>내 속도로 걷는 목포</h2><p>${esc(region.description)}</p><p>지도에서 장소를 살펴보거나, 날짜와 테마를 골라 하루 코스를 만들어 보세요.</p></div></div><div class="info-pair"><div><strong>걸어서, 필요할 땐 버스로</strong><p>걷기 좋은 동선을 먼저 찾고, 도보 연결이 어려우면 확인 가능한 버스 경로를 살펴봐요.</p></div><div><strong>출발 전 한 번 더 확인</strong><p>장소의 운영시간과 실제 출입구, 버스 배차는 여행 당일 확인해 주세요.</p></div></div>`}</div>
+      <div class="city-cta"><button class="btn btn-primary" id="choose-region">⌖ 목포 지도 둘러보기</button><button class="btn btn-outline" id="city-plan">나의 하루 계획</button></div></div></section>`;
+    $('#city-back').onclick=()=>nav('home');
+    $('#choose-region').onclick=()=>{state.mapCenter=region.center;state.mapZoom=13;state.selected=null;state.categories.clear();state.mapDisplay='map';nav('region');};
+    $('#city-plan').onclick=()=>nav('plan');
+    document.querySelectorAll('[data-city-tab]').forEach(b=>b.onclick=()=>{state.destinationTab=b.dataset.cityTab;renderDestination();});
+    document.querySelectorAll('[data-discover-theme]').forEach(b=>b.onclick=()=>{state.route.mode='theme';state.route.theme=b.dataset.discoverTheme;state.route.results=[];state.route.selected=-1;nav('routes');});
+    document.querySelectorAll('[data-open-place]').forEach(b=>b.onclick=()=>{state.placeBack='destination';state.placeTab='intro';state.selected=b.dataset.openPlace;nav('place');});
+  }
+  function renderPlacePage() {
+    const p=getPlace(state.selected);if(!p){nav('region');return;}
+    const related=state.places.filter(x=>x.id!==p.id&&x.category===p.category).slice(0,4);
+    const tab=state.placeTab||'intro';
+    $('#main').innerHTML=`<section class="place-page"><div class="place-cover">${placeVisual(p)}<button class="round-control" id="place-back" aria-label="이전 화면">‹</button></div><div class="place-page-body"><span class="eyebrow">${esc(categoryName(p.category))}</span><h1>${esc(p.name)}</h1><p class="place-address">⌖ ${esc(p.locationText||'위치 확인 필요')}</p>${p.rating!=null?`<p class="place-rating">카카오맵 ${esc(p.rating.toFixed(1))} / 5 · 평가 ${esc(p.ratingCount)}건 · 2026-10-01 조사</p>`:''}<div class="place-quick-actions"><button id="place-see-map">${uiIcon('location')}지도 위치</button><button id="place-plan">${uiIcon('plan')}계획표 열기</button>${p.source?`<a href="${esc(p.source)}" target="_blank" rel="noopener noreferrer">${uiIcon('external')}장소 정보</a>`:''}</div>
+      <div class="city-tabs" role="tablist" aria-label="장소 상세 정보"><button role="tab" aria-selected="${tab==='intro'}" data-place-tab="intro">방문 안내</button><button role="tab" aria-selected="${tab==='hours'}" data-place-tab="hours">운영시간</button><button role="tab" aria-selected="${tab==='related'}" data-place-tab="related">함께 둘러보기</button></div>
+      <div class="place-tab-content">${tab==='intro'?`<div class="travel-note">${turtlePose('rest','잠시 쉬는 거북이')}<div><h2>여기서 잠깐!</h2><p>${esc(p.hours?placeTimeText(p):'방문 가능한 시간은 아직 확인 중이에요. 운영시간 탭에서 조사 내용을 확인해 주세요.')}</p>${p.hours?.note?`<p>${esc(p.hours.note)}</p>`:''}</div></div>${p.mapPinBasis?`<p class="small">지도 표시점: ${esc(p.mapPinBasis)}. 실제 출입구와 보행 시작점은 따로 확인해 주세요.</p>`:''}<h2>같은 취향의 장소</h2><div class="discovery-grid">${related.map(destinationPlaceCard).join('')}</div>`:tab==='hours'?`<h2>방문 전 확인해 주세요</h2>${scheduleHtml(p)}<p class="small">기본 조사 2026-10-01${p.mapWeekChecked?' · 주간표 확인 '+esc(p.mapWeekChecked):''}. 당일 변경은 장소 안내에서 확인해 주세요.</p>`:`<h2>같은 취향의 장소</h2><p class="small">같은 유형으로 묶은 장소예요. 이동 거리는 지도에서 확인해 주세요.</p><div class="discovery-grid">${related.map(destinationPlaceCard).join('')}</div>`}</div>
+      <button class="btn btn-primary place-main-cta" id="place-map-cta">⌖ 지도로 보기</button></div></section>`;
+    $('#place-back').onclick=()=>{state.placeTab='intro';nav(state.placeBack||'region');};
+    const seeMap=()=>{state.mapDisplay='map';const point=pinPoint(p);if(point){state.mapCenter=point;state.mapZoom=15;}state.categories.clear();state.selected=null;nav('region');};
+    $('#place-see-map').onclick=seeMap;$('#place-map-cta').onclick=seeMap;
+    $('#place-plan').onclick=()=>{nav('plan');toast('시간 칸을 눌러 '+p.name+'을 넣어주세요.');};
+    document.querySelectorAll('[data-place-tab]').forEach(b=>b.onclick=()=>{state.placeTab=b.dataset.placeTab;renderPlacePage();});
+    document.querySelectorAll('[data-open-place]').forEach(b=>b.onclick=()=>{state.selected=b.dataset.openPlace;state.placeTab='intro';renderPlacePage();window.scrollTo(0,0);});
   }
   function renderRegionMap() {
     const region = REGIONS.find((x) => x.id === state.region) || REGIONS[0];
@@ -151,21 +220,19 @@
     const resultLabel = chosen.length === 0 ? '전체' : chosen.length <= 2 ? chosen.join('·') : '선택한 분류 ' + chosen.length + '개';
     if (state.mapProvider === 'leaflet') state.map?.remove();
     state.map = null; state.mapProvider = null;
-    $('#main').innerHTML = '<section class="page"><button class="back" id="region-back">← 여행지 선택</button><div class="page-head"><div><div class="eyebrow">선택한 여행지</div><h1>' + esc(region.name) + ' 지도</h1><p>장소를 살펴보고 계획을 시작해 보세요.</p></div></div><div class="home-layout"><div class="left-panel">' +
-      '<div class="card home-search"><label class="field-label" for="map-search">장소 또는 주소 검색</label><form id="map-search-form" class="search-row"><input id="map-search" class="text-field" autocomplete="off" placeholder="목포역, 평화광장, 주소"><button class="btn btn-primary" type="submit">검색</button></form><p class="small" style="margin:8px 0 0">앱 장소를 먼저 찾고, 없으면 지도 검색으로 이동합니다.</p></div>' +
-      '<div class="action-grid home-actions"><button type="button" class="action-tile" id="go-plan" ' + (region.ready ? '' : 'disabled') + '><span class="action-symbol">▤</span><strong>계획</strong><small>한 칸씩 직접 짜기</small></button><button type="button" class="action-tile" id="go-routes" ' + (region.ready ? '' : 'disabled') + '><span class="action-symbol">↗</span><strong>추천 루트</strong><small>여러 동선 비교하기</small></button></div>' +
-      '</div><div class="map-column"><div class="map-frame"><div id="map"></div><div class="map-tools"><button class="btn btn-sm btn-outline" type="button" id="recenter">' + esc(region.name) + '로 돌아가기</button></div><div class="map-caption">' + (region.ready ? '지도 핀은 대표 위치입니다. 출입구·보행 경로는 별도 확인이 필요할 수 있어요.' : '아직 검증된 장소 핀이 없습니다.') + '</div></div>' +
-      '<div class="filter-strip" aria-label="장소 유형 여러 개 선택 가능">' + CATEGORIES.map(([id, label, icon]) => { const active = id === 'all' ? !state.categories.size : state.categories.has(id); return '<button type="button" class="filter-chip ' + (active ? 'active' : '') + '" data-category="' + id + '" aria-pressed="' + active + '"><span aria-hidden="true">' + icon + '</span> ' + label + '</button>'; }).join('') + '</div><p class="small filter-hint">여러 분류를 함께 선택할 수 있어요.</p>' +
-      '<div class="results-title"><span>' + esc(resultLabel) + ' · ' + list.length + '곳</span><span id="pin-count">지도 핀 ' + list.filter(hasPin).length + '곳</span></div><div class="place-list">' + list.map((p) => '<button type="button" class="place-row" data-place="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>' + esc(p.locationText || '위치 확인 필요') + (p.rating != null ? ' · 카카오 ' + p.rating.toFixed(1) + ' (' + p.ratingCount + ')' : '') + '</small></button>').join('') + '</div><div id="place-detail">' + (state.selected ? detailHtml(getPlace(state.selected)) : '') + '</div></div></div></section>';
-    $('.page-head')?.insertAdjacentHTML('beforeend', turtlePose('map', '지도를 살펴보는 거북이', 'turtle-page-corner'));
+    $('#main').innerHTML=`<section class="explore-page ${state.mapDisplay==='list'?'list-mode':''}">
+      <div class="explore-topbar"><button class="round-control" id="region-back" aria-label="목포 소개로">${uiIcon('back')}</button><h1>${esc(region.name)} 한 바퀴</h1><div class="view-switch" aria-label="탐색 방식"><button data-map-display="map" class="${state.mapDisplay==='map'?'active':''}" aria-pressed="${state.mapDisplay==='map'}">지도</button><button data-map-display="list" class="${state.mapDisplay==='list'?'active':''}" aria-pressed="${state.mapDisplay==='list'}">목록</button></div></div>
+      <div class="explore-workspace"><div class="explore-search"><form id="map-search-form" class="explore-search-form">${uiIcon('search')}<input id="map-search" aria-label="장소 또는 주소 검색" autocomplete="off" placeholder="목포의 장소, 주소 검색"><button type="submit" aria-label="검색">${uiIcon('arrow')}</button></form><div class="filter-strip" aria-label="장소 유형 여러 개 선택 가능">${CATEGORIES.map(([id,label,emoji])=>{const active=id==='all'?!state.categories.size:state.categories.has(id);return `<button class="filter-chip ${active?'active':''}" data-category="${id}" aria-pressed="${active}"><span aria-hidden="true">${emoji}</span> ${label}</button>`;}).join('')}</div></div>
+      <div class="explore-map"><div id="map"></div><button class="round-control recenter-control" id="recenter" aria-label="목포 중심으로 돌아가기" title="목포 중심으로 돌아가기">${uiIcon('target')}</button><span class="map-location-label">${uiIcon('location')} 목포</span></div>
+      <aside class="explore-sheet"><span class="sheet-handle" aria-hidden="true"></span><div class="explore-sheet-title"><div><span class="eyebrow">발걸음이 닿는 곳</span><h2>${esc(resultLabel==='전체'?'목포의 장소':resultLabel)} <small>${list.length}</small></h2></div><span class="small" id="pin-count">지도 핀 ${list.filter(hasPin).length}곳</span></div><div class="place-list">${list.map(p=>`<button class="place-row" data-place="${p.id}">${placeVisual(p,true)}<span class="place-row-copy"><small class="place-row-category">${esc(categoryName(p.category))}</small><strong>${esc(p.name)}</strong><small>${esc(p.locationText||'위치 확인 필요')}</small></span><span class="row-chevron" aria-hidden="true">›</span></button>`).join('')}</div><p class="map-evidence">지도 핀은 대표 위치예요. 실제 출입구는 방문 전 확인해 주세요.</p><div class="explore-actions"><button class="btn btn-outline" id="go-plan">${uiIcon('plan')} 직접 계획</button><button class="btn btn-primary" id="go-routes">${uiIcon('map')} 추천 루트</button></div></aside></div></section>`;
     initHomeMap(list);
-    $('#region-back').onclick = () => nav('home');
-    $('#go-plan').onclick = () => nav('plan'); $('#go-routes').onclick = () => nav('routes');
-    $('#recenter').onclick = () => { if (state.mapProvider === 'kakao') { state.map?.setCenter(kakaoPoint(...region.center)); state.map?.setLevel(kakaoLevel(13)); } else state.map?.setView(region.center, 13); state.mapCenter = region.center; state.mapZoom = 13; };
-    $('#map-search-form').onsubmit = searchMap;
-    document.querySelectorAll('[data-category]').forEach((b) => b.onclick = () => { const scrollLeft = $('.filter-strip').scrollLeft; const id = b.dataset.category; if (id === 'all') state.categories.clear(); else if (state.categories.has(id)) state.categories.delete(id); else state.categories.add(id); state.selected = null; renderRegionMap(); $('.filter-strip').scrollLeft = scrollLeft; });
-    document.querySelectorAll('[data-place]').forEach((b) => b.onclick = () => selectPlace(b.dataset.place));
-    bindDetail();
+    $('#region-back').onclick=()=>nav('destination');
+    $('#go-plan').onclick=()=>nav('plan');$('#go-routes').onclick=()=>nav('routes');
+    $('#recenter').onclick=()=>{if(state.mapProvider==='kakao'){state.map?.setCenter(kakaoPoint(...region.center));state.map?.setLevel(kakaoLevel(13));}else state.map?.setView(region.center,13);state.mapCenter=region.center;state.mapZoom=13;};
+    $('#map-search-form').onsubmit=searchMap;
+    document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>{const offset=$('.filter-strip').scrollLeft;const id=b.dataset.category;if(id==='all')state.categories.clear();else if(state.categories.has(id))state.categories.delete(id);else state.categories.add(id);state.selected=null;renderRegionMap();$('.filter-strip').scrollLeft=offset;});
+    document.querySelectorAll('[data-place]').forEach(b=>b.onclick=()=>selectPlace(b.dataset.place));
+    document.querySelectorAll('[data-map-display]').forEach(b=>b.onclick=()=>{state.mapDisplay=b.dataset.mapDisplay;$('.explore-page').classList.toggle('list-mode',state.mapDisplay==='list');document.querySelectorAll('[data-map-display]').forEach(x=>{const active=x.dataset.mapDisplay===state.mapDisplay;x.classList.toggle('active',active);x.setAttribute('aria-pressed',active);});if(state.mapProvider==='kakao')state.map?.relayout();else state.map?.invalidateSize();});
   }
   async function initHomeMap(list) {
     const container = $('#map');
@@ -198,7 +265,7 @@
         return;
       } catch { toast('카카오맵 연결에 실패해 기존 지도를 표시합니다. 키와 등록 도메인을 확인해 주세요.'); }
     }
-    if (!window.L) return;
+    if (!window.L || container !== $('#map')) return;
     const map = L.map('map', { zoomControl: false }).setView(state.mapCenter, state.mapZoom);
     state.map = map; state.mapProvider = 'leaflet';
     L.control.zoom({ position: 'bottomright' }).addTo(map);
@@ -239,17 +306,8 @@
     }
   }
   function selectPlace(id) {
-    state.selected = id; const p = getPlace(id); if (!p) return;
-    const point = pinPoint(p);
-    if (point && state.map) {
-      if (state.mapProvider === 'kakao') { state.map.setLevel(Math.min(state.map.getLevel(), kakaoLevel(15))); state.map.panTo(kakaoPoint(...point)); }
-      else state.map.flyTo(point, Math.max(state.map.getZoom(), 15), { duration: .5 });
-    }
-    $('#place-detail').innerHTML = detailHtml(p); bindDetail(); $('#place-detail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-  function bindDetail() {
-    if ($('#close-detail')) $('#close-detail').onclick = () => { state.selected = null; $('#place-detail').innerHTML = ''; };
-    if ($('#add-place-plan')) $('#add-place-plan').onclick = () => { nav('plan'); toast('시간 칸을 눌러 이 장소를 넣어주세요.'); };
+    if(!getPlace(id))return;
+    state.selected=id;state.placeBack='region';state.placeTab='intro';nav('place');
   }
   async function searchMap(event) {
     event.preventDefault(); const q = $('#map-search').value.trim(); if (!q) return;
@@ -322,7 +380,7 @@
     if (!Array.isArray(d.pending)) d.pending=[];
     const slots = planSlots();
     const filled = slots.filter((m) => d.entries[m]);
-    $('#main').innerHTML = '<section class="page"><button class="back" id="plan-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">나의 하루 계획</div><h1>시간계획표</h1><p>시간은 예상입니다. 실제로 떠날 때 다음 장소의 길을 열어보세요.</p></div><div class="top-actions"><button class="btn btn-outline" id="new-plan">새 계획</button><button class="btn btn-primary" id="save-plan">계획 저장</button></div></div>' +
+    $('#main').innerHTML = '<section class="page planner-page"><button class="back" id="plan-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">나의 하루 계획</div><h1>시간계획표</h1><p>시간은 예상입니다. 실제로 떠날 때 다음 장소의 길을 열어보세요.</p></div><div class="top-actions"><button class="btn btn-outline" id="new-plan">새 계획</button><button class="btn btn-primary" id="save-plan">계획 저장</button></div></div>' +
       '<div class="planner-grid"><div><div class="card"><label class="field-label" for="plan-title">계획 이름</label><input class="text-field" id="plan-title" value="' + esc(d.title) + '" maxlength="80"><div class="form-grid" style="margin-top:14px"><div class="field-group"><label class="field-label" for="plan-date">날짜</label><input class="text-field" type="date" id="plan-date" value="' + esc(d.date) + '"></div><div class="field-group"><label class="field-label" for="plan-start">시작 시각</label><input class="text-field" type="time" id="plan-start" value="' + esc(d.start) + '"></div><div class="field-group"><label class="field-label" for="plan-end">끝낼 시각</label><input class="text-field" type="time" id="plan-end" value="' + esc(d.end === '24:00' ? '23:59' : d.end || '23:59') + '" ' + (d.end === '24:00' ? 'disabled' : '') + '><label class="check-line"><input type="checkbox" id="plan-midnight" ' + (d.end === '24:00' ? 'checked' : '') + '> 자정까지</label></div></div></div>' +
       '<div class="slot-list">' + slots.map((m) => slotHtml(m, d.entries[m])).join('') + '</div></div>' +
       '<aside class="card plan-aside"><div class="eyebrow">계획 안내</div><h3>내 일정은 내 속도로</h3><p>장소에서 일찍 나오거나 오래 머물러도 괜찮아요. 다음 장소로 출발할 때 버튼을 누르면 그 시각 기준으로 다시 확인합니다.</p><div class="notice">운영시간·브레이크·공식 입장/주문 마감을 확인합니다. <strong>폐관 1시간 전 입장</strong>은 권장 안내이며 자동 삭제 기준이 아닙니다.</div><p class="small" style="margin:14px 0 0">장소 정보 기준 2026-10-01. 임시휴무와 실제 출입구는 방문 전에 다시 확인하세요.</p></aside></div></section>';
@@ -595,7 +653,7 @@
     const destinationOptions = [STATION,...endpointPlaces].map((p) => '<option value="' + esc(p.id) + '" ' + (r.destination === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
     const must = '<option value="">선택 안 함</option>' + state.places.filter((p) => coord(p) && !routeEngine.EXCLUDED_IDS.has(p.id)).map((p) => '<option value="' + esc(p.id) + '" ' + (r.must === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
     const themeOptions=routeEngine.THEMES.map((t) => '<option value="' + t.id + '" ' + (r.theme === t.id ? 'selected' : '') + '>' + t.name + '</option>').join('');
-    $('#main').innerHTML = '<section class="page"><button class="back" id="routes-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">하루 동선 후보</div><h1>추천 루트</h1><p>출발지에서 도착지까지 가까운 곳을 이어 주세요. 식사는 원하는 시각에 맞춥니다.</p></div></div><div class="card"><div class="form-grid"><div class="field-group"><label class="field-label" for="route-date">날짜</label><input class="text-field" type="date" id="route-date" value="' + esc(r.date) + '"></div><div class="field-group"><label class="field-label" for="route-start">시작 시각</label><input class="text-field" type="time" id="route-start" value="' + esc(r.start) + '"></div><div class="field-group"><label class="field-label" for="route-end">끝낼 시각</label><input class="text-field" type="time" id="route-end" value="' + esc(r.end === '24:00' ? '23:59' : r.end) + '" ' + (r.end === '24:00' ? 'disabled' : '') + '><label class="check-line"><input type="checkbox" id="route-midnight" ' + (r.end === '24:00' ? 'checked' : '') + '> 자정까지</label></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-origin">시작 위치</label><select class="select-field" id="route-origin">' + options + (r.current ? '<option value="current" ' + (r.origin === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select><button class="btn btn-outline btn-sm" id="use-location" style="margin-top:8px">현재 위치 사용</button></div><div class="field-group"><label class="field-label" for="route-destination">도착 위치</label><select class="select-field" id="route-destination">' + destinationOptions + (r.current ? '<option value="current" ' + (r.destination === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-theme">여행 테마</label><select class="select-field" id="route-theme">' + themeOptions + '</select></div><div class="field-group"><label class="field-label" for="route-must">꼭 가고 싶은 장소</label><select class="select-field" id="route-must">' + must + '</select></div></div><div class="form-grid meal-grid" style="margin-top:14px">' + '' + '</div><p class="small" style="margin:10px 0 0">식사 시각은 비워둘 수 있습니다. 입력한 시각에는 음식점 또는 카페만 넣습니다.</p><div class="modal-actions"><button class="btn btn-primary" id="make-routes">코스 찾기</button></div></div><div class="notice warn" style="margin-top:18px">걷기를 우선합니다. 도보로 연결하기 어려울 때만 버스를 확인합니다. 걷는 구간은 1.6km·30분, 하루 도보 합계는 8km 이내입니다. 확인되지 않은 영업시간과 추정 이동 구간은 따로 표시합니다. 케이블카를 도보 이동으로 계산하지 않습니다.</div><div id="route-results" class="route-results"></div></section>';
+    $('#main').innerHTML = '<section class="page routes-page"><button class="back" id="routes-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">하루 동선 후보</div><h1>추천 루트</h1><p>출발지에서 도착지까지 가까운 곳을 이어 주세요. 식사는 원하는 시각에 맞춥니다.</p></div></div><div class="card"><div class="form-grid"><div class="field-group"><label class="field-label" for="route-date">날짜</label><input class="text-field" type="date" id="route-date" value="' + esc(r.date) + '"></div><div class="field-group"><label class="field-label" for="route-start">시작 시각</label><input class="text-field" type="time" id="route-start" value="' + esc(r.start) + '"></div><div class="field-group"><label class="field-label" for="route-end">끝낼 시각</label><input class="text-field" type="time" id="route-end" value="' + esc(r.end === '24:00' ? '23:59' : r.end) + '" ' + (r.end === '24:00' ? 'disabled' : '') + '><label class="check-line"><input type="checkbox" id="route-midnight" ' + (r.end === '24:00' ? 'checked' : '') + '> 자정까지</label></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-origin">시작 위치</label><select class="select-field" id="route-origin">' + options + (r.current ? '<option value="current" ' + (r.origin === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select><button class="btn btn-outline btn-sm" id="use-location" style="margin-top:8px">현재 위치 사용</button></div><div class="field-group"><label class="field-label" for="route-destination">도착 위치</label><select class="select-field" id="route-destination">' + destinationOptions + (r.current ? '<option value="current" ' + (r.destination === 'current' ? 'selected' : '') + '>현재 위치</option>' : '') + '</select></div></div><div class="form-grid two" style="margin-top:14px"><div class="field-group"><label class="field-label" for="route-theme">여행 테마</label><select class="select-field" id="route-theme">' + themeOptions + '</select></div><div class="field-group"><label class="field-label" for="route-must">꼭 가고 싶은 장소</label><select class="select-field" id="route-must">' + must + '</select></div></div><div class="form-grid meal-grid" style="margin-top:14px">' + '' + '</div><p class="small" style="margin:10px 0 0">식사 시각은 비워둘 수 있습니다. 입력한 시각에는 음식점 또는 카페만 넣습니다.</p><div class="modal-actions"><button class="btn btn-primary" id="make-routes">코스 찾기</button></div></div><div class="notice warn" style="margin-top:18px">걷기를 우선합니다. 도보로 연결하기 어려울 때만 버스를 확인합니다. 걷는 구간은 1.6km·30분, 하루 도보 합계는 8km 이내입니다. 확인되지 않은 영업시간과 추정 이동 구간은 따로 표시합니다. 케이블카를 도보 이동으로 계산하지 않습니다.</div><div id="route-results" class="route-results"></div></section>';
     setupRoutePlaceSearch('origin');
     setupRoutePlaceSearch('destination');
     setupRequiredPlaceSearch();
@@ -633,6 +691,7 @@
         if (!r.start || !r.end || end <= start) { toast('끝낼 시각은 시작 시각보다 뒤여야 합니다.'); return; }
       }
       const button=$('#make-routes'); button.disabled=true; button.textContent='시간표 작성 중…';
+      $('#route-results').hidden=false;
       $('#route-results').innerHTML='<div class="turtle-loading">' + turtlePose('map','지도를 살펴보는 거북이') + '<span>장소와 도보 경로를 확인하고 있어요.</span></div>';
       r.searched=true;
       try { r.results=await makeRoutes(); r.baseResults=[...r.results]; r.selected=r.results.length ? 0 : -1; showRouteResults(); }
@@ -704,6 +763,20 @@
     root.querySelectorAll('[data-route-tab]').forEach((b) => b.onclick = () => { r.selected = Number(b.dataset.routeTab); showRouteResults(); });
     if ($('#import-route')) $('#import-route').onclick = importRoute;
     if ($('#go-own-plan')) $('#go-own-plan').onclick = () => nav('plan');
+    if (chosen) presentRouteResult(chosen);
+  }
+  function presentRouteResult(chosen) {
+    const root=$('#route-results'), page=$('.routes-page'), r=state.route;
+    const wasResult=page.classList.contains('has-route-result');
+    page.classList.add('has-route-result');root.hidden=false;if(!wasResult)window.scrollTo(0,0);
+    const itinerary=root.querySelector('.card');itinerary?.classList.add('route-itinerary');
+    const elapsed=chosen.endArrival-chosen.start;
+    root.insertAdjacentHTML('afterbegin',`<div class="route-overview-heading"><button class="round-control" id="edit-route-conditions" aria-label="추천 조건으로 돌아가기">${uiIcon('back')}</button><div><span class="eyebrow">나의 목포 하루</span><h1>${esc(chosen.title)}</h1></div></div><div class="result-view-switch view-switch" aria-label="추천 코스 보기"><button data-result-view="map">지도</button><button data-result-view="list">방문 순서</button></div>`);
+    root.querySelector('.route-result-map-wrap')?.insertAdjacentHTML('afterend',`<div class="route-overview-stats"><div><small>도보 거리</small><strong>${(chosen.walkMeters/1000).toFixed(2)}<span> km</span></strong></div><div><small>예상 일정</small><strong>${Math.floor(elapsed/60)}<span>시간 ${elapsed%60?elapsed%60+'분':''}</span></strong></div><div><small>방문 장소</small><strong>${chosen.rows.length}<span>곳</span></strong></div></div>`);
+    const sync=()=>{const list=r.presentation==='list';root.classList.toggle('result-list-view',list);root.querySelectorAll('[data-result-view]').forEach(b=>{const active=b.dataset.resultView===(list?'list':'map');b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);});if(!list)requestAnimationFrame(()=>state.resultMap?.invalidateSize());};
+    $('#edit-route-conditions').onclick=()=>{page.classList.remove('has-route-result');root.hidden=true;window.scrollTo(0,0);};
+    root.querySelectorAll('[data-result-view]').forEach(b=>b.onclick=()=>{r.presentation=b.dataset.resultView;sync();});
+    sync();
   }
   function initResultMap(route) {
     if (!window.L || !$('#route-result-map')) return;
@@ -968,7 +1041,9 @@
     $('#import-plans').onclick = () => $('#import-file').click();
     $('#import-file').onchange = async (e) => { try { const data = JSON.parse(await e.target.files[0].text()); if (data.app !== 'hangeoreum-mokpo' || !Array.isArray(data.plans)) throw Error(); const incoming = data.plans.filter((p) => p && typeof p.id === 'string' && p.entries && typeof p.entries === 'object'); if (!incoming.length) throw Error(); const ids = new Set(state.saved.map((p) => p.id)); state.saved = [...state.saved,...incoming.filter((p) => !ids.has(p.id))]; save(STORAGE_SAVED,state.saved); renderSaved(); toast('계획 파일을 가져왔습니다.'); } catch { toast('이 앱에서 내보낸 계획 파일인지 확인해 주세요.'); } };
   }
-  document.querySelectorAll('[data-nav]').forEach((b) => b.onclick = () => nav(b.dataset.nav));
+  document.addEventListener('error',event=>{const img=event.target;if(img.tagName!=='IMG'||!img.closest('.place-visual'))return;const visual=img.closest('.place-visual');img.remove();visual.dataset.kind='decoration';const caption=visual.querySelector('.media-caption');if(caption)caption.textContent='유형 이미지';},true);
+  document.addEventListener('keydown',event=>{const current=event.target.closest?.('[role="tab"]');if(!current||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;const group=current.closest('[role="tablist"]');const tabs=[...group.querySelectorAll('[role="tab"]')];const i=tabs.indexOf(current);const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(i+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;event.preventDefault();const label=group.getAttribute('aria-label');tabs[next].click();document.querySelector('[role="tablist"][aria-label="'+CSS.escape(label)+'"] [aria-selected="true"]')?.focus();});
+  document.querySelectorAll('[data-nav]').forEach(b=>{b.querySelector('span').innerHTML=uiIcon(b.dataset.nav==='region'?'map':b.dataset.nav);b.onclick=()=>nav(b.dataset.nav);});
   window.addEventListener('online', () => { statusConnection(); render(); });
   window.addEventListener('offline', () => { statusConnection(); render(); });
   fetch('./places.json?v=10', {cache:'no-store'}).then((r) => { if (!r.ok) throw Error(); return r.json(); }).then((data) => { state.places = data.places || []; render(); }).catch(() => { state.places = []; render(); toast('장소 자료를 불러오지 못했습니다. 저장한 계획은 볼 수 있습니다.'); });
