@@ -371,6 +371,62 @@
     const scheduled=scheduleVisits(order,{...input,scheduledRows:route.rows,fixedMeals:!!route.chosenMeals?.length},walks);
     return scheduled ? {...route,...scheduled,chosenMeals:(route.chosenMeals || []).map(meal=>({...meal,minute:scheduled.rows.find(row=>row.placeId===meal.placeId)?.minute ?? meal.minute}))} : null;
   }
+  // 실제 경로 확인으로 일정이 밀려도 전체 코스를 즉시 버리지 않는다.
+  // 같은 방문지의 순서를 먼저 탐색하고, 실패한 경우에만 선택 방문지를 줄인다.
+  async function confirmOrRepairRoute(route,input,cache) {
+    const confirmed=await confirmRoute(route,input,cache);
+    if(confirmed) return confirmed;
+    // 사용자가 고정한 식사와 버스 연결은 별도 편집 규칙을 유지한다.
+    if(route.chosenMeals?.length || route.transport==='walk-bus') return null;
+    const original=route.rows.map(row=>input.places.find(p=>p.id===row.placeId));
+    const templates=new Map(route.rows.map(row=>[row.placeId,row]));
+    const leg=(a,b)=>cache.get([a.id,a.lat,a.lon,b.id,b.lat,b.lon].join(':')) || pointLeg(a,b);
+    const schedule=order=>scheduleVisits(order,{...input,scheduledRows:order.map(p=>templates.get(p.id))},
+      [input.origin,...order].map((p,i)=>leg(p,order[i] || input.destination)));
+    const distance=order=>[input.origin,...order].reduce((sum,p,i)=>sum+leg(p,order[i] || input.destination).meters,0);
+    const attempted=new Set();
+    let sets=[original], confirmations=0;
+    for(let count=original.length;count>=2 && sets.length;count--) {
+      const orders=new Map();
+      const add=order=>orders.set(order.map(p=>p.id).join(','),order);
+      for(const order of sets) {
+        add(order);
+        for(let i=0;i<order.length;i++) for(let j=0;j<order.length;j++) {
+          if(i===j) continue;
+          const moved=[...order], [p]=moved.splice(i,1);moved.splice(j,0,p);add(moved);
+          if(i<j) add([...order.slice(0,i),...order.slice(i,j+1).reverse(),...order.slice(j+1)]);
+        }
+      }
+      // 재조회가 알려 준 이동시간으로 남은 후보도 다시 검사한다.
+      for(let attempt=0;attempt<8 && confirmations<24;attempt++) {
+        const candidates=[];
+        for(const [signature,order] of orders) {
+          if(attempted.has(signature)) continue;
+          const scheduled=schedule(order);
+          if(scheduled) candidates.push({order,scheduled});
+        }
+        candidates.sort((a,b)=>a.scheduled.walkMeters-b.scheduled.walkMeters || a.scheduled.endArrival-b.scheduled.endArrival);
+        if(!candidates.length) break;
+        const {order,scheduled}=candidates[0];
+        attempted.add(scheduled.signature);confirmations++;
+        const repaired=await confirmRoute({...route,...scheduled},input,cache);
+        if(repaired) return {...repaired,actualTimeAdjusted:true,
+          adjustedDroppedNames:original.filter(p=>!order.some(x=>x.id===p.id)).map(p=>p.name)};
+      }
+      if(confirmations>=24) return null;
+      const reduced=new Map();
+      for(const order of sets) for(let i=0;i<order.length;i++) {
+        if(order[i].id===input.requiredPlaceId) continue;
+        const candidate=order.filter((_,j)=>j!==i), key=candidate.map(p=>p.id).sort().join(',');
+        if(!reduced.has(key)) reduced.set(key,candidate);
+      }
+      // 탐색·API 비용을 제한한다. 전역 최적해나 모든 가능한 순서를 보장하지 않는다.
+      sets=[...reduced.values()].sort((a,b)=>
+        Number(b.some(p=>p.id===input.preferredPlaceId))-Number(a.some(p=>p.id===input.preferredPlaceId)) ||
+        b.filter(p=>themedPlace(p,input.theme)).length-a.filter(p=>themedPlace(p,input.theme)).length || distance(a)-distance(b)).slice(0,24);
+    }
+    return null;
+  }
   async function busFallback(input,cache=new Map()) {
     if(!input.busProvider || distanceKm(input.origin,input.destination)<.2) return [];
     const pool=input.places.filter(p=>hasCoord(p)&&!EXCLUDED_IDS.has(p.id)&&!['food','cafe'].includes(p.category));
@@ -409,8 +465,8 @@
     for(const focus of focuses) {
       const proposed=makeGeographicRoutes(input,focus), checked=[];
       for(const route of proposed) {
-        const result=await confirmRoute(route,input,cache);
-        if(!result) continue;
+        const result=await confirmOrRepairRoute(route,input,cache);
+        if(!result || checked.some(other=>other.signature===result.signature)) continue;
         checked.push({...result,requestedFocus:requested,fallbackFocus:focus!==requested?focus:null});
       }
       if(checked.length) return checked;
@@ -633,7 +689,7 @@
     }
     candidates.sort((a,b)=>themedCount(b.route)-themedCount(a.route) || b.route.rows.length-a.route.rows.length || a.route.walkMeters-b.route.walkMeters);
     async function finish(route,context) {
-      let checked=await confirmRoute(route,context,cache);
+      let checked=await confirmOrRepairRoute(route,context,cache);
       if(!checked || !themedCount(checked)) return null;
       // 실제 도보 시간으로 먼저 맞춘 뒤 식사를 넣어 뒤 일정의 밀림을 확인한다.
       if(!checked.rows.some(row=>row.kind==='meal')) {
