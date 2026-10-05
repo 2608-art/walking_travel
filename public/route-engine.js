@@ -125,7 +125,7 @@
         if (direct <= 1.3 && routeProvider) {
           try {
             const routed = await routeProvider(a,b);
-          if (routed?.meters > 0 && routed?.minutes > 0) value = {meters:routed.meters,minutes:routed.minutes,actual:true,points:routed.points || []};
+          if (routed?.meters > 0 && routed?.minutes > 0) value = {...routed,actual:true,points:routed.points || []};
           } catch { /* 추정 구간은 결과에 명시 */ }
         }
         legCache.set(key,value);
@@ -184,7 +184,7 @@
           break;
         }
         const {p,walk,visit,duration,result}=choice;
-        rows.push({minute:visit,placeId:p.id,duration,walkEstimate:walk.minutes,walkMeters:walk.meters,actual:walk.actual,walkPoints:walk.points || [],result,kind:mealDue?'meal':'visit'});
+        rows.push({minute:visit,placeId:p.id,duration,walkEstimate:walk.minutes,walkMeters:walk.meters,actual:walk.actual,walkPoints:walk.points || [],savedPathId:walk.savedPathId,savedPathLabel:walk.savedPathLabel,source:walk.source,result,kind:mealDue?'meal':'visit'});
         if (rows.length === 1) usedFirst.add(p.id);
         used.add(p.id); walked+=walk.meters; prior=p; now=visit+duration;
         if (mealDue) mealIndex++;
@@ -242,7 +242,7 @@
       }
       if (minute>latest) return null;
       rows.push({placeId:p.id,minute,duration,walkEstimate:walk.minutes,walkMeters:walk.meters,
-        actual:walk.actual,walkPoints:walk.points || [],result,kind,mode:walk.mode || 'walk',busLeg:walk.mode==='bus'?walk:null});
+        actual:walk.actual,walkPoints:walk.points || [],savedPathId:walk.savedPathId,savedPathLabel:walk.savedPathLabel,source:walk.source,result,kind,mode:walk.mode || 'walk',busLeg:walk.mode==='bus'?walk:null});
       now=minute+duration; walked+=walk.meters; prior=p;
     }
     const endWalk=walks ? walks[order.length] : inputLeg(prior,destination,input);
