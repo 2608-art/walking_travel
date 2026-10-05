@@ -85,6 +85,8 @@ def save_walk_route(coords, result, start_id="", end_id=""):
 
 
 def bus_identity(route):
+    if route.get("transfers", 0) > 0 or any(step.get("type") not in ("WALK", "WALKING", "BUS") for step in route.get("steps", [])):
+        return ""
     buses = [step for step in route.get("steps", []) if step.get("type") == "BUS"]
     if len(buses) != 1 or not buses[0].get("vehicle") or len(buses[0].get("stops") or []) < 2:
         return ""

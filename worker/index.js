@@ -57,6 +57,7 @@ function summarize(mode,data) {
 }
 // 한 번의 조회값은 평균이라고 부르지 않는다. 같은 방향·노선·승하차 구간의 정상 관측만 평균에 넣는다.
 function busIdentity(route) {
+  if(route.transfers>0 || (route.steps || []).some(step=>!['WALK','WALKING','BUS'].includes(step.type))) return '';
   const buses=(route.steps || []).filter(step=>step.type==='BUS');
   if(buses.length!==1 || !buses[0].vehicle || !Array.isArray(buses[0].stops) || buses[0].stops.length<2) return '';
   return [buses[0].vehicle,buses[0].stops[0],buses[0].stops.at(-1)].join(':');

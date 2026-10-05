@@ -24,15 +24,16 @@ const count=()=>db.prepare('SELECT COUNT(*) n FROM walk_routes').get().n;
 const busCount=()=>db.prepare('SELECT COUNT(*) n FROM bus_routes').get().n;
 const upstream=globalThis.fetch;
 let calls=0;
-let busSeconds=1500, failBus=false;
+let busSeconds=1500, failBus=false, mixedTransit=false;
 globalThis.fetch=async url=>{
   calls++;
   if(url.includes('/local/search/')) return Response.json({documents:[{x:'126.3853',y:'34.7911',address_name:'시험 주소'}]});
   if(url.includes('/publictraffic')) {
     if(failBus) throw Error('upstream unavailable');
-    return Response.json({status:'OK',routes:[{properties:{totalTime:busSeconds+1080,totalDistance:7228},steps:[
+    return Response.json({status:'OK',routes:[{properties:{totalTime:busSeconds+1080,totalDistance:7228,transfers:mixedTransit?1:0},steps:[
       {properties:{type:'WALKING',distance:443,time:480,guidance:'정류장까지 걷기'}},
       {properties:{type:'BUS',guidance:'22-1 버스',distance:6785,time:busSeconds,vehicles:[{name:'22-1'}],stops:[{name:'승차 정류장'},{name:'하차 정류장'}]}},
+      ...(mixedTransit ? [{properties:{type:'SUBWAY',time:600,distance:1000}}] : []),
     ]}]});
   }
   return Response.json({status:'OK',route:{properties:{totalTime:600,totalDistance:600},legs:[{steps:[{path:{points:[[126.3859,34.7914],[destination.lon,destination.lat]]}}]}]}});
@@ -77,6 +78,11 @@ try {
   failBus=false;
   await api({...parameters,mode:'transit',start_id:'custom'});
   assert.equal(busCount(),1,'미등록 구간은 버스 저장 제외');
+  mixedTransit=true;
+  next=(await (await api({...parameters,mode:'transit'})).json()).routes[0];
+  assert.equal(next.busCacheStatus,undefined,'복합·환승은 단일 버스 평균 저장에서 제외');
+  assert.equal(next.minutes,53,'철도 탑승시간을 버스 평균으로 덮어쓰지 않음');
+  assert.equal(busCount(),1);
   assert.equal(count(),1);
   console.log('PASS: hosted API, walk cache, bus average/traffic/fallback, registered-only persistence, quota, assets.');
 } finally {globalThis.fetch=upstream;db.close();}

@@ -123,6 +123,7 @@
     };
   }
   function sameSavedBusRoute(route, leg) {
+    if(route?.transfers>0 || (route?.steps || []).some(step=>!['WALK','WALKING','BUS'].includes(step.type))) return false;
     const buses=(route?.steps || []).filter(step=>step.type==='BUS');
     return buses.length===1 && buses[0].vehicle===leg.routeNumber &&
       buses[0].stops?.[0]===leg.boardingStop.name &&
