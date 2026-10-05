@@ -24,19 +24,22 @@ const count=()=>db.prepare('SELECT COUNT(*) n FROM walk_routes').get().n;
 const busCount=()=>db.prepare('SELECT COUNT(*) n FROM bus_routes').get().n;
 const upstream=globalThis.fetch;
 let calls=0;
-let busSeconds=1500, failBus=false, mixedTransit=false;
+let busSeconds=1500, failBus=false, mixedTransit=false, omitWalk=false, failWalk=false, walkCalls=0;
 globalThis.fetch=async url=>{
   calls++;
   if(url.includes('/local/search/')) return Response.json({documents:[{x:'126.3853',y:'34.7911',address_name:'시험 주소'}]});
   if(url.includes('/publictraffic')) {
     if(failBus) throw Error('upstream unavailable');
     return Response.json({status:'OK',routes:[{properties:{totalTime:busSeconds+1080,totalDistance:7228,transfers:mixedTransit?1:0},steps:[
-      {properties:{type:'WALKING',distance:443,time:480,guidance:'정류장까지 걷기'}},
-      {properties:{type:'BUS',guidance:'22-1 버스',distance:6785,time:busSeconds,vehicles:[{name:'22-1'}],stops:[{name:'승차 정류장'},{name:'하차 정류장'}]}},
+      ...(!omitWalk ? [{properties:{type:'WALKING',distance:443,time:480,guidance:'정류장까지 걷기'}}] : []),
+      {properties:{type:'BUS',guidance:'22-1 버스',distance:6785,time:busSeconds,vehicles:[{name:'22-1'}],stops:[{name:'승차 정류장'},{name:'하차 정류장'}]},path:{points:[[126.386,34.792],[126.39,34.795]]}},
       ...(mixedTransit ? [{properties:{type:'SUBWAY',time:600,distance:1000}}] : []),
     ]}]});
   }
-  return Response.json({status:'OK',route:{properties:{totalTime:600,totalDistance:600},legs:[{steps:[{path:{points:[[126.3859,34.7914],[destination.lon,destination.lat]]}}]}]}});
+  walkCalls++;
+  if(failWalk) throw Error('walking unavailable');
+  const q=new URL(url).searchParams;
+  return Response.json({status:'OK',route:{properties:{totalTime:600,totalDistance:600},legs:[{steps:[{path:{points:[[Number(q.get('start_x')),Number(q.get('start_y'))],[Number(q.get('end_x')),Number(q.get('end_y'))]]}}]}]}});
 };
 try {
   const responses=await Promise.all([api(parameters),api(parameters),api(parameters)]);
@@ -84,5 +87,21 @@ try {
   assert.equal(next.minutes,53,'철도 탑승시간을 버스 평균으로 덮어쓰지 않음');
   assert.equal(busCount(),1);
   assert.equal(count(),1);
+  mixedTransit=false;omitWalk=true;busSeconds=2100;
+  db.prepare("UPDATE api_usage SET calls=0 WHERE day_kind LIKE '%:walk'").run();
+  const before=walkCalls;
+  next=(await (await api({...parameters,mode:'transit'})).json()).routes[0];
+  assert.equal(next.busAccessUnknown,false);
+  assert.equal(next.walkMinutes,20);
+  assert.equal(next.minutes,55);
+  assert.equal(next.busStops.boarding.name,'승차 정류장');
+  assert.equal(walkCalls-before,2,'승하차 양쪽 실제 도보 경로 조회');
+  next=(await (await api({...parameters,mode:'transit'})).json()).routes[0];
+  assert.equal(walkCalls-before,2,'큰 시간 증가 때도 정류장 도보 저장·재사용');
+  failWalk=true;
+  next=(await (await api({...parameters,mode:'transit',start_id:'custom'})).json()).routes[0];
+  assert.equal(next.busAccessUnknown,true);
+  assert.equal(next.minutes,null,'미확인 도보는 0분으로 계산하지 않음');
+  assert.equal(busCount(),1,'임시 좌표는 버스 캐시 재사용·영구저장 제외');
   console.log('PASS: hosted API, walk cache, bus average/traffic/fallback, registered-only persistence, quota, assets.');
 } finally {globalThis.fetch=upstream;db.close();}

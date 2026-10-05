@@ -94,6 +94,83 @@ def bus_identity(route):
     return ":".join((bus["vehicle"], bus["stops"][0], bus["stops"][-1]))
 
 
+def route_with_bus_average(route, seconds):
+    minutes = round(seconds / 60)
+    walking = route.get("walkMinutes")
+    return {**route, "minutes": max(1, walking + minutes) if isinstance(walking, (int, float)) else None,
+            "busRideSeconds": seconds, "busRideMinutes": minutes,
+            "steps": [{**step, "minutes": minutes} if step["type"] == "BUS" else step
+                      for step in route["steps"]]}
+
+
+def valid_point(point):
+    return (isinstance(point, list) and len(point) == 2
+            and all(isinstance(value, (int, float)) and not isinstance(value, bool) for value in point)
+            and 124 <= point[0] <= 132 and 33 <= point[1] <= 39)
+
+
+def coordinate_pair(start, end):
+    return {"start_x": f"{start[0]:.7f}", "start_y": f"{start[1]:.7f}",
+            "end_x": f"{end[0]:.7f}", "end_y": f"{end[1]:.7f}"}
+
+
+def access_walk(start, end, saved=None):
+    pair = coordinate_pair(start, end)
+    if saved and saved.get("coords") == pair:
+        return saved
+    if start == end:
+        return {"coords": pair, "minutes": 0, "meters": 0, "points": [start]}
+    status, result = fetch_kakao_route("walk", pair)
+    if status != 200 or result.get("status") != "OK" or not result.get("routes"):
+        return None
+    route = result["routes"][0]
+    points = route.get("points") or []
+    if len(points) < 2 or not all(valid_point(point) for point in points):
+        return None
+    if not isinstance(route.get("minutes"), (int, float)) or not isinstance(route.get("meters"), (int, float)):
+        return None
+    return {"coords": pair, "minutes": route["minutes"], "meters": route["meters"],
+            "points": points}
+
+
+def saved_bus_response(connection, coords, identity):
+    key = "bus:" + walk_cache_key(coords) + ":" + identity
+    row = connection.execute("SELECT response FROM bus_routes WHERE route_key = ?", (key,)).fetchone()
+    return json.loads(row[0]) if row else None
+
+
+def complete_bus_access(route, coords, saved=None):
+    buses = [step for step in route.get("steps", []) if step.get("type") == "BUS"]
+    if len(buses) != 1 or not bus_identity(route):
+        return route
+    bus = buses[0]
+    path = bus.get("points") or []
+    if len(path) < 2 or not valid_point(path[0]) or not valid_point(path[-1]):
+        return route
+    boarding, alighting = path[0], path[-1]
+    bus_stops = {"boarding": {"name": bus["stops"][0], "lon": boarding[0], "lat": boarding[1]},
+                 "alighting": {"name": bus["stops"][-1], "lon": alighting[0], "lat": alighting[1]},
+                 "positionBasis": "bus-step-path"}
+    if not route.get("busAccessUnknown"):
+        return {**route, "busStops": bus_stops}
+    origin = [float(coords["start_x"]), float(coords["start_y"])]
+    destination = [float(coords["end_x"]), float(coords["end_y"])]
+    before = access_walk(origin, boarding, (saved or {}).get("accessWalk"))
+    after = access_walk(alighting, destination, (saved or {}).get("egressWalk"))
+    if before is None or after is None:
+        return {**route, "busStops": bus_stops}
+    access_step = {"type": "WALK", "guidance": "승차 정류장까지 도보", "minutes": before["minutes"],
+                   "meters": before["meters"], "vehicle": "", "stops": [], "points": before["points"]}
+    egress_step = {"type": "WALK", "guidance": "하차 정류장에서 도보", "minutes": after["minutes"],
+                   "meters": after["meters"], "vehicle": "", "stops": [], "points": after["points"]}
+    walking_minutes = before["minutes"] + after["minutes"]
+    return {**route, "minutes": walking_minutes + (route.get("busRideMinutes") or 0),
+            "walkMeters": before["meters"] + after["meters"], "walkMinutes": walking_minutes,
+            "busAccessUnknown": False, "accessWalk": before, "egressWalk": after,
+            "busStops": bus_stops, "steps": [access_step, bus, egress_step],
+            "points": (before["points"] + path + after["points"])[:5000]}
+
+
 def compare_and_save_bus_route(connection, coords, route):
     identity = bus_identity(route)
     seconds = route.get("busRideSeconds")
@@ -115,7 +192,10 @@ def compare_and_save_bus_route(connection, coords, route):
     difference = seconds - baseline
     significant = abs(difference) >= 300 and abs(difference) >= baseline * .2
     if significant and difference > 0:
-        connection.execute("UPDATE bus_routes SET checked_at = CURRENT_TIMESTAMP WHERE route_key = ?", (key,))
+        connection.execute(
+            "UPDATE bus_routes SET response = ?, checked_at = CURRENT_TIMESTAMP WHERE route_key = ?",
+            (json.dumps(route, ensure_ascii=False, separators=(",", ":")), key)
+        )
         return {**route, "busCacheStatus": "longer", "baselineBusRideSeconds": baseline,
                 "baselineSampleCount": count, "currentBusRideSeconds": seconds,
                 "rideDifferenceSeconds": difference}
@@ -132,11 +212,7 @@ def compare_and_save_bus_route(connection, coords, route):
         "UPDATE bus_routes SET response = ?, average_ride_seconds = ?, sample_count = ?, checked_at = CURRENT_TIMESTAMP WHERE route_key = ?",
         (json.dumps(route, ensure_ascii=False, separators=(",", ":")), average, next_count, key)
     )
-    ride_minutes = round(average / 60)
-    return {**route, "minutes": max(1, route["walkMinutes"] + ride_minutes),
-            "busRideSeconds": average, "busRideMinutes": ride_minutes,
-            "steps": [{**step, "minutes": ride_minutes} if step["type"] == "BUS" else step
-                      for step in route["steps"]],
+    return {**route_with_bus_average(route, average),
             "busCacheStatus": "reused", "baselineBusRideSeconds": average,
             "baselineSampleCount": next_count, "currentBusRideSeconds": seconds}
 
@@ -151,11 +227,7 @@ def cached_bus_route(connection, coords):
         return None
     route = json.loads(row[0])
     average, count = row[1:]
-    ride_minutes = round(average / 60)
-    return {**route, "minutes": max(1, route["walkMinutes"] + ride_minutes),
-            "busRideSeconds": average, "busRideMinutes": ride_minutes,
-            "steps": [{**step, "minutes": ride_minutes} if step["type"] == "BUS" else step
-                      for step in route["steps"]],
+    return {**route_with_bus_average(route, average),
             "busCacheStatus": "currentUnavailable", "currentUnavailable": True,
             "baselineBusRideSeconds": average, "baselineSampleCount": count}
 
@@ -187,6 +259,7 @@ def summarize(mode, data):
         vehicle_seconds = sum((step.get("properties") or {}).get("time") or 0 for step in vehicles)
         bus_seconds = sum((step.get("properties") or {}).get("time") or 0 for step in vehicles
                           if (step.get("properties") or {}).get("type") == "BUS")
+        access_unknown = mode == "transit" and not walking
         points = []
         summary_steps = []
         for step in steps or []:
@@ -204,15 +277,16 @@ def summarize(mode, data):
                     "points": [point for point in path if isinstance(point, list) and len(point) == 2][:5000],
                 })
         routes.append({
-            "minutes": max(1, round((walking_seconds + vehicle_seconds if mode == "transit"
+            "minutes": None if access_unknown else max(1, round((walking_seconds + vehicle_seconds if mode == "transit"
                                      else props.get("totalTime") or 0) / 60)),
             "meters": props.get("totalDistance") or 0,
-            "walkMeters": walking_meters if mode == "transit" else props.get("totalDistance") or 0,
-            "walkMinutes": max(0, round(walking_seconds / 60)) if mode == "transit"
+            "walkMeters": None if access_unknown else walking_meters if mode == "transit" else props.get("totalDistance") or 0,
+            "walkMinutes": None if access_unknown else max(0, round(walking_seconds / 60)) if mode == "transit"
             else max(1, round((props.get("totalTime") or 0) / 60)),
             "busRideSeconds": bus_seconds if mode == "transit" and bus_seconds > 0 else None if mode == "transit" else 0,
             "busRideMinutes": round(bus_seconds / 60) if mode == "transit" and bus_seconds > 0 else None if mode == "transit" else 0,
             **({"transitTimeBasis": "walking-and-vehicle-steps-excluding-wait"} if mode == "transit" else {}),
+            **({"busAccessUnknown": access_unknown} if mode == "transit" else {}),
             "transfers": props.get("transfers") or 0,
             "fare": (props.get("fare") or {}).get("value"),
             "points": points[:5000],
@@ -321,14 +395,21 @@ class Handler(SimpleHTTPRequestHandler):
         registered_pair = can_persist_walk(coords, start_id, end_id)
         # 버스는 현재 조회값을 매번 비교해야 하므로 짧은 메모리 캐시도 사용하지 않는다.
         status, result = fetch_kakao_route(mode, coords)
+        if not registered_pair and status == 200 and result.get("status") == "OK":
+            result["routes"] = [complete_bus_access(route, coords) for route in result.get("routes", [])]
         if registered_pair:
             try:
                 with closing(open_walk_cache()) as connection:
                     if status == 200 and result.get("status") == "OK":
                         lock = WALK_LOCKS[hash(walk_cache_key(coords)) % len(WALK_LOCKS)]
                         with lock:
-                            result["routes"] = [compare_and_save_bus_route(connection, coords, route)
-                                                for route in result.get("routes", [])]
+                            enriched = []
+                            for route in result.get("routes", []):
+                                identity = bus_identity(route)
+                                saved = saved_bus_response(connection, coords, identity) if identity else None
+                                route = complete_bus_access(route, coords, saved)
+                                enriched.append(compare_and_save_bus_route(connection, coords, route))
+                            result["routes"] = enriched
                             connection.commit()
                     elif status != 200:
                         saved = cached_bus_route(connection, coords)

@@ -35,9 +35,10 @@ function summarize(mode,data) {
     const walkingMeters=walking.reduce((sum,step)=>sum+(step.properties?.distance || 0),0);
     const walkingSeconds=walking.reduce((sum,step)=>sum+(step.properties?.time || 0),0);
     const busSeconds=steps.filter(step=>step.properties?.type==='BUS').reduce((sum,step)=>sum+(step.properties?.time || 0),0);
-    return {minutes:Math.max(1,Math.round((mode==='transit' ? walkingSeconds+vehicleSeconds : p.totalTime || 0)/60)),meters:p.totalDistance || 0,
-      walkMeters:mode==='transit' ? walkingMeters : p.totalDistance || 0,
-      walkMinutes:mode==='transit' ? Math.max(0,Math.round(walkingSeconds/60)) : Math.max(1,Math.round((p.totalTime || 0)/60)),
+    return {minutes:mode==='transit' && !walking.length ? null : Math.max(1,Math.round((mode==='transit' ? walkingSeconds+vehicleSeconds : p.totalTime || 0)/60)),meters:p.totalDistance || 0,
+      walkMeters:mode==='transit' ? (walking.length ? walkingMeters : null) : p.totalDistance || 0,
+      walkMinutes:mode==='transit' ? (walking.length ? Math.max(0,Math.round(walkingSeconds/60)) : null) : Math.max(1,Math.round((p.totalTime || 0)/60)),
+      busAccessUnknown:mode==='transit' && !walking.length,
       busRideSeconds:mode==='transit' ? (busSeconds>0 ? busSeconds : null) : 0,
       busRideMinutes:mode==='transit' ? (busSeconds>0 ? Math.round(busSeconds/60) : null) : 0,
       transitTimeBasis:mode==='transit' ? 'walking-and-vehicle-steps-excluding-wait' : undefined,
@@ -62,6 +63,47 @@ function busIdentity(route) {
   if(buses.length!==1 || !buses[0].vehicle || !Array.isArray(buses[0].stops) || buses[0].stops.length<2) return '';
   return [buses[0].vehicle,buses[0].stops[0],buses[0].stops.at(-1)].join(':');
 }
+async function addBusAccess(env,coords,route,requests,canReadSaved) {
+  if(!route.busAccessUnknown || !busIdentity(route)) return route;
+  const bus=route.steps.find(step=>step.type==='BUS');
+  const start=bus.points?.[0],end=bus.points?.at(-1);
+  const valid=point=>Array.isArray(point) && point.length===2 && point.every(Number.isFinite);
+  if(!valid(start) || !valid(end)) return route;
+  const origin=[Number(coords.start_x),Number(coords.start_y)],destination=[Number(coords.end_x),Number(coords.end_y)];
+  let saved;
+  try {
+    const row=canReadSaved ? await database(env).prepare('SELECT response FROM bus_routes WHERE route_key = ?').bind('bus:'+pairKey(coords)+':'+busIdentity(route)).first() : null;
+    if(row) saved=JSON.parse(row.response);
+  } catch(failure) {console.warn('Bus access cache read failed:',failure?.message);}
+  const same=(a,b)=>valid(a) && valid(b) && a.every((value,index)=>value.toFixed(7)===b[index].toFixed(7));
+  const foot=async(from,to,previous)=>{
+    if(same(from,to)) return {minutes:0,meters:0,points:[from],from,to,verified:true};
+    if(previous?.verified && same(previous.from,from) && same(previous.to,to) &&
+      previous.points?.length>1 && Number.isFinite(previous.minutes) && Number.isFinite(previous.meters)) return previous;
+    const parameters={start_x:from[0].toFixed(7),start_y:from[1].toFixed(7),end_x:to[0].toFixed(7),end_y:to[1].toFixed(7)};
+    const key=pairKey(parameters);
+    if(!requests.has(key)) requests.set(key,(async()=>{
+      try {
+        if(!await reserve(env,'walk')) return null;
+        const response=summarize('walk',await kakao(env,'https://dapi.kakao.com/v2/routing/walk?'+new URLSearchParams(parameters),4000000));
+        const walk=response.status==='OK' ? response.routes[0] : null;
+        if(!walk?.points?.length || walk.points.length<2) return null;
+        return {...walk,from,to,verified:true};
+      } catch {return null;}
+    })());
+    return requests.get(key);
+  };
+  const [access,egress]=await Promise.all([foot(origin,start,saved?.accessWalk),foot(end,destination,saved?.egressWalk)]);
+  if(!access || !egress) return route;
+  const walkMinutes=access.minutes+egress.minutes,walkMeters=access.meters+egress.meters;
+  const steps=[{type:'WALKING',guidance:bus.stops[0]+' 정류장까지 걷기',minutes:access.minutes,meters:access.meters,points:access.points},
+    bus,{type:'WALKING',guidance:'하차 후 목적지까지 걷기',minutes:egress.minutes,meters:egress.meters,points:egress.points}];
+  return {...route,walkMinutes,walkMeters,busAccessUnknown:false,accessWalk:access,egressWalk:egress,
+    minutes:walkMinutes+route.busRideMinutes,meters:walkMeters+bus.meters,
+    points:steps.flatMap(step=>step.points).slice(0,5000),steps,
+    busStops:{boarding:{name:bus.stops[0],lon:start[0],lat:start[1],positionBasis:'bus-step-path'},
+      alighting:{name:bus.stops.at(-1),lon:end[0],lat:end[1],positionBasis:'bus-step-path'}}};
+}
 async function compareAndSaveBusRoute(env,coords,route) {
   const identity=busIdentity(route);
   const seconds=route.busRideSeconds;
@@ -79,7 +121,7 @@ async function compareAndSaveBusRoute(env,coords,route) {
   const difference=seconds-baseline;
   const significant=Math.abs(difference)>=300 && Math.abs(difference)>=baseline*.2;
   if(significant && difference>0) {
-    await db.prepare('UPDATE bus_routes SET checked_at = CURRENT_TIMESTAMP WHERE route_key = ?').bind(key).run();
+    await db.prepare('UPDATE bus_routes SET response = ?, checked_at = CURRENT_TIMESTAMP WHERE route_key = ?').bind(JSON.stringify(route),key).run();
     return {...route,busCacheStatus:'longer',baselineBusRideSeconds:baseline,baselineSampleCount:count,
       currentBusRideSeconds:seconds,rideDifferenceSeconds:difference};
   }
@@ -92,20 +134,23 @@ async function compareAndSaveBusRoute(env,coords,route) {
   const average=Math.round((baseline*Math.min(count,19)+seconds)/nextCount);
   await db.prepare('UPDATE bus_routes SET response = ?, average_ride_seconds = ?, sample_count = ?, checked_at = CURRENT_TIMESTAMP WHERE route_key = ?')
     .bind(JSON.stringify(route),average,nextCount,key).run();
-  return {...route,minutes:Math.max(1,route.walkMinutes+Math.round(average/60)),busRideSeconds:average,
+  return {...route,minutes:route.busAccessUnknown ? null : Math.max(1,route.walkMinutes+Math.round(average/60)),busRideSeconds:average,
     busRideMinutes:Math.round(average/60),steps:route.steps.map(step=>step.type==='BUS' ? {...step,minutes:Math.round(average/60)} : step),
     busCacheStatus:'reused',baselineBusRideSeconds:average,
     baselineSampleCount:nextCount,currentBusRideSeconds:seconds};
 }
 async function cachedBusFallback(env,coords) {
   const prefix='bus:'+pairKey(coords)+':';
-  const saved=await database(env).prepare('SELECT response, average_ride_seconds, sample_count FROM bus_routes WHERE route_key LIKE ? ORDER BY checked_at DESC LIMIT 1').bind(prefix+'%').first();
+  const saved=await database(env).prepare('SELECT response, average_ride_seconds, sample_count FROM bus_routes WHERE route_key >= ? AND route_key < ? ORDER BY checked_at DESC LIMIT 1').bind(prefix,prefix+'\uffff').first();
   if(!saved) return null;
   const route=JSON.parse(saved.response);
+  if(!(route.steps || []).some(step=>['WALK','WALKING'].includes(step.type))) {
+    route.walkMinutes=null;route.walkMeters=null;route.busAccessUnknown=true;
+  }
   const seconds=Number(saved.average_ride_seconds);
   if(!Number.isFinite(seconds) || seconds<=0) return null;
   const observed=Number(route.busRideSeconds) || 0;
-  return {status:'OK',routes:[{...route,minutes:Math.max(1,route.minutes-Math.round(observed/60)+Math.round(seconds/60)),
+  return {status:'OK',routes:[{...route,minutes:route.busAccessUnknown ? null : Math.max(1,route.walkMinutes+Math.round(seconds/60)),
     busRideSeconds:seconds,busRideMinutes:Math.round(seconds/60),
     steps:(route.steps || []).map(step=>step.type==='BUS' ? {...step,minutes:Math.round(seconds/60)} : step),
     busCacheStatus:'fallback',currentUnavailable:true,baselineBusRideSeconds:seconds,
@@ -145,7 +190,11 @@ async function route(url,env) {
       const saved=await database(env).prepare('SELECT response FROM walk_routes WHERE route_key = ?').bind(key).first();
       if(saved) return {status:200,body:JSON.parse(saved.response)};
     }
-    const fallback=mode==='transit' && registeredPair ? await cachedBusFallback(env,coords) : null;
+    let fallback=null;
+    if(mode==='transit' && registeredPair) {
+      try {fallback=await cachedBusFallback(env,coords);}
+      catch(failure) {console.warn('Bus fallback cache read failed:',failure?.message);}
+    }
     if(!env.KAKAO_REST_API_KEY) return fallback ? {status:200,body:fallback} : {status:503,body:{error:'경로 검색 연결을 준비 중입니다.'}};
     if(!await reserve(env,mode)) return fallback ? {status:200,body:fallback} : {status:429,body:{error:'오늘의 경로 조회 안전 한도에 도달했습니다.'}};
     let data;
@@ -153,8 +202,13 @@ async function route(url,env) {
     catch(error) {if(fallback) return {status:200,body:fallback}; throw error;}
     const result=summarize(mode,data);
     if(persistent && result.status==='OK' && result.routes.length) await database(env).prepare('INSERT OR IGNORE INTO walk_routes (route_key,response) VALUES (?,?)').bind(key,JSON.stringify(result)).run();
-    if(mode==='transit' && registeredPair && result.status==='OK')
-      result.routes=await Promise.all(result.routes.map(item=>compareAndSaveBusRoute(env,coords,item)));
+    if(mode==='transit' && result.status==='OK') {
+      const requests=new Map();
+      result.routes=await Promise.all(result.routes.map(async item=>{
+        const enriched=await addBusAccess(env,coords,item,requests,registeredPair);
+        return registeredPair ? compareAndSaveBusRoute(env,coords,enriched) : enriched;
+      }));
+    }
     return {status:200,body:result};
   };
   // 등록 구간만 요청 중 합친다. 서로 다른 Worker에서도 DB 기본키가 중복 저장을 방지한다.
@@ -172,7 +226,7 @@ export default {
         if(url.pathname==='/api/place-search') return await search(url,env);
         if(url.pathname==='/api/route') return await route(url,env);
         return error('찾을 수 없는 API입니다.',404);
-      } catch { return error('검색 서버에 연결하지 못했습니다. 잠시 후 다시 시도해 주세요.',502); }
+      } catch(failure) {console.error('Route API failure:',failure?.message); return error('검색 서버에 연결하지 못했습니다. 잠시 후 다시 시도해 주세요.',502); }
     }
     return env.ASSETS.fetch(request);
   }
