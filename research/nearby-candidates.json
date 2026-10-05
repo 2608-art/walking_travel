@@ -1,0 +1,3998 @@
+{
+  "version": 1,
+  "selection": "Each geocoded registered place, including Mokpo Station, to its five nearest other registered points by straight-line distance. Direction matters; these are research candidates, not verified routes.",
+  "placeCount": 114,
+  "candidatesPerPlace": 5,
+  "candidates": [
+    {
+      "fromId": "p2",
+      "fromName": "노적봉",
+      "toId": "p8",
+      "toName": "목포근대역사관 1관",
+      "straightMeters": 43
+    },
+    {
+      "fromId": "p2",
+      "fromName": "노적봉",
+      "toId": "p29",
+      "toName": "노적봉예술공원미술관",
+      "straightMeters": 85
+    },
+    {
+      "fromId": "p2",
+      "fromName": "노적봉",
+      "toId": "p96",
+      "toName": "무가보",
+      "straightMeters": 137
+    },
+    {
+      "fromId": "p2",
+      "fromName": "노적봉",
+      "toId": "p47",
+      "toName": "초원음식점(초원식당)",
+      "straightMeters": 178
+    },
+    {
+      "fromId": "p2",
+      "fromName": "노적봉",
+      "toId": "p95",
+      "toName": "유달동의로망스",
+      "straightMeters": 199
+    },
+    {
+      "fromId": "p3",
+      "fromName": "목포해상케이블카 북항승강장",
+      "toId": "p60",
+      "toName": "너구리식당",
+      "straightMeters": 379
+    },
+    {
+      "fromId": "p3",
+      "fromName": "목포해상케이블카 북항승강장",
+      "toId": "p99",
+      "toName": "석산(SUKSAN)",
+      "straightMeters": 464
+    },
+    {
+      "fromId": "p3",
+      "fromName": "목포해상케이블카 북항승강장",
+      "toId": "p88",
+      "toName": "압해도뻘낙지",
+      "straightMeters": 519
+    },
+    {
+      "fromId": "p3",
+      "fromName": "목포해상케이블카 북항승강장",
+      "toId": "p18",
+      "toName": "유달산 조각공원",
+      "straightMeters": 664
+    },
+    {
+      "fromId": "p3",
+      "fromName": "목포해상케이블카 북항승강장",
+      "toId": "p52",
+      "toName": "은빛바다회센터(율석수산)",
+      "straightMeters": 689
+    },
+    {
+      "fromId": "p4",
+      "fromName": "목포해상케이블카 유달산승강장",
+      "toId": "p17",
+      "toName": "성옥기념관",
+      "straightMeters": 453
+    },
+    {
+      "fromId": "p4",
+      "fromName": "목포해상케이블카 유달산승강장",
+      "toId": "p119",
+      "toName": "한마을떡",
+      "straightMeters": 507
+    },
+    {
+      "fromId": "p4",
+      "fromName": "목포해상케이블카 유달산승강장",
+      "toId": "p126",
+      "toName": "유유랜드",
+      "straightMeters": 521
+    },
+    {
+      "fromId": "p4",
+      "fromName": "목포해상케이블카 유달산승강장",
+      "toId": "p29",
+      "toName": "노적봉예술공원미술관",
+      "straightMeters": 564
+    },
+    {
+      "fromId": "p4",
+      "fromName": "목포해상케이블카 유달산승강장",
+      "toId": "p96",
+      "toName": "무가보",
+      "straightMeters": 566
+    },
+    {
+      "fromId": "p5",
+      "fromName": "목포해상케이블카 고하도승강장",
+      "toId": "p6",
+      "toName": "고하도 전망대·해안데크",
+      "straightMeters": 410
+    },
+    {
+      "fromId": "p5",
+      "fromName": "목포해상케이블카 고하도승강장",
+      "toId": "p34",
+      "toName": "국립호남권생물자원관",
+      "straightMeters": 981
+    },
+    {
+      "fromId": "p5",
+      "fromName": "목포해상케이블카 고하도승강장",
+      "toId": "p97",
+      "toName": "달몬트",
+      "straightMeters": 1329
+    },
+    {
+      "fromId": "p5",
+      "fromName": "목포해상케이블카 고하도승강장",
+      "toId": "p19",
+      "toName": "목포스카이워크",
+      "straightMeters": 1596
+    },
+    {
+      "fromId": "p5",
+      "fromName": "목포해상케이블카 고하도승강장",
+      "toId": "p68",
+      "toName": "조선쫄복탕",
+      "straightMeters": 1610
+    },
+    {
+      "fromId": "p6",
+      "fromName": "고하도 전망대·해안데크",
+      "toId": "p5",
+      "toName": "목포해상케이블카 고하도승강장",
+      "straightMeters": 410
+    },
+    {
+      "fromId": "p6",
+      "fromName": "고하도 전망대·해안데크",
+      "toId": "p97",
+      "toName": "달몬트",
+      "straightMeters": 1315
+    },
+    {
+      "fromId": "p6",
+      "fromName": "고하도 전망대·해안데크",
+      "toId": "p19",
+      "toName": "목포스카이워크",
+      "straightMeters": 1318
+    },
+    {
+      "fromId": "p6",
+      "fromName": "고하도 전망대·해안데크",
+      "toId": "p34",
+      "toName": "국립호남권생물자원관",
+      "straightMeters": 1385
+    },
+    {
+      "fromId": "p6",
+      "fromName": "고하도 전망대·해안데크",
+      "toId": "p68",
+      "toName": "조선쫄복탕",
+      "straightMeters": 1617
+    },
+    {
+      "fromId": "p7",
+      "fromName": "갓바위·해상보행교",
+      "toId": "p20",
+      "toName": "목포문예역사관",
+      "straightMeters": 373
+    },
+    {
+      "fromId": "p7",
+      "fromName": "갓바위·해상보행교",
+      "toId": "p25",
+      "toName": "수중유산박물관(옛 국립해양유물전시관)",
+      "straightMeters": 397
+    },
+    {
+      "fromId": "p7",
+      "fromName": "갓바위·해상보행교",
+      "toId": "p100",
+      "toName": "오리진 커피 로스터스",
+      "straightMeters": 422
+    },
+    {
+      "fromId": "p7",
+      "fromName": "갓바위·해상보행교",
+      "toId": "p16",
+      "toName": "목포자연사박물관",
+      "straightMeters": 454
+    },
+    {
+      "fromId": "p7",
+      "fromName": "갓바위·해상보행교",
+      "toId": "p62",
+      "toName": "소래기냉면",
+      "straightMeters": 474
+    },
+    {
+      "fromId": "p8",
+      "fromName": "목포근대역사관 1관",
+      "toId": "p2",
+      "toName": "노적봉",
+      "straightMeters": 43
+    },
+    {
+      "fromId": "p8",
+      "fromName": "목포근대역사관 1관",
+      "toId": "p29",
+      "toName": "노적봉예술공원미술관",
+      "straightMeters": 94
+    },
+    {
+      "fromId": "p8",
+      "fromName": "목포근대역사관 1관",
+      "toId": "p96",
+      "toName": "무가보",
+      "straightMeters": 108
+    },
+    {
+      "fromId": "p8",
+      "fromName": "목포근대역사관 1관",
+      "toId": "p47",
+      "toName": "초원음식점(초원식당)",
+      "straightMeters": 150
+    },
+    {
+      "fromId": "p8",
+      "fromName": "목포근대역사관 1관",
+      "toId": "p95",
+      "toName": "유달동의로망스",
+      "straightMeters": 158
+    },
+    {
+      "fromId": "p9",
+      "fromName": "목포근대역사관 2관",
+      "toId": "p95",
+      "toName": "유달동의로망스",
+      "straightMeters": 31
+    },
+    {
+      "fromId": "p9",
+      "fromName": "목포근대역사관 2관",
+      "toId": "p120",
+      "toName": "목포쫀드기 본점",
+      "straightMeters": 80
+    },
+    {
+      "fromId": "p9",
+      "fromName": "목포근대역사관 2관",
+      "toId": "p126",
+      "toName": "유유랜드",
+      "straightMeters": 117
+    },
+    {
+      "fromId": "p9",
+      "fromName": "목포근대역사관 2관",
+      "toId": "p96",
+      "toName": "무가보",
+      "straightMeters": 125
+    },
+    {
+      "fromId": "p9",
+      "fromName": "목포근대역사관 2관",
+      "toId": "p119",
+      "toName": "한마을떡",
+      "straightMeters": 130
+    },
+    {
+      "fromId": "p10",
+      "fromName": "서산동 시화골목",
+      "toId": "p12",
+      "toName": "연희네슈퍼",
+      "straightMeters": 108
+    },
+    {
+      "fromId": "p10",
+      "fromName": "서산동 시화골목",
+      "toId": "p68",
+      "toName": "조선쫄복탕",
+      "straightMeters": 208
+    },
+    {
+      "fromId": "p10",
+      "fromName": "서산동 시화골목",
+      "toId": "p97",
+      "toName": "달몬트",
+      "straightMeters": 399
+    },
+    {
+      "fromId": "p10",
+      "fromName": "서산동 시화골목",
+      "toId": "p126",
+      "toName": "유유랜드",
+      "straightMeters": 483
+    },
+    {
+      "fromId": "p10",
+      "fromName": "서산동 시화골목",
+      "toId": "p94",
+      "toName": "송자르트",
+      "straightMeters": 523
+    },
+    {
+      "fromId": "p12",
+      "fromName": "연희네슈퍼",
+      "toId": "p10",
+      "toName": "서산동 시화골목",
+      "straightMeters": 108
+    },
+    {
+      "fromId": "p12",
+      "fromName": "연희네슈퍼",
+      "toId": "p68",
+      "toName": "조선쫄복탕",
+      "straightMeters": 128
+    },
+    {
+      "fromId": "p12",
+      "fromName": "연희네슈퍼",
+      "toId": "p97",
+      "toName": "달몬트",
+      "straightMeters": 394
+    },
+    {
+      "fromId": "p12",
+      "fromName": "연희네슈퍼",
+      "toId": "p94",
+      "toName": "송자르트",
+      "straightMeters": 518
+    },
+    {
+      "fromId": "p12",
+      "fromName": "연희네슈퍼",
+      "toId": "p81",
+      "toName": "에스타시옹1913",
+      "straightMeters": 535
+    },
+    {
+      "fromId": "p14",
+      "fromName": "평화광장",
+      "toId": "p101",
+      "toName": "커피창고로(평화광장점)",
+      "straightMeters": 231
+    },
+    {
+      "fromId": "p14",
+      "fromName": "평화광장",
+      "toId": "p74",
+      "toName": "88포장마차(원형로)",
+      "straightMeters": 262
+    },
+    {
+      "fromId": "p14",
+      "fromName": "평화광장",
+      "toId": "p56",
+      "toName": "어락",
+      "straightMeters": 279
+    },
+    {
+      "fromId": "p14",
+      "fromName": "평화광장",
+      "toId": "p55",
+      "toName": "해빔",
+      "straightMeters": 318
+    },
+    {
+      "fromId": "p14",
+      "fromName": "평화광장",
+      "toId": "p62",
+      "toName": "소래기냉면",
+      "straightMeters": 357
+    },
+    {
+      "fromId": "p16",
+      "fromName": "목포자연사박물관",
+      "toId": "p20",
+      "toName": "목포문예역사관",
+      "straightMeters": 113
+    },
+    {
+      "fromId": "p16",
+      "fromName": "목포자연사박물관",
+      "toId": "p25",
+      "toName": "수중유산박물관(옛 국립해양유물전시관)",
+      "straightMeters": 141
+    },
+    {
+      "fromId": "p16",
+      "fromName": "목포자연사박물관",
+      "toId": "p21",
+      "toName": "목포생활도자박물관",
+      "straightMeters": 143
+    },
+    {
+      "fromId": "p16",
+      "fromName": "목포자연사박물관",
+      "toId": "p42",
+      "toName": "남농기념관",
+      "straightMeters": 156
+    },
+    {
+      "fromId": "p16",
+      "fromName": "목포자연사박물관",
+      "toId": "p35",
+      "toName": "목포문화예술회관",
+      "straightMeters": 253
+    },
+    {
+      "fromId": "p17",
+      "fromName": "성옥기념관",
+      "toId": "p119",
+      "toName": "한마을떡",
+      "straightMeters": 58
+    },
+    {
+      "fromId": "p17",
+      "fromName": "성옥기념관",
+      "toId": "p96",
+      "toName": "무가보",
+      "straightMeters": 117
+    },
+    {
+      "fromId": "p17",
+      "fromName": "성옥기념관",
+      "toId": "p126",
+      "toName": "유유랜드",
+      "straightMeters": 118
+    },
+    {
+      "fromId": "p17",
+      "fromName": "성옥기념관",
+      "toId": "p29",
+      "toName": "노적봉예술공원미술관",
+      "straightMeters": 164
+    },
+    {
+      "fromId": "p17",
+      "fromName": "성옥기념관",
+      "toId": "p95",
+      "toName": "유달동의로망스",
+      "straightMeters": 176
+    },
+    {
+      "fromId": "p18",
+      "fromName": "유달산 조각공원",
+      "toId": "p3",
+      "toName": "목포해상케이블카 북항승강장",
+      "straightMeters": 664
+    },
+    {
+      "fromId": "p18",
+      "fromName": "유달산 조각공원",
+      "toId": "p4",
+      "toName": "목포해상케이블카 유달산승강장",
+      "straightMeters": 734
+    },
+    {
+      "fromId": "p18",
+      "fromName": "유달산 조각공원",
+      "toId": "p84",
+      "toName": "예향밥상",
+      "straightMeters": 898
+    },
+    {
+      "fromId": "p18",
+      "fromName": "유달산 조각공원",
+      "toId": "p41",
+      "toName": "노라노미술관",
+      "straightMeters": 908
+    },
+    {
+      "fromId": "p18",
+      "fromName": "유달산 조각공원",
+      "toId": "p117",
+      "toName": "작은낙",
+      "straightMeters": 923
+    },
+    {
+      "fromId": "p19",
+      "fromName": "목포스카이워크",
+      "toId": "p4",
+      "toName": "목포해상케이블카 유달산승강장",
+      "straightMeters": 700
+    },
+    {
+      "fromId": "p19",
+      "fromName": "목포스카이워크",
+      "toId": "p18",
+      "toName": "유달산 조각공원",
+      "straightMeters": 941
+    },
+    {
+      "fromId": "p19",
+      "fromName": "목포스카이워크",
+      "toId": "p97",
+      "toName": "달몬트",
+      "straightMeters": 971
+    },
+    {
+      "fromId": "p19",
+      "fromName": "목포스카이워크",
+      "toId": "p10",
+      "toName": "서산동 시화골목",
+      "straightMeters": 1036
+    },
+    {
+      "fromId": "p19",
+      "fromName": "목포스카이워크",
+      "toId": "p12",
+      "toName": "연희네슈퍼",
+      "straightMeters": 1130
+    },
+    {
+      "fromId": "p20",
+      "fromName": "목포문예역사관",
+      "toId": "p16",
+      "toName": "목포자연사박물관",
+      "straightMeters": 113
+    },
+    {
+      "fromId": "p20",
+      "fromName": "목포문예역사관",
+      "toId": "p25",
+      "toName": "수중유산박물관(옛 국립해양유물전시관)",
+      "straightMeters": 192
+    },
+    {
+      "fromId": "p20",
+      "fromName": "목포문예역사관",
+      "toId": "p21",
+      "toName": "목포생활도자박물관",
+      "straightMeters": 256
+    },
+    {
+      "fromId": "p20",
+      "fromName": "목포문예역사관",
+      "toId": "p42",
+      "toName": "남농기념관",
+      "straightMeters": 266
+    },
+    {
+      "fromId": "p20",
+      "fromName": "목포문예역사관",
+      "toId": "p35",
+      "toName": "목포문화예술회관",
+      "straightMeters": 358
+    },
+    {
+      "fromId": "p21",
+      "fromName": "목포생활도자박물관",
+      "toId": "p42",
+      "toName": "남농기념관",
+      "straightMeters": 78
+    },
+    {
+      "fromId": "p21",
+      "fromName": "목포생활도자박물관",
+      "toId": "p16",
+      "toName": "목포자연사박물관",
+      "straightMeters": 143
+    },
+    {
+      "fromId": "p21",
+      "fromName": "목포생활도자박물관",
+      "toId": "p35",
+      "toName": "목포문화예술회관",
+      "straightMeters": 164
+    },
+    {
+      "fromId": "p21",
+      "fromName": "목포생활도자박물관",
+      "toId": "p25",
+      "toName": "수중유산박물관(옛 국립해양유물전시관)",
+      "straightMeters": 205
+    },
+    {
+      "fromId": "p21",
+      "fromName": "목포생활도자박물관",
+      "toId": "p33",
+      "toName": "목포문학관",
+      "straightMeters": 247
+    },
+    {
+      "fromId": "p22",
+      "fromName": "목포대중음악의전당",
+      "toId": "p93",
+      "toName": "화신연쇄점",
+      "straightMeters": 62
+    },
+    {
+      "fromId": "p22",
+      "fromName": "목포대중음악의전당",
+      "toId": "p128",
+      "toName": "구보책방",
+      "straightMeters": 96
+    },
+    {
+      "fromId": "p22",
+      "fromName": "목포대중음악의전당",
+      "toId": "p108",
+      "toName": "손소영갤러리앤카페",
+      "straightMeters": 176
+    },
+    {
+      "fromId": "p22",
+      "fromName": "목포대중음악의전당",
+      "toId": "p57",
+      "toName": "대명춘",
+      "straightMeters": 177
+    },
+    {
+      "fromId": "p22",
+      "fromName": "목포대중음악의전당",
+      "toId": "p125",
+      "toName": "비팡이네",
+      "straightMeters": 186
+    },
+    {
+      "fromId": "p24",
+      "fromName": "목포삼학도크루즈",
+      "toId": "p53",
+      "toName": "연희네포차(항구포차 9호)",
+      "straightMeters": 55
+    },
+    {
+      "fromId": "p24",
+      "fromName": "목포삼학도크루즈",
+      "toId": "p32",
+      "toName": "목포어린이바다과학관",
+      "straightMeters": 145
+    },
+    {
+      "fromId": "p24",
+      "fromName": "목포삼학도크루즈",
+      "toId": "p30",
+      "toName": "김대중노벨평화상기념관",
+      "straightMeters": 432
+    },
+    {
+      "fromId": "p24",
+      "fromName": "목포삼학도크루즈",
+      "toId": "p51",
+      "toName": "성식당(수강로 본점 후보)",
+      "straightMeters": 558
+    },
+    {
+      "fromId": "p24",
+      "fromName": "목포삼학도크루즈",
+      "toId": "p31",
+      "toName": "소년 김대중 공부방",
+      "straightMeters": 570
+    },
+    {
+      "fromId": "p25",
+      "fromName": "수중유산박물관(옛 국립해양유물전시관)",
+      "toId": "p16",
+      "toName": "목포자연사박물관",
+      "straightMeters": 141
+    },
+    {
+      "fromId": "p25",
+      "fromName": "수중유산박물관(옛 국립해양유물전시관)",
+      "toId": "p42",
+      "toName": "남농기념관",
+      "straightMeters": 155
+    },
+    {
+      "fromId": "p25",
+      "fromName": "수중유산박물관(옛 국립해양유물전시관)",
+      "toId": "p20",
+      "toName": "목포문예역사관",
+      "straightMeters": 192
+    },
+    {
+      "fromId": "p25",
+      "fromName": "수중유산박물관(옛 국립해양유물전시관)",
+      "toId": "p21",
+      "toName": "목포생활도자박물관",
+      "straightMeters": 205
+    },
+    {
+      "fromId": "p25",
+      "fromName": "수중유산박물관(옛 국립해양유물전시관)",
+      "toId": "p35",
+      "toName": "목포문화예술회관",
+      "straightMeters": 208
+    },
+    {
+      "fromId": "p29",
+      "fromName": "노적봉예술공원미술관",
+      "toId": "p2",
+      "toName": "노적봉",
+      "straightMeters": 85
+    },
+    {
+      "fromId": "p29",
+      "fromName": "노적봉예술공원미술관",
+      "toId": "p8",
+      "toName": "목포근대역사관 1관",
+      "straightMeters": 94
+    },
+    {
+      "fromId": "p29",
+      "fromName": "노적봉예술공원미술관",
+      "toId": "p96",
+      "toName": "무가보",
+      "straightMeters": 102
+    },
+    {
+      "fromId": "p29",
+      "fromName": "노적봉예술공원미술관",
+      "toId": "p119",
+      "toName": "한마을떡",
+      "straightMeters": 162
+    },
+    {
+      "fromId": "p29",
+      "fromName": "노적봉예술공원미술관",
+      "toId": "p17",
+      "toName": "성옥기념관",
+      "straightMeters": 164
+    },
+    {
+      "fromId": "p30",
+      "fromName": "김대중노벨평화상기념관",
+      "toId": "p32",
+      "toName": "목포어린이바다과학관",
+      "straightMeters": 324
+    },
+    {
+      "fromId": "p30",
+      "fromName": "김대중노벨평화상기념관",
+      "toId": "p53",
+      "toName": "연희네포차(항구포차 9호)",
+      "straightMeters": 421
+    },
+    {
+      "fromId": "p30",
+      "fromName": "김대중노벨평화상기념관",
+      "toId": "p24",
+      "toName": "목포삼학도크루즈",
+      "straightMeters": 432
+    },
+    {
+      "fromId": "p30",
+      "fromName": "김대중노벨평화상기념관",
+      "toId": "p51",
+      "toName": "성식당(수강로 본점 후보)",
+      "straightMeters": 607
+    },
+    {
+      "fromId": "p30",
+      "fromName": "김대중노벨평화상기념관",
+      "toId": "p127",
+      "toName": "포도책방(목포점)",
+      "straightMeters": 635
+    },
+    {
+      "fromId": "p31",
+      "fromName": "소년 김대중 공부방",
+      "toId": "p46",
+      "toName": "영란횟집",
+      "straightMeters": 137
+    },
+    {
+      "fromId": "p31",
+      "fromName": "소년 김대중 공부방",
+      "toId": "p48",
+      "toName": "장터식당 본점",
+      "straightMeters": 144
+    },
+    {
+      "fromId": "p31",
+      "fromName": "소년 김대중 공부방",
+      "toId": "p51",
+      "toName": "성식당(수강로 본점 후보)",
+      "straightMeters": 152
+    },
+    {
+      "fromId": "p31",
+      "fromName": "소년 김대중 공부방",
+      "toId": "p98",
+      "toName": "쿠레레",
+      "straightMeters": 172
+    },
+    {
+      "fromId": "p31",
+      "fromName": "소년 김대중 공부방",
+      "toId": "p63",
+      "toName": "김정림선지해장국",
+      "straightMeters": 181
+    },
+    {
+      "fromId": "p32",
+      "fromName": "목포어린이바다과학관",
+      "toId": "p53",
+      "toName": "연희네포차(항구포차 9호)",
+      "straightMeters": 109
+    },
+    {
+      "fromId": "p32",
+      "fromName": "목포어린이바다과학관",
+      "toId": "p24",
+      "toName": "목포삼학도크루즈",
+      "straightMeters": 145
+    },
+    {
+      "fromId": "p32",
+      "fromName": "목포어린이바다과학관",
+      "toId": "p30",
+      "toName": "김대중노벨평화상기념관",
+      "straightMeters": 324
+    },
+    {
+      "fromId": "p32",
+      "fromName": "목포어린이바다과학관",
+      "toId": "p51",
+      "toName": "성식당(수강로 본점 후보)",
+      "straightMeters": 456
+    },
+    {
+      "fromId": "p32",
+      "fromName": "목포어린이바다과학관",
+      "toId": "p31",
+      "toName": "소년 김대중 공부방",
+      "straightMeters": 501
+    },
+    {
+      "fromId": "p33",
+      "fromName": "목포문학관",
+      "toId": "p43",
+      "toName": "옥공예전시관",
+      "straightMeters": 95
+    },
+    {
+      "fromId": "p33",
+      "fromName": "목포문학관",
+      "toId": "p35",
+      "toName": "목포문화예술회관",
+      "straightMeters": 196
+    },
+    {
+      "fromId": "p33",
+      "fromName": "목포문학관",
+      "toId": "p42",
+      "toName": "남농기념관",
+      "straightMeters": 244
+    },
+    {
+      "fromId": "p33",
+      "fromName": "목포문학관",
+      "toId": "p21",
+      "toName": "목포생활도자박물관",
+      "straightMeters": 247
+    },
+    {
+      "fromId": "p33",
+      "fromName": "목포문학관",
+      "toId": "p16",
+      "toName": "목포자연사박물관",
+      "straightMeters": 387
+    },
+    {
+      "fromId": "p34",
+      "fromName": "국립호남권생물자원관",
+      "toId": "p5",
+      "toName": "목포해상케이블카 고하도승강장",
+      "straightMeters": 981
+    },
+    {
+      "fromId": "p34",
+      "fromName": "국립호남권생물자원관",
+      "toId": "p6",
+      "toName": "고하도 전망대·해안데크",
+      "straightMeters": 1385
+    },
+    {
+      "fromId": "p34",
+      "fromName": "국립호남권생물자원관",
+      "toId": "p97",
+      "toName": "달몬트",
+      "straightMeters": 1634
+    },
+    {
+      "fromId": "p34",
+      "fromName": "국립호남권생물자원관",
+      "toId": "p68",
+      "toName": "조선쫄복탕",
+      "straightMeters": 1797
+    },
+    {
+      "fromId": "p34",
+      "fromName": "국립호남권생물자원관",
+      "toId": "p12",
+      "toName": "연희네슈퍼",
+      "straightMeters": 1925
+    },
+    {
+      "fromId": "p35",
+      "fromName": "목포문화예술회관",
+      "toId": "p42",
+      "toName": "남농기념관",
+      "straightMeters": 100
+    },
+    {
+      "fromId": "p35",
+      "fromName": "목포문화예술회관",
+      "toId": "p21",
+      "toName": "목포생활도자박물관",
+      "straightMeters": 164
+    },
+    {
+      "fromId": "p35",
+      "fromName": "목포문화예술회관",
+      "toId": "p33",
+      "toName": "목포문학관",
+      "straightMeters": 196
+    },
+    {
+      "fromId": "p35",
+      "fromName": "목포문화예술회관",
+      "toId": "p25",
+      "toName": "수중유산박물관(옛 국립해양유물전시관)",
+      "straightMeters": 208
+    },
+    {
+      "fromId": "p35",
+      "fromName": "목포문화예술회관",
+      "toId": "p16",
+      "toName": "목포자연사박물관",
+      "straightMeters": 253
+    },
+    {
+      "fromId": "p41",
+      "fromName": "노라노미술관",
+      "toId": "p117",
+      "toName": "작은낙",
+      "straightMeters": 33
+    },
+    {
+      "fromId": "p41",
+      "fromName": "노라노미술관",
+      "toId": "p83",
+      "toName": "라멘집아저씨",
+      "straightMeters": 121
+    },
+    {
+      "fromId": "p41",
+      "fromName": "노라노미술관",
+      "toId": "p105",
+      "toName": "브릭레인",
+      "straightMeters": 130
+    },
+    {
+      "fromId": "p41",
+      "fromName": "노라노미술관",
+      "toId": "p116",
+      "toName": "코롬방제과점",
+      "straightMeters": 201
+    },
+    {
+      "fromId": "p41",
+      "fromName": "노라노미술관",
+      "toId": "p115",
+      "toName": "씨엘비베이커리(원도심점)",
+      "straightMeters": 210
+    },
+    {
+      "fromId": "p42",
+      "fromName": "남농기념관",
+      "toId": "p21",
+      "toName": "목포생활도자박물관",
+      "straightMeters": 78
+    },
+    {
+      "fromId": "p42",
+      "fromName": "남농기념관",
+      "toId": "p35",
+      "toName": "목포문화예술회관",
+      "straightMeters": 100
+    },
+    {
+      "fromId": "p42",
+      "fromName": "남농기념관",
+      "toId": "p25",
+      "toName": "수중유산박물관(옛 국립해양유물전시관)",
+      "straightMeters": 155
+    },
+    {
+      "fromId": "p42",
+      "fromName": "남농기념관",
+      "toId": "p16",
+      "toName": "목포자연사박물관",
+      "straightMeters": 156
+    },
+    {
+      "fromId": "p42",
+      "fromName": "남농기념관",
+      "toId": "p33",
+      "toName": "목포문학관",
+      "straightMeters": 244
+    },
+    {
+      "fromId": "p43",
+      "fromName": "옥공예전시관",
+      "toId": "p33",
+      "toName": "목포문학관",
+      "straightMeters": 95
+    },
+    {
+      "fromId": "p43",
+      "fromName": "옥공예전시관",
+      "toId": "p35",
+      "toName": "목포문화예술회관",
+      "straightMeters": 284
+    },
+    {
+      "fromId": "p43",
+      "fromName": "옥공예전시관",
+      "toId": "p42",
+      "toName": "남농기념관",
+      "straightMeters": 339
+    },
+    {
+      "fromId": "p43",
+      "fromName": "옥공예전시관",
+      "toId": "p21",
+      "toName": "목포생활도자박물관",
+      "straightMeters": 341
+    },
+    {
+      "fromId": "p43",
+      "fromName": "옥공예전시관",
+      "toId": "p16",
+      "toName": "목포자연사박물관",
+      "straightMeters": 481
+    },
+    {
+      "fromId": "p46",
+      "fromName": "영란횟집",
+      "toId": "p63",
+      "toName": "김정림선지해장국",
+      "straightMeters": 52
+    },
+    {
+      "fromId": "p46",
+      "fromName": "영란횟집",
+      "toId": "p47",
+      "toName": "초원음식점(초원식당)",
+      "straightMeters": 91
+    },
+    {
+      "fromId": "p46",
+      "fromName": "영란횟집",
+      "toId": "p64",
+      "toName": "정성김밥",
+      "straightMeters": 93
+    },
+    {
+      "fromId": "p46",
+      "fromName": "영란횟집",
+      "toId": "p98",
+      "toName": "쿠레레",
+      "straightMeters": 121
+    },
+    {
+      "fromId": "p46",
+      "fromName": "영란횟집",
+      "toId": "p31",
+      "toName": "소년 김대중 공부방",
+      "straightMeters": 137
+    },
+    {
+      "fromId": "p47",
+      "fromName": "초원음식점(초원식당)",
+      "toId": "p63",
+      "toName": "김정림선지해장국",
+      "straightMeters": 60
+    },
+    {
+      "fromId": "p47",
+      "fromName": "초원음식점(초원식당)",
+      "toId": "p46",
+      "toName": "영란횟집",
+      "straightMeters": 91
+    },
+    {
+      "fromId": "p47",
+      "fromName": "초원음식점(초원식당)",
+      "toId": "p64",
+      "toName": "정성김밥",
+      "straightMeters": 111
+    },
+    {
+      "fromId": "p47",
+      "fromName": "초원음식점(초원식당)",
+      "toId": "p120",
+      "toName": "목포쫀드기 본점",
+      "straightMeters": 142
+    },
+    {
+      "fromId": "p47",
+      "fromName": "초원음식점(초원식당)",
+      "toId": "p8",
+      "toName": "목포근대역사관 1관",
+      "straightMeters": 150
+    },
+    {
+      "fromId": "p48",
+      "fromName": "장터식당 본점",
+      "toId": "p65",
+      "toName": "원조제일돌곱창",
+      "straightMeters": 92
+    },
+    {
+      "fromId": "p48",
+      "fromName": "장터식당 본점",
+      "toId": "p64",
+      "toName": "정성김밥",
+      "straightMeters": 110
+    },
+    {
+      "fromId": "p48",
+      "fromName": "장터식당 본점",
+      "toId": "p94",
+      "toName": "송자르트",
+      "straightMeters": 139
+    },
+    {
+      "fromId": "p48",
+      "fromName": "장터식당 본점",
+      "toId": "p31",
+      "toName": "소년 김대중 공부방",
+      "straightMeters": 144
+    },
+    {
+      "fromId": "p48",
+      "fromName": "장터식당 본점",
+      "toId": "p120",
+      "toName": "목포쫀드기 본점",
+      "straightMeters": 147
+    },
+    {
+      "fromId": "p49",
+      "fromName": "인동주마을",
+      "toId": "p92",
+      "toName": "트라이팟",
+      "straightMeters": 264
+    },
+    {
+      "fromId": "p49",
+      "fromName": "인동주마을",
+      "toId": "p58",
+      "toName": "솜리치킨 목포점",
+      "straightMeters": 474
+    },
+    {
+      "fromId": "p49",
+      "fromName": "인동주마을",
+      "toId": "p50",
+      "toName": "하당먹거리",
+      "straightMeters": 577
+    },
+    {
+      "fromId": "p49",
+      "fromName": "인동주마을",
+      "toId": "p74",
+      "toName": "88포장마차(원형로)",
+      "straightMeters": 842
+    },
+    {
+      "fromId": "p49",
+      "fromName": "인동주마을",
+      "toId": "p124",
+      "toName": "가죽공방 모닉",
+      "straightMeters": 859
+    },
+    {
+      "fromId": "p50",
+      "fromName": "하당먹거리",
+      "toId": "p58",
+      "toName": "솜리치킨 목포점",
+      "straightMeters": 125
+    },
+    {
+      "fromId": "p50",
+      "fromName": "하당먹거리",
+      "toId": "p124",
+      "toName": "가죽공방 모닉",
+      "straightMeters": 382
+    },
+    {
+      "fromId": "p50",
+      "fromName": "하당먹거리",
+      "toId": "p49",
+      "toName": "인동주마을",
+      "straightMeters": 577
+    },
+    {
+      "fromId": "p50",
+      "fromName": "하당먹거리",
+      "toId": "p70",
+      "toName": "원조신선횟집",
+      "straightMeters": 599
+    },
+    {
+      "fromId": "p50",
+      "fromName": "하당먹거리",
+      "toId": "p92",
+      "toName": "트라이팟",
+      "straightMeters": 622
+    },
+    {
+      "fromId": "p51",
+      "fromName": "성식당(수강로 본점 후보)",
+      "toId": "p127",
+      "toName": "포도책방(목포점)",
+      "straightMeters": 150
+    },
+    {
+      "fromId": "p51",
+      "fromName": "성식당(수강로 본점 후보)",
+      "toId": "p31",
+      "toName": "소년 김대중 공부방",
+      "straightMeters": 152
+    },
+    {
+      "fromId": "p51",
+      "fromName": "성식당(수강로 본점 후보)",
+      "toId": "p98",
+      "toName": "쿠레레",
+      "straightMeters": 168
+    },
+    {
+      "fromId": "p51",
+      "fromName": "성식당(수강로 본점 후보)",
+      "toId": "p108",
+      "toName": "손소영갤러리앤카페",
+      "straightMeters": 200
+    },
+    {
+      "fromId": "p51",
+      "fromName": "성식당(수강로 본점 후보)",
+      "toId": "p46",
+      "toName": "영란횟집",
+      "straightMeters": 232
+    },
+    {
+      "fromId": "p52",
+      "fromName": "은빛바다회센터(율석수산)",
+      "toId": "p112",
+      "toName": "라니카이",
+      "straightMeters": 26
+    },
+    {
+      "fromId": "p52",
+      "fromName": "은빛바다회센터(율석수산)",
+      "toId": "p88",
+      "toName": "압해도뻘낙지",
+      "straightMeters": 194
+    },
+    {
+      "fromId": "p52",
+      "fromName": "은빛바다회센터(율석수산)",
+      "toId": "p99",
+      "toName": "석산(SUKSAN)",
+      "straightMeters": 318
+    },
+    {
+      "fromId": "p52",
+      "fromName": "은빛바다회센터(율석수산)",
+      "toId": "p60",
+      "toName": "너구리식당",
+      "straightMeters": 408
+    },
+    {
+      "fromId": "p52",
+      "fromName": "은빛바다회센터(율석수산)",
+      "toId": "p3",
+      "toName": "목포해상케이블카 북항승강장",
+      "straightMeters": 689
+    },
+    {
+      "fromId": "p53",
+      "fromName": "연희네포차(항구포차 9호)",
+      "toId": "p24",
+      "toName": "목포삼학도크루즈",
+      "straightMeters": 55
+    },
+    {
+      "fromId": "p53",
+      "fromName": "연희네포차(항구포차 9호)",
+      "toId": "p32",
+      "toName": "목포어린이바다과학관",
+      "straightMeters": 109
+    },
+    {
+      "fromId": "p53",
+      "fromName": "연희네포차(항구포차 9호)",
+      "toId": "p30",
+      "toName": "김대중노벨평화상기념관",
+      "straightMeters": 421
+    },
+    {
+      "fromId": "p53",
+      "fromName": "연희네포차(항구포차 9호)",
+      "toId": "p51",
+      "toName": "성식당(수강로 본점 후보)",
+      "straightMeters": 503
+    },
+    {
+      "fromId": "p53",
+      "fromName": "연희네포차(항구포차 9호)",
+      "toId": "p31",
+      "toName": "소년 김대중 공부방",
+      "straightMeters": 516
+    },
+    {
+      "fromId": "p54",
+      "fromName": "목포관광오리탕(시내본점)",
+      "toId": "p85",
+      "toName": "금강뻘낙지장어요리전문점",
+      "straightMeters": 89
+    },
+    {
+      "fromId": "p54",
+      "fromName": "목포관광오리탕(시내본점)",
+      "toId": "p103",
+      "toName": "인스파이어링 커피",
+      "straightMeters": 215
+    },
+    {
+      "fromId": "p54",
+      "fromName": "목포관광오리탕(시내본점)",
+      "toId": "p61",
+      "toName": "유달콩물(호남로 본점)",
+      "straightMeters": 230
+    },
+    {
+      "fromId": "p54",
+      "fromName": "목포관광오리탕(시내본점)",
+      "toId": "p84",
+      "toName": "예향밥상",
+      "straightMeters": 274
+    },
+    {
+      "fromId": "p54",
+      "fromName": "목포관광오리탕(시내본점)",
+      "toId": "station",
+      "toName": "목포역",
+      "straightMeters": 302
+    },
+    {
+      "fromId": "p55",
+      "fromName": "해빔",
+      "toId": "p62",
+      "toName": "소래기냉면",
+      "straightMeters": 38
+    },
+    {
+      "fromId": "p55",
+      "fromName": "해빔",
+      "toId": "p56",
+      "toName": "어락",
+      "straightMeters": 84
+    },
+    {
+      "fromId": "p55",
+      "fromName": "해빔",
+      "toId": "p100",
+      "toName": "오리진 커피 로스터스",
+      "straightMeters": 91
+    },
+    {
+      "fromId": "p55",
+      "fromName": "해빔",
+      "toId": "p101",
+      "toName": "커피창고로(평화광장점)",
+      "straightMeters": 123
+    },
+    {
+      "fromId": "p55",
+      "fromName": "해빔",
+      "toId": "p14",
+      "toName": "평화광장",
+      "straightMeters": 318
+    },
+    {
+      "fromId": "p56",
+      "fromName": "어락",
+      "toId": "p101",
+      "toName": "커피창고로(평화광장점)",
+      "straightMeters": 52
+    },
+    {
+      "fromId": "p56",
+      "fromName": "어락",
+      "toId": "p55",
+      "toName": "해빔",
+      "straightMeters": 84
+    },
+    {
+      "fromId": "p56",
+      "fromName": "어락",
+      "toId": "p62",
+      "toName": "소래기냉면",
+      "straightMeters": 109
+    },
+    {
+      "fromId": "p56",
+      "fromName": "어락",
+      "toId": "p100",
+      "toName": "오리진 커피 로스터스",
+      "straightMeters": 154
+    },
+    {
+      "fromId": "p56",
+      "fromName": "어락",
+      "toId": "p14",
+      "toName": "평화광장",
+      "straightMeters": 279
+    },
+    {
+      "fromId": "p57",
+      "fromName": "대명춘",
+      "toId": "p113",
+      "toName": "고호의 책방",
+      "straightMeters": 53
+    },
+    {
+      "fromId": "p57",
+      "fromName": "대명춘",
+      "toId": "p115",
+      "toName": "씨엘비베이커리(원도심점)",
+      "straightMeters": 62
+    },
+    {
+      "fromId": "p57",
+      "fromName": "대명춘",
+      "toId": "p116",
+      "toName": "코롬방제과점",
+      "straightMeters": 70
+    },
+    {
+      "fromId": "p57",
+      "fromName": "대명춘",
+      "toId": "p128",
+      "toName": "구보책방",
+      "straightMeters": 106
+    },
+    {
+      "fromId": "p57",
+      "fromName": "대명춘",
+      "toId": "p118",
+      "toName": "물망초",
+      "straightMeters": 118
+    },
+    {
+      "fromId": "p58",
+      "fromName": "솜리치킨 목포점",
+      "toId": "p50",
+      "toName": "하당먹거리",
+      "straightMeters": 125
+    },
+    {
+      "fromId": "p58",
+      "fromName": "솜리치킨 목포점",
+      "toId": "p49",
+      "toName": "인동주마을",
+      "straightMeters": 474
+    },
+    {
+      "fromId": "p58",
+      "fromName": "솜리치킨 목포점",
+      "toId": "p124",
+      "toName": "가죽공방 모닉",
+      "straightMeters": 500
+    },
+    {
+      "fromId": "p58",
+      "fromName": "솜리치킨 목포점",
+      "toId": "p92",
+      "toName": "트라이팟",
+      "straightMeters": 561
+    },
+    {
+      "fromId": "p58",
+      "fromName": "솜리치킨 목포점",
+      "toId": "p70",
+      "toName": "원조신선횟집",
+      "straightMeters": 721
+    },
+    {
+      "fromId": "p59",
+      "fromName": "카와루라멘",
+      "toId": "p67",
+      "toName": "왕새우직판장 본점",
+      "straightMeters": 265
+    },
+    {
+      "fromId": "p59",
+      "fromName": "카와루라멘",
+      "toId": "p75",
+      "toName": "꼬미꼬미",
+      "straightMeters": 302
+    },
+    {
+      "fromId": "p59",
+      "fromName": "카와루라멘",
+      "toId": "p73",
+      "toName": "서해반점",
+      "straightMeters": 341
+    },
+    {
+      "fromId": "p59",
+      "fromName": "카와루라멘",
+      "toId": "p86",
+      "toName": "형제꼬막짬뽕",
+      "straightMeters": 490
+    },
+    {
+      "fromId": "p59",
+      "fromName": "카와루라멘",
+      "toId": "p60",
+      "toName": "너구리식당",
+      "straightMeters": 624
+    },
+    {
+      "fromId": "p60",
+      "fromName": "너구리식당",
+      "toId": "p88",
+      "toName": "압해도뻘낙지",
+      "straightMeters": 215
+    },
+    {
+      "fromId": "p60",
+      "fromName": "너구리식당",
+      "toId": "p3",
+      "toName": "목포해상케이블카 북항승강장",
+      "straightMeters": 379
+    },
+    {
+      "fromId": "p60",
+      "fromName": "너구리식당",
+      "toId": "p99",
+      "toName": "석산(SUKSAN)",
+      "straightMeters": 383
+    },
+    {
+      "fromId": "p60",
+      "fromName": "너구리식당",
+      "toId": "p52",
+      "toName": "은빛바다회센터(율석수산)",
+      "straightMeters": 408
+    },
+    {
+      "fromId": "p60",
+      "fromName": "너구리식당",
+      "toId": "p112",
+      "toName": "라니카이",
+      "straightMeters": 427
+    },
+    {
+      "fromId": "p61",
+      "fromName": "유달콩물(호남로 본점)",
+      "toId": "p103",
+      "toName": "인스파이어링 커피",
+      "straightMeters": 37
+    },
+    {
+      "fromId": "p61",
+      "fromName": "유달콩물(호남로 본점)",
+      "toId": "p130",
+      "toName": "웨이브",
+      "straightMeters": 87
+    },
+    {
+      "fromId": "p61",
+      "fromName": "유달콩물(호남로 본점)",
+      "toId": "p84",
+      "toName": "예향밥상",
+      "straightMeters": 99
+    },
+    {
+      "fromId": "p61",
+      "fromName": "유달콩물(호남로 본점)",
+      "toId": "p85",
+      "toName": "금강뻘낙지장어요리전문점",
+      "straightMeters": 146
+    },
+    {
+      "fromId": "p61",
+      "fromName": "유달콩물(호남로 본점)",
+      "toId": "p102",
+      "toName": "혹호",
+      "straightMeters": 148
+    },
+    {
+      "fromId": "p62",
+      "fromName": "소래기냉면",
+      "toId": "p55",
+      "toName": "해빔",
+      "straightMeters": 38
+    },
+    {
+      "fromId": "p62",
+      "fromName": "소래기냉면",
+      "toId": "p100",
+      "toName": "오리진 커피 로스터스",
+      "straightMeters": 53
+    },
+    {
+      "fromId": "p62",
+      "fromName": "소래기냉면",
+      "toId": "p56",
+      "toName": "어락",
+      "straightMeters": 109
+    },
+    {
+      "fromId": "p62",
+      "fromName": "소래기냉면",
+      "toId": "p101",
+      "toName": "커피창고로(평화광장점)",
+      "straightMeters": 154
+    },
+    {
+      "fromId": "p62",
+      "fromName": "소래기냉면",
+      "toId": "p14",
+      "toName": "평화광장",
+      "straightMeters": 357
+    },
+    {
+      "fromId": "p63",
+      "fromName": "김정림선지해장국",
+      "toId": "p46",
+      "toName": "영란횟집",
+      "straightMeters": 52
+    },
+    {
+      "fromId": "p63",
+      "fromName": "김정림선지해장국",
+      "toId": "p47",
+      "toName": "초원음식점(초원식당)",
+      "straightMeters": 60
+    },
+    {
+      "fromId": "p63",
+      "fromName": "김정림선지해장국",
+      "toId": "p98",
+      "toName": "쿠레레",
+      "straightMeters": 105
+    },
+    {
+      "fromId": "p63",
+      "fromName": "김정림선지해장국",
+      "toId": "p64",
+      "toName": "정성김밥",
+      "straightMeters": 124
+    },
+    {
+      "fromId": "p63",
+      "fromName": "김정림선지해장국",
+      "toId": "p108",
+      "toName": "손소영갤러리앤카페",
+      "straightMeters": 171
+    },
+    {
+      "fromId": "p64",
+      "fromName": "정성김밥",
+      "toId": "p120",
+      "toName": "목포쫀드기 본점",
+      "straightMeters": 70
+    },
+    {
+      "fromId": "p64",
+      "fromName": "정성김밥",
+      "toId": "p46",
+      "toName": "영란횟집",
+      "straightMeters": 93
+    },
+    {
+      "fromId": "p64",
+      "fromName": "정성김밥",
+      "toId": "p48",
+      "toName": "장터식당 본점",
+      "straightMeters": 110
+    },
+    {
+      "fromId": "p64",
+      "fromName": "정성김밥",
+      "toId": "p47",
+      "toName": "초원음식점(초원식당)",
+      "straightMeters": 111
+    },
+    {
+      "fromId": "p64",
+      "fromName": "정성김밥",
+      "toId": "p63",
+      "toName": "김정림선지해장국",
+      "straightMeters": 124
+    },
+    {
+      "fromId": "p65",
+      "fromName": "원조제일돌곱창",
+      "toId": "p94",
+      "toName": "송자르트",
+      "straightMeters": 76
+    },
+    {
+      "fromId": "p65",
+      "fromName": "원조제일돌곱창",
+      "toId": "p48",
+      "toName": "장터식당 본점",
+      "straightMeters": 92
+    },
+    {
+      "fromId": "p65",
+      "fromName": "원조제일돌곱창",
+      "toId": "p81",
+      "toName": "에스타시옹1913",
+      "straightMeters": 125
+    },
+    {
+      "fromId": "p65",
+      "fromName": "원조제일돌곱창",
+      "toId": "p120",
+      "toName": "목포쫀드기 본점",
+      "straightMeters": 131
+    },
+    {
+      "fromId": "p65",
+      "fromName": "원조제일돌곱창",
+      "toId": "p64",
+      "toName": "정성김밥",
+      "straightMeters": 142
+    },
+    {
+      "fromId": "p66",
+      "fromName": "야드레보쌈",
+      "toId": "p106",
+      "toName": "더왈츠",
+      "straightMeters": 389
+    },
+    {
+      "fromId": "p66",
+      "fromName": "야드레보쌈",
+      "toId": "p74",
+      "toName": "88포장마차(원형로)",
+      "straightMeters": 473
+    },
+    {
+      "fromId": "p66",
+      "fromName": "야드레보쌈",
+      "toId": "p56",
+      "toName": "어락",
+      "straightMeters": 479
+    },
+    {
+      "fromId": "p66",
+      "fromName": "야드레보쌈",
+      "toId": "p101",
+      "toName": "커피창고로(평화광장점)",
+      "straightMeters": 498
+    },
+    {
+      "fromId": "p66",
+      "fromName": "야드레보쌈",
+      "toId": "p100",
+      "toName": "오리진 커피 로스터스",
+      "straightMeters": 513
+    },
+    {
+      "fromId": "p67",
+      "fromName": "왕새우직판장 본점",
+      "toId": "p59",
+      "toName": "카와루라멘",
+      "straightMeters": 265
+    },
+    {
+      "fromId": "p67",
+      "fromName": "왕새우직판장 본점",
+      "toId": "p75",
+      "toName": "꼬미꼬미",
+      "straightMeters": 372
+    },
+    {
+      "fromId": "p67",
+      "fromName": "왕새우직판장 본점",
+      "toId": "p86",
+      "toName": "형제꼬막짬뽕",
+      "straightMeters": 547
+    },
+    {
+      "fromId": "p67",
+      "fromName": "왕새우직판장 본점",
+      "toId": "p73",
+      "toName": "서해반점",
+      "straightMeters": 580
+    },
+    {
+      "fromId": "p67",
+      "fromName": "왕새우직판장 본점",
+      "toId": "p60",
+      "toName": "너구리식당",
+      "straightMeters": 640
+    },
+    {
+      "fromId": "p68",
+      "fromName": "조선쫄복탕",
+      "toId": "p12",
+      "toName": "연희네슈퍼",
+      "straightMeters": 128
+    },
+    {
+      "fromId": "p68",
+      "fromName": "조선쫄복탕",
+      "toId": "p10",
+      "toName": "서산동 시화골목",
+      "straightMeters": 208
+    },
+    {
+      "fromId": "p68",
+      "fromName": "조선쫄복탕",
+      "toId": "p97",
+      "toName": "달몬트",
+      "straightMeters": 304
+    },
+    {
+      "fromId": "p68",
+      "fromName": "조선쫄복탕",
+      "toId": "p94",
+      "toName": "송자르트",
+      "straightMeters": 633
+    },
+    {
+      "fromId": "p68",
+      "fromName": "조선쫄복탕",
+      "toId": "p81",
+      "toName": "에스타시옹1913",
+      "straightMeters": 643
+    },
+    {
+      "fromId": "p69",
+      "fromName": "춘광식당",
+      "toId": "p128",
+      "toName": "구보책방",
+      "straightMeters": 381
+    },
+    {
+      "fromId": "p69",
+      "fromName": "춘광식당",
+      "toId": "p93",
+      "toName": "화신연쇄점",
+      "straightMeters": 386
+    },
+    {
+      "fromId": "p69",
+      "fromName": "춘광식당",
+      "toId": "p22",
+      "toName": "목포대중음악의전당",
+      "straightMeters": 400
+    },
+    {
+      "fromId": "p69",
+      "fromName": "춘광식당",
+      "toId": "station",
+      "toName": "목포역",
+      "straightMeters": 429
+    },
+    {
+      "fromId": "p69",
+      "fromName": "춘광식당",
+      "toId": "p118",
+      "toName": "물망초",
+      "straightMeters": 443
+    },
+    {
+      "fromId": "p70",
+      "fromName": "원조신선횟집",
+      "toId": "p124",
+      "toName": "가죽공방 모닉",
+      "straightMeters": 380
+    },
+    {
+      "fromId": "p70",
+      "fromName": "원조신선횟집",
+      "toId": "p50",
+      "toName": "하당먹거리",
+      "straightMeters": 599
+    },
+    {
+      "fromId": "p70",
+      "fromName": "원조신선횟집",
+      "toId": "p58",
+      "toName": "솜리치킨 목포점",
+      "straightMeters": 721
+    },
+    {
+      "fromId": "p70",
+      "fromName": "원조신선횟집",
+      "toId": "p121",
+      "toName": "청호시장",
+      "straightMeters": 776
+    },
+    {
+      "fromId": "p70",
+      "fromName": "원조신선횟집",
+      "toId": "p77",
+      "toName": "오두막집",
+      "straightMeters": 875
+    },
+    {
+      "fromId": "p71",
+      "fromName": "관우식당",
+      "toId": "p89",
+      "toName": "청호식당",
+      "straightMeters": 25
+    },
+    {
+      "fromId": "p71",
+      "fromName": "관우식당",
+      "toId": "p69",
+      "toName": "춘광식당",
+      "straightMeters": 563
+    },
+    {
+      "fromId": "p71",
+      "fromName": "관우식당",
+      "toId": "p54",
+      "toName": "목포관광오리탕(시내본점)",
+      "straightMeters": 582
+    },
+    {
+      "fromId": "p71",
+      "fromName": "관우식당",
+      "toId": "p90",
+      "toName": "이가네고기국수",
+      "straightMeters": 594
+    },
+    {
+      "fromId": "p71",
+      "fromName": "관우식당",
+      "toId": "p85",
+      "toName": "금강뻘낙지장어요리전문점",
+      "straightMeters": 625
+    },
+    {
+      "fromId": "p72",
+      "fromName": "미달이네집밥",
+      "toId": "p87",
+      "toName": "삼학만두",
+      "straightMeters": 663
+    },
+    {
+      "fromId": "p72",
+      "fromName": "미달이네집밥",
+      "toId": "p90",
+      "toName": "이가네고기국수",
+      "straightMeters": 971
+    },
+    {
+      "fromId": "p72",
+      "fromName": "미달이네집밥",
+      "toId": "p71",
+      "toName": "관우식당",
+      "straightMeters": 995
+    },
+    {
+      "fromId": "p72",
+      "fromName": "미달이네집밥",
+      "toId": "p89",
+      "toName": "청호식당",
+      "straightMeters": 1020
+    },
+    {
+      "fromId": "p72",
+      "fromName": "미달이네집밥",
+      "toId": "p69",
+      "toName": "춘광식당",
+      "straightMeters": 1124
+    },
+    {
+      "fromId": "p73",
+      "fromName": "서해반점",
+      "toId": "p59",
+      "toName": "카와루라멘",
+      "straightMeters": 341
+    },
+    {
+      "fromId": "p73",
+      "fromName": "서해반점",
+      "toId": "p60",
+      "toName": "너구리식당",
+      "straightMeters": 564
+    },
+    {
+      "fromId": "p73",
+      "fromName": "서해반점",
+      "toId": "p67",
+      "toName": "왕새우직판장 본점",
+      "straightMeters": 580
+    },
+    {
+      "fromId": "p73",
+      "fromName": "서해반점",
+      "toId": "p75",
+      "toName": "꼬미꼬미",
+      "straightMeters": 590
+    },
+    {
+      "fromId": "p73",
+      "fromName": "서해반점",
+      "toId": "p3",
+      "toName": "목포해상케이블카 북항승강장",
+      "straightMeters": 726
+    },
+    {
+      "fromId": "p74",
+      "fromName": "88포장마차(원형로)",
+      "toId": "p101",
+      "toName": "커피창고로(평화광장점)",
+      "straightMeters": 249
+    },
+    {
+      "fromId": "p74",
+      "fromName": "88포장마차(원형로)",
+      "toId": "p14",
+      "toName": "평화광장",
+      "straightMeters": 262
+    },
+    {
+      "fromId": "p74",
+      "fromName": "88포장마차(원형로)",
+      "toId": "p56",
+      "toName": "어락",
+      "straightMeters": 288
+    },
+    {
+      "fromId": "p74",
+      "fromName": "88포장마차(원형로)",
+      "toId": "p55",
+      "toName": "해빔",
+      "straightMeters": 370
+    },
+    {
+      "fromId": "p74",
+      "fromName": "88포장마차(원형로)",
+      "toId": "p62",
+      "toName": "소래기냉면",
+      "straightMeters": 397
+    },
+    {
+      "fromId": "p75",
+      "fromName": "꼬미꼬미",
+      "toId": "p86",
+      "toName": "형제꼬막짬뽕",
+      "straightMeters": 192
+    },
+    {
+      "fromId": "p75",
+      "fromName": "꼬미꼬미",
+      "toId": "p59",
+      "toName": "카와루라멘",
+      "straightMeters": 302
+    },
+    {
+      "fromId": "p75",
+      "fromName": "꼬미꼬미",
+      "toId": "p67",
+      "toName": "왕새우직판장 본점",
+      "straightMeters": 372
+    },
+    {
+      "fromId": "p75",
+      "fromName": "꼬미꼬미",
+      "toId": "p73",
+      "toName": "서해반점",
+      "straightMeters": 590
+    },
+    {
+      "fromId": "p75",
+      "fromName": "꼬미꼬미",
+      "toId": "p60",
+      "toName": "너구리식당",
+      "straightMeters": 917
+    },
+    {
+      "fromId": "p76",
+      "fromName": "용당반점",
+      "toId": "p78",
+      "toName": "만났지식당",
+      "straightMeters": 283
+    },
+    {
+      "fromId": "p76",
+      "fromName": "용당반점",
+      "toId": "p90",
+      "toName": "이가네고기국수",
+      "straightMeters": 377
+    },
+    {
+      "fromId": "p76",
+      "fromName": "용당반점",
+      "toId": "p122",
+      "toName": "목포동부시장",
+      "straightMeters": 395
+    },
+    {
+      "fromId": "p76",
+      "fromName": "용당반점",
+      "toId": "p80",
+      "toName": "어채",
+      "straightMeters": 434
+    },
+    {
+      "fromId": "p76",
+      "fromName": "용당반점",
+      "toId": "p82",
+      "toName": "그때그짜장집",
+      "straightMeters": 702
+    },
+    {
+      "fromId": "p77",
+      "fromName": "오두막집",
+      "toId": "p106",
+      "toName": "더왈츠",
+      "straightMeters": 470
+    },
+    {
+      "fromId": "p77",
+      "fromName": "오두막집",
+      "toId": "p66",
+      "toName": "야드레보쌈",
+      "straightMeters": 717
+    },
+    {
+      "fromId": "p77",
+      "fromName": "오두막집",
+      "toId": "p70",
+      "toName": "원조신선횟집",
+      "straightMeters": 875
+    },
+    {
+      "fromId": "p77",
+      "fromName": "오두막집",
+      "toId": "p20",
+      "toName": "목포문예역사관",
+      "straightMeters": 915
+    },
+    {
+      "fromId": "p77",
+      "fromName": "오두막집",
+      "toId": "p16",
+      "toName": "목포자연사박물관",
+      "straightMeters": 919
+    },
+    {
+      "fromId": "p78",
+      "fromName": "만났지식당",
+      "toId": "p122",
+      "toName": "목포동부시장",
+      "straightMeters": 197
+    },
+    {
+      "fromId": "p78",
+      "fromName": "만났지식당",
+      "toId": "p76",
+      "toName": "용당반점",
+      "straightMeters": 283
+    },
+    {
+      "fromId": "p78",
+      "fromName": "만났지식당",
+      "toId": "p80",
+      "toName": "어채",
+      "straightMeters": 312
+    },
+    {
+      "fromId": "p78",
+      "fromName": "만났지식당",
+      "toId": "p129",
+      "toName": "오늘의 페이지",
+      "straightMeters": 580
+    },
+    {
+      "fromId": "p78",
+      "fromName": "만났지식당",
+      "toId": "p90",
+      "toName": "이가네고기국수",
+      "straightMeters": 618
+    },
+    {
+      "fromId": "p79",
+      "fromName": "찬의여왕 식당",
+      "toId": "p104",
+      "toName": "아르볼",
+      "straightMeters": 441
+    },
+    {
+      "fromId": "p79",
+      "fromName": "찬의여왕 식당",
+      "toId": "p121",
+      "toName": "청호시장",
+      "straightMeters": 858
+    },
+    {
+      "fromId": "p79",
+      "fromName": "찬의여왕 식당",
+      "toId": "p70",
+      "toName": "원조신선횟집",
+      "straightMeters": 990
+    },
+    {
+      "fromId": "p79",
+      "fromName": "찬의여왕 식당",
+      "toId": "p77",
+      "toName": "오두막집",
+      "straightMeters": 1265
+    },
+    {
+      "fromId": "p79",
+      "fromName": "찬의여왕 식당",
+      "toId": "p124",
+      "toName": "가죽공방 모닉",
+      "straightMeters": 1321
+    },
+    {
+      "fromId": "p80",
+      "fromName": "어채",
+      "toId": "p78",
+      "toName": "만났지식당",
+      "straightMeters": 312
+    },
+    {
+      "fromId": "p80",
+      "fromName": "어채",
+      "toId": "p129",
+      "toName": "오늘의 페이지",
+      "straightMeters": 433
+    },
+    {
+      "fromId": "p80",
+      "fromName": "어채",
+      "toId": "p76",
+      "toName": "용당반점",
+      "straightMeters": 434
+    },
+    {
+      "fromId": "p80",
+      "fromName": "어채",
+      "toId": "p111",
+      "toName": "기찻길315",
+      "straightMeters": 453
+    },
+    {
+      "fromId": "p80",
+      "fromName": "어채",
+      "toId": "p122",
+      "toName": "목포동부시장",
+      "straightMeters": 499
+    },
+    {
+      "fromId": "p81",
+      "fromName": "에스타시옹1913",
+      "toId": "p94",
+      "toName": "송자르트",
+      "straightMeters": 63
+    },
+    {
+      "fromId": "p81",
+      "fromName": "에스타시옹1913",
+      "toId": "p65",
+      "toName": "원조제일돌곱창",
+      "straightMeters": 125
+    },
+    {
+      "fromId": "p81",
+      "fromName": "에스타시옹1913",
+      "toId": "p48",
+      "toName": "장터식당 본점",
+      "straightMeters": 154
+    },
+    {
+      "fromId": "p81",
+      "fromName": "에스타시옹1913",
+      "toId": "p64",
+      "toName": "정성김밥",
+      "straightMeters": 251
+    },
+    {
+      "fromId": "p81",
+      "fromName": "에스타시옹1913",
+      "toId": "p120",
+      "toName": "목포쫀드기 본점",
+      "straightMeters": 255
+    },
+    {
+      "fromId": "p82",
+      "fromName": "그때그짜장집",
+      "toId": "p80",
+      "toName": "어채",
+      "straightMeters": 515
+    },
+    {
+      "fromId": "p82",
+      "fromName": "그때그짜장집",
+      "toId": "p111",
+      "toName": "기찻길315",
+      "straightMeters": 541
+    },
+    {
+      "fromId": "p82",
+      "fromName": "그때그짜장집",
+      "toId": "p76",
+      "toName": "용당반점",
+      "straightMeters": 702
+    },
+    {
+      "fromId": "p82",
+      "fromName": "그때그짜장집",
+      "toId": "p78",
+      "toName": "만났지식당",
+      "straightMeters": 769
+    },
+    {
+      "fromId": "p82",
+      "fromName": "그때그짜장집",
+      "toId": "p129",
+      "toName": "오늘의 페이지",
+      "straightMeters": 836
+    },
+    {
+      "fromId": "p83",
+      "fromName": "라멘집아저씨",
+      "toId": "p105",
+      "toName": "브릭레인",
+      "straightMeters": 22
+    },
+    {
+      "fromId": "p83",
+      "fromName": "라멘집아저씨",
+      "toId": "p116",
+      "toName": "코롬방제과점",
+      "straightMeters": 80
+    },
+    {
+      "fromId": "p83",
+      "fromName": "라멘집아저씨",
+      "toId": "p113",
+      "toName": "고호의 책방",
+      "straightMeters": 94
+    },
+    {
+      "fromId": "p83",
+      "fromName": "라멘집아저씨",
+      "toId": "p115",
+      "toName": "씨엘비베이커리(원도심점)",
+      "straightMeters": 96
+    },
+    {
+      "fromId": "p83",
+      "fromName": "라멘집아저씨",
+      "toId": "p41",
+      "toName": "노라노미술관",
+      "straightMeters": 121
+    },
+    {
+      "fromId": "p84",
+      "fromName": "예향밥상",
+      "toId": "p61",
+      "toName": "유달콩물(호남로 본점)",
+      "straightMeters": 99
+    },
+    {
+      "fromId": "p84",
+      "fromName": "예향밥상",
+      "toId": "p103",
+      "toName": "인스파이어링 커피",
+      "straightMeters": 135
+    },
+    {
+      "fromId": "p84",
+      "fromName": "예향밥상",
+      "toId": "p130",
+      "toName": "웨이브",
+      "straightMeters": 137
+    },
+    {
+      "fromId": "p84",
+      "fromName": "예향밥상",
+      "toId": "p85",
+      "toName": "금강뻘낙지장어요리전문점",
+      "straightMeters": 209
+    },
+    {
+      "fromId": "p84",
+      "fromName": "예향밥상",
+      "toId": "p102",
+      "toName": "혹호",
+      "straightMeters": 233
+    },
+    {
+      "fromId": "p85",
+      "fromName": "금강뻘낙지장어요리전문점",
+      "toId": "p54",
+      "toName": "목포관광오리탕(시내본점)",
+      "straightMeters": 89
+    },
+    {
+      "fromId": "p85",
+      "fromName": "금강뻘낙지장어요리전문점",
+      "toId": "p103",
+      "toName": "인스파이어링 커피",
+      "straightMeters": 127
+    },
+    {
+      "fromId": "p85",
+      "fromName": "금강뻘낙지장어요리전문점",
+      "toId": "p61",
+      "toName": "유달콩물(호남로 본점)",
+      "straightMeters": 146
+    },
+    {
+      "fromId": "p85",
+      "fromName": "금강뻘낙지장어요리전문점",
+      "toId": "p84",
+      "toName": "예향밥상",
+      "straightMeters": 209
+    },
+    {
+      "fromId": "p85",
+      "fromName": "금강뻘낙지장어요리전문점",
+      "toId": "station",
+      "toName": "목포역",
+      "straightMeters": 220
+    },
+    {
+      "fromId": "p86",
+      "fromName": "형제꼬막짬뽕",
+      "toId": "p75",
+      "toName": "꼬미꼬미",
+      "straightMeters": 192
+    },
+    {
+      "fromId": "p86",
+      "fromName": "형제꼬막짬뽕",
+      "toId": "p59",
+      "toName": "카와루라멘",
+      "straightMeters": 490
+    },
+    {
+      "fromId": "p86",
+      "fromName": "형제꼬막짬뽕",
+      "toId": "p67",
+      "toName": "왕새우직판장 본점",
+      "straightMeters": 547
+    },
+    {
+      "fromId": "p86",
+      "fromName": "형제꼬막짬뽕",
+      "toId": "p73",
+      "toName": "서해반점",
+      "straightMeters": 748
+    },
+    {
+      "fromId": "p86",
+      "fromName": "형제꼬막짬뽕",
+      "toId": "p109",
+      "toName": "아마빌레",
+      "straightMeters": 1004
+    },
+    {
+      "fromId": "p87",
+      "fromName": "삼학만두",
+      "toId": "p69",
+      "toName": "춘광식당",
+      "straightMeters": 600
+    },
+    {
+      "fromId": "p87",
+      "fromName": "삼학만두",
+      "toId": "p72",
+      "toName": "미달이네집밥",
+      "straightMeters": 663
+    },
+    {
+      "fromId": "p87",
+      "fromName": "삼학만두",
+      "toId": "p30",
+      "toName": "김대중노벨평화상기념관",
+      "straightMeters": 751
+    },
+    {
+      "fromId": "p87",
+      "fromName": "삼학만두",
+      "toId": "p71",
+      "toName": "관우식당",
+      "straightMeters": 830
+    },
+    {
+      "fromId": "p87",
+      "fromName": "삼학만두",
+      "toId": "p89",
+      "toName": "청호식당",
+      "straightMeters": 843
+    },
+    {
+      "fromId": "p88",
+      "fromName": "압해도뻘낙지",
+      "toId": "p52",
+      "toName": "은빛바다회센터(율석수산)",
+      "straightMeters": 194
+    },
+    {
+      "fromId": "p88",
+      "fromName": "압해도뻘낙지",
+      "toId": "p112",
+      "toName": "라니카이",
+      "straightMeters": 214
+    },
+    {
+      "fromId": "p88",
+      "fromName": "압해도뻘낙지",
+      "toId": "p60",
+      "toName": "너구리식당",
+      "straightMeters": 215
+    },
+    {
+      "fromId": "p88",
+      "fromName": "압해도뻘낙지",
+      "toId": "p99",
+      "toName": "석산(SUKSAN)",
+      "straightMeters": 274
+    },
+    {
+      "fromId": "p88",
+      "fromName": "압해도뻘낙지",
+      "toId": "p3",
+      "toName": "목포해상케이블카 북항승강장",
+      "straightMeters": 519
+    },
+    {
+      "fromId": "p89",
+      "fromName": "청호식당",
+      "toId": "p71",
+      "toName": "관우식당",
+      "straightMeters": 25
+    },
+    {
+      "fromId": "p89",
+      "fromName": "청호식당",
+      "toId": "p54",
+      "toName": "목포관광오리탕(시내본점)",
+      "straightMeters": 557
+    },
+    {
+      "fromId": "p89",
+      "fromName": "청호식당",
+      "toId": "p69",
+      "toName": "춘광식당",
+      "straightMeters": 558
+    },
+    {
+      "fromId": "p89",
+      "fromName": "청호식당",
+      "toId": "p85",
+      "toName": "금강뻘낙지장어요리전문점",
+      "straightMeters": 601
+    },
+    {
+      "fromId": "p89",
+      "fromName": "청호식당",
+      "toId": "p90",
+      "toName": "이가네고기국수",
+      "straightMeters": 609
+    },
+    {
+      "fromId": "p90",
+      "fromName": "이가네고기국수",
+      "toId": "p76",
+      "toName": "용당반점",
+      "straightMeters": 377
+    },
+    {
+      "fromId": "p90",
+      "fromName": "이가네고기국수",
+      "toId": "p71",
+      "toName": "관우식당",
+      "straightMeters": 594
+    },
+    {
+      "fromId": "p90",
+      "fromName": "이가네고기국수",
+      "toId": "p89",
+      "toName": "청호식당",
+      "straightMeters": 609
+    },
+    {
+      "fromId": "p90",
+      "fromName": "이가네고기국수",
+      "toId": "p78",
+      "toName": "만났지식당",
+      "straightMeters": 618
+    },
+    {
+      "fromId": "p90",
+      "fromName": "이가네고기국수",
+      "toId": "p122",
+      "toName": "목포동부시장",
+      "straightMeters": 636
+    },
+    {
+      "fromId": "p92",
+      "fromName": "트라이팟",
+      "toId": "p49",
+      "toName": "인동주마을",
+      "straightMeters": 264
+    },
+    {
+      "fromId": "p92",
+      "fromName": "트라이팟",
+      "toId": "p58",
+      "toName": "솜리치킨 목포점",
+      "straightMeters": 561
+    },
+    {
+      "fromId": "p92",
+      "fromName": "트라이팟",
+      "toId": "p50",
+      "toName": "하당먹거리",
+      "straightMeters": 622
+    },
+    {
+      "fromId": "p92",
+      "fromName": "트라이팟",
+      "toId": "p124",
+      "toName": "가죽공방 모닉",
+      "straightMeters": 788
+    },
+    {
+      "fromId": "p92",
+      "fromName": "트라이팟",
+      "toId": "p110",
+      "toName": "티하우스클리프",
+      "straightMeters": 827
+    },
+    {
+      "fromId": "p93",
+      "fromName": "화신연쇄점",
+      "toId": "p22",
+      "toName": "목포대중음악의전당",
+      "straightMeters": 62
+    },
+    {
+      "fromId": "p93",
+      "fromName": "화신연쇄점",
+      "toId": "p108",
+      "toName": "손소영갤러리앤카페",
+      "straightMeters": 145
+    },
+    {
+      "fromId": "p93",
+      "fromName": "화신연쇄점",
+      "toId": "p128",
+      "toName": "구보책방",
+      "straightMeters": 151
+    },
+    {
+      "fromId": "p93",
+      "fromName": "화신연쇄점",
+      "toId": "p127",
+      "toName": "포도책방(목포점)",
+      "straightMeters": 186
+    },
+    {
+      "fromId": "p93",
+      "fromName": "화신연쇄점",
+      "toId": "p125",
+      "toName": "비팡이네",
+      "straightMeters": 213
+    },
+    {
+      "fromId": "p94",
+      "fromName": "송자르트",
+      "toId": "p81",
+      "toName": "에스타시옹1913",
+      "straightMeters": 63
+    },
+    {
+      "fromId": "p94",
+      "fromName": "송자르트",
+      "toId": "p65",
+      "toName": "원조제일돌곱창",
+      "straightMeters": 76
+    },
+    {
+      "fromId": "p94",
+      "fromName": "송자르트",
+      "toId": "p48",
+      "toName": "장터식당 본점",
+      "straightMeters": 139
+    },
+    {
+      "fromId": "p94",
+      "fromName": "송자르트",
+      "toId": "p120",
+      "toName": "목포쫀드기 본점",
+      "straightMeters": 206
+    },
+    {
+      "fromId": "p94",
+      "fromName": "송자르트",
+      "toId": "p64",
+      "toName": "정성김밥",
+      "straightMeters": 215
+    },
+    {
+      "fromId": "p95",
+      "fromName": "유달동의로망스",
+      "toId": "p9",
+      "toName": "목포근대역사관 2관",
+      "straightMeters": 31
+    },
+    {
+      "fromId": "p95",
+      "fromName": "유달동의로망스",
+      "toId": "p120",
+      "toName": "목포쫀드기 본점",
+      "straightMeters": 85
+    },
+    {
+      "fromId": "p95",
+      "fromName": "유달동의로망스",
+      "toId": "p96",
+      "toName": "무가보",
+      "straightMeters": 98
+    },
+    {
+      "fromId": "p95",
+      "fromName": "유달동의로망스",
+      "toId": "p119",
+      "toName": "한마을떡",
+      "straightMeters": 119
+    },
+    {
+      "fromId": "p95",
+      "fromName": "유달동의로망스",
+      "toId": "p126",
+      "toName": "유유랜드",
+      "straightMeters": 127
+    },
+    {
+      "fromId": "p96",
+      "fromName": "무가보",
+      "toId": "p119",
+      "toName": "한마을떡",
+      "straightMeters": 81
+    },
+    {
+      "fromId": "p96",
+      "fromName": "무가보",
+      "toId": "p95",
+      "toName": "유달동의로망스",
+      "straightMeters": 98
+    },
+    {
+      "fromId": "p96",
+      "fromName": "무가보",
+      "toId": "p29",
+      "toName": "노적봉예술공원미술관",
+      "straightMeters": 102
+    },
+    {
+      "fromId": "p96",
+      "fromName": "무가보",
+      "toId": "p8",
+      "toName": "목포근대역사관 1관",
+      "straightMeters": 108
+    },
+    {
+      "fromId": "p96",
+      "fromName": "무가보",
+      "toId": "p17",
+      "toName": "성옥기념관",
+      "straightMeters": 117
+    },
+    {
+      "fromId": "p97",
+      "fromName": "달몬트",
+      "toId": "p68",
+      "toName": "조선쫄복탕",
+      "straightMeters": 304
+    },
+    {
+      "fromId": "p97",
+      "fromName": "달몬트",
+      "toId": "p12",
+      "toName": "연희네슈퍼",
+      "straightMeters": 394
+    },
+    {
+      "fromId": "p97",
+      "fromName": "달몬트",
+      "toId": "p10",
+      "toName": "서산동 시화골목",
+      "straightMeters": 399
+    },
+    {
+      "fromId": "p97",
+      "fromName": "달몬트",
+      "toId": "p4",
+      "toName": "목포해상케이블카 유달산승강장",
+      "straightMeters": 832
+    },
+    {
+      "fromId": "p97",
+      "fromName": "달몬트",
+      "toId": "p126",
+      "toName": "유유랜드",
+      "straightMeters": 876
+    },
+    {
+      "fromId": "p98",
+      "fromName": "쿠레레",
+      "toId": "p108",
+      "toName": "손소영갤러리앤카페",
+      "straightMeters": 84
+    },
+    {
+      "fromId": "p98",
+      "fromName": "쿠레레",
+      "toId": "p63",
+      "toName": "김정림선지해장국",
+      "straightMeters": 105
+    },
+    {
+      "fromId": "p98",
+      "fromName": "쿠레레",
+      "toId": "p46",
+      "toName": "영란횟집",
+      "straightMeters": 121
+    },
+    {
+      "fromId": "p98",
+      "fromName": "쿠레레",
+      "toId": "p47",
+      "toName": "초원음식점(초원식당)",
+      "straightMeters": 163
+    },
+    {
+      "fromId": "p98",
+      "fromName": "쿠레레",
+      "toId": "p51",
+      "toName": "성식당(수강로 본점 후보)",
+      "straightMeters": 168
+    },
+    {
+      "fromId": "p99",
+      "fromName": "석산(SUKSAN)",
+      "toId": "p88",
+      "toName": "압해도뻘낙지",
+      "straightMeters": 274
+    },
+    {
+      "fromId": "p99",
+      "fromName": "석산(SUKSAN)",
+      "toId": "p52",
+      "toName": "은빛바다회센터(율석수산)",
+      "straightMeters": 318
+    },
+    {
+      "fromId": "p99",
+      "fromName": "석산(SUKSAN)",
+      "toId": "p112",
+      "toName": "라니카이",
+      "straightMeters": 342
+    },
+    {
+      "fromId": "p99",
+      "fromName": "석산(SUKSAN)",
+      "toId": "p60",
+      "toName": "너구리식당",
+      "straightMeters": 383
+    },
+    {
+      "fromId": "p99",
+      "fromName": "석산(SUKSAN)",
+      "toId": "p3",
+      "toName": "목포해상케이블카 북항승강장",
+      "straightMeters": 464
+    },
+    {
+      "fromId": "p100",
+      "fromName": "오리진 커피 로스터스",
+      "toId": "p62",
+      "toName": "소래기냉면",
+      "straightMeters": 53
+    },
+    {
+      "fromId": "p100",
+      "fromName": "오리진 커피 로스터스",
+      "toId": "p55",
+      "toName": "해빔",
+      "straightMeters": 91
+    },
+    {
+      "fromId": "p100",
+      "fromName": "오리진 커피 로스터스",
+      "toId": "p56",
+      "toName": "어락",
+      "straightMeters": 154
+    },
+    {
+      "fromId": "p100",
+      "fromName": "오리진 커피 로스터스",
+      "toId": "p101",
+      "toName": "커피창고로(평화광장점)",
+      "straightMeters": 202
+    },
+    {
+      "fromId": "p100",
+      "fromName": "오리진 커피 로스터스",
+      "toId": "p14",
+      "toName": "평화광장",
+      "straightMeters": 409
+    },
+    {
+      "fromId": "p101",
+      "fromName": "커피창고로(평화광장점)",
+      "toId": "p56",
+      "toName": "어락",
+      "straightMeters": 52
+    },
+    {
+      "fromId": "p101",
+      "fromName": "커피창고로(평화광장점)",
+      "toId": "p55",
+      "toName": "해빔",
+      "straightMeters": 123
+    },
+    {
+      "fromId": "p101",
+      "fromName": "커피창고로(평화광장점)",
+      "toId": "p62",
+      "toName": "소래기냉면",
+      "straightMeters": 154
+    },
+    {
+      "fromId": "p101",
+      "fromName": "커피창고로(평화광장점)",
+      "toId": "p100",
+      "toName": "오리진 커피 로스터스",
+      "straightMeters": 202
+    },
+    {
+      "fromId": "p101",
+      "fromName": "커피창고로(평화광장점)",
+      "toId": "p14",
+      "toName": "평화광장",
+      "straightMeters": 231
+    },
+    {
+      "fromId": "p102",
+      "fromName": "혹호",
+      "toId": "p118",
+      "toName": "물망초",
+      "straightMeters": 33
+    },
+    {
+      "fromId": "p102",
+      "fromName": "혹호",
+      "toId": "station",
+      "toName": "목포역",
+      "straightMeters": 57
+    },
+    {
+      "fromId": "p102",
+      "fromName": "혹호",
+      "toId": "p130",
+      "toName": "웨이브",
+      "straightMeters": 108
+    },
+    {
+      "fromId": "p102",
+      "fromName": "혹호",
+      "toId": "p57",
+      "toName": "대명춘",
+      "straightMeters": 119
+    },
+    {
+      "fromId": "p102",
+      "fromName": "혹호",
+      "toId": "p115",
+      "toName": "씨엘비베이커리(원도심점)",
+      "straightMeters": 121
+    },
+    {
+      "fromId": "p103",
+      "fromName": "인스파이어링 커피",
+      "toId": "p61",
+      "toName": "유달콩물(호남로 본점)",
+      "straightMeters": 37
+    },
+    {
+      "fromId": "p103",
+      "fromName": "인스파이어링 커피",
+      "toId": "p130",
+      "toName": "웨이브",
+      "straightMeters": 99
+    },
+    {
+      "fromId": "p103",
+      "fromName": "인스파이어링 커피",
+      "toId": "p85",
+      "toName": "금강뻘낙지장어요리전문점",
+      "straightMeters": 127
+    },
+    {
+      "fromId": "p103",
+      "fromName": "인스파이어링 커피",
+      "toId": "p102",
+      "toName": "혹호",
+      "straightMeters": 129
+    },
+    {
+      "fromId": "p103",
+      "fromName": "인스파이어링 커피",
+      "toId": "p84",
+      "toName": "예향밥상",
+      "straightMeters": 135
+    },
+    {
+      "fromId": "p104",
+      "fromName": "아르볼",
+      "toId": "p79",
+      "toName": "찬의여왕 식당",
+      "straightMeters": 441
+    },
+    {
+      "fromId": "p104",
+      "fromName": "아르볼",
+      "toId": "p121",
+      "toName": "청호시장",
+      "straightMeters": 526
+    },
+    {
+      "fromId": "p104",
+      "fromName": "아르볼",
+      "toId": "p70",
+      "toName": "원조신선횟집",
+      "straightMeters": 1006
+    },
+    {
+      "fromId": "p104",
+      "fromName": "아르볼",
+      "toId": "p124",
+      "toName": "가죽공방 모닉",
+      "straightMeters": 1240
+    },
+    {
+      "fromId": "p104",
+      "fromName": "아르볼",
+      "toId": "p77",
+      "toName": "오두막집",
+      "straightMeters": 1549
+    },
+    {
+      "fromId": "p105",
+      "fromName": "브릭레인",
+      "toId": "p83",
+      "toName": "라멘집아저씨",
+      "straightMeters": 22
+    },
+    {
+      "fromId": "p105",
+      "fromName": "브릭레인",
+      "toId": "p116",
+      "toName": "코롬방제과점",
+      "straightMeters": 75
+    },
+    {
+      "fromId": "p105",
+      "fromName": "브릭레인",
+      "toId": "p113",
+      "toName": "고호의 책방",
+      "straightMeters": 94
+    },
+    {
+      "fromId": "p105",
+      "fromName": "브릭레인",
+      "toId": "p115",
+      "toName": "씨엘비베이커리(원도심점)",
+      "straightMeters": 101
+    },
+    {
+      "fromId": "p105",
+      "fromName": "브릭레인",
+      "toId": "p117",
+      "toName": "작은낙",
+      "straightMeters": 129
+    },
+    {
+      "fromId": "p106",
+      "fromName": "더왈츠",
+      "toId": "p66",
+      "toName": "야드레보쌈",
+      "straightMeters": 389
+    },
+    {
+      "fromId": "p106",
+      "fromName": "더왈츠",
+      "toId": "p20",
+      "toName": "목포문예역사관",
+      "straightMeters": 455
+    },
+    {
+      "fromId": "p106",
+      "fromName": "더왈츠",
+      "toId": "p77",
+      "toName": "오두막집",
+      "straightMeters": 470
+    },
+    {
+      "fromId": "p106",
+      "fromName": "더왈츠",
+      "toId": "p16",
+      "toName": "목포자연사박물관",
+      "straightMeters": 483
+    },
+    {
+      "fromId": "p106",
+      "fromName": "더왈츠",
+      "toId": "p21",
+      "toName": "목포생활도자박물관",
+      "straightMeters": 531
+    },
+    {
+      "fromId": "p107",
+      "fromName": "산들소리찻집",
+      "toId": "p110",
+      "toName": "티하우스클리프",
+      "straightMeters": 113
+    },
+    {
+      "fromId": "p107",
+      "fromName": "산들소리찻집",
+      "toId": "p92",
+      "toName": "트라이팟",
+      "straightMeters": 894
+    },
+    {
+      "fromId": "p107",
+      "fromName": "산들소리찻집",
+      "toId": "p49",
+      "toName": "인동주마을",
+      "straightMeters": 1146
+    },
+    {
+      "fromId": "p107",
+      "fromName": "산들소리찻집",
+      "toId": "p124",
+      "toName": "가죽공방 모닉",
+      "straightMeters": 1325
+    },
+    {
+      "fromId": "p107",
+      "fromName": "산들소리찻집",
+      "toId": "p58",
+      "toName": "솜리치킨 목포점",
+      "straightMeters": 1384
+    },
+    {
+      "fromId": "p108",
+      "fromName": "손소영갤러리앤카페",
+      "toId": "p98",
+      "toName": "쿠레레",
+      "straightMeters": 84
+    },
+    {
+      "fromId": "p108",
+      "fromName": "손소영갤러리앤카페",
+      "toId": "p93",
+      "toName": "화신연쇄점",
+      "straightMeters": 145
+    },
+    {
+      "fromId": "p108",
+      "fromName": "손소영갤러리앤카페",
+      "toId": "p127",
+      "toName": "포도책방(목포점)",
+      "straightMeters": 147
+    },
+    {
+      "fromId": "p108",
+      "fromName": "손소영갤러리앤카페",
+      "toId": "p63",
+      "toName": "김정림선지해장국",
+      "straightMeters": 171
+    },
+    {
+      "fromId": "p108",
+      "fromName": "손소영갤러리앤카페",
+      "toId": "p125",
+      "toName": "비팡이네",
+      "straightMeters": 176
+    },
+    {
+      "fromId": "p109",
+      "fromName": "아마빌레",
+      "toId": "p122",
+      "toName": "목포동부시장",
+      "straightMeters": 638
+    },
+    {
+      "fromId": "p109",
+      "fromName": "아마빌레",
+      "toId": "p129",
+      "toName": "오늘의 페이지",
+      "straightMeters": 659
+    },
+    {
+      "fromId": "p109",
+      "fromName": "아마빌레",
+      "toId": "p78",
+      "toName": "만났지식당",
+      "straightMeters": 742
+    },
+    {
+      "fromId": "p109",
+      "fromName": "아마빌레",
+      "toId": "p80",
+      "toName": "어채",
+      "straightMeters": 878
+    },
+    {
+      "fromId": "p109",
+      "fromName": "아마빌레",
+      "toId": "p86",
+      "toName": "형제꼬막짬뽕",
+      "straightMeters": 1004
+    },
+    {
+      "fromId": "p110",
+      "fromName": "티하우스클리프",
+      "toId": "p107",
+      "toName": "산들소리찻집",
+      "straightMeters": 113
+    },
+    {
+      "fromId": "p110",
+      "fromName": "티하우스클리프",
+      "toId": "p92",
+      "toName": "트라이팟",
+      "straightMeters": 827
+    },
+    {
+      "fromId": "p110",
+      "fromName": "티하우스클리프",
+      "toId": "p49",
+      "toName": "인동주마을",
+      "straightMeters": 1070
+    },
+    {
+      "fromId": "p110",
+      "fromName": "티하우스클리프",
+      "toId": "p124",
+      "toName": "가죽공방 모닉",
+      "straightMeters": 1321
+    },
+    {
+      "fromId": "p110",
+      "fromName": "티하우스클리프",
+      "toId": "p58",
+      "toName": "솜리치킨 목포점",
+      "straightMeters": 1339
+    },
+    {
+      "fromId": "p111",
+      "fromName": "기찻길315",
+      "toId": "p129",
+      "toName": "오늘의 페이지",
+      "straightMeters": 416
+    },
+    {
+      "fromId": "p111",
+      "fromName": "기찻길315",
+      "toId": "p80",
+      "toName": "어채",
+      "straightMeters": 453
+    },
+    {
+      "fromId": "p111",
+      "fromName": "기찻길315",
+      "toId": "p82",
+      "toName": "그때그짜장집",
+      "straightMeters": 541
+    },
+    {
+      "fromId": "p111",
+      "fromName": "기찻길315",
+      "toId": "p78",
+      "toName": "만났지식당",
+      "straightMeters": 750
+    },
+    {
+      "fromId": "p111",
+      "fromName": "기찻길315",
+      "toId": "p76",
+      "toName": "용당반점",
+      "straightMeters": 877
+    },
+    {
+      "fromId": "p112",
+      "fromName": "라니카이",
+      "toId": "p52",
+      "toName": "은빛바다회센터(율석수산)",
+      "straightMeters": 26
+    },
+    {
+      "fromId": "p112",
+      "fromName": "라니카이",
+      "toId": "p88",
+      "toName": "압해도뻘낙지",
+      "straightMeters": 214
+    },
+    {
+      "fromId": "p112",
+      "fromName": "라니카이",
+      "toId": "p99",
+      "toName": "석산(SUKSAN)",
+      "straightMeters": 342
+    },
+    {
+      "fromId": "p112",
+      "fromName": "라니카이",
+      "toId": "p60",
+      "toName": "너구리식당",
+      "straightMeters": 427
+    },
+    {
+      "fromId": "p112",
+      "fromName": "라니카이",
+      "toId": "p67",
+      "toName": "왕새우직판장 본점",
+      "straightMeters": 702
+    },
+    {
+      "fromId": "p113",
+      "fromName": "고호의 책방",
+      "toId": "p115",
+      "toName": "씨엘비베이커리(원도심점)",
+      "straightMeters": 24
+    },
+    {
+      "fromId": "p113",
+      "fromName": "고호의 책방",
+      "toId": "p116",
+      "toName": "코롬방제과점",
+      "straightMeters": 25
+    },
+    {
+      "fromId": "p113",
+      "fromName": "고호의 책방",
+      "toId": "p57",
+      "toName": "대명춘",
+      "straightMeters": 53
+    },
+    {
+      "fromId": "p113",
+      "fromName": "고호의 책방",
+      "toId": "p105",
+      "toName": "브릭레인",
+      "straightMeters": 94
+    },
+    {
+      "fromId": "p113",
+      "fromName": "고호의 책방",
+      "toId": "p83",
+      "toName": "라멘집아저씨",
+      "straightMeters": 94
+    },
+    {
+      "fromId": "p115",
+      "fromName": "씨엘비베이커리(원도심점)",
+      "toId": "p113",
+      "toName": "고호의 책방",
+      "straightMeters": 24
+    },
+    {
+      "fromId": "p115",
+      "fromName": "씨엘비베이커리(원도심점)",
+      "toId": "p116",
+      "toName": "코롬방제과점",
+      "straightMeters": 45
+    },
+    {
+      "fromId": "p115",
+      "fromName": "씨엘비베이커리(원도심점)",
+      "toId": "p57",
+      "toName": "대명춘",
+      "straightMeters": 62
+    },
+    {
+      "fromId": "p115",
+      "fromName": "씨엘비베이커리(원도심점)",
+      "toId": "p83",
+      "toName": "라멘집아저씨",
+      "straightMeters": 96
+    },
+    {
+      "fromId": "p115",
+      "fromName": "씨엘비베이커리(원도심점)",
+      "toId": "p105",
+      "toName": "브릭레인",
+      "straightMeters": 101
+    },
+    {
+      "fromId": "p116",
+      "fromName": "코롬방제과점",
+      "toId": "p113",
+      "toName": "고호의 책방",
+      "straightMeters": 25
+    },
+    {
+      "fromId": "p116",
+      "fromName": "코롬방제과점",
+      "toId": "p115",
+      "toName": "씨엘비베이커리(원도심점)",
+      "straightMeters": 45
+    },
+    {
+      "fromId": "p116",
+      "fromName": "코롬방제과점",
+      "toId": "p57",
+      "toName": "대명춘",
+      "straightMeters": 70
+    },
+    {
+      "fromId": "p116",
+      "fromName": "코롬방제과점",
+      "toId": "p105",
+      "toName": "브릭레인",
+      "straightMeters": 75
+    },
+    {
+      "fromId": "p116",
+      "fromName": "코롬방제과점",
+      "toId": "p83",
+      "toName": "라멘집아저씨",
+      "straightMeters": 80
+    },
+    {
+      "fromId": "p117",
+      "fromName": "작은낙",
+      "toId": "p41",
+      "toName": "노라노미술관",
+      "straightMeters": 33
+    },
+    {
+      "fromId": "p117",
+      "fromName": "작은낙",
+      "toId": "p83",
+      "toName": "라멘집아저씨",
+      "straightMeters": 124
+    },
+    {
+      "fromId": "p117",
+      "fromName": "작은낙",
+      "toId": "p105",
+      "toName": "브릭레인",
+      "straightMeters": 129
+    },
+    {
+      "fromId": "p117",
+      "fromName": "작은낙",
+      "toId": "p116",
+      "toName": "코롬방제과점",
+      "straightMeters": 203
+    },
+    {
+      "fromId": "p117",
+      "fromName": "작은낙",
+      "toId": "p2",
+      "toName": "노적봉",
+      "straightMeters": 210
+    },
+    {
+      "fromId": "p118",
+      "fromName": "물망초",
+      "toId": "p102",
+      "toName": "혹호",
+      "straightMeters": 33
+    },
+    {
+      "fromId": "p118",
+      "fromName": "물망초",
+      "toId": "station",
+      "toName": "목포역",
+      "straightMeters": 34
+    },
+    {
+      "fromId": "p118",
+      "fromName": "물망초",
+      "toId": "p57",
+      "toName": "대명춘",
+      "straightMeters": 118
+    },
+    {
+      "fromId": "p118",
+      "fromName": "물망초",
+      "toId": "p115",
+      "toName": "씨엘비베이커리(원도심점)",
+      "straightMeters": 136
+    },
+    {
+      "fromId": "p118",
+      "fromName": "물망초",
+      "toId": "p130",
+      "toName": "웨이브",
+      "straightMeters": 141
+    },
+    {
+      "fromId": "p119",
+      "fromName": "한마을떡",
+      "toId": "p17",
+      "toName": "성옥기념관",
+      "straightMeters": 58
+    },
+    {
+      "fromId": "p119",
+      "fromName": "한마을떡",
+      "toId": "p126",
+      "toName": "유유랜드",
+      "straightMeters": 81
+    },
+    {
+      "fromId": "p119",
+      "fromName": "한마을떡",
+      "toId": "p96",
+      "toName": "무가보",
+      "straightMeters": 81
+    },
+    {
+      "fromId": "p119",
+      "fromName": "한마을떡",
+      "toId": "p95",
+      "toName": "유달동의로망스",
+      "straightMeters": 119
+    },
+    {
+      "fromId": "p119",
+      "fromName": "한마을떡",
+      "toId": "p9",
+      "toName": "목포근대역사관 2관",
+      "straightMeters": 130
+    },
+    {
+      "fromId": "p120",
+      "fromName": "목포쫀드기 본점",
+      "toId": "p64",
+      "toName": "정성김밥",
+      "straightMeters": 70
+    },
+    {
+      "fromId": "p120",
+      "fromName": "목포쫀드기 본점",
+      "toId": "p9",
+      "toName": "목포근대역사관 2관",
+      "straightMeters": 80
+    },
+    {
+      "fromId": "p120",
+      "fromName": "목포쫀드기 본점",
+      "toId": "p95",
+      "toName": "유달동의로망스",
+      "straightMeters": 85
+    },
+    {
+      "fromId": "p120",
+      "fromName": "목포쫀드기 본점",
+      "toId": "p65",
+      "toName": "원조제일돌곱창",
+      "straightMeters": 131
+    },
+    {
+      "fromId": "p120",
+      "fromName": "목포쫀드기 본점",
+      "toId": "p47",
+      "toName": "초원음식점(초원식당)",
+      "straightMeters": 142
+    },
+    {
+      "fromId": "p121",
+      "fromName": "청호시장",
+      "toId": "p104",
+      "toName": "아르볼",
+      "straightMeters": 526
+    },
+    {
+      "fromId": "p121",
+      "fromName": "청호시장",
+      "toId": "p70",
+      "toName": "원조신선횟집",
+      "straightMeters": 776
+    },
+    {
+      "fromId": "p121",
+      "fromName": "청호시장",
+      "toId": "p124",
+      "toName": "가죽공방 모닉",
+      "straightMeters": 858
+    },
+    {
+      "fromId": "p121",
+      "fromName": "청호시장",
+      "toId": "p79",
+      "toName": "찬의여왕 식당",
+      "straightMeters": 858
+    },
+    {
+      "fromId": "p121",
+      "fromName": "청호시장",
+      "toId": "p50",
+      "toName": "하당먹거리",
+      "straightMeters": 1235
+    },
+    {
+      "fromId": "p122",
+      "fromName": "목포동부시장",
+      "toId": "p78",
+      "toName": "만났지식당",
+      "straightMeters": 197
+    },
+    {
+      "fromId": "p122",
+      "fromName": "목포동부시장",
+      "toId": "p76",
+      "toName": "용당반점",
+      "straightMeters": 395
+    },
+    {
+      "fromId": "p122",
+      "fromName": "목포동부시장",
+      "toId": "p80",
+      "toName": "어채",
+      "straightMeters": 499
+    },
+    {
+      "fromId": "p122",
+      "fromName": "목포동부시장",
+      "toId": "p90",
+      "toName": "이가네고기국수",
+      "straightMeters": 636
+    },
+    {
+      "fromId": "p122",
+      "fromName": "목포동부시장",
+      "toId": "p109",
+      "toName": "아마빌레",
+      "straightMeters": 638
+    },
+    {
+      "fromId": "p123",
+      "fromName": "나비팩토리",
+      "toId": "p54",
+      "toName": "목포관광오리탕(시내본점)",
+      "straightMeters": 721
+    },
+    {
+      "fromId": "p123",
+      "fromName": "나비팩토리",
+      "toId": "p73",
+      "toName": "서해반점",
+      "straightMeters": 782
+    },
+    {
+      "fromId": "p123",
+      "fromName": "나비팩토리",
+      "toId": "p85",
+      "toName": "금강뻘낙지장어요리전문점",
+      "straightMeters": 798
+    },
+    {
+      "fromId": "p123",
+      "fromName": "나비팩토리",
+      "toId": "p84",
+      "toName": "예향밥상",
+      "straightMeters": 863
+    },
+    {
+      "fromId": "p123",
+      "fromName": "나비팩토리",
+      "toId": "p61",
+      "toName": "유달콩물(호남로 본점)",
+      "straightMeters": 893
+    },
+    {
+      "fromId": "p124",
+      "fromName": "가죽공방 모닉",
+      "toId": "p70",
+      "toName": "원조신선횟집",
+      "straightMeters": 380
+    },
+    {
+      "fromId": "p124",
+      "fromName": "가죽공방 모닉",
+      "toId": "p50",
+      "toName": "하당먹거리",
+      "straightMeters": 382
+    },
+    {
+      "fromId": "p124",
+      "fromName": "가죽공방 모닉",
+      "toId": "p58",
+      "toName": "솜리치킨 목포점",
+      "straightMeters": 500
+    },
+    {
+      "fromId": "p124",
+      "fromName": "가죽공방 모닉",
+      "toId": "p92",
+      "toName": "트라이팟",
+      "straightMeters": 788
+    },
+    {
+      "fromId": "p124",
+      "fromName": "가죽공방 모닉",
+      "toId": "p121",
+      "toName": "청호시장",
+      "straightMeters": 858
+    },
+    {
+      "fromId": "p125",
+      "fromName": "비팡이네",
+      "toId": "p108",
+      "toName": "손소영갤러리앤카페",
+      "straightMeters": 176
+    },
+    {
+      "fromId": "p125",
+      "fromName": "비팡이네",
+      "toId": "p105",
+      "toName": "브릭레인",
+      "straightMeters": 180
+    },
+    {
+      "fromId": "p125",
+      "fromName": "비팡이네",
+      "toId": "p116",
+      "toName": "코롬방제과점",
+      "straightMeters": 185
+    },
+    {
+      "fromId": "p125",
+      "fromName": "비팡이네",
+      "toId": "p47",
+      "toName": "초원음식점(초원식당)",
+      "straightMeters": 185
+    },
+    {
+      "fromId": "p125",
+      "fromName": "비팡이네",
+      "toId": "p22",
+      "toName": "목포대중음악의전당",
+      "straightMeters": 186
+    },
+    {
+      "fromId": "p126",
+      "fromName": "유유랜드",
+      "toId": "p119",
+      "toName": "한마을떡",
+      "straightMeters": 81
+    },
+    {
+      "fromId": "p126",
+      "fromName": "유유랜드",
+      "toId": "p9",
+      "toName": "목포근대역사관 2관",
+      "straightMeters": 117
+    },
+    {
+      "fromId": "p126",
+      "fromName": "유유랜드",
+      "toId": "p17",
+      "toName": "성옥기념관",
+      "straightMeters": 118
+    },
+    {
+      "fromId": "p126",
+      "fromName": "유유랜드",
+      "toId": "p95",
+      "toName": "유달동의로망스",
+      "straightMeters": 127
+    },
+    {
+      "fromId": "p126",
+      "fromName": "유유랜드",
+      "toId": "p96",
+      "toName": "무가보",
+      "straightMeters": 147
+    },
+    {
+      "fromId": "p127",
+      "fromName": "포도책방(목포점)",
+      "toId": "p108",
+      "toName": "손소영갤러리앤카페",
+      "straightMeters": 147
+    },
+    {
+      "fromId": "p127",
+      "fromName": "포도책방(목포점)",
+      "toId": "p51",
+      "toName": "성식당(수강로 본점 후보)",
+      "straightMeters": 150
+    },
+    {
+      "fromId": "p127",
+      "fromName": "포도책방(목포점)",
+      "toId": "p93",
+      "toName": "화신연쇄점",
+      "straightMeters": 186
+    },
+    {
+      "fromId": "p127",
+      "fromName": "포도책방(목포점)",
+      "toId": "p98",
+      "toName": "쿠레레",
+      "straightMeters": 186
+    },
+    {
+      "fromId": "p127",
+      "fromName": "포도책방(목포점)",
+      "toId": "p22",
+      "toName": "목포대중음악의전당",
+      "straightMeters": 245
+    },
+    {
+      "fromId": "p128",
+      "fromName": "구보책방",
+      "toId": "p22",
+      "toName": "목포대중음악의전당",
+      "straightMeters": 96
+    },
+    {
+      "fromId": "p128",
+      "fromName": "구보책방",
+      "toId": "p57",
+      "toName": "대명춘",
+      "straightMeters": 106
+    },
+    {
+      "fromId": "p128",
+      "fromName": "구보책방",
+      "toId": "p93",
+      "toName": "화신연쇄점",
+      "straightMeters": 151
+    },
+    {
+      "fromId": "p128",
+      "fromName": "구보책방",
+      "toId": "p113",
+      "toName": "고호의 책방",
+      "straightMeters": 154
+    },
+    {
+      "fromId": "p128",
+      "fromName": "구보책방",
+      "toId": "p116",
+      "toName": "코롬방제과점",
+      "straightMeters": 161
+    },
+    {
+      "fromId": "p129",
+      "fromName": "오늘의 페이지",
+      "toId": "p111",
+      "toName": "기찻길315",
+      "straightMeters": 416
+    },
+    {
+      "fromId": "p129",
+      "fromName": "오늘의 페이지",
+      "toId": "p80",
+      "toName": "어채",
+      "straightMeters": 433
+    },
+    {
+      "fromId": "p129",
+      "fromName": "오늘의 페이지",
+      "toId": "p78",
+      "toName": "만났지식당",
+      "straightMeters": 580
+    },
+    {
+      "fromId": "p129",
+      "fromName": "오늘의 페이지",
+      "toId": "p109",
+      "toName": "아마빌레",
+      "straightMeters": 659
+    },
+    {
+      "fromId": "p129",
+      "fromName": "오늘의 페이지",
+      "toId": "p122",
+      "toName": "목포동부시장",
+      "straightMeters": 672
+    },
+    {
+      "fromId": "p130",
+      "fromName": "웨이브",
+      "toId": "p61",
+      "toName": "유달콩물(호남로 본점)",
+      "straightMeters": 87
+    },
+    {
+      "fromId": "p130",
+      "fromName": "웨이브",
+      "toId": "p103",
+      "toName": "인스파이어링 커피",
+      "straightMeters": 99
+    },
+    {
+      "fromId": "p130",
+      "fromName": "웨이브",
+      "toId": "p102",
+      "toName": "혹호",
+      "straightMeters": 108
+    },
+    {
+      "fromId": "p130",
+      "fromName": "웨이브",
+      "toId": "p115",
+      "toName": "씨엘비베이커리(원도심점)",
+      "straightMeters": 136
+    },
+    {
+      "fromId": "p130",
+      "fromName": "웨이브",
+      "toId": "p84",
+      "toName": "예향밥상",
+      "straightMeters": 137
+    },
+    {
+      "fromId": "station",
+      "fromName": "목포역",
+      "toId": "p118",
+      "toName": "물망초",
+      "straightMeters": 34
+    },
+    {
+      "fromId": "station",
+      "fromName": "목포역",
+      "toId": "p102",
+      "toName": "혹호",
+      "straightMeters": 57
+    },
+    {
+      "fromId": "station",
+      "fromName": "목포역",
+      "toId": "p103",
+      "toName": "인스파이어링 커피",
+      "straightMeters": 147
+    },
+    {
+      "fromId": "station",
+      "fromName": "목포역",
+      "toId": "p57",
+      "toName": "대명춘",
+      "straightMeters": 150
+    },
+    {
+      "fromId": "station",
+      "fromName": "목포역",
+      "toId": "p130",
+      "toName": "웨이브",
+      "straightMeters": 158
+    }
+  ]
+}

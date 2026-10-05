@@ -29,5 +29,12 @@ assert.throws(() => savedPaths.setCatalog({version: 1, paths: [{...segment, vari
 
 const production = JSON.parse(fs.readFileSync(path.join(__dirname, '../public/walk-paths.json'), 'utf8'));
 assert.equal(production.version, 1);
-assert.equal(production.paths.length, 0);
-console.log('PASS: two saved routes, reverse/coordinate mismatch rejection, no fabricated production paths.');
+assert.equal(production.paths.length, 4);
+savedPaths.setCatalog(production);
+for (const id of ['p118', 'p103', 'p57', 'p130']) {
+  const entry = production.paths.find(item => item.from.id === 'station' && item.to.id === id);
+  assert.ok(entry, `missing station → ${id}`);
+  assert.ok(savedPaths.select(entry.from, entry.to)?.points?.length >= 2);
+  assert.equal(savedPaths.select(entry.to, entry.from), null);
+}
+console.log('PASS: saved route selection, coordinate mismatch rejection, four production walking paths.');
