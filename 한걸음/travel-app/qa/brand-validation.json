@@ -1,0 +1,33 @@
+{
+  "app.js": true,
+  "places.json": true,
+  "route-engine.js": true,
+  "map-config.js": true,
+  "place-media.js": true,
+  "png_sizes": {
+    "icon-192.png": [
+      192,
+      192
+    ],
+    "icon-512.png": [
+      512,
+      512
+    ],
+    "assets/brand/favicon-64.png": [
+      64,
+      64
+    ],
+    "assets/brand/apple-touch-icon.png": [
+      180,
+      180
+    ],
+    "assets/brand/header-logo.png": [
+      600,
+      200
+    ]
+  },
+  "logo_alpha_extrema": [
+    0,
+    255
+  ]
+}

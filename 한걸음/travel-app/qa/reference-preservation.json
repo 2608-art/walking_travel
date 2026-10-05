@@ -1,0 +1,9 @@
+{
+  "route-engine.js": true,
+  "places.json": true,
+  "map-config.js": true,
+  "place-media.js": true,
+  "event_registrations_identical": true,
+  "event_registration_line_count": 101,
+  "cache_assets_present": true
+}

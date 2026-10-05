@@ -1,0 +1,43 @@
+{
+  "themes": [
+    {
+      "theme": "first",
+      "visits": 9,
+      "walkKm": 2.008
+    },
+    {
+      "theme": "history",
+      "visits": 7,
+      "walkKm": 2.911
+    },
+    {
+      "theme": "sea",
+      "visits": 7,
+      "walkKm": 5.37
+    },
+    {
+      "theme": "shops",
+      "visits": 9,
+      "walkKm": 3.745
+    },
+    {
+      "theme": "food",
+      "visits": 8,
+      "walkKm": 1.286
+    },
+    {
+      "theme": "cafe",
+      "visits": 9,
+      "walkKm": 1.376
+    }
+  ],
+  "walkCalls": 162,
+  "busCalls": 2,
+  "busFallback": {
+    "visits": 8,
+    "endArrival": 973,
+    "walkMeters": 2447
+  },
+  "mealChoices": 9,
+  "checks": "도보 우선·버스 실패·철도 제외·접근도보 상한·식사 후 버스 연결 보존 통과"
+}

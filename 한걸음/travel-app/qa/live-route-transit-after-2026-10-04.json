@@ -1,0 +1,1771 @@
+{
+  "date": "2026-10-04",
+  "checkedAt": "2026-10-04T14:54:03.030Z",
+  "transit": true,
+  "cases": [
+    {
+      "name": "역 왕복 자정",
+      "estimated": [
+        {
+          "signature": "p130,p115,p113,p116,p117,p2,p8,p125,p118,p128,p22,p127",
+          "visits": 12,
+          "meters": 3706,
+          "arrival": 1129,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": true,
+          "rows": [
+            {
+              "id": "p130",
+              "minute": 610,
+              "duration": 30,
+              "walk": 5,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 650,
+              "duration": 30,
+              "walk": 4,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 685,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 720,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p117",
+              "minute": 760,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p2",
+              "minute": 800,
+              "duration": 45,
+              "walk": 6,
+              "result": "unknown"
+            },
+            {
+              "id": "p8",
+              "minute": 850,
+              "duration": 45,
+              "walk": 2,
+              "result": "ok"
+            },
+            {
+              "id": "p125",
+              "minute": 905,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p118",
+              "minute": 950,
+              "duration": 30,
+              "walk": 10,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 990,
+              "duration": 30,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p22",
+              "minute": 1030,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p127",
+              "minute": 1085,
+              "duration": 30,
+              "walk": 7,
+              "result": "ok"
+            }
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "signature": "p130,p115,p113,p116,p117,p2,p8,p125,p118,p22,p127,p128",
+          "visits": 12,
+          "meters": 3832,
+          "arrival": 1135,
+          "transport": "walk",
+          "adjusted": true,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p130",
+              "minute": 610,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 650,
+              "duration": 30,
+              "walk": 3,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 685,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 720,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p117",
+              "minute": 760,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p2",
+              "minute": 805,
+              "duration": 45,
+              "walk": 8,
+              "result": "unknown"
+            },
+            {
+              "id": "p8",
+              "minute": 865,
+              "duration": 45,
+              "walk": 9,
+              "result": "ok"
+            },
+            {
+              "id": "p125",
+              "minute": 920,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p118",
+              "minute": 960,
+              "duration": 30,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p22",
+              "minute": 1000,
+              "duration": 45,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p127",
+              "minute": 1055,
+              "duration": 30,
+              "walk": 5,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 1100,
+              "duration": 30,
+              "walk": 8,
+              "result": "unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "역 왕복 18시",
+      "estimated": [
+        {
+          "signature": "p130,p115,p113,p116,p117,p2,p8,p125,p22,p128,p118",
+          "visits": 11,
+          "meters": 2329,
+          "arrival": 1071,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": true,
+          "rows": [
+            {
+              "id": "p130",
+              "minute": 610,
+              "duration": 30,
+              "walk": 5,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 650,
+              "duration": 30,
+              "walk": 4,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 685,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 720,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p117",
+              "minute": 760,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p2",
+              "minute": 800,
+              "duration": 45,
+              "walk": 6,
+              "result": "unknown"
+            },
+            {
+              "id": "p8",
+              "minute": 850,
+              "duration": 45,
+              "walk": 2,
+              "result": "ok"
+            },
+            {
+              "id": "p125",
+              "minute": 905,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p22",
+              "minute": 945,
+              "duration": 45,
+              "walk": 5,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 1000,
+              "duration": 30,
+              "walk": 3,
+              "result": "unknown"
+            },
+            {
+              "id": "p118",
+              "minute": 1040,
+              "duration": 30,
+              "walk": 5,
+              "result": "ok"
+            }
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "signature": "p128,p22,p125,p2,p117,p116,p113,p115,p130,p118",
+          "visits": 10,
+          "meters": 2583,
+          "arrival": 1027,
+          "transport": "walk",
+          "adjusted": true,
+          "dropped": [
+            "목포근대역사관 1관"
+          ],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p128",
+              "minute": 610,
+              "duration": 30,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p22",
+              "minute": 650,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p125",
+              "minute": 705,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p2",
+              "minute": 750,
+              "duration": 45,
+              "walk": 12,
+              "result": "unknown"
+            },
+            {
+              "id": "p117",
+              "minute": 805,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 845,
+              "duration": 30,
+              "walk": 4,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 880,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 915,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p130",
+              "minute": 955,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p118",
+              "minute": 995,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "역사관1관→역",
+      "estimated": [
+        {
+          "signature": "p119,p29,p2,p125,p22,p128,p116,p113,p115,p130,p118",
+          "visits": 11,
+          "meters": 2241,
+          "arrival": 1076,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": true,
+          "rows": [
+            {
+              "id": "p119",
+              "minute": 610,
+              "duration": 30,
+              "walk": 6,
+              "result": "unknown"
+            },
+            {
+              "id": "p29",
+              "minute": 650,
+              "duration": 45,
+              "walk": 5,
+              "result": "ok"
+            },
+            {
+              "id": "p2",
+              "minute": 705,
+              "duration": 45,
+              "walk": 3,
+              "result": "unknown"
+            },
+            {
+              "id": "p125",
+              "minute": 760,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p22",
+              "minute": 800,
+              "duration": 45,
+              "walk": 5,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 855,
+              "duration": 30,
+              "walk": 3,
+              "result": "unknown"
+            },
+            {
+              "id": "p116",
+              "minute": 895,
+              "duration": 30,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 930,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 965,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p130",
+              "minute": 1005,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p118",
+              "minute": 1045,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            }
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "signature": "p29,p119,p125,p22,p128,p116,p113,p115,p130,p118",
+          "visits": 10,
+          "meters": 2574,
+          "arrival": 1032,
+          "transport": "walk",
+          "adjusted": true,
+          "dropped": [
+            "노적봉"
+          ],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p29",
+              "minute": 610,
+              "duration": 45,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p119",
+              "minute": 670,
+              "duration": 30,
+              "walk": 8,
+              "result": "unknown"
+            },
+            {
+              "id": "p125",
+              "minute": 715,
+              "duration": 30,
+              "walk": 9,
+              "result": "ok"
+            },
+            {
+              "id": "p22",
+              "minute": 755,
+              "duration": 45,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 810,
+              "duration": 30,
+              "walk": 3,
+              "result": "unknown"
+            },
+            {
+              "id": "p116",
+              "minute": 850,
+              "duration": 30,
+              "walk": 4,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 885,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 920,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p130",
+              "minute": 960,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p118",
+              "minute": 1000,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "역→역사관2관",
+      "estimated": [
+        {
+          "signature": "p130,p115,p113,p116,p125,p2,p8,p29,p119,p126,p120",
+          "visits": 11,
+          "meters": 2157,
+          "arrival": 1073,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": true,
+          "rows": [
+            {
+              "id": "p130",
+              "minute": 610,
+              "duration": 30,
+              "walk": 5,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 650,
+              "duration": 30,
+              "walk": 4,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 685,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 720,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p125",
+              "minute": 760,
+              "duration": 30,
+              "walk": 5,
+              "result": "ok"
+            },
+            {
+              "id": "p2",
+              "minute": 800,
+              "duration": 45,
+              "walk": 6,
+              "result": "unknown"
+            },
+            {
+              "id": "p8",
+              "minute": 850,
+              "duration": 45,
+              "walk": 2,
+              "result": "ok"
+            },
+            {
+              "id": "p29",
+              "minute": 905,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p119",
+              "minute": 960,
+              "duration": 30,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p126",
+              "minute": 1000,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p120",
+              "minute": 1040,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            }
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "signature": "p130,p115,p113,p116,p125,p8,p29,p2,p119,p126,p120",
+          "visits": 11,
+          "meters": 2939,
+          "arrival": 1077,
+          "transport": "walk",
+          "adjusted": true,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p130",
+              "minute": 610,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 650,
+              "duration": 30,
+              "walk": 3,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 685,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 720,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p125",
+              "minute": 760,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p8",
+              "minute": 800,
+              "duration": 45,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p29",
+              "minute": 855,
+              "duration": 45,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p2",
+              "minute": 910,
+              "duration": 45,
+              "walk": 7,
+              "result": "unknown"
+            },
+            {
+              "id": "p119",
+              "minute": 970,
+              "duration": 30,
+              "walk": 11,
+              "result": "unknown"
+            },
+            {
+              "id": "p126",
+              "minute": 1005,
+              "duration": 30,
+              "walk": 2,
+              "result": "ok"
+            },
+            {
+              "id": "p120",
+              "minute": 1045,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "갓바위→평화광장",
+      "estimated": [
+        {
+          "signature": "p25,p16,p21,p33,p35,p42,p20",
+          "visits": 7,
+          "meters": 3889,
+          "arrival": 1022,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": true,
+          "rows": [
+            {
+              "id": "p25",
+              "minute": 615,
+              "duration": 45,
+              "walk": 11,
+              "result": "unknown"
+            },
+            {
+              "id": "p16",
+              "minute": 670,
+              "duration": 45,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p21",
+              "minute": 725,
+              "duration": 45,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p33",
+              "minute": 780,
+              "duration": 45,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p35",
+              "minute": 835,
+              "duration": 45,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p42",
+              "minute": 890,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p20",
+              "minute": 950,
+              "duration": 45,
+              "walk": 8,
+              "result": "ok"
+            }
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "signature": "p25,p16,p21,p33,p35,p42,p20",
+          "visits": 7,
+          "meters": 3005,
+          "arrival": 1017,
+          "transport": "walk-bus",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p25",
+              "minute": 615,
+              "duration": 45,
+              "walk": 11,
+              "result": "unknown"
+            },
+            {
+              "id": "p16",
+              "minute": 670,
+              "duration": 45,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p21",
+              "minute": 725,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p33",
+              "minute": 780,
+              "duration": 45,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p35",
+              "minute": 835,
+              "duration": 45,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p42",
+              "minute": 890,
+              "duration": 45,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p20",
+              "minute": 945,
+              "duration": 45,
+              "walk": 7,
+              "result": "ok"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "평화광장→갓바위",
+      "estimated": [
+        {
+          "signature": "p20,p16,p21,p42,p25",
+          "visits": 5,
+          "meters": 2951,
+          "arrival": 951,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": true,
+          "rows": [
+            {
+              "id": "p20",
+              "minute": 630,
+              "duration": 45,
+              "walk": 27,
+              "result": "ok"
+            },
+            {
+              "id": "p16",
+              "minute": 685,
+              "duration": 45,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p21",
+              "minute": 740,
+              "duration": 45,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p42",
+              "minute": 840,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p25",
+              "minute": 895,
+              "duration": 45,
+              "walk": 5,
+              "result": "unknown"
+            }
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "signature": "p20,p16,p21,p42,p25",
+          "visits": 5,
+          "meters": 1938,
+          "arrival": 951,
+          "transport": "walk-bus",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p20",
+              "minute": 625,
+              "duration": 45,
+              "walk": 22,
+              "result": "ok"
+            },
+            {
+              "id": "p16",
+              "minute": 680,
+              "duration": 45,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p21",
+              "minute": 735,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p42",
+              "minute": 840,
+              "duration": 45,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p25",
+              "minute": 895,
+              "duration": 45,
+              "walk": 5,
+              "result": "unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "역사관1관→노적봉 근거리",
+      "estimated": [
+        {
+          "signature": "p29,p17,p119,p126,p9,p120,p125,p116,p115,p117",
+          "visits": 10,
+          "meters": 2447,
+          "arrival": 1046,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": true,
+          "rows": [
+            {
+              "id": "p29",
+              "minute": 610,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p17",
+              "minute": 665,
+              "duration": 45,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p119",
+              "minute": 715,
+              "duration": 30,
+              "walk": 2,
+              "result": "unknown"
+            },
+            {
+              "id": "p126",
+              "minute": 755,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p9",
+              "minute": 795,
+              "duration": 45,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p120",
+              "minute": 850,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p125",
+              "minute": 895,
+              "duration": 30,
+              "walk": 9,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 935,
+              "duration": 30,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p115",
+              "minute": 970,
+              "duration": 30,
+              "walk": 2,
+              "result": "unknown"
+            },
+            {
+              "id": "p117",
+              "minute": 1010,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            }
+          ]
+        },
+        {
+          "signature": "p119,p29,p117,p130,p118,p128,p22,p115,p113,p116,p125",
+          "visits": 11,
+          "meters": 2973,
+          "arrival": 1066,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": true,
+          "rows": [
+            {
+              "id": "p119",
+              "minute": 610,
+              "duration": 30,
+              "walk": 6,
+              "result": "unknown"
+            },
+            {
+              "id": "p29",
+              "minute": 650,
+              "duration": 45,
+              "walk": 5,
+              "result": "ok"
+            },
+            {
+              "id": "p117",
+              "minute": 705,
+              "duration": 30,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p130",
+              "minute": 745,
+              "duration": 30,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p118",
+              "minute": 785,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 825,
+              "duration": 30,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p22",
+              "minute": 865,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 920,
+              "duration": 30,
+              "walk": 7,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 955,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 990,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p125",
+              "minute": 1030,
+              "duration": 30,
+              "walk": 5,
+              "result": "ok"
+            }
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "signature": "p29,p17,p119,p126,p9,p120,p125,p116,p115,p117",
+          "visits": 10,
+          "meters": 2638,
+          "arrival": 1033,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p29",
+              "minute": 610,
+              "duration": 45,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p17",
+              "minute": 665,
+              "duration": 45,
+              "walk": 7,
+              "result": "unknown"
+            },
+            {
+              "id": "p119",
+              "minute": 715,
+              "duration": 30,
+              "walk": 2,
+              "result": "unknown"
+            },
+            {
+              "id": "p126",
+              "minute": 750,
+              "duration": 30,
+              "walk": 2,
+              "result": "ok"
+            },
+            {
+              "id": "p9",
+              "minute": 790,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p120",
+              "minute": 840,
+              "duration": 30,
+              "walk": 2,
+              "result": "ok"
+            },
+            {
+              "id": "p125",
+              "minute": 880,
+              "duration": 30,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 920,
+              "duration": 30,
+              "walk": 4,
+              "result": "unknown"
+            },
+            {
+              "id": "p115",
+              "minute": 955,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p117",
+              "minute": 995,
+              "duration": 30,
+              "walk": 5,
+              "result": "ok"
+            }
+          ]
+        },
+        {
+          "signature": "p119,p29,p117,p130,p118,p128,p22,p115,p113,p116,p125",
+          "visits": 11,
+          "meters": 3349,
+          "arrival": 1077,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p119",
+              "minute": 610,
+              "duration": 30,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p29",
+              "minute": 655,
+              "duration": 45,
+              "walk": 9,
+              "result": "ok"
+            },
+            {
+              "id": "p117",
+              "minute": 710,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p130",
+              "minute": 750,
+              "duration": 30,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p118",
+              "minute": 790,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 830,
+              "duration": 30,
+              "walk": 4,
+              "result": "unknown"
+            },
+            {
+              "id": "p22",
+              "minute": 870,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 925,
+              "duration": 30,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 960,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 995,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p125",
+              "minute": 1035,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "theme:first",
+      "actual": [
+        {
+          "signature": "p57,p118,p113,p116,p2,p8,p125,p22,p128",
+          "visits": 9,
+          "meters": 2836,
+          "arrival": 1120,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p57",
+              "minute": 690,
+              "duration": 60,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p118",
+              "minute": 755,
+              "duration": 30,
+              "walk": 2,
+              "result": "ok"
+            },
+            {
+              "id": "p113",
+              "minute": 795,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 830,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p2",
+              "minute": 875,
+              "duration": 45,
+              "walk": 12,
+              "result": "unknown"
+            },
+            {
+              "id": "p8",
+              "minute": 935,
+              "duration": 45,
+              "walk": 9,
+              "result": "ok"
+            },
+            {
+              "id": "p125",
+              "minute": 990,
+              "duration": 30,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p22",
+              "minute": 1030,
+              "duration": 45,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 1085,
+              "duration": 30,
+              "walk": 3,
+              "result": "unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "theme:history",
+      "actual": [
+        {
+          "signature": "p115,p29,p2,p47,p9,p8,p22,p128",
+          "visits": 8,
+          "meters": 3547,
+          "arrival": 1045,
+          "transport": "walk",
+          "adjusted": true,
+          "dropped": [
+            "김대중노벨평화상기념관"
+          ],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p115",
+              "minute": 610,
+              "duration": 30,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p29",
+              "minute": 655,
+              "duration": 45,
+              "walk": 12,
+              "result": "ok"
+            },
+            {
+              "id": "p2",
+              "minute": 710,
+              "duration": 45,
+              "walk": 7,
+              "result": "unknown"
+            },
+            {
+              "id": "p47",
+              "minute": 770,
+              "duration": 60,
+              "walk": 12,
+              "result": "ok"
+            },
+            {
+              "id": "p9",
+              "minute": 840,
+              "duration": 45,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p8",
+              "minute": 895,
+              "duration": 45,
+              "walk": 5,
+              "result": "ok"
+            },
+            {
+              "id": "p22",
+              "minute": 955,
+              "duration": 45,
+              "walk": 10,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 1010,
+              "duration": 30,
+              "walk": 3,
+              "result": "unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "theme:sea",
+      "actual": [
+        {
+          "signature": "p66,p16,p21,p33,p43,p35,p20",
+          "visits": 7,
+          "meters": 3952,
+          "arrival": 1102,
+          "transport": "walk-bus",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p66",
+              "minute": 665,
+              "duration": 60,
+              "walk": 14,
+              "result": "ok"
+            },
+            {
+              "id": "p16",
+              "minute": 745,
+              "duration": 45,
+              "walk": 16,
+              "result": "ok"
+            },
+            {
+              "id": "p21",
+              "minute": 800,
+              "duration": 45,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p33",
+              "minute": 855,
+              "duration": 45,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p43",
+              "minute": 910,
+              "duration": 45,
+              "walk": 3,
+              "result": "unknown"
+            },
+            {
+              "id": "p35",
+              "minute": 970,
+              "duration": 45,
+              "walk": 8,
+              "result": "ok"
+            },
+            {
+              "id": "p20",
+              "minute": 1030,
+              "duration": 45,
+              "walk": 9,
+              "result": "ok"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "theme:shops",
+      "actual": [
+        {
+          "signature": "p130,p113,p83,p117,p126,p125,p127,p128,p118",
+          "visits": 9,
+          "meters": 3358,
+          "arrival": 1067,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p130",
+              "minute": 610,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p113",
+              "minute": 660,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p83",
+              "minute": 750,
+              "duration": 60,
+              "walk": 2,
+              "result": "ok"
+            },
+            {
+              "id": "p117",
+              "minute": 815,
+              "duration": 30,
+              "walk": 2,
+              "result": "ok"
+            },
+            {
+              "id": "p126",
+              "minute": 865,
+              "duration": 30,
+              "walk": 14,
+              "result": "ok"
+            },
+            {
+              "id": "p125",
+              "minute": 910,
+              "duration": 30,
+              "walk": 10,
+              "result": "ok"
+            },
+            {
+              "id": "p127",
+              "minute": 950,
+              "duration": 30,
+              "walk": 7,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 995,
+              "duration": 30,
+              "walk": 8,
+              "result": "unknown"
+            },
+            {
+              "id": "p118",
+              "minute": 1035,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "theme:food",
+      "actual": [
+        {
+          "signature": "p61,p130,p115,p113,p116,p57,p128,p118",
+          "visits": 8,
+          "meters": 1297,
+          "arrival": 1017,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p61",
+              "minute": 660,
+              "duration": 60,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p130",
+              "minute": 730,
+              "duration": 30,
+              "walk": 3,
+              "result": "ok"
+            },
+            {
+              "id": "p115",
+              "minute": 770,
+              "duration": 30,
+              "walk": 3,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 805,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 840,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p57",
+              "minute": 875,
+              "duration": 60,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p128",
+              "minute": 945,
+              "duration": 30,
+              "walk": 3,
+              "result": "unknown"
+            },
+            {
+              "id": "p118",
+              "minute": 985,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "theme:cafe",
+      "actual": [
+        {
+          "signature": "p128,p113,p116,p105,p83,p102,p118",
+          "visits": 7,
+          "meters": 1268,
+          "arrival": 932,
+          "transport": "walk",
+          "adjusted": false,
+          "dropped": [],
+          "estimated": false,
+          "rows": [
+            {
+              "id": "p128",
+              "minute": 610,
+              "duration": 30,
+              "walk": 5,
+              "result": "unknown"
+            },
+            {
+              "id": "p113",
+              "minute": 660,
+              "duration": 30,
+              "walk": 4,
+              "result": "ok"
+            },
+            {
+              "id": "p116",
+              "minute": 695,
+              "duration": 30,
+              "walk": 1,
+              "result": "unknown"
+            },
+            {
+              "id": "p105",
+              "minute": 730,
+              "duration": 40,
+              "walk": 2,
+              "result": "ok"
+            },
+            {
+              "id": "p83",
+              "minute": 780,
+              "duration": 60,
+              "walk": 1,
+              "result": "ok"
+            },
+            {
+              "id": "p102",
+              "minute": 855,
+              "duration": 40,
+              "walk": 6,
+              "result": "ok"
+            },
+            {
+              "id": "p118",
+              "minute": 900,
+              "duration": 30,
+              "walk": 1,
+              "result": "ok"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
