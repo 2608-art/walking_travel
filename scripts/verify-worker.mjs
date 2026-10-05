@@ -21,12 +21,21 @@ const station={id:'station',lat:34.7914,lon:126.3859}, destination=points.find(p
 const parameters={mode:'walk',start_id:station.id,end_id:destination.id,start_x:station.lon,start_y:station.lat,end_x:destination.lon,end_y:destination.lat};
 const api=p=>worker.fetch(new Request('https://test.invalid/api/route?'+new URLSearchParams(p)),env);
 const count=()=>db.prepare('SELECT COUNT(*) n FROM walk_routes').get().n;
+const busCount=()=>db.prepare('SELECT COUNT(*) n FROM bus_routes').get().n;
 const upstream=globalThis.fetch;
 let calls=0;
+let busSeconds=1500, failBus=false, mixedTransit=false;
 globalThis.fetch=async url=>{
   calls++;
   if(url.includes('/local/search/')) return Response.json({documents:[{x:'126.3853',y:'34.7911',address_name:'시험 주소'}]});
-  if(url.includes('/publictraffic')) return Response.json({status:'OK',routes:[{properties:{totalTime:1974,totalDistance:7228},steps:[{properties:{type:'BUS',guidance:'22-1 버스',distance:6785,time:1486,vehicles:[{name:'22-1'}]}}]}]});
+  if(url.includes('/publictraffic')) {
+    if(failBus) throw Error('upstream unavailable');
+    return Response.json({status:'OK',routes:[{properties:{totalTime:busSeconds+1080,totalDistance:7228,transfers:mixedTransit?1:0},steps:[
+      {properties:{type:'WALKING',distance:443,time:480,guidance:'정류장까지 걷기'}},
+      {properties:{type:'BUS',guidance:'22-1 버스',distance:6785,time:busSeconds,vehicles:[{name:'22-1'}],stops:[{name:'승차 정류장'},{name:'하차 정류장'}]}},
+      ...(mixedTransit ? [{properties:{type:'SUBWAY',time:600,distance:1000}}] : []),
+    ]}]});
+  }
   return Response.json({status:'OK',route:{properties:{totalTime:600,totalDistance:600},legs:[{steps:[{path:{points:[[126.3859,34.7914],[destination.lon,destination.lat]]}}]}]}});
 };
 try {
@@ -46,9 +55,34 @@ try {
   assert.equal(transit.routes[0].walkMeters,443);
   assert.equal(transit.routes[0].walkMinutes,8);
   assert.equal(transit.routes[0].busRideMinutes,25);
-  assert.equal(transit.routes[0].busRideSeconds,1486);
-  assert.equal(transit.routes[0].steps[0].meters,6785);
-  assert.equal(transit.routes[0].steps[0].type,'BUS');
-  assert.equal(count(),1,'버스 경로는 영구 저장 제외');
-  console.log('PASS: hosted API, registered-only D1 cache, deduplication, custom addresses, quota, assets, bus access walking.');
+  assert.equal(transit.routes[0].busRideSeconds,1500);
+  assert.equal(transit.routes[0].minutes,33,'정류장 도보와 탑승만 포함');
+  assert.equal(transit.routes[0].steps[1].meters,6785);
+  assert.equal(transit.routes[0].steps[1].type,'BUS');
+  assert.equal(transit.routes[0].busCacheStatus,'new');
+  assert.equal(busCount(),1);
+  busSeconds=1680;
+  let next=(await (await api({...parameters,mode:'transit'})).json()).routes[0];
+  assert.equal(next.busCacheStatus,'reused');
+  assert.equal(next.busRideSeconds,1590,'작은 변동은 관측 평균을 재사용');
+  busSeconds=2100;
+  next=(await (await api({...parameters,mode:'transit'})).json()).routes[0];
+  assert.equal(next.busCacheStatus,'longer');
+  assert.equal(next.busRideSeconds,2100,'5분과 20% 모두 넘는 증가만 현재 조회값 사용');
+  assert.equal(next.rideDifferenceSeconds,510);
+  assert.equal(db.prepare('SELECT average_ride_seconds n FROM bus_routes').get().n,1590,'긴 조회값은 기준 평균을 오염시키지 않음');
+  failBus=true;
+  next=(await (await api({...parameters,mode:'transit'})).json()).routes[0];
+  assert.equal(next.currentUnavailable,true);
+  assert.equal(next.busRideSeconds,1590,'API 실패 시 저장값 사용');
+  failBus=false;
+  await api({...parameters,mode:'transit',start_id:'custom'});
+  assert.equal(busCount(),1,'미등록 구간은 버스 저장 제외');
+  mixedTransit=true;
+  next=(await (await api({...parameters,mode:'transit'})).json()).routes[0];
+  assert.equal(next.busCacheStatus,undefined,'복합·환승은 단일 버스 평균 저장에서 제외');
+  assert.equal(next.minutes,53,'철도 탑승시간을 버스 평균으로 덮어쓰지 않음');
+  assert.equal(busCount(),1);
+  assert.equal(count(),1);
+  console.log('PASS: hosted API, walk cache, bus average/traffic/fallback, registered-only persistence, quota, assets.');
 } finally {globalThis.fetch=upstream;db.close();}

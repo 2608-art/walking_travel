@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "scope": "Mokpo Station outbound five-neighbor walking candidates",
+  "checkedDateKst": "2026-10-06",
+  "verificationStatus": "partial-live-map-review",
+  "summary": "A later 2026-10-06 in-app map review supplied Kakao and Naver walking figures for all five candidates. Google reported that walking directions were outside its current service area for two checked pairs. No current route geometry or GPX was captured. Earlier access failures, historical API fixture and D1 responses are kept separate.",
+  "earlierAccessAttempts": [
+    {
+      "provider": "Naver Map",
+      "url": "https://map.naver.com/",
+      "result": "The earlier web search was blocked by robots.txt and had no browser surface. A later in-app map review supplied walking figures."
+    },
+    {
+      "provider": "Kakao Map",
+      "url": "https://map.kakao.com/",
+      "result": "The earlier web search was blocked by robots.txt and had no browser surface. A later in-app map review supplied walking figures."
+    },
+    {
+      "provider": "Google Maps",
+      "url": "https://www.google.com/maps/dir/?api=1&origin=34.7914%2C126.3859&destination=34.791173399165%2C126.385646337825&travelmode=walking",
+      "result": "The earlier web search gave a limited view. A later in-app review checked two Google walking requests and found no supported route."
+    }
+  ],
+  "laterMapReview": {
+    "reviewedDateKst": "2026-10-06",
+    "observationProvenance": "In-app map results supplied by the coordinating agent. The editor of this record could not access the agent-owned browser tabs.",
+    "routeUrls": "Exact official route URLs were not supplied. Empty routeUrl fields below mean unrecorded.",
+    "geometry": "Current map route coordinates and GPX export were not supplied."
+  },
+  "existingEvidence": {
+    "file": "../verification/qa/live-route-legs-2026-10-04.json",
+    "sourceDescription": "Published registered walking API; distances/times, no path geometry",
+    "capturedAtUtc": "2026-10-04T14:54:23.986Z",
+    "limitations": "A historical test fixture, separate from the later map review and not a queried D1 row. No GPS points, entrance details or GPX."
+  },
+  "publishedPathCatalog": {
+    "file": "../public/walk-paths.json",
+    "state": "Four station outbound paths (p118, p103, p57, p130) added after user requested application storage; p102 remains unlisted because no geometry was obtained.",
+    "runtimeD1Cache": "A read-only audit found matching coordinate-key rows for 4 of 5 outbound candidates; see d1-cache-coverage-2026-10-06.json. Their points were copied into the public catalog after Kakao map distance and time comparison, with original API source URLs and review notes."
+  },
+  "candidates": [
+    {
+      "fromId": "station",
+      "toId": "p118",
+      "toName": "물망초",
+      "candidateStraightMeters": 34,
+      "priorApiWalk": {"meters": 83, "minutes": 2},
+      "historicalD1Walk": {"meters": 83, "minutes": 2, "pointCount": 12, "savedAtUtc": "2026-10-04 14:25:36"},
+      "priorApiFixtureKey": "station:34.7914:126.3859:p118:34.791173399165:126.385646337825",
+      "mapReview": {
+        "kakao": {"meters": 83, "minutes": 2, "placeMatch": "not independently documented", "routeUrl": ""},
+        "naver": {"meters": 103, "minutes": 1, "placeMatch": "exact POI", "routeUrl": ""},
+        "google": {"status": "walking directions outside current service area", "meters": null, "minutes": null, "routeUrl": ""}
+      },
+      "pathGeometry": "historical D1 response has 12 points; current entrances unverified",
+      "gpxAvailability": "unknown"
+    },
+    {
+      "fromId": "station",
+      "toId": "p102",
+      "toName": "혹호",
+      "candidateStraightMeters": 57,
+      "priorApiWalk": null,
+      "historicalD1Walk": null,
+      "priorApiFixtureKey": null,
+      "mapReview": {
+        "kakao": {"meters": 80, "minutes": 2, "placeMatch": "not independently documented", "routeUrl": ""},
+        "naver": {"meters": 80, "minutes": 1, "placeMatch": "exact POI", "routeUrl": ""},
+        "google": {"status": "not checked", "meters": null, "minutes": null, "routeUrl": ""}
+      },
+      "pathGeometry": null,
+      "gpxAvailability": "unknown"
+    },
+    {
+      "fromId": "station",
+      "toId": "p103",
+      "toName": "인스파이어링 커피",
+      "candidateStraightMeters": 147,
+      "priorApiWalk": null,
+      "historicalD1Walk": {"meters": 209, "minutes": 3, "pointCount": 7, "savedAtUtc": "2026-10-04 18:26:09"},
+      "priorApiFixtureKey": null,
+      "mapReview": {
+        "kakao": {"meters": 209, "minutes": 3, "placeMatch": "not independently documented", "routeUrl": ""},
+        "naver": {"meters": 212, "minutes": 3, "placeMatch": "exact POI", "routeUrl": ""},
+        "google": {"status": "not checked", "meters": null, "minutes": null, "routeUrl": ""}
+      },
+      "pathGeometry": "historical D1 response has 7 points; current entrances unverified",
+      "gpxAvailability": "unknown"
+    },
+    {
+      "fromId": "station",
+      "toId": "p57",
+      "toName": "대명춘",
+      "candidateStraightMeters": 150,
+      "priorApiWalk": {"meters": 220, "minutes": 4},
+      "historicalD1Walk": {"meters": 220, "minutes": 4, "pointCount": 16, "savedAtUtc": "2026-10-04 14:25:45"},
+      "priorApiFixtureKey": "station:34.7914:126.3859:p57:34.7901961:126.3851487",
+      "mapReview": {
+        "kakao": {"meters": 220, "minutes": 4, "placeMatch": "not independently documented", "routeUrl": ""},
+        "naver": {"meters": 188, "minutes": 2, "placeMatch": "exact POI", "routeUrl": ""},
+        "google": {"status": "walking directions outside current service area", "meters": null, "minutes": null, "routeUrl": ""}
+      },
+      "pathGeometry": "historical D1 response has 16 points; current entrances unverified",
+      "gpxAvailability": "unknown"
+    },
+    {
+      "fromId": "station",
+      "toId": "p130",
+      "toName": "웨이브",
+      "candidateStraightMeters": 158,
+      "priorApiWalk": {"meters": 184, "minutes": 3},
+      "historicalD1Walk": {"meters": 184, "minutes": 3, "pointCount": 9, "savedAtUtc": "2026-10-04 13:08:12"},
+      "priorApiFixtureKey": "station:34.7914:126.3859:p130:34.7915770360113:126.384182038601",
+      "mapReview": {
+        "kakao": {"meters": 184, "minutes": 3, "placeMatch": "not independently documented", "routeUrl": ""},
+        "naver": {"meters": 188, "minutes": 2, "placeMatch": "address search: 수문로 15-2; Wave POI not confirmed", "routeUrl": ""},
+        "google": {"status": "not checked", "meters": null, "minutes": null, "routeUrl": ""}
+      },
+      "pathGeometry": "historical D1 response has 9 points; current entrances unverified",
+      "gpxAvailability": "unknown"
+    }
+  ],
+  "nextVerification": "For p102 obtain lawful GPX or API geometry. For all five check actual entrances and current walking access; confirm the Wave POI against the Naver address result. The four saved API lines are local application data, not a deployed site update."
+}

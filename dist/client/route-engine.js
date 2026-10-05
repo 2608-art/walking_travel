@@ -524,8 +524,10 @@
         const riding=busRideMinutes(bus);
         if(riding==null || riding>=60) continue;
         if(!Number.isFinite(bus.walkMeters)||!Number.isFinite(bus.walkMinutes)||!(bus.minutes>0)) continue;
-        const leg={mode:'bus',actual:true,meters:bus.walkMeters,walkMinutes:bus.walkMinutes,minutes:bus.minutes+10,
-          travelMeters:bus.meters,points:bus.points || [],steps:bus.steps,waitBuffer:10};
+        const leg={mode:'bus',actual:true,meters:bus.walkMeters,walkMinutes:bus.walkMinutes,minutes:bus.minutes,
+          travelMeters:bus.meters,points:bus.points || [],steps:bus.steps,busRideMinutes:riding,
+          savedBusId:bus.savedBusId,busStops:bus.busStops,busPoints:bus.busPoints,
+          timetable:bus.timetable,serviceNotice:bus.serviceNotice,estimated:bus.estimated};
         if(!validLeg(leg)) continue;
         const connected={...input,busConnection:{...pair,leg}};
         for(const focus of ['through','start','end']) for(const proposed of makeGeographicRoutes(connected,focus)) {
@@ -606,7 +608,9 @@
       const bus=rides.sort((x,y)=>x.minutes-y.minutes)[0];
       if(bus) {
         legs.push({mode:'bus',actual:true,meters:bus.walkMeters || 0,walkMinutes:bus.walkMinutes || 0,
-          minutes:bus.minutes+10,points:bus.points || [],steps:bus.steps,busRideMinutes:busRideMinutes(bus)});
+          minutes:bus.minutes,points:bus.points || [],steps:bus.steps,busRideMinutes:busRideMinutes(bus),
+          savedBusId:bus.savedBusId,busStops:bus.busStops,busPoints:bus.busPoints,
+          timetable:bus.timetable,serviceNotice:bus.serviceNotice,estimated:bus.estimated});
       } else legs.push(walk || estimate(a,b));
     }
     let now=minutes(input.start),walked=0;

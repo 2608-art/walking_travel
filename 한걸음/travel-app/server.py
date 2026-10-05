@@ -19,8 +19,7 @@ from urllib.parse import parse_qs, urlencode, urlsplit
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parent
-DIST = ROOT / "dist"
-CACHE = {}
+DIST = ROOT / "dist" / "client" if (ROOT / "dist" / "client").is_dir() else ROOT / "dist"
 DAILY_CALLS = defaultdict(int)
 MAX_CALLS_PER_DAY = 200  # 무료 한도(종류별 1,000건/일)보다 낮은 로컬 안전 한도
 WALK_CACHE_DB = Path(os.environ.get("HANGEORUM_ROUTE_CACHE_DB", ROOT / "route-cache.sqlite3"))
@@ -56,6 +55,14 @@ def open_walk_cache():
         response BLOB NOT NULL,
         saved_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
     )""")
+    connection.execute("""CREATE TABLE IF NOT EXISTS bus_routes (
+        route_key TEXT PRIMARY KEY,
+        response TEXT NOT NULL,
+        average_ride_seconds INTEGER NOT NULL,
+        sample_count INTEGER NOT NULL DEFAULT 1,
+        saved_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        checked_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )""")
     return connection
 
 
@@ -75,6 +82,82 @@ def save_walk_route(coords, result, start_id="", end_id=""):
         connection.execute("INSERT OR IGNORE INTO walk_routes (route_key, response) VALUES (?, ?)",
                            (walk_cache_key(coords), payload))
         connection.commit()
+
+
+def bus_identity(route):
+    if route.get("transfers", 0) > 0 or any(step.get("type") not in ("WALK", "WALKING", "BUS") for step in route.get("steps", [])):
+        return ""
+    buses = [step for step in route.get("steps", []) if step.get("type") == "BUS"]
+    if len(buses) != 1 or not buses[0].get("vehicle") or len(buses[0].get("stops") or []) < 2:
+        return ""
+    bus = buses[0]
+    return ":".join((bus["vehicle"], bus["stops"][0], bus["stops"][-1]))
+
+
+def compare_and_save_bus_route(connection, coords, route):
+    identity = bus_identity(route)
+    seconds = route.get("busRideSeconds")
+    if not identity or not isinstance(seconds, (int, float)) or seconds <= 0:
+        return route
+    key = "bus:" + walk_cache_key(coords) + ":" + identity
+    previous = connection.execute(
+        "SELECT average_ride_seconds, sample_count FROM bus_routes WHERE route_key = ?", (key,)
+    ).fetchone()
+    if previous is None:
+        connection.execute(
+            "INSERT OR IGNORE INTO bus_routes (route_key, response, average_ride_seconds, sample_count) VALUES (?, ?, ?, 1)",
+            (key, json.dumps(route, ensure_ascii=False, separators=(",", ":")), seconds)
+        )
+        return {**route, "busCacheStatus": "new", "baselineBusRideSeconds": seconds, "baselineSampleCount": 1}
+    baseline, count = previous
+    if baseline <= 0 or count < 1:
+        return route
+    difference = seconds - baseline
+    significant = abs(difference) >= 300 and abs(difference) >= baseline * .2
+    if significant and difference > 0:
+        connection.execute("UPDATE bus_routes SET checked_at = CURRENT_TIMESTAMP WHERE route_key = ?", (key,))
+        return {**route, "busCacheStatus": "longer", "baselineBusRideSeconds": baseline,
+                "baselineSampleCount": count, "currentBusRideSeconds": seconds,
+                "rideDifferenceSeconds": difference}
+    if significant and difference < 0:
+        connection.execute(
+            "UPDATE bus_routes SET response = ?, average_ride_seconds = ?, sample_count = 1, checked_at = CURRENT_TIMESTAMP WHERE route_key = ?",
+            (json.dumps(route, ensure_ascii=False, separators=(",", ":")), seconds, key)
+        )
+        return {**route, "busCacheStatus": "shorter-reset", "baselineBusRideSeconds": seconds,
+                "baselineSampleCount": 1}
+    next_count = min(20, count + 1)
+    average = round((baseline * min(count, 19) + seconds) / next_count)
+    connection.execute(
+        "UPDATE bus_routes SET response = ?, average_ride_seconds = ?, sample_count = ?, checked_at = CURRENT_TIMESTAMP WHERE route_key = ?",
+        (json.dumps(route, ensure_ascii=False, separators=(",", ":")), average, next_count, key)
+    )
+    ride_minutes = round(average / 60)
+    return {**route, "minutes": max(1, route["walkMinutes"] + ride_minutes),
+            "busRideSeconds": average, "busRideMinutes": ride_minutes,
+            "steps": [{**step, "minutes": ride_minutes} if step["type"] == "BUS" else step
+                      for step in route["steps"]],
+            "busCacheStatus": "reused", "baselineBusRideSeconds": average,
+            "baselineSampleCount": next_count, "currentBusRideSeconds": seconds}
+
+
+def cached_bus_route(connection, coords):
+    prefix = "bus:" + walk_cache_key(coords) + ":"
+    row = connection.execute(
+        "SELECT response, average_ride_seconds, sample_count FROM bus_routes "
+        "WHERE route_key LIKE ? ORDER BY checked_at DESC LIMIT 1", (prefix + "%",)
+    ).fetchone()
+    if row is None:
+        return None
+    route = json.loads(row[0])
+    average, count = row[1:]
+    ride_minutes = round(average / 60)
+    return {**route, "minutes": max(1, route["walkMinutes"] + ride_minutes),
+            "busRideSeconds": average, "busRideMinutes": ride_minutes,
+            "steps": [{**step, "minutes": ride_minutes} if step["type"] == "BUS" else step
+                      for step in route["steps"]],
+            "busCacheStatus": "currentUnavailable", "currentUnavailable": True,
+            "baselineBusRideSeconds": average, "baselineSampleCount": count}
 
 
 def rest_key():
@@ -97,35 +180,39 @@ def summarize(mode, data):
     for route in source:
         props = route.get("properties") or {}
         steps = route.get("steps") if mode == "transit" else [step for leg in route.get("legs", []) for step in leg.get("steps", [])]
+        walking = [step for step in steps or [] if (step.get("properties") or {}).get("type") in ("WALK", "WALKING")]
+        vehicles = [step for step in steps or [] if (step.get("properties") or {}).get("type") not in ("WALK", "WALKING")]
+        walking_seconds = sum((step.get("properties") or {}).get("time") or 0 for step in walking)
+        walking_meters = sum((step.get("properties") or {}).get("distance") or 0 for step in walking)
+        vehicle_seconds = sum((step.get("properties") or {}).get("time") or 0 for step in vehicles)
+        bus_seconds = sum((step.get("properties") or {}).get("time") or 0 for step in vehicles
+                          if (step.get("properties") or {}).get("type") == "BUS")
         points = []
         summary_steps = []
-        vehicle_distance = 0
-        vehicle_seconds = 0
-        bus_seconds = 0
         for step in steps or []:
             info = step.get("properties") or {}
             path = (step.get("path") or {}).get("points") or []
             points.extend(point for point in path if isinstance(point, list) and len(point) == 2)
             if mode == "transit":
-                if info.get("type") not in ("WALK", "WALKING"):
-                    vehicle_distance += info.get("distance") or 0
-                    vehicle_seconds += info.get("time") or 0
-                if info.get("type") == "BUS":
-                    bus_seconds += info.get("time") or 0
                 summary_steps.append({
                     "type": info.get("type", ""),
                     "guidance": info.get("guidance", ""),
                     "minutes": round((info.get("time") or 0) / 60),
                     "meters": info.get("distance") or 0,
                     "vehicle": ", ".join(v.get("name", "") for v in info.get("vehicles", []) if v.get("name")),
+                    "stops": [stop.get("name") for stop in info.get("stops", []) if stop.get("name")],
+                    "points": [point for point in path if isinstance(point, list) and len(point) == 2][:5000],
                 })
         routes.append({
-            "minutes": max(1, round((props.get("totalTime") or 0) / 60)),
+            "minutes": max(1, round((walking_seconds + vehicle_seconds if mode == "transit"
+                                     else props.get("totalTime") or 0) / 60)),
             "meters": props.get("totalDistance") or 0,
-            "walkMeters": max(0, (props.get("totalDistance") or 0) - vehicle_distance) if mode == "transit" else props.get("totalDistance") or 0,
-            "walkMinutes": max(0, round(((props.get("totalTime") or 0) - vehicle_seconds) / 60)) if mode == "transit" else max(1, round((props.get("totalTime") or 0) / 60)),
+            "walkMeters": walking_meters if mode == "transit" else props.get("totalDistance") or 0,
+            "walkMinutes": max(0, round(walking_seconds / 60)) if mode == "transit"
+            else max(1, round((props.get("totalTime") or 0) / 60)),
             "busRideSeconds": bus_seconds if mode == "transit" and bus_seconds > 0 else None if mode == "transit" else 0,
-            "busRideMinutes": int(bus_seconds / 60 + .5) if mode == "transit" and bus_seconds > 0 else None if mode == "transit" else 0,
+            "busRideMinutes": round(bus_seconds / 60) if mode == "transit" and bus_seconds > 0 else None if mode == "transit" else 0,
+            **({"transitTimeBasis": "walking-and-vehicle-steps-excluding-wait"} if mode == "transit" else {}),
             "transfers": props.get("transfers") or 0,
             "fare": (props.get("fare") or {}).get("value"),
             "points": points[:5000],
@@ -229,13 +316,26 @@ class Handler(SimpleHTTPRequestHandler):
                     except (sqlite3.Error, OSError):
                         return self.send_json(500, {"error": "도보 경로를 저장하지 못했습니다."})
                 return self.send_json(status, result)
-        cache_key = (mode, tuple(coords.values()))
-        cached = CACHE.get(cache_key)
-        if cached and cached[0] > time.time():
-            return self.send_json(200, cached[1])
+        start_id = values.get("start_id", [""])[0]
+        end_id = values.get("end_id", [""])[0]
+        registered_pair = can_persist_walk(coords, start_id, end_id)
+        # 버스는 현재 조회값을 매번 비교해야 하므로 짧은 메모리 캐시도 사용하지 않는다.
         status, result = fetch_kakao_route(mode, coords)
-        if status == 200:
-            CACHE[cache_key] = (time.time() + 600, result)
+        if registered_pair:
+            try:
+                with closing(open_walk_cache()) as connection:
+                    if status == 200 and result.get("status") == "OK":
+                        lock = WALK_LOCKS[hash(walk_cache_key(coords)) % len(WALK_LOCKS)]
+                        with lock:
+                            result["routes"] = [compare_and_save_bus_route(connection, coords, route)
+                                                for route in result.get("routes", [])]
+                            connection.commit()
+                    elif status != 200:
+                        saved = cached_bus_route(connection, coords)
+                        if saved is not None:
+                            return self.send_json(200, {"status": "OK", "routes": [saved]})
+            except (sqlite3.Error, OSError, ValueError, json.JSONDecodeError, KeyError):
+                return self.send_json(500, {"error": "저장된 버스 경로를 처리하지 못했습니다."})
         return self.send_json(status, result)
 
 
