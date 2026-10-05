@@ -1,0 +1,16 @@
+{
+  "unchanged": [
+    "route-engine.js",
+    "places.json",
+    "map-config.js",
+    "styles.css",
+    "diary.css"
+  ],
+  "appChangedLines": [
+    5,
+    173,
+    175,
+    189
+  ],
+  "identicalEventRegistrationLines": 103
+}

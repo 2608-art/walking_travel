@@ -1,0 +1,4 @@
+interface:
+  display_name: "GIT"
+  short_description: "명세 확인부터 PR과 배포까지 진행"
+  default_prompt: "Use $git to review the specification and current changes, then commit, push, open a PR to main, and deploy this project."
