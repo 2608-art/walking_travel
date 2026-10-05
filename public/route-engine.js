@@ -701,10 +701,10 @@
     return {...route,id:route.id+'-reverse',title:route.title+' · 반대 방향',rows,walkMeters:walked+finalLeg.meters,
       endWalk:finalLeg,endArrival:now+finalLeg.minutes,signature:rows.map((row) => row.placeId).join(','),reversed:true,reverseDropped:dropped,chosenMeals:[],plannedMeals:rows.filter(row=>row.kind==='meal').map(row=>row.minute)};
   }
-  function mealChoices({route,places,origin,destination,date,validate,requiredPlaceId='',kind='lunch',cuisineTags=[]}) {
+  function mealChoices({route,places,origin,destination,date,validate,requiredPlaceId='',kind='lunch',cuisineTags=[],candidateFilter=()=>true,mealDuration}) {
     const window=kind === 'dinner' ? [17*60,21*60] : kind === 'lunch' ? [11*60,15*60] : [route.start,route.end];
-    const duration=kind === 'cafe' ? 40 : 60;
-    const restaurants=places.filter((p) => hasCoord(p) && p.category === (kind === 'cafe' ? 'cafe' : 'food') && !EXCLUDED_IDS.has(p.id) &&
+    const duration=mealDuration || (kind === 'cafe' ? 40 : 60);
+    const restaurants=places.filter((p) => hasCoord(p) && p.category === (kind === 'cafe' ? 'cafe' : 'food') && !EXCLUDED_IDS.has(p.id) && candidateFilter(p) &&
       !route.rows.some((row) => row.placeId === p.id) &&
       (!cuisineTags.length || cuisineTags.some(tag => p.cuisineTags?.includes(tag))));
     const byPlace=new Map();
