@@ -5,7 +5,7 @@
   const HISTORY_IDS = new Set(['p2','p8','p9','p12','p13','p20','p22','p29','p30','p31','p40']);
   const SEA_IDS = new Set(['p3','p4','p5','p6','p7','p14','p19','p24','p25','p32','p34','p36','p37']);
   const NIGHT_OUTDOOR_IDS = new Set(['p14']);
-  const EXCLUDED_IDS = new Set(['p3','p4','p5','p24','p41','p51']);
+  const EXCLUDED_IDS = new Set(['p3','p4','p5','p24','p35','p41','p44','p45','p51']);
   const THEMES = [
     {id:'balanced', name:'목포 기본 코스'},
     {id:'first', name:'처음 가는 목포'},
@@ -48,6 +48,8 @@
     return value>0 ? value : null;
   };
   function datedHours(p,date) {
+    // 운영자 사이트와 충돌하는 포도책방의 지도 주간표는 판정에 사용하지 않는다.
+    if (p.id === 'p127') return null;
     if (date < '2026-10-03' || date > '2026-10-09') return null;
     const day=Number(date.slice(-2));
     const texts=[p.diningWeekText,p.mapWeekText].filter(Boolean);
@@ -72,6 +74,7 @@
   }
   function stay(p, meal) {
     if (meal) return 60;
+    if (p.shortScenicWalk) return p.shortScenicWalk.minutes;
     if (p.category === 'food') return 45;
     if (p.category === 'cafe') return 40;
     if (routeCategory(p) === 'shop') return 30;
@@ -97,6 +100,7 @@
   }
   function allowedAt(p, minute, meal, date) {
     if (EXCLUDED_IDS.has(p.id)) return false;
+    if (p.unrestrictedAccess && !meal) return true;
     const category = routeCategory(p);
     const knownHours = p.hours || datedHours(p,date)?.open;
     if (minute >= 19*60 && !knownHours && ['shop','food','cafe'].includes(category)) return false;
@@ -158,6 +162,7 @@
         if (requiredPlaceId && !used.has(requiredPlaceId) && rows.length >= 7) candidates.sort((a,b) => Number(b.p.id === requiredPlaceId)-Number(a.p.id === requiredPlaceId) || a.direct-b.direct);
         let choice=null;
         for (const {p} of candidates) {
+          if (p.shortScenicWalk && distanceKm(prior,p) > .25) continue;
           // 이미 지나온 블록으로 되돌아가지 않는다. 현재 방문지 주변을 연달아 걷는 것은 허용한다.
           if (p.id !== requiredPlaceId && rows.slice(0,-2).some((row) => {
             const visited=places.find((item) => item.id === row.placeId);
@@ -367,7 +372,8 @@
     const endpoints=required ? [origin,required,destination] : [origin,destination];
     let skeleton=[], prior=origin;
     for(const endpoint of endpoints.slice(1)) {
-      const connection=shortestConnection(prior,endpoint,available,new Set(skeleton.map(p=>p.id)),input);
+      const connectors=available.filter(p=>!p.shortScenicWalk || p.id===requiredPlaceId);
+      const connection=shortestConnection(prior,endpoint,connectors,new Set(skeleton.map(p=>p.id)),input);
       if(!connection) return [];
       skeleton.push(...connection);prior=endpoint;
     }
@@ -384,6 +390,7 @@
           if(['food','cafe'].includes(p.category) && order.filter(x=>x.category===p.category).length >= (input.theme===p.category ? 2 : 1)) continue;
           for(let i=0;i<points.length-1;i++) {
             const extra=distanceKm(points[i],p)+distanceKm(p,points[i+1])-distanceKm(points[i],points[i+1]);
+            if(p.shortScenicWalk && extra>.25) continue;
             options.push({p,i,extra,near:distanceKm(focus==='end'?destination:origin,p)});
           }
         }

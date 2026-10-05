@@ -152,6 +152,7 @@
   function categoryName(cat) { return CATEGORIES.find((x) => x[0] === cat)?.[1] || '장소'; }
   function categoryIcon(cat) { return CATEGORIES.find((x) => x[0] === cat)?.[2] || '📍'; }
   function placeTimeText(p) {
+    if (p?.unrestrictedAccess) return '야외 산책 구간 · 정해진 출입시간 없음' + (p.accessConstraint === 'publicFerry' ? ' · 실제 방문은 여객선 운항·귀항편에 제한됨' : ' (기상·안전 통제는 별도 확인)');
     if (!p?.hours) return '일정 자동 검증용 시간표 미확정 · 아래 조사 내용을 확인하세요';
     let text = p.hours.open + '–' + p.hours.close;
     if (p.hours.breaks?.length) text += ' · 브레이크 ' + p.hours.breaks.map((b) => b.join('–')).join(', ');
@@ -172,6 +173,28 @@
       (diningWeek ? '<div class="schedule-week">' + diningWeek + (p.diningWeekSource ? '<a class="small" href="' + esc(p.diningWeekSource) + '" target="_blank" rel="noopener noreferrer">다이닝코드 장소 시간표</a>' : '') + '</div>' : '') +
       '<div class="schedule-facts">' + rows.map(([label, value]) => '<p><strong>' + esc(label) + '</strong><br>' + esc(value) + '</p>').join('') + '</div>' +
       (p.scheduleSource ? '<a class="small" href="' + esc(p.scheduleSource) + '" target="_blank" rel="noopener noreferrer">운영정보 출처</a>' : '');
+  }
+  function soloHtml(p) {
+    if (p.category !== 'food' && p.category !== 'cafe') return '';
+    const verdict = {
+      not_possible: '조사 기준 혼자 식사 불가 · 2인 이상 메뉴가 있고 별도 1인 메뉴는 확인하지 못함',
+      takeout_only: '매장 식사 불가 정황 · 최근 후기는 포장 전문점으로 설명',
+      specific_menu: '확인된 1인 메뉴로 혼자 이용 가능 · 다른 메뉴는 아래 주문 조건 확인',
+      single_item_unverified: '한 그릇·한 접시 단품 메뉴 확인 · 1인 주문 허용 여부는 미확인',
+      review_only: '혼자 이용한 후기 정황은 있으나 1인 메뉴·현행 주문 조건은 미확인',
+      unknown: '혼자 이용·주문 가능 여부를 공개 자료로 확인하지 못함'
+    }[p.soloVerdict] || '혼자 이용·주문 가능 여부를 공개 자료로 확인하지 못함';
+    const review = p.soloVisit === 'review_tag' ? (p.category === 'cafe' ? '혼카페 후기 태그 있음' : '혼밥 후기 태그 있음') : p.soloVisit === 'solo_visit_review' ? '혼자 방문한 후기 있음' : '';
+    const seat = {bar:'바 좌석',single:'1인석',window:'창가를 향한 혼자 앉는 자리',partition:'칸막이 좌석',takeout_only:'매장 식사 좌석 없음(포장 전문 후기)'}[p.soloSeat];
+    return '<div class="schedule-facts"><h2>혼자 이용하기</h2><p><strong>혼자 방문·주문</strong><br>' + esc(verdict) + (review ? '<br>' + esc(review) : '') + '</p>' +
+      '<p><strong>확인된 1인·단품 메뉴</strong><br>' + esc(p.soloMenu || '확인하지 못함') + '</p>' +
+      '<p><strong>혼자 앉을 자리</strong><br>' + esc(seat ? seat + (p.soloSeat === 'takeout_only' ? '' : ' 확인') : '1인석·바·창가 방향·칸막이 좌석 확인 못함. 일반 테이블 이용 불가라는 뜻은 아니에요.') + '</p>' +
+      (p.minimumOrder ? '<p><strong>대표·특정 메뉴의 인원 조건</strong><br>' + esc(p.minimumOrder) + '</p>' : '<p><strong>대표·특정 메뉴의 인원 조건</strong><br>공개 자료에서 별도 조건을 확인하지 못함</p>') +
+      (p.soloNote ? '<p>' + esc(p.soloNote) + '</p>' : '') +
+      (p.soloSource ? '<a class="small" href="' + esc(p.soloSource) + '" target="_blank" rel="noopener noreferrer">혼자 이용 조사 출처</a>' : '') +
+      (p.soloMenuSource && p.soloMenuSource !== p.soloSource ? ' · <a class="small" href="' + esc(p.soloMenuSource) + '" target="_blank" rel="noopener noreferrer">1인·단품 메뉴 근거</a>' : '') +
+      (p.minimumOrderSource && p.minimumOrderSource !== p.soloSource ? ' · <a class="small" href="' + esc(p.minimumOrderSource) + '" target="_blank" rel="noopener noreferrer">최소 주문 근거</a>' : '') +
+      '<p class="small">' + esc(p.soloChecked || '') + ' 공개 자료 조사 · 현장 좌석 배정과 메뉴 조건은 방문 전 재확인</p></div>';
   }
   function placeVisual(p, compact = false) {
     const media = window.HANGEORUM_PLACE_MEDIA?.[p.id];
@@ -225,7 +248,7 @@
     const tab=state.placeTab||'intro';
     $('#main').innerHTML=`<section class="place-page"><div class="place-cover">${placeVisual(p)}<button class="round-control" id="place-back" aria-label="이전 화면">‹</button></div><div class="place-page-body"><span class="eyebrow">${esc(categoryName(p.category))}</span><h1>${esc(p.name)}</h1><p class="place-address">⌖ ${esc(p.locationText||'위치 확인 필요')}</p>${p.rating!=null?`<p class="place-rating">카카오맵 ${esc(p.rating.toFixed(1))} / 5 · 평가 ${esc(p.ratingCount)}건 · 2026-10-01 조사</p>`:''}<div class="place-quick-actions"><button id="place-see-map">${uiIcon('location')}지도 위치</button><button id="place-plan">${uiIcon('plan')}계획표 열기</button>${p.source?`<a href="${esc(p.source)}" target="_blank" rel="noopener noreferrer">${uiIcon('external')}장소 정보</a>`:''}</div>
       <div class="city-tabs" role="tablist" aria-label="장소 상세 정보"><button role="tab" aria-selected="${tab==='intro'}" data-place-tab="intro">방문 안내</button><button role="tab" aria-selected="${tab==='hours'}" data-place-tab="hours">운영시간</button><button role="tab" aria-selected="${tab==='related'}" data-place-tab="related">함께 둘러보기</button></div>
-      <div class="place-tab-content">${tab==='intro'?`<div class="travel-note">${turtlePose('rest','잠시 쉬는 거북이')}<div><h2>여기서 잠깐!</h2><p>${esc(p.hours?placeTimeText(p):'방문 가능한 시간은 아직 확인 중이에요. 운영시간 탭에서 조사 내용을 확인해 주세요.')}</p>${p.hours?.note?`<p>${esc(p.hours.note)}</p>`:''}</div></div>${p.mapPinBasis?`<p class="small">지도 표시점: ${esc(p.mapPinBasis)}. 실제 출입구와 보행 시작점은 따로 확인해 주세요.</p>`:''}<h2>같은 취향의 장소</h2><div class="discovery-grid">${related.map(destinationPlaceCard).join('')}</div>`:tab==='hours'?`<h2>방문 전 확인해 주세요</h2>${scheduleHtml(p)}<p class="small">기본 조사 2026-10-01${p.mapWeekChecked?' · 주간표 확인 '+esc(p.mapWeekChecked):''}. 당일 변경은 장소 안내에서 확인해 주세요.</p>`:`<h2>같은 취향의 장소</h2><p class="small">같은 유형으로 묶은 장소예요. 이동 거리는 지도에서 확인해 주세요.</p><div class="discovery-grid">${related.map(destinationPlaceCard).join('')}</div>`}</div>
+      <div class="place-tab-content">${tab==='intro'?`<div class="travel-note">${turtlePose('rest','잠시 쉬는 거북이')}<div><h2>여기서 잠깐!</h2><p>${esc((p.hours||p.unrestrictedAccess)?placeTimeText(p):'방문 가능한 시간은 아직 확인 중이에요. 운영시간 탭에서 조사 내용을 확인해 주세요.')}</p>${p.hours?.note?`<p>${esc(p.hours.note)}</p>`:''}</div></div>${p.mapPinBasis?`<p class="small">지도 표시점: ${esc(p.mapPinBasis)}. 실제 출입구와 보행 시작점은 따로 확인해 주세요.</p>`:''}${soloHtml(p)}<h2>같은 취향의 장소</h2><div class="discovery-grid">${related.map(destinationPlaceCard).join('')}</div>`:tab==='hours'?`<h2>방문 전 확인해 주세요</h2>${scheduleHtml(p)}<p class="small">기본 조사 2026-10-01${p.mapWeekChecked?' · 주간표 확인 '+esc(p.mapWeekChecked):''}. 당일 변경은 장소 안내에서 확인해 주세요.</p>`:`<h2>같은 취향의 장소</h2><p class="small">같은 유형으로 묶은 장소예요. 이동 거리는 지도에서 확인해 주세요.</p><div class="discovery-grid">${related.map(destinationPlaceCard).join('')}</div>`}</div>
       <button class="btn btn-primary place-main-cta" id="place-map-cta">⌖ 지도로 보기</button></div></section>`;
     $('#place-back').onclick=()=>{state.placeTab='intro';nav(state.placeBack||'region');};
     const seeMap=()=>{state.mapDisplay='map';const point=pinPoint(p);if(point){state.mapCenter=point;state.mapZoom=15;}state.categories.clear();state.selected=null;nav('region');};
@@ -340,6 +363,9 @@
   function evaluate(entry, minute, date) {
     const p = entryPlace(entry);
     const daily=p ? routeEngine.datedHours(p,dateAt(date,minute)) : null;
+    if (p?.unrestrictedAccess) return p.accessConstraint === 'publicFerry' ?
+      {kind:'warn',title:'산책 시간 제한 없음 · 배편 확인',detail:'섬 자체의 입장시간은 없지만 실제 이동·귀항은 여객선 시간과 기상에 따릅니다.'} :
+      {kind:'ok',title:'야외 접근 가능',detail:'정해진 출입시간이 없는 산책 구간입니다. 기상·안전 통제와 야간 보행 여건은 현장에서 확인하세요.'};
     if (daily?.closed) return {kind:'bad',title:'해당 날짜 휴무',detail:'날짜별 시간표에 휴무로 표시되었습니다.'};
     const h = daily?.open ? {...p.hours,...daily,breaks:daily.breaks?.length ? daily.breaks : p.hours?.breaks} : p?.hours;
     if (!p || !h) return { kind: 'unknown', title: '운영시간 확인 필요', detail: '장소 운영정보가 없어 가능 여부를 확정할 수 없습니다.' };
@@ -806,7 +832,8 @@
       const previous=chosen.rows[i-1];
       const freeMinutes=x.minute-(previous ? previous.minute+previous.duration : chosen.start)-x.walkEstimate;
       const gap=freeMinutes > 25 ? '<div class="route-gap">' + esc(hhmm(previous ? previous.minute+previous.duration : chosen.start)) + ' 이후 약 ' + freeMinutes + '분 빈 시간 · 자유롭게 보내거나 이동 여유로 사용하세요.</div>' : '';
-      return gap + '<div class="route-stop"><div class="route-stop-time">' + esc(hhmm(x.minute)) + '<small>~ ' + esc(hhmm(x.minute+x.duration)) + '</small><button type="button" class="route-add-one" data-add-route-stop="' + i + '" aria-label="' + esc(getPlace(x.placeId)?.name) + '만 시간계획표에 넣기">+ 넣기</button></div><div><strong>' + (x.kind === 'meal' ? '식사 · ' : x.kind === 'cafe' ? '카페 휴식 · ' : '') + esc(getPlace(x.placeId)?.name) + '</strong><p>' + esc(x.duration) + '분 체류 · ' + esc(routeLegText(x)) + '</p><small>' + esc(x.result.title) + (x.result.kind === 'unknown' ? ' · 영업 확인 필요' : '') + '</small>' + routePathPicker(chosen,i) + '</div></div>';
+      const scenic=getPlace(x.placeId)?.shortScenicWalk;
+      return gap + '<div class="route-stop"><div class="route-stop-time">' + esc(hhmm(x.minute)) + '<small>~ ' + esc(hhmm(x.minute+x.duration)) + '</small><button type="button" class="route-add-one" data-add-route-stop="' + i + '" aria-label="' + esc(getPlace(x.placeId)?.name) + '만 시간계획표에 넣기">+ 넣기</button></div><div><strong>' + (x.kind === 'meal' ? '식사 · ' : x.kind === 'cafe' ? '카페 휴식 · ' : '') + esc(getPlace(x.placeId)?.name) + '</strong><p>' + esc(x.duration) + '분 ' + (scenic?'일부 산책':'체류') + ' · ' + esc(routeLegText(x)) + '</p>' + (scenic?'<small>'+esc(scenic.label)+' · 표시점은 접근 기준이며 실제 산책길은 현장 안내를 확인하세요.</small><br>':'') + '<small>' + esc(x.result.title) + (x.result.kind === 'unknown' ? ' · 영업 확인 필요' : '') + '</small>' + routePathPicker(chosen,i) + '</div></div>';
     }).join('') : '';
     const endRow=chosen ? '<div class="route-stop"><div class="route-stop-time">' + esc(hhmm(chosen.endArrival)) + '</div><div><strong>도착 · ' + esc(chosen.destinationName) + '</strong><p>' + esc(routeLegText(chosen.endWalk)) + '</p>' + routePathPicker(chosen,chosen.rows.length) + '</div></div>' : '';
     const free=chosen && !chosen.autoSchedule && chosen.endArrival < chosen.end-15 ? '<div class="notice" style="margin-top:12px">' + esc(hhmm(chosen.endArrival)) + ' 도착 후 ' + esc(hhmm(chosen.end)) + '까지 자유시간입니다. 확인되지 않은 야간 영업 장소를 임의로 넣지 않았습니다.</div>' : '';
