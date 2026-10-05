@@ -701,7 +701,7 @@
       leg.actual ? '도보 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km (실제 경로)' : '방향만 표시 · 실제 이동 경로 미확인';
     const stops=review.rows.map((row,index)=>'<div class="route-stop"><div class="route-stop-time">'+(index+1)+'</div><div><strong>'+esc(getPlace(row.placeId)?.name || '장소')+'</strong><p>앞 장소에서 '+esc(legText(row.busLeg || {mode:row.mode,minutes:row.walkEstimate,meters:row.walkMeters,actual:row.actual,walkMinutes:0,busRideMinutes:0}))+'</p></div></div>').join('');
     const issues=review.issues.length ? review.issues.map(issue=>'<li>'+esc(issue)+'</li>').join('') : '<li>확정 코스 탐색에서 모든 이동·운영 조건을 함께 검증하지 못했습니다.</li>';
-    root.innerHTML='<div class="card route-review"><span class="eyebrow">검토용 루트</span><h2>'+esc(review.originName)+' → '+esc(review.destinationName)+'</h2><p>입력한 위치와 가까운 장소를 방문 순서대로 이었습니다. 확정 추천이나 실제 버스 배차를 뜻하지 않습니다.</p><div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="검토용 방문 순서 지도"></div><p class="small">숫자는 방문 순서입니다. 점선은 실제 경로를 확인하지 못한 구간입니다.</p></div>'+stops+'<div class="route-stop"><div class="route-stop-time">도착</div><div><strong>'+esc(review.destinationName)+'</strong><p>앞 장소에서 '+esc(legText(review.endWalk))+'</p></div></div><div class="notice warn"><strong>확정 코스가 되지 않은 이유·확인할 점</strong><ul>'+issues+'</ul></div><p class="small">버스 60분 기준은 탑승시간만 계산합니다. 정류장 도보·환승·실제 배차 대기는 별도입니다.</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
+    root.innerHTML='<div class="card route-review"><span class="eyebrow">검토용 루트</span><h2>'+esc(review.originName)+' → '+esc(review.destinationName)+'</h2><p>입력한 위치와 가까운 장소를 방문 순서대로 이었습니다. 확정 추천이나 실제 버스 배차를 뜻하지 않습니다.</p><div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="검토용 방문 순서 지도"></div><p class="small">숫자는 방문 순서입니다. 점선은 실제 경로를 확인하지 못한 구간입니다. 지도 위에서 휠·두 손가락으로 확대·축소하고, 드래그로 이동할 수 있습니다.</p></div>'+stops+'<div class="route-stop"><div class="route-stop-time">도착</div><div><strong>'+esc(review.destinationName)+'</strong><p>앞 장소에서 '+esc(legText(review.endWalk))+'</p></div></div><div class="notice warn"><strong>확정 코스가 되지 않은 이유·확인할 점</strong><ul>'+issues+'</ul></div><p class="small">버스 60분 기준은 탑승시간만 계산합니다. 정류장 도보·환승·실제 배차 대기는 별도입니다.</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
     initResultMap(review);
     $('#go-own-plan').onclick=()=>nav('plan');
   }
@@ -722,7 +722,7 @@
     const free=chosen && !chosen.autoSchedule && chosen.endArrival < chosen.end-15 ? '<div class="notice" style="margin-top:12px">' + esc(hhmm(chosen.endArrival)) + ' 도착 후 ' + esc(hhmm(chosen.end)) + '까지 자유시간입니다. 확인되지 않은 야간 영업 장소를 임의로 넣지 않았습니다.</div>' : '';
     root.innerHTML = chosen ? '<div class="section-label">추천 코스 ' + r.results.length + '개</div><div class="route-tabs">' + r.results.map((x,i) => '<button class="filter-chip ' + (i === r.selected ? 'active' : '') + '" data-route-tab="' + i + '">' + esc(x.title) + '</button>').join('') + '</div><div class="card"><p><strong>' + esc(chosen.originName) + ' ' + esc(hhmm(chosen.start)) + ' 출발 → ' + esc(chosen.destinationName) + ' ' + esc(hhmm(chosen.end)) + '까지</strong></p><p class="small">방문 ' + chosen.rows.length + '곳 · 도보 합계 약 ' + (chosen.walkMeters/1000).toFixed(2) + 'km · ' + esc(routeEngine.THEMES.find((t) => t.id === chosen.theme)?.name || '') + '</p>' + stops + endRow + free + '<p class="small" style="margin-top:14px">영업시간 미확인 장소는 방문 전 확인하세요. 주소 좌표는 건물 대표점일 수 있으며, 이동시간에 신호와 대기는 별도로 여유를 두세요.</p><button class="btn btn-primary" id="import-route">시간계획표에 넣기</button></div>' : '<div class="card empty-state"><h3>조건에 맞는 코스를 찾지 못했습니다.</h3><p>' + esc(emptyReason) + '</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
     if (chosen) {
-      root.querySelector('.route-tabs').insertAdjacentHTML('afterend','<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="추천 코스 이동 순서 지도"></div><p class="small">숫자는 방문 순서, 화살표는 이동 방향입니다. 초록 선은 도보, 파란 선은 버스 연결입니다. 점선은 경로 미확인 구간의 방향입니다.</p></div>');
+      root.querySelector('.route-tabs').insertAdjacentHTML('afterend','<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="추천 코스 이동 순서 지도"></div><p class="small">숫자는 방문 순서, 화살표는 이동 방향입니다. 초록 선은 도보, 파란 선은 버스 연결입니다. 점선은 경로 미확인 구간의 방향입니다. 지도 위에서 휠·두 손가락으로 확대·축소하고, 드래그로 이동할 수 있습니다.</p></div>');
       initResultMap(chosen);
       if(chosen.actualTimeAdjusted) root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<p class="notice">실제 도보 시간과 운영시간에 맞춰 방문 순서를 조정했어요.' + (chosen.adjustedDroppedNames?.length ? ' 시간에 맞지 않는 선택 장소(' + esc(chosen.adjustedDroppedNames.join(', ')) + ')는 제외했어요.' : ' 출발·도착과 필수 조건은 유지했어요.') + '</p>');
       if(chosen.transport==='walk-bus') root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<p class="notice">도보만으로 연결하기 어려워 버스를 포함했습니다. 버스 구간은 정류장까지 걷는 시간과 대기 여유 10분을 포함합니다. 실제 배차·막차는 출발 전에 확인하세요.</p>');
@@ -782,10 +782,34 @@
     sync();
   }
   function initResultMap(route) {
-    if (!window.L || !$('#route-result-map')) return;
+    const mapElement=$('#route-result-map');
+    if (!window.L || !mapElement) return;
     const stops=[route.originPoint,...route.rows.map((row) => getPlace(row.placeId)),route.destinationPoint];
     if (stops.some((place) => !coord(place))) return;
-    const map=L.map('route-result-map',{scrollWheelZoom:true}); state.resultMap=map;
+    const map=L.map(mapElement,{scrollWheelZoom:false,dragging:true,touchZoom:true}); state.resultMap=map;
+    // Handle wheel input directly so embedded browsers use the same zoom gesture as desktop browsers.
+    let wheelTotal=0, wheelPoint=null, wheelTimer=null;
+    const applyWheelZoom=() => {
+      wheelTimer=null;
+      if (state.resultMap !== map || !wheelTotal) return;
+      const steps=Math.max(1,Math.min(3,Math.round(Math.abs(wheelTotal)/100)));
+      map.setZoomAround(wheelPoint,map.getZoom()+(wheelTotal<0 ? steps : -steps));
+      wheelTotal=0;
+    };
+    const onWheel=(event) => {
+      if (!event.deltaY) return;
+      event.preventDefault();
+      event.stopPropagation();
+      wheelPoint=map.mouseEventToContainerPoint(event);
+      wheelTotal+=event.deltaY*(event.deltaMode===1 ? 16 : event.deltaMode===2 ? mapElement.clientHeight : 1);
+      if (wheelTimer) clearTimeout(wheelTimer);
+      wheelTimer=setTimeout(applyWheelZoom,45);
+    };
+    mapElement.addEventListener('wheel',onWheel,{capture:true,passive:false});
+    map.on('unload',() => {
+      mapElement.removeEventListener('wheel',onWheel,true);
+      if (wheelTimer) clearTimeout(wheelTimer);
+    });
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
     const bounds=L.latLngBounds([]);
     const roundTrip=routeEngine.distanceKm(route.originPoint,route.destinationPoint) < .015;
