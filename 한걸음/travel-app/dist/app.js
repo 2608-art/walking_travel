@@ -109,7 +109,7 @@
     return {
       minutes:walkMinutes+leg.averageBusRideMinutes,
       meters:walkMeters,
-      walkMeters,walkMinutes,
+      walkMeters,walkMinutes,busAccessUnknown:false,
       busRideMinutes:leg.averageBusRideMinutes,
       busRideSeconds:leg.averageBusRideMinutes*60,
       points,actual:true,estimated:true,savedBusId:leg.id,
@@ -1255,8 +1255,8 @@
       j.route=routes[0];
       if(j.mode==='transit' && j.route?.savedBusId)
         j.savedBus=savedBusLegs?.select(j.origin,j.target,j.route.savedBusId) || null;
-      j.arrival=new Date().getHours()*60+new Date().getMinutes()+j.route.minutes;
-      j.result=evaluate(state.draft.entries[j.minute],j.arrival,today());
+      j.arrival=j.route.busAccessUnknown ? null : new Date().getHours()*60+new Date().getMinutes()+j.route.minutes;
+      j.result=j.arrival===null ? null : evaluate(state.draft.entries[j.minute],j.arrival,today());
     } catch (error) { j.error = error.message; }
     j.loading = false;
     if (state.view === 'routeMap' && state.journey === j) renderRouteMap();
@@ -1272,7 +1272,7 @@
         });
         new kakao.maps.Marker({position:kakaoPoint(j.origin.lat,j.origin.lon),map});
         new kakao.maps.Marker({position:kakaoPoint(j.target.lat,j.target.lon),map});
-        for (const [label,stop] of j.savedBus ? [['승차',j.savedBus.boardingStop],['하차',j.savedBus.alightingStop]] : [])
+        for (const [label,stop] of (j.savedBus || j.route?.busStops) ? [['승차',j.savedBus?.boardingStop || j.route.busStops.boarding],['하차',j.savedBus?.alightingStop || j.route.busStops.alighting]] : [])
           new kakao.maps.Marker({position:kakaoPoint(stop.lat,stop.lon),map,title:label+' · '+stop.name});
         const line = j.savedBus?.busPoints?.length > 1 ? j.savedBus.busPoints : j.route?.points?.length > 1 ? j.route.points : null;
         if (line || !j.savedBus) {
@@ -1291,7 +1291,7 @@
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
     L.circleMarker([j.origin.lat,j.origin.lon],{radius:8,color:'#155170'}).addTo(map).bindTooltip('출발');
     L.circleMarker([j.target.lat,j.target.lon],{radius:8,color:'#0c8f71'}).addTo(map).bindTooltip('도착');
-    for (const [label,stop] of j.savedBus ? [['승차',j.savedBus.boardingStop],['하차',j.savedBus.alightingStop]] : [])
+    for (const [label,stop] of (j.savedBus || j.route?.busStops) ? [['승차',j.savedBus?.boardingStop || j.route.busStops.boarding],['하차',j.savedBus?.alightingStop || j.route.busStops.alighting]] : [])
       L.circleMarker([stop.lat,stop.lon],{radius:8,color:'#c36b2e'}).addTo(map).bindTooltip(label+' · '+stop.name);
     const line=j.savedBus?.busPoints?.length > 1 ? j.savedBus.busPoints : j.route?.points?.length > 1 ? j.route.points : null;
     if (line || !j.savedBus) L.polyline(line ? line.map(([lon,lat]) => [lat,lon]) : [[j.origin.lat,j.origin.lon],[j.target.lat,j.target.lon]],{color:line ? '#0c8f71' : '#718b94',dashArray:line ? undefined : '5,9'}).addTo(map);
@@ -1314,7 +1314,7 @@
       ? '<p class="small">이번 조회와 저장 기준의 차이가 5분·20% 기준에 못 미쳐 저장한 탑승시간으로 계산했습니다. 배차 대기는 포함하지 않았습니다.</p>'
       : j.route.busCacheStatus==='new'
       ? '<p class="small">이 구간의 첫 버스 탑승시간을 저장했습니다. 이후 조회로 기준값을 다듬습니다.</p>' : '' : '';
-    const routeInfo = j.loading ? '<p>이동 경로 확인 중…</p>' : j.savedBus ? savedBusInfo : j.route ? '<p><strong>' + (j.mode === 'walk' ? '도보' : '대중교통') + ' 약 ' + j.route.minutes + '분 · ' + (j.route.meters / 1000).toFixed(1) + 'km (' + (j.route.savedPathId ? '미리 저장한 길' : '카카오 경로') + ')</strong>' + (j.mode === 'walk' ? ' · 예상 도착 ' + esc(hhmm(j.arrival)) : ' · 실제 버스 출발·도착 시각은 별도 확인') + '</p>' + (j.route.source ? '<p class="small">길선 자료 <a href="'+esc(j.route.source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(j.route.source.label)+'</a></p>' : '') : '<p>실제 경로를 표시할 수 없습니다. 직선거리 기준 도보 약 ' + (j.walk ?? '?') + '분 추정입니다.</p><p class="small">' + esc(j.error) + '</p>';
+    const routeInfo = j.loading ? '<p>이동 경로 확인 중…</p>' : j.savedBus ? savedBusInfo : j.route?.busAccessUnknown ? '<p><strong>버스 탑승 약 '+esc(j.route.busRideMinutes)+'분</strong></p><p class="small">정류장 도보를 확인하지 못해 총 이동시간과 예상 도착 시각은 계산하지 않았습니다.</p>' : j.route ? '<p><strong>' + (j.mode === 'walk' ? '도보' : '대중교통') + ' 약 ' + j.route.minutes + '분 · ' + (j.route.meters / 1000).toFixed(1) + 'km (' + (j.route.savedPathId ? '미리 저장한 길' : '카카오 경로') + ')</strong>' + (j.mode === 'walk' ? ' · 예상 도착 ' + esc(hhmm(j.arrival)) : ' · 실제 버스 출발·도착 시각은 별도 확인') + '</p>' + (j.route.source ? '<p class="small">길선 자료 <a href="'+esc(j.route.source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(j.route.source.label)+'</a></p>' : '') : '<p>실제 경로를 표시할 수 없습니다. 직선거리 기준 도보 약 ' + (j.walk ?? '?') + '분 추정입니다.</p><p class="small">' + esc(j.error) + '</p>';
     const pathOptions=j.mode==='walk' && coord(j.origin) && coord(j.target) ? savedWalkOptions(j.origin,j.target) : [];
     const pathPicker=pathOptions.length>1 ? '<div class="route-path-choice"><small>이 구간의 길 선택</small><div class="route-tabs">'+pathOptions.map(v=>'<button type="button" class="filter-chip '+(v.id===j.route?.savedPathId?'active':'')+'" data-journey-path="'+esc(v.id)+'" aria-pressed="'+(v.id===j.route?.savedPathId)+'">'+esc(v.label)+' · '+(v.meters/1000).toFixed(2)+'km</button>').join('')+'</div></div>' : '';
     const steps = j.savedBus ? '<div class="route-steps"><div class="route-step"><strong>승차 · '+esc(j.savedBus.boardingStop.name)+'</strong><span>정류장 ID '+esc(j.savedBus.boardingStop.id)+'</span></div><div class="route-step"><strong>하차 · '+esc(j.savedBus.alightingStop.name)+'</strong><span>정류장 ID '+esc(j.savedBus.alightingStop.id)+'</span></div></div>' : j.mode === 'transit' && j.route?.steps?.length ? '<div class="route-steps">' + j.route.steps.map((step) => '<div class="route-step"><strong>' + esc(step.vehicle || (step.type === 'WALKING' ? '도보' : step.type)) + '</strong><span>' + esc(step.guidance) + (step.stops?.length ? ' · '+esc(step.stops[0])+' → '+esc(step.stops.at(-1)) : '') + ' · 약 ' + esc(step.minutes) + '분</span></div>').join('') + '</div>' : '';
