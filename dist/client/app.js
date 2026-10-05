@@ -12,6 +12,7 @@
   ];
   const CATEGORY_COLORS = { food: '#cc6d39', cafe: '#8262b4', outdoors: '#0c8f71', culture: '#4679b8', experience: '#c58b28', market: '#c45868', books: '#8a6a52' };
   const routeEngine = window.HangeoreumRouteEngine;
+  const soloTravel = window.HangeoreumSoloTravel;
   const savedWalkPaths = window.HangeoreumSavedWalkPaths;
   const STORAGE_DRAFT = 'hangeoreum-draft-v1';
   const STORAGE_SAVED = 'hangeoreum-saved-v1';
@@ -127,7 +128,7 @@
     mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null,
     draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end: '24:00', origin: null, theme:'balanced', mealTimes:[], entries: {}, pending:[] },
     saved: load(STORAGE_SAVED, []),
-    route: { date: today(), start: '10:00', end: '24:00', origin: 'station', destination:'station', mode:'custom', theme:'first', must: '', mustOptional:false, focus:'through', results: [], baseResults:[], selected: -1 },
+    route: { date: today(), start: '10:00', end: '24:00', origin: 'station', destination:'station', mode:'custom', theme:'first', solo:false, must: '', mustOptional:false, focus:'through', results: [], baseResults:[], selected: -1 },
     pinMode: false, pinSelection: null, searchResults: []
   };
   const geocodeCache = load(STORAGE_GEOCODES, {});
@@ -671,6 +672,7 @@
   async function makeRoutes() {
     for (const [key, entry] of routeCache) if (!entry.persistent) routeCache.delete(key);
     const r=state.route;
+    const routePlaces=r.solo && r.mode !== 'theme' ? state.places.filter(soloTravel.canVisit) : state.places;
     r.review=null;
     r.locationMissing=false;
     const preset=r.mode === 'theme' ? routeEngine.THEME_PRESETS[r.theme] : null;
@@ -684,15 +686,15 @@
       busProvider:async (a,b) => getRoute('transit',a,b)
     };
     if (preset) {
-      const routes=await routeEngine.generateThemeDay({places:state.places,origin,destination,date:r.date,theme:r.theme,validate:validateRoute,...providers});
+      const routes=await routeEngine.generateThemeDay({places:routePlaces,origin,destination,date:r.date,theme:r.theme,validate:validateRoute,...providers});
       if(!routes.length) {
-        const review=await routeEngine.generateReviewRoute({places:state.places,origin,destination,
+        const review=await routeEngine.generateReviewRoute({places:routePlaces,origin,destination,
           start:'10:00',end:'19:00',date:r.date,theme:r.theme,validate:validateRoute,...providers});
         r.review=review ? {...review,originPoint:origin,destinationPoint:destination} : null;
       }
       return routes.map((route) => ({...route,originId:origin.id,destinationId:destination.id,originPoint:origin,destinationPoint:destination}));
     }
-    const input={places:state.places,origin,destination,
+    const input={places:routePlaces,origin,destination,
       start:r.start,end:r.end,date:r.date,theme:'balanced',mealTimes:[],routeFocus:r.focus,
       requiredPlaceId:r.must && !r.mustOptional ? r.must : '',preferredPlaceId:r.must && r.mustOptional ? r.must : '',
       validate:validateRoute,...providers};
@@ -724,6 +726,8 @@
     setupRoutePlaceSearch('destination');
     setupRequiredPlaceSearch();
     $('#route-origin-query').closest('.form-grid').classList.add('route-endpoint-grid');
+    $('#route-origin-query').closest('.form-grid').insertAdjacentHTML('beforebegin',
+      '<div class="route-solo-control"><label class="route-solo-label" for="route-solo"><input type="checkbox" id="route-solo" ' + (r.solo ? 'checked' : '') + '> 혼자 여행</label><span class="small">1인 메뉴 식당·식사 메뉴가 있는 카페 중심</span></div>');
     $('#route-must-query').closest('.form-grid').style.gridTemplateColumns='minmax(0,1fr)';
     $('#route-end').closest('.field-group').querySelector('.field-label').textContent='끝낼 시각 (도착)';
     const mealGrid=$('.meal-grid');
@@ -740,17 +744,20 @@
       $('#route-end').closest('.field-group').style.display='none';
       $('#route-date').closest('.form-grid').style.gridTemplateColumns='minmax(0,1fr)';
       $('#route-origin-query').closest('.form-grid').style.display='none';
+      $('.route-solo-control').style.display='none';
       $('#route-must-query').closest('.form-grid').style.display='none';
       $('#route-meal-guide').style.display='none';
       $('#make-routes').textContent='하루 시간표 만들기';
     }
     document.querySelectorAll('[data-route-mode]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.mode=button.dataset.routeMode; r.results=[]; r.selected=-1; renderRoutes(); });
+    $('#route-solo').onchange=(event) => { captureRouteInputs(); r.solo=event.target.checked; r.results=[]; r.selected=-1; renderRoutes(); };
     document.querySelectorAll('[data-theme-choice]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.theme=button.dataset.themeChoice; r.results=[]; r.selected=-1; renderRoutes(); });
     $('#routes-back').onclick = () => nav('region');
     $('#route-midnight').onchange = (e) => { $('#route-end').disabled=e.target.checked; };
     $('#make-routes').onclick = async () => {
       if (r.mode !== 'theme' && ($('#route-origin-query').value.trim() || $('#route-destination-query').value.trim() || $('#route-must-query').value.trim())) { toast('검색 결과에서 위치와 가고 싶은 장소를 선택해 주세요.'); return; }
       captureRouteInputs();
+      if (r.solo && r.mode !== 'theme' && r.must && !soloTravel.canVisit(getPlace(r.must))) { toast('선택한 필수 장소는 혼자 여행 후보에서 제외됩니다. 장소를 바꾸거나 혼자 여행 체크를 해제해 주세요.'); return; }
       if (!r.date) { toast('날짜를 선택해 주세요.'); return; }
       if (r.mode !== 'theme') {
         const start=toMin(r.start), end=routeEngine.minutes(r.end);
@@ -981,7 +988,9 @@
     const validateRoute=(p,minute,duration,date) => evaluate({placeId:p.id,duration},minute,date);
     function choices(kind) {
       if (!cached.has(kind)) cached.set(kind,routeEngine.mealChoices({route:chosen,places:state.places,origin:chosen.originPoint,
-        destination:chosen.destinationPoint,date:r.date,validate:validateRoute,requiredPlaceId:r.must && !r.mustOptional ? r.must : '',kind}));
+        destination:chosen.destinationPoint,date:r.date,validate:validateRoute,requiredPlaceId:r.must && !r.mustOptional ? r.must : '',kind,
+        candidateFilter:r.solo && r.mode !== 'theme' ? soloTravel.canEat : undefined,
+        mealDuration:r.solo && r.mode !== 'theme' && kind === 'cafe' ? 60 : undefined}));
       return cached.get(kind);
     }
     const all=period && !selected && !chosen.skippedMeals?.[period.id] ? [...choices('meal'),...choices('cafe')] : [];
@@ -998,10 +1007,14 @@
     const hourButtons=hours.map((hour) => '<button type="button" class="filter-chip ' + (ui.hour === hour ? 'active' : '') +
       '" data-meal-hour="' + hour + '" aria-pressed="' + (ui.hour === hour) + '">' + esc(hhmm(hour*60)) + '대</button>').join('');
     const list=visible.map(({choice,slot},i) => {
+      const place=getPlace(choice.placeId);
+      const soloNote=choice.kind === 'cafe' ? '식사 메뉴·주문 가능 시간 방문 전 확인' :
+        place?.soloVerdict === 'specific_menu' && place.soloMenu ? '1인 메뉴: ' + place.soloMenu + ' · 방문 전 확인' : '1인 주문 가능 여부 방문 전 확인';
       return '<form class="route-meal-option" data-meal-index="' + i + '"><div class="route-meal-title"><strong>' + esc(choice.placeName) +
         '</strong><span class="route-meal-type">' + (choice.kind === 'cafe' ? '카페' : '음식점') + '</span></div>' +
         '<p class="route-meal-time-label">추천 시각 <strong>' + esc(hhmm(slot.minute)) + '</strong>' +
           (slot.replaceName || slot.preview.droppedVisits ? ' · 방문 변경' : ' · 기존 방문 유지') + '</p>' +
+        (r.solo && r.mode !== 'theme' ? '<small>' + esc(soloNote) + '</small>' : '') +
         (slot.result.kind === 'unknown' ? '<small>영업시간 확인 필요</small>' : '') +
         '<button class="btn btn-outline btn-sm" type="submit" aria-label="' + esc(hhmm(slot.minute)+' '+choice.placeName+' 선택') + '">선택</button></form>';
     }).join('');
