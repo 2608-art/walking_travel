@@ -4,9 +4,11 @@ import json
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / "docs" / "지역" / "목포" / "장소.md"
-TARGET = Path(__file__).resolve().parent / "dist" / "places.json"
+TARGETS = (ROOT / "public" / "places.json", ROOT / "dist" / "client" / "places.json")
+SOLO_EVIDENCE = Path(__file__).resolve().parent / "solo-evidence.json"
+solo_research = json.loads(SOLO_EVIDENCE.read_text(encoding="utf-8"))
 ADDRESS_PINS = Path(__file__).resolve().parent / "address-pins.json"
 verified_pins = json.loads(ADDRESS_PINS.read_text(encoding="utf-8")) if ADDRESS_PINS.exists() else {}
 MAP_PINS = Path(__file__).resolve().parent / "map-representative-pins.json"
@@ -22,6 +24,17 @@ def plain(value):
 # Only explicit, comparatively stable operating rules are structured here.
 # Anything else remains visible as source text and needs confirmation.
 HOURS = {
+    "목포모자아트갤러리(옛 갑자옥모자점)": {"open": "09:00", "close": "18:00", "closedWeekdays": [1], "note": "월요일·1월 1일 휴관. 입장 마감은 운영 주체에서 확인되지 않아 방문 전 재확인.", "source": "https://www.mpcc1897.or.kr/base/culturalSpace/read?culturalSpaceNo=6&menuLevel=3&menuNo=25"},
+    "수중유산박물관(옛 국립해양유물전시관)": {"open": "09:00", "close": "18:00", "lastEntry": "17:00", "closedWeekdays": [1], "note": "어린이체험관은 10:00~16:30, 입장 16:00까지. 임시휴관은 공식 공지 확인.", "source": "https://www.seamuse.go.kr/mokpo/preview/exhibition_preview"},
+    "김대중노벨평화상기념관": {"open": "09:00", "close": "18:00", "lastEntry": "17:00", "closedWeekdays": [1], "note": "월요일 휴관. 행사·특별휴관 확인.", "source": "https://m.mokpo.go.kr/tour/attraction/museum?idx=7465&mode=view"},
+    "소년 김대중 공부방": {"open": "09:00", "close": "18:00", "closedWeekdays": [1], "note": "관광공사 안내 기준. 지도 날짜별 표시와 월요일 운영 여부 충돌 가능.", "source": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=101dd63f-9cb9-482e-9fa2-f9d7ceba6b67"},
+    "목포어린이바다과학관": {"open": "09:00", "close": "18:00", "lastEntry": "17:00", "closedWeekdays": [1], "note": "특별휴관 확인.", "source": "https://biz.mokpo.go.kr/tour/tourguide/information/admission"},
+    "목포문학관": {"open": "09:00", "close": "18:00", "lastEntry": "17:00", "closedWeekdays": [1], "note": "월요일·1월 1일 휴관. 특별휴관 확인.", "source": "https://www.mokpo.go.kr/tour/tourguide/information/admission"},
+    "국립호남권생물자원관": {"open": "09:30", "close": "17:30", "lastEntry": "16:30", "closedWeekdays": [1], "note": "월요일과 공식 휴관일. 월요일이 공휴일인 경우 예외·대체휴관 확인.", "source": "https://hnibr.re.kr/ko/M000000408/html/view"},
+    "옥공예전시관": {"open": "09:00", "close": "18:00", "closedWeekdays": [1], "note": "문화도시센터 시설 안내 기준. 목포시 관광의 0시~0시는 잘못된 값으로 판단. 체험은 별도 예약·회차 확인.", "source": "https://www.mpcc1897.or.kr/base/culturalSpace/read?culturalSpaceNo=12&menuLevel=3&menuNo=25"},
+    "씨엘비베이커리(원도심점)": {"open": "08:00", "close": "21:00", "note": "목포시 연중무휴 안내. 품절·특별휴무 확인.", "source": "https://tour.mokpo.go.kr/tour/food_100/mokpo_snack"},
+    "코롬방제과점": {"open": "08:00", "close": "21:00", "note": "목포시 연중무휴 안내. 품절·특별휴무 확인.", "source": "https://tour.mokpo.go.kr/tour/food_100/mokpo_snack"},
+    "포도책방(목포점)": {"open": "12:00", "close": "19:00", "closedWeekdays": [3], "note": "운영자 공식 사이트 기준. 지도와 개점·정기휴무 정보가 충돌하므로 공식 공지 우선, 당일 변동 확인.", "source": "https://podobooks.com/"},
     "목포근대역사관 1관": {"open": "09:00", "close": "18:00", "lastEntry": "17:00", "closedWeekdays": [1], "note": "월요일·1월 1일 휴관. 특별휴무 확인 필요.", "source": "https://www.mokpo.go.kr/tour/tourguide/information/admission"},
     "목포근대역사관 2관": {"open": "09:00", "close": "18:00", "closedWeekdays": [1], "note": "목포시 관광안내의 관람시간. 특별휴무와 입장 마감 확인 필요.", "source": "https://biz.mokpo.go.kr/tour/tourguide/information/admission"},
     "목포자연사박물관": {"open": "09:00", "close": "18:00", "lastEntry": "17:00", "closedWeekdays": [1], "note": "월요일 휴관. 공휴일·연휴에는 대체휴관 확인 필요.", "source": "https://www.mokpo.go.kr/tour/tourguide/information/admission"},
@@ -38,6 +51,32 @@ HOURS = {
     "트라이팟": {"open": "11:30", "close": "21:00", "breaks": [["15:00", "17:00"]], "lastOrder": "20:00", "closedWeekdays": [1], "note": "점심 주문 마감 14:00. 예약·특별휴무 확인.", "source": "https://www.diningcode.com/profile.php?rid=RgFf44xolOx6"},
     "오늘의 페이지": {"open": "12:00", "close": "19:00", "closedWeekdays": [1, 2], "note": "목포도서관 2026년 명단 기준. 월·화 휴무.", "source": "https://mplib.jne.go.kr/menu.es?mid=a20108010100"},
     "유유랜드": {"open": "12:00", "close": "18:00", "closedWeekdays": [1], "note": "업주 프로필 기준. 체험은 100% 예약제.", "source": "https://www.daangn.com/kr/local-profile/%EC%9C%A0%EC%9C%A0%EB%9E%9C%EB%93%9C-8nefzfc216z2/"},
+}
+
+# Public outdoor access has no published admission schedule. Facilities inside
+# these areas (shows, shops, ferries, buildings) retain their own time rules.
+UNRESTRICTED_OUTDOORS = {
+    "유달산", "노적봉", "서산동 시화골목", "보리마당",
+    "목포진 역사공원", "평화광장", "유달산 조각공원",
+    "삼학도 공원·이난영공원", "북항 노을공원",
+    "양을산산림욕장", "유달산 낙조대", "옥단이길",
+    "외달도", "달리도",
+}
+
+# Only the public approach side of these areas is used for a short optional
+# stroll. The mapped point is an approach marker, not a claim that every mural
+# lane or the full deck has been walked and verified.
+SHORT_SCENIC_WALKS = {
+    "서산동 시화골목": {
+        "minutes": 20,
+        "label": "연희네슈퍼 위쪽 공개 골목 일부 산책",
+        "source": "https://tour.mokpo.go.kr/tour/theme/movie",
+    },
+    "고하도 전망대·해안데크": {
+        "minutes": 20,
+        "label": "전망대 쪽 해안데크 일부 왕복",
+        "source": "https://youth.mokpo.go.kr/tour/support/popup?idx=454942&mode=view&page=8",
+    },
 }
 
 # Kakao Map's dated seven-day display, read on 2026-10-03. These are not
@@ -234,13 +273,16 @@ for line in SOURCE.read_text(encoding="utf-8").splitlines():
     if lat is None and pin and pin.get("query") == address_query:
         lat, lon = pin["lat"], pin["lon"]
     map_pin = representative_pins.get(name) if lat is None else None
+    scenic_approach = name == "서산동 시화골목" and map_pin is not None
+    if scenic_approach:
+        lat, lon = map_pin["lat"], map_pin["lon"]
     places[name] = {
         "id": f"p{len(places)+1}",
         "name": name,
         "category": CATEGORY_BY_NAME[name] if section in ("spot", "shop") else section,
         "lat": lat,
         "lon": lon,
-        "pinBasis": "verifiedAddress" if pin and pin.get("query") == address_query else ("source" if lat is not None else None),
+        "pinBasis": "scenicApproach" if scenic_approach else ("verifiedAddress" if pin and pin.get("query") == address_query else ("source" if lat is not None else None)),
         "mapLat": map_pin["lat"] if map_pin else None,
         "mapLon": map_pin["lon"] if map_pin else None,
         "mapPinBasis": map_pin["basis"] if map_pin else None,
@@ -251,6 +293,9 @@ for line in SOURCE.read_text(encoding="utf-8").splitlines():
         "rating": rating,
         "ratingCount": rating_count,
         "hours": HOURS.get(name),
+        "unrestrictedAccess": name in UNRESTRICTED_OUTDOORS,
+        "accessConstraint": "publicFerry" if name in ("외달도", "달리도") else None,
+        "shortScenicWalk": SHORT_SCENIC_WALKS.get(name),
     }
 
 assert set(representative_pins) <= set(places), "Unknown representative map pin"
@@ -277,6 +322,23 @@ for line in SOURCE.read_text(encoding="utf-8").splitlines():
     places[name]["scheduleSource"] = links[0] if links else None
 
 for name, place in places.items():
+    if place["category"] in ("food", "cafe"):
+        evidence = solo_research["places"].get(name, {})
+        place["soloVisit"] = evidence.get("solo", "unknown")
+        place["soloVerdict"] = evidence.get("verdict") or ("single_item_unverified" if "최소 인원 미표기" in evidence.get("soloMenu", "") else "specific_menu" if evidence.get("soloMenu") else "review_only" if evidence.get("solo") in ("review_tag", "solo_visit_review") else "unknown")
+        place["soloMenu"] = evidence.get("soloMenu")
+        place["soloSeat"] = evidence.get("seat", "unknown")
+        place["minimumOrder"] = evidence.get("minimum")
+        place["soloNote"] = evidence.get("note")
+        place["soloSource"] = evidence.get("source")
+        place["soloMenuSource"] = evidence.get("soloMenuSource") or (evidence.get("source") if evidence.get("soloMenu") else None)
+        place["minimumOrderSource"] = evidence.get("minimumSource") or (evidence.get("source") if evidence.get("minimum") else None)
+        place["soloChecked"] = solo_research["checked"]
+    if place["unrestrictedAccess"]:
+        place["scheduleText"] = "산·공원·공공 골목의 야외 산책은 정해진 입장시간이 없는 것으로 분류. 공식 24시간 운영을 보증하는 뜻은 아니며 기상·안전 통제는 별도 확인."
+        place["deadlineText"] = "야외 산책 자체의 매표·마지막 입장 없음. 구역 안 시설·공연·배편은 각각의 운영시간 적용."
+        if name in ("외달도", "달리도"):
+            place["scheduleText"] += " 섬 방문은 실제 여객선 운항·귀항편 시간에 제한됨."
     if name in MAP_WEEK:
         place["mapWeekText"] = MAP_WEEK[name]
         place["mapWeekSource"] = place["mapSource"]
@@ -296,5 +358,7 @@ for name in ("목포해상케이블카 북항승강장", "목포해상케이블�
     place["closureText"] = "고정 정기휴무 공지 없음. 기상·안전상 예고 없이 조기 마감 또는 휴장 가능. 061-244-2600으로 당일 확인."
     place["scheduleSource"] = "https://www.mmcablecar.com/"
 
-TARGET.write_text(json.dumps({"updated": "2026-10-04", "region": "목포", "places": list(places.values())}, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Wrote {len(places)} places ({sum(p['lat'] is not None or p['mapLat'] is not None for p in places.values())} map pins) to {TARGET}")
+payload = json.dumps({"updated": "2026-10-05", "region": "목포", "places": list(places.values())}, ensure_ascii=False, indent=2)
+for target in TARGETS:
+    target.write_text(payload, encoding="utf-8")
+print(f"Wrote {len(places)} places ({sum(p['lat'] is not None or p['mapLat'] is not None for p in places.values())} map pins) to {', '.join(map(str, TARGETS))}")
