@@ -1,0 +1,58 @@
+[
+  {
+    "transport": "walk-bus",
+    "start": 600,
+    "end": 975,
+    "walkMeters": 2534,
+    "rows": [
+      {
+        "name": "구보책방",
+        "minute": 610,
+        "mode": "walk",
+        "actual": true
+      },
+      {
+        "name": "목포대중음악의전당",
+        "minute": 650,
+        "mode": "walk",
+        "actual": true
+      },
+      {
+        "name": "포도책방(목포점)",
+        "minute": 705,
+        "mode": "walk",
+        "actual": true
+      },
+      {
+        "name": "코롬방제과점",
+        "minute": 750,
+        "mode": "walk",
+        "actual": true
+      },
+      {
+        "name": "고호의 책방",
+        "minute": 785,
+        "mode": "walk",
+        "actual": true
+      },
+      {
+        "name": "씨엘비베이커리(원도심점)",
+        "minute": 820,
+        "mode": "walk",
+        "actual": true
+      },
+      {
+        "name": "물망초",
+        "minute": 860,
+        "mode": "walk",
+        "actual": true
+      },
+      {
+        "name": "웨이브",
+        "minute": 900,
+        "mode": "walk",
+        "actual": true
+      }
+    ]
+  }
+]

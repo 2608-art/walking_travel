@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-04",
+  "tool": "Codex in-app browser / cua_repl",
+  "checks": [
+    {
+      "name": "home-mobile",
+      "brokenImages": [],
+      "scrollWidth": 375,
+      "view": "home",
+      "width": 390
+    },
+    {
+      "name": "city-mobile",
+      "brokenImages": [],
+      "scrollWidth": 375,
+      "view": "destination",
+      "width": 390
+    },
+    {
+      "name": "map-mobile",
+      "brokenImages": [],
+      "scrollWidth": 375,
+      "view": "region",
+      "width": 390
+    },
+    {
+      "name": "list-mobile",
+      "brokenImages": [],
+      "scrollWidth": 375,
+      "view": "region",
+      "width": 390
+    },
+    {
+      "name": "place-mobile",
+      "brokenImages": [],
+      "scrollWidth": 375,
+      "view": "place",
+      "width": 390
+    },
+    {
+      "name": "route-form-mobile",
+      "brokenImages": [],
+      "scrollWidth": 375,
+      "view": "routes",
+      "width": 390
+    },
+    {
+      "name": "route-result-mobile",
+      "brokenImages": [],
+      "scrollWidth": 375,
+      "view": "routes",
+      "width": 390
+    },
+    {
+      "name": "route-list-mobile",
+      "brokenImages": [],
+      "scrollWidth": 375,
+      "view": "routes",
+      "width": 390
+    },
+    {
+      "name": "planner-mobile",
+      "brokenImages": [],
+      "scrollWidth": 375,
+      "view": "plan",
+      "width": 390
+    },
+    {
+      "name": "home-360",
+      "brokenImages": [],
+      "scrollWidth": 345,
+      "view": "home",
+      "width": 360
+    },
+    {
+      "name": "city-360",
+      "brokenImages": [],
+      "scrollWidth": 345,
+      "view": "destination",
+      "width": 360
+    },
+    {
+      "name": "map-360",
+      "brokenImages": [],
+      "scrollWidth": 345,
+      "view": "region",
+      "width": 360
+    },
+    {
+      "name": "place-360",
+      "brokenImages": [],
+      "scrollWidth": 345,
+      "view": "place",
+      "width": 360
+    },
+    {
+      "name": "home-768",
+      "brokenImages": [],
+      "scrollWidth": 753,
+      "view": "home",
+      "width": 768
+    },
+    {
+      "name": "city-768",
+      "brokenImages": [],
+      "scrollWidth": 753,
+      "view": "destination",
+      "width": 768
+    },
+    {
+      "name": "map-768",
+      "brokenImages": [],
+      "scrollWidth": 753,
+      "view": "region",
+      "width": 768
+    },
+    {
+      "name": "place-768",
+      "brokenImages": [],
+      "scrollWidth": 753,
+      "view": "place",
+      "width": 768
+    },
+    {
+      "name": "home-1280",
+      "brokenImages": [],
+      "scrollWidth": 1265,
+      "view": "home",
+      "width": 1280
+    },
+    {
+      "name": "city-1280",
+      "brokenImages": [],
+      "scrollWidth": 1265,
+      "view": "destination",
+      "width": 1280
+    },
+    {
+      "name": "map-1280",
+      "brokenImages": [],
+      "scrollWidth": 1265,
+      "view": "region",
+      "width": 1280
+    },
+    {
+      "name": "place-1280",
+      "brokenImages": [],
+      "scrollWidth": 1265,
+      "view": "place",
+      "width": 1280
+    },
+    {
+      "name": "saved-mobile",
+      "brokenImages": [],
+      "scrollWidth": 390,
+      "view": "saved",
+      "width": 390
+    }
+  ],
+  "flows": {
+    "cultureCount": 20,
+    "culturePins": 20,
+    "homeSearch": true,
+    "mapSearch": true,
+    "mapListToggle": true,
+    "placeToMap": true,
+    "keyboardTabs": true,
+    "routeMapList": true,
+    "routePlanConfirmation": true
+  },
+  "consoleErrors": []
+}

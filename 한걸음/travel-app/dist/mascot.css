@@ -1,0 +1,49 @@
+:root{
+  --ink:#2c3c32;
+  --ink2:#506153;
+  --muted:#718073;
+  --paper:#f8f7f1;
+  --line:#dce3d8;
+  --mint:#b5d48e;
+  --mint-dark:#4c7650;
+}
+
+.destination-home .site-header{background:#fbf8f0;color:#2f342b;border-bottom:1px solid #e5e3d7}
+.destination-home .brand-mark{background:#dce9c9;color:#3a6241}
+.destination-home .header-tag{color:#718073}
+.destination-home .connection{color:#526653;border-color:#cdd8c3}
+.destination-home .connection.offline{color:#955c1e;border-color:#d8b98a}
+.destination-page{max-width:1150px}
+.destination-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:12px 0 22px;max-width:700px;min-height:114px}
+.destination-head h1{margin:0;font-size:clamp(1.9rem,4vw,2.5rem)}
+.destination-mascot{display:block;width:118px;height:118px;object-fit:contain;flex:none}
+.destination-grid.is-single{display:block;max-width:700px}
+.destination-grid.is-single .destination-tile{aspect-ratio:16/10;border-radius:16px}
+.destination-tile{background:#596d61}
+.destination-copy{gap:6px}
+.destination-copy small{order:-1;font-size:.8rem;letter-spacing:.01em}
+.destination-copy strong{font-size:clamp(2rem,5vw,3rem)}
+
+.turtle-pose{
+  display:block;
+  flex:none;
+  width:112px;
+  height:100px;
+  object-fit:contain;
+  object-position:center;
+}
+.turtle-page-corner{margin-left:auto}
+.turtle-aside{float:right;width:86px;height:82px;margin:-6px 0 8px 12px}
+.turtle-route-result{display:block;margin:0 0 9px}
+.turtle-empty{display:block;margin:0 auto 13px}
+.turtle-journey{float:right;margin:0 0 10px 14px}
+.turtle-loading{display:flex;align-items:center;gap:15px;padding:14px 18px;border:1px solid var(--line);border-radius:16px;background:#fff;color:var(--ink2);font-weight:700}
+
+@media(max-width:620px){
+  .destination-head{min-height:105px;margin:0 0 16px}
+  .destination-mascot{width:105px;height:105px}
+  .destination-grid.is-single .destination-tile{aspect-ratio:4/3}
+  .destination-copy{left:17px;right:48px;bottom:17px}
+  .page-head:has(.turtle-page-corner){display:flex;align-items:center}
+  .turtle-page-corner{width:84px;height:86px}
+}

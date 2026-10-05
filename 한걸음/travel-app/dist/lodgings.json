@@ -1,0 +1,913 @@
+{
+  "source": "목포시 관광 전체숙박",
+  "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total",
+  "updatedAt": "2026-10-05",
+  "lodgings": [
+    {
+      "id": "lodging-81412",
+      "name": "VIP호텔",
+      "address": "목포시 미항로 6",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81412"
+    },
+    {
+      "id": "lodging-81410",
+      "name": "ZARA 무인호텔",
+      "address": "목포시 평화로61번길 8",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81410"
+    },
+    {
+      "id": "lodging-81419",
+      "name": "달꾸메게스트하우스",
+      "address": "목포시 마인계터로38번길 13",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81419"
+    },
+    {
+      "id": "lodging-81411",
+      "name": "목포 유토피아 가족호텔",
+      "address": "목포시 평화로 65-9",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81411"
+    },
+    {
+      "id": "lodging-81413",
+      "name": "목포무인호텔",
+      "address": "목포시 비파로108번길 14",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81413"
+    },
+    {
+      "id": "lodging-81421",
+      "name": "백년한옥 게스트하우스",
+      "address": "목포시 북교길 31",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81421"
+    },
+    {
+      "id": "lodging-81428",
+      "name": "보보스호텔",
+      "address": "목포시 하당남부로51번길 3",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81428"
+    },
+    {
+      "id": "lodging-81649",
+      "name": "샹그리아 비치호텔",
+      "address": "목포시 평화로 79",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81649"
+    },
+    {
+      "id": "lodging-81404",
+      "name": "신안비치호텔",
+      "address": "목포시 해안로 2",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81404"
+    },
+    {
+      "id": "lodging-81430",
+      "name": "콘티넨탈호텔",
+      "address": "목포시 북항로 149",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81430"
+    },
+    {
+      "id": "lodging-81407",
+      "name": "폰타나비치 관광호텔",
+      "address": "목포시 평화로 69",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81407"
+    },
+    {
+      "id": "lodging-84731",
+      "name": "호텔 에디션스 목포",
+      "address": "목포시 평화로 75",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=84731"
+    },
+    {
+      "id": "lodging-81423",
+      "name": "게스트하우스예술촌",
+      "address": "목포시 달성길 31-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81423"
+    },
+    {
+      "id": "lodging-84142",
+      "name": "근대골목",
+      "address": "목포시 영산로 24-5",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=84142"
+    },
+    {
+      "id": "lodging-81420",
+      "name": "달빛언덕 게스트하우스",
+      "address": "목포시 영산로 57-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81420"
+    },
+    {
+      "id": "lodging-81442",
+      "name": "루벤스모텔",
+      "address": "목포시 평화로61번길 4",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81442"
+    },
+    {
+      "id": "lodging-83075",
+      "name": "목포 가족관광호텔",
+      "address": "목포시 호남로64번길 28",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=83075"
+    },
+    {
+      "id": "lodging-81405",
+      "name": "부영모텔",
+      "address": "목포시 삼향천로 63",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81405"
+    },
+    {
+      "id": "lodging-81615",
+      "name": "빙그레모텔",
+      "address": "목포시 삼향천로 59",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81615"
+    },
+    {
+      "id": "lodging-81416",
+      "name": "에프원호텔",
+      "address": "목포시 수강로12번길 29",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81416"
+    },
+    {
+      "id": "lodging-81688",
+      "name": "요술램프 게스트하우스",
+      "address": "목포시 해양대학로 243-3",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81688"
+    },
+    {
+      "id": "lodging-81471",
+      "name": "째즈호텔",
+      "address": "목포시 하당남부로61번길 29",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81471"
+    },
+    {
+      "id": "lodging-81406",
+      "name": "파레스모텔",
+      "address": "목포시 옥암로54번길 41-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81406"
+    },
+    {
+      "id": "lodging-81418",
+      "name": "호텔베니스",
+      "address": "목포시 북항로149번길 8",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81418"
+    },
+    {
+      "id": "lodging-81454",
+      "name": "1번지 무인호텔",
+      "address": "목포시 하당남부로 48",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81454"
+    },
+    {
+      "id": "lodging-81565",
+      "name": "KT모텔",
+      "address": "목포시 삼학로16번길 1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81565"
+    },
+    {
+      "id": "lodging-81456",
+      "name": "S모텔",
+      "address": "목포시 하당남부로 54",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81456"
+    },
+    {
+      "id": "lodging-81477",
+      "name": "WA모텔",
+      "address": "목포시 상리로 8",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81477"
+    },
+    {
+      "id": "lodging-83334",
+      "name": "가봄 호텔",
+      "address": "목포시 번영로 16",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=83334"
+    },
+    {
+      "id": "lodging-81417",
+      "name": "샤르망호텔",
+      "address": "목포시 신흥로59번길 5",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81417"
+    },
+    {
+      "id": "lodging-81483",
+      "name": "용꿈모텔",
+      "address": "목포시 영산로 517-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81483"
+    },
+    {
+      "id": "lodging-81425",
+      "name": "윈저 호텔",
+      "address": "목포시 통일대로 16",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81425"
+    },
+    {
+      "id": "lodging-81439",
+      "name": "첫눈에반한집",
+      "address": "목포시 달성길 60",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81439"
+    },
+    {
+      "id": "lodging-81452",
+      "name": "퀸모텔",
+      "address": "목포시 평화로83번길 3",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81452"
+    },
+    {
+      "id": "lodging-81458",
+      "name": "파라오 모텔",
+      "address": "목포시 통일대로 60",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81458"
+    },
+    {
+      "id": "lodging-81427",
+      "name": "프라도호텔",
+      "address": "목포시 번영로 24",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81427"
+    },
+    {
+      "id": "lodging-84125",
+      "name": "건맥스테이",
+      "address": "목포시 해안로237번길 10-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=84125"
+    },
+    {
+      "id": "lodging-81478",
+      "name": "고려모텔",
+      "address": "목포시 해안로 165",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81478"
+    },
+    {
+      "id": "lodging-81586",
+      "name": "국제파크모텔",
+      "address": "목포시 삼학로18번길 13",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81586"
+    },
+    {
+      "id": "lodging-81431",
+      "name": "굿모닝",
+      "address": "목포시 해안로249번길 13",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81431"
+    },
+    {
+      "id": "lodging-81619",
+      "name": "글로리모텔",
+      "address": "목포시 비파로116번길 3",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81619"
+    },
+    {
+      "id": "lodging-81646",
+      "name": "금탑모텔",
+      "address": "목포시 하당남부로61번길 3",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81646"
+    },
+    {
+      "id": "lodging-81666",
+      "name": "금호비치모텔",
+      "address": "목포시 수강로12번길 34",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81666"
+    },
+    {
+      "id": "lodging-81479",
+      "name": "꿈의궁전",
+      "address": "목포시 상리로 6",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81479"
+    },
+    {
+      "id": "lodging-81627",
+      "name": "낙원모텔",
+      "address": "목포시 영산로 517-2",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81627"
+    },
+    {
+      "id": "lodging-81386",
+      "name": "남도파크",
+      "address": "목포시 백년대로231번길 17",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81386"
+    },
+    {
+      "id": "lodging-81679",
+      "name": "노르웨이 게스트하우스",
+      "address": "목포시 호남로64번길 12",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81679"
+    },
+    {
+      "id": "lodging-81642",
+      "name": "노블리스",
+      "address": "목포시 비파로124번길 6",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81642"
+    },
+    {
+      "id": "lodging-81397",
+      "name": "뉴-LA모텔",
+      "address": "목포시 영산로 517-3",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81397"
+    },
+    {
+      "id": "lodging-81625",
+      "name": "뉴에덴모텔",
+      "address": "목포시 장미로 101",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81625"
+    },
+    {
+      "id": "lodging-81429",
+      "name": "뉴에버그린호텔",
+      "address": "목포시 하당남부로 59",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81429"
+    },
+    {
+      "id": "lodging-81628",
+      "name": "뉴오아시스",
+      "address": "목포시 번영로 29",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81628"
+    },
+    {
+      "id": "lodging-81398",
+      "name": "뉴원앙장모텔",
+      "address": "목포시 영산로 515-2",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81398"
+    },
+    {
+      "id": "lodging-81661",
+      "name": "대산하이텔",
+      "address": "목포시 상동로 6",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81661"
+    },
+    {
+      "id": "lodging-81440",
+      "name": "더 하루호텔",
+      "address": "목포시 평화로73번길 3",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81440"
+    },
+    {
+      "id": "lodging-81576",
+      "name": "동명장모텔",
+      "address": "목포시 삼학로18번길 21-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81576"
+    },
+    {
+      "id": "lodging-81598",
+      "name": "동아모텔",
+      "address": "목포시 하당로 246",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81598"
+    },
+    {
+      "id": "lodging-81529",
+      "name": "두바이모텔",
+      "address": "목포시 용샘길 24",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81529"
+    },
+    {
+      "id": "lodging-81692",
+      "name": "등대 게스트하우스",
+      "address": "목포시 노적봉길 6",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81692"
+    },
+    {
+      "id": "lodging-81441",
+      "name": "렉시호텔",
+      "address": "목포시 원형동로 44",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81441"
+    },
+    {
+      "id": "lodging-81426",
+      "name": "로얄호텔",
+      "address": "목포시 통일대로 12",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81426"
+    },
+    {
+      "id": "lodging-81391",
+      "name": "루쏘모텔",
+      "address": "목포시 장미로 107",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81391"
+    },
+    {
+      "id": "lodging-81432",
+      "name": "리젠트모텔",
+      "address": "목포시 북항로 163",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81432"
+    },
+    {
+      "id": "lodging-81638",
+      "name": "마로마",
+      "address": "목포시 번영로 26",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81638"
+    },
+    {
+      "id": "lodging-81433",
+      "name": "마카오모탤",
+      "address": "목포시 죽교천로 126",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81433"
+    },
+    {
+      "id": "lodging-81616",
+      "name": "만호장모텔",
+      "address": "목포시 수강로12번길 22",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81616"
+    },
+    {
+      "id": "lodging-81655",
+      "name": "메이저모텔",
+      "address": "목포시 비파로124번길 16-2",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81655"
+    },
+    {
+      "id": "lodging-81488",
+      "name": "명품 무인호텔",
+      "address": "목포시 하당남부로51번길 14",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81488"
+    },
+    {
+      "id": "lodging-81443",
+      "name": "목포무인텔",
+      "address": "목포시 원형로 26",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81443"
+    },
+    {
+      "id": "lodging-81690",
+      "name": "목포올레 게스트하우스",
+      "address": "목포시 열린길 18",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81690"
+    },
+    {
+      "id": "lodging-81566",
+      "name": "목포하루호텔",
+      "address": "목포시 용당로216번길 30",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81566"
+    },
+    {
+      "id": "lodging-81674",
+      "name": "문무인텔",
+      "address": "목포시 허사로 11",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81674"
+    },
+    {
+      "id": "lodging-81434",
+      "name": "미루모텔",
+      "address": "목포시 평화로83번길 3-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81434"
+    },
+    {
+      "id": "lodging-81653",
+      "name": "미소모텔",
+      "address": "목포시 옥암로124번길 3",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81653"
+    },
+    {
+      "id": "lodging-81545",
+      "name": "반도장 모텔",
+      "address": "목포시 영산로329번길 5",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81545"
+    },
+    {
+      "id": "lodging-81489",
+      "name": "발렌타인호텔",
+      "address": "목포시 번영로 30",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81489"
+    },
+    {
+      "id": "lodging-81682",
+      "name": "백운장모텔",
+      "address": "목포시 돌산길 27-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81682"
+    },
+    {
+      "id": "lodging-81636",
+      "name": "보보스 모텔",
+      "address": "목포시 하당남부로51번길 3",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81636"
+    },
+    {
+      "id": "lodging-81579",
+      "name": "부림모텔",
+      "address": "목포시 삼학로18번길 15",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81579"
+    },
+    {
+      "id": "lodging-81400",
+      "name": "블루힐모텔",
+      "address": "목포시 원형동로 44",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81400"
+    },
+    {
+      "id": "lodging-81604",
+      "name": "비너스",
+      "address": "목포시 삼향천로 57",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81604"
+    },
+    {
+      "id": "lodging-81393",
+      "name": "비자림오피스텔민박",
+      "address": "목포시 해안로 174-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81393"
+    },
+    {
+      "id": "lodging-81465",
+      "name": "비즈니스",
+      "address": "목포시 하당남부로 52-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81465"
+    },
+    {
+      "id": "lodging-81629",
+      "name": "비즈니스모텔",
+      "address": "목포시 하당남부로 52-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81629"
+    },
+    {
+      "id": "lodging-81466",
+      "name": "빅토리아모텔",
+      "address": "목포시 하당남부로61번길 22",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81466"
+    },
+    {
+      "id": "lodging-81447",
+      "name": "샤모텔",
+      "address": "목포시 미항로 14",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81447"
+    },
+    {
+      "id": "lodging-81657",
+      "name": "샬롬빌",
+      "address": "목포시 마파지로 58",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81657"
+    },
+    {
+      "id": "lodging-81436",
+      "name": "선샤인호텔",
+      "address": "목포시 평화로73번길 4",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81436"
+    },
+    {
+      "id": "lodging-81687",
+      "name": "설레임 게스트하우스",
+      "address": "목포시 달성길27번길 5",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81687"
+    },
+    {
+      "id": "lodging-81449",
+      "name": "세느강",
+      "address": "목포시 평화로 77",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81449"
+    },
+    {
+      "id": "lodging-81467",
+      "name": "소렌토",
+      "address": "목포시 하당남부로 63",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81467"
+    },
+    {
+      "id": "lodging-81422",
+      "name": "수다방게스트하우스",
+      "address": "목포시 마인계터로40번길 1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81422"
+    },
+    {
+      "id": "lodging-81612",
+      "name": "스위트",
+      "address": "목포시 해양대학로251번길 4-2",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81612"
+    },
+    {
+      "id": "lodging-81680",
+      "name": "스카이모텔",
+      "address": "목포시 신흥로59번길 15",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81680"
+    },
+    {
+      "id": "lodging-81468",
+      "name": "스타모텔",
+      "address": "목포시 번영로 28",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81468"
+    },
+    {
+      "id": "lodging-81469",
+      "name": "신도심모텔",
+      "address": "목포시 하당남부로 52",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81469"
+    },
+    {
+      "id": "lodging-81408",
+      "name": "신원모텔",
+      "address": "목포시 하당로30번길 16",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81408"
+    },
+    {
+      "id": "lodging-81437",
+      "name": "싼체스",
+      "address": "목포시 죽교천로 109",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81437"
+    },
+    {
+      "id": "lodging-81414",
+      "name": "썸무인호텔",
+      "address": "목포시 허사로 13",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81414"
+    },
+    {
+      "id": "lodging-81470",
+      "name": "씨사이드호텔",
+      "address": "목포시 해안로163번길 4",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81470"
+    },
+    {
+      "id": "lodging-81602",
+      "name": "아리랑모텔",
+      "address": "목포시 비파로 125",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81602"
+    },
+    {
+      "id": "lodging-81415",
+      "name": "아미가호텔",
+      "address": "목포시 번영로 9",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81415"
+    },
+    {
+      "id": "lodging-81480",
+      "name": "아비숑모텔",
+      "address": "목포시 비파로108번길 7",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81480"
+    },
+    {
+      "id": "lodging-81633",
+      "name": "에로스모텔",
+      "address": "목포시 영산로 499",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81633"
+    },
+    {
+      "id": "lodging-81617",
+      "name": "엠유(MU)모텔",
+      "address": "목포시 옥암로54번길 41",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81617"
+    },
+    {
+      "id": "lodging-81453",
+      "name": "영빈관 호텔",
+      "address": "목포시 통일대로 102",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81453"
+    },
+    {
+      "id": "lodging-81424",
+      "name": "오래뜰 게스트하우스",
+      "address": "목포시 북교길 27",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81424"
+    },
+    {
+      "id": "lodging-81481",
+      "name": "오렌지모텔",
+      "address": "목포시 비파로108번길 5-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81481"
+    },
+    {
+      "id": "lodging-81639",
+      "name": "오아시스 모텔",
+      "address": "목포시 중화길18번길 24-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81639"
+    },
+    {
+      "id": "lodging-81482",
+      "name": "오페라모텔",
+      "address": "목포시 비파로116번길 6",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81482"
+    },
+    {
+      "id": "lodging-81446",
+      "name": "워싱턴모텔",
+      "address": "목포시 평화로83번길 3-2",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81446"
+    },
+    {
+      "id": "lodging-81484",
+      "name": "워커힐비치",
+      "address": "목포시 비파로124번길 11",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81484"
+    },
+    {
+      "id": "lodging-81485",
+      "name": "웰모텔",
+      "address": "목포시 비파로116번길 6-2",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81485"
+    },
+    {
+      "id": "lodging-81455",
+      "name": "자라무인텔",
+      "address": "목포시 평화로61번길 8",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81455"
+    },
+    {
+      "id": "lodging-81589",
+      "name": "잠자리모텔",
+      "address": "목포시 북항로166번길 23-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81589"
+    },
+    {
+      "id": "lodging-81693",
+      "name": "저팬하우스",
+      "address": "목포시 유동로 51",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81693"
+    },
+    {
+      "id": "lodging-81503",
+      "name": "제일모텔",
+      "address": "목포시 수강로12번길 24-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81503"
+    },
+    {
+      "id": "lodging-81689",
+      "name": "좋은집 게스트하우스",
+      "address": "목포시 마인계터로40번길 2-15",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81689"
+    },
+    {
+      "id": "lodging-81457",
+      "name": "지중해",
+      "address": "목포시 평화로 65-6",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81457"
+    },
+    {
+      "id": "lodging-81451",
+      "name": "천궁모텔",
+      "address": "목포시 삼학로18번길 6",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81451"
+    },
+    {
+      "id": "lodging-81678",
+      "name": "청춘 게스트하우스",
+      "address": "목포시 달성길 39",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81678"
+    },
+    {
+      "id": "lodging-81611",
+      "name": "청학동 모텔",
+      "address": "목포시 해양대학로251번길 4-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81611"
+    },
+    {
+      "id": "lodging-81613",
+      "name": "초이스모텔",
+      "address": "목포시 삼향천로 59-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81613"
+    },
+    {
+      "id": "lodging-81450",
+      "name": "축복모텔",
+      "address": "목포시 죽교천로122번길 1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81450"
+    },
+    {
+      "id": "lodging-81634",
+      "name": "카이저",
+      "address": "목포시 하당남부로51번길 27",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81634"
+    },
+    {
+      "id": "lodging-81472",
+      "name": "카이져",
+      "address": "목포시 하당남부로51번길 27",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81472"
+    },
+    {
+      "id": "lodging-81664",
+      "name": "퀸스텔",
+      "address": "목포시 상동로 8",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81664"
+    },
+    {
+      "id": "lodging-81663",
+      "name": "크로스모텔",
+      "address": "목포시 산정로152번길 37-2",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81663"
+    },
+    {
+      "id": "lodging-81606",
+      "name": "크리스탈",
+      "address": "목포시 옥암로46번길 37-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81606"
+    },
+    {
+      "id": "lodging-81550",
+      "name": "크리스탈모텔",
+      "address": "목포시 산정로152번길 7-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81550"
+    },
+    {
+      "id": "lodging-81665",
+      "name": "티무인호텔",
+      "address": "목포시 해안로249번길 26",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81665"
+    },
+    {
+      "id": "lodging-81672",
+      "name": "포유무인텔",
+      "address": "목포시 번영로 113",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81672"
+    },
+    {
+      "id": "lodging-81637",
+      "name": "프라도",
+      "address": "목포시 번영로 24",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81637"
+    },
+    {
+      "id": "lodging-81610",
+      "name": "프린스",
+      "address": "목포시 해양대학로251번길 4",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81610"
+    },
+    {
+      "id": "lodging-81621",
+      "name": "피카다리모텔",
+      "address": "목포시 용당로196번길 7",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81621"
+    },
+    {
+      "id": "lodging-81691",
+      "name": "피카소 게스트하우스",
+      "address": "목포시 호남로64번길 23",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81691"
+    },
+    {
+      "id": "lodging-81462",
+      "name": "필모텔",
+      "address": "목포시 평화로83번길 5-2",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81462"
+    },
+    {
+      "id": "lodging-81683",
+      "name": "하얀풍차 게스트하우스",
+      "address": "목포시 유달로 126",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81683"
+    },
+    {
+      "id": "lodging-81608",
+      "name": "하이아트",
+      "address": "목포시 옥암로54번길 38",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81608"
+    },
+    {
+      "id": "lodging-81635",
+      "name": "하이텔",
+      "address": "목포시 북항로 161",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81635"
+    },
+    {
+      "id": "lodging-84150",
+      "name": "해마루",
+      "address": "목포시 불종대길9번길 6-4",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=84150"
+    },
+    {
+      "id": "lodging-81474",
+      "name": "해비치모텔",
+      "address": "목포시 하당남부로61번길 20",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81474"
+    },
+    {
+      "id": "lodging-81622",
+      "name": "해양모텔",
+      "address": "목포시 통일대로 11-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81622"
+    },
+    {
+      "id": "lodging-81476",
+      "name": "해운모텔",
+      "address": "목포시 수강로4번길 3",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81476"
+    },
+    {
+      "id": "lodging-81459",
+      "name": "호텔 티파니에서아침을",
+      "address": "목포시 평화로140번길 24",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81459"
+    },
+    {
+      "id": "lodging-81402",
+      "name": "호텔얌",
+      "address": "목포시 옥암로54번길 41-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81402"
+    },
+    {
+      "id": "lodging-81463",
+      "name": "호텔위드",
+      "address": "목포시 원형동로 50-1",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81463"
+    },
+    {
+      "id": "lodging-81461",
+      "name": "호텔카라",
+      "address": "목포시 북항로 141",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81461"
+    },
+    {
+      "id": "lodging-81475",
+      "name": "황궁모텔",
+      "address": "목포시 동부로5번길 7",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81475"
+    },
+    {
+      "id": "lodging-81460",
+      "name": "힐사이드",
+      "address": "목포시 미항로 12",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81460"
+    },
+    {
+      "id": "lodging-81464",
+      "name": "힐탑모텔",
+      "address": "목포시 원형동로 46",
+      "sourceUrl": "https://www.mokpo.go.kr/tour/amusement/accommodations/total?mode=view&idx=81464"
+    }
+  ]
+}
