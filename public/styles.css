@@ -42,3 +42,4 @@ main{min-height:calc(100vh - 68px)}.page{max-width:1240px;margin:auto;padding:28
 .route-path-choice{margin-top:10px;padding:10px 12px;border:1px solid #d5e3d8;border-radius:12px;background:#f5faf6}
 .route-path-choice .route-tabs{margin:6px 0;flex-wrap:wrap}
 .route-path-choice small{display:block;color:#4e6560}
+#route-result-map.leaflet-container{touch-action:none;overscroll-behavior:contain}
