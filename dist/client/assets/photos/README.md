@@ -143,3 +143,15 @@
 | p130 웨이브 | `p130-example.webp` · Cafe Coffee | Maciej Korsan | [원본](https://stocksnap.io/photo/cafe-coffee-0DFCQK31OQ), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 
 검색 결과의 이름만 비슷한 사진은 실제 장소 사진으로 취급하지 않았다. 원본의 라이선스와 저작자는 연결된 출처에서 다시 확인할 수 있다.
+
+2026-10-06 추가 카페 7곳은 실제 점포 사진의 재사용 허락을 확인하지 못해 아래 CC0 예시 사진을 재사용한다. 각 카드에서 실제 점포 사진이 아님을 표시한다.
+
+| 장소 | 사용 파일·주제 | 제작자·조건 | 출처 |
+| --- | --- | --- | --- |
+| p131 오거리숭커피 | `p130-example.webp` · 카페 커피 예시 | Maciej Korsan · CC0 1.0 | [원본](https://stocksnap.io/photo/cafe-coffee-0DFCQK31OQ) |
+| p132 마메종 | `p97-example.webp` · 커피 예시 | Sergey Zolkin · CC0 1.0 | [원본](https://stocksnap.io/photo/coffee-latte-MK3VLNK8NA) |
+| p133 토브공작소 | `p100-example.webp` · 커피 예시 | David Bares · CC0 1.0 | [원본](https://stocksnap.io/photo/coffee-latte-WDJES619M1) |
+| p134 가비1935 | `p96-example.webp` · 카페 커피 예시 | Maciej Korsan · CC0 1.0 | [원본](https://stocksnap.io/photo/cafe-coffee-TUIRU743JZ) |
+| p135 커피창고로 얼리버드점 | `p101-example.webp` · 카페 커피 예시 | Chiara Pinna · CC0 1.0 | [원본](https://stocksnap.io/photo/cafe-coffee-9QXZ4Q9PXX) |
+| p136 페어링 | `p99-example.webp` · 커피·차 예시 | Lia Leslie · CC0 1.0 | [원본](https://stocksnap.io/photo/coffee-tea-4VHE7E68OE) |
+| p137 카페델마르 | `p103-example.webp` · 카페 커피 예시 | Leeroy · CC0 1.0 | [원본](https://stocksnap.io/photo/coffee-cafe-ME0VNF7K74) |

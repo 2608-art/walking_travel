@@ -6,6 +6,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / "docs" / "지역" / "목포" / "장소.md"
+PLACE_IDS = json.loads((ROOT / "place-ids.json").read_text(encoding="utf-8"))
+assert len(set(PLACE_IDS.values())) == len(PLACE_IDS), "Duplicate stable place ID"
 TARGETS = (ROOT / "public" / "places.json", ROOT / "dist" / "client" / "places.json")
 SOLO_EVIDENCE = Path(__file__).resolve().parent / "solo-evidence.json"
 solo_research = json.loads(SOLO_EVIDENCE.read_text(encoding="utf-8"))
@@ -51,6 +53,13 @@ HOURS = {
     "트라이팟": {"open": "11:30", "close": "21:00", "breaks": [["15:00", "17:00"]], "lastOrder": "20:00", "closedWeekdays": [1], "note": "점심 주문 마감 14:00. 예약·특별휴무 확인.", "source": "https://www.diningcode.com/profile.php?rid=RgFf44xolOx6"},
     "오늘의 페이지": {"open": "12:00", "close": "19:00", "closedWeekdays": [1, 2], "note": "목포도서관 2026년 명단 기준. 월·화 휴무.", "source": "https://mplib.jne.go.kr/menu.es?mid=a20108010100"},
     "유유랜드": {"open": "12:00", "close": "18:00", "closedWeekdays": [1], "note": "업주 프로필 기준. 체험은 100% 예약제.", "source": "https://www.daangn.com/kr/local-profile/%EC%9C%A0%EC%9C%A0%EB%9E%9C%EB%93%9C-8nefzfc216z2/"},
+    "오거리숭커피": {"open": "09:00", "close": "19:00", "closedWeekdays": [2], "note": "금·토는 21:00까지로 표시. 공휴일 화요일은 영업 안내가 있어 방문일 재확인.", "source": "https://place.map.kakao.com/755318132"},
+    "마메종": {"open": "10:00", "close": "22:00", "note": "2026-10-06 카카오맵의 7일 표시 기준. 과거 방문기와 목요일 시작 시각이 달라 방문일 재확인.", "source": "https://place.map.kakao.com/933090535"},
+    "토브공작소": {"open": "09:00", "close": "18:00", "closedWeekdays": [0], "note": "화~토는 21:00까지로 표시. 월요일 18:00 종료를 공통 종료로 보수적으로 적용.", "source": "https://place.map.kakao.com/2096178963"},
+    "가비1935": {"open": "10:00", "close": "20:00", "note": "2026-10-06 카카오맵 표시 기준. 과거 방문기의 21:00 종료와 달라 방문일 재확인.", "source": "https://place.map.kakao.com/2139399499"},
+    "커피창고로 얼리버드점": {"open": "07:00", "close": "17:00", "lastOrder": "16:30", "note": "카카오맵 표시 기준. 평화광장점과 다른 지점.", "source": "https://place.map.kakao.com/427786530"},
+    "페어링": {"open": "09:00", "close": "24:00", "note": "2026-10-06 카카오맵의 7일 표시 기준. 방문일 재확인.", "source": "https://place.map.kakao.com/848686248"},
+    "카페델마르": {"open": "11:00", "close": "22:30", "lastOrder": "22:00", "note": "2026-10-06 카카오맵의 7일 표시 기준. 방문일 재확인.", "source": "https://place.map.kakao.com/1844963116"},
 }
 
 # Public outdoor access has no published admission schedule. Facilities inside
@@ -277,7 +286,7 @@ for line in SOURCE.read_text(encoding="utf-8").splitlines():
     if scenic_approach:
         lat, lon = map_pin["lat"], map_pin["lon"]
     places[name] = {
-        "id": f"p{len(places)+1}",
+        "id": PLACE_IDS[name],
         "name": name,
         "category": CATEGORY_BY_NAME[name] if section in ("spot", "shop") else section,
         "lat": lat,
@@ -299,6 +308,7 @@ for line in SOURCE.read_text(encoding="utf-8").splitlines():
     }
 
 assert set(representative_pins) <= set(places), "Unknown representative map pin"
+assert set(PLACE_IDS) == set(places), "Place ID registry differs from source places"
 assert all(34.7 <= pin["lat"] <= 34.9 and 126.2 <= pin["lon"] <= 126.6 for pin in representative_pins.values()), "Representative pin outside Mokpo"
 
 in_hours = False

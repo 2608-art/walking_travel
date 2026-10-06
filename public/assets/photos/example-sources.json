@@ -1188,5 +1188,75 @@
     "license": "CC0 1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "source": "https://stocksnap.io/photo/cafe-coffee-0DFCQK31OQ"
+  },
+  {
+    "placeId": "p131",
+    "placeName": "오거리숭커피",
+    "file": "p130-example.webp",
+    "subject": "Cafe Coffee",
+    "creator": "Maciej Korsan",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://stocksnap.io/photo/cafe-coffee-0DFCQK31OQ"
+  },
+  {
+    "placeId": "p132",
+    "placeName": "마메종",
+    "file": "p97-example.webp",
+    "subject": "Coffee Latte",
+    "creator": "Sergey Zolkin",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://stocksnap.io/photo/coffee-latte-MK3VLNK8NA"
+  },
+  {
+    "placeId": "p133",
+    "placeName": "토브공작소",
+    "file": "p100-example.webp",
+    "subject": "Coffee Latte",
+    "creator": "David Bares",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://stocksnap.io/photo/coffee-latte-WDJES619M1"
+  },
+  {
+    "placeId": "p134",
+    "placeName": "가비1935",
+    "file": "p96-example.webp",
+    "subject": "Cafe Coffee",
+    "creator": "Maciej Korsan",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://stocksnap.io/photo/cafe-coffee-TUIRU743JZ"
+  },
+  {
+    "placeId": "p135",
+    "placeName": "커피창고로 얼리버드점",
+    "file": "p101-example.webp",
+    "subject": "Cafe Coffee",
+    "creator": "Chiara Pinna",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://stocksnap.io/photo/cafe-coffee-9QXZ4Q9PXX"
+  },
+  {
+    "placeId": "p136",
+    "placeName": "페어링",
+    "file": "p99-example.webp",
+    "subject": "Coffee Tea",
+    "creator": "Lia Leslie",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://stocksnap.io/photo/coffee-tea-4VHE7E68OE"
+  },
+  {
+    "placeId": "p137",
+    "placeName": "카페델마르",
+    "file": "p103-example.webp",
+    "subject": "Coffee Cafe",
+    "creator": "Leeroy",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://stocksnap.io/photo/coffee-cafe-ME0VNF7K74"
   }
 ]
