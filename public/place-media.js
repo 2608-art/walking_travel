@@ -1,7 +1,7 @@
 /* 장소 그림은 places.json 재생성과 독립적으로 관리합니다.
  * 키: places.json의 정확한 장소 id.
  * 값: { src: './assets/photos/파일.webp', alt: '사진 설명', kind: 'photo' 또는 'example', credit: '제작자/라이선스', source: 'https://출처' }
- * 실제 장소 사진이 없으면 아래 장소별 고유 예시 사진을 표시하고 실제 모습이 아님을 밝힙니다.
+ * 실제 장소 사진이 없으면 이용 허락이 확인된 예시 사진을 표시하고 실제 모습이 아님을 밝힙니다.
  */
 window.HANGEORUM_PLACE_MEDIA = {
   p1: {
@@ -83,7 +83,7 @@ window.HANGEORUM_PLACE_MEDIA = {
   }
 };
 
-// 장소 자체의 사진이 확인되지 않은 119곳에 서로 다른 관련 주제 사진을 사용합니다.
+// 기존 119곳에는 장소별 예시 사진을 사용하고, 2026-10-06 추가 7곳에는 출처를 기록한 CC0 사진을 재사용합니다.
 window.HANGEORUM_PLACE_EXAMPLE_MEDIA = {
   "p4": {
     "src": "./assets/photos/p4-example.webp",
@@ -917,5 +917,54 @@ window.HANGEORUM_PLACE_EXAMPLE_MEDIA = {
     "kind": "example",
     "credit": "Maciej Korsan · CC0 1.0",
     "source": "https://stocksnap.io/photo/cafe-coffee-0DFCQK31OQ"
+  },
+  "p131": {
+    "src": "./assets/photos/p130-example.webp",
+    "alt": "커피·카페 관련 주제 사진 예시. 오거리숭커피의 실제 모습이나 상품은 아닙니다.",
+    "kind": "example",
+    "credit": "Maciej Korsan · CC0 1.0",
+    "source": "https://stocksnap.io/photo/cafe-coffee-0DFCQK31OQ"
+  },
+  "p132": {
+    "src": "./assets/photos/p97-example.webp",
+    "alt": "커피·카페 관련 주제 사진 예시. 마메종의 실제 모습이나 상품은 아닙니다.",
+    "kind": "example",
+    "credit": "Sergey Zolkin · CC0 1.0",
+    "source": "https://stocksnap.io/photo/coffee-latte-MK3VLNK8NA"
+  },
+  "p133": {
+    "src": "./assets/photos/p100-example.webp",
+    "alt": "커피·카페 관련 주제 사진 예시. 토브공작소의 실제 모습이나 상품은 아닙니다.",
+    "kind": "example",
+    "credit": "David Bares · CC0 1.0",
+    "source": "https://stocksnap.io/photo/coffee-latte-WDJES619M1"
+  },
+  "p134": {
+    "src": "./assets/photos/p96-example.webp",
+    "alt": "커피·카페 관련 주제 사진 예시. 가비1935의 실제 모습이나 상품은 아닙니다.",
+    "kind": "example",
+    "credit": "Maciej Korsan · CC0 1.0",
+    "source": "https://stocksnap.io/photo/cafe-coffee-TUIRU743JZ"
+  },
+  "p135": {
+    "src": "./assets/photos/p101-example.webp",
+    "alt": "커피·카페 관련 주제 사진 예시. 커피창고로 얼리버드점의 실제 모습이나 상품은 아닙니다.",
+    "kind": "example",
+    "credit": "Chiara Pinna · CC0 1.0",
+    "source": "https://stocksnap.io/photo/cafe-coffee-9QXZ4Q9PXX"
+  },
+  "p136": {
+    "src": "./assets/photos/p99-example.webp",
+    "alt": "커피·카페 관련 주제 사진 예시. 페어링의 실제 모습이나 상품은 아닙니다.",
+    "kind": "example",
+    "credit": "Lia Leslie · CC0 1.0",
+    "source": "https://stocksnap.io/photo/coffee-tea-4VHE7E68OE"
+  },
+  "p137": {
+    "src": "./assets/photos/p103-example.webp",
+    "alt": "커피·카페 관련 주제 사진 예시. 카페델마르의 실제 모습이나 상품은 아닙니다.",
+    "kind": "example",
+    "credit": "Leeroy · CC0 1.0",
+    "source": "https://stocksnap.io/photo/coffee-cafe-ME0VNF7K74"
   }
 };
