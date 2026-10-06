@@ -82,7 +82,7 @@ small, .small { font-size: var(--type-caption); line-height: 1.65; color: var(--
 .btn-primary:hover { background: var(--green-hover); border-color: var(--green-hover); }
 .btn-outline { background: var(--surface); border-color: #dce3d3; color: var(--mint-dark); }
 .btn-outline:hover { background: var(--green-soft); }
-.btn-danger { color: var(--bad); }
+.btn-danger { background: var(--bad); color: #fff; }
 .text-button { color: var(--mint-dark); font-size: 13px; font-weight: 600; min-height: 40px; }
 .round-control { width: 44px; height: 44px; background: #fffffff2; border-color: var(--line); box-shadow: var(--shadow); color: var(--ink); }
 .text-field, .select-field, .area-field { border-radius: var(--radius-control); min-height: 48px; background: var(--surface); border-color: #dce1d5; font-size: 15px; line-height: 1.6; }
@@ -98,6 +98,7 @@ small, .small { font-size: var(--type-caption); line-height: 1.65; color: var(--
 .notice, .empty-state { border-radius: var(--radius-control); font-size: 14px; line-height: 1.75; }
 .modal { background: var(--white); border-radius: var(--radius-card); }
 .modal h2 { font-size: var(--type-section); }
+.entry-time-help { margin: 14px 0 0; }
 /* Home: restrained atmosphere; photography remains the strongest visual. */
 .diary-hero { background-image: url('./assets/diary/reference-landscape.png'); background-color: var(--paper); background-position: center bottom; background-size: 100% 100%; min-height: 340px; padding: 32px 42px; border-radius: var(--radius-card); }
 .diary-hero:after { background: linear-gradient(90deg, #fffbf120, transparent); }
