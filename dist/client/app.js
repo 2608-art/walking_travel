@@ -188,7 +188,7 @@
   function toast(message) { const el = $('#toast'); if (!el) return; el.textContent = message; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 3600); }
   const state = {
     places: [], lodgings: [], view: 'home', region: 'mokpo', categories: new Set(), selected: null, mapDisplay:'map', homeMood:'all',
-    mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null,
+    mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null, mapFocusedPlace:null, mapMarkers:new Map(),
     draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end: '24:00', origin: null, theme:'balanced', mealTimes:[], entries: {}, pending:[] },
     saved: load(STORAGE_SAVED, []),
     route: { date: today(), start: '10:00', end: '24:00', origin: 'station', destination:'station', mode:'custom', theme:'first', solo:false, must: '', mustOptional:false, focus:'through', results: [], baseResults:[], selected: -1 },
@@ -335,19 +335,20 @@
     const chosen = CATEGORIES.filter(([id]) => state.categories.has(id)).map(([, label]) => label);
     const resultLabel = chosen.length === 0 ? '전체' : chosen.length <= 2 ? chosen.join('·') : '선택한 분류 ' + chosen.length + '개';
     if (state.mapProvider === 'leaflet') state.map?.remove();
-    state.map = null; state.mapProvider = null;
+    state.map = null; state.mapProvider = null; state.mapFocusedPlace = null; state.mapMarkers = new Map();
     $('#main').innerHTML=`<section class="explore-page ${state.mapDisplay==='list'?'list-mode':''}">
       <div class="explore-topbar"><button class="round-control" id="region-back" aria-label="목포 소개로">${uiIcon('back')}</button><h1>${esc(region.name)} 한 바퀴</h1><div class="view-switch" aria-label="탐색 방식"><button data-map-display="map" class="${state.mapDisplay==='map'?'active':''}" aria-pressed="${state.mapDisplay==='map'}">지도</button><button data-map-display="list" class="${state.mapDisplay==='list'?'active':''}" aria-pressed="${state.mapDisplay==='list'}">목록</button></div></div>
       <div class="explore-workspace"><div class="explore-search"><form id="map-search-form" class="explore-search-form">${uiIcon('search')}<input id="map-search" aria-label="장소 또는 주소 검색" autocomplete="off" placeholder="목포의 장소, 주소 검색"><button type="submit" aria-label="검색">${uiIcon('arrow')}</button></form><div class="filter-strip" aria-label="장소 유형 여러 개 선택 가능">${CATEGORIES.map(([id,label,emoji])=>{const active=id==='all'?!state.categories.size:state.categories.has(id);return `<button class="filter-chip ${active?'active':''}" data-category="${id}" aria-pressed="${active}"><span aria-hidden="true">${emoji}</span> ${label}</button>`;}).join('')}</div></div>
       <div class="explore-map"><div id="map"></div><button class="round-control recenter-control" id="recenter" aria-label="목포 중심으로 돌아가기" title="목포 중심으로 돌아가기">${uiIcon('target')}</button><span class="map-location-label">${uiIcon('location')} 목포</span></div>
-      <aside class="explore-sheet"><span class="sheet-handle" aria-hidden="true"></span><div class="explore-sheet-title"><div><span class="eyebrow">발걸음이 닿는 곳</span><h2>${esc(resultLabel==='전체'?'목포의 장소':resultLabel)} <small>${list.length}</small></h2></div><span class="small" id="pin-count">지도 핀 ${list.filter(hasPin).length}곳</span></div><div class="place-list">${list.map(p=>`<button class="place-row" data-place="${p.id}">${placeVisual(p,true)}<span class="place-row-copy"><small class="place-row-category">${esc(categoryName(p.category))}</small><strong>${esc(p.name)}</strong><small>${esc(p.locationText||'위치 확인 필요')}</small></span><span class="row-chevron" aria-hidden="true">›</span></button>`).join('')}</div><p class="map-evidence">지도 핀은 대표 위치예요. 실제 출입구는 방문 전 확인해 주세요.</p><div class="explore-actions"><button class="btn btn-outline" id="go-plan">${uiIcon('plan')} 직접 계획</button><button class="btn btn-primary" id="go-routes">${uiIcon('map')} 추천 루트</button></div></aside></div></section>`;
+      <aside class="explore-sheet"><span class="sheet-handle" aria-hidden="true"></span><div class="explore-sheet-title"><div><span class="eyebrow">발걸음이 닿는 곳</span><h2>${esc(resultLabel==='전체'?'목포의 장소':resultLabel)} <small>${list.length}</small></h2></div><span class="small" id="pin-count">지도 핀 ${list.filter(hasPin).length}곳</span></div><div class="place-list">${list.map(p=>`<div class="place-row"><button type="button" class="place-row-main" data-place="${p.id}" aria-label="${esc(p.name)} 지도 위치 보기, 다시 누르면 설명 보기">${placeVisual(p,true)}<span class="place-row-copy"><small class="place-row-category">${esc(categoryName(p.category))}</small><strong>${esc(p.name)}</strong><small>${esc(p.locationText||'위치 확인 필요')}</small></span></button><button type="button" class="place-row-open" data-open-map-place="${p.id}" aria-label="${esc(p.name)} 설명 보기"><span class="row-chevron" aria-hidden="true">›</span></button></div>`).join('')}</div><p class="map-evidence">지도 핀은 대표 위치예요. 실제 출입구는 방문 전 확인해 주세요.</p><div class="explore-actions"><button class="btn btn-outline" id="go-plan">${uiIcon('plan')} 직접 계획</button><button class="btn btn-primary" id="go-routes">${uiIcon('map')} 추천 루트</button></div></aside></div></section>`;
     initHomeMap(list);
     $('#region-back').onclick=()=>nav('destination');
     $('#go-plan').onclick=()=>nav('plan');$('#go-routes').onclick=()=>nav('routes');
     $('#recenter').onclick=()=>{if(state.mapProvider==='kakao'){state.map?.setCenter(kakaoPoint(...region.center));state.map?.setLevel(kakaoLevel(13));}else state.map?.setView(region.center,13);state.mapCenter=region.center;state.mapZoom=13;};
     $('#map-search-form').onsubmit=searchMap;
     document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>{const offset=$('.filter-strip').scrollLeft;const id=b.dataset.category;if(id==='all')state.categories.clear();else if(state.categories.has(id))state.categories.delete(id);else state.categories.add(id);state.selected=null;renderRegionMap();$('.filter-strip').scrollLeft=offset;});
-    document.querySelectorAll('[data-place]').forEach(b=>b.onclick=()=>selectPlace(b.dataset.place));
+    document.querySelectorAll('.explore-sheet .place-row').forEach(row=>row.onclick=(event)=>{if(event.target.closest('[data-open-map-place]'))return;focusMapPlace(row.querySelector('[data-place]').dataset.place);});
+    document.querySelectorAll('[data-open-map-place]').forEach(b=>b.onclick=()=>selectPlace(b.dataset.openMapPlace));
     document.querySelectorAll('[data-map-display]').forEach(b=>b.onclick=()=>{state.mapDisplay=b.dataset.mapDisplay;$('.explore-page').classList.toggle('list-mode',state.mapDisplay==='list');document.querySelectorAll('[data-map-display]').forEach(x=>{const active=x.dataset.mapDisplay===state.mapDisplay;x.classList.toggle('active',active);x.setAttribute('aria-pressed',active);});if(state.mapProvider==='kakao')state.map?.relayout();else state.map?.invalidateSize();});
   }
   async function initHomeMap(list) {
@@ -363,6 +364,7 @@
     pinned.forEach((p) => {
       const marker = L.circleMarker(pinPoint(p), { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
       marker.bindTooltip(esc(p.name)); marker.on('click', () => selectPlace(p.id));
+      state.mapMarkers.set(p.id, marker);
     });
     if (KAKAO_KEY && list.some((p) => !hasPin(p) && p.addressQuery)) loadKakao().then(() => {
       if (container === $('#map')) geocodeAddressPlaces(list, map, colors, container);
@@ -391,8 +393,25 @@
       p.lat = lat; p.lon = lon; p.pinBasis = 'address';
       const marker = L.circleMarker([lat, lon], { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
       marker.bindTooltip(esc(p.name + ' · 건물 주소 위치')); marker.on('click', () => selectPlace(p.id));
+      state.mapMarkers.set(p.id, marker);
       if ($('#pin-count')) $('#pin-count').textContent = '지도 핀 ' + list.filter(hasPin).length + '곳';
     }
+  }
+  function focusMapPlace(id) {
+    if (state.mapFocusedPlace === id) { selectPlace(id); return; }
+    const place = getPlace(id);
+    const point = pinPoint(place);
+    if (!point) return;
+    document.querySelector('[data-map-display="map"]')?.click();
+    const previous = state.mapMarkers.get(state.mapFocusedPlace);
+    previous?.setStyle({radius:7,weight:2,color:'#fff'});
+    state.mapFocusedPlace = id;
+    document.querySelectorAll('.explore-sheet .place-row').forEach(row => row.classList.toggle('is-focused', row.querySelector('[data-place]')?.dataset.place === id));
+    const marker = state.mapMarkers.get(id);
+    marker?.setStyle({radius:11,weight:3,color:'#244c39'});
+    marker?.bringToFront();
+    marker?.openTooltip();
+    state.map?.flyTo(point, 15);
   }
   function selectPlace(id) {
     if(!getPlace(id))return;

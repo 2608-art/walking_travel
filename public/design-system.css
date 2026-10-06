@@ -202,7 +202,13 @@ small, .small { font-size: var(--type-caption); line-height: 1.65; color: var(--
 .explore-sheet-title .eyebrow { font-size: 12px; }
 .explore-sheet-title h2 { font-size: 20px; line-height: 1.45; }
 .explore-sheet-title h2 small, .explore-sheet-title>.small { font-size: 12px; color: var(--muted); }
-.explore-sheet .place-row { background: var(--surface); border-color: var(--line); border-radius: var(--radius-control); box-shadow: 0 2px 7px #36452803; }
+.explore-sheet .place-row { grid-template-columns: minmax(0,1fr) 44px; background: var(--surface); border-color: var(--line); border-radius: var(--radius-control); box-shadow: 0 2px 7px #36452803; cursor: pointer; }
+.explore-sheet .place-row.is-focused { border-color: var(--green); background: var(--green-soft); }
+.explore-sheet .place-row-main { display: flex; align-items: center; gap: 12px; min-width: 0; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.explore-sheet .place-row-main .place-visual { flex: none; }
+.explore-sheet .place-row-main .place-row-copy { flex: 1; }
+.explore-sheet .place-row-open { display: grid; place-items: center; width: 44px; min-height: 44px; padding: 0; border: 0; border-radius: 10px; background: var(--green-soft); cursor: pointer; }
+.explore-sheet .place-row-open:hover, .explore-sheet .place-row-open:focus-visible { background: var(--green-soft); }
 .explore-sheet .place-row strong { font-size: 17px; line-height: 1.5; font-weight: 600; }
 .explore-sheet .place-row small, .place-row-copy .place-row-category { font-size: 12px; line-height: 1.55; color: var(--muted); }
 .place-row-copy .place-row-category { margin-bottom: 3px; color: var(--mint-dark); }
@@ -283,7 +289,7 @@ small, .small { font-size: var(--type-caption); line-height: 1.65; color: var(--
   .explore-sheet { min-height: 310px; max-height: 325px; padding: 22px 18px 16px; }
   .explore-sheet-title { margin-bottom: 14px; }
   .explore-sheet .place-list { max-height: 104px; }
-  .explore-sheet .place-row { width: 300px; min-height: 96px; grid-template-columns: 60px minmax(0,1fr) 10px; }
+  .explore-sheet .place-row { width: 300px; min-height: 96px; grid-template-columns: minmax(0,1fr) 44px; }
   .explore-sheet .place-visual.is-thumb { width: 60px; height: 70px; }
   .map-evidence { margin: 10px 0; }
   .recenter-control { bottom: 52px; }
