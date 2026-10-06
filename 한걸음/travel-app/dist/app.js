@@ -238,6 +238,12 @@
       '<div class="schedule-facts">' + rows.map(([label, value]) => '<p><strong>' + esc(label) + '</strong><br>' + esc(value) + '</p>').join('') + '</div>' +
       (p.scheduleSource ? '<a class="small" href="' + esc(p.scheduleSource) + '" target="_blank" rel="noopener noreferrer">운영정보 출처</a>' : '');
   }
+  function priceHtml(p) {
+    const info = p.priceInfo;
+    if (!info) return '';
+    const title = p.category === 'food' || p.category === 'cafe' ? '메뉴와 가격' : '입장·이용 요금';
+    return `<section class="place-price" aria-label="${title}"><div class="place-price-heading"><h2>${title}</h2><span>조회 ${esc(info.checked)}</span></div><div class="place-price-row"><strong>${esc(info.label)}</strong><b>${esc(info.price)}</b></div>${info.note?`<p>${esc(info.note)}</p>`:''}<a href="${esc(info.source)}" target="_blank" rel="noopener noreferrer">가격 출처 확인 ↗</a><p class="place-price-caveat">게시된 가격입니다. 할인·예약·현장 가격은 방문 전에 확인해 주세요.</p></section>`;
+  }
   function soloHtml(p) {
     if (p.category !== 'food' && p.category !== 'cafe') return '';
     const verdict = {
@@ -314,7 +320,7 @@
     const tab=state.placeTab||'intro';
     $('#main').innerHTML=`<section class="place-page"><div class="place-cover">${placeVisual(p)}<button class="round-control" id="place-back" aria-label="이전 화면">‹</button></div><div class="place-page-body"><span class="eyebrow">${esc(categoryName(p.category))}</span><h1>${esc(p.name)}</h1><p class="place-address">⌖ ${esc(p.locationText||'위치 확인 필요')}</p>${p.rating!=null?`<p class="place-rating">카카오맵 ${esc(p.rating.toFixed(1))} / 5 · 평가 ${esc(p.ratingCount)}건 · 2026-10-01 조사</p>`:''}<div class="place-quick-actions"><button id="place-see-map">${uiIcon('location')}지도 위치</button><button id="place-plan">${uiIcon('plan')}계획표 열기</button>${p.source?`<a href="${esc(p.source)}" target="_blank" rel="noopener noreferrer">${uiIcon('external')}장소 정보</a>`:''}</div>
       <div class="city-tabs" role="tablist" aria-label="장소 상세 정보"><button role="tab" aria-selected="${tab==='intro'}" data-place-tab="intro">방문 안내</button><button role="tab" aria-selected="${tab==='hours'}" data-place-tab="hours">운영시간</button><button role="tab" aria-selected="${tab==='related'}" data-place-tab="related">함께 둘러보기</button></div>
-      <div class="place-tab-content">${tab==='intro'?`<div class="travel-note">${turtlePose('rest','잠시 쉬는 거북이')}<div><h2>여기서 잠깐!</h2><p>${esc((p.hours||p.unrestrictedAccess)?placeTimeText(p):'방문 가능한 시간은 아직 확인 중이에요. 운영시간 탭에서 조사 내용을 확인해 주세요.')}</p>${p.hours?.note?`<p>${esc(p.hours.note)}</p>`:''}</div></div>${p.mapPinBasis?`<p class="small">지도 표시점: ${esc(p.mapPinBasis)}. 실제 출입구와 보행 시작점은 따로 확인해 주세요.</p>`:''}${soloHtml(p)}<h2>같은 취향의 장소</h2><div class="discovery-grid">${related.map(destinationPlaceCard).join('')}</div>`:tab==='hours'?`<h2>방문 전 확인해 주세요</h2>${scheduleHtml(p)}<p class="small">기본 조사 2026-10-01${p.mapWeekChecked?' · 주간표 확인 '+esc(p.mapWeekChecked):''}. 당일 변경은 장소 안내에서 확인해 주세요.</p>`:`<h2>같은 취향의 장소</h2><p class="small">같은 유형으로 묶은 장소예요. 이동 거리는 지도에서 확인해 주세요.</p><div class="discovery-grid">${related.map(destinationPlaceCard).join('')}</div>`}</div>
+      <div class="place-tab-content">${tab==='intro'?`${priceHtml(p)}<div class="travel-note">${turtlePose('rest','잠시 쉬는 거북이')}<div><h2>여기서 잠깐!</h2><p>${esc((p.hours||p.unrestrictedAccess)?placeTimeText(p):'방문 가능한 시간은 아직 확인 중이에요. 운영시간 탭에서 조사 내용을 확인해 주세요.')}</p>${p.hours?.note?`<p>${esc(p.hours.note)}</p>`:''}</div></div>${p.mapPinBasis?`<p class="small">지도 표시점: ${esc(p.mapPinBasis)}. 실제 출입구와 보행 시작점은 따로 확인해 주세요.</p>`:''}${soloHtml(p)}<h2>같은 취향의 장소</h2><div class="discovery-grid">${related.map(destinationPlaceCard).join('')}</div>`:tab==='hours'?`<h2>방문 전 확인해 주세요</h2>${scheduleHtml(p)}<p class="small">기본 조사 2026-10-01${p.mapWeekChecked?' · 주간표 확인 '+esc(p.mapWeekChecked):''}. 당일 변경은 장소 안내에서 확인해 주세요.</p>`:`<h2>같은 취향의 장소</h2><p class="small">같은 유형으로 묶은 장소예요. 이동 거리는 지도에서 확인해 주세요.</p><div class="discovery-grid">${related.map(destinationPlaceCard).join('')}</div>`}</div>
       <button class="btn btn-primary place-main-cta" id="place-map-cta">⌖ 지도로 보기</button></div></section>`;
     $('#place-back').onclick=()=>{state.placeTab='intro';nav(state.placeBack||'region');};
     const seeMap=()=>{state.mapDisplay='map';const point=pinPoint(p);if(point){state.mapCenter=point;state.mapZoom=15;}state.categories.clear();state.selected=null;nav('region');};
@@ -1352,7 +1358,7 @@
   window.addEventListener('online', () => { statusConnection(); render(); });
   window.addEventListener('offline', () => { statusConnection(); render(); });
   Promise.allSettled([
-    fetch('./places.json?v=10', {cache:'no-store'}).then((r) => { if (!r.ok) throw Error(); return r.json(); }),
+    fetch('./places.json?v=11', {cache:'no-store'}).then((r) => { if (!r.ok) throw Error(); return r.json(); }),
     fetch('./lodgings.json?v=1', {cache:'no-store'}).then((r) => { if (!r.ok) throw Error(); return r.json(); })
   ]).then(([placesResult,lodgingsResult]) => {
     state.places = placesResult.status === 'fulfilled' ? placesResult.value.places || [] : [];
