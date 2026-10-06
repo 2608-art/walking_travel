@@ -188,7 +188,7 @@
   function toast(message) { const el = $('#toast'); if (!el) return; el.textContent = message; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 3600); }
   const state = {
     places: [], lodgings: [], view: 'home', region: 'mokpo', categories: new Set(), selected: null, mapDisplay:'map', homeMood:'all',
-    mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null, mapFocusedPlace:null, mapMarkers:new Map(),
+    mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null, planMap:null, mapFocusedPlace:null, mapMarkers:new Map(),
     draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end: '24:00', origin: null, theme:'balanced', mealTimes:[], solo:false, entries: {}, pending:[] },
     saved: load(STORAGE_SAVED, []),
     route: { date: today(), start: '10:00', end: '24:00', origin: 'station', destination:'station', mode:'custom', theme:'first', solo:false, must: '', mustOptional:false, focus:'through', results: [], baseResults:[], selected: -1 },
@@ -198,7 +198,7 @@
   const lodgingPins = load(STORAGE_LODGING_PINS, {});
   function persistDraft() { save(STORAGE_DRAFT, state.draft); }
   function statusConnection() { const el = $('#connection'); if (!el) return; el.textContent = navigator.onLine ? '온라인' : '오프라인 · 저장한 글만'; el.classList.toggle('offline', !navigator.onLine); }
-  function nav(view) { if (state.view === 'region' && view !== 'region') { if(state.mapProvider === 'leaflet') state.map?.remove(); state.map=null; } if (state.view === 'routes' && view !== 'routes') { state.resultMap?.remove(); state.resultMap=null; } state.view = view; render(); window.scrollTo(0, 0); }
+  function nav(view) { if (state.view === 'region' && view !== 'region') { if(state.mapProvider === 'leaflet') state.map?.remove(); state.map=null; } if (state.view === 'routes' && view !== 'routes') { state.resultMap?.remove(); state.resultMap=null; } if (state.view === 'plan' && view !== 'plan') { state.planMap?.remove(); state.planMap=null; } state.view = view; render(); window.scrollTo(0, 0); }
   function render() {
     statusConnection();
     document.body.classList.toggle('destination-home', state.view === 'home');
@@ -325,7 +325,11 @@
     $('#place-back').onclick=()=>{state.placeTab='intro';nav(state.placeBack||'region');};
     const seeMap=()=>{state.mapDisplay='map';const point=pinPoint(p);if(point){state.mapCenter=point;state.mapZoom=15;}state.categories.clear();state.selected=null;nav('region');};
     $('#place-see-map').onclick=seeMap;$('#place-map-cta').onclick=seeMap;
-    $('#place-plan').onclick=()=>{nav('plan');toast('시간 칸을 눌러 '+p.name+'을 넣어주세요.');};
+    $('#place-plan').onclick=()=>{
+      nav('plan');
+      const minute=planSlots().find((slot)=>!state.draft.entries[slot]);
+      openSlotEditor(minute ?? null, hhmm(minute ?? toMin(state.draft.start)));
+    };
     document.querySelectorAll('[data-place-tab]').forEach(b=>b.onclick=()=>{state.placeTab=b.dataset.placeTab;renderPlacePage();});
     document.querySelectorAll('[data-open-place]').forEach(b=>b.onclick=()=>{state.selected=b.dataset.openPlace;state.placeTab='intro';renderPlacePage();window.scrollTo(0,0);});
   }
@@ -486,12 +490,18 @@
     return [...set].sort((a,b) => a-b);
   }
   function renderPlan() {
+    state.planMap?.remove(); state.planMap = null;
     const d = state.draft;
     if (!d.entries) d.entries = {};
     if (!Array.isArray(d.pending)) d.pending=[];
     const slots = planSlots();
     const filled = slots.filter((m) => d.entries[m]);
+    const mapped = filled.map((minute, index) => ({minute, number:index + 1, entry:d.entries[minute]}));
+    const missing = mapped.filter(({entry}) => !pinPoint(entryPlace(entry) || entry));
     $('#main').innerHTML = '<section class="page planner-page"><button class="back" id="plan-back">← 여행지 지도</button><div class="page-head"><div><div class="eyebrow">나의 하루 계획</div><h1>시간계획표</h1><p>시간은 예상입니다. 실제로 떠날 때 다음 장소의 길을 열어보세요.</p></div><div class="top-actions"><button class="btn btn-outline" id="new-plan">새 계획</button><button class="btn btn-primary" id="save-plan">계획 저장</button></div></div>' +
+      '<section class="plan-map-section" aria-labelledby="plan-map-title"><div class="plan-map-heading"><h2 id="plan-map-title">계획 장소 지도</h2><p>번호는 계획표의 방문 순서입니다.</p></div>' +
+      (navigator.onLine && window.L ? '<div id="plan-map" role="img" aria-label="계획표의 방문 순서 번호핀 지도"></div>' : '<p class="plan-map-message">인터넷에 연결하면 지도를 볼 수 있어요.</p>') +
+      (missing.length ? '<p class="plan-map-note">' + missing.map(({number}) => number).join(', ') + '번 장소는 위치를 찍으면 지도에 표시돼요.</p>' : '') + '</section>' +
       '<div class="planner-grid"><div><div class="card"><label class="field-label" for="plan-title">계획 이름</label><input class="text-field" id="plan-title" value="' + esc(d.title) + '" maxlength="80"><div class="form-grid" style="margin-top:14px"><div class="field-group"><label class="field-label" for="plan-date">날짜</label><input class="text-field" type="date" id="plan-date" value="' + esc(d.date) + '"></div><div class="field-group"><label class="field-label" for="plan-start">시작 시각</label><input class="text-field" type="time" id="plan-start" value="' + esc(d.start) + '"></div><div class="field-group"><label class="field-label" for="plan-end">끝낼 시각</label><input class="text-field" type="time" id="plan-end" value="' + esc(d.end === '24:00' ? '23:59' : d.end || '23:59') + '" ' + (d.end === '24:00' ? 'disabled' : '') + '><label class="check-line"><input type="checkbox" id="plan-midnight" ' + (d.end === '24:00' ? 'checked' : '') + '> 자정까지</label></div></div></div>' +
       '<div class="slot-list">' + slots.map((m) => slotHtml(m, d.entries[m])).join('') + '</div></div>' +
       '<aside class="card plan-aside"><div class="eyebrow">계획 안내</div><h3>내 일정은 내 속도로</h3><p>장소에서 일찍 나오거나 오래 머물러도 괜찮아요. 다음 장소로 출발할 때 버튼을 누르면 그 시각 기준으로 다시 확인합니다.</p><div class="notice">운영시간·브레이크·공식 입장/주문 마감을 확인합니다. <strong>폐관 1시간 전 입장</strong>은 권장 안내이며 자동 삭제 기준이 아닙니다.</div><p class="small" style="margin:14px 0 0">장소 정보 기준 2026-10-01. 임시휴무와 실제 출입구는 방문 전에 다시 확인하세요.</p></aside></div></section>';
@@ -512,6 +522,32 @@
     document.querySelectorAll('[data-apply-pending]').forEach((b) => b.onclick=() => applyPending(Number(b.dataset.applyPending)));
     document.querySelectorAll('[data-remove-pending]').forEach((b) => b.onclick=() => { d.pending.splice(Number(b.dataset.removePending),1); persistDraft(); renderPlan(); });
     if (!filled.length) $('.slot-list')?.insertAdjacentHTML('afterbegin', '<div class="notice">시간대를 골라 장소를 넣어 보세요. 추가할 때 시·분을 직접 정할 수 있습니다.</div>');
+    if (navigator.onLine && window.L) initPlanMap(mapped);
+  }
+  function initPlanMap(items) {
+    const element = $('#plan-map');
+    if (!element) return;
+    const map = L.map(element, {scrollWheelZoom:false, dragging:true, touchZoom:true}).setView(MOKPO, 13);
+    state.planMap = map;
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19, attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+    const groups = new Map();
+    items.forEach(({minute, number, entry}) => {
+      const point = pinPoint(entryPlace(entry) || entry);
+      if (!point) return;
+      const key = point.join(',');
+      if (!groups.has(key)) groups.set(key, {point, labels:[]});
+      groups.get(key).labels.push({number, name:entryLabel(entry), minute});
+    });
+    const bounds = L.latLngBounds([]);
+    groups.forEach(({point, labels}) => {
+      bounds.extend(point);
+      const numbers = labels.map(({number}) => number).join('·');
+      const tooltip = labels.map(({number, name, minute}) => number + '번 · ' + hhmm(minute) + ' ' + name).join(' / ');
+      const width = Math.max(34, Math.min(94, 16 + numbers.length * 9));
+      L.marker(point, {icon:L.divIcon({className:'plan-number-pin', html:'<span>' + esc(numbers) + '</span>', iconSize:[width,34], iconAnchor:[width/2,17]})}).addTo(map).bindTooltip(tooltip);
+    });
+    if (bounds.isValid()) map.fitBounds(bounds, {padding:[38,38], maxZoom:15});
+    setTimeout(() => { if (state.planMap === map) map.invalidateSize(); }, 50);
   }
   function slotHtml(minute, entry) {
     const time = '<div class="slot-time">' + esc(hhmm(minute)) + (entry ? '' : '<small>시간대</small>') + '</div>';
@@ -530,11 +566,12 @@
       .filter((v) => v.distance <= 1.1 && v.result.kind !== 'bad' && !(v.result.kind === 'warn' && /체류 중 브레이크|폐관을 넘/.test(v.result.title)))
       .sort((a,b) => (b.result.kind === 'ok' ? 1 : 0) - (a.result.kind === 'ok' ? 1 : 0) || (routeEngine.themeScore(b.p,d.theme || 'balanced',0)-routeEngine.themeScore(a.p,d.theme || 'balanced',0)) || a.distance-b.distance).slice(0,3);
   }
-  function openSlotEditor(minute, selectedTime = hhmm(minute)) {
-    const entry = state.draft.entries[minute];
+  function openSlotEditor(minute, selectedTime = hhmm(minute), preservePin = false) {
+    if (!preservePin) state.pinSelection = null;
+    const entry = minute == null ? null : state.draft.entries[minute];
     const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="route-solo-control plan-recommend-control"><span class="section-label">선택한 시각에 추천하는 장소</span><label class="route-solo-label" for="plan-meal-only"><input type="checkbox" id="plan-meal-only"> 식사·카페</label></div><div class="route-solo-control"><label class="route-solo-label" for="plan-solo"><input type="checkbox" id="plan-solo" ' + (state.draft.solo ? 'checked' : '') + '> 혼자 여행</label><span class="small">식당은 기존 혼자 여행 기준으로 추천 · 카페는 혼자 이용 정보가 없어도 포함</span></div><div id="entry-recommendations"></div>' +
       '<div class="divider"></div><div class="section-label">입력</div><label class="field-label" for="place-picker">앱에 있는 장소 찾기</label><input class="text-field" id="place-picker" autocomplete="off" placeholder="장소 이름 검색"><div id="picker-results" class="picker-list" style="display:none"></div>' +
-      '<div class="section-label">또는 내가 아는 장소 직접 추가</div><div class="form-grid two"><div class="field-group"><label class="field-label" for="custom-name">이름</label><input class="text-field" id="custom-name" value="' + esc(entry?.name || '') + '" placeholder="장소 이름"></div><div class="field-group"><label class="field-label" for="custom-location">위치·주소</label><input class="text-field" id="custom-location" value="' + esc(entry?.locationText || '') + '" placeholder="주소 또는 위치 설명"></div></div><button class="btn btn-outline btn-sm" style="margin-top:8px" id="choose-pin">지도에서 위치 찍기</button><span id="pin-note" class="small" style="margin-left:8px">' + (coord(entry) ? '핀 지정됨' : '핀 미지정') + '</span>' +
+      '<div class="section-label">또는 내가 아는 장소 직접 추가</div><div class="form-grid two"><div class="field-group"><label class="field-label" for="custom-name">이름</label><input class="text-field" id="custom-name" value="' + esc(entry?.name || '') + '" placeholder="장소 이름"></div><div class="field-group"><label class="field-label" for="custom-location">위치·주소</label><input class="text-field" id="custom-location" value="' + esc(entry?.locationText || '') + '" placeholder="주소 또는 위치 설명"></div></div><button class="btn btn-outline btn-sm" style="margin-top:8px" id="choose-pin">지도에서 위치 찍기</button><span id="pin-note" class="small" style="margin-left:8px">' + (coord(state.pinSelection) || coord(entry) ? '핀 지정됨' : '핀 미지정') + '</span>' +
       '<div class="form-grid two" style="margin-top:15px"><div class="field-group"><label class="field-label" for="entry-duration">예상 체류 (분)</label><input class="text-field" type="number" min="1" step="1" inputmode="numeric" id="entry-duration" value="' + esc(entry?.duration || 60) + '"></div><div class="field-group"><label class="field-label" for="entry-memo">기타 메모</label><input class="text-field" id="entry-memo" value="' + esc(entry?.memo || '') + '" placeholder="적어 두고 싶은 내용"></div></div>' +
       '<div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="save-custom">계획표에 넣기</button></div>';
     openModal(body, () => {
@@ -576,17 +613,18 @@
     if (selected < toMin(d.start) || selected + duration > end) return toast('방문 시각과 체류시간을 계획표의 시작·종료 범위 안으로 정해 주세요.');
     const conflict = Object.entries(d.entries).find(([at, existing]) => Number(at) !== minute && selected < Number(at) + (Number(existing.duration) || 60) && selected + duration > Number(at));
     if (conflict) return toast(hhmm(Number(conflict[0])) + ' 일정과 시간이 겹칩니다. 다른 시각을 골라 주세요.');
-    if (selected !== minute) delete d.entries[minute];
+    if (minute != null && selected !== minute) delete d.entries[minute];
     d.entries[selected] = entry; state.pinSelection = null; persistDraft(); closeModal(); renderPlan(); toast('계획표에 넣었습니다.');
   }
   function removeEntry(minute) { openModal('<h2>이 계획을 삭제할까요?</h2><p>' + esc(entryLabel(state.draft.entries[minute])) + ' · ' + esc(hhmm(minute)) + '</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-danger" id="confirm-remove">삭제</button></div>', () => { $('#confirm-remove').onclick = () => { delete state.draft.entries[minute]; persistDraft(); closeModal(); renderPlan(); }; }); }
   function chooseCustomPin(minute) {
     if (!navigator.onLine || !window.L) { toast('지도에서 위치를 찍으려면 인터넷이 필요합니다.'); return; }
     const name = $('#custom-name').value, locationText = $('#custom-location').value, duration = $('#entry-duration').value, memo = $('#entry-memo').value, selectedTime = $('#entry-time').value;
-    const pin = state.pinSelection;
+    const originalPin = state.pinSelection;
+    const pin = originalPin || (coord(state.draft.entries[minute]) ? state.draft.entries[minute] : null);
     openModal('<h2>지도에서 위치 찍기</h2><p>지도 위를 눌러 장소 위치를 선택하세요. 실제 건물 출입구인지 확인해 주세요.</p><div class="pin-map-wrap"><div id="pin-map"></div></div><p id="picked-coord" class="small">' + (pin ? pin.lat.toFixed(5) + ', ' + pin.lon.toFixed(5) : '아직 위치를 찍지 않았습니다.') + '</p><div class="modal-actions"><button class="btn btn-outline" id="pin-back">돌아가기</button><button class="btn btn-primary" id="pin-done" ' + (pin ? '' : 'disabled') + '>위치 사용</button></div>', async () => {
-      const back = () => { openSlotEditor(minute, selectedTime); $('#custom-name').value = name; $('#custom-location').value = locationText; $('#entry-duration').value = duration; $('#entry-memo').value = memo; };
-      $('#pin-back').onclick = back; $('#pin-done').onclick = back;
+      const back = (usePin) => { if (!usePin) state.pinSelection = originalPin; openSlotEditor(minute, selectedTime, true); $('#custom-name').value = name; $('#custom-location').value = locationText; $('#entry-duration').value = duration; $('#entry-memo').value = memo; };
+      $('#pin-back').onclick = () => back(false); $('#pin-done').onclick = () => back(true);
       if (KAKAO_KEY) {
         try {
           await loadKakao();
