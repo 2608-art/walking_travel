@@ -23,7 +23,10 @@
     food:{originId:'station',destinationId:'station',description:'식사는 최대 두 번, 그 사이에는 원도심 구경과 산책'},
     cafe:{originId:'station',destinationId:'station',description:'카페는 최대 두 곳, 책방과 골목을 함께 걷는 여유 코스'}
   };
+  const THEME_START_TIMES = Array.from({length:48},(_,index)=>String(Math.floor(index/2)).padStart(2,'0')+':'+(index%2?'30':'00'));
   const minutes = (value) => value === '24:00' ? 1440 : Number(value.slice(0,2)) * 60 + Number(value.slice(3,5));
+  const clockTime = value => value === 1440 ? '24:00' : String(Math.floor(value/60)).padStart(2,'0')+':'+String(value%60).padStart(2,'0');
+  const themeWindow = start => ({start,end:clockTime(Math.min(minutes(start)+540,20*60))});
   const round5 = (value) => Math.ceil(value / 5) * 5;
   const distanceKm = (a,b) => {
     const r = Math.PI / 180;
@@ -426,6 +429,15 @@
     }
     return results;
   }
+  async function themeStartCandidate(input) {
+    if (!THEME_START_TIMES.includes(input.start) || minutes(input.start)>16*60) return false;
+    const routeProvider=input.routeProvider || (async (from,to)=>({...estimate(from,to),actual:true}));
+    const busProvider=input.busProvider || (async()=>[]);
+    return (await generateThemeDay({...input,routeProvider,busProvider})).length>0;
+  }
+  const themeDayViable=route=>route.rows.length>=5 && route.endArrival-route.start>=240 &&
+    route.rows[0].minute-route.start-route.rows[0].walkEstimate<=60 &&
+    route.rows.every(row=>row.result?.kind==='ok');
   async function confirmRoute(route,input,cache=new Map()) {
     if(!input.routeProvider) return null;
     const order=route.rows.map(row=>input.places.find(p=>p.id===row.placeId));
@@ -863,10 +875,11 @@
     });
   }
   async function generateThemeDay(input) {
+    if (input.start && minutes(input.start)>16*60) return [];
     const cache=new Map(), candidates=[];
     const themedCount=route=>route.rows.filter(row=>themedPlace(input.places.find(p=>p.id===row.placeId),input.theme)).length+(input.theme==='sea' && (themedPlace(input.origin,'sea') || themedPlace(input.destination,'sea')) ? 1 : 0);
     // 테마에 맞는 장소를 가까운 동선으로 묶고, 식사·휴식 여유를 남긴다.
-    const plans=[{start:'10:00',end:'19:00'},{start:'11:00',end:'20:00'}];
+    const plans=(input.start ? [input.start] : ['10:00','11:00']).map(themeWindow);
     for(const plan of plans) {
       for(const allowRestStops of (input.theme==='sea' ? [false,true] : [false])) {
         const context={...input,...plan,maxStops:8,variants:2,allowRestStops,flexibleMeals:true};
@@ -893,10 +906,9 @@
           if(withLunch) {checked=withLunch;break;}
         }
       }
-      const first=checked.rows[0];
-      const departure=first.minute-checked.start-first.walkEstimate>25 ? Math.max(checked.start,Math.floor((first.minute-first.walkEstimate-3)/5)*5) : checked.start;
+      if(!themeDayViable(checked)) return null;
       return {...checked,id:'theme-day',title:(THEMES.find(t=>t.id===input.theme)?.name || '테마')+' 하루 코스',
-        start:departure,end:round5(checked.endArrival),autoSchedule:true,plannedMeals:checked.rows.filter(row=>row.kind==='meal').map(row=>row.minute)};
+        start:checked.start,end:round5(checked.endArrival),autoSchedule:true,plannedMeals:checked.rows.filter(row=>row.kind==='meal').map(row=>row.minute)};
     }
     let best=null, evaluated=0;
     for(const {route,context} of candidates) {
@@ -916,7 +928,7 @@
     }
     return [];
   }
-  const api={THEMES,THEME_PRESETS,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive,generateReviewRoute,verifyEditedRoute,reverseRoundTrip,generateThemeDay,mealChoices,recommendMealTimes,restoreFixedMeals,addMeal};
+  const api={THEMES,THEME_PRESETS,THEME_START_TIMES,themeWindow,themeStartCandidate,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive,generateReviewRoute,verifyEditedRoute,reverseRoundTrip,generateThemeDay,mealChoices,recommendMealTimes,restoreFixedMeals,addMeal};
   if (typeof module !== 'undefined' && module.exports) module.exports=api;
   if (typeof window !== 'undefined') window.HangeoreumRouteEngine=api;
 })();
