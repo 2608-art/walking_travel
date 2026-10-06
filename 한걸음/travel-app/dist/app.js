@@ -520,21 +520,19 @@
     const place = entryPlace(entry);
     return '<div class="slot-card">' + time + '<div class="slot-content"><div class="toolbar" style="justify-content:space-between"><h3>' + esc(entryLabel(entry)) + '</h3>' + pillFor(result) + '</div><p>' + esc(result.detail) + '</p>' + (place ? '<p class="small">' + esc(placeTimeText(place)) + '</p>' : '<p class="small">직접 입력한 장소 · 영업 정보 미확인</p>') + (entry.memo ? '<p>메모 · ' + esc(entry.memo) + '</p>' : '') + '<div class="slot-actions"><button class="btn btn-mint btn-sm" data-go-next="' + minute + '">이제 이 장소로 이동</button><button class="btn btn-outline btn-sm" data-edit-slot="' + minute + '">수정</button><button class="btn btn-outline btn-sm" data-remove-slot="' + minute + '">삭제</button></div></div></div>';
   }
-  function recommendations(minute, duration = 60) {
+  function recommendations(minute, duration = 60, mealOnly = false) {
     const d = state.draft;
     const used = new Set(Object.values(d.entries).map((e) => e.placeId));
     const earlier = Object.entries(d.entries).map(([t,e]) => [Number(t),e]).filter(([t,e]) => t < minute && coord(entryCoord(e))).sort((a,b) => b[0]-a[0])[0];
     const anchor = earlier ? entryCoord(earlier[1]) : (d.origin === 'current' ? d.currentOrigin || STATION : d.origin === 'custom' ? d.customOrigin || STATION : d.customOrigin?.id === d.origin ? d.customOrigin : getPlace(d.origin) || STATION);
-    const meal = (d.mealTimes || []).some((value) => value && routeEngine.minutes(value) === minute);
-    return state.places.filter((p) => coord(p) && !used.has(p.id) && (!meal || ['food','cafe'].includes(p.category)) && (!d.solo || soloTravel.canVisit(p)))
+    return state.places.filter((p) => coord(p) && !used.has(p.id) && (mealOnly === ['food','cafe'].includes(p.category)) && (!d.solo || soloTravel.canVisit(p)))
       .map((p) => ({ p, result: evaluate({placeId:p.id,duration},minute,d.date), distance: km(anchor,p) || 99 }))
       .filter((v) => v.distance <= 1.1 && v.result.kind !== 'bad' && !(v.result.kind === 'warn' && /체류 중 브레이크|폐관을 넘/.test(v.result.title)))
       .sort((a,b) => (b.result.kind === 'ok' ? 1 : 0) - (a.result.kind === 'ok' ? 1 : 0) || (routeEngine.themeScore(b.p,d.theme || 'balanced',0)-routeEngine.themeScore(a.p,d.theme || 'balanced',0)) || a.distance-b.distance).slice(0,3);
   }
   function openSlotEditor(minute, selectedTime = hhmm(minute)) {
-    const entry = state.draft.entries[minute]; const recs = recommendations(minute, Number(entry?.duration) || 60);
-    const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="section-label">선택한 시각에 추천하는 장소</div><div class="route-solo-control"><label class="route-solo-label" for="plan-solo"><input type="checkbox" id="plan-solo" ' + (state.draft.solo ? 'checked' : '') + '> 혼자 여행</label><span class="small">식당은 기존 혼자 여행 기준으로 추천 · 카페는 혼자 이용 정보가 없어도 포함</span></div><div id="entry-recommendations">' +
-      (recs.length ? '<div class="suggest-grid">' + recs.map(({p,result,distance}) => '<button class="suggest-btn" data-recommend="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>직선 약 ' + distance.toFixed(2) + 'km · ' + esc(result.title) + '</small></button>').join('') + '</div>' : '<div class="notice warn">이 시각·거리·식사 조건에 맞는 후보를 확인하지 못했습니다. 직접 입력할 수 있어요.</div>') + '</div>' +
+    const entry = state.draft.entries[minute];
+    const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="route-solo-control plan-recommend-control"><span class="section-label">선택한 시각에 추천하는 장소</span><label class="route-solo-label" for="plan-meal-only"><input type="checkbox" id="plan-meal-only"> 식사·카페</label></div><div class="route-solo-control"><label class="route-solo-label" for="plan-solo"><input type="checkbox" id="plan-solo" ' + (state.draft.solo ? 'checked' : '') + '> 혼자 여행</label><span class="small">식당은 기존 혼자 여행 기준으로 추천 · 카페는 혼자 이용 정보가 없어도 포함</span></div><div id="entry-recommendations"></div>' +
       '<div class="divider"></div><div class="section-label">입력</div><label class="field-label" for="place-picker">앱에 있는 장소 찾기</label><input class="text-field" id="place-picker" autocomplete="off" placeholder="장소 이름 검색"><div id="picker-results" class="picker-list" style="display:none"></div>' +
       '<div class="section-label">또는 내가 아는 장소 직접 추가</div><div class="form-grid two"><div class="field-group"><label class="field-label" for="custom-name">이름</label><input class="text-field" id="custom-name" value="' + esc(entry?.name || '') + '" placeholder="장소 이름"></div><div class="field-group"><label class="field-label" for="custom-location">위치·주소</label><input class="text-field" id="custom-location" value="' + esc(entry?.locationText || '') + '" placeholder="주소 또는 위치 설명"></div></div><button class="btn btn-outline btn-sm" style="margin-top:8px" id="choose-pin">지도에서 위치 찍기</button><span id="pin-note" class="small" style="margin-left:8px">' + (coord(entry) ? '핀 지정됨' : '핀 미지정') + '</span>' +
       '<div class="form-grid two" style="margin-top:15px"><div class="field-group"><label class="field-label" for="entry-duration">예상 체류 (분)</label><input class="text-field" type="number" min="1" step="1" inputmode="numeric" id="entry-duration" value="' + esc(entry?.duration || 60) + '"></div><div class="field-group"><label class="field-label" for="entry-memo">기타 메모</label><input class="text-field" id="entry-memo" value="' + esc(entry?.memo || '') + '" placeholder="적어 두고 싶은 내용"></div></div>' +
@@ -543,12 +541,14 @@
       const showRecommendations = () => {
         const value = $('#entry-time').value;
         if (!value) return;
-        const next = recommendations(toMin(value), Number($('#entry-duration').value) || 60);
-        $('#entry-recommendations').innerHTML = next.length ? '<div class="suggest-grid">' + next.map(({p,result,distance}) => '<button class="suggest-btn" data-recommend="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>직선 약 ' + distance.toFixed(2) + 'km · ' + esc(result.title) + '</small></button>').join('') + '</div>' : '<div class="notice warn">이 시각·거리·식사 조건에 맞는 후보를 확인하지 못했습니다. 직접 입력할 수 있어요.</div>';
+        const mealOnly = $('#plan-meal-only').checked;
+        const next = recommendations(toMin(value), Number($('#entry-duration').value) || 60, mealOnly);
+        $('#entry-recommendations').innerHTML = next.length ? '<div class="suggest-grid">' + next.map(({p,result,distance}) => '<button class="suggest-btn" data-recommend="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>직선 약 ' + distance.toFixed(2) + 'km · ' + esc(result.title) + '</small></button>').join('') + '</div>' : '<div class="notice warn">이 시각·거리·' + (mealOnly ? '식사·카페' : '장소') + ' 조건에 맞는 후보를 확인하지 못했습니다. 직접 입력할 수 있어요.</div>';
         $('#entry-recommendations').querySelectorAll('[data-recommend]').forEach((b) => b.onclick = () => setEntry(minute, { placeId: b.dataset.recommend, memo: '' }));
       };
       $('#entry-time').onchange = showRecommendations;
       $('#entry-duration').oninput = showRecommendations;
+      $('#plan-meal-only').onchange = showRecommendations;
       $('#plan-solo').onchange = (event) => { state.draft.solo = event.target.checked; persistDraft(); showRecommendations(); };
       showRecommendations();
       $('#place-picker').oninput = (e) => {
