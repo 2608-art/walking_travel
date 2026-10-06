@@ -2,6 +2,6 @@
   "name": "hangeoreum-hosted",
   "private": true,
   "type": "module",
-  "scripts": {"build": "node scripts/build.mjs", "db:generate": "drizzle-kit generate", "test": "node scripts/verify-worker.mjs", "sync:preview": "node scripts/sync-local-preview.mjs"},
+  "scripts": {"build": "node scripts/build.mjs", "db:generate": "drizzle-kit generate", "test": "node scripts/verify-worker.mjs", "sync:preview": "node scripts/sync-local-preview.mjs", "data:prices": "node scripts/apply-place-prices.mjs"},
   "devDependencies": {"drizzle-kit": "0.31.10", "drizzle-orm": "0.45.2"}
 }
