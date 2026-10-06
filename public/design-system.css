@@ -398,3 +398,13 @@ small, .small { font-size: var(--type-caption); line-height: 1.65; color: var(--
 @media (prefers-reduced-motion: reduce) {
   *, *:before, *:after { transition: none!important; scroll-behavior: auto!important; }
 }
+.place-price { margin: 0 0 22px; padding: 19px 21px; border: 1px solid #dce5d4; border-radius: 20px; background: #f8faf2; }
+.place-price-heading, .place-price-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.place-price-heading h2 { margin: 0; font-size: 1.08rem; }
+.place-price-heading span, .place-price-caveat { color: #697468; font-size: .73rem; }
+.place-price-row { margin: 16px 0 9px; flex-wrap: wrap; }
+.place-price-row strong { font-size: .93rem; }
+.place-price-row b { color: #32624e; font-size: 1.1rem; }
+.place-price p { margin: 8px 0; line-height: 1.6; font-size: .78rem; }
+.place-price a { display: inline-block; margin-top: 5px; color: #32624e; font-size: .78rem; text-decoration: underline; text-underline-offset: 3px; }
+.place-price .place-price-caveat { margin-bottom: 0; }
