@@ -328,7 +328,7 @@
     $('#place-plan').onclick=()=>{
       nav('plan');
       const minute=planSlots().find((slot)=>!state.draft.entries[slot]);
-      openSlotEditor(minute ?? null, hhmm(minute ?? toMin(state.draft.start)));
+      openSlotEditor(minute ?? null, hhmm(minute ?? toMin(state.draft.start)), false, p.id);
     };
     document.querySelectorAll('[data-place-tab]').forEach(b=>b.onclick=()=>{state.placeTab=b.dataset.placeTab;renderPlacePage();});
     document.querySelectorAll('[data-open-place]').forEach(b=>b.onclick=()=>{state.selected=b.dataset.openPlace;state.placeTab='intro';renderPlacePage();window.scrollTo(0,0);});
@@ -566,15 +566,18 @@
       .filter((v) => v.distance <= 1.1 && v.result.kind !== 'bad' && !(v.result.kind === 'warn' && /체류 중 브레이크|폐관을 넘/.test(v.result.title)))
       .sort((a,b) => (b.result.kind === 'ok' ? 1 : 0) - (a.result.kind === 'ok' ? 1 : 0) || (routeEngine.themeScore(b.p,d.theme || 'balanced',0)-routeEngine.themeScore(a.p,d.theme || 'balanced',0)) || a.distance-b.distance).slice(0,3);
   }
-  function openSlotEditor(minute, selectedTime = hhmm(minute), preservePin = false) {
+  function openSlotEditor(minute, selectedTime = hhmm(minute), preservePin = false, preselectedPlaceId = null) {
     if (!preservePin) state.pinSelection = null;
     const entry = minute == null ? null : state.draft.entries[minute];
+    const initialPlace = getPlace(preselectedPlaceId || entry?.placeId);
+    const initialDuration = Number(entry?.duration) || (initialPlace ? routeEngine.stay(initialPlace, false) : 60);
     const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="route-solo-control plan-recommend-control"><span class="section-label">선택한 시각에 추천하는 장소</span><label class="route-solo-label" for="plan-meal-only"><input type="checkbox" id="plan-meal-only"> 식사·카페</label></div><div class="route-solo-control"><label class="route-solo-label" for="plan-solo"><input type="checkbox" id="plan-solo" ' + (state.draft.solo ? 'checked' : '') + '> 혼자 여행</label><span class="small">식당은 기존 혼자 여행 기준으로 추천 · 카페는 혼자 이용 정보가 없어도 포함</span></div><div id="entry-recommendations"></div>' +
-      '<div class="divider"></div><div class="section-label">입력</div><label class="field-label" for="place-picker">앱에 있는 장소 찾기</label><input class="text-field" id="place-picker" autocomplete="off" placeholder="장소 이름 검색"><div id="picker-results" class="picker-list" style="display:none"></div>' +
+      '<div class="divider"></div><div class="section-label">입력</div><label class="field-label" for="place-picker">앱에 있는 장소 찾기</label><input class="text-field" id="place-picker" autocomplete="off" placeholder="장소 이름 검색" value="' + esc(initialPlace?.name || '') + '"><p id="selected-place-note" class="small">' + (initialPlace ? '선택한 장소: ' + esc(initialPlace.name) : '장소를 검색해 선택하거나 아래에 직접 입력하세요.') + '</p><div id="picker-results" class="picker-list" style="display:none"></div>' +
       '<div class="section-label">또는 내가 아는 장소 직접 추가</div><div class="form-grid two"><div class="field-group"><label class="field-label" for="custom-name">이름</label><input class="text-field" id="custom-name" value="' + esc(entry?.name || '') + '" placeholder="장소 이름"></div><div class="field-group"><label class="field-label" for="custom-location">위치·주소</label><input class="text-field" id="custom-location" value="' + esc(entry?.locationText || '') + '" placeholder="주소 또는 위치 설명"></div></div><button class="btn btn-outline btn-sm" style="margin-top:8px" id="choose-pin">지도에서 위치 찍기</button><span id="pin-note" class="small" style="margin-left:8px">' + (coord(state.pinSelection) || coord(entry) ? '핀 지정됨' : '핀 미지정') + '</span>' +
-      '<div class="form-grid two" style="margin-top:15px"><div class="field-group"><label class="field-label" for="entry-duration">예상 체류 (분)</label><input class="text-field" type="number" min="1" step="1" inputmode="numeric" id="entry-duration" value="' + esc(entry?.duration || 60) + '"></div><div class="field-group"><label class="field-label" for="entry-memo">기타 메모</label><input class="text-field" id="entry-memo" value="' + esc(entry?.memo || '') + '" placeholder="적어 두고 싶은 내용"></div></div>' +
+      '<div class="form-grid two" style="margin-top:15px"><div class="field-group"><label class="field-label" for="entry-duration">예상 체류 (분)</label><input class="text-field" type="number" min="1" step="1" inputmode="numeric" id="entry-duration" value="' + esc(initialDuration) + '">' + (initialPlace ? '<span class="small">코스에서 쓰는 예상 체류시간을 제안합니다. 직접 바꿀 수 있어요.</span>' : '') + '</div><div class="field-group"><label class="field-label" for="entry-memo">기타 메모</label><input class="text-field" id="entry-memo" value="' + esc(entry?.memo || '') + '" placeholder="적어 두고 싶은 내용"></div></div>' +
       '<div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="save-custom">계획표에 넣기</button></div>';
     openModal(body, () => {
+      let selectedPlaceId = initialPlace?.id || null;
       const showRecommendations = () => {
         const value = $('#entry-time').value;
         if (!value) return;
@@ -589,14 +592,23 @@
       $('#plan-solo').onchange = (event) => { state.draft.solo = event.target.checked; persistDraft(); showRecommendations(); };
       showRecommendations();
       $('#place-picker').oninput = (e) => {
+        selectedPlaceId = null;
+        $('#selected-place-note').textContent = '검색 결과에서 장소를 선택하거나 아래에 직접 입력하세요.';
         const q = e.target.value.trim().toLowerCase(); const box = $('#picker-results');
         if (!q) { box.style.display = 'none'; return; }
         const matches = state.places.filter((p) => p.name.toLowerCase().includes(q)).slice(0,8);
         box.style.display = 'block'; box.innerHTML = matches.length ? matches.map((p) => '<button class="picker-option" data-picker="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>' + esc(placeTimeText(p)) + '</small></button>').join('') : '<div class="small" style="padding:12px">자료에 없는 장소입니다. 아래에서 직접 추가하세요.</div>';
         box.querySelectorAll('[data-picker]').forEach((b) => b.onclick = () => setEntry(minute, { placeId:b.dataset.picker, duration:Number($('#entry-duration').value), memo:$('#entry-memo').value.trim() }));
       };
+      $('#custom-name').oninput = () => {
+        if (!selectedPlaceId) return;
+        selectedPlaceId = null;
+        $('#place-picker').value = '';
+        $('#selected-place-note').textContent = '직접 입력할 장소를 저장합니다.';
+      };
       $('#choose-pin').onclick = () => chooseCustomPin(minute);
       $('#save-custom').onclick = () => {
+        if (selectedPlaceId) return setEntry(minute, { placeId:selectedPlaceId, memo:$('#entry-memo').value.trim() });
         const name = $('#custom-name').value.trim(); if (!name) { toast('장소 이름을 입력해 주세요.'); $('#custom-name').focus(); return; }
         const pin = state.pinSelection;
         setEntry(minute, { name, locationText: $('#custom-location').value.trim(), lat:pin?.lat ?? entry?.lat ?? null, lon:pin?.lon ?? entry?.lon ?? null, duration:Number($('#entry-duration').value), memo:$('#entry-memo').value.trim() });
