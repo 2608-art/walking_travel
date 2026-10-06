@@ -267,12 +267,14 @@
       '<p class="small">' + esc(p.soloChecked || '') + ' 공개 자료 조사 · 현장 좌석 배정과 메뉴 조건은 방문 전 재확인</p></div>';
   }
   function placeVisual(p, compact = false) {
-    const media = window.HANGEORUM_PLACE_MEDIA?.[p.id];
+    const media = window.HANGEORUM_PLACE_MEDIA?.[p.id] || window.HANGEORUM_PLACE_EXAMPLE_MEDIA?.[p.id];
     const safe = media?.src && /^(\.\/assets\/|https:\/\/)/.test(media.src);
-    return '<div class="place-visual visual-' + esc(p.category) + ' ' + (compact ? 'is-thumb' : 'is-cover') + '" data-kind="' + (safe ? (media.kind === 'photo' ? 'photo' : 'illustration') : 'decoration') + '">' +
+    const kind = safe ? (media.kind === 'example' ? 'example' : media.kind === 'photo' ? 'photo' : 'illustration') : 'decoration';
+    const label = media?.kind === 'example' ? '예시 사진 · 실제 장소 아님' : media?.kind === 'photo' ? '사진' : '일러스트';
+    return '<div class="place-visual visual-' + esc(p.category) + ' ' + (compact ? 'is-thumb' : 'is-cover') + '" data-kind="' + kind + '">' +
       '<span class="place-visual-symbol" aria-hidden="true">' + uiIcon(p.category) + '</span>' +
       (safe ? '<img src="' + esc(media.src) + '" alt="' + esc(media.alt || p.name) + '" loading="lazy">' : '') +
-      (!compact ? '<span class="media-caption">' + (safe ? (media.kind === 'photo' ? '사진' : '일러스트') + (media.credit ? ' · ' + esc(media.credit) : '') : esc(categoryName(p.category)) + ' · 유형 이미지') + '</span>' : '') + '</div>';
+      (!compact ? '<span class="media-caption">' + (safe ? label + (media.credit ? ' · ' + esc(media.credit) : '') : esc(categoryName(p.category)) + ' · 유형 이미지') + '</span>' : '') + '</div>';
   }
   const HOME_MOODS=[['all','전체'],['sea','바다'],['history','역사·골목'],['shops','책방·소품'],['cafe','여유']];
   const THEME_ICONS={first:'first',history:'culture',sea:'sea',shops:'books',food:'food',cafe:'cafe'};
