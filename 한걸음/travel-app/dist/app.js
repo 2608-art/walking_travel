@@ -189,7 +189,7 @@
   const state = {
     places: [], lodgings: [], view: 'home', region: 'mokpo', categories: new Set(), selected: null, mapDisplay:'map', homeMood:'all',
     mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null, mapFocusedPlace:null, mapMarkers:new Map(),
-    draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end: '24:00', origin: null, theme:'balanced', mealTimes:[], entries: {}, pending:[] },
+    draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end: '24:00', origin: null, theme:'balanced', mealTimes:[], solo:false, entries: {}, pending:[] },
     saved: load(STORAGE_SAVED, []),
     route: { date: today(), start: '10:00', end: '24:00', origin: 'station', destination:'station', mode:'custom', theme:'first', solo:false, must: '', mustOptional:false, focus:'through', results: [], baseResults:[], selected: -1 },
     pinMode: false, pinSelection: null, searchResults: []
@@ -503,7 +503,7 @@
     if (d.pending.length) $('.slot-list').insertAdjacentHTML('beforebegin','<section class="plan-pending"><h2>보류 중인 장소 <small>' + d.pending.length + '곳</small></h2><p class="small">빈 시각을 정하면 계획표에 넣을 수 있습니다.</p>' + d.pending.map((item,i) => '<div class="plan-pending-item"><div><strong>' + esc(entryLabel(item.entry)) + '</strong><small>추천 ' + esc(hhmm(item.minute)) + (item.date !== d.date ? ' · 추천 날짜 ' + esc(item.date) : '') + '</small></div><label>넣을 시각 <input type="time" class="text-field" data-pending-time="' + i + '" value="' + esc(hhmm(item.minute)) + '"></label><button type="button" class="btn btn-outline btn-sm" data-apply-pending="' + i + '">넣기</button><button type="button" class="btn btn-outline btn-sm" data-remove-pending="' + i + '" aria-label="' + esc(entryLabel(item.entry)) + ' 보류에서 빼기">빼기</button></div>').join('') + '</section>');
     $('#plan-back').onclick = () => nav('region');
     $('#save-plan').onclick = savePlan;
-    $('#new-plan').onclick = () => openModal('<h2>새 계획을 시작할까요?</h2><p>현재 계획은 저장하지 않았다면 복구할 수 없습니다.</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="confirm-new">새 계획</button></div>', () => { $('#confirm-new').onclick = () => { state.draft = { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end:'24:00', origin: null, theme:'balanced', mealTimes:[], entries: {}, pending:[] }; persistDraft(); closeModal(); renderPlan(); }; });
+    $('#new-plan').onclick = () => openModal('<h2>새 계획을 시작할까요?</h2><p>현재 계획은 저장하지 않았다면 복구할 수 없습니다.</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="confirm-new">새 계획</button></div>', () => { $('#confirm-new').onclick = () => { state.draft = { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end:'24:00', origin: null, theme:'balanced', mealTimes:[], solo:false, entries: {}, pending:[] }; persistDraft(); closeModal(); renderPlan(); }; });
     $('#plan-title').onchange = (e) => { d.title = e.target.value.trim() || '나의 목포 하루'; persistDraft(); };
     $('#plan-date').onchange = (e) => { d.date = e.target.value || today(); persistDraft(); renderPlan(); };
     $('#plan-start').onchange = (e) => changePlanStart(e.target.value);
@@ -530,14 +530,14 @@
     const earlier = Object.entries(d.entries).map(([t,e]) => [Number(t),e]).filter(([t,e]) => t < minute && coord(entryCoord(e))).sort((a,b) => b[0]-a[0])[0];
     const anchor = earlier ? entryCoord(earlier[1]) : (d.origin === 'current' ? d.currentOrigin || STATION : d.origin === 'custom' ? d.customOrigin || STATION : d.customOrigin?.id === d.origin ? d.customOrigin : getPlace(d.origin) || STATION);
     const meal = (d.mealTimes || []).some((value) => value && routeEngine.minutes(value) === minute);
-    return state.places.filter((p) => coord(p) && !used.has(p.id) && (!meal || ['food','cafe'].includes(p.category)))
+    return state.places.filter((p) => coord(p) && !used.has(p.id) && (!meal || ['food','cafe'].includes(p.category)) && (!d.solo || soloTravel.canVisit(p)))
       .map((p) => ({ p, result: evaluate({placeId:p.id,duration},minute,d.date), distance: km(anchor,p) || 99 }))
       .filter((v) => v.distance <= 1.1 && v.result.kind !== 'bad' && !(v.result.kind === 'warn' && /체류 중 브레이크|폐관을 넘/.test(v.result.title)))
       .sort((a,b) => (b.result.kind === 'ok' ? 1 : 0) - (a.result.kind === 'ok' ? 1 : 0) || (routeEngine.themeScore(b.p,d.theme || 'balanced',0)-routeEngine.themeScore(a.p,d.theme || 'balanced',0)) || a.distance-b.distance).slice(0,3);
   }
   function openSlotEditor(minute, selectedTime = hhmm(minute)) {
     const entry = minute == null ? null : state.draft.entries[minute]; const recs = recommendations(toMin(selectedTime), Number(entry?.duration) || 60);
-    const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="section-label">선택한 시각에 추천하는 장소</div><div id="entry-recommendations">' +
+    const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="section-label">선택한 시각에 추천하는 장소</div><div class="route-solo-control"><label class="route-solo-label" for="plan-solo"><input type="checkbox" id="plan-solo" ' + (state.draft.solo ? 'checked' : '') + '> 혼자 여행</label><span class="small">식당은 기존 혼자 여행 기준으로 추천 · 카페는 혼자 이용 정보가 없어도 포함</span></div><div id="entry-recommendations">' +
       (recs.length ? '<div class="suggest-grid">' + recs.map(({p,result,distance}) => '<button class="suggest-btn" data-recommend="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>직선 약 ' + distance.toFixed(2) + 'km · ' + esc(result.title) + '</small></button>').join('') + '</div>' : '<div class="notice warn">이 시각·거리·식사 조건에 맞는 후보를 확인하지 못했습니다. 직접 입력할 수 있어요.</div>') + '</div>' +
       '<div class="divider"></div><div class="section-label">입력</div><label class="field-label" for="place-picker">앱에 있는 장소 찾기</label><input class="text-field" id="place-picker" autocomplete="off" placeholder="장소 이름 검색"><div id="picker-results" class="picker-list" style="display:none"></div>' +
       '<div class="section-label">또는 내가 아는 장소 직접 추가</div><div class="form-grid two"><div class="field-group"><label class="field-label" for="custom-name">이름</label><input class="text-field" id="custom-name" value="' + esc(entry?.name || '') + '" placeholder="장소 이름"></div><div class="field-group"><label class="field-label" for="custom-location">위치·주소</label><input class="text-field" id="custom-location" value="' + esc(entry?.locationText || '') + '" placeholder="주소 또는 위치 설명"></div></div><button class="btn btn-outline btn-sm" style="margin-top:8px" id="choose-pin">지도에서 위치 찍기</button><span id="pin-note" class="small" style="margin-left:8px">' + (coord(entry) ? '핀 지정됨' : '핀 미지정') + '</span>' +
@@ -553,6 +553,7 @@
       };
       $('#entry-time').onchange = showRecommendations;
       $('#entry-duration').oninput = showRecommendations;
+      $('#plan-solo').onchange = (event) => { state.draft.solo = event.target.checked; persistDraft(); showRecommendations(); };
       showRecommendations();
       $('#place-picker').oninput = (e) => {
         const q = e.target.value.trim().toLowerCase(); const box = $('#picker-results');
