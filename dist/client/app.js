@@ -325,7 +325,11 @@
     $('#place-back').onclick=()=>{state.placeTab='intro';nav(state.placeBack||'region');};
     const seeMap=()=>{state.mapDisplay='map';const point=pinPoint(p);if(point){state.mapCenter=point;state.mapZoom=15;}state.categories.clear();state.selected=null;nav('region');};
     $('#place-see-map').onclick=seeMap;$('#place-map-cta').onclick=seeMap;
-    $('#place-plan').onclick=()=>{nav('plan');toast('시간 칸을 눌러 '+p.name+'을 넣어주세요.');};
+    $('#place-plan').onclick=()=>{
+      nav('plan');
+      const minute=planSlots().find((slot)=>!state.draft.entries[slot]);
+      openSlotEditor(minute ?? null, hhmm(minute ?? toMin(state.draft.start)));
+    };
     document.querySelectorAll('[data-place-tab]').forEach(b=>b.onclick=()=>{state.placeTab=b.dataset.placeTab;renderPlacePage();});
     document.querySelectorAll('[data-open-place]').forEach(b=>b.onclick=()=>{state.selected=b.dataset.openPlace;state.placeTab='intro';renderPlacePage();window.scrollTo(0,0);});
   }
@@ -532,7 +536,7 @@
       .sort((a,b) => (b.result.kind === 'ok' ? 1 : 0) - (a.result.kind === 'ok' ? 1 : 0) || (routeEngine.themeScore(b.p,d.theme || 'balanced',0)-routeEngine.themeScore(a.p,d.theme || 'balanced',0)) || a.distance-b.distance).slice(0,3);
   }
   function openSlotEditor(minute, selectedTime = hhmm(minute)) {
-    const entry = state.draft.entries[minute]; const recs = recommendations(minute, Number(entry?.duration) || 60);
+    const entry = minute == null ? null : state.draft.entries[minute]; const recs = recommendations(toMin(selectedTime), Number(entry?.duration) || 60);
     const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="section-label">선택한 시각에 추천하는 장소</div><div id="entry-recommendations">' +
       (recs.length ? '<div class="suggest-grid">' + recs.map(({p,result,distance}) => '<button class="suggest-btn" data-recommend="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>직선 약 ' + distance.toFixed(2) + 'km · ' + esc(result.title) + '</small></button>').join('') + '</div>' : '<div class="notice warn">이 시각·거리·식사 조건에 맞는 후보를 확인하지 못했습니다. 직접 입력할 수 있어요.</div>') + '</div>' +
       '<div class="divider"></div><div class="section-label">입력</div><label class="field-label" for="place-picker">앱에 있는 장소 찾기</label><input class="text-field" id="place-picker" autocomplete="off" placeholder="장소 이름 검색"><div id="picker-results" class="picker-list" style="display:none"></div>' +
@@ -575,7 +579,7 @@
     if (selected < toMin(d.start) || selected + duration > end) return toast('방문 시각과 체류시간을 계획표의 시작·종료 범위 안으로 정해 주세요.');
     const conflict = Object.entries(d.entries).find(([at, existing]) => Number(at) !== minute && selected < Number(at) + (Number(existing.duration) || 60) && selected + duration > Number(at));
     if (conflict) return toast(hhmm(Number(conflict[0])) + ' 일정과 시간이 겹칩니다. 다른 시각을 골라 주세요.');
-    if (selected !== minute) delete d.entries[minute];
+    if (minute != null && selected !== minute) delete d.entries[minute];
     d.entries[selected] = entry; state.pinSelection = null; persistDraft(); closeModal(); renderPlan(); toast('계획표에 넣었습니다.');
   }
   function removeEntry(minute) { openModal('<h2>이 계획을 삭제할까요?</h2><p>' + esc(entryLabel(state.draft.entries[minute])) + ' · ' + esc(hhmm(minute)) + '</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-danger" id="confirm-remove">삭제</button></div>', () => { $('#confirm-remove').onclick = () => { delete state.draft.entries[minute]; persistDraft(); closeModal(); renderPlan(); }; }); }
