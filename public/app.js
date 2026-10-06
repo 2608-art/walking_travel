@@ -490,36 +490,45 @@
     document.querySelectorAll('[data-go-next]').forEach((b) => b.onclick = () => showJourney(Number(b.dataset.goNext)));
     document.querySelectorAll('[data-apply-pending]').forEach((b) => b.onclick=() => applyPending(Number(b.dataset.applyPending)));
     document.querySelectorAll('[data-remove-pending]').forEach((b) => b.onclick=() => { d.pending.splice(Number(b.dataset.removePending),1); persistDraft(); renderPlan(); });
-    if (!filled.length) $('.slot-list')?.insertAdjacentHTML('afterbegin', '<div class="notice">시간 칸을 눌러 장소를 하나씩 넣어 보세요.</div>');
+    if (!filled.length) $('.slot-list')?.insertAdjacentHTML('afterbegin', '<div class="notice">시간대를 골라 장소를 넣어 보세요. 추가할 때 시·분을 직접 정할 수 있습니다.</div>');
   }
   function slotHtml(minute, entry) {
-    const time = '<div class="slot-time">' + esc(hhmm(minute)) + '<small>' + esc(hhmm(Math.min(minute + 60, routeEngine.minutes(state.draft.end || '24:00')))) + '까지</small></div>';
-    if (!entry) return '<div class="slot-card">' + time + '<div class="slot-content slot-empty"><span>아직 계획이 없어요.</span><button class="btn btn-outline btn-sm" data-edit-slot="' + minute + '">+ 이 시간에 추가</button></div></div>';
+    const time = '<div class="slot-time">' + esc(hhmm(minute)) + (entry ? '' : '<small>시간대</small>') + '</div>';
+    if (!entry) return '<div class="slot-card">' + time + '<div class="slot-content slot-empty"><span>원하는 분을 정해 추가하세요.</span><button class="btn btn-outline btn-sm" data-edit-slot="' + minute + '">+ 일정 추가</button></div></div>';
     const result = evaluate(entry, minute, state.draft.date);
     const place = entryPlace(entry);
     return '<div class="slot-card">' + time + '<div class="slot-content"><div class="toolbar" style="justify-content:space-between"><h3>' + esc(entryLabel(entry)) + '</h3>' + pillFor(result) + '</div><p>' + esc(result.detail) + '</p>' + (place ? '<p class="small">' + esc(placeTimeText(place)) + '</p>' : '<p class="small">직접 입력한 장소 · 영업 정보 미확인</p>') + (entry.memo ? '<p>메모 · ' + esc(entry.memo) + '</p>' : '') + '<div class="slot-actions"><button class="btn btn-mint btn-sm" data-go-next="' + minute + '">이제 이 장소로 이동</button><button class="btn btn-outline btn-sm" data-edit-slot="' + minute + '">수정</button><button class="btn btn-outline btn-sm" data-remove-slot="' + minute + '">삭제</button></div></div></div>';
   }
-  function recommendations(minute) {
+  function recommendations(minute, duration = 60) {
     const d = state.draft;
     const used = new Set(Object.values(d.entries).map((e) => e.placeId));
     const earlier = Object.entries(d.entries).map(([t,e]) => [Number(t),e]).filter(([t,e]) => t < minute && coord(entryCoord(e))).sort((a,b) => b[0]-a[0])[0];
     const anchor = earlier ? entryCoord(earlier[1]) : (d.origin === 'current' ? d.currentOrigin || STATION : d.origin === 'custom' ? d.customOrigin || STATION : d.customOrigin?.id === d.origin ? d.customOrigin : getPlace(d.origin) || STATION);
     const meal = (d.mealTimes || []).some((value) => value && routeEngine.minutes(value) === minute);
     return state.places.filter((p) => coord(p) && !used.has(p.id) && (!meal || ['food','cafe'].includes(p.category)))
-      .map((p) => ({ p, result: evaluate({placeId:p.id,duration:routeEngine.stay(p,meal)},minute,d.date), distance: km(anchor,p) || 99 }))
+      .map((p) => ({ p, result: evaluate({placeId:p.id,duration},minute,d.date), distance: km(anchor,p) || 99 }))
       .filter((v) => v.distance <= 1.1 && v.result.kind !== 'bad' && !(v.result.kind === 'warn' && /체류 중 브레이크|폐관을 넘/.test(v.result.title)))
       .sort((a,b) => (b.result.kind === 'ok' ? 1 : 0) - (a.result.kind === 'ok' ? 1 : 0) || (routeEngine.themeScore(b.p,d.theme || 'balanced',0)-routeEngine.themeScore(a.p,d.theme || 'balanced',0)) || a.distance-b.distance).slice(0,3);
   }
-  function openSlotEditor(minute) {
-    const entry = state.draft.entries[minute]; const recs = recommendations(minute);
-    const body = '<h2>' + esc(hhmm(minute)) + ' 계획</h2><p>추천 장소를 누르면 바로 이 시간 칸에 들어갑니다.</p><div class="section-label">이 시간에 추천하는 장소</div>' +
-      (recs.length ? '<div class="suggest-grid">' + recs.map(({p,result,distance}) => '<button class="suggest-btn" data-recommend="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>직선 약 ' + distance.toFixed(2) + 'km · ' + esc(result.title) + '</small></button>').join('') + '</div>' : '<div class="notice warn">이 시각·거리·식사 조건에 맞는 후보를 확인하지 못했습니다. 직접 입력할 수 있어요.</div>') +
+  function openSlotEditor(minute, selectedTime = hhmm(minute)) {
+    const entry = state.draft.entries[minute]; const recs = recommendations(minute, Number(entry?.duration) || 60);
+    const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="section-label">선택한 시각에 추천하는 장소</div><div id="entry-recommendations">' +
+      (recs.length ? '<div class="suggest-grid">' + recs.map(({p,result,distance}) => '<button class="suggest-btn" data-recommend="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>직선 약 ' + distance.toFixed(2) + 'km · ' + esc(result.title) + '</small></button>').join('') + '</div>' : '<div class="notice warn">이 시각·거리·식사 조건에 맞는 후보를 확인하지 못했습니다. 직접 입력할 수 있어요.</div>') + '</div>' +
       '<div class="divider"></div><div class="section-label">입력</div><label class="field-label" for="place-picker">앱에 있는 장소 찾기</label><input class="text-field" id="place-picker" autocomplete="off" placeholder="장소 이름 검색"><div id="picker-results" class="picker-list" style="display:none"></div>' +
       '<div class="section-label">또는 내가 아는 장소 직접 추가</div><div class="form-grid two"><div class="field-group"><label class="field-label" for="custom-name">이름</label><input class="text-field" id="custom-name" value="' + esc(entry?.name || '') + '" placeholder="장소 이름"></div><div class="field-group"><label class="field-label" for="custom-location">위치·주소</label><input class="text-field" id="custom-location" value="' + esc(entry?.locationText || '') + '" placeholder="주소 또는 위치 설명"></div></div><button class="btn btn-outline btn-sm" style="margin-top:8px" id="choose-pin">지도에서 위치 찍기</button><span id="pin-note" class="small" style="margin-left:8px">' + (coord(entry) ? '핀 지정됨' : '핀 미지정') + '</span>' +
-      '<div class="form-grid two" style="margin-top:15px"><div class="field-group"><label class="field-label" for="entry-duration">예상 체류</label><select class="select-field" id="entry-duration">' + [30,60,90,120].map((v) => '<option value="' + v + '" ' + ((entry?.duration || 60) === v ? 'selected' : '') + '>' + v + '분</option>').join('') + '</select></div><div class="field-group"><label class="field-label" for="entry-memo">기타 메모</label><input class="text-field" id="entry-memo" value="' + esc(entry?.memo || '') + '" placeholder="적어 두고 싶은 내용"></div></div>' +
-      '<div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="save-custom">이 칸에 넣기</button></div>';
+      '<div class="form-grid two" style="margin-top:15px"><div class="field-group"><label class="field-label" for="entry-duration">예상 체류 (분)</label><input class="text-field" type="number" min="1" step="1" inputmode="numeric" id="entry-duration" value="' + esc(entry?.duration || 60) + '"></div><div class="field-group"><label class="field-label" for="entry-memo">기타 메모</label><input class="text-field" id="entry-memo" value="' + esc(entry?.memo || '') + '" placeholder="적어 두고 싶은 내용"></div></div>' +
+      '<div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="save-custom">계획표에 넣기</button></div>';
     openModal(body, () => {
-      document.querySelectorAll('[data-recommend]').forEach((b) => b.onclick = () => setEntry(minute, { placeId: b.dataset.recommend, duration: 60, memo: '' }));
+      const showRecommendations = () => {
+        const value = $('#entry-time').value;
+        if (!value) return;
+        const next = recommendations(toMin(value), Number($('#entry-duration').value) || 60);
+        $('#entry-recommendations').innerHTML = next.length ? '<div class="suggest-grid">' + next.map(({p,result,distance}) => '<button class="suggest-btn" data-recommend="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>직선 약 ' + distance.toFixed(2) + 'km · ' + esc(result.title) + '</small></button>').join('') + '</div>' : '<div class="notice warn">이 시각·거리·식사 조건에 맞는 후보를 확인하지 못했습니다. 직접 입력할 수 있어요.</div>';
+        $('#entry-recommendations').querySelectorAll('[data-recommend]').forEach((b) => b.onclick = () => setEntry(minute, { placeId: b.dataset.recommend, memo: '' }));
+      };
+      $('#entry-time').onchange = showRecommendations;
+      $('#entry-duration').oninput = showRecommendations;
+      showRecommendations();
       $('#place-picker').oninput = (e) => {
         const q = e.target.value.trim().toLowerCase(); const box = $('#picker-results');
         if (!q) { box.style.display = 'none'; return; }
@@ -535,14 +544,26 @@
       };
     });
   }
-  function setEntry(minute, entry) { state.draft.entries[minute] = entry; state.pinSelection = null; persistDraft(); closeModal(); renderPlan(); toast('계획표에 넣었습니다.'); }
+  function setEntry(minute, entry) {
+    const value = $('#entry-time')?.value;
+    if (!value) return toast('방문 시작 시각을 입력해 주세요.');
+    const duration = Number($('#entry-duration')?.value);
+    if (!Number.isSafeInteger(duration) || duration < 1) { toast('예상 체류시간을 1분 이상의 정수로 입력해 주세요.'); $('#entry-duration').focus(); return; }
+    entry.duration = duration;
+    const selected = toMin(value), d = state.draft, end = routeEngine.minutes(d.end || '24:00');
+    if (selected < toMin(d.start) || selected + duration > end) return toast('방문 시각과 체류시간을 계획표의 시작·종료 범위 안으로 정해 주세요.');
+    const conflict = Object.entries(d.entries).find(([at, existing]) => Number(at) !== minute && selected < Number(at) + (Number(existing.duration) || 60) && selected + duration > Number(at));
+    if (conflict) return toast(hhmm(Number(conflict[0])) + ' 일정과 시간이 겹칩니다. 다른 시각을 골라 주세요.');
+    if (selected !== minute) delete d.entries[minute];
+    d.entries[selected] = entry; state.pinSelection = null; persistDraft(); closeModal(); renderPlan(); toast('계획표에 넣었습니다.');
+  }
   function removeEntry(minute) { openModal('<h2>이 계획을 삭제할까요?</h2><p>' + esc(entryLabel(state.draft.entries[minute])) + ' · ' + esc(hhmm(minute)) + '</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-danger" id="confirm-remove">삭제</button></div>', () => { $('#confirm-remove').onclick = () => { delete state.draft.entries[minute]; persistDraft(); closeModal(); renderPlan(); }; }); }
   function chooseCustomPin(minute) {
     if (!navigator.onLine || !window.L) { toast('지도에서 위치를 찍으려면 인터넷이 필요합니다.'); return; }
-    const name = $('#custom-name').value, locationText = $('#custom-location').value, duration = $('#entry-duration').value, memo = $('#entry-memo').value;
+    const name = $('#custom-name').value, locationText = $('#custom-location').value, duration = $('#entry-duration').value, memo = $('#entry-memo').value, selectedTime = $('#entry-time').value;
     const pin = state.pinSelection;
     openModal('<h2>지도에서 위치 찍기</h2><p>지도 위를 눌러 장소 위치를 선택하세요. 실제 건물 출입구인지 확인해 주세요.</p><div class="pin-map-wrap"><div id="pin-map"></div></div><p id="picked-coord" class="small">' + (pin ? pin.lat.toFixed(5) + ', ' + pin.lon.toFixed(5) : '아직 위치를 찍지 않았습니다.') + '</p><div class="modal-actions"><button class="btn btn-outline" id="pin-back">돌아가기</button><button class="btn btn-primary" id="pin-done" ' + (pin ? '' : 'disabled') + '>위치 사용</button></div>', async () => {
-      const back = () => { openSlotEditor(minute); $('#custom-name').value = name; $('#custom-location').value = locationText; $('#entry-duration').value = duration; $('#entry-memo').value = memo; };
+      const back = () => { openSlotEditor(minute, selectedTime); $('#custom-name').value = name; $('#custom-location').value = locationText; $('#entry-duration').value = duration; $('#entry-memo').value = memo; };
       $('#pin-back').onclick = back; $('#pin-done').onclick = back;
       if (KAKAO_KEY) {
         try {
