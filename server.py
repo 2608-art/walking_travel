@@ -2,6 +2,7 @@
 
 실행: python server.py
 REST 키는 이 파일 옆의 .env 또는 KAKAO_REST_API_KEY 환경 변수에서만 읽습니다.
+키 없는 미리보기에서 HANGEORUM_ROUTE_PROXY를 설정하면 해당 사이트의 경로 API를 사용합니다.
 """
 
 import json
@@ -372,7 +373,7 @@ class Handler(SimpleHTTPRequestHandler):
             end_id = values.get("end_id", [""])[0]
             if not can_persist_walk(coords, start_id, end_id):
                 # 임의 주소/현재 위치는 기존 공통 캐시도 읽지 않고 요청 시 계산한다.
-                status, result = fetch_kakao_route(mode, coords)
+                status, result = fetch_kakao_route(mode, coords, start_id, end_id)
                 return self.send_json(status, result)
             # 같은 구간의 동시 요청을 한 번의 API 조회와 한 번의 저장으로 합친다.
             lock = WALK_LOCKS[hash(walk_cache_key(coords)) % len(WALK_LOCKS)]
@@ -383,7 +384,7 @@ class Handler(SimpleHTTPRequestHandler):
                     return self.send_json(500, {"error": "저장된 도보 경로를 읽지 못했습니다."})
                 if saved is not None:
                     return self.send_json(200, saved)
-                status, result = fetch_kakao_route(mode, coords)
+                status, result = fetch_kakao_route(mode, coords, start_id, end_id)
                 if status == 200 and result.get("status") == "OK" and result.get("routes"):
                     try:
                         save_walk_route(coords, result, start_id, end_id)
@@ -394,7 +395,7 @@ class Handler(SimpleHTTPRequestHandler):
         end_id = values.get("end_id", [""])[0]
         registered_pair = can_persist_walk(coords, start_id, end_id)
         # 버스는 현재 조회값을 매번 비교해야 하므로 짧은 메모리 캐시도 사용하지 않는다.
-        status, result = fetch_kakao_route(mode, coords)
+        status, result = fetch_kakao_route(mode, coords, start_id, end_id)
         if not registered_pair and status == 200 and result.get("status") == "OK":
             result["routes"] = [complete_bus_access(route, coords) for route in result.get("routes", [])]
         if registered_pair:
@@ -420,10 +421,26 @@ class Handler(SimpleHTTPRequestHandler):
         return self.send_json(status, result)
 
 
-def fetch_kakao_route(mode, coords):
+def fetch_kakao_route(mode, coords, start_id="", end_id=""):
     key = rest_key()
     if not key:
-        return 503, {"error": "REST API 키가 설정되지 않았습니다."}
+        proxy = os.environ.get("HANGEORUM_ROUTE_PROXY", "").rstrip("/")
+        if not proxy:
+            return 503, {"error": "REST API 키가 설정되지 않았습니다."}
+        query = urlencode({"mode": mode, **coords, "start_id": start_id, "end_id": end_id})
+        try:
+            with urlopen(Request(f"{proxy}/api/route?{query}", headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"}), timeout=15) as response:
+                raw = response.read(4_000_001)
+            if len(raw) > 4_000_000:
+                raise ValueError("응답이 너무 큽니다.")
+            result = json.loads(raw)
+            if result.get("status") != "OK" or not isinstance(result.get("routes"), list):
+                raise ValueError("경로 응답이 올바르지 않습니다.")
+            return 200, result
+        except HTTPError as exc:
+            return 502, {"error": f"미리보기 경로 API 오류 ({exc.code})"}
+        except (URLError, TimeoutError, ValueError, json.JSONDecodeError):
+            return 502, {"error": "미리보기 경로 API에 연결하지 못했습니다."}
     day_key = (time.strftime("%Y-%m-%d"), mode)
     with CALLS_LOCK:
         if DAILY_CALLS[day_key] >= MAX_CALLS_PER_DAY:
