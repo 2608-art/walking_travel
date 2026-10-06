@@ -573,7 +573,7 @@
     const initialDuration = Number(entry?.duration) || (initialPlace ? routeEngine.stay(initialPlace, false) : 60);
     const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="route-solo-control plan-recommend-control"><span class="section-label">선택한 시각에 추천하는 장소</span><label class="route-solo-label" for="plan-meal-only"><input type="checkbox" id="plan-meal-only"> 식사·카페</label></div><div class="route-solo-control"><label class="route-solo-label" for="plan-solo"><input type="checkbox" id="plan-solo" ' + (state.draft.solo ? 'checked' : '') + '> 혼자 여행</label><span class="small">식당은 기존 혼자 여행 기준으로 추천 · 카페는 혼자 이용 정보가 없어도 포함</span></div><div id="entry-recommendations"></div>' +
       '<div class="divider"></div><div class="section-label">입력</div><label class="field-label" for="place-picker">앱에 있는 장소 찾기</label><input class="text-field" id="place-picker" autocomplete="off" placeholder="장소 이름 검색" value="' + esc(initialPlace?.name || '') + '"><p id="selected-place-note" class="small">' + (initialPlace ? '선택한 장소: ' + esc(initialPlace.name) : '장소를 검색해 선택하거나 아래에 직접 입력하세요.') + '</p><div id="picker-results" class="picker-list" style="display:none"></div>' +
-      '<div class="section-label">또는 내가 아는 장소 직접 추가</div><div class="form-grid two"><div class="field-group"><label class="field-label" for="custom-name">이름</label><input class="text-field" id="custom-name" value="' + esc(entry?.name || '') + '" placeholder="장소 이름"></div><div class="field-group"><label class="field-label" for="custom-location">위치·주소</label><input class="text-field" id="custom-location" value="' + esc(entry?.locationText || '') + '" placeholder="주소 또는 위치 설명"></div></div><button class="btn btn-outline btn-sm" style="margin-top:8px" id="choose-pin">지도에서 위치 찍기</button><span id="pin-note" class="small" style="margin-left:8px">' + (coord(state.pinSelection) || coord(entry) ? '핀 지정됨' : '핀 미지정') + '</span>' +
+      '<div class="section-label">또는 내가 아는 장소 직접 추가</div><div class="form-grid two"><div class="field-group"><label class="field-label" for="custom-name">이름</label><input class="text-field" id="custom-name" value="' + esc(entry?.name || '') + '" placeholder="장소 이름"></div><div class="field-group"><label class="field-label" for="custom-location">주소</label><input class="text-field" id="custom-location" value="' + esc(entry?.locationText || '') + '" placeholder="주소 입력" autocomplete="street-address" aria-controls="custom-address-matches"></div></div><div class="custom-pin-actions"><button type="button" class="btn btn-outline btn-sm" id="search-custom-address">주소 검색</button><button type="button" class="btn btn-outline btn-sm" id="choose-pin">지도에서 위치 찍기</button><span id="pin-note" class="small" role="status">' + (coord(state.pinSelection) || coord(entry) ? '핀 지정됨' : '핀 미지정') + '</span></div><div id="custom-address-matches" class="route-place-matches" style="margin-top:8px" aria-live="polite"></div><p class="small">주소를 검색해 결과를 고르면 지도핀이 지정돼요. 실제 출입구 위치는 확인해 주세요.</p>' +
       '<div class="form-grid two" style="margin-top:15px"><div class="field-group"><label class="field-label" for="entry-duration">예상 체류 (분)</label><input class="text-field" type="number" min="1" step="1" inputmode="numeric" id="entry-duration" value="' + esc(initialDuration) + '">' + (initialPlace ? '<span class="small">코스에서 쓰는 예상 체류시간을 제안합니다. 직접 바꿀 수 있어요.</span>' : '') + '</div><div class="field-group"><label class="field-label" for="entry-memo">기타 메모</label><input class="text-field" id="entry-memo" value="' + esc(entry?.memo || '') + '" placeholder="적어 두고 싶은 내용"></div></div>' +
       '<div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="save-custom">계획표에 넣기</button></div>';
     openModal(body, () => {
@@ -606,12 +606,59 @@
         $('#place-picker').value = '';
         $('#selected-place-note').textContent = '직접 입력할 장소를 저장합니다.';
       };
+      const addressInput = $('#custom-location');
+      const addressMatches = $('#custom-address-matches');
+      const pinNote = $('#pin-note');
+      addressInput.oninput = () => {
+        if (selectedPlaceId) {
+          selectedPlaceId = null;
+          $('#place-picker').value = '';
+          $('#selected-place-note').textContent = '직접 입력할 장소를 저장합니다.';
+        }
+        state.pinSelection = null;
+        addressMatches.replaceChildren();
+        pinNote.textContent = addressInput.value.trim() === (entry?.locationText || '') && coord(entry) ? '핀 지정됨' : '핀 미지정';
+      };
+      addressInput.onkeydown = (event) => {
+        if (event.key === 'Enter') { event.preventDefault(); $('#search-custom-address').click(); }
+      };
+      $('#search-custom-address').onclick = async () => {
+        const query = addressInput.value.trim();
+        if (query.length < 2 || query.length > 100) return toast('주소를 2~100자로 입력해 주세요.');
+        if (!navigator.onLine) return toast('주소 검색에는 인터넷 연결이 필요합니다.');
+        const button = $('#search-custom-address');
+        button.disabled = true;
+        button.textContent = '검색 중…';
+        addressMatches.innerHTML = '<p class="small">주소를 찾고 있어요.</p>';
+        try {
+          const response = await fetch('/api/place-search?q=' + encodeURIComponent(query), {cache:'no-store'});
+          if (!response.headers.get('content-type')?.includes('application/json')) throw new Error('주소 검색 서버 연결이 필요합니다.');
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.error || '주소를 검색하지 못했습니다.');
+          if (!addressInput.isConnected || addressInput.value.trim() !== query) return;
+          const results = data.results || [];
+          addressMatches.innerHTML = results.length ? results.map((place, index) => '<button type="button" class="route-place-match" data-custom-address="' + index + '"><strong>' + esc(place.name) + '</strong><small>' + esc(place.address || query) + '</small></button>').join('') : '<p class="small">검색 결과가 없습니다. 주소를 확인하거나 지도에서 위치를 찍어 주세요.</p>';
+          addressMatches.querySelectorAll('[data-custom-address]').forEach((item) => item.onclick = () => {
+            const place = results[Number(item.dataset.customAddress)];
+            if (!coord(place)) return toast('이 결과의 지도 위치를 확인하지 못했습니다.');
+            state.pinSelection = {lat:place.lat,lon:place.lon};
+            addressInput.value = place.address || query;
+            pinNote.textContent = '핀 지정됨 · 주소 검색 결과';
+            addressMatches.replaceChildren();
+          });
+        } catch (error) {
+          if (addressInput.isConnected) { addressMatches.replaceChildren(); toast(error.message || '주소 검색에 실패했습니다.'); }
+        } finally {
+          if (button.isConnected) { button.disabled = false; button.textContent = '주소 검색'; }
+        }
+      };
       $('#choose-pin').onclick = () => chooseCustomPin(minute);
       $('#save-custom').onclick = () => {
         if (selectedPlaceId) return setEntry(minute, { placeId:selectedPlaceId, memo:$('#entry-memo').value.trim() });
         const name = $('#custom-name').value.trim(); if (!name) { toast('장소 이름을 입력해 주세요.'); $('#custom-name').focus(); return; }
-        const pin = state.pinSelection;
-        setEntry(minute, { name, locationText: $('#custom-location').value.trim(), lat:pin?.lat ?? entry?.lat ?? null, lon:pin?.lon ?? entry?.lon ?? null, duration:Number($('#entry-duration').value), memo:$('#entry-memo').value.trim() });
+        const locationText = addressInput.value.trim();
+        const pin = state.pinSelection || (locationText === (entry?.locationText || '') ? entry : null);
+        setEntry(minute, { name, locationText, lat:pin?.lat ?? null, lon:pin?.lon ?? null, duration:Number($('#entry-duration').value), memo:$('#entry-memo').value.trim() });
       };
     });
   }
@@ -633,7 +680,8 @@
     if (!navigator.onLine || !window.L) { toast('지도에서 위치를 찍으려면 인터넷이 필요합니다.'); return; }
     const name = $('#custom-name').value, locationText = $('#custom-location').value, duration = $('#entry-duration').value, memo = $('#entry-memo').value, selectedTime = $('#entry-time').value;
     const originalPin = state.pinSelection;
-    const pin = originalPin || (coord(state.draft.entries[minute]) ? state.draft.entries[minute] : null);
+    const previousEntry = state.draft.entries[minute];
+    const pin = originalPin || (locationText.trim() === (previousEntry?.locationText || '') && coord(previousEntry) ? previousEntry : null);
     openModal('<h2>지도에서 위치 찍기</h2><p>지도 위를 눌러 장소 위치를 선택하세요. 실제 건물 출입구인지 확인해 주세요.</p><div class="pin-map-wrap"><div id="pin-map"></div></div><p id="picked-coord" class="small">' + (pin ? pin.lat.toFixed(5) + ', ' + pin.lon.toFixed(5) : '아직 위치를 찍지 않았습니다.') + '</p><div class="modal-actions"><button class="btn btn-outline" id="pin-back">돌아가기</button><button class="btn btn-primary" id="pin-done" ' + (pin ? '' : 'disabled') + '>위치 사용</button></div>', async () => {
       const back = (usePin) => { if (!usePin) state.pinSelection = originalPin; openSlotEditor(minute, selectedTime, true); $('#custom-name').value = name; $('#custom-location').value = locationText; $('#entry-duration').value = duration; $('#entry-memo').value = memo; };
       $('#pin-back').onclick = () => back(false); $('#pin-done').onclick = () => back(true);
