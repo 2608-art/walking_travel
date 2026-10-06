@@ -188,8 +188,8 @@
   function toast(message) { const el = $('#toast'); if (!el) return; el.textContent = message; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 3600); }
   const state = {
     places: [], lodgings: [], view: 'home', region: 'mokpo', categories: new Set(), selected: null, mapDisplay:'map', homeMood:'all',
-    mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null, planMap:null,
-    draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end: '24:00', origin: null, theme:'balanced', mealTimes:[], entries: {}, pending:[] },
+    mapCenter: MOKPO, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null, planMap:null, mapFocusedPlace:null, mapMarkers:new Map(),
+    draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end: '24:00', origin: null, theme:'balanced', mealTimes:[], solo:false, entries: {}, pending:[] },
     saved: load(STORAGE_SAVED, []),
     route: { date: today(), start: '10:00', end: '24:00', origin: 'station', destination:'station', mode:'custom', theme:'first', solo:false, must: '', mustOptional:false, focus:'through', results: [], baseResults:[], selected: -1 },
     pinMode: false, pinSelection: null, searchResults: []
@@ -335,19 +335,20 @@
     const chosen = CATEGORIES.filter(([id]) => state.categories.has(id)).map(([, label]) => label);
     const resultLabel = chosen.length === 0 ? '전체' : chosen.length <= 2 ? chosen.join('·') : '선택한 분류 ' + chosen.length + '개';
     if (state.mapProvider === 'leaflet') state.map?.remove();
-    state.map = null; state.mapProvider = null;
+    state.map = null; state.mapProvider = null; state.mapFocusedPlace = null; state.mapMarkers = new Map();
     $('#main').innerHTML=`<section class="explore-page ${state.mapDisplay==='list'?'list-mode':''}">
       <div class="explore-topbar"><button class="round-control" id="region-back" aria-label="목포 소개로">${uiIcon('back')}</button><h1>${esc(region.name)} 한 바퀴</h1><div class="view-switch" aria-label="탐색 방식"><button data-map-display="map" class="${state.mapDisplay==='map'?'active':''}" aria-pressed="${state.mapDisplay==='map'}">지도</button><button data-map-display="list" class="${state.mapDisplay==='list'?'active':''}" aria-pressed="${state.mapDisplay==='list'}">목록</button></div></div>
       <div class="explore-workspace"><div class="explore-search"><form id="map-search-form" class="explore-search-form">${uiIcon('search')}<input id="map-search" aria-label="장소 또는 주소 검색" autocomplete="off" placeholder="목포의 장소, 주소 검색"><button type="submit" aria-label="검색">${uiIcon('arrow')}</button></form><div class="filter-strip" aria-label="장소 유형 여러 개 선택 가능">${CATEGORIES.map(([id,label,emoji])=>{const active=id==='all'?!state.categories.size:state.categories.has(id);return `<button class="filter-chip ${active?'active':''}" data-category="${id}" aria-pressed="${active}"><span aria-hidden="true">${emoji}</span> ${label}</button>`;}).join('')}</div></div>
       <div class="explore-map"><div id="map"></div><button class="round-control recenter-control" id="recenter" aria-label="목포 중심으로 돌아가기" title="목포 중심으로 돌아가기">${uiIcon('target')}</button><span class="map-location-label">${uiIcon('location')} 목포</span></div>
-      <aside class="explore-sheet"><span class="sheet-handle" aria-hidden="true"></span><div class="explore-sheet-title"><div><span class="eyebrow">발걸음이 닿는 곳</span><h2>${esc(resultLabel==='전체'?'목포의 장소':resultLabel)} <small>${list.length}</small></h2></div><span class="small" id="pin-count">지도 핀 ${list.filter(hasPin).length}곳</span></div><div class="place-list">${list.map(p=>`<button class="place-row" data-place="${p.id}">${placeVisual(p,true)}<span class="place-row-copy"><small class="place-row-category">${esc(categoryName(p.category))}</small><strong>${esc(p.name)}</strong><small>${esc(p.locationText||'위치 확인 필요')}</small></span><span class="row-chevron" aria-hidden="true">›</span></button>`).join('')}</div><p class="map-evidence">지도 핀은 대표 위치예요. 실제 출입구는 방문 전 확인해 주세요.</p><div class="explore-actions"><button class="btn btn-outline" id="go-plan">${uiIcon('plan')} 직접 계획</button><button class="btn btn-primary" id="go-routes">${uiIcon('map')} 추천 루트</button></div></aside></div></section>`;
+      <aside class="explore-sheet"><span class="sheet-handle" aria-hidden="true"></span><div class="explore-sheet-title"><div><span class="eyebrow">발걸음이 닿는 곳</span><h2>${esc(resultLabel==='전체'?'목포의 장소':resultLabel)} <small>${list.length}</small></h2></div><span class="small" id="pin-count">지도 핀 ${list.filter(hasPin).length}곳</span></div><div class="place-list">${list.map(p=>`<div class="place-row"><button type="button" class="place-row-main" data-place="${p.id}" aria-label="${esc(p.name)} 지도 위치 보기, 다시 누르면 설명 보기">${placeVisual(p,true)}<span class="place-row-copy"><small class="place-row-category">${esc(categoryName(p.category))}</small><strong>${esc(p.name)}</strong><small>${esc(p.locationText||'위치 확인 필요')}</small></span></button><button type="button" class="place-row-open" data-open-map-place="${p.id}" aria-label="${esc(p.name)} 설명 보기"><span class="row-chevron" aria-hidden="true">›</span></button></div>`).join('')}</div><p class="map-evidence">지도 핀은 대표 위치예요. 실제 출입구는 방문 전 확인해 주세요.</p><div class="explore-actions"><button class="btn btn-outline" id="go-plan">${uiIcon('plan')} 직접 계획</button><button class="btn btn-primary" id="go-routes">${uiIcon('map')} 추천 루트</button></div></aside></div></section>`;
     initHomeMap(list);
     $('#region-back').onclick=()=>nav('destination');
     $('#go-plan').onclick=()=>nav('plan');$('#go-routes').onclick=()=>nav('routes');
     $('#recenter').onclick=()=>{if(state.mapProvider==='kakao'){state.map?.setCenter(kakaoPoint(...region.center));state.map?.setLevel(kakaoLevel(13));}else state.map?.setView(region.center,13);state.mapCenter=region.center;state.mapZoom=13;};
     $('#map-search-form').onsubmit=searchMap;
     document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>{const offset=$('.filter-strip').scrollLeft;const id=b.dataset.category;if(id==='all')state.categories.clear();else if(state.categories.has(id))state.categories.delete(id);else state.categories.add(id);state.selected=null;renderRegionMap();$('.filter-strip').scrollLeft=offset;});
-    document.querySelectorAll('[data-place]').forEach(b=>b.onclick=()=>selectPlace(b.dataset.place));
+    document.querySelectorAll('.explore-sheet .place-row').forEach(row=>row.onclick=(event)=>{if(event.target.closest('[data-open-map-place]'))return;focusMapPlace(row.querySelector('[data-place]').dataset.place);});
+    document.querySelectorAll('[data-open-map-place]').forEach(b=>b.onclick=()=>selectPlace(b.dataset.openMapPlace));
     document.querySelectorAll('[data-map-display]').forEach(b=>b.onclick=()=>{state.mapDisplay=b.dataset.mapDisplay;$('.explore-page').classList.toggle('list-mode',state.mapDisplay==='list');document.querySelectorAll('[data-map-display]').forEach(x=>{const active=x.dataset.mapDisplay===state.mapDisplay;x.classList.toggle('active',active);x.setAttribute('aria-pressed',active);});if(state.mapProvider==='kakao')state.map?.relayout();else state.map?.invalidateSize();});
   }
   async function initHomeMap(list) {
@@ -363,6 +364,7 @@
     pinned.forEach((p) => {
       const marker = L.circleMarker(pinPoint(p), { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
       marker.bindTooltip(esc(p.name)); marker.on('click', () => selectPlace(p.id));
+      state.mapMarkers.set(p.id, marker);
     });
     if (KAKAO_KEY && list.some((p) => !hasPin(p) && p.addressQuery)) loadKakao().then(() => {
       if (container === $('#map')) geocodeAddressPlaces(list, map, colors, container);
@@ -391,8 +393,25 @@
       p.lat = lat; p.lon = lon; p.pinBasis = 'address';
       const marker = L.circleMarker([lat, lon], { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
       marker.bindTooltip(esc(p.name + ' · 건물 주소 위치')); marker.on('click', () => selectPlace(p.id));
+      state.mapMarkers.set(p.id, marker);
       if ($('#pin-count')) $('#pin-count').textContent = '지도 핀 ' + list.filter(hasPin).length + '곳';
     }
+  }
+  function focusMapPlace(id) {
+    if (state.mapFocusedPlace === id) { selectPlace(id); return; }
+    const place = getPlace(id);
+    const point = pinPoint(place);
+    if (!point) return;
+    document.querySelector('[data-map-display="map"]')?.click();
+    const previous = state.mapMarkers.get(state.mapFocusedPlace);
+    previous?.setStyle({radius:7,weight:2,color:'#fff'});
+    state.mapFocusedPlace = id;
+    document.querySelectorAll('.explore-sheet .place-row').forEach(row => row.classList.toggle('is-focused', row.querySelector('[data-place]')?.dataset.place === id));
+    const marker = state.mapMarkers.get(id);
+    marker?.setStyle({radius:11,weight:3,color:'#244c39'});
+    marker?.bringToFront();
+    marker?.openTooltip();
+    state.map?.flyTo(point, 15);
   }
   function selectPlace(id) {
     if(!getPlace(id))return;
@@ -486,7 +505,7 @@
     if (d.pending.length) $('.slot-list').insertAdjacentHTML('beforebegin','<section class="plan-pending"><h2>보류 중인 장소 <small>' + d.pending.length + '곳</small></h2><p class="small">빈 시각을 정하면 계획표에 넣을 수 있습니다.</p>' + d.pending.map((item,i) => '<div class="plan-pending-item"><div><strong>' + esc(entryLabel(item.entry)) + '</strong><small>추천 ' + esc(hhmm(item.minute)) + (item.date !== d.date ? ' · 추천 날짜 ' + esc(item.date) : '') + '</small></div><label>넣을 시각 <input type="time" class="text-field" data-pending-time="' + i + '" value="' + esc(hhmm(item.minute)) + '"></label><button type="button" class="btn btn-outline btn-sm" data-apply-pending="' + i + '">넣기</button><button type="button" class="btn btn-outline btn-sm" data-remove-pending="' + i + '" aria-label="' + esc(entryLabel(item.entry)) + ' 보류에서 빼기">빼기</button></div>').join('') + '</section>');
     $('#plan-back').onclick = () => nav('region');
     $('#save-plan').onclick = savePlan;
-    $('#new-plan').onclick = () => openModal('<h2>새 계획을 시작할까요?</h2><p>현재 계획은 저장하지 않았다면 복구할 수 없습니다.</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="confirm-new">새 계획</button></div>', () => { $('#confirm-new').onclick = () => { state.draft = { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end:'24:00', origin: null, theme:'balanced', mealTimes:[], entries: {}, pending:[] }; persistDraft(); closeModal(); renderPlan(); }; });
+    $('#new-plan').onclick = () => openModal('<h2>새 계획을 시작할까요?</h2><p>현재 계획은 저장하지 않았다면 복구할 수 없습니다.</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="confirm-new">새 계획</button></div>', () => { $('#confirm-new').onclick = () => { state.draft = { id: null, title: '나의 목포 하루', date: today(), start: '09:00', end:'24:00', origin: null, theme:'balanced', mealTimes:[], solo:false, entries: {}, pending:[] }; persistDraft(); closeModal(); renderPlan(); }; });
     $('#plan-title').onchange = (e) => { d.title = e.target.value.trim() || '나의 목포 하루'; persistDraft(); };
     $('#plan-date').onchange = (e) => { d.date = e.target.value || today(); persistDraft(); renderPlan(); };
     $('#plan-start').onchange = (e) => changePlanStart(e.target.value);
@@ -539,7 +558,7 @@
     const earlier = Object.entries(d.entries).map(([t,e]) => [Number(t),e]).filter(([t,e]) => t < minute && coord(entryCoord(e))).sort((a,b) => b[0]-a[0])[0];
     const anchor = earlier ? entryCoord(earlier[1]) : (d.origin === 'current' ? d.currentOrigin || STATION : d.origin === 'custom' ? d.customOrigin || STATION : d.customOrigin?.id === d.origin ? d.customOrigin : getPlace(d.origin) || STATION);
     const meal = (d.mealTimes || []).some((value) => value && routeEngine.minutes(value) === minute);
-    return state.places.filter((p) => coord(p) && !used.has(p.id) && (!meal || ['food','cafe'].includes(p.category)))
+    return state.places.filter((p) => coord(p) && !used.has(p.id) && (!meal || ['food','cafe'].includes(p.category)) && (!d.solo || soloTravel.canVisit(p)))
       .map((p) => ({ p, result: evaluate({placeId:p.id,duration},minute,d.date), distance: km(anchor,p) || 99 }))
       .filter((v) => v.distance <= 1.1 && v.result.kind !== 'bad' && !(v.result.kind === 'warn' && /체류 중 브레이크|폐관을 넘/.test(v.result.title)))
       .sort((a,b) => (b.result.kind === 'ok' ? 1 : 0) - (a.result.kind === 'ok' ? 1 : 0) || (routeEngine.themeScore(b.p,d.theme || 'balanced',0)-routeEngine.themeScore(a.p,d.theme || 'balanced',0)) || a.distance-b.distance).slice(0,3);
@@ -547,7 +566,7 @@
   function openSlotEditor(minute, selectedTime = hhmm(minute), preservePin = false) {
     if (!preservePin) state.pinSelection = null;
     const entry = state.draft.entries[minute]; const recs = recommendations(minute, Number(entry?.duration) || 60);
-    const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="section-label">선택한 시각에 추천하는 장소</div><div id="entry-recommendations">' +
+    const body = '<h2>일정 넣기</h2><label class="field-label" for="entry-time">방문 시작 시각 (시·분)</label><input class="text-field" type="time" step="60" id="entry-time" value="' + esc(selectedTime) + '"><p class="small entry-time-help">계획표의 시작·종료 시각 안에서 1분 단위로 정할 수 있습니다.</p><div class="section-label">선택한 시각에 추천하는 장소</div><div class="route-solo-control"><label class="route-solo-label" for="plan-solo"><input type="checkbox" id="plan-solo" ' + (state.draft.solo ? 'checked' : '') + '> 혼자 여행</label><span class="small">식당은 기존 혼자 여행 기준으로 추천 · 카페는 혼자 이용 정보가 없어도 포함</span></div><div id="entry-recommendations">' +
       (recs.length ? '<div class="suggest-grid">' + recs.map(({p,result,distance}) => '<button class="suggest-btn" data-recommend="' + p.id + '"><strong>' + esc(p.name) + '</strong><small>직선 약 ' + distance.toFixed(2) + 'km · ' + esc(result.title) + '</small></button>').join('') + '</div>' : '<div class="notice warn">이 시각·거리·식사 조건에 맞는 후보를 확인하지 못했습니다. 직접 입력할 수 있어요.</div>') + '</div>' +
       '<div class="divider"></div><div class="section-label">입력</div><label class="field-label" for="place-picker">앱에 있는 장소 찾기</label><input class="text-field" id="place-picker" autocomplete="off" placeholder="장소 이름 검색"><div id="picker-results" class="picker-list" style="display:none"></div>' +
       '<div class="section-label">또는 내가 아는 장소 직접 추가</div><div class="form-grid two"><div class="field-group"><label class="field-label" for="custom-name">이름</label><input class="text-field" id="custom-name" value="' + esc(entry?.name || '') + '" placeholder="장소 이름"></div><div class="field-group"><label class="field-label" for="custom-location">위치·주소</label><input class="text-field" id="custom-location" value="' + esc(entry?.locationText || '') + '" placeholder="주소 또는 위치 설명"></div></div><button class="btn btn-outline btn-sm" style="margin-top:8px" id="choose-pin">지도에서 위치 찍기</button><span id="pin-note" class="small" style="margin-left:8px">' + (coord(state.pinSelection) || coord(entry) ? '핀 지정됨' : '핀 미지정') + '</span>' +
@@ -563,6 +582,7 @@
       };
       $('#entry-time').onchange = showRecommendations;
       $('#entry-duration').oninput = showRecommendations;
+      $('#plan-solo').onchange = (event) => { state.draft.solo = event.target.checked; persistDraft(); showRecommendations(); };
       showRecommendations();
       $('#place-picker').oninput = (e) => {
         const q = e.target.value.trim().toLowerCase(); const box = $('#picker-results');
