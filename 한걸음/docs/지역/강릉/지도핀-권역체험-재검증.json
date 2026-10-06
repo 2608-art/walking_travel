@@ -1,0 +1,35 @@
+{
+  "checked": "2026-10-06",
+  "scope": "기존 무핀 장소 g16, g50, g170의 방문 기준점 재검증",
+  "matches": [
+    {
+      "id": "g170",
+      "name": "정동진 썬크루즈 요트투어",
+      "mapLat": 37.68344809518743,
+      "mapLon": 129.04392898863475,
+      "source": "https://place.map.kakao.com/26310988",
+      "confirmid": "26310988",
+      "matchedName": "썬크루즈호텔&리조트",
+      "matchedAddress": "강원특별자치도 강릉시 강동면 헌화로 950-39",
+      "basis": "카카오맵 호텔 대표 좌표. 운영사 공식 요트투어 안내는 탑승 당일 호텔 프런트에서 예약하고 호텔 앞 델라루즈 요트 클럽에서 이용한다고 명시한다. 이 핀은 예약·문의 기준점이며 실제 요트 승선장 위치가 아니다. 호텔 내부 프런트와 선착장까지의 도보 이동은 현장에서 확인해야 한다.",
+      "referenceSource": "https://www.esuncruise.com/view/viewLink.do?page=hotelcondo%2FKOR%2Fyacht%2Ftour",
+      "visitAccount": "https://www.springeye1.com/2023/11/314.html"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "g16",
+      "name": "초당두부마을",
+      "reason": "한국관광공사는 초당두부마을을 여러 식당과 디저트 가게가 모인 지역으로 소개하고 식당별 주소를 제시한다. 방문 블로그에도 마을 입구 조형물 언급은 있으나 현재 공개 자료에서 조형물의 정확한 지번·지도 좌표를 확인하지 못했다. 마을 전체나 특정 식당의 핀을 단일 출입구로 표시하면 오해가 생긴다.",
+      "referenceSource": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=f1a5b5da-f2b8-4f90-b612-316d3b2e49d8",
+      "visitAccount": "https://kbs4674.tistory.com/m/183"
+    },
+    {
+      "id": "g50",
+      "name": "2026 월화거리야시장",
+      "reason": "강릉시 2026 공지는 행사장을 '월화거리 일원 (홈플러스 ~ 은행나무 옆)'이라고 범위로 표기한다. G1방송 방문 보도도 '홈플러스 옆'이라고만 밝힌다. 홈플러스나 기존 월화거리 대표 핀은 행사 구간의 한쪽 참고점일 뿐 매대 전체 또는 공식 입구가 아니다. 공식 출입구·중앙점 좌표는 확인되지 않았다.",
+      "referenceSource": "https://www.gn.go.kr/www/selectBbsNttView.do?bbsNo=12&key=258&nttNo=207514",
+      "visitAccount": "https://www.g1tv.co.kr/tv/?idx=44860&mid=15_369_372&page=4&ptype=view"
+    }
+  ]
+}

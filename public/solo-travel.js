@@ -1,4 +1,4 @@
-/* 목포 혼자 여행 선택: 조사된 1인 메뉴와 이용 형태를 식사 후보에 반영한다. */
+/* 지역별 혼자 여행 선택: 확인된 1인 메뉴와 직접 혼자 식사한 후기를 식사 후보에 반영한다. */
 (() => {
   'use strict';
   const REVIEW_FOOD_IDS = new Set(['p60','p72','p77','p79']);
@@ -8,12 +8,14 @@
   function canEat(p) {
     if (!p || unsuitable(p)) return false;
     if (p.category === 'cafe') return MEAL_CAFE_IDS.has(p.id);
-    if (p.category !== 'food') return false;
-    return ['specific_menu','single_item_unverified'].includes(p.soloVerdict) ||
+    if (p.category !== 'food' && !(p.category === 'market' && p.soloMeal === true)) return false;
+    return p.soloVerdict === 'specific_menu' ||
+      (p.soloVerdict === 'single_item_unverified' && !String(p.id).startsWith('g')) ||
+      (p.soloVerdict === 'review_only' && p.soloVisit === 'solo_visit_review' && !!p.soloReviewSource) ||
       REVIEW_FOOD_IDS.has(p.id) || INFERRED_FOOD_IDS.has(p.id);
   }
   function canVisit(p) {
-    return !!p && !unsuitable(p) && (p.category !== 'food' || canEat(p));
+    return !!p && !unsuitable(p) && (p.category !== 'food' && !(p.category === 'market' && p.soloMeal === true) || canEat(p));
   }
   const api={canEat,canVisit};
   if (typeof module !== 'undefined' && module.exports) module.exports=api;

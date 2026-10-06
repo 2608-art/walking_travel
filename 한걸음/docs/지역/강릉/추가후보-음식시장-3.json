@@ -1,0 +1,659 @@
+{
+  "updated": "2026-10-06",
+  "scope": "강릉 음식점·시장·간식 3차 추가 조사. 핵심권 기존 앱 및 1·2차 후보와 상호·주소 중복을 제외.",
+  "status": "research-only",
+  "note": "후보 정보는 DiningCode 프로필의 공개 메뉴표·영업정보와 이용자 후기를 2026-10-06에 확인한 조사 원안이다. 공식 사업자·지도앱 교차 검증, 현장 영업 확인, 이미지 재사용 권한이 완료되기 전에는 확정 방문정보나 사진으로 취급하지 않는다. 가격·영업시간은 변동 가능하므로 방문 전 업체 확인이 필요하다. 지도 별점 4.0 이상 여부는 미확인.",
+  "candidates": [
+    {
+      "name": "안목항물회",
+      "category": "food",
+      "locationText": "강릉시 경강로 2609 (견소동 184-1)",
+      "source": "https://www.diningcode.com/profile.php?rid=JARATlZC2Jvd",
+      "scheduleText": "화~일 10:00~20:30",
+      "closureText": "월요일 휴무",
+      "description": "안목권 물회·꼬막비빔밥 전문점. 방문 전 영업시간과 메뉴 가격 확인.",
+      "menuItems": [
+        {
+          "name": "문어소라물회",
+          "priceKRW": 17000
+        },
+        {
+          "name": "꼬막비빔밥",
+          "priceKRW": 12000
+        },
+        {
+          "name": "가자미물회",
+          "priceKRW": 17000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=JARATlZC2Jvd",
+      "uncertainty": "프로필 20:30 종료와 방문 후기의 21:00 종료가 상충한다. 독립 공식 채널 및 카카오 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "머구리횟집",
+      "category": "food",
+      "locationText": "강릉시 창해로 19",
+      "source": "https://www.diningcode.com/profile.php?rid=SQowIkJDW35Q",
+      "scheduleText": "매일 11:00~22:00",
+      "closureText": "정기 휴무 표기 없음",
+      "description": "안목 해안 인근 물회·회비빔밥 식당. 포장·입장 조건은 방문 전 확인.",
+      "menuItems": [
+        {
+          "name": "물회 보통",
+          "priceKRW": 18000
+        },
+        {
+          "name": "물회 특",
+          "priceKRW": 25000
+        },
+        {
+          "name": "해초회비빔밥 보통",
+          "priceKRW": 16000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=SQowIkJDW35Q",
+      "uncertainty": "정기 휴무 없음은 무휴 확정이 아니다. 공식 채널·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "안목회관",
+      "category": "food",
+      "locationText": "강릉시 경강로 2627-1 1층",
+      "source": "https://www.diningcode.com/profile.php?rid=WIMAO4rGul33",
+      "scheduleText": "화~일 10:00~17:00; 주문마감 16:00",
+      "closureText": "월요일 휴무",
+      "description": "안목권 장칼국수·알곤이장칼국수 식당. 동태지리탕은 6~8월 제외로 표시되어 계절 메뉴 확인 필요.",
+      "menuItems": [
+        {
+          "name": "알곤이장칼국수",
+          "priceKRW": 12000
+        },
+        {
+          "name": "오징어볶음",
+          "priceKRW": 15000
+        },
+        {
+          "name": "장칼국수",
+          "priceKRW": 10000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=WIMAO4rGul33",
+      "uncertainty": "공식 영업 공지·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "안인횟집",
+      "category": "market",
+      "locationText": "강릉시 금성로 21 지하동 49호",
+      "source": "https://www.diningcode.com/profile.php?rid=GlzRYA3o7WaM",
+      "scheduleText": "수~월 10:00~21:00; 주문마감 20:30",
+      "closureText": "화요일 휴무로 표기",
+      "description": "중앙시장 지하 회 전문점. 회·물회 메뉴와 포장 가능 여부는 방문 전 확인.",
+      "menuItems": [
+        {
+          "name": "물회",
+          "priceKRW": 15000
+        },
+        {
+          "name": "광어+우럭+멍게 2인",
+          "priceKRW": 35000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=GlzRYA3o7WaM",
+      "uncertainty": "같은 프로필에 '연중무휴' 태그와 화요일 휴무가 함께 있어 휴무가 상충한다. 확정 고지 금지; 공식 채널·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "빛고을식당",
+      "category": "food",
+      "locationText": "강릉시 창해로 473",
+      "source": "https://www.diningcode.com/profile.php?rid=HsgdDIj7ochO",
+      "scheduleText": "목~화 08:30~21:00; 브레이크 16:00~17:00; 주문마감 20:30",
+      "closureText": "수요일 휴무",
+      "description": "경포권 순두부·한식 식당.",
+      "menuItems": [
+        {
+          "name": "초당순두부찌개",
+          "priceKRW": 11000
+        },
+        {
+          "name": "해물순두부",
+          "priceKRW": 14000
+        },
+        {
+          "name": "제육덮밥",
+          "priceKRW": 13000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=HsgdDIj7ochO",
+      "uncertainty": "영업·가격의 독립 공식 확인 및 지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "떡볶이는생각하지마세요",
+      "category": "market",
+      "locationText": "강릉시 중앙시장1길 6 1층",
+      "source": "https://www.diningcode.com/profile.php?rid=V6ATHHIDRJzd",
+      "scheduleText": "목~화 11:00~20:00",
+      "closureText": "수요일 휴무",
+      "description": "중앙시장 부근 가래떡 떡볶이·튀김 간식점.",
+      "menuItems": [
+        {
+          "name": "가래떡 떡볶이",
+          "priceKRW": 5500
+        },
+        {
+          "name": "모둠튀김",
+          "priceKRW": 6000
+        },
+        {
+          "name": "어묵",
+          "priceKRW": 1000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=V6ATHHIDRJzd",
+      "uncertainty": "포장·매장석·주문마감 및 지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "미트컬쳐",
+      "category": "food",
+      "locationText": "강릉시 경강로 2629 1층",
+      "source": "https://www.diningcode.com/profile.php?rid=95i2bwctB9do",
+      "scheduleText": "월·목~일 11:30~22:00; 브레이크 15:00~17:30; 주문마감 13:45/20:45",
+      "closureText": "화·수요일 휴무",
+      "description": "안목권 미트볼·피쉬앤칩스 식당. 예약 권장 여부는 업체에 확인.",
+      "menuItems": [
+        {
+          "name": "스웨디쉬 미트볼",
+          "priceKRW": 27000
+        },
+        {
+          "name": "헤링",
+          "priceKRW": 14000
+        },
+        {
+          "name": "피쉬앤칩스",
+          "priceKRW": 27000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=95i2bwctB9do",
+      "uncertainty": "방문 후기 일부가 시간과 메뉴를 뒷받침하지만 업체 공식 공지·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "오월에초당",
+      "category": "food",
+      "locationText": "강릉시 난설헌로 234-5",
+      "source": "https://www.diningcode.com/profile.php?rid=QB8ZUBw9R7bh",
+      "scheduleText": "목~월 11:00~20:00; 브레이크 14:30~17:00; 주문마감 19:30. 화 11:00~15:00; 주문마감 14:30",
+      "closureText": "수요일 휴무",
+      "description": "초당권 초계국수·오징어보쌈 식당. 화요일 단축영업 주의.",
+      "menuItems": [
+        {
+          "name": "초계냉비빔국수",
+          "priceKRW": 9000
+        },
+        {
+          "name": "오징어보쌈 2인상",
+          "priceKRW": 42000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=QB8ZUBw9R7bh",
+      "uncertainty": "계절 메뉴·공식 영업 공지·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "단아생선구이",
+      "category": "food",
+      "locationText": "강릉시 창해로 361-7 1층",
+      "source": "https://www.diningcode.com/profile.php?rid=oRItVotqGS0C",
+      "scheduleText": "월~금 10:00~22:00; 토·일 09:00~22:00",
+      "closureText": "정기 휴무 표기 없음",
+      "description": "강문권 생선구이·솥밥 식당.",
+      "menuItems": [
+        {
+          "name": "영양솥밥 생선구이",
+          "priceKRW": 19000
+        },
+        {
+          "name": "곤드레솥밥 생선구이",
+          "priceKRW": 21000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=oRItVotqGS0C",
+      "uncertainty": "생선조림 가격이 프로필 요약 33,000원과 설명 32,000원으로 상충해 제외했다. 정기 휴무·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "강릉전복해물뚝배기",
+      "category": "food",
+      "locationText": "강릉시 창해로 361-2 1층",
+      "source": "https://www.diningcode.com/profile.php?rid=OUbuIINJ0ITt",
+      "scheduleText": "매일 08:00~20:40; 주문마감 20:00",
+      "closureText": "정기 휴무 표기 없음",
+      "description": "강문권 전복해물뚝배기·순두부 식당.",
+      "menuItems": [
+        {
+          "name": "전복해물뚝배기",
+          "priceKRW": 23000
+        },
+        {
+          "name": "전복해물순두부",
+          "priceKRW": 16000
+        },
+        {
+          "name": "전복미역국",
+          "priceKRW": 18000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=OUbuIINJ0ITt",
+      "uncertainty": "해산물 수급·가격 변동 및 공식 영업 공지·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "강문떡갈비",
+      "category": "food",
+      "locationText": "강릉시 창해로 360-1",
+      "source": "https://www.diningcode.com/profile.php?rid=CfykzNYzxJUX",
+      "scheduleText": "목~화 11:00~21:00; 브레이크 15:00~17:00; 주문마감 20:00",
+      "closureText": "수요일 휴무",
+      "description": "강문권 떡갈비정식·한우물회정식 식당.",
+      "menuItems": [
+        {
+          "name": "떡갈비정식",
+          "priceKRW": 13000
+        },
+        {
+          "name": "치즈떡갈비정식",
+          "priceKRW": 16000
+        },
+        {
+          "name": "한우물회정식",
+          "priceKRW": 18000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=CfykzNYzxJUX",
+      "uncertainty": "공식 영업 공지·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "OODD",
+      "category": "food",
+      "locationText": "강릉시 창해로 355 1층",
+      "source": "https://www.diningcode.com/profile.php?rid=7ARUmrPRA7OX",
+      "scheduleText": "매일 11:30~21:00; 브레이크 15:00~17:00; 주문마감 20:10",
+      "closureText": "정기 휴무 표기 없음",
+      "description": "강문권 피자·양식 식당. 상호 대소문자 확인 필요.",
+      "menuItems": [
+        {
+          "name": "꽈뜨로풍기",
+          "priceKRW": 23000
+        },
+        {
+          "name": "초리조피칸테",
+          "priceKRW": 23000
+        },
+        {
+          "name": "꽈뜨로포르마죠",
+          "priceKRW": 27000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=7ARUmrPRA7OX",
+      "uncertainty": "메뉴명 표기·공식 영업 공지·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "영춘식탁",
+      "category": "food",
+      "locationText": "강릉시 성덕포남로182번길 20",
+      "source": "https://www.diningcode.com/profile.php?rid=VlUohM722dqP",
+      "scheduleText": "화~일 11:00~20:30; 브레이크 15:00~17:00; 주문마감 19:30",
+      "closureText": "월요일 휴무",
+      "description": "포남동 카레·떡볶이·오므라이스 식당.",
+      "menuItems": [
+        {
+          "name": "쫄카레",
+          "priceKRW": 9500
+        },
+        {
+          "name": "영춘떡볶이",
+          "priceKRW": 6000
+        },
+        {
+          "name": "회오리오므라이스",
+          "priceKRW": 9000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=VlUohM722dqP",
+      "uncertainty": "시내 핵심 관광 동선과 거리는 별도 확인 필요. 공식 채널·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "독도수산",
+      "category": "food",
+      "locationText": "강릉시 창해로 343-2",
+      "source": "https://www.diningcode.com/profile.php?rid=prGIfQNOLnLQ",
+      "scheduleText": "매일 12:00~24:00",
+      "closureText": "정기 휴무 표기 없음",
+      "description": "강문권 회 판매점. 포장 메뉴·가격 확인 필요.",
+      "menuItems": [
+        {
+          "name": "모듬회 시작가",
+          "priceKRW": 39000
+        },
+        {
+          "name": "광어회 시작가",
+          "priceKRW": 30000
+        },
+        {
+          "name": "1인 단품 포장",
+          "priceKRW": 19000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=prGIfQNOLnLQ",
+      "uncertainty": "방문 후기 수가 적고 일부 후기의 실제 마감이 자정보다 이르다는 취지여서 늦은 방문은 전화 확인 필요. 공식 채널·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "강릉옥수수빵",
+      "category": "market",
+      "locationText": "강릉시 창해로 349-1",
+      "source": "https://www.diningcode.com/profile.php?rid=sZk3G3jiAqSH",
+      "scheduleText": "토 09:00~22:00; 일~금 09:00~21:00",
+      "closureText": "정기 휴무 표기 없음",
+      "description": "강문권 옥수수빵·감자빵 간식점.",
+      "menuItems": [
+        {
+          "name": "옥수수빵",
+          "priceKRW": 3000
+        },
+        {
+          "name": "감자빵",
+          "priceKRW": 3000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=sZk3G3jiAqSH",
+      "uncertainty": "품절 시 조기 종료 가능성 및 공식 채널·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "강릉가자",
+      "category": "food",
+      "locationText": "강릉시 문화의길7번길 8",
+      "source": "https://www.diningcode.com/profile.php?rid=tb3e3ks9AYPN",
+      "scheduleText": "매일 11:30~24:00; 브레이크 14:00~16:30; 주문마감 23:00",
+      "closureText": "정기 휴무 표기 없음",
+      "description": "강릉 시내 튀김족발 전문점.",
+      "menuItems": [
+        {
+          "name": "후라이드 3색 튀김족발 2인",
+          "priceKRW": 35000
+        },
+        {
+          "name": "후라이드 3색 튀김족발 3인",
+          "priceKRW": 50000
+        },
+        {
+          "name": "한접시튀김족발/주먹밥",
+          "priceKRW": 25000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=tb3e3ks9AYPN",
+      "uncertainty": "후기에서 운영 정보 일부를 확인했으나 공식 영업 공지·지도 평점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    }
+  ],
+  "deferred": [
+    {
+      "name": "놀랄호떡군만두",
+      "category": "market",
+      "locationText": "강릉시 금성로13번길 8-1",
+      "source": "https://www.diningcode.com/profile.php?rid=JbpPYN54D0lW",
+      "reason": "2차 후보 중앙닭강정과 동일 주소로 보인다. 이전·폐업·입점 구조 확인 전 보류.",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "가득막횟집 / 맛가득",
+      "category": "food",
+      "locationText": "강릉시 해안로 501 1동 7호",
+      "source": "https://www.diningcode.com/profile.php?rid=Fzpkkiv8xuI9",
+      "reason": "프로필 상호와 방문 후기 상호가 달라 현행 업체명 검증 필요.",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "강릉샌드 초당직영점",
+      "category": "market",
+      "locationText": "강릉시 초당순두부길 89-8 1·2층",
+      "source": "https://www.diningcode.com/profile.php?rid=wAipv8PDwLCx",
+      "reason": "기존 앱 강원옥과 동일 주소. 공동 입점·이전·이름 중복 여부 검증 전 보류.",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "강원옥찹쌀떡 중앙시장점 / 옥시기농장",
+      "category": "market",
+      "locationText": "강릉시 금성로11번길 5",
+      "source": "https://www.diningcode.com/profile.php?rid=87E0SaWAj3CF",
+      "secondarySource": "https://www.diningcode.com/profile.php?rid=p6Cw6kBgCqrA",
+      "reason": "두 상호가 같은 주소에 표기되어 현재 점유·입점 관계 확인 필요.",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "싱이네라면도서관",
+      "category": "market",
+      "locationText": "주소·운영시간 재확인 필요",
+      "source": "https://www.diningcode.com/profile.php?rid=NYN2oe7L0KTG",
+      "reason": "확인된 임시 휴무일과 상시 운영일정 구분이 불명확해 보류.",
+      "checkedAt": "2026-10-06"
+    }
+  ]
+}

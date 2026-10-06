@@ -1,0 +1,74 @@
+{
+  "checked": "2026-10-06",
+  "scope": "기존 강릉 지도 핀 미확정 음식점·간식점 6곳",
+  "method": "카카오맵 공개 장소검색의 상호·주소·전화·좌표를 앱 기록 및 방문기·업체 게시와 교차 대조. 지도 좌표는 건물/점포 대표 핀이며 보행 출입구나 영업 보증은 아니다.",
+  "matches": [
+    {
+      "id": "g41",
+      "name": "초당할머니순두부",
+      "mapLat": 37.79055465,
+      "mapLon": 128.91539608,
+      "source": "https://place.map.kakao.com/8535139",
+      "confirmid": "8535139",
+      "matchedName": "초당할머니순두부",
+      "matchedAddress": "강원특별자치도 강릉시 초당순두부길 77",
+      "basis": "상호·도로명 주소가 정확히 일치하고 한국관광공사 소개의 전화 033-652-2058과 지도 전화가 일치한다. 같은 검색결과의 초당토박이 할머니순두부(47번지)와 주차장 핀은 별개로 구분했다.",
+      "corroboration": ["https://japanese.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=904&vcontsId=221276"],
+      "ratingNote": "카카오 공개검색 평점 0/평가 0으로 표시되어 4점 이상으로 분류할 근거가 없다."
+    },
+    {
+      "id": "g233",
+      "name": "티각태각대게고로케 강릉성남점",
+      "mapLat": 37.75360224,
+      "mapLon": 128.8995978,
+      "source": "https://place.map.kakao.com/758734897",
+      "confirmid": "758734897",
+      "matchedName": "티각태각 대게고로케",
+      "matchedAddress": "강원특별자치도 강릉시 금성로13번길 12-1",
+      "correctedLocationText": "강릉시 금성로13번길 12-1",
+      "basis": "핵심 상호·고로케 업종이 맞으며 카카오맵은 12-1, 테이블링·뽈레 방문/업체 자료는 12로 표기한다. 양 주소가 인접해 도로명 번호 차이를 방문 안내에 알리고 카카오 점포 핀을 지도 표시용으로 쓸 수 있다.",
+      "corroboration": ["https://www.tabling.co.kr/place/677cd2dd66de5f06988a8126", "https://polle.com/place/4m8IpT/%ED%8B%B0%EA%B0%81%ED%83%9C%EA%B0%81%20%EB%8C%80%EA%B2%8C%EA%B3%A0%EB%A1%9C%EC%BC%80"],
+      "ratingNote": "카카오 공개검색 4.2/13."
+    },
+    {
+      "id": "g234",
+      "name": "강릉오빠 감자파이 강릉중앙시장 본점",
+      "mapLat": 37.75310707,
+      "mapLon": 128.90036119,
+      "source": "https://place.map.kakao.com/607527806",
+      "confirmid": "607527806",
+      "matchedName": "강릉오빠",
+      "matchedAddress": "강원특별자치도 강릉시 중앙시장4길 24-1",
+      "basis": "카카오 지도는 약칭 '강릉오빠'로 등록되어 있으나 앱 주소와 정확히 일치한다. 업체 직접 게시와 MBC 강원영동 방송 안내의 상호·주소가 일치하며 카카오 전화 010-2369-7381과 업체 연락처 0507-1348-7381의 끝 네 자리도 같다.",
+      "corroboration": ["https://www.daangn.com/kr/local-profile/%EA%B0%95%EB%A6%89%EC%98%A4%EB%B9%A0-%EA%B0%90%EC%9E%90%ED%8C%8C%EC%9D%B4-%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5-%EB%B3%B8%EC%A0%90-7xsrswgbgykd/", "https://www.mbceg.co.kr/post/129140"],
+      "ratingNote": "카카오 공개검색 4.5/26."
+    },
+    {
+      "id": "g241",
+      "name": "산마루황태촌 초당점",
+      "mapLat": 37.78708977,
+      "mapLon": 128.91258579,
+      "source": "https://place.map.kakao.com/341189652",
+      "confirmid": "341189652",
+      "matchedName": "산마루황태촌 초당직영점",
+      "matchedAddress": "강원특별자치도 강릉시 연당길 112",
+      "basis": "앱과 카카오의 지점 표현만 다르다. 도로명 주소와 전화 033-651-9909가 일치하고 2026년 9월 방문 후기에도 초당직영점·연당길112·같은 전화가 나온다. 같은 주소에 다른 업소도 검색되므로 지도는 카카오의 식당 전용 핀을 사용한다.",
+      "corroboration": ["https://www.diningcode.com/profile.php?rid=ti7bIu1BuU3D"],
+      "ratingNote": "카카오 공개검색 4.0/33."
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "g65",
+      "name": "초당한솔순두부 감나무집",
+      "reason": "당근 업체 게시(2026-08-16 수정)와 다이닝코드는 초당순두부길57로 안내하나, 카카오맵에는 동일 주소에 '그옛날초당순두부'(ID 339009771)만 검색된다. 다이닝코드는 두 곳을 20m 이내 별개 점포로 보여 주므로 그옛날초당순두부 핀을 이곳에 대입할 수 없다. 건물 내 정확한 점포 위치/현행 영업을 확인할 자료가 부족하다.",
+      "sources": ["https://www.daangn.com/kr/local-profile/%EC%B4%88%EB%8B%B9%ED%95%9C%EC%86%94%EC%88%9C%EB%91%90%EB%B6%80-%EA%B0%90%EB%82%98%EB%AC%B4%EC%A7%91-psjqgpq4v5wo/", "https://www.diningcode.com/profile.php?rid=Edpb4oVBvg9W", "https://place.map.kakao.com/339009771"]
+    },
+    {
+      "id": "g144",
+      "name": "박종주 반죽소",
+      "reason": "과거 블로그·트리플·다이닝코드는 난설헌로228(초당동320)의 박종주반죽소를 소개하지만, 현재 카카오맵의 그 주소에는 택지골수제생갈비 경포대점과 피어52가 표시된다. 2026년 방문기에 택지골이 같은 주소를 사용한 사실도 확인된다. 카카오맵의 박종주반죽소 검색 결과는 중앙시장1길9 전국본점, 주문로45 주문진점, 헌화로1033 정동진점으로 모두 다른 지점이다. 초당점은 이전 또는 폐업 의심으로 구주소에 핀을 찍지 않는다.",
+      "sources": ["https://www.diningcode.com/profile.php?rid=bBGpvkymbZdM", "https://triple.guide/restaurants/67db4188-21f2-49cc-90a4-8b9ff9409cca", "https://place.map.kakao.com/1516670515", "https://place.map.kakao.com/1343344936", "https://www.diningcode.com/profile.php?rid=8sqAw0gRFENa"]
+    }
+  ]
+}

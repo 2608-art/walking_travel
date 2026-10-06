@@ -1,0 +1,753 @@
+{
+  "updated": "2026-10-06",
+  "scope": "강릉 핵심권 음식점·간식 추가 조사 2차",
+  "status": "research-only",
+  "note": "1차 파일 및 앱 데이터와 중복되지 않는 후보. 카카오맵 별점과 사진 재사용권은 확인되지 않았으므로 앱 반영 전 재검증 필요. 주소/상호 충돌 후보는 deferred로 분리.",
+  "candidates": [
+    {
+      "name": "디딤돌 숨 두부가",
+      "category": "food",
+      "locationText": "강릉시 초당원길 48 1층",
+      "source": "https://www.diningcode.com/profile.php?rid=vjjOFLKAKLmb",
+      "scheduleText": "평일 08:30~20:00, 토·일 08:00~20:00; 브레이크 16:00~17:00; 주문마감 19:30",
+      "closureText": "정기휴무 표시 없음",
+      "description": "초당권 두부 한상·순두부 전문점. 일부 한상·전골 메뉴는 2인 이상 주문.",
+      "menuItems": [
+        {
+          "name": "초두부 백반",
+          "priceKRW": 10000
+        },
+        {
+          "name": "곱창순두부",
+          "priceKRW": 15000
+        },
+        {
+          "name": "숨 한상 1인",
+          "priceKRW": 20000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=vjjOFLKAKLmb",
+      "uncertainty": "한상·전골 2인 이상 조건은 메뉴별로 다르므로 상세 페이지 재확인; 공휴일 변동 가능.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "다송가든",
+      "category": "food",
+      "locationText": "강릉시 난설헌로193번길 18 1층",
+      "source": "https://www.diningcode.com/profile.php?rid=bNCSuQfIKUmU",
+      "scheduleText": "목~화 10:00~21:00; 주문마감 19:50",
+      "closureText": "매주 수요일 휴무",
+      "description": "허균·허난설헌 기념공원 가까운 초당두부전골·한식.",
+      "menuItems": [
+        {
+          "name": "초당두부전골 1인분",
+          "priceKRW": 18000
+        },
+        {
+          "name": "생선구이 정식",
+          "priceKRW": 20000
+        },
+        {
+          "name": "코다리양념구이 1인분",
+          "priceKRW": 19000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=bNCSuQfIKUmU",
+      "uncertainty": "두부전골·코다리정식은 2인분 이상 주문 조건 표시. 가격·공휴일 운영 재확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "초당고부순두부",
+      "category": "food",
+      "locationText": "강릉시 강릉대로587번길 17",
+      "source": "https://www.diningcode.com/profile.php?rid=r7UqwFyrTNvV",
+      "scheduleText": "화~일 07:00~17:00; 주문마감 16:00(일부 요일 표시)",
+      "closureText": "매주 월요일 휴무 표시",
+      "description": "초당마을 순두부·두부전골 식당.",
+      "menuItems": [
+        {
+          "name": "순두부 백반",
+          "priceKRW": 11000
+        },
+        {
+          "name": "순두부전골 1인분",
+          "priceKRW": 13000
+        },
+        {
+          "name": "모두부",
+          "priceKRW": 12000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=r7UqwFyrTNvV",
+      "uncertainty": "전골은 2인 이상 주문 조건. 주문마감 표기가 요일별로 달라 현장 확인 필요.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "정은숙 초당순두부",
+      "category": "food",
+      "locationText": "강릉시 난설헌로 200",
+      "source": "https://www.diningcode.com/profile.php?rid=KD7ffAUq6knA",
+      "scheduleText": "수~일 08:00~18:30, 주문마감 17:30; 월 08:00~16:00, 주문마감 15:00",
+      "closureText": "매주 화요일 휴무 표시",
+      "description": "초당 두부 밥상과 1인 주문 가능한 순두부전골.",
+      "menuItems": [
+        {
+          "name": "초당 명품밥상",
+          "priceKRW": 25000
+        },
+        {
+          "name": "초당두부밥상",
+          "priceKRW": 20000
+        },
+        {
+          "name": "초당 순두부전골",
+          "priceKRW": 15000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=KD7ffAUq6knA",
+      "uncertainty": "초당두부밥상은 2인 이상, 순두부전골은 1인 가능으로 표시. 예약 할인 및 휴일 변동 별도 확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "9남매두부집",
+      "category": "food",
+      "locationText": "강릉시 초당원길 63-2",
+      "source": "https://www.diningcode.com/profile.php?rid=X29kKq3cdNzx",
+      "scheduleText": "금~수 08:00~20:00; 브레이크 15:00~16:00; 주문마감 19:30",
+      "closureText": "매주 목요일 휴무 표시",
+      "description": "초당 두부전골·청국장·순두부백반.",
+      "menuItems": [
+        {
+          "name": "순두부전골 2인분",
+          "priceKRW": 20000
+        },
+        {
+          "name": "청국장 2인분",
+          "priceKRW": 20000
+        },
+        {
+          "name": "순두부백반",
+          "priceKRW": 10000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=X29kKq3cdNzx",
+      "uncertainty": "전골/청국장 가격은 2인분 전체 가격. 리뷰상 현장대기·1인 1메뉴 조건은 공식 확인 필요.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "농촌순두부",
+      "category": "food",
+      "locationText": "강릉시 초당순두부길 108",
+      "source": "https://www.diningcode.com/profile.php?rid=cvlVqy8DSYZh",
+      "scheduleText": "화~일 07:00~20:00; 주문마감 19:30",
+      "closureText": "매주 월요일 휴무 표시",
+      "description": "초당마을 순두부전골·두부전골.",
+      "menuItems": [
+        {
+          "name": "얼큰순두부전골",
+          "priceKRW": 15000
+        },
+        {
+          "name": "낙지얼큰순두부전골정식",
+          "priceKRW": 20000
+        },
+        {
+          "name": "초당순두부 흰색",
+          "priceKRW": 10000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=cvlVqy8DSYZh",
+      "uncertainty": "메뉴 가격은 다이닝코드 표기. 1인 주문 가능 여부와 주말 변동 재확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "장미경양식",
+      "category": "food",
+      "locationText": "강릉시 금성로22번길 4 1층",
+      "source": "https://www.diningcode.com/profile.php?rid=0rfmY2MjIk7r",
+      "scheduleText": "대체로 10:00~21:00, 주문마감 20:20; 일부 목요일 10:00~20:30 표시",
+      "closureText": "정기휴무 표시 없음",
+      "description": "중앙시장·월화거리 인근 경양식 돈까스.",
+      "menuItems": [
+        {
+          "name": "수제 돈까스",
+          "priceKRW": 12000
+        },
+        {
+          "name": "수제 치즈돈까스",
+          "priceKRW": 14000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=0rfmY2MjIk7r",
+      "uncertainty": "사이트 요일별 운영에 목요일 단축 표시가 있어 매일 동일 시간으로 확정하지 않음.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "박종주 반죽소",
+      "category": "market",
+      "locationText": "강릉시 난설헌로 228",
+      "source": "https://www.diningcode.com/profile.php?rid=bBGpvkymbZdM",
+      "scheduleText": "매일 09:30~20:00 표시",
+      "closureText": "정기휴무 표시 없음",
+      "description": "초당권 찐빵·만두·젤라또 간식.",
+      "menuItems": [
+        {
+          "name": "쌀찐빵 5개",
+          "priceKRW": 6000
+        },
+        {
+          "name": "고기 또는 김치만두 5개",
+          "priceKRW": 5000
+        },
+        {
+          "name": "수제 순두부젤라또",
+          "priceKRW": 4000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=bBGpvkymbZdM",
+      "uncertainty": "소진 마감·공휴일 변동 미확인. 시장 내 매장이 아닌 초당권 간식점.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "월화의 부엌",
+      "category": "market",
+      "locationText": "강릉시 금성로22번길 9 1층 1호",
+      "source": "https://www.diningcode.com/profile.php?rid=v0HWSRkw5jRA",
+      "scheduleText": "매일 09:30~19:00; 주문마감 18:30",
+      "closureText": "정기휴무 표시 없음",
+      "description": "중앙시장 인근 김밥·간편식.",
+      "menuItems": [
+        {
+          "name": "명란구이김밥",
+          "priceKRW": 8500
+        },
+        {
+          "name": "명태회김밥",
+          "priceKRW": 7500
+        },
+        {
+          "name": "불고기김밥",
+          "priceKRW": 5500
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=v0HWSRkw5jRA",
+      "uncertainty": "영업정보는 다이닝코드 기준. 공휴일·재료 소진 변동 확인 필요.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "콩삐납따기",
+      "category": "market",
+      "locationText": "강릉시 신대학길 39 1층 101호",
+      "source": "https://www.diningcode.com/profile.php?rid=ujiofX46Sxxl",
+      "scheduleText": "매일 11:00~20:00; 주문마감 19:50",
+      "closureText": "정기휴무 표시 없음",
+      "description": "중앙시장 도보권 콩나물어묵·떡볶이 분식",
+      "menuItems": [
+        {
+          "name": "콩나물오뎅",
+          "priceKRW": 5000
+        },
+        {
+          "name": "떡볶이",
+          "priceKRW": 4500
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=ujiofX46Sxxl",
+      "uncertainty": "상호가 후기에서 '콩삐납띠기'로도 표기됨. 정확한 간판명 재확인. 시장 내부가 아닌 인근 점포.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "중앙닭강정",
+      "category": "market",
+      "locationText": "강릉시 금성로13번길 8-1",
+      "source": "https://www.diningcode.com/profile.php?rid=9PSzfGPgeuaO",
+      "scheduleText": "매일 09:00~20:00 표시",
+      "closureText": "정기휴무 표시 없음",
+      "description": "중앙시장 컵닭강정과 상자 포장",
+      "menuItems": [
+        {
+          "name": "컵닭강정",
+          "priceKRW": 6000
+        },
+        {
+          "name": "닭강정 반상자",
+          "priceKRW": 15000
+        },
+        {
+          "name": "닭강정 한상자",
+          "priceKRW": 25000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=9PSzfGPgeuaO",
+      "uncertainty": "재료 소진 및 공휴일 운영 변동 확인 필요.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "송파회식당",
+      "category": "food",
+      "locationText": "강릉시 창해로 10",
+      "source": "https://www.diningcode.com/profile.php?rid=0Y3SlWfojebO",
+      "scheduleText": "매일 08:00~20:00; 주문마감 19:30",
+      "closureText": "정기휴무 표시 없음",
+      "description": "안목권 물회·미역국·회덮밥",
+      "menuItems": [
+        {
+          "name": "물회",
+          "priceKRW": 16000
+        },
+        {
+          "name": "우럭미역국",
+          "priceKRW": 12000
+        },
+        {
+          "name": "회덮밥",
+          "priceKRW": 16000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=0Y3SlWfojebO",
+      "uncertainty": "일부 오래된 방문 후기에 물회 15,000원 표기, 현행 사이트 메뉴 16,000원 기준으로 작성. 방문 전 가격 확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+        "name": "남산막국수",
+        "category": "food",
+        "locationText": "강릉시 강변로 226 1층",
+        "source": "https://www.diningcode.com/profile.php?rid=7L8JPyduVdYE",
+        "scheduleText": "수~월 10:00~20:00; 브레이크 15:30~17:00; 주문마감 19:30",
+        "closureText": "매주 화요일 휴무",
+        "description": "중앙시장 남쪽 강변권 막국수",
+        "menuItems": [
+          {
+            "name": "물막국수",
+            "priceKRW": 10000
+          },
+          {
+            "name": "비빔회막국수",
+            "priceKRW": 11000
+          }
+        ],
+        "priceSource": "https://www.diningcode.com/profile.php?rid=7L8JPyduVdYE",
+        "uncertainty": "메밀떡만두국은 10~3월 계절메뉴. 카카오맵 별점과 공휴일 변동 미확인.",
+        "rating": {
+          "status": "unverified",
+          "score": null,
+          "reviewCount": null,
+          "mapUrl": null,
+          "checkedAt": "2026-10-06"
+        },
+        "photo": {
+          "status": "no-reuse-license-verified",
+          "originalUrl": null,
+          "author": null,
+          "license": null
+        },
+        "checkedAt": "2026-10-06"
+      },
+      {
+        "name": "다연",
+        "category": "food",
+        "locationText": "강릉시 경포로475번길 18 1층",
+        "source": "https://www.diningcode.com/profile.php?rid=PQ0CqlICZi87",
+        "scheduleText": "목~화 10:00~21:00; 브레이크 15:00~17:00; 주문마감 20:30",
+        "closureText": "매주 수요일 휴무 표시",
+        "description": "경포권 오삼불고기·순두부정식 한식",
+        "menuItems": [
+          {
+            "name": "오삼불고기 1인분",
+            "priceKRW": 15000
+          },
+          {
+            "name": "초당순두부정식",
+            "priceKRW": 10000
+          }
+        ],
+        "priceSource": "https://www.diningcode.com/profile.php?rid=PQ0CqlICZi87",
+        "uncertainty": "오삼불고기는 2인분 이상 주문. 카카오맵 별점과 공휴일 변동 미확인.",
+        "rating": {
+          "status": "unverified",
+          "score": null,
+          "reviewCount": null,
+          "mapUrl": null,
+          "checkedAt": "2026-10-06"
+        },
+        "photo": {
+          "status": "no-reuse-license-verified",
+          "originalUrl": null,
+          "author": null,
+          "license": null
+        },
+        "checkedAt": "2026-10-06"
+      }
+  ],
+  "reverifiedFromFirst": [
+    {
+      "name": "동녘댁",
+      "category": "food",
+      "locationText": "강릉시 난설헌로 229-11 (초당동 355-1)",
+      "source": "https://www.diningcode.com/profile.php?rid=vt6tVf9bD5qq",
+      "scheduleText": "수~월 11:00~21:00; 브레이크 14:30~17:00; 주문마감 20:00",
+      "closureText": "매주 화요일 휴무 표시",
+      "description": "파스타·감자베이컨피자",
+      "menuItems": [
+        {
+          "name": "청어알 새우 오일 파스타",
+          "priceKRW": 16000
+        },
+        {
+          "name": "감자베이컨피자",
+          "priceKRW": 22000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=vt6tVf9bD5qq",
+      "uncertainty": "2026-10-06 다이닝코드 상세 페이지 주소·주간 영업표·가격 대조 완료. 공휴일 변동과 카카오맵 별점은 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "번패티번 강릉",
+      "category": "food",
+      "locationText": "강릉시 해안로 30 (견소동 264)",
+      "source": "https://www.diningcode.com/profile.php?rid=AkQaK6Gcv2gm",
+      "secondarySource": "https://www.koreatriptips.com/dining/3536182.html",
+      "scheduleText": "매일 10:30~20:30; 주문마감 20:00",
+      "closureText": "정기휴무 표시 없음",
+      "description": "안목권 수제버거",
+      "menuItems": [
+        {
+          "name": "강릉버거",
+          "priceKRW": 13800
+        },
+        {
+          "name": "치즈버거",
+          "priceKRW": 8800
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=AkQaK6Gcv2gm",
+      "uncertainty": "2026-10-06 다이닝코드 상세 페이지 주소·주간 영업표·가격 대조 완료; 관광정보 페이지에서 주소 재확인. 공휴일 변동과 카카오맵 별점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "옛 태광식당",
+      "category": "food",
+      "locationText": "강릉시 난설헌로 105 라동 103호 (포남동 945)",
+      "source": "https://www.diningcode.com/profile.php?rid=oeo4LUxPc1Pk",
+      "scheduleText": "매일 07:30~15:00; 주문마감 14:30",
+      "closureText": "다이닝코드 '연중무휴' 태그, 주간표 7일 모두 영업 표시",
+      "description": "우럭미역국·가자미물회",
+      "menuItems": [
+        {
+          "name": "우럭미역국",
+          "priceKRW": 12000
+        },
+        {
+          "name": "가자미 물회",
+          "priceKRW": 17000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=oeo4LUxPc1Pk",
+      "uncertainty": "2026-10-06 다이닝코드 상세 페이지 주소·주간 영업표·가격 대조 완료. 연중무휴는 사이트 태그로만 확인되어 임시휴무 가능성 남음. 카카오맵 별점 미확인.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    }
+  ],
+  "deferred": [
+    {
+      "name": "그옛날초당순두부",
+      "category": "food",
+      "locationText": "강릉시 초당순두부길 57 (초당동 299-15)",
+      "source": "https://www.diningcode.com/profile.php?rid=UuMvoSfEDd1c",
+      "scheduleText": "매일 06:00~19:00 표기",
+      "closureText": "휴무 없음 표기",
+      "description": "다이닝코드에는 순두부백반·전골 식당으로 등록.",
+      "menuItems": [
+        {
+          "name": "순두부백반",
+          "priceKRW": 10000
+        },
+        {
+          "name": "순두부전골 1인분",
+          "priceKRW": 13000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=UuMvoSfEDd1c",
+      "uncertainty": "현재 앱의 초당한솔순두부 감나무집과 도로명·지번 주소가 완전히 동일. 상호 변경/승계 여부 불명. https://www.daangn.com/kr/local-profile/%EC%B4%88%EB%8B%B9%ED%95%9C%EC%86%94%EC%88%9C%EB%91%90%EB%B6%80-%EA%B0%90%EB%82%98%EB%AC%B4%EC%A7%91-psjqgpq4v5wo/ 에 다른 상호로 같은 주소 표시. 중복 등록 금지.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "하월당",
+      "category": "food",
+      "locationText": "강릉시 초당순두부길 89-12 1층",
+      "source": "https://www.diningcode.com/profile.php?rid=QbyKIiDilKtw",
+      "scheduleText": "리뷰: 매일 09:00~19:00, 브레이크 15:30~16:30, 주문마감 18:30",
+      "closureText": "2026-10-06 조회 다이닝코드 주간표에서는 10/7~10/9 휴무 표시",
+      "description": "짬뽕순두부·중식당.",
+      "menuItems": [
+        {
+          "name": "짬뽕순두부밥",
+          "priceKRW": 12000
+        },
+        {
+          "name": "차돌짬뽕순두부",
+          "priceKRW": 16000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=QbyKIiDilKtw",
+      "uncertainty": "최근 리뷰와 주간표 운영 시간이 불일치, 연휴 임시휴무 가능성. 현행 요일별 운영 확인 후 승격.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "name": "노아회식당",
+      "category": "food",
+      "locationText": "강릉시 경강로 2617",
+      "source": "https://www.diningcode.com/profile.php?rid=KWzRuOrmDGUn",
+      "scheduleText": "목~화 11:30~23:00; 브레이크 14:30~16:30; 주문마감 22:00",
+      "closureText": "수요일 휴무 표기; 일부 블로그 후기 1·3번째 월요일 휴무 주장",
+      "description": "안목권 물회·회덮밥·회 식당",
+      "menuItems": [
+        {
+          "name": "물회",
+          "priceKRW": 17000
+        },
+        {
+          "name": "회덮밥",
+          "priceKRW": 17000
+        }
+      ],
+      "priceSource": "https://www.diningcode.com/profile.php?rid=KWzRuOrmDGUn",
+      "uncertainty": "휴무일 출처 충돌: 다이닝코드 주간표는 수요일 휴무, 후기에는 1·3번째 월요일 휴무. 운영일 확정 전 앱 반영 보류 권장.",
+      "rating": {
+        "status": "unverified",
+        "score": null,
+        "reviewCount": null,
+        "mapUrl": null,
+        "checkedAt": "2026-10-06"
+      },
+      "photo": {
+        "status": "no-reuse-license-verified",
+        "originalUrl": null,
+        "author": null,
+        "license": null
+      },
+      "checkedAt": "2026-10-06"
+    }
+  ]
+}

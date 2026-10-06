@@ -1,0 +1,1099 @@
+{
+  "checkedAtKST": "2026-10-06",
+  "scope": "현재 앱의 기존 market 장소 중 g1~g246",
+  "rawQueries": [
+    {
+      "id": "g1",
+      "name": "강릉중앙시장",
+      "locationText": "강릉시 금성로 21. 점포별 운영시간이 다름",
+      "results": [
+        {
+          "name": "강릉중앙시장",
+          "rating": "3.9",
+          "reviews": "573건",
+          "url": "https://place.map.kakao.com/18525909",
+          "address": "강원특별자치도 강릉시 금성로 21"
+        },
+        {
+          "name": "강릉중앙시장 제1공영주차장",
+          "rating": "3.6",
+          "reviews": "14건",
+          "url": "https://place.map.kakao.com/301224738",
+          "address": "강원특별자치도 강릉시 성남동 65-4"
+        },
+        {
+          "name": "강릉중앙시장 제2공영주차장",
+          "rating": "1.0",
+          "reviews": "10건",
+          "url": "https://place.map.kakao.com/1718140517",
+          "address": "강원특별자치도 강릉시 금성로 9"
+        },
+        {
+          "name": "강릉중앙시장 지하어시장",
+          "rating": "2.7",
+          "reviews": "26건",
+          "url": "https://place.map.kakao.com/2018534118",
+          "address": "강원특별자치도 강릉시 성남동 50"
+        },
+        {
+          "name": "강릉커피콩빵 중앙시장점",
+          "rating": "3.1",
+          "reviews": "21건",
+          "url": "https://place.map.kakao.com/2119279976",
+          "address": "강원특별자치도 강릉시 금성로13번길 19 1층"
+        },
+        {
+          "name": "중앙시장 제3공영주차장",
+          "rating": "0.0",
+          "reviews": "0건",
+          "url": "https://place.map.kakao.com/1717716253",
+          "address": "강원특별자치도 강릉시 성남동 41-12"
+        },
+        {
+          "name": "강릉감자닭강정 중앙시장점",
+          "rating": "4.7",
+          "reviews": "36건",
+          "url": "https://place.map.kakao.com/755610421",
+          "address": "강원특별자치도 강릉시 금성로 16 2동 2층"
+        },
+        {
+          "name": "강릉길감자",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/1545071550",
+          "address": "강원특별자치도 강릉시 금성로 16 1층 2호"
+        },
+        {
+          "name": "중앙시장횟집 파란간판집",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/1967916039",
+          "address": "강원특별자치도 강릉시 금성로23번길 6 1층"
+        },
+        {
+          "name": "포토이즘박스 강릉중앙시장점",
+          "rating": "1.5",
+          "reviews": "2건",
+          "url": "https://place.map.kakao.com/2015394806",
+          "address": "강원특별자치도 강릉시 금성로14번길 5-2"
+        },
+        {
+          "name": "강릉이래요",
+          "rating": "4.6",
+          "reviews": "58건",
+          "url": "https://place.map.kakao.com/1004538025",
+          "address": "강원특별자치도 강릉시 금성로 21 1층 147호"
+        },
+        {
+          "name": "강릉중앙시장 출입구3",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/1675021689",
+          "address": "강원특별자치도 강릉시 성남동 114-1"
+        },
+        {
+          "name": "하루필름 강릉중앙점",
+          "rating": "5.0",
+          "reviews": "2건",
+          "url": "https://place.map.kakao.com/1312816312",
+          "address": "강원특별자치도 강릉시 대학길 11 1층"
+        },
+        {
+          "name": "강릉옥수수크림탕수육 중앙시장",
+          "rating": "0.0",
+          "reviews": "0건",
+          "url": "https://place.map.kakao.com/752848250",
+          "address": "강원특별자치도 강릉시 중앙시장2길 10-4"
+        },
+        {
+          "name": "삼초전 강릉중앙시장점",
+          "rating": "5.0",
+          "reviews": "1건",
+          "url": "https://place.map.kakao.com/484435942",
+          "address": "강원특별자치도 강릉시 중앙시장1길 7-1"
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "name": "성남시장",
+      "locationText": "강릉시 중앙시장길 24-2. 중앙시장과 인접한 별도 시장",
+      "results": []
+    },
+    {
+      "id": "g16",
+      "name": "초당두부마을",
+      "locationText": "초당순두부길 일대. 실제 방문은 개별 식당 선택 필요",
+      "results": [
+        {
+          "name": "초당순두부마을",
+          "rating": "3.4",
+          "reviews": "36건",
+          "url": "https://place.map.kakao.com/18097384",
+          "address": "강원특별자치도 강릉시 강문동 146-35"
+        },
+        {
+          "name": "두부마을초당순두부",
+          "rating": "4.2",
+          "reviews": "15건",
+          "url": "https://place.map.kakao.com/451764459",
+          "address": "강원특별자치도 강릉시 사임당로 131-1"
+        },
+        {
+          "name": "초당110",
+          "rating": "3.9",
+          "reviews": "184건",
+          "url": "https://place.map.kakao.com/1647908801",
+          "address": "강원특별자치도 강릉시 초당순두부길 110 초당110"
+        },
+        {
+          "name": "인생네컷 강릉초당두부마을점",
+          "rating": "1.0",
+          "reviews": "2건",
+          "url": "https://place.map.kakao.com/351545268",
+          "address": "강원특별자치도 강릉시 초당순두부길77번길 15"
+        }
+      ]
+    },
+    {
+      "id": "g50",
+      "name": "2026 월화거리야시장",
+      "locationText": "월화거리 홈플러스~은행나무 옆 구간 · 단일 출입구 아님",
+      "results": []
+    },
+    {
+      "id": "g51",
+      "name": "수제 어묵 고로케",
+      "locationText": "강릉시 금성로13번길 8 1층",
+      "results": [
+        {
+          "name": "수제어묵고로케",
+          "rating": "3.6",
+          "reviews": "251건",
+          "url": "https://place.map.kakao.com/234216431",
+          "address": "강원특별자치도 강릉시 금성로13번길 8 1층"
+        }
+      ]
+    },
+    {
+      "id": "g52",
+      "name": "강원옥",
+      "locationText": "강릉시 초당순두부길 89-8",
+      "results": [
+        {
+          "name": "강원옥 찹쌀떡",
+          "rating": "3.9",
+          "reviews": "39건",
+          "url": "https://place.map.kakao.com/1659998491",
+          "address": "강원특별자치도 강릉시 초당순두부길 89-8 1층"
+        }
+      ]
+    },
+    {
+      "id": "g72",
+      "name": "배니닭강정",
+      "locationText": "강릉시 금성로13번길 3-1",
+      "results": [
+        {
+          "name": "배니닭강정",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/19660110",
+          "address": "강원특별자치도 강릉시 금성로13번길 3-1 1층"
+        }
+      ]
+    },
+    {
+      "id": "g73",
+      "name": "만복래닭강정",
+      "locationText": "강릉시 중앙시장2길 42 1층",
+      "results": [
+        {
+          "name": "강릉만복래닭강정",
+          "rating": "4.8",
+          "reviews": "225건",
+          "url": "https://place.map.kakao.com/1722163390",
+          "address": "강원특별자치도 강릉시 중앙시장2길 42 1층"
+        }
+      ]
+    },
+    {
+      "id": "g75",
+      "name": "젤라또마켓",
+      "locationText": "강릉시 중앙시장2길 45-1",
+      "results": [
+        {
+          "name": "젤라또마켓 순두부젤라또",
+          "rating": "4.7",
+          "reviews": "54건",
+          "url": "https://place.map.kakao.com/709554562",
+          "address": "강원특별자치도 강릉시 중앙시장2길 45-1 상점4호"
+        }
+      ]
+    },
+    {
+      "id": "g76",
+      "name": "커피러버스",
+      "locationText": "강릉시 금성로 13",
+      "results": [
+        {
+          "name": "커피러버스",
+          "rating": "3.9",
+          "reviews": "19건",
+          "url": "https://place.map.kakao.com/317465759",
+          "address": "강원특별자치도 강릉시 금성로 13"
+        }
+      ]
+    },
+    {
+      "id": "g77",
+      "name": "강릉감자닭강정",
+      "locationText": "강릉시 창해로 343-1 1층",
+      "results": [
+        {
+          "name": "강릉감자닭강정",
+          "rating": "3.7",
+          "reviews": "68건",
+          "url": "https://place.map.kakao.com/1089508413",
+          "address": "강원특별자치도 강릉시 창해로 343-1 1층"
+        },
+        {
+          "name": "강릉감자닭강정 중앙시장점",
+          "rating": "4.7",
+          "reviews": "36건",
+          "url": "https://place.map.kakao.com/755610421",
+          "address": "강원특별자치도 강릉시 금성로 16 2동 2층"
+        },
+        {
+          "name": "강릉길감자",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/1545071550",
+          "address": "강원특별자치도 강릉시 금성로 16 1층 2호"
+        }
+      ]
+    },
+    {
+      "id": "g78",
+      "name": "바로방 중앙시장직영점",
+      "locationText": "강릉시 금성로23번길 8 1층",
+      "results": []
+    },
+    {
+      "id": "g80",
+      "name": "이화국수 강릉본점",
+      "locationText": "강릉시 중앙시장1길 11",
+      "results": []
+    },
+    {
+      "id": "g90",
+      "name": "두리튀김",
+      "locationText": "강릉시 금성로13번길 9",
+      "results": [
+        {
+          "name": "두리튀김",
+          "rating": "2.2",
+          "reviews": "13건",
+          "url": "https://place.map.kakao.com/17662698",
+          "address": "강원특별자치도 강릉시 금성로13번길 9"
+        }
+      ]
+    },
+    {
+      "id": "g91",
+      "name": "원조 소문난무침회",
+      "locationText": "강릉시 중앙시장1길 17 1층",
+      "results": [
+        {
+          "name": "원조소문난무침회",
+          "rating": "4.2",
+          "reviews": "53건",
+          "url": "https://place.map.kakao.com/1467066954",
+          "address": "강원특별자치도 강릉시 중앙시장1길 17 1층"
+        }
+      ]
+    },
+    {
+      "id": "g144",
+      "name": "박종주 반죽소",
+      "locationText": "강릉시 난설헌로 228",
+      "results": [
+        {
+          "name": "박종주반죽소 전국본점",
+          "rating": "4.8",
+          "reviews": "6건",
+          "url": "https://place.map.kakao.com/1343344936",
+          "address": "강원특별자치도 강릉시 중앙시장1길 9 1층"
+        },
+        {
+          "name": "박종주반죽소 주문진점",
+          "rating": "5.0",
+          "reviews": "1건",
+          "url": "https://place.map.kakao.com/273425209",
+          "address": "강원특별자치도 강릉시 주문진읍 주문로 45 1층"
+        },
+        {
+          "name": "강릉커피찐빵 박종주반죽소 정동진점",
+          "rating": "4.7",
+          "reviews": "23건",
+          "url": "https://place.map.kakao.com/1416410753",
+          "address": "강원특별자치도 강릉시 강동면 헌화로 1033 1층"
+        }
+      ]
+    },
+    {
+      "id": "g145",
+      "name": "월화의 부엌",
+      "locationText": "강릉시 금성로22번길 9 1층 1호",
+      "results": [
+        {
+          "name": "월화의부엌",
+          "rating": "4.5",
+          "reviews": "17건",
+          "url": "https://place.map.kakao.com/142186968",
+          "address": "강원특별자치도 강릉시 금성로22번길 9 1층 1호"
+        }
+      ]
+    },
+    {
+      "id": "g164",
+      "name": "콩삐납따기",
+      "locationText": "강릉시 신대학길 39 1층 101호",
+      "results": [
+        {
+          "name": "콩삐납따기",
+          "rating": "0.0",
+          "reviews": "0건",
+          "url": "https://place.map.kakao.com/840126383",
+          "address": "강원특별자치도 강릉시 신대학길 39"
+        }
+      ]
+    },
+    {
+      "id": "g174",
+      "name": "안인횟집",
+      "locationText": "강릉시 금성로 21 지하동 49호",
+      "results": [
+        {
+          "name": "안인횟집",
+          "rating": "3.8",
+          "reviews": "35건",
+          "url": "https://place.map.kakao.com/21345681",
+          "address": "강원특별자치도 강릉시 금성로 21 중앙시장 지하동 65호"
+        },
+        {
+          "name": "고향횟집",
+          "rating": "4.4",
+          "reviews": "35건",
+          "url": "https://place.map.kakao.com/8193455",
+          "address": "강원특별자치도 강릉시 강동면 염전길 155 1-2층"
+        },
+        {
+          "name": "염전횟집",
+          "rating": "3.9",
+          "reviews": "31건",
+          "url": "https://place.map.kakao.com/10644114",
+          "address": "강원특별자치도 강릉시 강동면 염전길 147 1층"
+        },
+        {
+          "name": "고향횟집 전용주차장",
+          "rating": "0.0",
+          "reviews": "0건",
+          "url": "https://place.map.kakao.com/468867777",
+          "address": "강원특별자치도 강릉시 강동면 안인리 3-8"
+        }
+      ]
+    },
+    {
+      "id": "g176",
+      "name": "떡볶이는생각하지마세요",
+      "locationText": "강릉시 중앙시장1길 6 1층",
+      "results": [
+        {
+          "name": "떡볶이는생각하지마세요",
+          "rating": "4.3",
+          "reviews": "25건",
+          "url": "https://place.map.kakao.com/524820977",
+          "address": "강원특별자치도 강릉시 중앙시장1길 6 1층"
+        }
+      ]
+    },
+    {
+      "id": "g185",
+      "name": "강릉옥수수빵",
+      "locationText": "강릉시 창해로 349-1",
+      "results": [
+        {
+          "name": "강릉옥수수빵",
+          "rating": "3.6",
+          "reviews": "31건",
+          "url": "https://place.map.kakao.com/882618279",
+          "address": "강원특별자치도 강릉시 창해로 349-1"
+        },
+        {
+          "name": "정남미명과 수평선점",
+          "rating": "4.3",
+          "reviews": "67건",
+          "url": "https://place.map.kakao.com/1173484619",
+          "address": "강원특별자치도 강릉시 창해로350번길 21-1 1-2층"
+        },
+        {
+          "name": "카페칠공공",
+          "rating": "3.1",
+          "reviews": "16건",
+          "url": "https://place.map.kakao.com/23151270",
+          "address": "강원특별자치도 강릉시 죽헌길 142 가동"
+        }
+      ]
+    },
+    {
+      "id": "g228",
+      "name": "강릉 중앙시장 횟집 파란간판집",
+      "locationText": "강릉시 금성로23번길 6 1층",
+      "results": [
+        {
+          "name": "중앙시장횟집 파란간판집",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/1967916039",
+          "address": "강원특별자치도 강릉시 금성로23번길 6 1층"
+        }
+      ]
+    },
+    {
+      "id": "g229",
+      "name": "유성상회",
+      "locationText": "강릉시 금성로 21 중앙시장 지하 20호·50호",
+      "results": [
+        {
+          "name": "유성상회",
+          "rating": "3.0",
+          "reviews": "21건",
+          "url": "https://place.map.kakao.com/9334882",
+          "address": "강원특별자치도 강릉시 금성로 21 중앙시장 지하 20,50호"
+        }
+      ]
+    },
+    {
+      "id": "g230",
+      "name": "동해바다횟집",
+      "locationText": "강릉시 금성로 21 중앙시장 지하 25·26·27호",
+      "results": []
+    },
+    {
+      "id": "g231",
+      "name": "강릉사임당오징어순대",
+      "locationText": "강릉시 금성로13번길 9-2 23호",
+      "results": [
+        {
+          "name": "강릉사임당오징어순대",
+          "rating": "4.2",
+          "reviews": "112건",
+          "url": "https://place.map.kakao.com/107296570",
+          "address": "강원특별자치도 강릉시 금성로13번길 9-2 1층 23호"
+        }
+      ]
+    },
+    {
+      "id": "g232",
+      "name": "브뤼셀프라이 강릉중앙점",
+      "locationText": "강릉시 중앙시장1길 10 1층",
+      "results": [
+        {
+          "name": "브뤼셀프라이 강릉중앙점",
+          "rating": "3.5",
+          "reviews": "8건",
+          "url": "https://place.map.kakao.com/1916770539",
+          "address": "강원특별자치도 강릉시 중앙시장1길 10 1층"
+        }
+      ]
+    },
+    {
+      "id": "g233",
+      "name": "티각태각대게고로케 강릉성남점",
+      "locationText": "강릉시 금성로13번길 12",
+      "results": [
+        {
+          "name": "티각태각 대게고로케",
+          "rating": "4.2",
+          "reviews": "13건",
+          "url": "https://place.map.kakao.com/758734897",
+          "address": "강원특별자치도 강릉시 금성로13번길 12-1 1층"
+        }
+      ]
+    },
+    {
+      "id": "g234",
+      "name": "강릉오빠 감자파이 강릉중앙시장 본점",
+      "locationText": "강릉시 중앙시장4길 24-1",
+      "results": []
+    },
+    {
+      "id": "g235",
+      "name": "만동제과 강릉점",
+      "locationText": "강릉시 금성로 6 1층",
+      "results": [
+        {
+          "name": "만동 제과 강릉점",
+          "rating": "4.3",
+          "reviews": "347건",
+          "url": "https://place.map.kakao.com/1895412800",
+          "address": "강원특별자치도 강릉시 금성로 6 1층"
+        }
+      ]
+    },
+    {
+      "id": "g245",
+      "name": "맹글 베이크",
+      "locationText": "강릉시 남문길 15-1 1층",
+      "results": [
+        {
+          "name": "맹글베이크",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/1487694148",
+          "address": "강원특별자치도 강릉시 남문길 15-1 1층"
+        }
+      ]
+    },
+    {
+      "id": "g246",
+      "name": "고고횟집",
+      "locationText": "강릉시 금성로 21 중앙시장 지하 9·10호",
+      "results": [
+        {
+          "name": "고고횟집",
+          "rating": "3.9",
+          "reviews": "62건",
+          "url": "https://place.map.kakao.com/361383384",
+          "address": "강원특별자치도 강릉시 금성로 21 중앙시장 지하 1층 9호"
+        }
+      ]
+    }
+  ],
+  "matched": [
+    {
+      "id": "g1",
+      "appName": "강릉중앙시장",
+      "appLocationText": "강릉시 금성로 21. 점포별 운영시간이 다름",
+      "kakaoName": "강릉중앙시장",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로 21",
+      "kakaoUrl": "https://place.map.kakao.com/18525909",
+      "rating": 3.9,
+      "reviewCount": 573,
+      "reviewIndicator": null,
+      "status": "area_rating_only",
+      "note": "시장 전체 평점이며 개별 점포 교체 기준으로 사용하지 않음"
+    },
+    {
+      "id": "g2",
+      "appName": "성남시장",
+      "appLocationText": "강릉시 중앙시장길 24-2. 중앙시장과 인접한 별도 시장",
+      "kakaoName": null,
+      "kakaoAddress": null,
+      "kakaoUrl": null,
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": null,
+      "status": "unmatched",
+      "note": "강릉시 공식 자료에서 시장 존재·주소 확인. 카카오맵 검색에서 독립 장소 카드 미확인"
+    },
+    {
+      "id": "g16",
+      "appName": "초당두부마을",
+      "appLocationText": "초당순두부길 일대. 실제 방문은 개별 식당 선택 필요",
+      "kakaoName": "초당순두부마을",
+      "kakaoAddress": "강원특별자치도 강릉시 강문동 146-35",
+      "kakaoUrl": "https://place.map.kakao.com/18097384",
+      "rating": 3.4,
+      "reviewCount": 36,
+      "reviewIndicator": null,
+      "status": "area_rating_only",
+      "note": "마을 전체 평점이며 개별 식당 교체 기준으로 사용하지 않음"
+    },
+    {
+      "id": "g50",
+      "appName": "2026 월화거리야시장",
+      "appLocationText": "월화거리 홈플러스~은행나무 옆 구간 · 단일 출입구 아님",
+      "kakaoName": null,
+      "kakaoAddress": null,
+      "kakaoUrl": null,
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": null,
+      "status": "unmatched",
+      "note": "기간형 야시장으로 카카오맵 독립 장소 카드 미확인; 행사 자체는 공식 출처 별도 검증 필요"
+    },
+    {
+      "id": "g51",
+      "appName": "수제 어묵 고로케",
+      "appLocationText": "강릉시 금성로13번길 8 1층",
+      "kakaoName": "수제어묵고로케",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로13번길 8 1층",
+      "kakaoUrl": "https://place.map.kakao.com/234216431",
+      "rating": 3.6,
+      "reviewCount": 251,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g52",
+      "appName": "강원옥",
+      "appLocationText": "강릉시 초당순두부길 89-8",
+      "kakaoName": "강원옥 찹쌀떡",
+      "kakaoAddress": "강원특별자치도 강릉시 초당순두부길 89-8 1층",
+      "kakaoUrl": "https://place.map.kakao.com/1659998491",
+      "rating": 3.9,
+      "reviewCount": 39,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g72",
+      "appName": "배니닭강정",
+      "appLocationText": "강릉시 금성로13번길 3-1",
+      "kakaoName": "배니닭강정",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로13번길 3-1 1층",
+      "kakaoUrl": "https://place.map.kakao.com/19660110",
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": "(30)",
+      "status": "unrated",
+      "note": "카카오맵 검색 카드가 후기 미제공으로 점수를 숨김. (30)은 평가 수가 아님"
+    },
+    {
+      "id": "g73",
+      "appName": "만복래닭강정",
+      "appLocationText": "강릉시 중앙시장2길 42 1층",
+      "kakaoName": "강릉만복래닭강정",
+      "kakaoAddress": "강원특별자치도 강릉시 중앙시장2길 42 1층",
+      "kakaoUrl": "https://place.map.kakao.com/1722163390",
+      "rating": 4.8,
+      "reviewCount": 225,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g75",
+      "appName": "젤라또마켓",
+      "appLocationText": "강릉시 중앙시장2길 45-1",
+      "kakaoName": "젤라또마켓 순두부젤라또",
+      "kakaoAddress": "강원특별자치도 강릉시 중앙시장2길 45-1 상점4호",
+      "kakaoUrl": "https://place.map.kakao.com/709554562",
+      "rating": 4.7,
+      "reviewCount": 54,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g76",
+      "appName": "커피러버스",
+      "appLocationText": "강릉시 금성로 13",
+      "kakaoName": "커피러버스",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로 13",
+      "kakaoUrl": "https://place.map.kakao.com/317465759",
+      "rating": 3.9,
+      "reviewCount": 19,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g77",
+      "appName": "강릉감자닭강정",
+      "appLocationText": "강릉시 창해로 343-1 1층",
+      "kakaoName": "강릉감자닭강정",
+      "kakaoAddress": "강원특별자치도 강릉시 창해로 343-1 1층",
+      "kakaoUrl": "https://place.map.kakao.com/1089508413",
+      "rating": 3.7,
+      "reviewCount": 68,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g78",
+      "appName": "바로방 중앙시장직영점",
+      "appLocationText": "강릉시 금성로23번길 8 1층",
+      "kakaoName": "바로방 중앙시장점",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로23번길 8",
+      "kakaoUrl": "https://place.map.kakao.com/123088455",
+      "rating": 3.7,
+      "reviewCount": 3,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g80",
+      "appName": "이화국수 강릉본점",
+      "appLocationText": "강릉시 중앙시장1길 11",
+      "kakaoName": "이화국수 1호점",
+      "kakaoAddress": "강원특별자치도 강릉시 중앙시장1길 11",
+      "kakaoUrl": "https://place.map.kakao.com/1390290222",
+      "rating": 3.5,
+      "reviewCount": 117,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g90",
+      "appName": "두리튀김",
+      "appLocationText": "강릉시 금성로13번길 9",
+      "kakaoName": "두리튀김",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로13번길 9",
+      "kakaoUrl": "https://place.map.kakao.com/17662698",
+      "rating": 2.2,
+      "reviewCount": 13,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g91",
+      "appName": "원조 소문난무침회",
+      "appLocationText": "강릉시 중앙시장1길 17 1층",
+      "kakaoName": "원조소문난무침회",
+      "kakaoAddress": "강원특별자치도 강릉시 중앙시장1길 17 1층",
+      "kakaoUrl": "https://place.map.kakao.com/1467066954",
+      "rating": 4.2,
+      "reviewCount": 53,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g144",
+      "appName": "박종주 반죽소",
+      "appLocationText": "강릉시 난설헌로 228",
+      "kakaoName": null,
+      "kakaoAddress": null,
+      "kakaoUrl": null,
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": null,
+      "status": "unmatched",
+      "note": "동일 상호의 중앙시장·주문진·정동진 지점만 검색됨. 앱 주소 난설헌로 228 점포의 카카오 장소·영업 상태 확인 필요"
+    },
+    {
+      "id": "g145",
+      "appName": "월화의 부엌",
+      "appLocationText": "강릉시 금성로22번길 9 1층 1호",
+      "kakaoName": "월화의부엌",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로22번길 9 1층 1호",
+      "kakaoUrl": "https://place.map.kakao.com/142186968",
+      "rating": 4.5,
+      "reviewCount": 17,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g164",
+      "appName": "콩삐납따기",
+      "appLocationText": "강릉시 신대학길 39 1층 101호",
+      "kakaoName": "콩삐납따기",
+      "kakaoAddress": "강원특별자치도 강릉시 신대학길 39",
+      "kakaoUrl": "https://place.map.kakao.com/840126383",
+      "rating": null,
+      "reviewCount": 0,
+      "reviewIndicator": null,
+      "status": "unrated",
+      "note": "카카오맵 점수 0.0/0건은 평점 부재로 해석, 저평점으로 분류하지 않음. 앱 층·호수와 카카오 주소 상세 불일치"
+    },
+    {
+      "id": "g174",
+      "appName": "안인횟집",
+      "appLocationText": "강릉시 금성로 21 지하동 49호",
+      "kakaoName": "안인횟집",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로 21 중앙시장 지하동 65호",
+      "kakaoUrl": "https://place.map.kakao.com/21345681",
+      "rating": 3.8,
+      "reviewCount": 35,
+      "reviewIndicator": null,
+      "status": "address_conflict",
+      "note": "상호는 같으나 앱은 중앙시장 지하동 49호, 카카오는 65호로 주소 충돌. 동일 점포 여부 재확인 필요"
+    },
+    {
+      "id": "g176",
+      "appName": "떡볶이는생각하지마세요",
+      "appLocationText": "강릉시 중앙시장1길 6 1층",
+      "kakaoName": "떡볶이는생각하지마세요",
+      "kakaoAddress": "강원특별자치도 강릉시 중앙시장1길 6 1층",
+      "kakaoUrl": "https://place.map.kakao.com/524820977",
+      "rating": 4.3,
+      "reviewCount": 25,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g185",
+      "appName": "강릉옥수수빵",
+      "appLocationText": "강릉시 창해로 349-1",
+      "kakaoName": "강릉옥수수빵",
+      "kakaoAddress": "강원특별자치도 강릉시 창해로 349-1",
+      "kakaoUrl": "https://place.map.kakao.com/882618279",
+      "rating": 3.6,
+      "reviewCount": 31,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g228",
+      "appName": "강릉 중앙시장 횟집 파란간판집",
+      "appLocationText": "강릉시 금성로23번길 6 1층",
+      "kakaoName": "중앙시장횟집 파란간판집",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로23번길 6 1층",
+      "kakaoUrl": "https://place.map.kakao.com/1967916039",
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": "(30)",
+      "status": "unrated",
+      "note": "카카오맵 점수 비공개/미제공. (30)은 평가 수가 아님"
+    },
+    {
+      "id": "g229",
+      "appName": "유성상회",
+      "appLocationText": "강릉시 금성로 21 중앙시장 지하 20호·50호",
+      "kakaoName": "유성상회",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로 21 중앙시장 지하 20,50호",
+      "kakaoUrl": "https://place.map.kakao.com/9334882",
+      "rating": 3.0,
+      "reviewCount": 21,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g230",
+      "appName": "동해바다횟집",
+      "appLocationText": "강릉시 금성로 21 중앙시장 지하 25·26·27호",
+      "kakaoName": "동해바다 횟집",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로 21 지하 25~27호",
+      "kakaoUrl": "https://place.map.kakao.com/13068166",
+      "rating": 4.2,
+      "reviewCount": 9,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g231",
+      "appName": "강릉사임당오징어순대",
+      "appLocationText": "강릉시 금성로13번길 9-2 23호",
+      "kakaoName": "강릉사임당오징어순대",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로13번길 9-2 1층 23호",
+      "kakaoUrl": "https://place.map.kakao.com/107296570",
+      "rating": 4.2,
+      "reviewCount": 112,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g232",
+      "appName": "브뤼셀프라이 강릉중앙점",
+      "appLocationText": "강릉시 중앙시장1길 10 1층",
+      "kakaoName": "브뤼셀프라이 강릉중앙점",
+      "kakaoAddress": "강원특별자치도 강릉시 중앙시장1길 10 1층",
+      "kakaoUrl": "https://place.map.kakao.com/1916770539",
+      "rating": 3.5,
+      "reviewCount": 8,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g233",
+      "appName": "티각태각대게고로케 강릉성남점",
+      "appLocationText": "강릉시 금성로13번길 12",
+      "kakaoName": "티각태각 대게고로케",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로13번길 12-1 1층",
+      "kakaoUrl": "https://place.map.kakao.com/758734897",
+      "rating": 4.2,
+      "reviewCount": 13,
+      "reviewIndicator": null,
+      "status": "address_conflict",
+      "note": "상호는 유사하나 앱 12번길 12, 카카오 12-1로 상세 주소 충돌"
+    },
+    {
+      "id": "g234",
+      "appName": "강릉오빠 감자파이 강릉중앙시장 본점",
+      "appLocationText": "강릉시 중앙시장4길 24-1",
+      "kakaoName": null,
+      "kakaoAddress": null,
+      "kakaoUrl": null,
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": null,
+      "status": "unmatched",
+      "note": "강릉오빠 감자파이의 매장 존재는 당근/방송으로 확인되지만 카카오맵 장소 카드 미검색"
+    },
+    {
+      "id": "g235",
+      "appName": "만동제과 강릉점",
+      "appLocationText": "강릉시 금성로 6 1층",
+      "kakaoName": "만동 제과 강릉점",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로 6 1층",
+      "kakaoUrl": "https://place.map.kakao.com/1895412800",
+      "rating": 4.3,
+      "reviewCount": 347,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g245",
+      "appName": "맹글 베이크",
+      "appLocationText": "강릉시 남문길 15-1 1층",
+      "kakaoName": "맹글베이크",
+      "kakaoAddress": "강원특별자치도 강릉시 남문길 15-1 1층",
+      "kakaoUrl": "https://place.map.kakao.com/1487694148",
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": "(30)",
+      "status": "unrated",
+      "note": "카카오맵 점수 비공개/미제공. (30)은 평가 수가 아님"
+    },
+    {
+      "id": "g246",
+      "appName": "고고횟집",
+      "appLocationText": "강릉시 금성로 21 중앙시장 지하 9·10호",
+      "kakaoName": "고고횟집",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로 21 중앙시장 지하 1층 9호",
+      "kakaoUrl": "https://place.map.kakao.com/361383384",
+      "rating": 3.9,
+      "reviewCount": 62,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    }
+  ],
+  "summary": {
+    "address_conflict": 2,
+    "area_rating_only": 2,
+    "at_least_4": 8,
+    "below_4_review": 11,
+    "unmatched": 4,
+    "unrated": 4
+  },
+  "below4ReplacementReview": [
+    {
+      "id": "g51",
+      "appName": "수제 어묵 고로케",
+      "rating": 3.6,
+      "reviewCount": 251,
+      "kakaoUrl": "https://place.map.kakao.com/234216431"
+    },
+    {
+      "id": "g52",
+      "appName": "강원옥",
+      "rating": 3.9,
+      "reviewCount": 39,
+      "kakaoUrl": "https://place.map.kakao.com/1659998491"
+    },
+    {
+      "id": "g76",
+      "appName": "커피러버스",
+      "rating": 3.9,
+      "reviewCount": 19,
+      "kakaoUrl": "https://place.map.kakao.com/317465759"
+    },
+    {
+      "id": "g77",
+      "appName": "강릉감자닭강정",
+      "rating": 3.7,
+      "reviewCount": 68,
+      "kakaoUrl": "https://place.map.kakao.com/1089508413"
+    },
+    {
+      "id": "g78",
+      "appName": "바로방 중앙시장직영점",
+      "rating": 3.7,
+      "reviewCount": 3,
+      "kakaoUrl": "https://place.map.kakao.com/123088455"
+    },
+    {
+      "id": "g80",
+      "appName": "이화국수 강릉본점",
+      "rating": 3.5,
+      "reviewCount": 117,
+      "kakaoUrl": "https://place.map.kakao.com/1390290222"
+    },
+    {
+      "id": "g90",
+      "appName": "두리튀김",
+      "rating": 2.2,
+      "reviewCount": 13,
+      "kakaoUrl": "https://place.map.kakao.com/17662698"
+    },
+    {
+      "id": "g185",
+      "appName": "강릉옥수수빵",
+      "rating": 3.6,
+      "reviewCount": 31,
+      "kakaoUrl": "https://place.map.kakao.com/882618279"
+    },
+    {
+      "id": "g229",
+      "appName": "유성상회",
+      "rating": 3.0,
+      "reviewCount": 21,
+      "kakaoUrl": "https://place.map.kakao.com/9334882"
+    },
+    {
+      "id": "g232",
+      "appName": "브뤼셀프라이 강릉중앙점",
+      "rating": 3.5,
+      "reviewCount": 8,
+      "kakaoUrl": "https://place.map.kakao.com/1916770539"
+    },
+    {
+      "id": "g246",
+      "appName": "고고횟집",
+      "rating": 3.9,
+      "reviewCount": 62,
+      "kakaoUrl": "https://place.map.kakao.com/361383384"
+    }
+  ],
+  "method": "2026-10-06 카카오맵 웹 검색 결과에서 상호와 도로명주소를 대조했다. 검색에서 상호가 달라 나오는 3곳은 주소 포함 재검색으로 확인했다. 0.0/0건 및 점수 숨김은 평점 없음으로 분류했다. 시장/마을/야시장 등 권역 평점을 점포 교체 기준으로 쓰지 않았다. 상호 또는 주소 충돌은 별도 확인 상태로 두었다.",
+  "initial34NowReclassified": [
+    {
+      "id": "g71",
+      "appName": "명성오징어순대",
+      "kakaoName": "명성오징어순대 1호점",
+      "kakaoAddress": "강원특별자치도 강릉시 중앙시장1길 17",
+      "kakaoUrl": "https://place.map.kakao.com/1658725811",
+      "rating": 2.8,
+      "reviewCount": 13,
+      "note": "최초 market 34곳에 포함되었으나 현행 market 분류에서 제외되어 현행 교체 대상 11곳에 미포함"
+    },
+    {
+      "id": "g74",
+      "appName": "모자호떡",
+      "kakaoName": "모자호떡",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로 21 중앙시장 185호",
+      "kakaoUrl": "https://place.map.kakao.com/27364436",
+      "rating": 3.3,
+      "reviewCount": 100,
+      "note": "최초 market 34곳에 포함되었으나 현행 market 분류에서 제외되어 현행 교체 대상 11곳에 미포함"
+    },
+    {
+      "id": "g79",
+      "appName": "정남미명과 강릉본점",
+      "kakaoName": "정남미명과 강릉본점",
+      "kakaoAddress": "강원특별자치도 강릉시 경강로 2668 1층",
+      "kakaoUrl": "https://place.map.kakao.com/258120453",
+      "rating": 2.7,
+      "reviewCount": 39,
+      "note": "최초 market 34곳에 포함되었으나 현행 market 분류에서 제외되어 현행 교체 대상 11곳에 미포함"
+    }
+  ]
+}

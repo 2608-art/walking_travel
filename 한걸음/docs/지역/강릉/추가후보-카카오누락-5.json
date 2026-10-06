@@ -1,0 +1,31 @@
+{
+  "region": "gangneung",
+  "checkedAtKst": "2026-10-06",
+  "scope": "사용자 피드백으로 확인한 카카오맵 누락 장소. 강릉시 전체 식당 전수 조사는 진행 중.",
+  "candidates": [
+    {
+      "name": "서울양계",
+      "category": "market",
+      "locationText": "강문동, 강릉시 창해로 367 (강문동 12-1)",
+      "scheduleText": "월~금·일 10:00~22:00(마지막 주문 21:40), 토 10:00~22:30(마지막 주문 22:10); 2026-10-06 카카오맵 주간표",
+      "closureText": "2026-10-06 카카오맵 주간표에 정기 휴무 없음; 임시 휴무는 방문 전 확인",
+      "description": "강문해변 인근에서 닭강정을 포장하거나 먹을 수 있는 가게.",
+      "menuItems": ["닭강정반반 28,000원", "후라이드 26,000원", "양념 28,000원", "반박스 15,000원"],
+      "source": ["https://place.map.kakao.com/760986230"],
+      "priceSource": "https://place.map.kakao.com/760986230",
+      "uncertainty": "카카오맵 현행 주소를 채택했다. 다른 집계 사이트에는 이전 또는 불일치 주소가 표시된다. 영업시간·메뉴 가격 변동 가능."
+    },
+    {
+      "name": "베리베리딸기",
+      "category": "cafe",
+      "locationText": "임당동, 강릉시 임영로164번길 16-2 1층 (임당동 42)",
+      "scheduleText": "월~수 12:00~18:30, 금~일 12:00~19:00; 2026-10-06 카카오맵 주간표",
+      "closureText": "목요일 휴무로 표시; 임시 운영은 방문 전 확인",
+      "description": "직접 기른 딸기로 만든 소르베·실타래빙수 등을 파는 딸기 디저트 카페.",
+      "menuItems": ["딸기소르베 5,000원", "딸기우유실타래빙수 20,000원", "순수우유실타래빙수 20,000원", "말차실타래빙수 20,000원"],
+      "source": ["https://place.map.kakao.com/1037506521", "https://www.instagram.com/berryberryddalki"],
+      "priceSource": "https://place.map.kakao.com/1037506521",
+      "uncertainty": "가격·영업시간은 카카오맵 직접 확인. 인스타그램 계정은 카카오맵에 연결되어 있으나 게시물 내용은 직접 대조하지 못했다."
+    }
+  ]
+}

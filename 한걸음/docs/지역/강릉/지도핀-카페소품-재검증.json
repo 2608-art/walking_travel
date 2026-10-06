@@ -1,0 +1,92 @@
+{
+  "checked": "2026-10-06",
+  "scope": "기존 무핀 강릉 카페·소품샵 5곳. 카카오맵 장소검색과 직접 장소 페이지, 네이버 블로그 방문 기록(다이닝코드 수록), 관광공사·사업자/입점처·기존 지도 링크 대조. 지도 좌표는 표시용 대표 위치이며 출입구·보행 경로로 검증한 값이 아님.",
+  "matches": [
+    {
+      "id": "g149",
+      "name": "경포,휴가커피",
+      "mapLat": 37.8142712,
+      "mapLon": 128.89555938,
+      "source": "https://place.map.kakao.com/25550774",
+      "confirmid": "25550774",
+      "matchedName": "휴가카페",
+      "matchedAddress": "강원특별자치도 강릉시 해안로 653-1 1층 (안현동 222-1)",
+      "basis": "카카오맵 현행 휴가카페와 앱의 경포,휴가커피는 해안로 653-1 1층으로 주소가 정확히 같고, 과거 휴가카페 명칭의 방문 후기와 현행 경포,휴가커피 방문 후기 모두 같은 사근진해변 앞 카페를 설명한다. 전화번호는 카카오 0507-1496-3025, 다이닝코드 0507-1340-5845로 서로 다르므로 앱 전화/운영시간의 최신성은 별도 확인 필요.",
+      "evidence": [
+        "https://www.diningcode.com/profile.php?rid=w5VWujB7hViD",
+        "https://www.tripadvisor.co.kr/Restaurant_Review-g317126-d8965545-Reviews-Hyuga_Cafe-Gangneung_Gangwon_do.html",
+        "https://wowo21a.tistory.com/36"
+      ],
+      "mapRating": 4.2,
+      "mapRatingCount": 9
+    },
+    {
+      "id": "g215",
+      "name": "346커피스토리",
+      "mapLat": 37.79437549,
+      "mapLon": 128.91907975,
+      "source": "https://place.map.kakao.com/863215764",
+      "confirmid": "863215764",
+      "matchedName": "346커피스토리",
+      "matchedAddress": "강원특별자치도 강릉시 강문동 159-34 나동 1-3층 (카카오맵 도로명 창해로 346)",
+      "basis": "상호와 지번·층수·대표전화 033-653-0117이 일치한다. 카카오맵 도로명 창해로 346과 앱의 창해로 348은 다르지만 관광공사 2026-08 갱신 자료, 다이닝코드 방문기, 영업 사업장 자료는 모두 창해로 348/강문동 159-34로 기재한다. 동일 지번 장소 핀으로 판단한다.",
+      "evidence": [
+        "https://access.visitkorea.or.kr/food/detail.do?cotId=695bef5a-f658-4934-bea5-5e2c5b01a2af",
+        "https://www.diningcode.com/profile.php?rid=saWJGU2oxX5e",
+        "https://www.daangn.com/kr/local-profile/346%EC%BB%A4%ED%94%BC%EC%8A%A4%ED%86%A0%EB%A6%AC-53u2qknbnt9b/"
+      ],
+      "mapRating": 4.3,
+      "mapRatingCount": 666,
+      "addressConflict": "카카오맵 도로명 346, 관광공사·방문기·앱 348. 지번 159-34 및 점포 층수 일치."
+    },
+    {
+      "id": "g221",
+      "name": "하루로스터리",
+      "mapLat": 37.76417341,
+      "mapLon": 128.88896556,
+      "source": "https://place.map.kakao.com/352060953",
+      "confirmid": "352060953",
+      "matchedName": "하루로스터리",
+      "matchedAddress": "강원특별자치도 강릉시 교동 828-18 1층",
+      "basis": "상호와 전화 033-644-8090이 카카오맵·2026 방문 후기에서 같고 모두 교동 강일여고 앞 주택형 카페를 설명한다. 다이닝코드는 옛강일길 39-1/교동 828-17로, 카카오는 인접 지번 828-18로 표시한다. 장소 식별은 전화·상호·현장 설명으로 확인했으며 정확한 필지/출입구는 미확인이다.",
+      "evidence": [
+        "https://www.diningcode.com/profile.php?rid=Uvhi0ggWIG7R",
+        "https://cafe.ambitstock.com/gangneung/cafe/%ED%95%98%EB%A3%A8%EB%A1%9C%EC%8A%A4%ED%84%B0%EB%A6%AC/"
+      ],
+      "mapRating": 5.0,
+      "mapRatingCount": 2,
+      "addressConflict": "카카오 지번 828-18, 다이닝코드 828-17 및 도로명 옛강일길 39-1. 앱 주소를 현 단계에선 바꾸지 말고 필지 차이를 표시."
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "g100",
+      "name": "유라유라",
+      "reason": "2025 실제 방문기, 상품 입점처 목록, 과거 카카오·네이버 지도 링크 모두 임영로 187 2층을 가리키지만 카카오 현재 장소검색에서 상호가 없고 과거 카카오 장소 920144620은 데이터를 불러올 수 없음으로 응답한다. 같은 건물의 다른 업소만 현행 지도에 표시돼 현재 입점/영업 여부가 확인되지 않았다. 주소 건물 좌표를 유라유라 현행 점포 핀으로 확정하면 오해 소지가 있다.",
+      "candidateMapLat": 37.75804909,
+      "candidateMapLon": 128.89157266,
+      "candidateBasis": "카카오맵 같은 건물(임영로 187/교동 860-25) 현행 다른 업소 티지투 강릉점 위치. 유라유라 전용 핀 아님.",
+      "evidence": [
+        "https://ganada-yeon.tistory.com/214",
+        "https://studioyesl.com/stockist",
+        "https://kangdbang.tistory.com/1414",
+        "https://place.map.kakao.com/920144620",
+        "https://place.map.kakao.com/1872438379",
+        "https://naver.me/GnCpnTVP"
+      ]
+    },
+    {
+      "id": "g109",
+      "name": "도자기별",
+      "reason": "2025년 11월 실제 방문기는 율곡로 2910 1층이라고 쓰지만 카카오 현행 상호검색 결과가 없고 같은 주소/지번 교동 192-101의 1층은 현재 댕스데이로 등록돼 있다. 다이닝코드는 속초·고성 동명 도자기별 리뷰까지 혼합하므로 현행 강릉 점포의 영업과 동일성 근거로 삼기 어렵다. 옛 주소 건물 좌표를 현행 도자기별 핀으로 확정하지 않는다.",
+      "candidateMapLat": 37.7627336,
+      "candidateMapLon": 128.89302303,
+      "candidateBasis": "카카오맵 같은 건물(율곡로 2910/교동 192-101) 현행 다른 업소 댕스데이 위치. 도자기별 전용 핀 아님.",
+      "evidence": [
+        "https://www.diningcode.com/profile.php?rid=Rrd5cqyk3TbI",
+        "https://place.map.kakao.com/938388029",
+        "https://place.map.kakao.com/2046461710"
+      ]
+    }
+  ]
+}

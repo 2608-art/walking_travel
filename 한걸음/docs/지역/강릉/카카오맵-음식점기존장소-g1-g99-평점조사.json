@@ -1,0 +1,677 @@
+{
+  "checkedAtKST": "2026-10-06",
+  "scope": "현재 앱의 기존 food g1~g99 중 mapRating 누락",
+  "rawQueries": [
+    {
+      "id": "g26",
+      "name": "장미경양식 강릉중앙시장점",
+      "locationText": "강릉시 금성로22번길 4",
+      "results": [
+        {
+          "name": "장미경양식",
+          "rating": "4.0",
+          "reviews": "130건",
+          "url": "https://place.map.kakao.com/1517874213",
+          "address": "강원특별자치도 강릉시 금성로22번길 4 1층"
+        }
+      ]
+    },
+    {
+      "id": "g28",
+      "name": "초당장칼국수",
+      "locationText": "강릉시 초당순두부길 33-1",
+      "results": [
+        {
+          "name": "초당장칼국수",
+          "rating": "4.6",
+          "reviews": "82건",
+          "url": "https://place.map.kakao.com/795704163",
+          "address": "강원특별자치도 강릉시 초당순두부길 33-1 1층"
+        },
+        {
+          "name": "최씨장칼국수",
+          "rating": "3.2",
+          "reviews": "70건",
+          "url": "https://place.map.kakao.com/1261014624",
+          "address": "강원특별자치도 강릉시 해안로 292 1층 5호"
+        },
+        {
+          "name": "초당본가주문진막국수",
+          "rating": "4.9",
+          "reviews": "15건",
+          "url": "https://place.map.kakao.com/571486171",
+          "address": "강원특별자치도 강릉시 강릉대로587번길 20 1층"
+        },
+        {
+          "name": "초당가국수",
+          "rating": "4.6",
+          "reviews": "62건",
+          "url": "https://place.map.kakao.com/686297013",
+          "address": "강원특별자치도 강릉시 초당원길 51 1층"
+        },
+        {
+          "name": "울릉도며느리",
+          "rating": "4.5",
+          "reviews": "32건",
+          "url": "https://place.map.kakao.com/1742727625",
+          "address": "강원특별자치도 강릉시 초당원길 19 상가동 1층 101호"
+        },
+        {
+          "name": "사랑채막국수",
+          "rating": "4.0",
+          "reviews": "62건",
+          "url": "https://place.map.kakao.com/1149990333",
+          "address": "강원특별자치도 강릉시 강릉대로587번길 37-7 1층"
+        }
+      ]
+    },
+    {
+      "id": "g29",
+      "name": "초당맷돌순두부",
+      "locationText": "강릉시 초당순두부길 75",
+      "results": [
+        {
+          "name": "초당맷돌순두부",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/1197816283",
+          "address": "강원특별자치도 강릉시 초당순두부길 75"
+        }
+      ]
+    },
+    {
+      "id": "g33",
+      "name": "선채향",
+      "locationText": "강릉시 경강로2095번길 17. 중앙시장 주변 골목 음식점",
+      "results": [
+        {
+          "name": "선채향",
+          "rating": "4.7",
+          "reviews": "230건",
+          "url": "https://place.map.kakao.com/1427149199",
+          "address": "강원특별자치도 강릉시 경강로2095번길 17 1층"
+        }
+      ]
+    },
+    {
+      "id": "g40",
+      "name": "감자바우 옹심이장칼국수",
+      "locationText": "강릉시 금성로35번길 4, 2층",
+      "results": [
+        {
+          "name": "옹심이장칼국수 감자바우",
+          "rating": "3.2",
+          "reviews": "296건",
+          "url": "https://place.map.kakao.com/11395119",
+          "address": "강원특별자치도 강릉시 금성로35번길 4 1층"
+        }
+      ]
+    },
+    {
+      "id": "g41",
+      "name": "초당할머니순두부",
+      "locationText": "강릉시 초당순두부길 77",
+      "results": [
+        {
+          "name": "초당할머니순두부",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/8535139",
+          "address": "강원특별자치도 강릉시 초당순두부길 77 1층"
+        },
+        {
+          "name": "초당토박이 할머니순두부",
+          "rating": "3.9",
+          "reviews": "185건",
+          "url": "https://place.map.kakao.com/9521756",
+          "address": "강원특별자치도 강릉시 초당순두부길 47"
+        },
+        {
+          "name": "초당할머니순두부 주차장",
+          "rating": "5.0",
+          "reviews": "1건",
+          "url": "https://place.map.kakao.com/652006786",
+          "address": "강원특별자치도 강릉시 초당순두부길 77"
+        },
+        {
+          "name": "토박이할머니순두부 주차장",
+          "rating": "0.0",
+          "reviews": "0건",
+          "url": "https://place.map.kakao.com/483815907",
+          "address": "강원특별자치도 강릉시 초당동 273-2"
+        }
+      ]
+    },
+    {
+      "id": "g42",
+      "name": "동화가든 본점",
+      "locationText": "강릉시 초당순두부길77번길 15",
+      "results": [
+        {
+          "name": "동화가든",
+          "rating": "3.4",
+          "reviews": "1,331건",
+          "url": "https://place.map.kakao.com/7846414",
+          "address": "강원특별자치도 강릉시 초당순두부길77번길 15 1층"
+        },
+        {
+          "name": "동화가든 본점 주차장",
+          "rating": "3.0",
+          "reviews": "2건",
+          "url": "https://place.map.kakao.com/1935962249",
+          "address": "강원특별자치도 강릉시 초당동 309-1"
+        }
+      ]
+    },
+    {
+      "id": "g58",
+      "name": "광덕식당 중앙시장점",
+      "locationText": "강릉시 중앙시장길 22-3",
+      "results": [
+        {
+          "name": "광덕식당 중앙시장점",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/8775081",
+          "address": "강원특별자치도 강릉시 중앙시장길 22-3"
+        }
+      ]
+    },
+    {
+      "id": "g63",
+      "name": "해미가",
+      "locationText": "강릉시 솔올로 103",
+      "results": [
+        {
+          "name": "해미가수산",
+          "rating": "4.2",
+          "reviews": "248건",
+          "url": "https://place.map.kakao.com/16109903",
+          "address": "강원특별자치도 강릉시 솔올로 97 1층"
+        },
+        {
+          "name": "해미가",
+          "rating": "4.3",
+          "reviews": "39건",
+          "url": "https://place.map.kakao.com/507599310",
+          "address": "강원특별자치도 강릉시 솔올로 103 1층"
+        },
+        {
+          "name": "해미가 주차장",
+          "rating": "0.0",
+          "reviews": "0건",
+          "url": "https://place.map.kakao.com/606567901",
+          "address": "강원특별자치도 강릉시 교동 1807-1"
+        },
+        {
+          "name": "해미삼",
+          "rating": "0.0",
+          "reviews": "0건",
+          "url": "https://place.map.kakao.com/1682332744",
+          "address": "강원특별자치도 강릉시 사천면 해안로 1166"
+        }
+      ]
+    },
+    {
+      "id": "g65",
+      "name": "초당한솔순두부 감나무집",
+      "locationText": "강릉시 초당순두부길 57",
+      "results": []
+    },
+    {
+      "id": "g83",
+      "name": "초당비스트로",
+      "locationText": "강릉시 초당순두부길 19",
+      "results": [
+        {
+          "name": "초당비스트로",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/1572181856",
+          "address": "강원특별자치도 강릉시 초당순두부길 19"
+        }
+      ]
+    },
+    {
+      "id": "g84",
+      "name": "동산항물회",
+      "locationText": "강릉시 경강로2267번길 22",
+      "results": [
+        {
+          "name": "동산항물회",
+          "rating": "4.7",
+          "reviews": "47건",
+          "url": "https://place.map.kakao.com/667433302",
+          "address": "강원특별자치도 강릉시 경강로2267번길 22 1층"
+        }
+      ]
+    },
+    {
+      "id": "g85",
+      "name": "독도야",
+      "locationText": "강릉시 창해로 451",
+      "results": [
+        {
+          "name": "독도야",
+          "rating": "4.2",
+          "reviews": "46건",
+          "url": "https://place.map.kakao.com/18936380",
+          "address": "강원특별자치도 강릉시 창해로 451 1층"
+        }
+      ]
+    },
+    {
+      "id": "g86",
+      "name": "안목애",
+      "locationText": "강릉시 창해로14번길 34",
+      "results": [
+        {
+          "name": "안목애",
+          "rating": "2.8",
+          "reviews": "25건",
+          "url": "https://place.map.kakao.com/890078328",
+          "address": "강원특별자치도 강릉시 창해로14번길 34 1층"
+        }
+      ]
+    },
+    {
+      "id": "g87",
+      "name": "강릉생선찜",
+      "locationText": "강릉시 난설헌로 228-5 2층",
+      "results": [
+        {
+          "name": "강릉생선찜",
+          "rating": "4.0",
+          "reviews": "1건",
+          "url": "https://place.map.kakao.com/2125567652",
+          "address": "강원특별자치도 강릉시 난설헌로 228-5 2층"
+        },
+        {
+          "name": "이모네생선찜",
+          "rating": "3.3",
+          "reviews": "250건",
+          "url": "https://place.map.kakao.com/16653374",
+          "address": "강원특별자치도 강릉시 가작로 8 1층"
+        },
+        {
+          "name": "원인숙고성생선찜",
+          "rating": "3.9",
+          "reviews": "213건",
+          "url": "https://place.map.kakao.com/64126759",
+          "address": "강원특별자치도 강릉시 성덕포남로 56 1층"
+        },
+        {
+          "name": "찜사랑생선찜전문점",
+          "rating": "5.0",
+          "reviews": "2건",
+          "url": "https://place.map.kakao.com/1747566878",
+          "address": "강원특별자치도 강릉시 문화의길7번길 8 임당상가아파트 1층"
+        },
+        {
+          "name": "강릉코다리찜",
+          "rating": "4.3",
+          "reviews": "4건",
+          "url": "https://place.map.kakao.com/1541913879",
+          "address": "강원특별자치도 강릉시 하평3길 8-1"
+        },
+        {
+          "name": "강릉대구머리찜",
+          "rating": "4.0",
+          "reviews": "3건",
+          "url": "https://place.map.kakao.com/26848939",
+          "address": "강원특별자치도 강릉시 임영로25번길 13 대림아파트 상가 1층"
+        },
+        {
+          "name": "강릉주문진곰치국장치찜맛집 청정곰치국",
+          "rating": "3.2",
+          "reviews": "12건",
+          "url": "https://place.map.kakao.com/1713595101",
+          "address": "강원특별자치도 강릉시 주문진읍 작은다리길 33 1층"
+        },
+        {
+          "name": "선옥네생선찜",
+          "rating": "0.0",
+          "reviews": "0건",
+          "url": "https://place.map.kakao.com/464235587",
+          "address": "강원특별자치도 강릉시 중앙시장3길 37-4"
+        },
+        {
+          "name": "오늘은생선구이 생선찜",
+          "rating": "0.0",
+          "reviews": "0건",
+          "url": "https://place.map.kakao.com/1319001347",
+          "address": "강원특별자치도 강릉시 임영로25번길 35"
+        },
+        {
+          "name": "강릉다모아식당",
+          "rating": "4.7",
+          "reviews": "96건",
+          "url": "https://place.map.kakao.com/1537341289",
+          "address": "강원특별자치도 강릉시 해안로 298-5 B동 1층"
+        },
+        {
+          "name": "갯마을식당 강릉점",
+          "rating": "4.1",
+          "reviews": "14건",
+          "url": "https://place.map.kakao.com/393349088",
+          "address": "강원특별자치도 강릉시 초당원길 17"
+        }
+      ]
+    },
+    {
+      "id": "g88",
+      "name": "원조초당순두부",
+      "locationText": "강릉시 초당순두부길77번길 9",
+      "results": [
+        {
+          "name": "원조초당순두부",
+          "rating": "",
+          "reviews": "(30)",
+          "url": "https://place.map.kakao.com/16940493",
+          "address": "강원특별자치도 강릉시 초당순두부길77번길 9 1층"
+        },
+        {
+          "name": "원조민속초당순두부",
+          "rating": "4.4",
+          "reviews": "117건",
+          "url": "https://place.map.kakao.com/8025288",
+          "address": "강원특별자치도 강릉시 운정길 129 1층"
+        },
+        {
+          "name": "시골순두부밥상",
+          "rating": "3.5",
+          "reviews": "26건",
+          "url": "https://place.map.kakao.com/1802122560",
+          "address": "강원특별자치도 강릉시 해안로 517 1층"
+        },
+        {
+          "name": "동화가든",
+          "rating": "3.4",
+          "reviews": "1,331건",
+          "url": "https://place.map.kakao.com/7846414",
+          "address": "강원특별자치도 강릉시 초당순두부길77번길 15 1층"
+        }
+      ]
+    },
+    {
+      "id": "g89",
+      "name": "까치칼국수",
+      "locationText": "강릉시 강릉대로313번길 62",
+      "results": [
+        {
+          "name": "까치칼국수",
+          "rating": "3.7",
+          "reviews": "79건",
+          "url": "https://place.map.kakao.com/8240944",
+          "address": "강원특별자치도 강릉시 강릉대로313번길 62 1층"
+        }
+      ]
+    }
+  ],
+  "matched": [
+    {
+      "id": "g26",
+      "appName": "장미경양식 강릉중앙시장점",
+      "appLocationText": "강릉시 금성로22번길 4",
+      "kakaoName": "장미경양식",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로22번길 4 1층",
+      "kakaoUrl": "https://place.map.kakao.com/1517874213",
+      "rating": 4.0,
+      "reviewCount": 130,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": "카카오 상호는 장미경양식, 앱은 강릉중앙시장점. 주소 일치."
+    },
+    {
+      "id": "g28",
+      "appName": "초당장칼국수",
+      "appLocationText": "강릉시 초당순두부길 33-1",
+      "kakaoName": "초당장칼국수",
+      "kakaoAddress": "강원특별자치도 강릉시 초당순두부길 33-1 1층",
+      "kakaoUrl": "https://place.map.kakao.com/795704163",
+      "rating": 4.6,
+      "reviewCount": 82,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g29",
+      "appName": "초당맷돌순두부",
+      "appLocationText": "강릉시 초당순두부길 75",
+      "kakaoName": "초당맷돌순두부",
+      "kakaoAddress": "강원특별자치도 강릉시 초당순두부길 75",
+      "kakaoUrl": "https://place.map.kakao.com/1197816283",
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": "(30)",
+      "status": "unrated",
+      "note": "카카오 별점 미제공. 검색 카드의 (30)은 평가 수가 아님."
+    },
+    {
+      "id": "g33",
+      "appName": "선채향",
+      "appLocationText": "강릉시 경강로2095번길 17. 중앙시장 주변 골목 음식점",
+      "kakaoName": "선채향",
+      "kakaoAddress": "강원특별자치도 강릉시 경강로2095번길 17 1층",
+      "kakaoUrl": "https://place.map.kakao.com/1427149199",
+      "rating": 4.7,
+      "reviewCount": 230,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g40",
+      "appName": "감자바우 옹심이장칼국수",
+      "appLocationText": "강릉시 금성로35번길 4, 2층",
+      "kakaoName": "옹심이장칼국수 감자바우",
+      "kakaoAddress": "강원특별자치도 강릉시 금성로35번길 4 1층",
+      "kakaoUrl": "https://place.map.kakao.com/11395119",
+      "rating": 3.2,
+      "reviewCount": 296,
+      "reviewIndicator": null,
+      "status": "identity_or_address_conflict",
+      "note": "앱은 금성로35번길 4 2층, 카카오는 같은 건물 1층. 층수 충돌이 있어 주소·영업 위치 확인 필요. 평점 3.2는 참고만."
+    },
+    {
+      "id": "g41",
+      "appName": "초당할머니순두부",
+      "appLocationText": "강릉시 초당순두부길 77",
+      "kakaoName": "초당할머니순두부",
+      "kakaoAddress": "강원특별자치도 강릉시 초당순두부길 77 1층",
+      "kakaoUrl": "https://place.map.kakao.com/8535139",
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": "(30)",
+      "status": "unrated",
+      "note": "카카오 별점 미제공. 초당토박이할머니순두부(47번지)와 혼동 금지."
+    },
+    {
+      "id": "g42",
+      "appName": "동화가든 본점",
+      "appLocationText": "강릉시 초당순두부길77번길 15",
+      "kakaoName": "동화가든",
+      "kakaoAddress": "강원특별자치도 강릉시 초당순두부길77번길 15 1층",
+      "kakaoUrl": "https://place.map.kakao.com/7846414",
+      "rating": 3.4,
+      "reviewCount": 1331,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": "카카오 상호 동화가든, 앱 상호 동화가든 본점. 주소 일치."
+    },
+    {
+      "id": "g58",
+      "appName": "광덕식당 중앙시장점",
+      "appLocationText": "강릉시 중앙시장길 22-3",
+      "kakaoName": "광덕식당 중앙시장점",
+      "kakaoAddress": "강원특별자치도 강릉시 중앙시장길 22-3",
+      "kakaoUrl": "https://place.map.kakao.com/8775081",
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": "(30)",
+      "status": "unrated",
+      "note": "카카오 별점 미제공. 검색 카드의 (30)은 평가 수가 아님."
+    },
+    {
+      "id": "g63",
+      "appName": "해미가",
+      "appLocationText": "강릉시 솔올로 103",
+      "kakaoName": "해미가",
+      "kakaoAddress": "강원특별자치도 강릉시 솔올로 103 1층",
+      "kakaoUrl": "https://place.map.kakao.com/507599310",
+      "rating": 4.3,
+      "reviewCount": 39,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": "해미가수산(솔올로 97)은 다른 가게. 솔올로 103 해미가를 선택."
+    },
+    {
+      "id": "g65",
+      "appName": "초당한솔순두부 감나무집",
+      "appLocationText": "강릉시 초당순두부길 57",
+      "kakaoName": null,
+      "kakaoAddress": null,
+      "kakaoUrl": null,
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": null,
+      "status": "identity_or_address_conflict",
+      "note": "카카오에서 앱 상호 초당한솔순두부 감나무집을 찾지 못함. 같은 57번지에 그옛날초당순두부(카카오 4.0/61)가 표시됨. 당근은 감나무집을 2026-08-16 갱신으로 게시해 상호/점유 충돌. 동일 점포로 단정 금지."
+    },
+    {
+      "id": "g83",
+      "appName": "초당비스트로",
+      "appLocationText": "강릉시 초당순두부길 19",
+      "kakaoName": "초당비스트로",
+      "kakaoAddress": "강원특별자치도 강릉시 초당순두부길 19",
+      "kakaoUrl": "https://place.map.kakao.com/1572181856",
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": "(30)",
+      "status": "unrated",
+      "note": "카카오 별점 미제공."
+    },
+    {
+      "id": "g84",
+      "appName": "동산항물회",
+      "appLocationText": "강릉시 경강로2267번길 22",
+      "kakaoName": "동산항물회",
+      "kakaoAddress": "강원특별자치도 강릉시 경강로2267번길 22 1층",
+      "kakaoUrl": "https://place.map.kakao.com/667433302",
+      "rating": 4.7,
+      "reviewCount": 47,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g85",
+      "appName": "독도야",
+      "appLocationText": "강릉시 창해로 451",
+      "kakaoName": "독도야",
+      "kakaoAddress": "강원특별자치도 강릉시 창해로 451 1층",
+      "kakaoUrl": "https://place.map.kakao.com/18936380",
+      "rating": 4.2,
+      "reviewCount": 46,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": null
+    },
+    {
+      "id": "g86",
+      "appName": "안목애",
+      "appLocationText": "강릉시 창해로14번길 34",
+      "kakaoName": "안목애",
+      "kakaoAddress": "강원특별자치도 강릉시 창해로14번길 34 1층",
+      "kakaoUrl": "https://place.map.kakao.com/890078328",
+      "rating": 2.8,
+      "reviewCount": 25,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    },
+    {
+      "id": "g87",
+      "appName": "강릉생선찜",
+      "appLocationText": "강릉시 난설헌로 228-5 2층",
+      "kakaoName": "강릉생선찜",
+      "kakaoAddress": "강원특별자치도 강릉시 난설헌로 228-5 2층",
+      "kakaoUrl": "https://place.map.kakao.com/2125567652",
+      "rating": 4.0,
+      "reviewCount": 1,
+      "reviewIndicator": null,
+      "status": "at_least_4",
+      "note": "평가 1건만으로 4.0점이므로 낮은 표본 수 명시."
+    },
+    {
+      "id": "g88",
+      "appName": "원조초당순두부",
+      "appLocationText": "강릉시 초당순두부길77번길 9",
+      "kakaoName": "원조초당순두부",
+      "kakaoAddress": "강원특별자치도 강릉시 초당순두부길77번길 9 1층",
+      "kakaoUrl": "https://place.map.kakao.com/16940493",
+      "rating": null,
+      "reviewCount": null,
+      "reviewIndicator": "(30)",
+      "status": "unrated",
+      "note": "카카오 별점 미제공. 원조민속초당순두부(운정길 129)는 다른 가게."
+    },
+    {
+      "id": "g89",
+      "appName": "까치칼국수",
+      "appLocationText": "강릉시 강릉대로313번길 62",
+      "kakaoName": "까치칼국수",
+      "kakaoAddress": "강원특별자치도 강릉시 강릉대로313번길 62 1층",
+      "kakaoUrl": "https://place.map.kakao.com/8240944",
+      "rating": 3.7,
+      "reviewCount": 79,
+      "reviewIndicator": null,
+      "status": "below_4_review",
+      "note": null
+    }
+  ],
+  "summary": {
+    "at_least_4": 7,
+    "below_4_review": 3,
+    "identity_or_address_conflict": 2,
+    "unrated": 5
+  },
+  "below4ReplacementReview": [
+    {
+      "id": "g42",
+      "appName": "동화가든 본점",
+      "rating": 3.4,
+      "reviewCount": 1331,
+      "kakaoUrl": "https://place.map.kakao.com/7846414"
+    },
+    {
+      "id": "g86",
+      "appName": "안목애",
+      "rating": 2.8,
+      "reviewCount": 25,
+      "kakaoUrl": "https://place.map.kakao.com/890078328"
+    },
+    {
+      "id": "g89",
+      "appName": "까치칼국수",
+      "rating": 3.7,
+      "reviewCount": 79,
+      "kakaoUrl": "https://place.map.kakao.com/8240944"
+    }
+  ],
+  "manualCrosscheckForG65": {
+    "conflictingKakaoPlace": {
+      "name": "그옛날초당순두부",
+      "address": "강원특별자치도 강릉시 초당순두부길 57 1층",
+      "url": "https://place.map.kakao.com/339009771",
+      "rating": 4.0,
+      "reviewCount": 61
+    },
+    "otherEvidence": [
+      "https://www.daangn.com/kr/local-profile/%EC%B4%88%EB%8B%B9%ED%95%9C%EC%86%94%EC%88%9C%EB%91%90%EB%B6%80-%EA%B0%90%EB%82%98%EB%AC%B4%EC%A7%91-psjqgpq4v5wo/",
+      "https://www.diningcode.com/profile.php?rid=Edpb4oVBvg9W"
+    ]
+  },
+  "method": "2026-10-06 카카오맵 웹 검색에서 상호·도로명주소를 직접 대조. 0.0/0건과 점수 미제공은 무평점으로 분류하며 검색 카드의 (30)을 평가 수로 쓰지 않음. 층수와 상호가 충돌하는 항목은 4점 미만 교체 대상으로 단정하지 않음."
+}
