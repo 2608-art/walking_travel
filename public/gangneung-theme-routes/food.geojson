@@ -1,0 +1,770 @@
+{
+  "type": "FeatureCollection",
+  "name": "Gangneung food pedestrian legs",
+  "metadata": {
+    "checkedOn": "2026-10-07",
+    "source": "OpenStreetMap/Valhalla public pedestrian router",
+    "attribution": "© OpenStreetMap contributors",
+    "note": "Only walk-mode legs are routed. Transit-mode gaps remain separate. Place pins may not be entrances."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "food",
+        "legIndex": 1,
+        "from": "g45",
+        "to": "g22",
+        "fromName": "아르떼뮤지엄 강릉",
+        "toName": "허균·허난설헌 기념공원",
+        "meters": 574,
+        "minutes": 8,
+        "startSnapMeters": 27,
+        "endSnapMeters": 23,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.907827,
+            37.791776
+          ],
+          [
+            128.907663,
+            37.792162
+          ],
+          [
+            128.907361,
+            37.793096
+          ],
+          [
+            128.907162,
+            37.793548
+          ],
+          [
+            128.907424,
+            37.793729
+          ],
+          [
+            128.907689,
+            37.793725
+          ],
+          [
+            128.907846,
+            37.793301
+          ],
+          [
+            128.908067,
+            37.793187
+          ],
+          [
+            128.908236,
+            37.793034
+          ],
+          [
+            128.908557,
+            37.792888
+          ],
+          [
+            128.908758,
+            37.792658
+          ],
+          [
+            128.90897,
+            37.792387
+          ],
+          [
+            128.909127,
+            37.79198
+          ],
+          [
+            128.909185,
+            37.791875
+          ],
+          [
+            128.909219,
+            37.791775
+          ],
+          [
+            128.909274,
+            37.791743
+          ],
+          [
+            128.90941,
+            37.791665
+          ],
+          [
+            128.909517,
+            37.791587
+          ],
+          [
+            128.909604,
+            37.791597
+          ],
+          [
+            128.909694,
+            37.79159
+          ],
+          [
+            128.909694,
+            37.79159
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "food",
+        "legIndex": 2,
+        "from": "g22",
+        "to": "g49",
+        "fromName": "허균·허난설헌 기념공원",
+        "toName": "초희전통차체험관",
+        "meters": 90,
+        "minutes": 2,
+        "startSnapMeters": 23,
+        "endSnapMeters": 34,
+        "accepted": true,
+        "pinType": {
+          "from": "route-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.909694,
+            37.79159
+          ],
+          [
+            128.909604,
+            37.791597
+          ],
+          [
+            128.909517,
+            37.791587
+          ],
+          [
+            128.909565,
+            37.791542
+          ],
+          [
+            128.909895,
+            37.791455
+          ],
+          [
+            128.910279,
+            37.791335
+          ],
+          [
+            128.910302,
+            37.791329
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "food",
+        "legIndex": 3,
+        "from": "g49",
+        "to": "g88",
+        "fromName": "초희전통차체험관",
+        "toName": "원조초당순두부",
+        "meters": 707,
+        "minutes": 9,
+        "startSnapMeters": 34,
+        "endSnapMeters": 46,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.910302,
+            37.791329
+          ],
+          [
+            128.910462,
+            37.79129
+          ],
+          [
+            128.910991,
+            37.791189
+          ],
+          [
+            128.911016,
+            37.791154
+          ],
+          [
+            128.911034,
+            37.791128
+          ],
+          [
+            128.911302,
+            37.790789
+          ],
+          [
+            128.911427,
+            37.790808
+          ],
+          [
+            128.911749,
+            37.790863
+          ],
+          [
+            128.912027,
+            37.790974
+          ],
+          [
+            128.912171,
+            37.791051
+          ],
+          [
+            128.912403,
+            37.791192
+          ],
+          [
+            128.912542,
+            37.791307
+          ],
+          [
+            128.913444,
+            37.792299
+          ],
+          [
+            128.913496,
+            37.792363
+          ],
+          [
+            128.913698,
+            37.792584
+          ],
+          [
+            128.913893,
+            37.792791
+          ],
+          [
+            128.91415,
+            37.791379
+          ],
+          [
+            128.914325,
+            37.790837
+          ],
+          [
+            128.914472,
+            37.79048
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "food",
+        "legIndex": 4,
+        "from": "g88",
+        "to": "g98",
+        "fromName": "원조초당순두부",
+        "toName": "카페 툇마루",
+        "meters": 300,
+        "minutes": 4,
+        "startSnapMeters": 46,
+        "endSnapMeters": 42,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.914472,
+            37.79048
+          ],
+          [
+            128.914325,
+            37.790837
+          ],
+          [
+            128.91415,
+            37.791379
+          ],
+          [
+            128.913893,
+            37.792791
+          ],
+          [
+            128.914135,
+            37.793068
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "food",
+        "legIndex": 5,
+        "from": "g98",
+        "to": "g30",
+        "fromName": "카페 툇마루",
+        "toName": "초당110",
+        "meters": 445,
+        "minutes": 6,
+        "startSnapMeters": 42,
+        "endSnapMeters": 13,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.914135,
+            37.793068
+          ],
+          [
+            128.914151,
+            37.793086
+          ],
+          [
+            128.914218,
+            37.79316
+          ],
+          [
+            128.914712,
+            37.793708
+          ],
+          [
+            128.916325,
+            37.791703
+          ],
+          [
+            128.916444,
+            37.791782
+          ],
+          [
+            128.916546,
+            37.791845
+          ],
+          [
+            128.916679,
+            37.791965
+          ],
+          [
+            128.916758,
+            37.792061
+          ],
+          [
+            128.916852,
+            37.792191
+          ],
+          [
+            128.916996,
+            37.792354
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "food",
+        "legIndex": 6,
+        "from": "g30",
+        "to": "g5",
+        "fromName": "초당110",
+        "toName": "강문해변",
+        "meters": 508,
+        "minutes": 7,
+        "startSnapMeters": 13,
+        "endSnapMeters": 34,
+        "accepted": true,
+        "pinType": {
+          "from": "route-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.916996,
+            37.792354
+          ],
+          [
+            128.917137,
+            37.792513
+          ],
+          [
+            128.917321,
+            37.792776
+          ],
+          [
+            128.917489,
+            37.793049
+          ],
+          [
+            128.91734,
+            37.793636
+          ],
+          [
+            128.917259,
+            37.794514
+          ],
+          [
+            128.917225,
+            37.794851
+          ],
+          [
+            128.917205,
+            37.79502
+          ],
+          [
+            128.917406,
+            37.794907
+          ],
+          [
+            128.917572,
+            37.794835
+          ],
+          [
+            128.917854,
+            37.794739
+          ],
+          [
+            128.918047,
+            37.794678
+          ],
+          [
+            128.918253,
+            37.794603
+          ],
+          [
+            128.918366,
+            37.794529
+          ],
+          [
+            128.918455,
+            37.794463
+          ],
+          [
+            128.91858,
+            37.794343
+          ],
+          [
+            128.918686,
+            37.794216
+          ],
+          [
+            128.918907,
+            37.79394
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "food",
+        "legIndex": 7,
+        "from": "g5",
+        "to": "g181",
+        "fromName": "강문해변",
+        "toName": "강문떡갈비",
+        "meters": 169,
+        "minutes": 2,
+        "startSnapMeters": 34,
+        "endSnapMeters": 26,
+        "accepted": true,
+        "pinType": {
+          "from": "route-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.918907,
+            37.79394
+          ],
+          [
+            128.918686,
+            37.794216
+          ],
+          [
+            128.91858,
+            37.794343
+          ],
+          [
+            128.918455,
+            37.794463
+          ],
+          [
+            128.918366,
+            37.794529
+          ],
+          [
+            128.918253,
+            37.794603
+          ],
+          [
+            128.918047,
+            37.794678
+          ],
+          [
+            128.917854,
+            37.794739
+          ],
+          [
+            128.917572,
+            37.794835
+          ],
+          [
+            128.917471,
+            37.794879
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "food",
+        "legIndex": 8,
+        "from": "g181",
+        "to": "g56",
+        "fromName": "강문떡갈비",
+        "toName": "유리알유희",
+        "meters": 83,
+        "minutes": 2,
+        "startSnapMeters": 26,
+        "endSnapMeters": 3,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.917471,
+            37.794879
+          ],
+          [
+            128.917572,
+            37.794835
+          ],
+          [
+            128.917854,
+            37.794739
+          ],
+          [
+            128.918047,
+            37.794678
+          ],
+          [
+            128.918253,
+            37.794603
+          ],
+          [
+            128.918325,
+            37.794556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "food",
+        "legIndex": 9,
+        "from": "g56",
+        "to": "g257",
+        "fromName": "유리알유희",
+        "toName": "서울양계",
+        "meters": 173,
+        "minutes": 3,
+        "startSnapMeters": 3,
+        "endSnapMeters": 13,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.918325,
+            37.794556
+          ],
+          [
+            128.918253,
+            37.794603
+          ],
+          [
+            128.918047,
+            37.794678
+          ],
+          [
+            128.917854,
+            37.794739
+          ],
+          [
+            128.917572,
+            37.794835
+          ],
+          [
+            128.917406,
+            37.794907
+          ],
+          [
+            128.917205,
+            37.79502
+          ],
+          [
+            128.917029,
+            37.795148
+          ],
+          [
+            128.916936,
+            37.795232
+          ],
+          [
+            128.916828,
+            37.795354
+          ],
+          [
+            128.916753,
+            37.795446
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "food",
+        "legIndex": 10,
+        "from": "g257",
+        "to": "g35",
+        "fromName": "서울양계",
+        "toName": "강문솟대다리",
+        "meters": 332,
+        "minutes": 5,
+        "startSnapMeters": 13,
+        "endSnapMeters": 0,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.916753,
+            37.795446
+          ],
+          [
+            128.916701,
+            37.795511
+          ],
+          [
+            128.91659,
+            37.795642
+          ],
+          [
+            128.916367,
+            37.795951
+          ],
+          [
+            128.916245,
+            37.796134
+          ],
+          [
+            128.916227,
+            37.796173
+          ],
+          [
+            128.916208,
+            37.796214
+          ],
+          [
+            128.916139,
+            37.796435
+          ],
+          [
+            128.916612,
+            37.796651
+          ],
+          [
+            128.916791,
+            37.796766
+          ],
+          [
+            128.916859,
+            37.79679
+          ],
+          [
+            128.916897,
+            37.796855
+          ],
+          [
+            128.917196,
+            37.797038
+          ],
+          [
+            128.917197,
+            37.797099
+          ],
+          [
+            128.917153,
+            37.797148
+          ],
+          [
+            128.916767,
+            37.797512
+          ],
+          [
+            128.916685,
+            37.797595
+          ],
+          [
+            128.916676,
+            37.797707
+          ],
+          [
+            128.916675,
+            37.797725
+          ]
+        ]
+      }
+    }
+  ]
+}

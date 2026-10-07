@@ -1,0 +1,3154 @@
+{
+  "title": "강릉 테마별 네이버 지도 구간 검증 자료",
+  "checkedAt": "2026-10-07",
+  "mapProvider": "Naver Map mobile walking/transit directions",
+  "routeCount": 25,
+  "routesByTheme": {
+    "food": 5,
+    "sea": 5,
+    "shops": 5,
+    "cafe": 5,
+    "history": 5
+  },
+  "verificationScope": "25개의 서로 다른 후보 동선. 각 인접 구간에서 지도 길찾기 경로선과 요약 이동시간을 확인했다. 운영시간·배차 대기·예약·현장 입구는 모든 후보에 대해 완전 검증하지 않았다. 강릉역→코스 출발점 10개와 코스 도착점→강릉역 11개 대중교통 길찾기도 Naver UI에서 대조했다. 시간표/대기·환승은 조회 당시 기준이라 일정시각별 확정은 미완료. 앱 polyline용 경로 geometry는 확보·연결하지 못했다.",
+  "transitCaveat": "대중교통 구간의 시간·노선은 조회 시점 기준이며 실제 출발시간, 배차, 대기시간에 따라 달라질 수 있다.",
+  "routes": [
+    {
+      "id": "food-01",
+      "themeId": "food",
+      "title": "강문·초당 A — 기념공원·차·순두부·해변",
+      "placeIds": [
+        "g22",
+        "g49",
+        "g29",
+        "g30",
+        "g5",
+        "g56"
+      ],
+      "placeNames": [
+        "허균·허난설헌 기념공원",
+        "초희전통차체험관",
+        "초당맷돌순두부",
+        "초당110",
+        "강문해변",
+        "유리알유희"
+      ],
+      "walkMinutes": 36,
+      "walkMeters": 2542,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g30"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g22",
+          "to": "g49",
+          "mode": "walk",
+          "minutes": 2,
+          "meters": 186,
+          "buses": null,
+          "fromName": "허균·허난설헌 기념공원",
+          "toName": "초희전통차체험관",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9097365%2C37.7917949%2C%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90%2Cundefined%2CADDRESS_POI/128.9101867745931%2C37.79103562487218%2C%EC%B4%88%ED%9D%AC%EC%A0%84%ED%86%B5%EC%B0%A8%EC%B2%B4%ED%97%98%EA%B4%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 기념공원 대표점. 개별 시설 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "초희전통차체험관 장소 대표점. 앱의 주소 충돌은 현장 내부 위치 대조 전까지 유지"
+          }
+        },
+        {
+          "from": "g49",
+          "to": "g29",
+          "mode": "walk",
+          "minutes": 9,
+          "meters": 644,
+          "buses": null,
+          "fromName": "초희전통차체험관",
+          "toName": "초당맷돌순두부",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9101867745931%2C37.79103562487218%2C%EC%B4%88%ED%9D%AC%EC%A0%84%ED%86%B5%EC%B0%A8%EC%B2%B4%ED%97%98%EA%B4%80%2Cundefined%2CADDRESS_POI/128.915362803757%2C37.7900353735598%2C%EC%B4%88%EB%8B%B9%EB%A7%B7%EB%8F%8C%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "초희전통차체험관 장소 대표점. 앱의 주소 충돌은 현장 내부 위치 대조 전까지 유지",
+            "to": "앱 저장 좌표; 현장 출입구 미확인"
+          }
+        },
+        {
+          "from": "g29",
+          "to": "g30",
+          "mode": "walk",
+          "minutes": 5,
+          "meters": 371,
+          "buses": null,
+          "fromName": "초당맷돌순두부",
+          "toName": "초당110",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.915362803757%2C37.7900353735598%2C%EC%B4%88%EB%8B%B9%EB%A7%B7%EB%8F%8C%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "앱 저장 좌표; 현장 출입구 미확인",
+            "to": "앱 저장 좌표; 현장 출입구 미확인"
+          }
+        },
+        {
+          "from": "g30",
+          "to": "g5",
+          "mode": "walk",
+          "minutes": 12,
+          "meters": 776,
+          "buses": null,
+          "fromName": "초당110",
+          "toName": "강문해변",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "앱 저장 좌표; 현장 출입구 미확인",
+            "to": "강문해변 화장실 위치의 해변 남단 접근 후보. 시설 문 좌표는 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g5",
+          "to": "g56",
+          "mode": "walk",
+          "minutes": 8,
+          "meters": 565,
+          "buses": null,
+          "fromName": "강문해변",
+          "toName": "유리알유희",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/128.9183005090944%2C37.794532313371874%2C%EC%9C%A0%EB%A6%AC%EC%95%8C%EC%9C%A0%ED%9D%AC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "강문해변 화장실 위치의 해변 남단 접근 후보. 시설 문 좌표는 아님 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 장소검색 ID 1309759804의 도로명 주소 창해로351-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g22",
+      "stationReturnCheckId": "g56-to-station"
+    },
+    {
+      "id": "food-02",
+      "themeId": "food",
+      "title": "강문·초당 B — 생가터·순두부·툇마루·해변",
+      "placeIds": [
+        "g22",
+        "g31",
+        "g41",
+        "g98",
+        "g5"
+      ],
+      "placeNames": [
+        "허균·허난설헌 기념공원",
+        "허난설헌 생가터",
+        "초당할머니순두부",
+        "카페 툇마루",
+        "강문해변"
+      ],
+      "walkMinutes": 28,
+      "walkMeters": 1967,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g31",
+        "g41",
+        "g98"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g22",
+          "to": "g31",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 42,
+          "buses": null,
+          "fromName": "허균·허난설헌 기념공원",
+          "toName": "허난설헌 생가터",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9097365%2C37.7917949%2C%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90%2Cundefined%2CADDRESS_POI/128.909675424%2C37.791928171%2C%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EC%83%9D%EA%B0%80%ED%84%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 기념공원 대표점. 개별 시설 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "앱 저장 좌표; 현장 출입구 미확인"
+          }
+        },
+        {
+          "from": "g31",
+          "to": "g41",
+          "mode": "walk",
+          "minutes": 12,
+          "meters": 831,
+          "buses": null,
+          "fromName": "허난설헌 생가터",
+          "toName": "초당할머니순두부",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.909675424%2C37.791928171%2C%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EC%83%9D%EA%B0%80%ED%84%B0%2Cundefined%2CADDRESS_POI/128.91539608%2C37.79055465%2C%EC%B4%88%EB%8B%B9%ED%95%A0%EB%A8%B8%EB%8B%88%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "앱 저장 좌표; 현장 출입구 미확인",
+            "to": "상호·도로명 주소가 정확히 일치하고 한국관광공사 소개의 전화 033-652-2058과 지도 전화가 일치한다. 같은 검색결과의 초당토박이 할머니순두부(47번지)와 주차장 핀은 별개로 구분했다."
+          }
+        },
+        {
+          "from": "g41",
+          "to": "g98",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 321,
+          "buses": null,
+          "fromName": "초당할머니순두부",
+          "toName": "카페 툇마루",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.91539608%2C37.79055465%2C%EC%B4%88%EB%8B%B9%ED%95%A0%EB%A8%B8%EB%8B%88%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/128.914529131473%2C37.792853268313756%2C%EC%B9%B4%ED%8E%98%20%ED%88%87%EB%A7%88%EB%A3%A8%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "상호·도로명 주소가 정확히 일치하고 한국관광공사 소개의 전화 033-652-2058과 지도 전화가 일치한다. 같은 검색결과의 초당토박이 할머니순두부(47번지)와 주차장 핀은 별개로 구분했다.",
+            "to": "카카오 장소검색 ID 401540066의 도로명 주소 난설헌로232 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g98",
+          "to": "g5",
+          "mode": "walk",
+          "minutes": 11,
+          "meters": 773,
+          "buses": null,
+          "fromName": "카페 툇마루",
+          "toName": "강문해변",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.914529131473%2C37.792853268313756%2C%EC%B9%B4%ED%8E%98%20%ED%88%87%EB%A7%88%EB%A3%A8%2Cundefined%2CADDRESS_POI/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 401540066의 도로명 주소 난설헌로232 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "강문해변 화장실 위치의 해변 남단 접근 후보. 시설 문 좌표는 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g22",
+      "stationReturnCheckId": "g5-to-station"
+    },
+    {
+      "id": "food-03",
+      "themeId": "food",
+      "title": "강문·초당 C — 기념관·장칼국수·카페·해변",
+      "placeIds": [
+        "g22",
+        "g32",
+        "g28",
+        "g30",
+        "g5"
+      ],
+      "placeNames": [
+        "허균·허난설헌 기념공원",
+        "허균·허난설헌기념관",
+        "초당장칼국수",
+        "초당110",
+        "강문해변"
+      ],
+      "walkMinutes": 33,
+      "walkMeters": 2276,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g28",
+        "g30"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g22",
+          "to": "g32",
+          "mode": "walk",
+          "minutes": 2,
+          "meters": 174,
+          "buses": null,
+          "fromName": "허균·허난설헌 기념공원",
+          "toName": "허균·허난설헌기념관",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9097365%2C37.7917949%2C%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90%2Cundefined%2CADDRESS_POI/128.90952332790056%2C37.7909274728017%2C%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%EA%B8%B0%EB%85%90%EA%B4%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 기념공원 대표점. 개별 시설 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "앱 저장 좌표; 현장 출입구 미확인"
+          }
+        },
+        {
+          "from": "g32",
+          "to": "g28",
+          "mode": "walk",
+          "minutes": 8,
+          "meters": 537,
+          "buses": null,
+          "fromName": "허균·허난설헌기념관",
+          "toName": "초당장칼국수",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.90952332790056%2C37.7909274728017%2C%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%EA%B8%B0%EB%85%90%EA%B4%80%2Cundefined%2CADDRESS_POI/128.912021424017%2C37.7881734478087%2C%EC%B4%88%EB%8B%B9%EC%9E%A5%EC%B9%BC%EA%B5%AD%EC%88%98%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "앱 저장 좌표; 현장 출입구 미확인",
+            "to": "앱 저장 좌표; 현장 출입구 미확인"
+          }
+        },
+        {
+          "from": "g28",
+          "to": "g30",
+          "mode": "walk",
+          "minutes": 11,
+          "meters": 789,
+          "buses": null,
+          "fromName": "초당장칼국수",
+          "toName": "초당110",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.912021424017%2C37.7881734478087%2C%EC%B4%88%EB%8B%B9%EC%9E%A5%EC%B9%BC%EA%B5%AD%EC%88%98%2Cundefined%2CADDRESS_POI/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "앱 저장 좌표; 현장 출입구 미확인",
+            "to": "앱 저장 좌표; 현장 출입구 미확인"
+          }
+        },
+        {
+          "from": "g30",
+          "to": "g5",
+          "mode": "walk",
+          "minutes": 12,
+          "meters": 776,
+          "buses": null,
+          "fromName": "초당110",
+          "toName": "강문해변",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "앱 저장 좌표; 현장 출입구 미확인",
+            "to": "강문해변 화장실 위치의 해변 남단 접근 후보. 시설 문 좌표는 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g22",
+      "stationReturnCheckId": "g5-to-station"
+    },
+    {
+      "id": "food-04",
+      "themeId": "food",
+      "title": "강문·초당 D — 생가터·초당 순두부·카페·해변",
+      "placeIds": [
+        "g22",
+        "g31",
+        "g29",
+        "g30",
+        "g5"
+      ],
+      "placeNames": [
+        "허균·허난설헌 기념공원",
+        "허난설헌 생가터",
+        "초당맷돌순두부",
+        "초당110",
+        "강문해변"
+      ],
+      "walkMinutes": 29,
+      "walkMeters": 1953,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g31",
+        "g30"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g22",
+          "to": "g31",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 42,
+          "buses": null,
+          "fromName": "허균·허난설헌 기념공원",
+          "toName": "허난설헌 생가터",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9097365%2C37.7917949%2C%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90%2Cundefined%2CADDRESS_POI/128.909675424%2C37.791928171%2C%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EC%83%9D%EA%B0%80%ED%84%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 기념공원 대표점. 개별 시설 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "앱 저장 좌표; 현장 출입구 미확인"
+          }
+        },
+        {
+          "from": "g31",
+          "to": "g29",
+          "mode": "walk",
+          "minutes": 11,
+          "meters": 764,
+          "buses": null,
+          "fromName": "허난설헌 생가터",
+          "toName": "초당맷돌순두부",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.909675424%2C37.791928171%2C%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EC%83%9D%EA%B0%80%ED%84%B0%2Cundefined%2CADDRESS_POI/128.915362803757%2C37.7900353735598%2C%EC%B4%88%EB%8B%B9%EB%A7%B7%EB%8F%8C%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "앱 저장 좌표; 현장 출입구 미확인",
+            "to": "앱 저장 좌표; 현장 출입구 미확인"
+          }
+        },
+        {
+          "from": "g29",
+          "to": "g30",
+          "mode": "walk",
+          "minutes": 5,
+          "meters": 371,
+          "buses": null,
+          "fromName": "초당맷돌순두부",
+          "toName": "초당110",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.915362803757%2C37.7900353735598%2C%EC%B4%88%EB%8B%B9%EB%A7%B7%EB%8F%8C%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "앱 저장 좌표; 현장 출입구 미확인",
+            "to": "앱 저장 좌표; 현장 출입구 미확인"
+          }
+        },
+        {
+          "from": "g30",
+          "to": "g5",
+          "mode": "walk",
+          "minutes": 12,
+          "meters": 776,
+          "buses": null,
+          "fromName": "초당110",
+          "toName": "강문해변",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "앱 저장 좌표; 현장 출입구 미확인",
+            "to": "강문해변 화장실 위치의 해변 남단 접근 후보. 시설 문 좌표는 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g22",
+      "stationReturnCheckId": "g5-to-station"
+    },
+    {
+      "id": "food-05",
+      "themeId": "food",
+      "title": "강문·초당 E — 전통차·순두부 식사·툇마루·해변",
+      "placeIds": [
+        "g22",
+        "g49",
+        "g41",
+        "g98",
+        "g5"
+      ],
+      "placeNames": [
+        "허균·허난설헌 기념공원",
+        "초희전통차체험관",
+        "초당할머니순두부",
+        "카페 툇마루",
+        "강문해변"
+      ],
+      "walkMinutes": 27,
+      "walkMeters": 1991,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g41",
+        "g98"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g22",
+          "to": "g49",
+          "mode": "walk",
+          "minutes": 2,
+          "meters": 186,
+          "buses": null,
+          "fromName": "허균·허난설헌 기념공원",
+          "toName": "초희전통차체험관",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9097365%2C37.7917949%2C%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90%2Cundefined%2CADDRESS_POI/128.9101867745931%2C37.79103562487218%2C%EC%B4%88%ED%9D%AC%EC%A0%84%ED%86%B5%EC%B0%A8%EC%B2%B4%ED%97%98%EA%B4%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 기념공원 대표점. 개별 시설 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "초희전통차체험관 장소 대표점. 앱의 주소 충돌은 현장 내부 위치 대조 전까지 유지"
+          }
+        },
+        {
+          "from": "g49",
+          "to": "g41",
+          "mode": "walk",
+          "minutes": 10,
+          "meters": 711,
+          "buses": null,
+          "fromName": "초희전통차체험관",
+          "toName": "초당할머니순두부",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9101867745931%2C37.79103562487218%2C%EC%B4%88%ED%9D%AC%EC%A0%84%ED%86%B5%EC%B0%A8%EC%B2%B4%ED%97%98%EA%B4%80%2Cundefined%2CADDRESS_POI/128.91539608%2C37.79055465%2C%EC%B4%88%EB%8B%B9%ED%95%A0%EB%A8%B8%EB%8B%88%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "초희전통차체험관 장소 대표점. 앱의 주소 충돌은 현장 내부 위치 대조 전까지 유지",
+            "to": "상호·도로명 주소가 정확히 일치하고 한국관광공사 소개의 전화 033-652-2058과 지도 전화가 일치한다. 같은 검색결과의 초당토박이 할머니순두부(47번지)와 주차장 핀은 별개로 구분했다."
+          }
+        },
+        {
+          "from": "g41",
+          "to": "g98",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 321,
+          "buses": null,
+          "fromName": "초당할머니순두부",
+          "toName": "카페 툇마루",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.91539608%2C37.79055465%2C%EC%B4%88%EB%8B%B9%ED%95%A0%EB%A8%B8%EB%8B%88%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/128.914529131473%2C37.792853268313756%2C%EC%B9%B4%ED%8E%98%20%ED%88%87%EB%A7%88%EB%A3%A8%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "상호·도로명 주소가 정확히 일치하고 한국관광공사 소개의 전화 033-652-2058과 지도 전화가 일치한다. 같은 검색결과의 초당토박이 할머니순두부(47번지)와 주차장 핀은 별개로 구분했다.",
+            "to": "카카오 장소검색 ID 401540066의 도로명 주소 난설헌로232 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g98",
+          "to": "g5",
+          "mode": "walk",
+          "minutes": 11,
+          "meters": 773,
+          "buses": null,
+          "fromName": "카페 툇마루",
+          "toName": "강문해변",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.914529131473%2C37.792853268313756%2C%EC%B9%B4%ED%8E%98%20%ED%88%87%EB%A7%88%EB%A3%A8%2Cundefined%2CADDRESS_POI/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 401540066의 도로명 주소 난설헌로232 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "강문해변 화장실 위치의 해변 남단 접근 후보. 시설 문 좌표는 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g22",
+      "stationReturnCheckId": "g5-to-station"
+    },
+    {
+      "id": "sea-01",
+      "themeId": "sea",
+      "title": "안목 A — 커피거리·카페·물회·송정",
+      "placeIds": [
+        "g15",
+        "g96",
+        "g17",
+        "g171",
+        "g14"
+      ],
+      "placeNames": [
+        "안목 커피거리",
+        "AM브레드앤커피",
+        "보사노바 커피로스터스 강릉점",
+        "안목항물회",
+        "송정해변·송림"
+      ],
+      "walkMinutes": 24,
+      "walkMeters": 1650,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g15",
+        "g96",
+        "g171"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g15",
+          "to": "g96",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 59,
+          "buses": null,
+          "fromName": "안목 커피거리",
+          "toName": "AM브레드앤커피",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94804%2C37.77201%2C%EC%95%88%EB%AA%A9%20%EC%BB%A4%ED%94%BC%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "거리 대표점, 특정 카페 입구 아님",
+            "to": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)"
+          }
+        },
+        {
+          "from": "g96",
+          "to": "g17",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 51,
+          "buses": null,
+          "fromName": "AM브레드앤커피",
+          "toName": "보사노바 커피로스터스 강릉점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)",
+            "to": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g17",
+          "to": "g171",
+          "mode": "walk",
+          "minutes": 5,
+          "meters": 340,
+          "buses": null,
+          "fromName": "보사노바 커피로스터스 강릉점",
+          "toName": "안목항물회",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표"
+          }
+        },
+        {
+          "from": "g171",
+          "to": "g14",
+          "mode": "walk",
+          "minutes": 17,
+          "meters": 1200,
+          "buses": null,
+          "fromName": "안목항물회",
+          "toName": "송정해변·송림",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/128.9371318%2C37.7801011%2C%EC%86%A1%EC%A0%95%ED%95%B4%EB%B3%80%C2%B7%EC%86%A1%EB%A6%BC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표",
+            "to": "송정해변 창해로118 공중화장실 주소 지점. KTO 대표점과 약 6m · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g15",
+      "stationReturnCheckId": "g14-to-station"
+    },
+    {
+      "id": "sea-02",
+      "themeId": "sea",
+      "title": "안목 B — 안목해변·뤼미에르·물회·송정",
+      "placeIds": [
+        "g15",
+        "g4",
+        "g147",
+        "g17",
+        "g171",
+        "g14"
+      ],
+      "placeNames": [
+        "안목 커피거리",
+        "안목해변",
+        "카페 뤼미에르",
+        "보사노바 커피로스터스 강릉점",
+        "안목항물회",
+        "송정해변·송림"
+      ],
+      "walkMinutes": 31,
+      "walkMeters": 2275,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g15",
+        "g147",
+        "g171"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g15",
+          "to": "g4",
+          "mode": "walk",
+          "minutes": 5,
+          "meters": 372,
+          "buses": null,
+          "fromName": "안목 커피거리",
+          "toName": "안목해변",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94804%2C37.77201%2C%EC%95%88%EB%AA%A9%20%EC%BB%A4%ED%94%BC%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/128.9451009%2C37.7742852%2C%EC%95%88%EB%AA%A9%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "거리 대표점, 특정 카페 입구 아님",
+            "to": "안목해변과 이어지는 안목해맞이공원 접근점. 해변 전체 진입로는 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g4",
+          "to": "g147",
+          "mode": "walk",
+          "minutes": 3,
+          "meters": 255,
+          "buses": null,
+          "fromName": "안목해변",
+          "toName": "카페 뤼미에르",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9451009%2C37.7742852%2C%EC%95%88%EB%AA%A9%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/128.94715274912144%2C37.77272713557293%2C%EC%B9%B4%ED%8E%98%20%EB%A4%BC%EB%AF%B8%EC%97%90%EB%A5%B4%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "안목해변과 이어지는 안목해맞이공원 접근점. 해변 전체 진입로는 아님 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 장소검색 ID 1842226063의 도로명 주소 창해로14번길18 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g147",
+          "to": "g17",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 108,
+          "buses": null,
+          "fromName": "카페 뤼미에르",
+          "toName": "보사노바 커피로스터스 강릉점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94715274912144%2C37.77272713557293%2C%EC%B9%B4%ED%8E%98%20%EB%A4%BC%EB%AF%B8%EC%97%90%EB%A5%B4%2Cundefined%2CADDRESS_POI/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1842226063의 도로명 주소 창해로14번길18 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g17",
+          "to": "g171",
+          "mode": "walk",
+          "minutes": 5,
+          "meters": 340,
+          "buses": null,
+          "fromName": "보사노바 커피로스터스 강릉점",
+          "toName": "안목항물회",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표"
+          }
+        },
+        {
+          "from": "g171",
+          "to": "g14",
+          "mode": "walk",
+          "minutes": 17,
+          "meters": 1200,
+          "buses": null,
+          "fromName": "안목항물회",
+          "toName": "송정해변·송림",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/128.9371318%2C37.7801011%2C%EC%86%A1%EC%A0%95%ED%95%B4%EB%B3%80%C2%B7%EC%86%A1%EB%A6%BC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표",
+            "to": "송정해변 창해로118 공중화장실 주소 지점. KTO 대표점과 약 6m · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g15",
+      "stationReturnCheckId": "g14-to-station"
+    },
+    {
+      "id": "sea-03",
+      "themeId": "sea",
+      "title": "안목 C — 카페거리·뤼미에르·해변·물회·송정",
+      "placeIds": [
+        "g15",
+        "g187",
+        "g147",
+        "g4",
+        "g171",
+        "g14"
+      ],
+      "placeNames": [
+        "안목 커피거리",
+        "레오파드",
+        "카페 뤼미에르",
+        "안목해변",
+        "안목항물회",
+        "송정해변·송림"
+      ],
+      "walkMinutes": 27,
+      "walkMeters": 1902,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g15",
+        "g187",
+        "g147",
+        "g171"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g15",
+          "to": "g187",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 31,
+          "buses": null,
+          "fromName": "안목 커피거리",
+          "toName": "레오파드",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94804%2C37.77201%2C%EC%95%88%EB%AA%A9%20%EC%BB%A4%ED%94%BC%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/128.9477655048886%2C37.77220533189159%2C%EB%A0%88%EC%98%A4%ED%8C%8C%EB%93%9C%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "거리 대표점, 특정 카페 입구 아님",
+            "to": "카카오 장소검색 ID 1952561624의 도로명 주소 창해로14번길28-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g187",
+          "to": "g147",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 105,
+          "buses": null,
+          "fromName": "레오파드",
+          "toName": "카페 뤼미에르",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9477655048886%2C37.77220533189159%2C%EB%A0%88%EC%98%A4%ED%8C%8C%EB%93%9C%2Cundefined%2CADDRESS_POI/128.94715274912144%2C37.77272713557293%2C%EC%B9%B4%ED%8E%98%20%EB%A4%BC%EB%AF%B8%EC%97%90%EB%A5%B4%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1952561624의 도로명 주소 창해로14번길28-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "카카오 장소검색 ID 1842226063의 도로명 주소 창해로14번길18 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g147",
+          "to": "g4",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 255,
+          "buses": null,
+          "fromName": "카페 뤼미에르",
+          "toName": "안목해변",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94715274912144%2C37.77272713557293%2C%EC%B9%B4%ED%8E%98%20%EB%A4%BC%EB%AF%B8%EC%97%90%EB%A5%B4%2Cundefined%2CADDRESS_POI/128.9451009%2C37.7742852%2C%EC%95%88%EB%AA%A9%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1842226063의 도로명 주소 창해로14번길18 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "안목해변과 이어지는 안목해맞이공원 접근점. 해변 전체 진입로는 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g4",
+          "to": "g171",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 311,
+          "buses": null,
+          "fromName": "안목해변",
+          "toName": "안목항물회",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9451009%2C37.7742852%2C%EC%95%88%EB%AA%A9%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "안목해변과 이어지는 안목해맞이공원 접근점. 해변 전체 진입로는 아님 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표"
+          }
+        },
+        {
+          "from": "g171",
+          "to": "g14",
+          "mode": "walk",
+          "minutes": 17,
+          "meters": 1200,
+          "buses": null,
+          "fromName": "안목항물회",
+          "toName": "송정해변·송림",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/128.9371318%2C37.7801011%2C%EC%86%A1%EC%A0%95%ED%95%B4%EB%B3%80%C2%B7%EC%86%A1%EB%A6%BC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표",
+            "to": "송정해변 창해로118 공중화장실 주소 지점. KTO 대표점과 약 6m · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g15",
+      "stationReturnCheckId": "g14-to-station"
+    },
+    {
+      "id": "sea-04",
+      "themeId": "sea",
+      "title": "안목 D — 해변·AM브레드·보사노바·물회·송정",
+      "placeIds": [
+        "g15",
+        "g4",
+        "g96",
+        "g17",
+        "g171",
+        "g14"
+      ],
+      "placeNames": [
+        "안목 커피거리",
+        "안목해변",
+        "AM브레드앤커피",
+        "보사노바 커피로스터스 강릉점",
+        "안목항물회",
+        "송정해변·송림"
+      ],
+      "walkMinutes": 32,
+      "walkMeters": 2275,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g15",
+        "g96",
+        "g171"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g15",
+          "to": "g4",
+          "mode": "walk",
+          "minutes": 5,
+          "meters": 372,
+          "buses": null,
+          "fromName": "안목 커피거리",
+          "toName": "안목해변",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94804%2C37.77201%2C%EC%95%88%EB%AA%A9%20%EC%BB%A4%ED%94%BC%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/128.9451009%2C37.7742852%2C%EC%95%88%EB%AA%A9%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "거리 대표점, 특정 카페 입구 아님",
+            "to": "안목해변과 이어지는 안목해맞이공원 접근점. 해변 전체 진입로는 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g4",
+          "to": "g96",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 312,
+          "buses": null,
+          "fromName": "안목해변",
+          "toName": "AM브레드앤커피",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9451009%2C37.7742852%2C%EC%95%88%EB%AA%A9%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "안목해변과 이어지는 안목해맞이공원 접근점. 해변 전체 진입로는 아님 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)"
+          }
+        },
+        {
+          "from": "g96",
+          "to": "g17",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 51,
+          "buses": null,
+          "fromName": "AM브레드앤커피",
+          "toName": "보사노바 커피로스터스 강릉점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)",
+            "to": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g17",
+          "to": "g171",
+          "mode": "walk",
+          "minutes": 5,
+          "meters": 340,
+          "buses": null,
+          "fromName": "보사노바 커피로스터스 강릉점",
+          "toName": "안목항물회",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표"
+          }
+        },
+        {
+          "from": "g171",
+          "to": "g14",
+          "mode": "walk",
+          "minutes": 17,
+          "meters": 1200,
+          "buses": null,
+          "fromName": "안목항물회",
+          "toName": "송정해변·송림",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/128.9371318%2C37.7801011%2C%EC%86%A1%EC%A0%95%ED%95%B4%EB%B3%80%C2%B7%EC%86%A1%EB%A6%BC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표",
+            "to": "송정해변 창해로118 공중화장실 주소 지점. KTO 대표점과 약 6m · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g15",
+      "stationReturnCheckId": "g14-to-station"
+    },
+    {
+      "id": "sea-05",
+      "themeId": "sea",
+      "title": "안목 E — 커피커퍼·레오파드·해변·물회·송정",
+      "placeIds": [
+        "g15",
+        "g189",
+        "g187",
+        "g147",
+        "g4",
+        "g171",
+        "g14"
+      ],
+      "placeNames": [
+        "안목 커피거리",
+        "커피커퍼 안목1호점",
+        "레오파드",
+        "카페 뤼미에르",
+        "안목해변",
+        "안목항물회",
+        "송정해변·송림"
+      ],
+      "walkMinutes": 28,
+      "walkMeters": 2088,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g15",
+        "g189",
+        "g187",
+        "g147",
+        "g171"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g15",
+          "to": "g189",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 114,
+          "buses": null,
+          "fromName": "안목 커피거리",
+          "toName": "커피커퍼 안목1호점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94804%2C37.77201%2C%EC%95%88%EB%AA%A9%20%EC%BB%A4%ED%94%BC%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/128.947241042645%2C37.77263198939384%2C%EC%BB%A4%ED%94%BC%EC%BB%A4%ED%8D%BC%20%EC%95%88%EB%AA%A91%ED%98%B8%EC%A0%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "거리 대표점, 특정 카페 입구 아님",
+            "to": "카카오 장소검색 ID 19731258의 도로명 주소 창해로14번길20 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g189",
+          "to": "g187",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 103,
+          "buses": null,
+          "fromName": "커피커퍼 안목1호점",
+          "toName": "레오파드",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.947241042645%2C37.77263198939384%2C%EC%BB%A4%ED%94%BC%EC%BB%A4%ED%8D%BC%20%EC%95%88%EB%AA%A91%ED%98%B8%EC%A0%90%2Cundefined%2CADDRESS_POI/128.9477655048886%2C37.77220533189159%2C%EB%A0%88%EC%98%A4%ED%8C%8C%EB%93%9C%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 19731258의 도로명 주소 창해로14번길20 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "카카오 장소검색 ID 1952561624의 도로명 주소 창해로14번길28-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g187",
+          "to": "g147",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 105,
+          "buses": null,
+          "fromName": "레오파드",
+          "toName": "카페 뤼미에르",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9477655048886%2C37.77220533189159%2C%EB%A0%88%EC%98%A4%ED%8C%8C%EB%93%9C%2Cundefined%2CADDRESS_POI/128.94715274912144%2C37.77272713557293%2C%EC%B9%B4%ED%8E%98%20%EB%A4%BC%EB%AF%B8%EC%97%90%EB%A5%B4%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1952561624의 도로명 주소 창해로14번길28-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "카카오 장소검색 ID 1842226063의 도로명 주소 창해로14번길18 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g147",
+          "to": "g4",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 255,
+          "buses": null,
+          "fromName": "카페 뤼미에르",
+          "toName": "안목해변",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94715274912144%2C37.77272713557293%2C%EC%B9%B4%ED%8E%98%20%EB%A4%BC%EB%AF%B8%EC%97%90%EB%A5%B4%2Cundefined%2CADDRESS_POI/128.9451009%2C37.7742852%2C%EC%95%88%EB%AA%A9%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1842226063의 도로명 주소 창해로14번길18 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "안목해변과 이어지는 안목해맞이공원 접근점. 해변 전체 진입로는 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g4",
+          "to": "g171",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 311,
+          "buses": null,
+          "fromName": "안목해변",
+          "toName": "안목항물회",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9451009%2C37.7742852%2C%EC%95%88%EB%AA%A9%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "안목해변과 이어지는 안목해맞이공원 접근점. 해변 전체 진입로는 아님 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표"
+          }
+        },
+        {
+          "from": "g171",
+          "to": "g14",
+          "mode": "walk",
+          "minutes": 17,
+          "meters": 1200,
+          "buses": null,
+          "fromName": "안목항물회",
+          "toName": "송정해변·송림",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/128.9371318%2C37.7801011%2C%EC%86%A1%EC%A0%95%ED%95%B4%EB%B3%80%C2%B7%EC%86%A1%EB%A6%BC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표",
+            "to": "송정해변 창해로118 공중화장실 주소 지점. KTO 대표점과 약 6m · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g15",
+      "stationReturnCheckId": "g14-to-station"
+    },
+    {
+      "id": "shops-01",
+      "themeId": "shops",
+      "title": "시장 A — 관아·임당 굿즈·중앙시장·닭강정·월화교",
+      "placeIds": [
+        "g27",
+        "g8",
+        "g1",
+        "g72",
+        "g26",
+        "g7"
+      ],
+      "placeNames": [
+        "강릉 대도호부 관아·임영관삼문",
+        "굿즈임당·임당생활문화센터",
+        "강릉중앙시장",
+        "배니닭강정",
+        "장미경양식 강릉중앙시장점",
+        "월화교"
+      ],
+      "walkMinutes": 22,
+      "walkMeters": 1581,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g1",
+        "g72"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g27",
+          "to": "g8",
+          "mode": "walk",
+          "minutes": 6,
+          "meters": 424,
+          "buses": null,
+          "fromName": "강릉 대도호부 관아·임영관삼문",
+          "toName": "굿즈임당·임당생활문화센터",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8919443%2C37.7525948%2C%EA%B0%95%EB%A6%89%20%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80%20%EA%B4%80%EC%95%84%C2%B7%EC%9E%84%EC%98%81%EA%B4%80%EC%82%BC%EB%AC%B8%2Cundefined%2CADDRESS_POI/128.8949965%2C37.7546925%2C%EA%B5%BF%EC%A6%88%EC%9E%84%EB%8B%B9%C2%B7%EC%9E%84%EB%8B%B9%EC%83%9D%ED%99%9C%EB%AC%B8%ED%99%94%EC%84%BC%ED%84%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 관아 주소 권역의 카카오 부지 지점. 개별 출입문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "강릉시 안내 주소와 일치하는 임당생활문화센터 건물 위치 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g8",
+          "to": "g1",
+          "mode": "walk",
+          "minutes": 7,
+          "meters": 477,
+          "buses": null,
+          "fromName": "굿즈임당·임당생활문화센터",
+          "toName": "강릉중앙시장",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8949965%2C37.7546925%2C%EA%B5%BF%EC%A6%88%EC%9E%84%EB%8B%B9%C2%B7%EC%9E%84%EB%8B%B9%EC%83%9D%ED%99%9C%EB%AC%B8%ED%99%94%EC%84%BC%ED%84%B0%2Cundefined%2CADDRESS_POI/128.8986238%2C37.7540251%2C%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "강릉시 안내 주소와 일치하는 임당생활문화센터 건물 위치 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "한국관광공사 대표점과 근접한 카카오 시장 위치. 특정 출입문은 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g1",
+          "to": "g72",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 60,
+          "buses": null,
+          "fromName": "강릉중앙시장",
+          "toName": "배니닭강정",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8986238%2C37.7540251%2C%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%2Cundefined%2CADDRESS_POI/128.89915055%2C37.75421481%2C%EB%B0%B0%EB%8B%88%EB%8B%AD%EA%B0%95%EC%A0%95%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 대표점과 근접한 카카오 시장 위치. 특정 출입문은 아님 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표"
+          }
+        },
+        {
+          "from": "g72",
+          "to": "g26",
+          "mode": "walk",
+          "minutes": 2,
+          "meters": 152,
+          "buses": null,
+          "fromName": "배니닭강정",
+          "toName": "장미경양식 강릉중앙시장점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.89915055%2C37.75421481%2C%EB%B0%B0%EB%8B%88%EB%8B%AD%EA%B0%95%EC%A0%95%2Cundefined%2CADDRESS_POI/128.8979872%2C37.7542002%2C%EC%9E%A5%EB%AF%B8%EA%B2%BD%EC%96%91%EC%8B%9D%20%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%EC%A0%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표",
+            "to": "업체 관리 프로필 주소와 일치하는 카카오 음식점 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g26",
+          "to": "g7",
+          "mode": "walk",
+          "minutes": 6,
+          "meters": 468,
+          "buses": null,
+          "fromName": "장미경양식 강릉중앙시장점",
+          "toName": "월화교",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8979872%2C37.7542002%2C%EC%9E%A5%EB%AF%B8%EA%B2%BD%EC%96%91%EC%8B%9D%20%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%EC%A0%90%2Cundefined%2CADDRESS_POI/128.901498%2C37.7522636%2C%EC%9B%94%ED%99%94%EA%B5%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "업체 관리 프로필 주소와 일치하는 카카오 음식점 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 월화교 위치. 다리 양 끝 진입점은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g27",
+      "stationReturnCheckId": "g7-to-station"
+    },
+    {
+      "id": "shops-02",
+      "themeId": "shops",
+      "title": "시장 B — 임당·시장 간식·월화거리 산책",
+      "placeIds": [
+        "g27",
+        "g8",
+        "g1",
+        "g73",
+        "g176",
+        "g3",
+        "g7"
+      ],
+      "placeNames": [
+        "강릉 대도호부 관아·임영관삼문",
+        "굿즈임당·임당생활문화센터",
+        "강릉중앙시장",
+        "만복래닭강정",
+        "떡볶이는생각하지마세요",
+        "월화거리",
+        "월화교"
+      ],
+      "walkMinutes": 30,
+      "walkMeters": 2191,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g1",
+        "g73",
+        "g176"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g27",
+          "to": "g8",
+          "mode": "walk",
+          "minutes": 6,
+          "meters": 424,
+          "buses": null,
+          "fromName": "강릉 대도호부 관아·임영관삼문",
+          "toName": "굿즈임당·임당생활문화센터",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8919443%2C37.7525948%2C%EA%B0%95%EB%A6%89%20%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80%20%EA%B4%80%EC%95%84%C2%B7%EC%9E%84%EC%98%81%EA%B4%80%EC%82%BC%EB%AC%B8%2Cundefined%2CADDRESS_POI/128.8949965%2C37.7546925%2C%EA%B5%BF%EC%A6%88%EC%9E%84%EB%8B%B9%C2%B7%EC%9E%84%EB%8B%B9%EC%83%9D%ED%99%9C%EB%AC%B8%ED%99%94%EC%84%BC%ED%84%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 관아 주소 권역의 카카오 부지 지점. 개별 출입문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "강릉시 안내 주소와 일치하는 임당생활문화센터 건물 위치 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g8",
+          "to": "g1",
+          "mode": "walk",
+          "minutes": 7,
+          "meters": 477,
+          "buses": null,
+          "fromName": "굿즈임당·임당생활문화센터",
+          "toName": "강릉중앙시장",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8949965%2C37.7546925%2C%EA%B5%BF%EC%A6%88%EC%9E%84%EB%8B%B9%C2%B7%EC%9E%84%EB%8B%B9%EC%83%9D%ED%99%9C%EB%AC%B8%ED%99%94%EC%84%BC%ED%84%B0%2Cundefined%2CADDRESS_POI/128.8986238%2C37.7540251%2C%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "강릉시 안내 주소와 일치하는 임당생활문화센터 건물 위치 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "한국관광공사 대표점과 근접한 카카오 시장 위치. 특정 출입문은 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g1",
+          "to": "g73",
+          "mode": "walk",
+          "minutes": 2,
+          "meters": 169,
+          "buses": null,
+          "fromName": "강릉중앙시장",
+          "toName": "만복래닭강정",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8986238%2C37.7540251%2C%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%2Cundefined%2CADDRESS_POI/128.8994003845463%2C37.75315860186623%2C%EB%A7%8C%EB%B3%B5%EB%9E%98%EB%8B%AD%EA%B0%95%EC%A0%95%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 대표점과 근접한 카카오 시장 위치. 특정 출입문은 아님 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표"
+          }
+        },
+        {
+          "from": "g73",
+          "to": "g176",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 122,
+          "buses": null,
+          "fromName": "만복래닭강정",
+          "toName": "떡볶이는생각하지마세요",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8994003845463%2C37.75315860186623%2C%EB%A7%8C%EB%B3%B5%EB%9E%98%EB%8B%AD%EA%B0%95%EC%A0%95%2Cundefined%2CADDRESS_POI/128.89829544848217%2C37.75307551550388%2C%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%8A%94%EC%83%9D%EA%B0%81%ED%95%98%EC%A7%80%EB%A7%88%EC%84%B8%EC%9A%94%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표",
+            "to": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표"
+          }
+        },
+        {
+          "from": "g176",
+          "to": "g3",
+          "mode": "walk",
+          "minutes": 6,
+          "meters": 421,
+          "buses": null,
+          "fromName": "떡볶이는생각하지마세요",
+          "toName": "월화거리",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.89829544848217%2C37.75307551550388%2C%EB%96%A1%EB%B3%B6%EC%9D%B4%EB%8A%94%EC%83%9D%EA%B0%81%ED%95%98%EC%A7%80%EB%A7%88%EC%84%B8%EC%9A%94%2Cundefined%2CADDRESS_POI/128.8974965%2C37.7559098%2C%EC%9B%94%ED%99%94%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표",
+            "to": "한국관광공사 대표점과 근접한 카카오 월화거리 보행구간 지점 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g3",
+          "to": "g7",
+          "mode": "walk",
+          "minutes": 8,
+          "meters": 578,
+          "buses": null,
+          "fromName": "월화거리",
+          "toName": "월화교",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8974965%2C37.7559098%2C%EC%9B%94%ED%99%94%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/128.901498%2C37.7522636%2C%EC%9B%94%ED%99%94%EA%B5%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 대표점과 근접한 카카오 월화거리 보행구간 지점 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 월화교 위치. 다리 양 끝 진입점은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g27",
+      "stationReturnCheckId": "g7-to-station"
+    },
+    {
+      "id": "shops-03",
+      "themeId": "shops",
+      "title": "시장 C — 임당·월화의 부엌·옹심이·월화교",
+      "placeIds": [
+        "g27",
+        "g8",
+        "g145",
+        "g1",
+        "g40",
+        "g7"
+      ],
+      "placeNames": [
+        "강릉 대도호부 관아·임영관삼문",
+        "굿즈임당·임당생활문화센터",
+        "월화의 부엌",
+        "강릉중앙시장",
+        "감자바우 옹심이장칼국수",
+        "월화교"
+      ],
+      "walkMinutes": 23,
+      "walkMeters": 1619,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g145",
+        "g1",
+        "g40"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g27",
+          "to": "g8",
+          "mode": "walk",
+          "minutes": 6,
+          "meters": 424,
+          "buses": null,
+          "fromName": "강릉 대도호부 관아·임영관삼문",
+          "toName": "굿즈임당·임당생활문화센터",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8919443%2C37.7525948%2C%EA%B0%95%EB%A6%89%20%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80%20%EA%B4%80%EC%95%84%C2%B7%EC%9E%84%EC%98%81%EA%B4%80%EC%82%BC%EB%AC%B8%2Cundefined%2CADDRESS_POI/128.8949965%2C37.7546925%2C%EA%B5%BF%EC%A6%88%EC%9E%84%EB%8B%B9%C2%B7%EC%9E%84%EB%8B%B9%EC%83%9D%ED%99%9C%EB%AC%B8%ED%99%94%EC%84%BC%ED%84%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 관아 주소 권역의 카카오 부지 지점. 개별 출입문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "강릉시 안내 주소와 일치하는 임당생활문화센터 건물 위치 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g8",
+          "to": "g145",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 290,
+          "buses": null,
+          "fromName": "굿즈임당·임당생활문화센터",
+          "toName": "월화의 부엌",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8949965%2C37.7546925%2C%EA%B5%BF%EC%A6%88%EC%9E%84%EB%8B%B9%C2%B7%EC%9E%84%EB%8B%B9%EC%83%9D%ED%99%9C%EB%AC%B8%ED%99%94%EC%84%BC%ED%84%B0%2Cundefined%2CADDRESS_POI/128.89737644257792%2C37.754585717463065%2C%EC%9B%94%ED%99%94%EC%9D%98%20%EB%B6%80%EC%97%8C%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "강릉시 안내 주소와 일치하는 임당생활문화센터 건물 위치 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표"
+          }
+        },
+        {
+          "from": "g145",
+          "to": "g1",
+          "mode": "walk",
+          "minutes": 3,
+          "meters": 210,
+          "buses": null,
+          "fromName": "월화의 부엌",
+          "toName": "강릉중앙시장",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.89737644257792%2C37.754585717463065%2C%EC%9B%94%ED%99%94%EC%9D%98%20%EB%B6%80%EC%97%8C%2Cundefined%2CADDRESS_POI/128.8986238%2C37.7540251%2C%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표",
+            "to": "한국관광공사 대표점과 근접한 카카오 시장 위치. 특정 출입문은 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g1",
+          "to": "g40",
+          "mode": "walk",
+          "minutes": 3,
+          "meters": 197,
+          "buses": null,
+          "fromName": "강릉중앙시장",
+          "toName": "감자바우 옹심이장칼국수",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8986238%2C37.7540251%2C%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%2Cundefined%2CADDRESS_POI/128.89707430758034%2C37.75310689521508%2C%EA%B0%90%EC%9E%90%EB%B0%94%EC%9A%B0%20%EC%98%B9%EC%8B%AC%EC%9D%B4%EC%9E%A5%EC%B9%BC%EA%B5%AD%EC%88%98%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 대표점과 근접한 카카오 시장 위치. 특정 출입문은 아님 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "공식 주소와 대조한 카카오 음식점 대표점. 2층 출입문 미확인"
+          }
+        },
+        {
+          "from": "g40",
+          "to": "g7",
+          "mode": "walk",
+          "minutes": 7,
+          "meters": 498,
+          "buses": null,
+          "fromName": "감자바우 옹심이장칼국수",
+          "toName": "월화교",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.89707430758034%2C37.75310689521508%2C%EA%B0%90%EC%9E%90%EB%B0%94%EC%9A%B0%20%EC%98%B9%EC%8B%AC%EC%9D%B4%EC%9E%A5%EC%B9%BC%EA%B5%AD%EC%88%98%2Cundefined%2CADDRESS_POI/128.901498%2C37.7522636%2C%EC%9B%94%ED%99%94%EA%B5%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "공식 주소와 대조한 카카오 음식점 대표점. 2층 출입문 미확인",
+            "to": "카카오 월화교 위치. 다리 양 끝 진입점은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g27",
+      "stationReturnCheckId": "g7-to-station"
+    },
+    {
+      "id": "shops-04",
+      "themeId": "shops",
+      "title": "시장 D — 중앙시장 식사·젤라또·월화거리",
+      "placeIds": [
+        "g27",
+        "g8",
+        "g1",
+        "g26",
+        "g75",
+        "g3",
+        "g7"
+      ],
+      "placeNames": [
+        "강릉 대도호부 관아·임영관삼문",
+        "굿즈임당·임당생활문화센터",
+        "강릉중앙시장",
+        "장미경양식 강릉중앙시장점",
+        "젤라또마켓",
+        "월화거리",
+        "월화교"
+      ],
+      "walkMinutes": 32,
+      "walkMeters": 2261,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g1",
+        "g75"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g27",
+          "to": "g8",
+          "mode": "walk",
+          "minutes": 6,
+          "meters": 424,
+          "buses": null,
+          "fromName": "강릉 대도호부 관아·임영관삼문",
+          "toName": "굿즈임당·임당생활문화센터",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8919443%2C37.7525948%2C%EA%B0%95%EB%A6%89%20%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80%20%EA%B4%80%EC%95%84%C2%B7%EC%9E%84%EC%98%81%EA%B4%80%EC%82%BC%EB%AC%B8%2Cundefined%2CADDRESS_POI/128.8949965%2C37.7546925%2C%EA%B5%BF%EC%A6%88%EC%9E%84%EB%8B%B9%C2%B7%EC%9E%84%EB%8B%B9%EC%83%9D%ED%99%9C%EB%AC%B8%ED%99%94%EC%84%BC%ED%84%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 관아 주소 권역의 카카오 부지 지점. 개별 출입문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "강릉시 안내 주소와 일치하는 임당생활문화센터 건물 위치 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g8",
+          "to": "g1",
+          "mode": "walk",
+          "minutes": 7,
+          "meters": 477,
+          "buses": null,
+          "fromName": "굿즈임당·임당생활문화센터",
+          "toName": "강릉중앙시장",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8949965%2C37.7546925%2C%EA%B5%BF%EC%A6%88%EC%9E%84%EB%8B%B9%C2%B7%EC%9E%84%EB%8B%B9%EC%83%9D%ED%99%9C%EB%AC%B8%ED%99%94%EC%84%BC%ED%84%B0%2Cundefined%2CADDRESS_POI/128.8986238%2C37.7540251%2C%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "강릉시 안내 주소와 일치하는 임당생활문화센터 건물 위치 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "한국관광공사 대표점과 근접한 카카오 시장 위치. 특정 출입문은 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g1",
+          "to": "g26",
+          "mode": "walk",
+          "minutes": 2,
+          "meters": 133,
+          "buses": null,
+          "fromName": "강릉중앙시장",
+          "toName": "장미경양식 강릉중앙시장점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8986238%2C37.7540251%2C%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%2Cundefined%2CADDRESS_POI/128.8979872%2C37.7542002%2C%EC%9E%A5%EB%AF%B8%EA%B2%BD%EC%96%91%EC%8B%9D%20%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%EC%A0%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 대표점과 근접한 카카오 시장 위치. 특정 출입문은 아님 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "업체 관리 프로필 주소와 일치하는 카카오 음식점 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g26",
+          "to": "g75",
+          "mode": "walk",
+          "minutes": 3,
+          "meters": 249,
+          "buses": null,
+          "fromName": "장미경양식 강릉중앙시장점",
+          "toName": "젤라또마켓",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8979872%2C37.7542002%2C%EC%9E%A5%EB%AF%B8%EA%B2%BD%EC%96%91%EC%8B%9D%20%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%EC%A0%90%2Cundefined%2CADDRESS_POI/128.8997715922628%2C37.75347692006928%2C%EC%A0%A4%EB%9D%BC%EB%98%90%EB%A7%88%EC%BC%93%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "업체 관리 프로필 주소와 일치하는 카카오 음식점 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표"
+          }
+        },
+        {
+          "from": "g75",
+          "to": "g3",
+          "mode": "walk",
+          "minutes": 6,
+          "meters": 400,
+          "buses": null,
+          "fromName": "젤라또마켓",
+          "toName": "월화거리",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8997715922628%2C37.75347692006928%2C%EC%A0%A4%EB%9D%BC%EB%98%90%EB%A7%88%EC%BC%93%2Cundefined%2CADDRESS_POI/128.8974965%2C37.7559098%2C%EC%9B%94%ED%99%94%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표",
+            "to": "한국관광공사 대표점과 근접한 카카오 월화거리 보행구간 지점 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g3",
+          "to": "g7",
+          "mode": "walk",
+          "minutes": 8,
+          "meters": 578,
+          "buses": null,
+          "fromName": "월화거리",
+          "toName": "월화교",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8974965%2C37.7559098%2C%EC%9B%94%ED%99%94%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/128.901498%2C37.7522636%2C%EC%9B%94%ED%99%94%EA%B5%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 대표점과 근접한 카카오 월화거리 보행구간 지점 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 월화교 위치. 다리 양 끝 진입점은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g27",
+      "stationReturnCheckId": "g7-to-station"
+    },
+    {
+      "id": "shops-05",
+      "themeId": "shops",
+      "title": "시장 E — 중앙시장 닭강정·무침회·월화거리",
+      "placeIds": [
+        "g27",
+        "g8",
+        "g1",
+        "g72",
+        "g91",
+        "g3",
+        "g7"
+      ],
+      "placeNames": [
+        "강릉 대도호부 관아·임영관삼문",
+        "굿즈임당·임당생활문화센터",
+        "강릉중앙시장",
+        "배니닭강정",
+        "원조 소문난무침회",
+        "월화거리",
+        "월화교"
+      ],
+      "walkMinutes": 27,
+      "walkMeters": 1910,
+      "transitMinutes": 0,
+      "transitLines": [],
+      "unknownHoursPlaceIds": [
+        "g1",
+        "g72",
+        "g91"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g27",
+          "to": "g8",
+          "mode": "walk",
+          "minutes": 6,
+          "meters": 424,
+          "buses": null,
+          "fromName": "강릉 대도호부 관아·임영관삼문",
+          "toName": "굿즈임당·임당생활문화센터",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8919443%2C37.7525948%2C%EA%B0%95%EB%A6%89%20%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80%20%EA%B4%80%EC%95%84%C2%B7%EC%9E%84%EC%98%81%EA%B4%80%EC%82%BC%EB%AC%B8%2Cundefined%2CADDRESS_POI/128.8949965%2C37.7546925%2C%EA%B5%BF%EC%A6%88%EC%9E%84%EB%8B%B9%C2%B7%EC%9E%84%EB%8B%B9%EC%83%9D%ED%99%9C%EB%AC%B8%ED%99%94%EC%84%BC%ED%84%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 관아 주소 권역의 카카오 부지 지점. 개별 출입문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "강릉시 안내 주소와 일치하는 임당생활문화센터 건물 위치 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g8",
+          "to": "g1",
+          "mode": "walk",
+          "minutes": 7,
+          "meters": 477,
+          "buses": null,
+          "fromName": "굿즈임당·임당생활문화센터",
+          "toName": "강릉중앙시장",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8949965%2C37.7546925%2C%EA%B5%BF%EC%A6%88%EC%9E%84%EB%8B%B9%C2%B7%EC%9E%84%EB%8B%B9%EC%83%9D%ED%99%9C%EB%AC%B8%ED%99%94%EC%84%BC%ED%84%B0%2Cundefined%2CADDRESS_POI/128.8986238%2C37.7540251%2C%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "강릉시 안내 주소와 일치하는 임당생활문화센터 건물 위치 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "한국관광공사 대표점과 근접한 카카오 시장 위치. 특정 출입문은 아님 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g1",
+          "to": "g72",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 60,
+          "buses": null,
+          "fromName": "강릉중앙시장",
+          "toName": "배니닭강정",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8986238%2C37.7540251%2C%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%2Cundefined%2CADDRESS_POI/128.89915055%2C37.75421481%2C%EB%B0%B0%EB%8B%88%EB%8B%AD%EA%B0%95%EC%A0%95%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 대표점과 근접한 카카오 시장 위치. 특정 출입문은 아님 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표"
+          }
+        },
+        {
+          "from": "g72",
+          "to": "g91",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 47,
+          "buses": null,
+          "fromName": "배니닭강정",
+          "toName": "원조 소문난무침회",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.89915055%2C37.75421481%2C%EB%B0%B0%EB%8B%88%EB%8B%AD%EA%B0%95%EC%A0%95%2Cundefined%2CADDRESS_POI/128.89938539340412%2C37.75381465669253%2C%EC%9B%90%EC%A1%B0%20%EC%86%8C%EB%AC%B8%EB%82%9C%EB%AC%B4%EC%B9%A8%ED%9A%8C%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 공개 검색의 단일 상호·도로명 주소 일치 장소 대표 좌표",
+            "to": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표"
+          }
+        },
+        {
+          "from": "g91",
+          "to": "g3",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 324,
+          "buses": null,
+          "fromName": "원조 소문난무침회",
+          "toName": "월화거리",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.89938539340412%2C37.75381465669253%2C%EC%9B%90%EC%A1%B0%20%EC%86%8C%EB%AC%B8%EB%82%9C%EB%AC%B4%EC%B9%A8%ED%9A%8C%2Cundefined%2CADDRESS_POI/128.8974965%2C37.7559098%2C%EC%9B%94%ED%99%94%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표",
+            "to": "한국관광공사 대표점과 근접한 카카오 월화거리 보행구간 지점 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g3",
+          "to": "g7",
+          "mode": "walk",
+          "minutes": 8,
+          "meters": 578,
+          "buses": null,
+          "fromName": "월화거리",
+          "toName": "월화교",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8974965%2C37.7559098%2C%EC%9B%94%ED%99%94%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/128.901498%2C37.7522636%2C%EC%9B%94%ED%99%94%EA%B5%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 대표점과 근접한 카카오 월화거리 보행구간 지점 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 월화교 위치. 다리 양 끝 진입점은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g27",
+      "stationReturnCheckId": "g7-to-station"
+    },
+    {
+      "id": "cafe-01",
+      "themeId": "cafe",
+      "title": "카페 투어 A — 임당·봉봉·베리베리딸기·안목",
+      "placeIds": [
+        "g23",
+        "g24",
+        "g258",
+        "g96",
+        "g17"
+      ],
+      "placeNames": [
+        "테라로사 임당점",
+        "봉봉방앗간",
+        "베리베리딸기",
+        "AM브레드앤커피",
+        "보사노바 커피로스터스 강릉점"
+      ],
+      "walkMinutes": 19,
+      "walkMeters": 1327,
+      "transitMinutes": 26,
+      "transitLines": [
+        "300-1"
+      ],
+      "unknownHoursPlaceIds": [
+        "g258",
+        "g96"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g23",
+          "to": "g24",
+          "mode": "walk",
+          "minutes": 8,
+          "meters": 593,
+          "buses": null,
+          "fromName": "테라로사 임당점",
+          "toName": "봉봉방앗간",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8943582%2C37.7549334%2C%ED%85%8C%EB%9D%BC%EB%A1%9C%EC%82%AC%20%EC%9E%84%EB%8B%B9%EC%A0%90%2Cundefined%2CADDRESS_POI/128.8924254%2C37.7510368%2C%EB%B4%89%EB%B4%89%EB%B0%A9%EC%95%97%EA%B0%84%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g24",
+          "to": "g258",
+          "mode": "walk",
+          "minutes": 10,
+          "meters": 683,
+          "buses": null,
+          "fromName": "봉봉방앗간",
+          "toName": "베리베리딸기",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8924254%2C37.7510368%2C%EB%B4%89%EB%B4%89%EB%B0%A9%EC%95%97%EA%B0%84%2Cundefined%2CADDRESS_POI/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 장소검색 ID 1037506521의 도로명 주소 임영로164번길16-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g258",
+          "to": "g96",
+          "mode": "transit",
+          "minutes": 26,
+          "meters": null,
+          "buses": "300-1",
+          "fromName": "베리베리딸기",
+          "toName": "AM브레드앤커피",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1037506521의 도로명 주소 임영로164번길16-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)"
+          }
+        },
+        {
+          "from": "g96",
+          "to": "g17",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 51,
+          "buses": null,
+          "fromName": "AM브레드앤커피",
+          "toName": "보사노바 커피로스터스 강릉점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)",
+            "to": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g23",
+      "stationReturnCheckId": "g17-to-station"
+    },
+    {
+      "id": "cafe-02",
+      "themeId": "cafe",
+      "title": "카페 투어 B — 명주동·베리베리딸기·뤼미에르·경포호",
+      "placeIds": [
+        "g23",
+        "g258",
+        "g96",
+        "g147",
+        "g21"
+      ],
+      "placeNames": [
+        "테라로사 임당점",
+        "베리베리딸기",
+        "AM브레드앤커피",
+        "카페 뤼미에르",
+        "테라로사 경포호수점"
+      ],
+      "walkMinutes": 3,
+      "walkMeters": 222,
+      "transitMinutes": 53,
+      "transitLines": [
+        "300-1",
+        "504-1",
+        "207"
+      ],
+      "unknownHoursPlaceIds": [
+        "g258",
+        "g96",
+        "g147"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g23",
+          "to": "g258",
+          "mode": "walk",
+          "minutes": 2,
+          "meters": 165,
+          "buses": null,
+          "fromName": "테라로사 임당점",
+          "toName": "베리베리딸기",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8943582%2C37.7549334%2C%ED%85%8C%EB%9D%BC%EB%A1%9C%EC%82%AC%20%EC%9E%84%EB%8B%B9%EC%A0%90%2Cundefined%2CADDRESS_POI/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 장소검색 ID 1037506521의 도로명 주소 임영로164번길16-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g258",
+          "to": "g96",
+          "mode": "transit",
+          "minutes": 26,
+          "meters": null,
+          "buses": "300-1",
+          "fromName": "베리베리딸기",
+          "toName": "AM브레드앤커피",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1037506521의 도로명 주소 임영로164번길16-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)"
+          }
+        },
+        {
+          "from": "g96",
+          "to": "g147",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 57,
+          "buses": null,
+          "fromName": "AM브레드앤커피",
+          "toName": "카페 뤼미에르",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/128.94715274912144%2C37.77272713557293%2C%EC%B9%B4%ED%8E%98%20%EB%A4%BC%EB%AF%B8%EC%97%90%EB%A5%B4%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)",
+            "to": "카카오 장소검색 ID 1842226063의 도로명 주소 창해로14번길18 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g147",
+          "to": "g21",
+          "mode": "transit",
+          "minutes": 27,
+          "meters": null,
+          "buses": "504-1, 207",
+          "fromName": "카페 뤼미에르",
+          "toName": "테라로사 경포호수점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.94715274912144%2C37.77272713557293%2C%EC%B9%B4%ED%8E%98%20%EB%A4%BC%EB%AF%B8%EC%97%90%EB%A5%B4%2Cundefined%2CADDRESS_POI/128.9074894%2C37.7878498%2C%ED%85%8C%EB%9D%BC%EB%A1%9C%EC%82%AC%20%EA%B2%BD%ED%8F%AC%ED%98%B8%EC%88%98%EC%A0%90%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1842226063의 도로명 주소 창해로14번길18 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g23",
+      "stationReturnCheckId": "g21-to-station"
+    },
+    {
+      "id": "cafe-03",
+      "themeId": "cafe",
+      "title": "카페 투어 C — 봉봉·새바람·베리베리딸기·안목",
+      "placeIds": [
+        "g24",
+        "g25",
+        "g258",
+        "g96",
+        "g17"
+      ],
+      "placeNames": [
+        "봉봉방앗간",
+        "새바람이 오는 그늘",
+        "베리베리딸기",
+        "AM브레드앤커피",
+        "보사노바 커피로스터스 강릉점"
+      ],
+      "walkMinutes": 17,
+      "walkMeters": 1201,
+      "transitMinutes": 26,
+      "transitLines": [
+        "300-1"
+      ],
+      "unknownHoursPlaceIds": [
+        "g258",
+        "g96"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g24",
+          "to": "g25",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 294,
+          "buses": null,
+          "fromName": "봉봉방앗간",
+          "toName": "새바람이 오는 그늘",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8924254%2C37.7510368%2C%EB%B4%89%EB%B4%89%EB%B0%A9%EC%95%97%EA%B0%84%2Cundefined%2CADDRESS_POI/128.890473%2C37.7497493%2C%EC%83%88%EB%B0%94%EB%9E%8C%EC%9D%B4%20%EC%98%A4%EB%8A%94%20%EA%B7%B8%EB%8A%98%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "업체 관리 프로필 주소와 일치하는 카카오 카페 건물 지점. 2층 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g25",
+          "to": "g258",
+          "mode": "walk",
+          "minutes": 12,
+          "meters": 856,
+          "buses": null,
+          "fromName": "새바람이 오는 그늘",
+          "toName": "베리베리딸기",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.890473%2C37.7497493%2C%EC%83%88%EB%B0%94%EB%9E%8C%EC%9D%B4%20%EC%98%A4%EB%8A%94%20%EA%B7%B8%EB%8A%98%2Cundefined%2CADDRESS_POI/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "업체 관리 프로필 주소와 일치하는 카카오 카페 건물 지점. 2층 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 장소검색 ID 1037506521의 도로명 주소 임영로164번길16-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g258",
+          "to": "g96",
+          "mode": "transit",
+          "minutes": 26,
+          "meters": null,
+          "buses": "300-1",
+          "fromName": "베리베리딸기",
+          "toName": "AM브레드앤커피",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1037506521의 도로명 주소 임영로164번길16-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)"
+          }
+        },
+        {
+          "from": "g96",
+          "to": "g17",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 51,
+          "buses": null,
+          "fromName": "AM브레드앤커피",
+          "toName": "보사노바 커피로스터스 강릉점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)",
+            "to": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g24",
+      "stationReturnCheckId": "g17-to-station"
+    },
+    {
+      "id": "cafe-04",
+      "themeId": "cafe",
+      "title": "카페 투어 D — 임당·명주동·새바람·베리베리딸기",
+      "placeIds": [
+        "g23",
+        "g24",
+        "g25",
+        "g258",
+        "g96"
+      ],
+      "placeNames": [
+        "테라로사 임당점",
+        "봉봉방앗간",
+        "새바람이 오는 그늘",
+        "베리베리딸기",
+        "AM브레드앤커피"
+      ],
+      "walkMinutes": 24,
+      "walkMeters": 1743,
+      "transitMinutes": 26,
+      "transitLines": [
+        "300-1"
+      ],
+      "unknownHoursPlaceIds": [
+        "g258",
+        "g96"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g23",
+          "to": "g24",
+          "mode": "walk",
+          "minutes": 8,
+          "meters": 593,
+          "buses": null,
+          "fromName": "테라로사 임당점",
+          "toName": "봉봉방앗간",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8943582%2C37.7549334%2C%ED%85%8C%EB%9D%BC%EB%A1%9C%EC%82%AC%20%EC%9E%84%EB%8B%B9%EC%A0%90%2Cundefined%2CADDRESS_POI/128.8924254%2C37.7510368%2C%EB%B4%89%EB%B4%89%EB%B0%A9%EC%95%97%EA%B0%84%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g24",
+          "to": "g25",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 294,
+          "buses": null,
+          "fromName": "봉봉방앗간",
+          "toName": "새바람이 오는 그늘",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8924254%2C37.7510368%2C%EB%B4%89%EB%B4%89%EB%B0%A9%EC%95%97%EA%B0%84%2Cundefined%2CADDRESS_POI/128.890473%2C37.7497493%2C%EC%83%88%EB%B0%94%EB%9E%8C%EC%9D%B4%20%EC%98%A4%EB%8A%94%20%EA%B7%B8%EB%8A%98%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "업체 관리 프로필 주소와 일치하는 카카오 카페 건물 지점. 2층 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g25",
+          "to": "g258",
+          "mode": "walk",
+          "minutes": 12,
+          "meters": 856,
+          "buses": null,
+          "fromName": "새바람이 오는 그늘",
+          "toName": "베리베리딸기",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.890473%2C37.7497493%2C%EC%83%88%EB%B0%94%EB%9E%8C%EC%9D%B4%20%EC%98%A4%EB%8A%94%20%EA%B7%B8%EB%8A%98%2Cundefined%2CADDRESS_POI/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "업체 관리 프로필 주소와 일치하는 카카오 카페 건물 지점. 2층 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 장소검색 ID 1037506521의 도로명 주소 임영로164번길16-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g258",
+          "to": "g96",
+          "mode": "transit",
+          "minutes": 26,
+          "meters": null,
+          "buses": "300-1",
+          "fromName": "베리베리딸기",
+          "toName": "AM브레드앤커피",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1037506521의 도로명 주소 임영로164번길16-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g23",
+      "stationReturnCheckId": "g96-to-station"
+    },
+    {
+      "id": "cafe-05",
+      "themeId": "cafe",
+      "title": "카페 투어 E — 명주동·새바람·베리베리딸기·안목·경포",
+      "placeIds": [
+        "g24",
+        "g25",
+        "g258",
+        "g96",
+        "g17",
+        "g21"
+      ],
+      "placeNames": [
+        "봉봉방앗간",
+        "새바람이 오는 그늘",
+        "베리베리딸기",
+        "AM브레드앤커피",
+        "보사노바 커피로스터스 강릉점",
+        "테라로사 경포호수점"
+      ],
+      "walkMinutes": 17,
+      "walkMeters": 1201,
+      "transitMinutes": 55,
+      "transitLines": [
+        "300-1",
+        "504-1",
+        "207"
+      ],
+      "unknownHoursPlaceIds": [
+        "g258",
+        "g96"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g24",
+          "to": "g25",
+          "mode": "walk",
+          "minutes": 4,
+          "meters": 294,
+          "buses": null,
+          "fromName": "봉봉방앗간",
+          "toName": "새바람이 오는 그늘",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8924254%2C37.7510368%2C%EB%B4%89%EB%B4%89%EB%B0%A9%EC%95%97%EA%B0%84%2Cundefined%2CADDRESS_POI/128.890473%2C37.7497493%2C%EC%83%88%EB%B0%94%EB%9E%8C%EC%9D%B4%20%EC%98%A4%EB%8A%94%20%EA%B7%B8%EB%8A%98%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "업체 관리 프로필 주소와 일치하는 카카오 카페 건물 지점. 2층 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g25",
+          "to": "g258",
+          "mode": "walk",
+          "minutes": 12,
+          "meters": 856,
+          "buses": null,
+          "fromName": "새바람이 오는 그늘",
+          "toName": "베리베리딸기",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.890473%2C37.7497493%2C%EC%83%88%EB%B0%94%EB%9E%8C%EC%9D%B4%20%EC%98%A4%EB%8A%94%20%EA%B7%B8%EB%8A%98%2Cundefined%2CADDRESS_POI/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "업체 관리 프로필 주소와 일치하는 카카오 카페 건물 지점. 2층 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 장소검색 ID 1037506521의 도로명 주소 임영로164번길16-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인"
+          }
+        },
+        {
+          "from": "g258",
+          "to": "g96",
+          "mode": "transit",
+          "minutes": 26,
+          "meters": null,
+          "buses": "300-1",
+          "fromName": "베리베리딸기",
+          "toName": "AM브레드앤커피",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 1037506521의 도로명 주소 임영로164번길16-2 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인",
+            "to": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)"
+          }
+        },
+        {
+          "from": "g96",
+          "to": "g17",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 51,
+          "buses": null,
+          "fromName": "AM브레드앤커피",
+          "toName": "보사노바 커피로스터스 강릉점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 장소검색 ID 10534998의 도로명 주소 창해로14번길24 일치; 카카오 장소 페이지 메타 좌표. 건물 대표 위치이며 보행 출입문 미확인 (상호 표기 차이)",
+            "to": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g17",
+          "to": "g21",
+          "mode": "transit",
+          "minutes": 29,
+          "meters": null,
+          "buses": "504-1, 207",
+          "fromName": "보사노바 커피로스터스 강릉점",
+          "toName": "테라로사 경포호수점",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/128.9074894%2C37.7878498%2C%ED%85%8C%EB%9D%BC%EB%A1%9C%EC%82%AC%20%EA%B2%BD%ED%8F%AC%ED%98%B8%EC%88%98%EC%A0%90%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "운영사 주소와 일치하는 카카오 카페 건물 지점. 실제 문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g24",
+      "stationReturnCheckId": "g21-to-station"
+    },
+    {
+      "id": "history-01",
+      "themeId": "history",
+      "title": "역사 A — 경포대 주변 식사·오죽헌·선교장",
+      "placeIds": [
+        "g11",
+        "g331",
+        "g9",
+        "g10"
+      ],
+      "placeNames": [
+        "경포대",
+        "까막장이야기",
+        "오죽헌·시립박물관",
+        "강릉 선교장"
+      ],
+      "walkMinutes": 18,
+      "walkMeters": 1181,
+      "transitMinutes": 13,
+      "transitLines": [
+        "202-1"
+      ],
+      "unknownHoursPlaceIds": [
+        "g11",
+        "g331",
+        "g10"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g11",
+          "to": "g331",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 81,
+          "buses": null,
+          "fromName": "경포대",
+          "toName": "까막장이야기",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8966363%2C37.7950742%2C%EA%B2%BD%ED%8F%AC%EB%8C%80%2Cundefined%2CADDRESS_POI/128.89591968841992%2C37.79599374517156%2C%EA%B9%8C%EB%A7%89%EC%9E%A5%EC%9D%B4%EC%95%BC%EA%B8%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "강릉시 안내 주소와 일치하는 카카오 경포대 지점. 누각 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표"
+          }
+        },
+        {
+          "from": "g331",
+          "to": "g9",
+          "mode": "transit",
+          "minutes": 13,
+          "meters": null,
+          "buses": "202-1",
+          "fromName": "까막장이야기",
+          "toName": "오죽헌·시립박물관",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.89591968841992%2C37.79599374517156%2C%EA%B9%8C%EB%A7%89%EC%9E%A5%EC%9D%B4%EC%95%BC%EA%B8%B0%2Cundefined%2CADDRESS_POI/128.8798026%2C37.7791902%2C%EC%98%A4%EC%A3%BD%ED%97%8C%C2%B7%EC%8B%9C%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표",
+            "to": "카카오 오죽헌 매표소 지점. 시 제공 매표소 입구 택시 지점에서 약 25m · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g9",
+          "to": "g10",
+          "mode": "walk",
+          "minutes": 17,
+          "meters": 1100,
+          "buses": null,
+          "fromName": "오죽헌·시립박물관",
+          "toName": "강릉 선교장",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8798026%2C37.7791902%2C%EC%98%A4%EC%A3%BD%ED%97%8C%C2%B7%EC%8B%9C%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80%2Cundefined%2CADDRESS_POI/128.8847671%2C37.7854492%2C%EA%B0%95%EB%A6%89%20%EC%84%A0%EA%B5%90%EC%9E%A5%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 오죽헌 매표소 지점. 시 제공 매표소 입구 택시 지점에서 약 25m · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 선교장 매표소 지점. 운영사 주소·버스 정류장 권역과 대조 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g11",
+      "stationReturnCheckId": "g10-to-station"
+    },
+    {
+      "id": "history-02",
+      "themeId": "history",
+      "title": "역사 B — 막국수·경포대·오죽헌·대도호부·단오제 전시관",
+      "placeIds": [
+        "g289",
+        "g11",
+        "g9",
+        "g27",
+        "g18"
+      ],
+      "placeNames": [
+        "명경막국수",
+        "경포대",
+        "오죽헌·시립박물관",
+        "강릉 대도호부 관아·임영관삼문",
+        "강릉단오제전수교육관 홍보전시관"
+      ],
+      "walkMinutes": 13,
+      "walkMeters": 850,
+      "transitMinutes": 28,
+      "transitLines": [
+        "202-1",
+        "200"
+      ],
+      "unknownHoursPlaceIds": [
+        "g289",
+        "g11"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g289",
+          "to": "g11",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 101,
+          "buses": null,
+          "fromName": "명경막국수",
+          "toName": "경포대",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.89621326826912%2C37.796464660594374%2C%EB%AA%85%EA%B2%BD%EB%A7%89%EA%B5%AD%EC%88%98%2Cundefined%2CADDRESS_POI/128.8966363%2C37.7950742%2C%EA%B2%BD%ED%8F%AC%EB%8C%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표",
+            "to": "강릉시 안내 주소와 일치하는 카카오 경포대 지점. 누각 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g11",
+          "to": "g9",
+          "mode": "transit",
+          "minutes": 12,
+          "meters": null,
+          "buses": "202-1",
+          "fromName": "경포대",
+          "toName": "오죽헌·시립박물관",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8966363%2C37.7950742%2C%EA%B2%BD%ED%8F%AC%EB%8C%80%2Cundefined%2CADDRESS_POI/128.8798026%2C37.7791902%2C%EC%98%A4%EC%A3%BD%ED%97%8C%C2%B7%EC%8B%9C%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "강릉시 안내 주소와 일치하는 카카오 경포대 지점. 누각 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 오죽헌 매표소 지점. 시 제공 매표소 입구 택시 지점에서 약 25m · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g9",
+          "to": "g27",
+          "mode": "transit",
+          "minutes": 16,
+          "meters": null,
+          "buses": "200",
+          "fromName": "오죽헌·시립박물관",
+          "toName": "강릉 대도호부 관아·임영관삼문",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8798026%2C37.7791902%2C%EC%98%A4%EC%A3%BD%ED%97%8C%C2%B7%EC%8B%9C%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80%2Cundefined%2CADDRESS_POI/128.8919443%2C37.7525948%2C%EA%B0%95%EB%A6%89%20%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80%20%EA%B4%80%EC%95%84%C2%B7%EC%9E%84%EC%98%81%EA%B4%80%EC%82%BC%EB%AC%B8%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "카카오 오죽헌 매표소 지점. 시 제공 매표소 입구 택시 지점에서 약 25m · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "한국관광공사 관아 주소 권역의 카카오 부지 지점. 개별 출입문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g27",
+          "to": "g18",
+          "mode": "walk",
+          "minutes": 12,
+          "meters": 749,
+          "buses": null,
+          "fromName": "강릉 대도호부 관아·임영관삼문",
+          "toName": "강릉단오제전수교육관 홍보전시관",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8919443%2C37.7525948%2C%EA%B0%95%EB%A6%89%20%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80%20%EA%B4%80%EC%95%84%C2%B7%EC%9E%84%EC%98%81%EA%B4%80%EC%82%BC%EB%AC%B8%2Cundefined%2CADDRESS_POI/128.8948305181144%2C37.74836402941369%2C%EA%B0%95%EB%A6%89%EB%8B%A8%EC%98%A4%EC%A0%9C%EC%A0%84%EC%88%98%EA%B5%90%EC%9C%A1%EA%B4%80%20%ED%99%8D%EB%B3%B4%EC%A0%84%EC%8B%9C%EA%B4%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 관아 주소 권역의 카카오 부지 지점. 개별 출입문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "전수교육관 건물 대표점. 홍보전시관 내부 출입구는 별도 확인 필요"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g289",
+      "stationReturnCheckId": "g18-to-station"
+    },
+    {
+      "id": "history-03",
+      "themeId": "history",
+      "title": "역사 C — 한정식·경포대·오죽헌·선교장",
+      "placeIds": [
+        "g330",
+        "g11",
+        "g9",
+        "g10"
+      ],
+      "placeNames": [
+        "솔담한정식 강릉본점",
+        "경포대",
+        "오죽헌·시립박물관",
+        "강릉 선교장"
+      ],
+      "walkMinutes": 19,
+      "walkMeters": 1279,
+      "transitMinutes": 12,
+      "transitLines": [
+        "202-1"
+      ],
+      "unknownHoursPlaceIds": [
+        "g330",
+        "g11",
+        "g10"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g330",
+          "to": "g11",
+          "mode": "walk",
+          "minutes": 2,
+          "meters": 179,
+          "buses": null,
+          "fromName": "솔담한정식 강릉본점",
+          "toName": "경포대",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.89575736911758%2C37.79674945769115%2C%EC%86%94%EB%8B%B4%ED%95%9C%EC%A0%95%EC%8B%9D%20%EA%B0%95%EB%A6%89%EB%B3%B8%EC%A0%90%2Cundefined%2CADDRESS_POI/128.8966363%2C37.7950742%2C%EA%B2%BD%ED%8F%AC%EB%8C%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표",
+            "to": "강릉시 안내 주소와 일치하는 카카오 경포대 지점. 누각 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g11",
+          "to": "g9",
+          "mode": "transit",
+          "minutes": 12,
+          "meters": null,
+          "buses": "202-1",
+          "fromName": "경포대",
+          "toName": "오죽헌·시립박물관",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8966363%2C37.7950742%2C%EA%B2%BD%ED%8F%AC%EB%8C%80%2Cundefined%2CADDRESS_POI/128.8798026%2C37.7791902%2C%EC%98%A4%EC%A3%BD%ED%97%8C%C2%B7%EC%8B%9C%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "강릉시 안내 주소와 일치하는 카카오 경포대 지점. 누각 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 오죽헌 매표소 지점. 시 제공 매표소 입구 택시 지점에서 약 25m · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g9",
+          "to": "g10",
+          "mode": "walk",
+          "minutes": 17,
+          "meters": 1100,
+          "buses": null,
+          "fromName": "오죽헌·시립박물관",
+          "toName": "강릉 선교장",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8798026%2C37.7791902%2C%EC%98%A4%EC%A3%BD%ED%97%8C%C2%B7%EC%8B%9C%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80%2Cundefined%2CADDRESS_POI/128.8847671%2C37.7854492%2C%EA%B0%95%EB%A6%89%20%EC%84%A0%EA%B5%90%EC%9E%A5%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 오죽헌 매표소 지점. 시 제공 매표소 입구 택시 지점에서 약 25m · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 선교장 매표소 지점. 운영사 주소·버스 정류장 권역과 대조 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g330",
+      "stationReturnCheckId": "g10-to-station"
+    },
+    {
+      "id": "history-04",
+      "themeId": "history",
+      "title": "역사 D — 단오제 전시관·대도호부·오죽헌·경포대 식사",
+      "placeIds": [
+        "g18",
+        "g27",
+        "g9",
+        "g11",
+        "g331"
+      ],
+      "placeNames": [
+        "강릉단오제전수교육관 홍보전시관",
+        "강릉 대도호부 관아·임영관삼문",
+        "오죽헌·시립박물관",
+        "경포대",
+        "까막장이야기"
+      ],
+      "walkMinutes": 13,
+      "walkMeters": 830,
+      "transitMinutes": 29,
+      "transitLines": [
+        "200",
+        "202"
+      ],
+      "unknownHoursPlaceIds": [
+        "g11",
+        "g331"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g18",
+          "to": "g27",
+          "mode": "walk",
+          "minutes": 12,
+          "meters": 749,
+          "buses": null,
+          "fromName": "강릉단오제전수교육관 홍보전시관",
+          "toName": "강릉 대도호부 관아·임영관삼문",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8948305181144%2C37.74836402941369%2C%EA%B0%95%EB%A6%89%EB%8B%A8%EC%98%A4%EC%A0%9C%EC%A0%84%EC%88%98%EA%B5%90%EC%9C%A1%EA%B4%80%20%ED%99%8D%EB%B3%B4%EC%A0%84%EC%8B%9C%EA%B4%80%2Cundefined%2CADDRESS_POI/128.8919443%2C37.7525948%2C%EA%B0%95%EB%A6%89%20%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80%20%EA%B4%80%EC%95%84%C2%B7%EC%9E%84%EC%98%81%EA%B4%80%EC%82%BC%EB%AC%B8%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "전수교육관 건물 대표점. 홍보전시관 내부 출입구는 별도 확인 필요",
+            "to": "한국관광공사 관아 주소 권역의 카카오 부지 지점. 개별 출입문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g27",
+          "to": "g9",
+          "mode": "transit",
+          "minutes": 17,
+          "meters": null,
+          "buses": "200",
+          "fromName": "강릉 대도호부 관아·임영관삼문",
+          "toName": "오죽헌·시립박물관",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8919443%2C37.7525948%2C%EA%B0%95%EB%A6%89%20%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80%20%EA%B4%80%EC%95%84%C2%B7%EC%9E%84%EC%98%81%EA%B4%80%EC%82%BC%EB%AC%B8%2Cundefined%2CADDRESS_POI/128.8798026%2C37.7791902%2C%EC%98%A4%EC%A3%BD%ED%97%8C%C2%B7%EC%8B%9C%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "한국관광공사 관아 주소 권역의 카카오 부지 지점. 개별 출입문은 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 오죽헌 매표소 지점. 시 제공 매표소 입구 택시 지점에서 약 25m · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g9",
+          "to": "g11",
+          "mode": "transit",
+          "minutes": 12,
+          "meters": null,
+          "buses": "202",
+          "fromName": "오죽헌·시립박물관",
+          "toName": "경포대",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8798026%2C37.7791902%2C%EC%98%A4%EC%A3%BD%ED%97%8C%C2%B7%EC%8B%9C%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80%2Cundefined%2CADDRESS_POI/128.8966363%2C37.7950742%2C%EA%B2%BD%ED%8F%AC%EB%8C%80%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "카카오 오죽헌 매표소 지점. 시 제공 매표소 입구 택시 지점에서 약 25m · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "강릉시 안내 주소와 일치하는 카카오 경포대 지점. 누각 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g11",
+          "to": "g331",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 81,
+          "buses": null,
+          "fromName": "경포대",
+          "toName": "까막장이야기",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8966363%2C37.7950742%2C%EA%B2%BD%ED%8F%AC%EB%8C%80%2Cundefined%2CADDRESS_POI/128.89591968841992%2C37.79599374517156%2C%EA%B9%8C%EB%A7%89%EC%9E%A5%EC%9D%B4%EC%95%BC%EA%B8%B0%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "강릉시 안내 주소와 일치하는 카카오 경포대 지점. 누각 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g18",
+      "stationReturnCheckId": "g331-to-station"
+    },
+    {
+      "id": "history-05",
+      "themeId": "history",
+      "title": "역사 E — 경포해변·선교장·오죽헌·경포대·막국수",
+      "placeIds": [
+        "g6",
+        "g10",
+        "g9",
+        "g11",
+        "g289"
+      ],
+      "placeNames": [
+        "경포해변",
+        "강릉 선교장",
+        "오죽헌·시립박물관",
+        "경포대",
+        "명경막국수"
+      ],
+      "walkMinutes": 18,
+      "walkMeters": 1201,
+      "transitMinutes": 21,
+      "transitLines": [
+        "202-1",
+        "202"
+      ],
+      "unknownHoursPlaceIds": [
+        "g10",
+        "g11",
+        "g289"
+      ],
+      "mapPathStatus": "각 인접 구간 네이버 길찾기 확인 완료",
+      "operatingStatus": "미완료: 방문 시간·배차·대기·영업일·예약 조건을 코스 시각에 맞춰 확정하지 않음",
+      "coordinateCaveat": "지도 길찾기는 앱 대표 좌표로 조회했으며, 일부 핀은 건물 대표점·권역 접근점이다. 실제 현장 문·해변 진입로까지는 별도 확인 필요.",
+      "legs": [
+        {
+          "from": "g6",
+          "to": "g10",
+          "mode": "transit",
+          "minutes": 9,
+          "meters": null,
+          "buses": "202-1",
+          "fromName": "경포해변",
+          "toName": "강릉 선교장",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.9078036%2C37.8051381%2C%EA%B2%BD%ED%8F%AC%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/128.8847671%2C37.7854492%2C%EA%B0%95%EB%A6%89%20%EC%84%A0%EA%B5%90%EC%9E%A5%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "행사 집결 장소로 확인된 경포해변 중앙광장 지점 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 선교장 매표소 지점. 운영사 주소·버스 정류장 권역과 대조 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g10",
+          "to": "g9",
+          "mode": "walk",
+          "minutes": 17,
+          "meters": 1100,
+          "buses": null,
+          "fromName": "강릉 선교장",
+          "toName": "오죽헌·시립박물관",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8847671%2C37.7854492%2C%EA%B0%95%EB%A6%89%20%EC%84%A0%EA%B5%90%EC%9E%A5%2Cundefined%2CADDRESS_POI/128.8798026%2C37.7791902%2C%EC%98%A4%EC%A3%BD%ED%97%8C%C2%B7%EC%8B%9C%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "카카오 선교장 매표소 지점. 운영사 주소·버스 정류장 권역과 대조 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오 오죽헌 매표소 지점. 시 제공 매표소 입구 택시 지점에서 약 25m · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g9",
+          "to": "g11",
+          "mode": "transit",
+          "minutes": 12,
+          "meters": null,
+          "buses": "202",
+          "fromName": "오죽헌·시립박물관",
+          "toName": "경포대",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8798026%2C37.7791902%2C%EC%98%A4%EC%A3%BD%ED%97%8C%C2%B7%EC%8B%9C%EB%A6%BD%EB%B0%95%EB%AC%BC%EA%B4%80%2Cundefined%2CADDRESS_POI/128.8966363%2C37.7950742%2C%EA%B2%BD%ED%8F%AC%EB%8C%80%2Cundefined%2CADDRESS_POI/-/transit/0",
+          "coordinateBasis": {
+            "from": "카카오 오죽헌 매표소 지점. 시 제공 매표소 입구 택시 지점에서 약 25m · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "강릉시 안내 주소와 일치하는 카카오 경포대 지점. 누각 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인"
+          }
+        },
+        {
+          "from": "g11",
+          "to": "g289",
+          "mode": "walk",
+          "minutes": 1,
+          "meters": 101,
+          "buses": null,
+          "fromName": "경포대",
+          "toName": "명경막국수",
+          "routeUrl": "https://way-m.map.naver.com/quick-path/128.8966363%2C37.7950742%2C%EA%B2%BD%ED%8F%AC%EB%8C%80%2Cundefined%2CADDRESS_POI/128.89621326826912%2C37.796464660594374%2C%EB%AA%85%EA%B2%BD%EB%A7%89%EA%B5%AD%EC%88%98%2Cundefined%2CADDRESS_POI/-/walk/0",
+          "coordinateBasis": {
+            "from": "강릉시 안내 주소와 일치하는 카카오 경포대 지점. 누각 입구는 미확인 · 현장 출입구와 보행 여건은 방문 전 확인",
+            "to": "카카오맵 고유 장소 페이지의 이름·도로명 주소 일치 및 정적 지도 대표 좌표"
+          }
+        }
+      ],
+      "stationAccessCheckId": "station-to-g6",
+      "stationReturnCheckId": "g289-to-station"
+    }
+  ],
+  "stationAccessChecks": [
+    {
+      "id": "station-to-g22",
+      "from": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "to": {
+        "id": "g22",
+        "name": "허균·허난설헌 기념공원",
+        "lon": 128.9097365,
+        "lat": 37.7917949
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 20분; 도보 1분+202-1 버스 13분+도보 5분; 1정류장",
+      "routeUrl": "https://map.naver.com/p/directions/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/128.9097365,37.7917949,%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "station-to-g15",
+      "from": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "to": {
+        "id": "g15",
+        "name": "안목 커피거리",
+        "lon": 128.94804,
+        "lat": 37.77201
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 19분; 도보 2분+버스 12분+도보 4분; 300-1(강릉역) 등 후보",
+      "routeUrl": "https://map.naver.com/p/directions/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/128.94804,37.77201,%EC%95%88%EB%AA%A9%20%EC%BB%A4%ED%94%BC%EA%B1%B0%EB%A6%AC,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "station-to-g27",
+      "from": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "to": {
+        "id": "g27",
+        "name": "강릉 대도호부 관아",
+        "lon": 128.8919443,
+        "lat": 37.7525948
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 12분; 도보 1분+버스 7분+도보 4분; 300번 등 후보",
+      "routeUrl": "https://map.naver.com/p/directions/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/128.8919443,37.7525948,%EA%B0%95%EB%A6%89%20%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80%20%EA%B4%80%EC%95%84,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "station-to-g23",
+      "from": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "to": {
+        "id": "g23",
+        "name": "테라로사 임당점",
+        "lon": 128.8943582,
+        "lat": 37.7549334
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 12분; 도보 1분+버스 7분+도보 3분; 300번 등 후보",
+      "routeUrl": "https://map.naver.com/p/directions/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/128.8943582,37.7549334,%ED%85%8C%EB%9D%BC%EB%A1%9C%EC%82%AC%20%EC%9E%84%EB%8B%B9%EC%A0%90,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "station-to-g24",
+      "from": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "to": {
+        "id": "g24",
+        "name": "봉봉방앗간",
+        "lon": 128.8924254,
+        "lat": 37.7510368
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 14분; 도보 1분+버스 7분+도보 6분; 300번 등 후보",
+      "routeUrl": "https://map.naver.com/p/directions/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/128.8924254,37.7510368,%EB%B4%89%EB%B4%89%EB%B0%A9%EC%95%97%EA%B0%84,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "station-to-g11",
+      "from": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "to": {
+        "id": "g11",
+        "name": "경포대",
+        "lon": 128.8966363,
+        "lat": 37.7950742
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 37분; 두 버스 구간, 도보 포함; 첫 구간 300번 확인, 상세 환승경로 재확인 필요",
+      "routeUrl": "https://map.naver.com/p/directions/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/128.8966363,37.7950742,%EA%B2%BD%ED%8F%AC%EB%8C%80,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "station-to-g289",
+      "from": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "to": {
+        "id": "g289",
+        "name": "명경막국수",
+        "lon": 128.8962133,
+        "lat": 37.7964647
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 38분; 두 버스 구간, 도보 포함; 첫 구간 300번 확인, 상세 환승경로 재확인 필요",
+      "routeUrl": "https://map.naver.com/p/directions/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/128.8962133,37.7964647,%EB%AA%85%EA%B2%BD%EB%A7%89%EA%B5%AD%EC%88%98,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "station-to-g330",
+      "from": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "to": {
+        "id": "g330",
+        "name": "솔담한정식 강릉본점",
+        "lon": 128.8957574,
+        "lat": 37.7967495
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 38분; 두 버스 구간, 도보 포함; 첫 구간 300번 확인, 상세 환승경로 재확인 필요",
+      "routeUrl": "https://map.naver.com/p/directions/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/128.8957574,37.7967495,%EC%86%94%EB%8B%B4%ED%95%9C%EC%A0%95%EC%8B%9D%20%EA%B0%95%EB%A6%89%EB%B3%B8%EC%A0%90,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "station-to-g18",
+      "from": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "to": {
+        "id": "g18",
+        "name": "강릉단오제전수교육관 홍보전시관",
+        "lon": 128.8948305,
+        "lat": 37.748364
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 21분; 도보 1분+버스 7분+도보 13분; 300번 계열",
+      "routeUrl": "https://map.naver.com/p/directions/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/128.8948305,37.748364,%EA%B0%95%EB%A6%89%EB%8B%A8%EC%98%A4%EC%A0%9C%EC%A0%84%EC%88%98%EA%B5%90%EC%9C%A1%EA%B4%80%20%ED%99%8D%EB%B3%B4%EC%A0%84%EC%8B%9C%EA%B4%80,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "station-to-g6",
+      "from": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "to": {
+        "id": "g6",
+        "name": "경포해변",
+        "lon": 128.9078036,
+        "lat": 37.8051381
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 25분; 도보 1분+202-1 버스 19분+도보 4분; 강릉역→경포해변 종점",
+      "routeUrl": "https://map.naver.com/p/directions/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/128.9078036,37.8051381,%EA%B2%BD%ED%8F%AC%ED%95%B4%EB%B3%80,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    }
+  ],
+  "stationReturnChecks": [
+    {
+      "id": "g56-to-station",
+      "from": {
+        "id": "g56",
+        "name": "유리알유희",
+        "lon": 128.9183005090944,
+        "lat": 37.794532313371874
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 35분; 도보 3분+버스 7분+도보 1분+버스 15분+도보 1분; 시티1 포함",
+      "routeUrl": "https://map.naver.com/p/directions/128.9183005090944,37.794532313371874,%EC%9C%A0%EB%A6%AC%EC%95%8C%EC%9C%A0%ED%9D%AC,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "g5-to-station",
+      "from": {
+        "id": "g5",
+        "name": "강문해변",
+        "lon": 128.9192316,
+        "lat": 37.7941028
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 37분; 도보 6분+버스 7분+도보 1분+버스 15분+도보 1분; 시티1 포함",
+      "routeUrl": "https://map.naver.com/p/directions/128.9192316,37.7941028,%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "g14-to-station",
+      "from": {
+        "id": "g14",
+        "name": "송정해변·송림",
+        "lon": 128.9371318,
+        "lat": 37.7801011
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 21분; 도보 4분+223번 버스 15분+도보 1분",
+      "routeUrl": "https://map.naver.com/p/directions/128.9371318,37.7801011,%EC%86%A1%EC%A0%95%ED%95%B4%EB%B3%80%C2%B7%EC%86%A1%EB%A6%BC,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "g7-to-station",
+      "from": {
+        "id": "g7",
+        "name": "월화교",
+        "lon": 128.901498,
+        "lat": 37.7522636
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 12분; 도보 5분+110번 버스 4분+도보 1분",
+      "routeUrl": "https://map.naver.com/p/directions/128.901498,37.7522636,%EC%9B%94%ED%99%94%EA%B5%90,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "g17-to-station",
+      "from": {
+        "id": "g17",
+        "name": "보사노바 커피로스터스 강릉점",
+        "lon": 128.9478294,
+        "lat": 37.7720457
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 21분; 도보 4분+버스 16분+도보 1분; 300번 계열 후보",
+      "routeUrl": "https://map.naver.com/p/directions/128.9478294,37.7720457,%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "g96-to-station",
+      "from": {
+        "id": "g96",
+        "name": "AM브레드앤커피",
+        "lon": 128.9475338,
+        "lat": 37.7723713
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 21분; 도보 3분+버스 16분+도보 1분; 300번 계열 후보",
+      "routeUrl": "https://map.naver.com/p/directions/128.9475338,37.7723713,AM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "g21-to-station",
+      "from": {
+        "id": "g21",
+        "name": "테라로사 경포호수점",
+        "lon": 128.9074894,
+        "lat": 37.7878498
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 24분; 도보 5분+207번 버스 13분+도보 5분",
+      "routeUrl": "https://map.naver.com/p/directions/128.9074894,37.7878498,%ED%85%8C%EB%9D%BC%EB%A1%9C%EC%82%AC%20%EA%B2%BD%ED%8F%AC%ED%98%B8%EC%88%98%EC%A0%90,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "g10-to-station",
+      "from": {
+        "id": "g10",
+        "name": "강릉 선교장",
+        "lon": 128.8847671,
+        "lat": 37.7854492
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 28분; 도보·버스 2구간·도보 포함; 202-1 계열",
+      "routeUrl": "https://map.naver.com/p/directions/128.8847671,37.7854492,%EA%B0%95%EB%A6%89%20%EC%84%A0%EA%B5%90%EC%9E%A5,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "g18-to-station",
+      "from": {
+        "id": "g18",
+        "name": "강릉단오제전수교육관 홍보전시관",
+        "lon": 128.8948305,
+        "lat": 37.748364
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 29분; 도보 8분+504-1 버스 8분+도보 12분; 222번 등 대안",
+      "routeUrl": "https://map.naver.com/p/directions/128.8948305,37.748364,%EA%B0%95%EB%A6%89%EB%8B%A8%EC%98%A4%EC%A0%9C%EC%A0%84%EC%88%98%EA%B5%90%EC%9C%A1%EA%B4%80%20%ED%99%8D%EB%B3%B4%EC%A0%84%EC%8B%9C%EA%B4%80,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "g331-to-station",
+      "from": {
+        "id": "g331",
+        "name": "까막장이야기",
+        "lon": 128.89591968841992,
+        "lat": 37.79599374517156
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 44분; 도보 2분+202-1 버스 40분+도보 1분",
+      "routeUrl": "https://map.naver.com/p/directions/128.89591968841992,37.79599374517156,%EA%B9%8C%EB%A7%89%EC%9E%A5%EC%9D%B4%EC%95%BC%EA%B8%B0,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    },
+    {
+      "id": "g289-to-station",
+      "from": {
+        "id": "g289",
+        "name": "명경막국수",
+        "lon": 128.8962133,
+        "lat": 37.7964647
+      },
+      "to": {
+        "id": "station",
+        "name": "강릉역",
+        "lon": 128.8997106,
+        "lat": 37.7641331
+      },
+      "mode": "transit",
+      "mapChecked": true,
+      "checkedAtKst": "2026-10-07 11:37–11:38 (Naver Map UI)",
+      "summaryAtLookup": "최적 44분; 도보 2분+202-1 버스 40분+도보 1분",
+      "routeUrl": "https://map.naver.com/p/directions/128.8962133,37.7964647,%EB%AA%85%EA%B2%BD%EB%A7%89%EA%B5%AD%EC%88%98,PLACE_POI/128.8997106,37.7641331,%EA%B0%95%EB%A6%89%EC%97%AD,PLACE_POI/-/transit",
+      "timeCaveat": "조회 당시 출발시각 기준. 버스 도착정보·운행시간은 변동하며 계획시각 기준 배차대기/환승여유를 확정한 값이 아님.",
+      "geometryExported": false
+    }
+  ],
+  "polylineIntegration": {
+    "checkedOn": "2026-10-07",
+    "naverMapUiRouteLineVisuallyConfirmed": true,
+    "stationAccessChecks": 10,
+    "stationReturnChecks": 11,
+    "geometrySource": "OpenStreetMap pedestrian network through Valhalla public routing service",
+    "geometrySegmentsSavedForRoute": "food-01",
+    "geometrySegmentsSaved": 5,
+    "geometryLoadedByAppCatalog": true,
+    "rendererSupportsPointGeometry": true,
+    "appPolylineEndToEndVisuallyConfirmed": false,
+    "candidateRouteConnectedToUi": 0,
+    "naverDistanceComparison": [
+      {
+        "from": "g22",
+        "to": "g49",
+        "naverMeters": 186,
+        "osmMeters": 90,
+        "differencePercent": 52,
+        "status": "거리 차이 52%로 큼; 두 경로의 통행 구간·출입구를 추가 대조해야 함"
+      },
+      {
+        "from": "g49",
+        "to": "g29",
+        "naverMeters": 644,
+        "osmMeters": 839,
+        "differencePercent": 30,
+        "status": "거리 차이 30%로 큼; 두 경로의 통행 구간·출입구를 추가 대조해야 함"
+      },
+      {
+        "from": "g29",
+        "to": "g30",
+        "naverMeters": 371,
+        "osmMeters": 324,
+        "differencePercent": 13,
+        "status": "거리 차이 25% 이내; 두 지도 서비스의 경로선은 별도 출처"
+      },
+      {
+        "from": "g30",
+        "to": "g5",
+        "naverMeters": 776,
+        "osmMeters": 508,
+        "differencePercent": 35,
+        "status": "거리 차이 35%로 큼; 두 경로의 통행 구간·출입구를 추가 대조해야 함"
+      },
+      {
+        "from": "g5",
+        "to": "g56",
+        "naverMeters": 565,
+        "osmMeters": 85,
+        "differencePercent": 85,
+        "status": "거리 차이 85%로 큼; 두 경로의 통행 구간·출입구를 추가 대조해야 함"
+      }
+    ],
+    "blocker": "로컬 preview 서버는 /api/route 요청에 404 HTML을 반환한다. UI에서 5개 최신 테마 후보 확인은 48개 단계 중 21개에서 여전히 진행 중이어서 완성된 루트 지도까지 도달하지 못했다. public/app.js 렌더러는 points 배열을 받으면 실제 좌표 선을 그리지만, 이번 후보가 렌더러까지 도달하는 화면 검증은 완료되지 않았다. 네이버 UI에서 geometry 좌표를 공식 방식으로 export하는 기능도 확인하지 못했다.",
+    "safeFallback": "이동선은 OSM geometry와 해당 출처를 표시하고, 네이버는 이동 가능 여부·거리·시간 확인 링크로 따로 제공한다. Naver 거리 편차가 큰 구간은 같은 경로라는 표현을 하지 않고 추가 대조 대상으로 남긴다."
+  },
+  "geometryReadyForRoute": "food-01: five OSM point sequences are stored in the app saved-walk catalog; this is geometry input readiness, not proof that a complete route result already displayed them."
+}
