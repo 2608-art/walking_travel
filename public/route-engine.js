@@ -89,27 +89,27 @@
     for (const key of Object.keys(GEOGRAPHIC_THEME_IDS)) delete GEOGRAPHIC_THEME_IDS[key];
     SNACK_IDS.clear();
     if (regionId !== 'gangneung') return;
-    SHOP_IDS.clear(); ['g1','g2','g3','g7','g8','g23','g24','g25','g34'].forEach((id) => SHOP_IDS.add(id));
+    SHOP_IDS.clear(); ['g1','g2','g3','g7'].forEach((id) => SHOP_IDS.add(id));
     HISTORY_IDS.clear(); ['g9','g10','g11','g18','g22','g27','g31','g32'].forEach((id) => HISTORY_IDS.add(id));
     FIRST_IDS.clear(); ['g3','g7','g8','g27','g34'].forEach((id) => FIRST_IDS.add(id));
-    SEA_IDS.clear(); ['g4','g5','g6','g12','g14','g15','g17','g21','g22','g35','g36'].forEach((id) => SEA_IDS.add(id));
+    SEA_IDS.clear(); ['g4','g14','g15','g17','g96','g147','g187','g189'].forEach((id) => SEA_IDS.add(id));
     NIGHT_OUTDOOR_IDS.clear();
     EXCLUDED_IDS.clear(); ['g16'].forEach((id) => EXCLUDED_IDS.add(id));
     THEMES.splice(0, THEMES.length,
       {id:'balanced',name:'강릉 기본 코스'},
-      {id:'first',name:'처음 가는 강릉'},
-      {id:'sea',name:'바다와 커피'},
-      {id:'history',name:'오죽헌·선교장 역사'},
-      {id:'shops',name:'월화거리·중앙시장'},
-      {id:'food',name:'초당 먹거리·산책'}
+      {id:'food',name:'강문·초당마을'},
+      {id:'sea',name:'커피거리·안목'},
+      {id:'shops',name:'시장·먹거리'},
+      {id:'cafe',name:'특색있는 카페 투어'},
+      {id:'history',name:'경포·오죽헌 역사·문화'}
     );
     for (const key of Object.keys(THEME_PRESETS)) delete THEME_PRESETS[key];
     Object.assign(THEME_PRESETS, {
-      first:{originId:'gangneung-station',destinationId:'g7',description:'강릉역에서 시내 골목과 시장 주변을 지나 월화교로 걷는 첫 방문 코스'},
-      sea:{originId:'g17',destinationId:'g6',description:'안목 카페에서 송정 송림과 중간 카페를 쉬어 가며 강문·경포로 걷는 코스'},
-      history:{originId:'g9',destinationId:'g10',description:'오죽헌과 선교장을 중심으로 강릉의 역사를 살피는 코스'},
-      shops:{originId:'g27',destinationId:'g7',description:'대도호부 관아에서 월화거리·중앙시장 골목을 지나 월화교로 걷는 코스'},
-      food:{originId:'g22',destinationId:'g5',description:'초당의 먹거리와 산책길을 지나 강문해변으로 가는 코스'}
+      food:{originId:'g33',destinationId:'g58',description:'강문 바다와 초당마을의 순두부·산책을 즐기는 테마'},
+      sea:{originId:'g33',destinationId:'g58',description:'안목 커피거리와 바닷가 풍경을 함께 즐기는 테마'},
+      shops:{originId:'g33',destinationId:'g58',description:'중앙시장 간식과 월화거리 주변 골목을 둘러보는 테마'},
+      cafe:{originId:'g24',destinationId:'g17',description:'강릉의 개성 있는 카페와 시그니처 메뉴를 찾아가는 테마'},
+      history:{originId:'g33',destinationId:'g58',description:'오죽헌·선교장·경포대에서 강릉의 역사와 문화를 만나는 테마'}
     });
   }
   const THEME_START_TIMES = Array.from({length:48},(_,index)=>String(Math.floor(index/2)).padStart(2,'0')+':'+(index%2?'30':'00'));
@@ -133,6 +133,15 @@
   const hasCoord = (p) => p && Number.isFinite(p.lat) && Number.isFinite(p.lon);
   const routeCategory = (p) => ['outdoors','culture','experience'].includes(p.category) ? 'spot' :
     ['market','books'].includes(p.category) ? 'shop' : p.category;
+  const GANGNEUNG_FEATURED_CAFE_IDS = new Set(['g17','g24','g25','g30','g43','g95','g98','g187','g189','g190','g191','g192','g193','g195','g198','g217','g223','g227','g258']);
+  const GANGMUN_CHODANG_CENTER={lat:37.792,lon:128.916}, ANMOK_CENTER={lat:37.772,lon:128.947}, CENTRAL_MARKET_CENTER={lat:37.7538,lon:128.899};
+  function prepareRoutePlaces(places) {
+    if (activeRegionId !== 'gangneung') return places;
+    return places.map((place) => {
+      if (hasCoord(place) || !Number.isFinite(place.mapLat) || !Number.isFinite(place.mapLon) || !place.mapPinBasis) return place;
+      return {...place,lat:place.mapLat,lon:place.mapLon,routeCoordinateBasis:'representative_map_pin'};
+    });
+  }
   const busRideMinutes=route=>{
     const value=Number.isFinite(route.busRideSeconds) && route.busRideSeconds>0 ? route.busRideSeconds/60 :
       Number.isFinite(route.busRideMinutes) && route.busRideMinutes>0 ? route.busRideMinutes :
@@ -309,7 +318,31 @@
   const pointLeg = (a,b) => distanceKm(a,b) < .015 ? {meters:0,minutes:0,actual:true,points:[]} : estimate(a,b);
   const samePoint=(a,b)=>a && b && a.lat===b.lat && a.lon===b.lon;
   const inputLeg=(a,b,input)=>input.busConnection && samePoint(a,input.busConnection.from) && samePoint(b,input.busConnection.to) ? input.busConnection.leg : pointLeg(a,b);
-  const themedPlace=(p,theme)=>GEOGRAPHIC_THEME_IDS[theme] ? GEOGRAPHIC_THEME_IDS[theme].has(p.id) : theme==='first' ? FIRST_IDS.has(p.id) : theme==='history' ? HISTORY_IDS.has(p.id) : theme==='sea' ? SEA_IDS.has(p.id) : theme==='shops' ? SHOP_IDS.has(p.id) : theme==='food' ? p.category==='food' : theme==='cafe' ? p.category==='cafe' : false;
+  const themedPlace=(p,theme)=>{
+    if(!p) return false;
+    if(activeRegionId==='gangneung') {
+      if(theme==='food') return distanceKm(p,GANGMUN_CHODANG_CENTER)<=1.0 && ['food','cafe','outdoors','culture','experience','books','market'].includes(p.category);
+      if(theme==='sea') return SEA_IDS.has(p.id) || p.category==='cafe' && distanceKm(p,ANMOK_CENTER)<=.9;
+      if(theme==='shops') return SHOP_IDS.has(p.id) || p.category==='market' && p.id!=='g16' || p.category==='food' && distanceKm(p,CENTRAL_MARKET_CENTER)<=.75;
+      if(theme==='history') return HISTORY_IDS.has(p.id) || ['g11','g12'].includes(p.id);
+      if(theme==='cafe') return p.category==='cafe';
+    }
+    return theme==='first' ? FIRST_IDS.has(p.id) : theme==='history' ? HISTORY_IDS.has(p.id) : theme==='sea' ? SEA_IDS.has(p.id) : theme==='shops' ? SHOP_IDS.has(p.id) : theme==='food' ? p.category==='food' : theme==='cafe' ? p.category==='cafe' : false;
+  };
+  function themeScore(p,theme,variant) {
+    const shop=SHOP_IDS.has(p.id),history=HISTORY_IDS.has(p.id),sea=SEA_IDS.has(p.id),category=routeCategory(p);
+    const base={spot:7,food:4,cafe:5,shop:5}[category]||0;
+    const focused={
+      balanced:(history?3:0)+(sea?2:0)+(shop?1:0),
+      history:themedPlace(p,'history')?16:category==='spot'?5:0,
+      sea:themedPlace(p,'sea')?16:category==='spot'?2:0,
+      shops:themedPlace(p,'shops')?17:category==='shop'?-4:0,
+      food:themedPlace(p,'food')?15:p.category==='cafe'?5:0,
+      cafe:p.category==='cafe'?16+(activeRegionId==='gangneung'&&GANGNEUNG_FEATURED_CAFE_IDS.has(p.id)?18:0):shop?2:0
+    }[theme]||0;
+    const variantBoost=variant===1?(category==='shop'?3:p.category==='cafe'?2:0):variant===2?(sea?4:p.category==='food'?2:0):0;
+    return base+focused+variantBoost;
+  }
 
   // 초기 탐색·대체 탐색·최종 API 확인에 동일한 시간표 규칙을 적용한다.
   function scheduleVisits(order,input,walks) {
@@ -453,7 +486,7 @@
       if (focus==='start') return distanceKm(origin,p)<=1.3;
       if (focus==='end') return distanceKm(destination,p)<=1.3;
       const progress=routeProgress(origin,destination,p);
-      return progress.off<=.65 && progress.along*span>=-.18 && progress.along*span<=span+.18;
+      return input.theme==='cafe' && p.category==='cafe' || progress.off<=.65 && progress.along*span>=-.18 && progress.along*span<=span+.18;
     });
     // 날짜 전체에 방문할 수 없는 장소는 연결점으로도 사용하지 않는다.
     const available=pool.filter(p=>{
@@ -482,7 +515,8 @@
         const points=[origin,...order,destination], options=[];
         for(const p of available) {
           if(order.some(x=>x.id===p.id)) continue;
-          const maxCategoryStops=p.category==='cafe' && activeRegionId==='gangneung' && ['first','shops','sea'].includes(input.theme) ? 2 : input.theme===p.category ? 2 : 1;
+          const maxCategoryStops=activeRegionId==='gangneung'&&input.theme==='cafe'&&p.category==='cafe'?4:
+            p.category==='cafe'&&activeRegionId==='gangneung'&&['first','shops','sea'].includes(input.theme)?2:input.theme===p.category?2:1;
           if(['food','cafe'].includes(p.category) && order.filter(x=>x.category===p.category).length >= maxCategoryStops) continue;
           for(let i=0;i<points.length-1;i++) {
             const extra=distanceKm(points[i],p)+distanceKm(p,points[i+1])-distanceKm(points[i],points[i+1]);
@@ -495,7 +529,8 @@
           Number(b.p.id===input.preferredPlaceId)-Number(a.p.id===input.preferredPlaceId) ||
           Number(input.theme==='cafeWalk' && CAFE_SPECIALTY_IDS.has(b.p.id))-Number(input.theme==='cafeWalk' && CAFE_SPECIALTY_IDS.has(a.p.id)) ||
           Number(input.theme!=='cafeWalk' && MOKPO_MENU_IDS.has(b.p.id))-Number(input.theme!=='cafeWalk' && MOKPO_MENU_IDS.has(a.p.id)) ||
-          Number(themedPlace(b.p,input.theme))-Number(themedPlace(a.p,input.theme)) ||
+          (input.theme==='first' && order.filter(p=>themedPlace(p,'first')).length>=3 ? 0 : Number(themedPlace(b.p,input.theme))-Number(themedPlace(a.p,input.theme))) ||
+          (input.theme==='cafe' ? themeScore(b.p,'cafe',variant)-themeScore(a.p,'cafe',variant) : 0) ||
           (focus==='through' || close ? a.extra-b.extra : a.near-b.near) ||
           a.extra-b.extra || a.near-b.near || a.p.id.localeCompare(b.p.id));
         let next=null;
@@ -528,7 +563,7 @@
     if (!THEME_START_TIMES.includes(input.start) || minutes(input.start)>16*60) return false;
     const routeProvider=input.routeProvider || (async (from,to)=>({...estimate(from,to),actual:true}));
     const busProvider=input.busProvider || (async()=>[]);
-    return (await generateThemeDay({...input,routeProvider,busProvider})).length>0;
+    return (await generateThemeDay({...input,routeProvider,busProvider,stopAfterFirst:true})).length>0;
   }
   const themeDayViable=route=>route.rows.length>=5 && route.endArrival-route.start>=240 &&
     !(activeRegionId==='gyeongju' && route.rows[0]?.kind==='meal' && route.start<11*60) &&
@@ -975,34 +1010,31 @@
   }
   async function generateThemeDay(input) {
     if (input.start && minutes(input.start)>16*60) return [];
-    const cache=new Map(), candidates=[];
-    // 경주는 사용자 지정 목표인 약 10곳에 가까운 유효 코스를 우선한다.
-    const targetStops=activeRegionId==='gyeongju' ? 10 : 8;
-    const maxStops=activeRegionId==='gyeongju' ? 15 : 8;
-    const preference=(route,context)=>routePreference(route,context.origin,context.places,context.theme)+
-      (activeRegionId==='gyeongju' ? Math.abs(route.rows.length-targetStops)*100000 : 0);
+    const cache=new Map(), candidates=[], target=Math.min(15,Math.max(input.stopAfterFirst?1:5,Number(input.recommendationCount)||10));
     const themedCount=route=>route.rows.filter(row=>themedPlace(input.places.find(p=>p.id===row.placeId),input.theme)).length+(input.theme==='sea' && (themedPlace(input.origin,'sea') || themedPlace(input.destination,'sea')) ? 1 : 0);
     // 테마에 맞는 장소를 가까운 동선으로 묶고, 식사·휴식 여유를 남긴다.
     const plans=(input.start ? [input.start] : ['10:00','11:00']).map(start=>themeWindow(start,input.theme));
     for(const plan of plans) {
-      for(const allowRestStops of (activeRegionId==='gangneung' || activeRegionId==='gyeongju' || input.theme==='sea' ? [false,true] : [false])) {
-        const context={...input,...plan,maxStops,variants:2,allowRestStops,flexibleMeals:true};
-        let found=false;
+      for(const allowRestStops of (activeRegionId==='gangneung' || input.theme==='sea' ? [false,true] : [false])) {
+        const context={...input,...plan,maxStops:8,variants:Math.max(3,target),allowRestStops,flexibleMeals:true};
         for(const focus of ['through','start','end']) {
           const routes=makeGeographicRoutes(context,focus).filter(route=>route.rows.length>=5 && themedCount(route));
-          // 초기 거리 후보가 있어도 실제 경로 확인에서 탈락할 수 있다.
-          // 같은 규칙으로 출발·도착 주변 후보까지 모은 뒤 실제 이동을 비교한다.
-          if(routes.length) {candidates.push(...routes.map(route=>({route,context})));found=true;}
+          candidates.push(...routes.map(route=>({route,context})));
+          if(candidates.length>=target*3) break;
         }
-        if(found) break;
+        if(candidates.length>=target*3) break;
       }
+      if(candidates.length>=target*3) break;
     }
-    candidates.sort((a,b)=>preference(a.route,a.context)-preference(b.route,b.context));
+    const candidateSignatures=new Set();
+    const uniqueCandidates=candidates.filter(({route})=>{if(candidateSignatures.has(route.signature))return false;candidateSignatures.add(route.signature);return true;});
+    uniqueCandidates.sort((a,b)=>routePreference(a.route,a.context.origin,a.context.places,a.context.theme)
+      -routePreference(b.route,b.context.origin,b.context.places,b.context.theme));
     async function finish(route,context) {
       let checked=await confirmOrRepairRoute(route,context,cache);
       if(!checked || !themedCount(checked) || !enoughThemeStops(checked)) return null;
       // 실제 도보 시간으로 먼저 맞춘 뒤 식사를 넣어 뒤 일정의 밀림을 확인한다.
-      if(input.theme!=='cafeWalk' && !checked.rows.some(row=>row.kind==='meal')) {
+      if(!['cafeWalk','cafe'].includes(input.theme) && !checked.rows.some(row=>row.kind==='meal')) {
         const options=recommendMealTimes(mealChoices({...context,route:checked,kind:'lunch'}),{from:660,to:900,target:750});
         options.sort((a,b)=>a.slot.preview.droppedVisits-b.slot.preview.droppedVisits || Math.abs(a.slot.minute-750)-Math.abs(b.slot.minute-750) || a.slot.preview.walkMeters-b.slot.preview.walkMeters);
         for(const item of options) {
@@ -1045,26 +1077,24 @@
       return {...checked,id:'theme-day',title:(THEMES.find(t=>t.id===input.theme)?.name || '테마')+' 하루 코스',
         start:checked.start,end:round5(checked.endArrival),autoSchedule:true,plannedMeals:checked.rows.filter(row=>row.kind==='meal').map(row=>row.minute)};
     }
-    let best=null, evaluated=0;
-    for(const {route,context} of candidates) {
+    const results=[], resultSignatures=new Set();
+    for(const {route,context} of uniqueCandidates) {
       const result=await finish(route,context);
-      if(!result) continue;
-      evaluated++;
-      if(!best || preference(result,context)<best.score)
-        best={result,score:preference(result,context)};
-      // 경주는 실제 검증 후 방문 수가 줄 수 있어 모든 중심 후보를 비교한다.
-      if(evaluated>=4 && activeRegionId!=='gyeongju') break;
+      if(!result || resultSignatures.has(result.signature)) continue;
+      resultSignatures.add(result.signature);
+      results.push({...result,id:'theme-day-'+(results.length+1),title:'코스 '+(results.length+1)+' · '+(context.places.find(p=>p.id===result.rows[0]?.placeId)?.name || '테마 시작')});
+      if(results.length>=target) break;
     }
-    if(best) return [best.result];
+    if(results.length) return results;
     // 모든 도보 후보가 불가능한 경우에만 실제 버스 연결을 조회한다.
-    const context={...input,...plans[0],maxStops,variants:1};
+    const context={...input,...plans[0],maxStops:8,variants:1};
     for(const route of await busFallback(context,cache)) {
       const result=await finish(route,context);
       if(result) return [result];
     }
     return [];
   }
-  const api={THEMES,THEME_PRESETS,THEME_START_TIMES,configureRegion,themeWindow,themeStartCandidate,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive,generateReviewRoute,verifyEditedRoute,reverseRoundTrip,generateThemeDay,mealChoices,recommendMealTimes,restoreFixedMeals,addMeal};
+  const api={THEMES,THEME_PRESETS,THEME_START_TIMES,configureRegion,prepareRoutePlaces,themeWindow,themeStartCandidate,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive,generateReviewRoute,verifyEditedRoute,reverseRoundTrip,generateThemeDay,mealChoices,recommendMealTimes,restoreFixedMeals,addMeal};
   if (typeof module !== 'undefined' && module.exports) module.exports=api;
   if (typeof window !== 'undefined') window.HangeoreumRouteEngine=api;
 })();

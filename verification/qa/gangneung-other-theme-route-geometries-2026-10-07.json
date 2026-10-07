@@ -1,0 +1,767 @@
+{
+  "checkedOn": "2026-10-07",
+  "routes": [
+    {
+      "id": "food-01",
+      "themeId": "food",
+      "status": "routing-review; not yet app recommendation",
+      "source": {
+        "label": "OpenStreetMap/Valhalla public pedestrian routing",
+        "url": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.7917949%2C%22lon%22%3A128.9097365%7D%2C%7B%22lat%22%3A37.79103562487218%2C%22lon%22%3A128.9101867745931%7D%2C%7B%22lat%22%3A37.7900353735598%2C%22lon%22%3A128.915362803757%7D%2C%7B%22lat%22%3A37.7922884465996%2C%22lon%22%3A128.917115241913%7D%2C%7B%22lat%22%3A37.7941028%2C%22lon%22%3A128.9192316%7D%2C%7B%22lat%22%3A37.794532313371874%2C%22lon%22%3A128.9183005090944%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "checkedOn": "2026-10-07"
+      },
+      "stops": [
+        {
+          "id": "g22",
+          "name": "허균·허난설헌 기념공원",
+          "category": "outdoors",
+          "lat": 37.7917949,
+          "lon": 128.9097365,
+          "pinType": "route-pin"
+        },
+        {
+          "id": "g49",
+          "name": "초희전통차체험관",
+          "category": "experience",
+          "lat": 37.79103562487218,
+          "lon": 128.9101867745931,
+          "pinType": "map-pin-only"
+        },
+        {
+          "id": "g29",
+          "name": "초당맷돌순두부",
+          "category": "food",
+          "lat": 37.7900353735598,
+          "lon": 128.915362803757,
+          "pinType": "route-pin"
+        },
+        {
+          "id": "g30",
+          "name": "초당110",
+          "category": "cafe",
+          "lat": 37.7922884465996,
+          "lon": 128.917115241913,
+          "pinType": "route-pin"
+        },
+        {
+          "id": "g5",
+          "name": "강문해변",
+          "category": "outdoors",
+          "lat": 37.7941028,
+          "lon": 128.9192316,
+          "pinType": "route-pin"
+        },
+        {
+          "id": "g56",
+          "name": "유리알유희",
+          "category": "books",
+          "lat": 37.794532313371874,
+          "lon": 128.9183005090944,
+          "pinType": "map-pin-only"
+        }
+      ],
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.909694,
+            37.79159
+          ],
+          [
+            128.909604,
+            37.791597
+          ],
+          [
+            128.909517,
+            37.791587
+          ],
+          [
+            128.909565,
+            37.791542
+          ],
+          [
+            128.909895,
+            37.791455
+          ],
+          [
+            128.910279,
+            37.791335
+          ],
+          [
+            128.910302,
+            37.791329
+          ],
+          [
+            128.910462,
+            37.79129
+          ],
+          [
+            128.910991,
+            37.791189
+          ],
+          [
+            128.911016,
+            37.791154
+          ],
+          [
+            128.911034,
+            37.791128
+          ],
+          [
+            128.911302,
+            37.790789
+          ],
+          [
+            128.911427,
+            37.790808
+          ],
+          [
+            128.911568,
+            37.790646
+          ],
+          [
+            128.911744,
+            37.790531
+          ],
+          [
+            128.911935,
+            37.790384
+          ],
+          [
+            128.912072,
+            37.790246
+          ],
+          [
+            128.912342,
+            37.789957
+          ],
+          [
+            128.912514,
+            37.789754
+          ],
+          [
+            128.912601,
+            37.789607
+          ],
+          [
+            128.912672,
+            37.789532
+          ],
+          [
+            128.912835,
+            37.789331
+          ],
+          [
+            128.913007,
+            37.789231
+          ],
+          [
+            128.913101,
+            37.789161
+          ],
+          [
+            128.913158,
+            37.789069
+          ],
+          [
+            128.913193,
+            37.788908
+          ],
+          [
+            128.913295,
+            37.788501
+          ],
+          [
+            128.913444,
+            37.787881
+          ],
+          [
+            128.913644,
+            37.787969
+          ],
+          [
+            128.91382,
+            37.788043
+          ],
+          [
+            128.913904,
+            37.788078
+          ],
+          [
+            128.91418,
+            37.788177
+          ],
+          [
+            128.914307,
+            37.788248
+          ],
+          [
+            128.914408,
+            37.788304
+          ],
+          [
+            128.914683,
+            37.788501
+          ],
+          [
+            128.915153,
+            37.788924
+          ],
+          [
+            128.915086,
+            37.788991
+          ],
+          [
+            128.915462,
+            37.789359
+          ],
+          [
+            128.915566,
+            37.78949
+          ],
+          [
+            128.915609,
+            37.789694
+          ],
+          [
+            128.91565,
+            37.78988
+          ],
+          [
+            128.915662,
+            37.79002
+          ],
+          [
+            128.915673,
+            37.790156
+          ],
+          [
+            128.91573,
+            37.790397
+          ],
+          [
+            128.915687,
+            37.790562
+          ],
+          [
+            128.915497,
+            37.79078
+          ],
+          [
+            128.915444,
+            37.790857
+          ],
+          [
+            128.915416,
+            37.790971
+          ],
+          [
+            128.915439,
+            37.791108
+          ],
+          [
+            128.915764,
+            37.791336
+          ],
+          [
+            128.916023,
+            37.791506
+          ],
+          [
+            128.916271,
+            37.79168
+          ],
+          [
+            128.916325,
+            37.791703
+          ],
+          [
+            128.916444,
+            37.791782
+          ],
+          [
+            128.916546,
+            37.791845
+          ],
+          [
+            128.916679,
+            37.791965
+          ],
+          [
+            128.916758,
+            37.792061
+          ],
+          [
+            128.916852,
+            37.792191
+          ],
+          [
+            128.916996,
+            37.792354
+          ],
+          [
+            128.917137,
+            37.792513
+          ],
+          [
+            128.917321,
+            37.792776
+          ],
+          [
+            128.917489,
+            37.793049
+          ],
+          [
+            128.91734,
+            37.793636
+          ],
+          [
+            128.917259,
+            37.794514
+          ],
+          [
+            128.917225,
+            37.794851
+          ],
+          [
+            128.917205,
+            37.79502
+          ],
+          [
+            128.917406,
+            37.794907
+          ],
+          [
+            128.917572,
+            37.794835
+          ],
+          [
+            128.917854,
+            37.794739
+          ],
+          [
+            128.918047,
+            37.794678
+          ],
+          [
+            128.918253,
+            37.794603
+          ],
+          [
+            128.918366,
+            37.794529
+          ],
+          [
+            128.918455,
+            37.794463
+          ],
+          [
+            128.91858,
+            37.794343
+          ],
+          [
+            128.918686,
+            37.794216
+          ],
+          [
+            128.918907,
+            37.79394
+          ],
+          [
+            128.918686,
+            37.794216
+          ],
+          [
+            128.91858,
+            37.794343
+          ],
+          [
+            128.918455,
+            37.794463
+          ],
+          [
+            128.918366,
+            37.794529
+          ],
+          [
+            128.918325,
+            37.794556
+          ]
+        ],
+        "stopPointIndices": [
+          0,
+          6,
+          41,
+          58,
+          75,
+          80
+        ]
+      },
+      "legs": [
+        {
+          "from": "g22",
+          "to": "g49",
+          "meters": 90,
+          "minutes": 2,
+          "startSnapMeters": 23,
+          "endSnapMeters": 34,
+          "naverMeters": 186,
+          "naverMinutes": 2,
+          "naverUrl": "https://way-m.map.naver.com/quick-path/128.9097365%2C37.7917949%2C%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90%2Cundefined%2CADDRESS_POI/128.9101867745931%2C37.79103562487218%2C%EC%B4%88%ED%9D%AC%EC%A0%84%ED%86%B5%EC%B0%A8%EC%B2%B4%ED%97%98%EA%B4%80%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        {
+          "from": "g49",
+          "to": "g29",
+          "meters": 839,
+          "minutes": 10,
+          "startSnapMeters": 34,
+          "endSnapMeters": 26,
+          "naverMeters": 644,
+          "naverMinutes": 9,
+          "naverUrl": "https://way-m.map.naver.com/quick-path/128.9101867745931%2C37.79103562487218%2C%EC%B4%88%ED%9D%AC%EC%A0%84%ED%86%B5%EC%B0%A8%EC%B2%B4%ED%97%98%EA%B4%80%2Cundefined%2CADDRESS_POI/128.915362803757%2C37.7900353735598%2C%EC%B4%88%EB%8B%B9%EB%A7%B7%EB%8F%8C%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        {
+          "from": "g29",
+          "to": "g30",
+          "meters": 324,
+          "minutes": 4,
+          "startSnapMeters": 26,
+          "endSnapMeters": 13,
+          "naverMeters": 371,
+          "naverMinutes": 5,
+          "naverUrl": "https://way-m.map.naver.com/quick-path/128.915362803757%2C37.7900353735598%2C%EC%B4%88%EB%8B%B9%EB%A7%B7%EB%8F%8C%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        {
+          "from": "g30",
+          "to": "g5",
+          "meters": 508,
+          "minutes": 7,
+          "startSnapMeters": 13,
+          "endSnapMeters": 34,
+          "naverMeters": 776,
+          "naverMinutes": 12,
+          "naverUrl": "https://way-m.map.naver.com/quick-path/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        {
+          "from": "g5",
+          "to": "g56",
+          "meters": 85,
+          "minutes": 2,
+          "startSnapMeters": 34,
+          "endSnapMeters": 3,
+          "naverMeters": 565,
+          "naverMinutes": 8,
+          "naverUrl": "https://way-m.map.naver.com/quick-path/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/128.9183005090944%2C37.794532313371874%2C%EC%9C%A0%EB%A6%AC%EC%95%8C%EC%9C%A0%ED%9D%AC%2Cundefined%2CADDRESS_POI/-/walk/0"
+        }
+      ],
+      "meters": 1849,
+      "unknownHoursPlaceIds": [
+        "g30"
+      ],
+      "limitations": [
+        "Representative map pins are not verified entry points.",
+        "OSM geometry and Naver walking summaries may follow different streets."
+      ]
+    },
+    {
+      "id": "sea-01",
+      "themeId": "sea",
+      "status": "routing-review; not yet app recommendation",
+      "source": {
+        "label": "OpenStreetMap/Valhalla public pedestrian routing",
+        "url": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.77201%2C%22lon%22%3A128.94804%7D%2C%7B%22lat%22%3A37.77237131277108%2C%22lon%22%3A128.9475338084109%7D%2C%7B%22lat%22%3A37.7720457%2C%22lon%22%3A128.9478294%7D%2C%7B%22lat%22%3A37.77321492%2C%22lon%22%3A128.94516362%7D%2C%7B%22lat%22%3A37.7801011%2C%22lon%22%3A128.9371318%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "checkedOn": "2026-10-07"
+      },
+      "stops": [
+        {
+          "id": "g15",
+          "name": "안목 커피거리",
+          "category": "cafe",
+          "lat": 37.77201,
+          "lon": 128.94804,
+          "pinType": "map-pin-only"
+        },
+        {
+          "id": "g96",
+          "name": "AM브레드앤커피",
+          "category": "cafe",
+          "lat": 37.77237131277108,
+          "lon": 128.9475338084109,
+          "pinType": "map-pin-only"
+        },
+        {
+          "id": "g17",
+          "name": "보사노바 커피로스터스 강릉점",
+          "category": "cafe",
+          "lat": 37.7720457,
+          "lon": 128.9478294,
+          "pinType": "route-pin"
+        },
+        {
+          "id": "g171",
+          "name": "안목항물회",
+          "category": "food",
+          "lat": 37.77321492,
+          "lon": 128.94516362,
+          "pinType": "map-pin-only"
+        },
+        {
+          "id": "g14",
+          "name": "송정해변·송림",
+          "category": "outdoors",
+          "lat": 37.7801011,
+          "lon": 128.9371318,
+          "pinType": "route-pin"
+        }
+      ],
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.948042,
+            37.772012
+          ],
+          [
+            128.947608,
+            37.77242
+          ],
+          [
+            128.947933,
+            37.772115
+          ],
+          [
+            128.947113,
+            37.772886
+          ],
+          [
+            128.94693,
+            37.773027
+          ],
+          [
+            128.946374,
+            37.773321
+          ],
+          [
+            128.946002,
+            37.773512
+          ],
+          [
+            128.945757,
+            37.773548
+          ],
+          [
+            128.945774,
+            37.773519
+          ],
+          [
+            128.94578,
+            37.773487
+          ],
+          [
+            128.945774,
+            37.773456
+          ],
+          [
+            128.945756,
+            37.773427
+          ],
+          [
+            128.945728,
+            37.773404
+          ],
+          [
+            128.945692,
+            37.773388
+          ],
+          [
+            128.945653,
+            37.773382
+          ],
+          [
+            128.945612,
+            37.773385
+          ],
+          [
+            128.945731,
+            37.773155
+          ],
+          [
+            128.945832,
+            37.772947
+          ],
+          [
+            128.945959,
+            37.772624
+          ],
+          [
+            128.946015,
+            37.77241
+          ],
+          [
+            128.945874,
+            37.772482
+          ],
+          [
+            128.944829,
+            37.773022
+          ],
+          [
+            128.945075,
+            37.77318
+          ],
+          [
+            128.9451,
+            37.773161
+          ],
+          [
+            128.945075,
+            37.77318
+          ],
+          [
+            128.944829,
+            37.773022
+          ],
+          [
+            128.944704,
+            37.773087
+          ],
+          [
+            128.944069,
+            37.773415
+          ],
+          [
+            128.943897,
+            37.773502
+          ],
+          [
+            128.943665,
+            37.773648
+          ],
+          [
+            128.943199,
+            37.773988
+          ],
+          [
+            128.939661,
+            37.776915
+          ],
+          [
+            128.939405,
+            37.777074
+          ],
+          [
+            128.939199,
+            37.777168
+          ],
+          [
+            128.938933,
+            37.777289
+          ],
+          [
+            128.938621,
+            37.777414
+          ],
+          [
+            128.938995,
+            37.777648
+          ],
+          [
+            128.939272,
+            37.777693
+          ],
+          [
+            128.939762,
+            37.778004
+          ],
+          [
+            128.939463,
+            37.778216
+          ],
+          [
+            128.938548,
+            37.778887
+          ],
+          [
+            128.937458,
+            37.77963
+          ],
+          [
+            128.937282,
+            37.779728
+          ],
+          [
+            128.937218,
+            37.779779
+          ],
+          [
+            128.936969,
+            37.779964
+          ]
+        ],
+        "stopPointIndices": [
+          0,
+          1,
+          2,
+          23,
+          44
+        ]
+      },
+      "legs": [
+        {
+          "from": "g15",
+          "to": "g96",
+          "meters": 59,
+          "minutes": 1,
+          "startSnapMeters": 0,
+          "endSnapMeters": 8,
+          "naverMeters": 59,
+          "naverMinutes": 1,
+          "naverUrl": "https://way-m.map.naver.com/quick-path/128.94804%2C37.77201%2C%EC%95%88%EB%AA%A9%20%EC%BB%A4%ED%94%BC%EA%B1%B0%EB%A6%AC%2Cundefined%2CADDRESS_POI/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        {
+          "from": "g96",
+          "to": "g17",
+          "meters": 44,
+          "minutes": 1,
+          "startSnapMeters": 8,
+          "endSnapMeters": 12,
+          "naverMeters": 51,
+          "naverMinutes": 1,
+          "naverUrl": "https://way-m.map.naver.com/quick-path/128.9475338084109%2C37.77237131277108%2CAM%EB%B8%8C%EB%A0%88%EB%93%9C%EC%95%A4%EC%BB%A4%ED%94%BC%2Cundefined%2CADDRESS_POI/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        {
+          "from": "g17",
+          "to": "g171",
+          "meters": 553,
+          "minutes": 7,
+          "startSnapMeters": 12,
+          "endSnapMeters": 8,
+          "naverMeters": 340,
+          "naverMinutes": 5,
+          "naverUrl": "https://way-m.map.naver.com/quick-path/128.9478294%2C37.7720457%2C%EB%B3%B4%EC%82%AC%EB%85%B8%EB%B0%94%20%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%84%B0%EC%8A%A4%20%EA%B0%95%EB%A6%89%EC%A0%90%2Cundefined%2CADDRESS_POI/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        {
+          "from": "g171",
+          "to": "g14",
+          "meters": 1219,
+          "minutes": 16,
+          "startSnapMeters": 8,
+          "endSnapMeters": 21,
+          "naverMeters": 1200,
+          "naverMinutes": 17,
+          "naverUrl": "https://way-m.map.naver.com/quick-path/128.94516362%2C37.77321492%2C%EC%95%88%EB%AA%A9%ED%95%AD%EB%AC%BC%ED%9A%8C%2Cundefined%2CADDRESS_POI/128.9371318%2C37.7801011%2C%EC%86%A1%EC%A0%95%ED%95%B4%EB%B3%80%C2%B7%EC%86%A1%EB%A6%BC%2Cundefined%2CADDRESS_POI/-/walk/0"
+        }
+      ],
+      "meters": 1877,
+      "unknownHoursPlaceIds": [
+        "g15",
+        "g96",
+        "g171"
+      ],
+      "limitations": [
+        "Representative map pins are not verified entry points.",
+        "OSM geometry and Naver walking summaries may follow different streets."
+      ]
+    }
+  ]
+}

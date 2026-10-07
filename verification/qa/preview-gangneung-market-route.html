@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>강릉 시장 코스 보행선 검토</title>
+  <link rel="stylesheet" href="../../public/vendor/leaflet.css">
+  <style>
+    body{margin:0;font:15px/1.5 system-ui,sans-serif;color:#1c303a;background:#f7f8f5}
+    main{display:grid;grid-template-columns:minmax(0,1fr) 290px;min-height:100vh}
+    #map{min-height:100vh}
+    aside{padding:22px;border-left:1px solid #ddd;background:#fff}
+    h1{font-size:20px;margin:0 0 12px}
+    p{margin:8px 0}
+    ol{padding-left:22px}
+    li{margin:10px 0}
+    .warn{padding:12px;background:#fff2d7;border-radius:8px}
+    @media(max-width:700px){main{display:block}#map{height:65vh;min-height:0}}
+  </style>
+</head>
+<body>
+  <main>
+    <div id="map" aria-label="시장 코스 보행선 검토 지도"></div>
+    <aside>
+      <h1>시장·먹거리 첫 코스</h1>
+      <p class="warn">검토 화면입니다. 보라색은 OSM/Valhalla 보행망 1.49km, 주황색은 중앙시장→배니닭강정 153m 구간입니다. 네이버 길찾기는 이 구간을 60m로 표시합니다.</p>
+      <ol id="stops"></ol>
+      <p>개별 건물 입구와 시장 내부 통로는 미확인입니다.</p>
+    </aside>
+  </main>
+  <script src="../../public/vendor/leaflet.js"></script>
+  <script>
+    Promise.all([
+      fetch('gangneung-market-route-geometry-2026-10-07.geojson').then(r=>r.json()),
+      fetch('gangneung-market-first-route-design-2026-10-07.json').then(r=>r.json())
+    ]).then(([route,design])=>{
+      const map=L.map('map');
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+      const points=route.geometry.coordinates.map(([lon,lat])=>[lat,lon]);
+      const line=L.polyline(points,{color:'#653aab',weight:5,opacity:.8}).addTo(map);
+      const [from,to]=route.properties.stopPointIndices.slice(3,5);
+      L.polyline(points.slice(from,to+1),{color:'#e96b16',weight:7,opacity:.95}).addTo(map);
+      design.places.forEach((place,index)=>{
+        L.circleMarker([place.lat,place.lon],{radius:8,color:'#fff',fillColor:'#153f5a',fillOpacity:1,weight:2}).addTo(map)
+          .bindTooltip((index+1)+'. '+place.name);
+        const item=document.createElement('li');
+        item.textContent=place.name+' — '+place.purpose;
+        document.querySelector('#stops').append(item);
+      });
+      map.fitBounds(line.getBounds(),{padding:[25,25]});
+    }).catch(error=>{document.querySelector('aside').append('자료를 불러오지 못했습니다: '+error.message)});
+  </script>
+</body>
+</html>
