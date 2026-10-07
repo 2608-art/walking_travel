@@ -1,0 +1,781 @@
+{
+  "checkedOn": "2026-10-07",
+  "source": "OpenStreetMap/Valhalla public pedestrian routing",
+  "attribution": "© OpenStreetMap contributors",
+  "routes": [
+    {
+      "themeId": "food",
+      "title": "강문·초당마을 · 확정 방문 순서",
+      "gpx": "public/gangneung-theme-routes/food.gpx",
+      "geojson": "public/gangneung-theme-routes/food.geojson",
+      "walkLegCount": 10,
+      "acceptedLegCount": 10,
+      "rejectedLegCount": 0,
+      "legs": [
+        {
+          "themeId": "food",
+          "legIndex": 1,
+          "from": "g45",
+          "to": "g22",
+          "fromName": "아르떼뮤지엄 강릉",
+          "toName": "허균·허난설헌 기념공원",
+          "meters": 574,
+          "minutes": 8,
+          "startSnapMeters": 27,
+          "endSnapMeters": 23,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "food",
+          "legIndex": 2,
+          "from": "g22",
+          "to": "g49",
+          "fromName": "허균·허난설헌 기념공원",
+          "toName": "초희전통차체험관",
+          "meters": 90,
+          "minutes": 2,
+          "startSnapMeters": 23,
+          "endSnapMeters": 34,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "food",
+          "legIndex": 3,
+          "from": "g49",
+          "to": "g88",
+          "fromName": "초희전통차체험관",
+          "toName": "원조초당순두부",
+          "meters": 707,
+          "minutes": 9,
+          "startSnapMeters": 34,
+          "endSnapMeters": 46,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "food",
+          "legIndex": 4,
+          "from": "g88",
+          "to": "g98",
+          "fromName": "원조초당순두부",
+          "toName": "카페 툇마루",
+          "meters": 300,
+          "minutes": 4,
+          "startSnapMeters": 46,
+          "endSnapMeters": 42,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "food",
+          "legIndex": 5,
+          "from": "g98",
+          "to": "g30",
+          "fromName": "카페 툇마루",
+          "toName": "초당110",
+          "meters": 445,
+          "minutes": 6,
+          "startSnapMeters": 42,
+          "endSnapMeters": 13,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "food",
+          "legIndex": 6,
+          "from": "g30",
+          "to": "g5",
+          "fromName": "초당110",
+          "toName": "강문해변",
+          "meters": 508,
+          "minutes": 7,
+          "startSnapMeters": 13,
+          "endSnapMeters": 34,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "food",
+          "legIndex": 7,
+          "from": "g5",
+          "to": "g181",
+          "fromName": "강문해변",
+          "toName": "강문떡갈비",
+          "meters": 169,
+          "minutes": 2,
+          "startSnapMeters": 34,
+          "endSnapMeters": 26,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "food",
+          "legIndex": 8,
+          "from": "g181",
+          "to": "g56",
+          "fromName": "강문떡갈비",
+          "toName": "유리알유희",
+          "meters": 83,
+          "minutes": 2,
+          "startSnapMeters": 26,
+          "endSnapMeters": 3,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "food",
+          "legIndex": 9,
+          "from": "g56",
+          "to": "g257",
+          "fromName": "유리알유희",
+          "toName": "서울양계",
+          "meters": 173,
+          "minutes": 3,
+          "startSnapMeters": 3,
+          "endSnapMeters": 13,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "food",
+          "legIndex": 10,
+          "from": "g257",
+          "to": "g35",
+          "fromName": "서울양계",
+          "toName": "강문솟대다리",
+          "meters": 332,
+          "minutes": 5,
+          "startSnapMeters": 13,
+          "endSnapMeters": 0,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "route-pin"
+          }
+        }
+      ]
+    },
+    {
+      "themeId": "sea",
+      "title": "커피거리·안목 · 확정 방문 순서",
+      "gpx": "public/gangneung-theme-routes/sea.gpx",
+      "geojson": "public/gangneung-theme-routes/sea.geojson",
+      "walkLegCount": 8,
+      "acceptedLegCount": 8,
+      "rejectedLegCount": 0,
+      "legs": [
+        {
+          "themeId": "sea",
+          "legIndex": 1,
+          "from": "g14",
+          "to": "g156",
+          "fromName": "송정해변·송림",
+          "toName": "환희컵박물관",
+          "meters": 987,
+          "minutes": 12,
+          "startSnapMeters": 21,
+          "endSnapMeters": 23,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "sea",
+          "legIndex": 2,
+          "from": "g156",
+          "to": "g4",
+          "fromName": "환희컵박물관",
+          "toName": "안목해변",
+          "meters": 550,
+          "minutes": 7,
+          "startSnapMeters": 23,
+          "endSnapMeters": 24,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "sea",
+          "legIndex": 3,
+          "from": "g4",
+          "to": "g171",
+          "fromName": "안목해변",
+          "toName": "안목항물회",
+          "meters": 379,
+          "minutes": 5,
+          "startSnapMeters": 24,
+          "endSnapMeters": 8,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "sea",
+          "legIndex": 4,
+          "from": "g171",
+          "to": "g189",
+          "fromName": "안목항물회",
+          "toName": "커피커퍼 안목1호점",
+          "meters": 470,
+          "minutes": 6,
+          "startSnapMeters": 8,
+          "endSnapMeters": 10,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "sea",
+          "legIndex": 5,
+          "from": "g189",
+          "to": "g158",
+          "fromName": "커피커퍼 안목1호점",
+          "toName": "강릉항",
+          "meters": 718,
+          "minutes": 9,
+          "startSnapMeters": 10,
+          "endSnapMeters": 14,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "sea",
+          "legIndex": 6,
+          "from": "g158",
+          "to": "g37",
+          "fromName": "강릉항",
+          "toName": "솔바람다리",
+          "meters": 891,
+          "minutes": 11,
+          "startSnapMeters": 14,
+          "endSnapMeters": 1,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "sea",
+          "legIndex": 7,
+          "from": "g37",
+          "to": "g297",
+          "fromName": "솔바람다리",
+          "toName": "삼교리동치미막국수 남항진점",
+          "meters": 345,
+          "minutes": 5,
+          "startSnapMeters": 1,
+          "endSnapMeters": 26,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "sea",
+          "legIndex": 8,
+          "from": "g297",
+          "to": "g38",
+          "fromName": "삼교리동치미막국수 남항진점",
+          "toName": "남항진해변",
+          "meters": 205,
+          "minutes": 3,
+          "startSnapMeters": 26,
+          "endSnapMeters": 74,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "route-pin"
+          }
+        }
+      ]
+    },
+    {
+      "themeId": "shops",
+      "title": "시장·먹거리 · 확정 방문 순서",
+      "gpx": "public/gangneung-theme-routes/shops.gpx",
+      "geojson": "public/gangneung-theme-routes/shops.geojson",
+      "walkLegCount": 9,
+      "acceptedLegCount": 9,
+      "rejectedLegCount": 0,
+      "legs": [
+        {
+          "themeId": "shops",
+          "legIndex": 1,
+          "from": "g33",
+          "to": "g3",
+          "fromName": "선채향",
+          "toName": "월화거리",
+          "meters": 268,
+          "minutes": 4,
+          "startSnapMeters": 11,
+          "endSnapMeters": 7,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "shops",
+          "legIndex": 2,
+          "from": "g3",
+          "to": "g40",
+          "fromName": "월화거리",
+          "toName": "감자바우 옹심이장칼국수",
+          "meters": 436,
+          "minutes": 6,
+          "startSnapMeters": 7,
+          "endSnapMeters": 9,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "shops",
+          "legIndex": 3,
+          "from": "g40",
+          "to": "g1",
+          "fromName": "감자바우 옹심이장칼국수",
+          "toName": "강릉중앙시장",
+          "meters": 191,
+          "minutes": 3,
+          "startSnapMeters": 9,
+          "endSnapMeters": 29,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "shops",
+          "legIndex": 4,
+          "from": "g1",
+          "to": "g2",
+          "fromName": "강릉중앙시장",
+          "toName": "성남시장",
+          "meters": 36,
+          "minutes": 1,
+          "startSnapMeters": 29,
+          "endSnapMeters": 5,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "shops",
+          "legIndex": 5,
+          "from": "g2",
+          "to": "g58",
+          "fromName": "성남시장",
+          "toName": "광덕식당 중앙시장점",
+          "meters": 66,
+          "minutes": 1,
+          "startSnapMeters": 5,
+          "endSnapMeters": 3,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "shops",
+          "legIndex": 6,
+          "from": "g58",
+          "to": "g73",
+          "fromName": "광덕식당 중앙시장점",
+          "toName": "만복래닭강정",
+          "meters": 144,
+          "minutes": 2,
+          "startSnapMeters": 3,
+          "endSnapMeters": 3,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "shops",
+          "legIndex": 7,
+          "from": "g73",
+          "to": "g200",
+          "fromName": "만복래닭강정",
+          "toName": "강릉 명주동 거리",
+          "meters": 634,
+          "minutes": 8,
+          "startSnapMeters": 3,
+          "endSnapMeters": 3,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "shops",
+          "legIndex": 8,
+          "from": "g200",
+          "to": "g24",
+          "fromName": "강릉 명주동 거리",
+          "toName": "봉봉방앗간",
+          "meters": 72,
+          "minutes": 1,
+          "startSnapMeters": 3,
+          "endSnapMeters": 17,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "shops",
+          "legIndex": 9,
+          "from": "g24",
+          "to": "g27",
+          "fromName": "봉봉방앗간",
+          "toName": "강릉 대도호부 관아·임영관삼문",
+          "meters": 374,
+          "minutes": 6,
+          "startSnapMeters": 17,
+          "endSnapMeters": 20,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "route-pin"
+          }
+        }
+      ]
+    },
+    {
+      "themeId": "history",
+      "title": "경포·오죽헌 역사·문화 · 확정 방문 순서",
+      "gpx": "public/gangneung-theme-routes/history.gpx",
+      "geojson": "public/gangneung-theme-routes/history.geojson",
+      "walkLegCount": 8,
+      "acceptedLegCount": 8,
+      "rejectedLegCount": 0,
+      "legs": [
+        {
+          "themeId": "history",
+          "legIndex": 1,
+          "from": "g9",
+          "to": "g10",
+          "fromName": "오죽헌·시립박물관",
+          "toName": "강릉 선교장",
+          "meters": 1261,
+          "minutes": 15,
+          "startSnapMeters": 3,
+          "endSnapMeters": 11,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "history",
+          "legIndex": 2,
+          "from": "g10",
+          "to": "g11",
+          "fromName": "강릉 선교장",
+          "toName": "경포대",
+          "meters": 1875,
+          "minutes": 24,
+          "startSnapMeters": 11,
+          "endSnapMeters": 2,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "history",
+          "legIndex": 3,
+          "from": "g11",
+          "to": "g121",
+          "fromName": "경포대",
+          "toName": "참소리축음기·에디슨과학박물관",
+          "meters": 428,
+          "minutes": 6,
+          "startSnapMeters": 2,
+          "endSnapMeters": 12,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "history",
+          "legIndex": 4,
+          "from": "g121",
+          "to": "g236",
+          "fromName": "참소리축음기·에디슨과학박물관",
+          "toName": "경포별난해물찜",
+          "meters": 1088,
+          "minutes": 14,
+          "startSnapMeters": 12,
+          "endSnapMeters": 16,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "history",
+          "legIndex": 5,
+          "from": "g236",
+          "to": "g12",
+          "fromName": "경포별난해물찜",
+          "toName": "경포호",
+          "meters": 1297,
+          "minutes": 16,
+          "startSnapMeters": 16,
+          "endSnapMeters": 8,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "history",
+          "legIndex": 6,
+          "from": "g12",
+          "to": "g181",
+          "fromName": "경포호",
+          "toName": "강문떡갈비",
+          "meters": 1202,
+          "minutes": 15,
+          "startSnapMeters": 8,
+          "endSnapMeters": 26,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "history",
+          "legIndex": 7,
+          "from": "g181",
+          "to": "g22",
+          "fromName": "강문떡갈비",
+          "toName": "허균·허난설헌 기념공원",
+          "meters": 1608,
+          "minutes": 20,
+          "startSnapMeters": 26,
+          "endSnapMeters": 23,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "history",
+          "legIndex": 8,
+          "from": "g22",
+          "to": "g21",
+          "fromName": "허균·허난설헌 기념공원",
+          "toName": "테라로사 경포호수점",
+          "meters": 954,
+          "minutes": 13,
+          "startSnapMeters": 23,
+          "endSnapMeters": 52,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "route-pin"
+          }
+        }
+      ]
+    },
+    {
+      "themeId": "cafe",
+      "title": "시내→초당→안목 카페 투어 · 10곳",
+      "gpx": "public/gangneung-theme-routes/cafe.gpx",
+      "geojson": "public/gangneung-theme-routes/cafe.geojson",
+      "walkLegCount": 7,
+      "acceptedLegCount": 7,
+      "rejectedLegCount": 0,
+      "legs": [
+        {
+          "themeId": "cafe",
+          "legIndex": 1,
+          "from": "g24",
+          "to": "g25",
+          "fromName": "봉봉방앗간",
+          "toName": "새바람이 오는 그늘",
+          "meters": 240,
+          "minutes": 3,
+          "startSnapMeters": 17,
+          "endSnapMeters": 10,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "route-pin"
+          }
+        },
+        {
+          "themeId": "cafe",
+          "legIndex": 2,
+          "from": "g25",
+          "to": "g258",
+          "fromName": "새바람이 오는 그늘",
+          "toName": "베리베리딸기",
+          "meters": 872,
+          "minutes": 11,
+          "startSnapMeters": 10,
+          "endSnapMeters": 2,
+          "accepted": true,
+          "pinType": {
+            "from": "route-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "cafe",
+          "legIndex": 4,
+          "from": "g223",
+          "to": "g195",
+          "fromName": "말차로",
+          "toName": "쵸딩 초당옥수수 푸딩 카페",
+          "meters": 336,
+          "minutes": 4,
+          "startSnapMeters": 17,
+          "endSnapMeters": 12,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "cafe",
+          "legIndex": 5,
+          "from": "g195",
+          "to": "g193",
+          "fromName": "쵸딩 초당옥수수 푸딩 카페",
+          "toName": "카페콥스",
+          "meters": 143,
+          "minutes": 2,
+          "startSnapMeters": 12,
+          "endSnapMeters": 15,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "cafe",
+          "legIndex": 6,
+          "from": "g193",
+          "to": "g98",
+          "fromName": "카페콥스",
+          "toName": "카페 툇마루",
+          "meters": 580,
+          "minutes": 7,
+          "startSnapMeters": 15,
+          "endSnapMeters": 42,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "cafe",
+          "legIndex": 8,
+          "from": "g189",
+          "to": "g187",
+          "fromName": "커피커퍼 안목1호점",
+          "toName": "레오파드",
+          "meters": 66,
+          "minutes": 1,
+          "startSnapMeters": 10,
+          "endSnapMeters": 5,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "representative-map-pin"
+          }
+        },
+        {
+          "themeId": "cafe",
+          "legIndex": 9,
+          "from": "g187",
+          "to": "g17",
+          "fromName": "레오파드",
+          "toName": "보사노바 커피로스터스 강릉점",
+          "meters": 17,
+          "minutes": 1,
+          "startSnapMeters": 5,
+          "endSnapMeters": 12,
+          "accepted": true,
+          "pinType": {
+            "from": "representative-map-pin",
+            "to": "route-pin"
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Only legs marked walk in the saved theme draft receive walking geometry. Bus legs remain disconnected and are not represented as walk paths.",
+    "The router snaps representative place pins to mapped pedestrian roads; place entrances and on-site access are not verified.",
+    "This is build-time OSM/Valhalla output and not an export from the GPX Studio routing engine."
+  ]
+}

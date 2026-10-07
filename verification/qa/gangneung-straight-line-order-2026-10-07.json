@@ -1,0 +1,519 @@
+{
+  "date": "2026-10-07",
+  "method": "Regional routes generally minimize the open path across a sightseeing backbone and insert meals/cafes by nearest projection. The market route minimizes straight-line distance across all selected food, cafe, market, and sightseeing stops together, with lunch before dinner. This is not a walk network.",
+  "rules": {
+    "routeStops": "Food 11 (12 originally before user-directed stop-1 removal); sea/history 9 each; market and cafe 10 each",
+    "breakfast": "omitted from food, sea, and history routes at user request; retained in the market route",
+    "meals": "market has breakfast, lunch, and dinner; food/sea/history retain lunch and dinner",
+    "cafes": "0-2 on regional routes",
+    "cafeTour": "existing 10-cafe route retained unchanged"
+  },
+  "routes": [
+    {
+      "themeId": "food",
+      "title": "강문·초당마을 · 확정 방문 순서",
+      "corePlaceIds": [
+        "g45",
+        "g22",
+        "g49",
+        "g5",
+        "g35"
+      ],
+      "orderedPlaceIds": [
+        "g45",
+        "g22",
+        "g49",
+        "g88",
+        "g98",
+        "g30",
+        "g5",
+        "g181",
+        "g56",
+        "g257",
+        "g35"
+      ],
+      "stopKinds": {
+        "g45": "place",
+        "g22": "place",
+        "g49": "place",
+        "g88": "lunch",
+        "g98": "cafe",
+        "g30": "cafe",
+        "g5": "place",
+        "g181": "dinner",
+        "g35": "place",
+        "g56": "place",
+        "g257": "take-home"
+      },
+      "mealSlots": {
+        "g88": "점심",
+        "g181": "저녁"
+      },
+      "cafeCount": 2,
+      "straightLineKilometers": 2.17,
+      "segments": [
+        {
+          "from": "g45",
+          "to": "g22",
+          "meters": 194,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g22",
+          "to": "g49",
+          "meters": 93,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g49",
+          "to": "g88",
+          "meters": 424,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g88",
+          "to": "g98",
+          "meters": 252,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g98",
+          "to": "g30",
+          "meters": 236,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g30",
+          "to": "g5",
+          "meters": 274,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g5",
+          "to": "g181",
+          "meters": 179,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g181",
+          "to": "g56",
+          "meters": 86,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g56",
+          "to": "g257",
+          "meters": 175,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g257",
+          "to": "g35",
+          "meters": 260,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        }
+      ],
+      "insertedStops": [
+        {
+          "id": "g88",
+          "kind": "meal",
+          "slot": "lunch",
+          "offsetMeters": 209
+        },
+        {
+          "id": "g98",
+          "kind": "cafe",
+          "slot": null,
+          "offsetMeters": 35
+        },
+        {
+          "id": "g30",
+          "kind": "cafe",
+          "slot": null,
+          "offsetMeters": 112
+        },
+        {
+          "id": "g181",
+          "kind": "meal",
+          "slot": "dinner",
+          "offsetMeters": 71
+        },
+        {
+          "id": "g56",
+          "kind": "place",
+          "slot": null,
+          "offsetMeters": null
+        },
+        {
+          "id": "g257",
+          "kind": "take-home",
+          "slot": null,
+          "offsetMeters": null
+        }
+      ]
+    },
+    {
+      "themeId": "sea",
+      "title": "커피거리·안목 · 확정 방문 순서",
+      "corePlaceIds": [
+        "g14",
+        "g156",
+        "g4",
+        "g158",
+        "g37",
+        "g38"
+      ],
+      "orderedPlaceIds": [
+        "g14",
+        "g156",
+        "g4",
+        "g171",
+        "g189",
+        "g158",
+        "g37",
+        "g297",
+        "g38"
+      ],
+      "stopKinds": {
+        "g14": "place",
+        "g156": "place",
+        "g4": "place",
+        "g171": "lunch",
+        "g189": "cafe",
+        "g158": "place",
+        "g37": "place",
+        "g297": "dinner",
+        "g38": "place"
+      },
+      "mealSlots": {
+        "g171": "점심",
+        "g297": "저녁"
+      },
+      "cafeCount": 1,
+      "straightLineKilometers": 2.92,
+      "segments": [
+        {
+          "from": "g14",
+          "to": "g156",
+          "meters": 840,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g156",
+          "to": "g4",
+          "meters": 165,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g4",
+          "to": "g171",
+          "meters": 119,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g171",
+          "to": "g189",
+          "meters": 194,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g189",
+          "to": "g158",
+          "meters": 511,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g158",
+          "to": "g37",
+          "meters": 540,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g37",
+          "to": "g297",
+          "meters": 302,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g297",
+          "to": "g38",
+          "meters": 244,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        }
+      ],
+      "insertedStops": [
+        {
+          "id": "g171",
+          "kind": "meal",
+          "slot": "lunch",
+          "offsetMeters": 114
+        },
+        {
+          "id": "g189",
+          "kind": "cafe",
+          "slot": null,
+          "offsetMeters": 136
+        },
+        {
+          "id": "g297",
+          "kind": "meal",
+          "slot": "dinner",
+          "offsetMeters": 80
+        }
+      ]
+    },
+    {
+      "themeId": "shops",
+      "title": "시장·먹거리 · 확정 방문 순서",
+      "corePlaceIds": [
+        "g3",
+        "g1",
+        "g2",
+        "g73",
+        "g200",
+        "g27"
+      ],
+      "orderedPlaceIds": [
+        "g33",
+        "g3",
+        "g40",
+        "g1",
+        "g2",
+        "g58",
+        "g73",
+        "g200",
+        "g24",
+        "g27"
+      ],
+      "stopKinds": {
+        "g33": "breakfast",
+        "g3": "place",
+        "g40": "lunch",
+        "g1": "place",
+        "g2": "place",
+        "g58": "dinner",
+        "g73": "place",
+        "g200": "place",
+        "g24": "cafe",
+        "g27": "place"
+      },
+      "mealSlots": {
+        "g33": "아침",
+        "g40": "점심",
+        "g58": "저녁"
+      },
+      "cafeCount": 1,
+      "straightLineKilometers": 1.61,
+      "segments": [
+        {
+          "from": "g33",
+          "to": "g3",
+          "meters": 147,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g3",
+          "to": "g40",
+          "meters": 313,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g40",
+          "to": "g1",
+          "meters": 170,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g1",
+          "to": "g2",
+          "meters": 49,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g2",
+          "to": "g58",
+          "meters": 17,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g58",
+          "to": "g73",
+          "meters": 68,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g73",
+          "to": "g200",
+          "meters": 604,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g200",
+          "to": "g24",
+          "meters": 68,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g24",
+          "to": "g27",
+          "meters": 178,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        }
+      ],
+      "insertedStops": [
+        {
+          "id": "g33",
+          "kind": "meal",
+          "slot": "breakfast",
+          "offsetMeters": 0
+        },
+        {
+          "id": "g40",
+          "kind": "meal",
+          "slot": "lunch",
+          "offsetMeters": 0
+        },
+        {
+          "id": "g58",
+          "kind": "meal",
+          "slot": "dinner",
+          "offsetMeters": 0
+        },
+        {
+          "id": "g24",
+          "kind": "cafe",
+          "slot": null,
+          "offsetMeters": 0
+        }
+      ]
+    },
+    {
+      "themeId": "history",
+      "title": "경포·오죽헌 역사·문화 · 확정 방문 순서",
+      "corePlaceIds": [
+        "g9",
+        "g10",
+        "g11",
+        "g121",
+        "g12",
+        "g22"
+      ],
+      "orderedPlaceIds": [
+        "g9",
+        "g10",
+        "g11",
+        "g121",
+        "g236",
+        "g12",
+        "g181",
+        "g22",
+        "g21"
+      ],
+      "stopKinds": {
+        "g9": "place",
+        "g10": "place",
+        "g11": "place",
+        "g121": "place",
+        "g236": "lunch",
+        "g12": "place",
+        "g181": "dinner",
+        "g22": "place",
+        "g21": "cafe"
+      },
+      "mealSlots": {
+        "g236": "점심",
+        "g181": "저녁"
+      },
+      "cafeCount": 1,
+      "straightLineKilometers": 6.49,
+      "segments": [
+        {
+          "from": "g9",
+          "to": "g10",
+          "meters": 821,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g10",
+          "to": "g11",
+          "meters": 1494,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g11",
+          "to": "g121",
+          "meters": 301,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g121",
+          "to": "g236",
+          "meters": 966,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g236",
+          "to": "g12",
+          "meters": 871,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g12",
+          "to": "g181",
+          "meters": 773,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g181",
+          "to": "g22",
+          "meters": 783,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        },
+        {
+          "from": "g22",
+          "to": "g21",
+          "meters": 480,
+          "routeType": "pin-to-pin straight line; actual walk unverified"
+        }
+      ],
+      "insertedStops": [
+        {
+          "id": "g236",
+          "kind": "meal",
+          "slot": "lunch",
+          "offsetMeters": 742
+        },
+        {
+          "id": "g181",
+          "kind": "meal",
+          "slot": "dinner",
+          "offsetMeters": 703
+        },
+        {
+          "id": "g21",
+          "kind": "cafe",
+          "slot": null,
+          "offsetMeters": 480
+        }
+      ]
+    },
+    {
+      "themeId": "cafe",
+      "title": "시내→초당→안목 카페 투어 · 10곳",
+      "orderedPlaceIds": [
+        "g24",
+        "g25",
+        "g258",
+        "g223",
+        "g195",
+        "g193",
+        "g98",
+        "g189",
+        "g187",
+        "g17"
+      ],
+      "preserved": true,
+      "actualSavedWalkGeometry": true
+    }
+  ]
+}

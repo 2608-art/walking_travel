@@ -29,7 +29,9 @@ assert.throws(() => savedPaths.setCatalog({version: 1, paths: [{...segment, vari
 
 const production = JSON.parse(fs.readFileSync(path.join(__dirname, '../public/walk-paths.json'), 'utf8'));
 assert.equal(production.version, 1);
-assert.equal(production.paths.length, 4);
+assert.equal(production.paths.filter(item => item.from.id === 'station' && ['p118','p103','p57','p130'].includes(item.to.id)).length, 4);
+assert.equal(production.paths.filter(item => item.from.id.startsWith('g') && item.to.id.startsWith('g')).length, 0,
+  'unmatched Gangneung geometry remains disabled in the live app catalog');
 savedPaths.setCatalog(production);
 for (const id of ['p118', 'p103', 'p57', 'p130']) {
   const entry = production.paths.find(item => item.from.id === 'station' && item.to.id === id);
@@ -37,4 +39,4 @@ for (const id of ['p118', 'p103', 'p57', 'p130']) {
   assert.ok(savedPaths.select(entry.from, entry.to)?.points?.length >= 2);
   assert.equal(savedPaths.select(entry.to, entry.from), null);
 }
-console.log('PASS: saved route selection, coordinate mismatch rejection, four production walking paths.');
+console.log('PASS: saved route selection, coordinate mismatch rejection, four Mokpo paths; unverified Gangneung geometry is not active.');

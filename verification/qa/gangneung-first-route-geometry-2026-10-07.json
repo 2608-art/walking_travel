@@ -1,0 +1,564 @@
+{
+  "route": "food-01",
+  "checkedOn": "2026-10-07",
+  "status": "comparison-only; not enabled in app route catalog",
+  "enableForApp": false,
+  "reason": "OSM/Valhalla and Naver Map segment lengths differ by more than 25% on four of five legs; Naver UI does not export path geometry. Keep every OSM geometry candidate out of the solid app route catalog until corridor and entrance discrepancies are reviewed.",
+  "paths": [
+    {
+      "from": {
+        "id": "g22",
+        "lat": 37.7917949,
+        "lon": 128.9097365
+      },
+      "to": {
+        "id": "g49",
+        "lat": 37.79103562487218,
+        "lon": 128.9101867745931
+      },
+      "source": {
+        "label": "OpenStreetMap 보행 길선(Valhalla) · 네이버 길찾기 대조",
+        "url": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.7917949%2C%22lon%22%3A128.9097365%7D%2C%7B%22lat%22%3A37.79103562487218%2C%22lon%22%3A128.9101867745931%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "naverUrl": "https://way-m.map.naver.com/quick-path/128.9097365%2C37.7917949%2C%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90%2Cundefined%2CADDRESS_POI/128.9101867745931%2C37.79103562487218%2C%EC%B4%88%ED%9D%AC%EC%A0%84%ED%86%B5%EC%B0%A8%EC%B2%B4%ED%97%98%EA%B4%80%2Cundefined%2CADDRESS_POI/-/walk/0"
+      },
+      "verification": {
+        "checkedOn": "2026-10-07",
+        "geometryProvider": "Valhalla public routing service using OpenStreetMap pedestrian network",
+        "geometrySourceUrl": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.7917949%2C%22lon%22%3A128.9097365%7D%2C%7B%22lat%22%3A37.79103562487218%2C%22lon%22%3A128.9101867745931%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "geometryDistanceMeters": 90,
+        "geometryMinutes": 2,
+        "geometryPointCount": 7,
+        "naverMap": {
+          "meters": 186,
+          "minutes": 2,
+          "url": "https://way-m.map.naver.com/quick-path/128.9097365%2C37.7917949%2C%ED%97%88%EA%B7%A0%C2%B7%ED%97%88%EB%82%9C%EC%84%A4%ED%97%8C%20%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90%2Cundefined%2CADDRESS_POI/128.9101867745931%2C37.79103562487218%2C%EC%B4%88%ED%9D%AC%EC%A0%84%ED%86%B5%EC%B0%A8%EC%B2%B4%ED%97%98%EA%B4%80%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        "naverDistanceDifferencePercent": 52,
+        "naverComparisonStatus": "거리 차이 52%로 큼; 두 경로의 통행 구간·출입구를 추가 대조해야 함",
+        "note": "보행 길선 좌표는 OSM/Valhalla에서 받았고, 네이버 지도는 별도로 해당 장소 사이의 보행 가능 경로·거리·시간을 확인하는 데 사용했다. 경로선 geometry 자체는 네이버 자료가 아니다. 대표 좌표와 실제 출입구 차이는 미확인."
+      },
+      "variants": [
+        {
+          "id": "osm-valhalla-g22-g49",
+          "label": "OSM 보행 길선(Valhalla)",
+          "meters": 90,
+          "minutes": 2,
+          "points": [
+            [
+              128.909694,
+              37.79159
+            ],
+            [
+              128.909604,
+              37.791597
+            ],
+            [
+              128.909517,
+              37.791587
+            ],
+            [
+              128.909565,
+              37.791542
+            ],
+            [
+              128.909895,
+              37.791455
+            ],
+            [
+              128.910279,
+              37.791335
+            ],
+            [
+              128.910302,
+              37.791329
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "from": {
+        "id": "g49",
+        "lat": 37.79103562487218,
+        "lon": 128.9101867745931
+      },
+      "to": {
+        "id": "g29",
+        "lat": 37.7900353735598,
+        "lon": 128.915362803757
+      },
+      "source": {
+        "label": "OpenStreetMap 보행 길선(Valhalla) · 네이버 길찾기 대조",
+        "url": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.79103562487218%2C%22lon%22%3A128.9101867745931%7D%2C%7B%22lat%22%3A37.7900353735598%2C%22lon%22%3A128.915362803757%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "naverUrl": "https://way-m.map.naver.com/quick-path/128.9101867745931%2C37.79103562487218%2C%EC%B4%88%ED%9D%AC%EC%A0%84%ED%86%B5%EC%B0%A8%EC%B2%B4%ED%97%98%EA%B4%80%2Cundefined%2CADDRESS_POI/128.915362803757%2C37.7900353735598%2C%EC%B4%88%EB%8B%B9%EB%A7%B7%EB%8F%8C%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/-/walk/0"
+      },
+      "verification": {
+        "checkedOn": "2026-10-07",
+        "geometryProvider": "Valhalla public routing service using OpenStreetMap pedestrian network",
+        "geometrySourceUrl": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.79103562487218%2C%22lon%22%3A128.9101867745931%7D%2C%7B%22lat%22%3A37.7900353735598%2C%22lon%22%3A128.915362803757%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "geometryDistanceMeters": 839,
+        "geometryMinutes": 10,
+        "geometryPointCount": 36,
+        "naverMap": {
+          "meters": 644,
+          "minutes": 9,
+          "url": "https://way-m.map.naver.com/quick-path/128.9101867745931%2C37.79103562487218%2C%EC%B4%88%ED%9D%AC%EC%A0%84%ED%86%B5%EC%B0%A8%EC%B2%B4%ED%97%98%EA%B4%80%2Cundefined%2CADDRESS_POI/128.915362803757%2C37.7900353735598%2C%EC%B4%88%EB%8B%B9%EB%A7%B7%EB%8F%8C%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        "naverDistanceDifferencePercent": 30,
+        "naverComparisonStatus": "거리 차이 30%로 큼; 두 경로의 통행 구간·출입구를 추가 대조해야 함",
+        "note": "보행 길선 좌표는 OSM/Valhalla에서 받았고, 네이버 지도는 별도로 해당 장소 사이의 보행 가능 경로·거리·시간을 확인하는 데 사용했다. 경로선 geometry 자체는 네이버 자료가 아니다. 대표 좌표와 실제 출입구 차이는 미확인."
+      },
+      "variants": [
+        {
+          "id": "osm-valhalla-g49-g29",
+          "label": "OSM 보행 길선(Valhalla)",
+          "meters": 839,
+          "minutes": 10,
+          "points": [
+            [
+              128.910302,
+              37.791329
+            ],
+            [
+              128.910462,
+              37.79129
+            ],
+            [
+              128.910991,
+              37.791189
+            ],
+            [
+              128.911016,
+              37.791154
+            ],
+            [
+              128.911034,
+              37.791128
+            ],
+            [
+              128.911302,
+              37.790789
+            ],
+            [
+              128.911427,
+              37.790808
+            ],
+            [
+              128.911568,
+              37.790646
+            ],
+            [
+              128.911744,
+              37.790531
+            ],
+            [
+              128.911935,
+              37.790384
+            ],
+            [
+              128.912072,
+              37.790246
+            ],
+            [
+              128.912342,
+              37.789957
+            ],
+            [
+              128.912514,
+              37.789754
+            ],
+            [
+              128.912601,
+              37.789607
+            ],
+            [
+              128.912672,
+              37.789532
+            ],
+            [
+              128.912835,
+              37.789331
+            ],
+            [
+              128.913007,
+              37.789231
+            ],
+            [
+              128.913101,
+              37.789161
+            ],
+            [
+              128.913158,
+              37.789069
+            ],
+            [
+              128.913193,
+              37.788908
+            ],
+            [
+              128.913295,
+              37.788501
+            ],
+            [
+              128.913444,
+              37.787881
+            ],
+            [
+              128.913644,
+              37.787969
+            ],
+            [
+              128.91382,
+              37.788043
+            ],
+            [
+              128.913904,
+              37.788078
+            ],
+            [
+              128.91418,
+              37.788177
+            ],
+            [
+              128.914307,
+              37.788248
+            ],
+            [
+              128.914408,
+              37.788304
+            ],
+            [
+              128.914683,
+              37.788501
+            ],
+            [
+              128.915153,
+              37.788924
+            ],
+            [
+              128.915086,
+              37.788991
+            ],
+            [
+              128.915462,
+              37.789359
+            ],
+            [
+              128.915566,
+              37.78949
+            ],
+            [
+              128.915609,
+              37.789694
+            ],
+            [
+              128.91565,
+              37.78988
+            ],
+            [
+              128.915662,
+              37.79002
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "from": {
+        "id": "g29",
+        "lat": 37.7900353735598,
+        "lon": 128.915362803757
+      },
+      "to": {
+        "id": "g30",
+        "lat": 37.7922884465996,
+        "lon": 128.917115241913
+      },
+      "source": {
+        "label": "OpenStreetMap 보행 길선(Valhalla) · 네이버 길찾기 대조",
+        "url": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.7900353735598%2C%22lon%22%3A128.915362803757%7D%2C%7B%22lat%22%3A37.7922884465996%2C%22lon%22%3A128.917115241913%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "naverUrl": "https://way-m.map.naver.com/quick-path/128.915362803757%2C37.7900353735598%2C%EC%B4%88%EB%8B%B9%EB%A7%B7%EB%8F%8C%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/-/walk/0"
+      },
+      "verification": {
+        "checkedOn": "2026-10-07",
+        "geometryProvider": "Valhalla public routing service using OpenStreetMap pedestrian network",
+        "geometrySourceUrl": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.7900353735598%2C%22lon%22%3A128.915362803757%7D%2C%7B%22lat%22%3A37.7922884465996%2C%22lon%22%3A128.917115241913%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "geometryDistanceMeters": 324,
+        "geometryMinutes": 4,
+        "geometryPointCount": 18,
+        "naverMap": {
+          "meters": 371,
+          "minutes": 5,
+          "url": "https://way-m.map.naver.com/quick-path/128.915362803757%2C37.7900353735598%2C%EC%B4%88%EB%8B%B9%EB%A7%B7%EB%8F%8C%EC%88%9C%EB%91%90%EB%B6%80%2Cundefined%2CADDRESS_POI/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        "naverDistanceDifferencePercent": 13,
+        "naverComparisonStatus": "거리 차이 25% 이내; 두 지도 서비스의 경로선은 별도 출처",
+        "note": "보행 길선 좌표는 OSM/Valhalla에서 받았고, 네이버 지도는 별도로 해당 장소 사이의 보행 가능 경로·거리·시간을 확인하는 데 사용했다. 경로선 geometry 자체는 네이버 자료가 아니다. 대표 좌표와 실제 출입구 차이는 미확인."
+      },
+      "variants": [
+        {
+          "id": "osm-valhalla-g29-g30",
+          "label": "OSM 보행 길선(Valhalla)",
+          "meters": 324,
+          "minutes": 4,
+          "points": [
+            [
+              128.915662,
+              37.79002
+            ],
+            [
+              128.915673,
+              37.790156
+            ],
+            [
+              128.91573,
+              37.790397
+            ],
+            [
+              128.915687,
+              37.790562
+            ],
+            [
+              128.915497,
+              37.79078
+            ],
+            [
+              128.915444,
+              37.790857
+            ],
+            [
+              128.915416,
+              37.790971
+            ],
+            [
+              128.915439,
+              37.791108
+            ],
+            [
+              128.915764,
+              37.791336
+            ],
+            [
+              128.916023,
+              37.791506
+            ],
+            [
+              128.916271,
+              37.79168
+            ],
+            [
+              128.916325,
+              37.791703
+            ],
+            [
+              128.916444,
+              37.791782
+            ],
+            [
+              128.916546,
+              37.791845
+            ],
+            [
+              128.916679,
+              37.791965
+            ],
+            [
+              128.916758,
+              37.792061
+            ],
+            [
+              128.916852,
+              37.792191
+            ],
+            [
+              128.916996,
+              37.792354
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "from": {
+        "id": "g30",
+        "lat": 37.7922884465996,
+        "lon": 128.917115241913
+      },
+      "to": {
+        "id": "g5",
+        "lat": 37.7941028,
+        "lon": 128.9192316
+      },
+      "source": {
+        "label": "OpenStreetMap 보행 길선(Valhalla) · 네이버 길찾기 대조",
+        "url": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.7922884465996%2C%22lon%22%3A128.917115241913%7D%2C%7B%22lat%22%3A37.7941028%2C%22lon%22%3A128.9192316%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "naverUrl": "https://way-m.map.naver.com/quick-path/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0"
+      },
+      "verification": {
+        "checkedOn": "2026-10-07",
+        "geometryProvider": "Valhalla public routing service using OpenStreetMap pedestrian network",
+        "geometrySourceUrl": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.7922884465996%2C%22lon%22%3A128.917115241913%7D%2C%7B%22lat%22%3A37.7941028%2C%22lon%22%3A128.9192316%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "geometryDistanceMeters": 508,
+        "geometryMinutes": 7,
+        "geometryPointCount": 18,
+        "naverMap": {
+          "meters": 776,
+          "minutes": 12,
+          "url": "https://way-m.map.naver.com/quick-path/128.917115241913%2C37.7922884465996%2C%EC%B4%88%EB%8B%B9110%2Cundefined%2CADDRESS_POI/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        "naverDistanceDifferencePercent": 35,
+        "naverComparisonStatus": "거리 차이 35%로 큼; 두 경로의 통행 구간·출입구를 추가 대조해야 함",
+        "note": "보행 길선 좌표는 OSM/Valhalla에서 받았고, 네이버 지도는 별도로 해당 장소 사이의 보행 가능 경로·거리·시간을 확인하는 데 사용했다. 경로선 geometry 자체는 네이버 자료가 아니다. 대표 좌표와 실제 출입구 차이는 미확인."
+      },
+      "variants": [
+        {
+          "id": "osm-valhalla-g30-g5",
+          "label": "OSM 보행 길선(Valhalla)",
+          "meters": 508,
+          "minutes": 7,
+          "points": [
+            [
+              128.916996,
+              37.792354
+            ],
+            [
+              128.917137,
+              37.792513
+            ],
+            [
+              128.917321,
+              37.792776
+            ],
+            [
+              128.917489,
+              37.793049
+            ],
+            [
+              128.91734,
+              37.793636
+            ],
+            [
+              128.917259,
+              37.794514
+            ],
+            [
+              128.917225,
+              37.794851
+            ],
+            [
+              128.917205,
+              37.79502
+            ],
+            [
+              128.917406,
+              37.794907
+            ],
+            [
+              128.917572,
+              37.794835
+            ],
+            [
+              128.917854,
+              37.794739
+            ],
+            [
+              128.918047,
+              37.794678
+            ],
+            [
+              128.918253,
+              37.794603
+            ],
+            [
+              128.918366,
+              37.794529
+            ],
+            [
+              128.918455,
+              37.794463
+            ],
+            [
+              128.91858,
+              37.794343
+            ],
+            [
+              128.918686,
+              37.794216
+            ],
+            [
+              128.918907,
+              37.79394
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "from": {
+        "id": "g5",
+        "lat": 37.7941028,
+        "lon": 128.9192316
+      },
+      "to": {
+        "id": "g56",
+        "lat": 37.794532313371874,
+        "lon": 128.9183005090944
+      },
+      "source": {
+        "label": "OpenStreetMap 보행 길선(Valhalla) · 네이버 길찾기 대조",
+        "url": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.7941028%2C%22lon%22%3A128.9192316%7D%2C%7B%22lat%22%3A37.794532313371874%2C%22lon%22%3A128.9183005090944%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "naverUrl": "https://way-m.map.naver.com/quick-path/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/128.9183005090944%2C37.794532313371874%2C%EC%9C%A0%EB%A6%AC%EC%95%8C%EC%9C%A0%ED%9D%AC%2Cundefined%2CADDRESS_POI/-/walk/0"
+      },
+      "verification": {
+        "checkedOn": "2026-10-07",
+        "geometryProvider": "Valhalla public routing service using OpenStreetMap pedestrian network",
+        "geometrySourceUrl": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.7941028%2C%22lon%22%3A128.9192316%7D%2C%7B%22lat%22%3A37.794532313371874%2C%22lon%22%3A128.9183005090944%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D",
+        "geometryDistanceMeters": 85,
+        "geometryMinutes": 2,
+        "geometryPointCount": 6,
+        "naverMap": {
+          "meters": 565,
+          "minutes": 8,
+          "url": "https://way-m.map.naver.com/quick-path/128.9192316%2C37.7941028%2C%EA%B0%95%EB%AC%B8%ED%95%B4%EB%B3%80%2Cundefined%2CADDRESS_POI/128.9183005090944%2C37.794532313371874%2C%EC%9C%A0%EB%A6%AC%EC%95%8C%EC%9C%A0%ED%9D%AC%2Cundefined%2CADDRESS_POI/-/walk/0"
+        },
+        "naverDistanceDifferencePercent": 85,
+        "naverComparisonStatus": "거리 차이 85%로 큼; 두 경로의 통행 구간·출입구를 추가 대조해야 함",
+        "note": "보행 길선 좌표는 OSM/Valhalla에서 받았고, 네이버 지도는 별도로 해당 장소 사이의 보행 가능 경로·거리·시간을 확인하는 데 사용했다. 경로선 geometry 자체는 네이버 자료가 아니다. 대표 좌표와 실제 출입구 차이는 미확인."
+      },
+      "variants": [
+        {
+          "id": "osm-valhalla-g5-g56",
+          "label": "OSM 보행 길선(Valhalla)",
+          "meters": 85,
+          "minutes": 2,
+          "points": [
+            [
+              128.918907,
+              37.79394
+            ],
+            [
+              128.918686,
+              37.794216
+            ],
+            [
+              128.91858,
+              37.794343
+            ],
+            [
+              128.918455,
+              37.794463
+            ],
+            [
+              128.918366,
+              37.794529
+            ],
+            [
+              128.918325,
+              37.794556
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

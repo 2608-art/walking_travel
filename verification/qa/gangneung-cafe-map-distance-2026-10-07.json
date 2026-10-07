@@ -1,0 +1,43 @@
+{
+  "checkedOn": "2026-10-07",
+  "source": "Naver Map walking and public transit route results",
+  "walkingSegments": [
+    {"from":"g24","to":"g25","naverMeters":294,"naverMinutes":4,"savedOsmMeters":240,"savedOsmMinutes":3},
+    {"from":"g25","to":"g258","naverMeters":856,"naverMinutes":12,"savedOsmMeters":872,"savedOsmMinutes":11},
+    {"from":"g223","to":"g195","naverMeters":345,"naverMinutes":5,"savedOsmMeters":336,"savedOsmMinutes":4},
+    {"from":"g195","to":"g193","naverMeters":149,"naverMinutes":2,"savedOsmMeters":143,"savedOsmMinutes":2},
+    {"from":"g193","to":"g98","naverMeters":609,"naverMinutes":9,"savedOsmMeters":580,"savedOsmMinutes":7},
+    {"from":"g189","to":"g187","naverMeters":103,"naverMinutes":1,"savedOsmMeters":66,"savedOsmMinutes":1},
+    {"from":"g187","to":"g17","naverMeters":3,"naverMinutes":1,"savedOsmMeters":17,"savedOsmMinutes":1}
+  ],
+  "transitSegments": [
+    {
+      "from":"g258","to":"g223","routeUrl":"https://way-m.map.naver.com/quick-path/128.8932522703908%2C37.755880812412244%2C%EB%B2%A0%EB%A6%AC%EB%B2%A0%EB%A6%AC%EB%94%B8%EA%B8%B0%2Cundefined%2CADDRESS_POI/128.915235806526%2C37.78575400683453%2C%EB%A7%90%EC%B0%A8%EB%A1%9C%2Cundefined%2CADDRESS_POI/-/transit/0",
+      "mapResult": {"routeLabel":"222","boardingStop":"신영극장","boardingStopId":"4200252","alightingStop":"강릉고입구","alightingStopId":"4200102","stopCount":12,"busRideMinutes":16,"totalRouteMinutes":35,"accessWalkMeters":374,"accessWalkMinutes":6,"egressWalkMeters":710,"egressWalkMinutes":11},
+      "busDistanceMetersApprox":4000,
+      "distanceMethod":"Approximate bus-only distance measured from the Naver route-map scale and path; Naver does not label bus-only kilometers on this result."
+    },
+    {
+      "from":"g98","to":"g189","routeUrl":"https://way-m.map.naver.com/quick-path/128.914529131473%2C37.792853268313756%2C%EC%B9%B4%ED%8E%98%20%ED%88%87%EB%A7%88%EB%A3%A8%2Cundefined%2CADDRESS_POI/128.947241042645%2C37.77263198939384%2C%EC%BB%A4%ED%94%BC%EC%BB%A4%20%EC%95%88%EB%AA%A91%ED%98%B8%EC%A0%90%2Cundefined%2CADDRESS_POI/-/transit/0",
+      "mapResult": {"routeLabel":"시티1","boardingStop":"강문해변","boardingStopId":"4200613","alightingStop":"안목커피거리","alightingStopId":"4200244","stopCount":6,"busRideMinutes":8,"totalRouteMinutes":16,"accessWalkMeters":351,"accessWalkMinutes":5,"egressWalkMeters":176,"egressWalkMinutes":2},
+      "busDistanceMetersApprox":3500,
+      "distanceMethod":"Approximate bus-only distance measured from the Naver route-map scale and path; Naver does not label bus-only kilometers on this result."
+    }
+  ],
+  "otherThemesBusReview": {
+    "status":"no-additional-bus-leg-needed",
+    "basis":"Every saved OSM pedestrian segment in the four non-cafe themes is at most 2 km; the longest is a 1.875 km walk from g10 to g11 in the history route. No bus segment or bus distance was added to those themes.",
+    "longestWalkLegByThemeMeters":{"food":707,"sea":987,"shops":634,"history":1875}
+  },
+  "appMapConnector": {
+    "status":"bus-segment-connected-with-dashed-place-to-place-line",
+    "representation":"Blue dashed connector between the cafe route's place pins, labeled with bus number and estimated distance.",
+    "notActualBusRoadGeometry":true,
+    "reason":"Naver route results provided the bus route, boarding/alighting stops, and distances, but no exportable road-path coordinates were captured. The connector shows route order only and is explicitly labeled so it is not mistaken for the bus's road geometry."
+  },
+  "limitations": [
+    "Naver transit results confirm route line, stops, and displayed travel times for the current map query, not service at a particular future departure date or time.",
+    "The bus-only distances are rounded estimates read from the Naver map scale because the route result displays stop-access walking distances but not the bus-only kilometer total.",
+    "Saved GPX walking lines remain based on the OpenStreetMap/Valhalla pedestrian paths; Naver walking values are cross-checks and can differ by route choice."
+  ]
+}

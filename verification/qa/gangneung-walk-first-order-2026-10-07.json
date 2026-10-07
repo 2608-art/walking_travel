@@ -1,0 +1,2966 @@
+{
+  "checkedOn": "2026-10-07",
+  "source": "OpenStreetMap/Valhalla pedestrian distance/time matrix",
+  "criteria": {
+    "fixedStartEnd": true,
+    "lunchWindowPositions": [
+      4,
+      5,
+      6
+    ],
+    "foodLocalToCoastwardProgression": true,
+    "transitThresholdMeters": 2000,
+    "maxTransitLegs": 3,
+    "unverifiedTransitPenaltyMinutes": 24
+  },
+  "routes": [
+    {
+      "themeId": "food",
+      "title": "시내 아침부터 강문·초당·경포까지 · 식사 3회",
+      "matrixUrl": "https://valhalla1.openstreetmap.de/sources_to_targets?json=%7B%22sources%22%3A%5B%7B%22lat%22%3A37.7559700411569%2C%22lon%22%3A128.895826398452%7D%2C%7B%22lat%22%3A37.7525948%2C%22lon%22%3A128.8919443%7D%2C%7B%22lat%22%3A37.7917949%2C%22lon%22%3A128.9097365%7D%2C%7B%22lat%22%3A37.79060924%2C%22lon%22%3A128.91497522%7D%2C%7B%22lat%22%3A37.7922884465996%2C%22lon%22%3A128.917115241913%7D%2C%7B%22lat%22%3A37.79169839544907%2C%22lon%22%3A128.9075339258423%7D%2C%7B%22lat%22%3A37.7977913781%2C%22lon%22%3A128.9095224784%7D%2C%7B%22lat%22%3A37.79199868134902%2C%22lon%22%3A128.89652591272056%7D%2C%7B%22lat%22%3A37.8051381%2C%22lon%22%3A128.9078036%7D%2C%7B%22lat%22%3A37.75363136%2C%22lon%22%3A128.89890872%7D%5D%2C%22targets%22%3A%5B%7B%22lat%22%3A37.7559700411569%2C%22lon%22%3A128.895826398452%7D%2C%7B%22lat%22%3A37.7525948%2C%22lon%22%3A128.8919443%7D%2C%7B%22lat%22%3A37.7917949%2C%22lon%22%3A128.9097365%7D%2C%7B%22lat%22%3A37.79060924%2C%22lon%22%3A128.91497522%7D%2C%7B%22lat%22%3A37.7922884465996%2C%22lon%22%3A128.917115241913%7D%2C%7B%22lat%22%3A37.79169839544907%2C%22lon%22%3A128.9075339258423%7D%2C%7B%22lat%22%3A37.7977913781%2C%22lon%22%3A128.9095224784%7D%2C%7B%22lat%22%3A37.79199868134902%2C%22lon%22%3A128.89652591272056%7D%2C%7B%22lat%22%3A37.8051381%2C%22lon%22%3A128.9078036%7D%2C%7B%22lat%22%3A37.75363136%2C%22lon%22%3A128.89890872%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%7D",
+      "current": {
+        "placeIds": [
+          "g33",
+          "g27",
+          "g22",
+          "g88",
+          "g30",
+          "g45",
+          "g12",
+          "g20",
+          "g6",
+          "g58"
+        ],
+        "allPedestrianMeters": 22666,
+        "walkOnlyMeters": 7849,
+        "legs": [
+          {
+            "from": "g33",
+            "to": "g27",
+            "mode": "walk",
+            "meters": 657,
+            "minutes": 9
+          },
+          {
+            "from": "g27",
+            "to": "g22",
+            "mode": "transit",
+            "meters": 6064,
+            "minutes": 76
+          },
+          {
+            "from": "g22",
+            "to": "g88",
+            "mode": "walk",
+            "meters": 1438,
+            "minutes": 19
+          },
+          {
+            "from": "g88",
+            "to": "g30",
+            "mode": "walk",
+            "meters": 628,
+            "minutes": 8
+          },
+          {
+            "from": "g30",
+            "to": "g45",
+            "mode": "walk",
+            "meters": 1523,
+            "minutes": 18
+          },
+          {
+            "from": "g45",
+            "to": "g12",
+            "mode": "walk",
+            "meters": 924,
+            "minutes": 11
+          },
+          {
+            "from": "g12",
+            "to": "g20",
+            "mode": "walk",
+            "meters": 2679,
+            "minutes": 32
+          },
+          {
+            "from": "g20",
+            "to": "g6",
+            "mode": "transit",
+            "meters": 1863,
+            "minutes": 24
+          },
+          {
+            "from": "g6",
+            "to": "g58",
+            "mode": "transit",
+            "meters": 6890,
+            "minutes": 83
+          }
+        ]
+      },
+      "best": {
+        "score": 141,
+        "placeIds": [
+          "g33",
+          "g27",
+          "g88",
+          "g30",
+          "g22",
+          "g45",
+          "g12",
+          "g6",
+          "g20",
+          "g58"
+        ],
+        "legs": [
+          {
+            "from": "g33",
+            "to": "g27",
+            "meters": 657,
+            "minutes": 9
+          },
+          {
+            "from": "g27",
+            "to": "g88",
+            "meters": 5418,
+            "minutes": 65
+          },
+          {
+            "from": "g88",
+            "to": "g30",
+            "meters": 628,
+            "minutes": 8
+          },
+          {
+            "from": "g30",
+            "to": "g22",
+            "meters": 1578,
+            "minutes": 20
+          },
+          {
+            "from": "g22",
+            "to": "g45",
+            "meters": 575,
+            "minutes": 8
+          },
+          {
+            "from": "g45",
+            "to": "g12",
+            "meters": 924,
+            "minutes": 11
+          },
+          {
+            "from": "g12",
+            "to": "g6",
+            "meters": 1123,
+            "minutes": 14
+          },
+          {
+            "from": "g6",
+            "to": "g20",
+            "meters": 1863,
+            "minutes": 23
+          },
+          {
+            "from": "g20",
+            "to": "g58",
+            "meters": 5163,
+            "minutes": 64
+          }
+        ],
+        "busLegs": [
+          {
+            "from": "g27",
+            "to": "g88",
+            "meters": 5418,
+            "minutes": 65
+          },
+          {
+            "from": "g20",
+            "to": "g58",
+            "meters": 5163,
+            "minutes": 64
+          }
+        ]
+      },
+      "alternatives": [
+        {
+          "score": 141,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g88",
+            "g30",
+            "g22",
+            "g45",
+            "g12",
+            "g6",
+            "g20",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g88",
+              "meters": 5418,
+              "minutes": 65
+            },
+            {
+              "from": "g88",
+              "to": "g30",
+              "meters": 628,
+              "minutes": 8
+            },
+            {
+              "from": "g30",
+              "to": "g22",
+              "meters": 1578,
+              "minutes": 20
+            },
+            {
+              "from": "g22",
+              "to": "g45",
+              "meters": 575,
+              "minutes": 8
+            },
+            {
+              "from": "g45",
+              "to": "g12",
+              "meters": 924,
+              "minutes": 11
+            },
+            {
+              "from": "g12",
+              "to": "g6",
+              "meters": 1123,
+              "minutes": 14
+            },
+            {
+              "from": "g6",
+              "to": "g20",
+              "meters": 1863,
+              "minutes": 23
+            },
+            {
+              "from": "g20",
+              "to": "g58",
+              "meters": 5163,
+              "minutes": 64
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g27",
+              "to": "g88",
+              "meters": 5418,
+              "minutes": 65
+            },
+            {
+              "from": "g20",
+              "to": "g58",
+              "meters": 5163,
+              "minutes": 64
+            }
+          ]
+        },
+        {
+          "score": 152,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g88",
+            "g30",
+            "g22",
+            "g45",
+            "g12",
+            "g20",
+            "g6",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g88",
+              "meters": 5418,
+              "minutes": 65
+            },
+            {
+              "from": "g88",
+              "to": "g30",
+              "meters": 628,
+              "minutes": 8
+            },
+            {
+              "from": "g30",
+              "to": "g22",
+              "meters": 1578,
+              "minutes": 20
+            },
+            {
+              "from": "g22",
+              "to": "g45",
+              "meters": 575,
+              "minutes": 8
+            },
+            {
+              "from": "g45",
+              "to": "g12",
+              "meters": 924,
+              "minutes": 11
+            },
+            {
+              "from": "g12",
+              "to": "g20",
+              "meters": 2679,
+              "minutes": 32
+            },
+            {
+              "from": "g20",
+              "to": "g6",
+              "meters": 1863,
+              "minutes": 24
+            },
+            {
+              "from": "g6",
+              "to": "g58",
+              "meters": 6890,
+              "minutes": 83
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g6",
+              "to": "g58",
+              "meters": 6890,
+              "minutes": 83
+            },
+            {
+              "from": "g27",
+              "to": "g88",
+              "meters": 5418,
+              "minutes": 65
+            },
+            {
+              "from": "g12",
+              "to": "g20",
+              "meters": 2679,
+              "minutes": 32
+            }
+          ]
+        },
+        {
+          "score": 155,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g88",
+            "g30",
+            "g22",
+            "g45",
+            "g6",
+            "g12",
+            "g20",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g88",
+              "meters": 5418,
+              "minutes": 65
+            },
+            {
+              "from": "g88",
+              "to": "g30",
+              "meters": 628,
+              "minutes": 8
+            },
+            {
+              "from": "g30",
+              "to": "g22",
+              "meters": 1578,
+              "minutes": 20
+            },
+            {
+              "from": "g22",
+              "to": "g45",
+              "meters": 575,
+              "minutes": 8
+            },
+            {
+              "from": "g45",
+              "to": "g6",
+              "meters": 1957,
+              "minutes": 24
+            },
+            {
+              "from": "g6",
+              "to": "g12",
+              "meters": 1127,
+              "minutes": 14
+            },
+            {
+              "from": "g12",
+              "to": "g20",
+              "meters": 2679,
+              "minutes": 32
+            },
+            {
+              "from": "g20",
+              "to": "g58",
+              "meters": 5163,
+              "minutes": 64
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g27",
+              "to": "g88",
+              "meters": 5418,
+              "minutes": 65
+            },
+            {
+              "from": "g20",
+              "to": "g58",
+              "meters": 5163,
+              "minutes": 64
+            },
+            {
+              "from": "g12",
+              "to": "g20",
+              "meters": 2679,
+              "minutes": 32
+            }
+          ]
+        },
+        {
+          "score": 155,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g88",
+            "g30",
+            "g22",
+            "g45",
+            "g20",
+            "g6",
+            "g12",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g88",
+              "meters": 5418,
+              "minutes": 65
+            },
+            {
+              "from": "g88",
+              "to": "g30",
+              "meters": 628,
+              "minutes": 8
+            },
+            {
+              "from": "g30",
+              "to": "g22",
+              "meters": 1578,
+              "minutes": 20
+            },
+            {
+              "from": "g22",
+              "to": "g45",
+              "meters": 575,
+              "minutes": 8
+            },
+            {
+              "from": "g45",
+              "to": "g20",
+              "meters": 2317,
+              "minutes": 28
+            },
+            {
+              "from": "g20",
+              "to": "g6",
+              "meters": 1863,
+              "minutes": 24
+            },
+            {
+              "from": "g6",
+              "to": "g12",
+              "meters": 1127,
+              "minutes": 14
+            },
+            {
+              "from": "g12",
+              "to": "g58",
+              "meters": 6406,
+              "minutes": 78
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g12",
+              "to": "g58",
+              "meters": 6406,
+              "minutes": 78
+            },
+            {
+              "from": "g27",
+              "to": "g88",
+              "meters": 5418,
+              "minutes": 65
+            },
+            {
+              "from": "g45",
+              "to": "g20",
+              "meters": 2317,
+              "minutes": 28
+            }
+          ]
+        },
+        {
+          "score": 159,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g88",
+            "g30",
+            "g22",
+            "g45",
+            "g20",
+            "g12",
+            "g6",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g88",
+              "meters": 5418,
+              "minutes": 65
+            },
+            {
+              "from": "g88",
+              "to": "g30",
+              "meters": 628,
+              "minutes": 8
+            },
+            {
+              "from": "g30",
+              "to": "g22",
+              "meters": 1578,
+              "minutes": 20
+            },
+            {
+              "from": "g22",
+              "to": "g45",
+              "meters": 575,
+              "minutes": 8
+            },
+            {
+              "from": "g45",
+              "to": "g20",
+              "meters": 2317,
+              "minutes": 28
+            },
+            {
+              "from": "g20",
+              "to": "g12",
+              "meters": 2679,
+              "minutes": 33
+            },
+            {
+              "from": "g12",
+              "to": "g6",
+              "meters": 1123,
+              "minutes": 14
+            },
+            {
+              "from": "g6",
+              "to": "g58",
+              "meters": 6890,
+              "minutes": 83
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g6",
+              "to": "g58",
+              "meters": 6890,
+              "minutes": 83
+            },
+            {
+              "from": "g27",
+              "to": "g88",
+              "meters": 5418,
+              "minutes": 65
+            },
+            {
+              "from": "g20",
+              "to": "g12",
+              "meters": 2679,
+              "minutes": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "themeId": "sea",
+      "title": "시내 출발 안목·남항진·송정 하루 코스 · 식사 3회",
+      "matrixUrl": "https://valhalla1.openstreetmap.de/sources_to_targets?json=%7B%22sources%22%3A%5B%7B%22lat%22%3A37.7559700411569%2C%22lon%22%3A128.895826398452%7D%2C%7B%22lat%22%3A37.7525948%2C%22lon%22%3A128.8919443%7D%2C%7B%22lat%22%3A37.7742852%2C%22lon%22%3A128.9451009%7D%2C%7B%22lat%22%3A37.77263198939384%2C%22lon%22%3A128.947241042645%7D%2C%7B%22lat%22%3A37.768135288333%2C%22lon%22%3A128.951362699457%7D%2C%7B%22lat%22%3A37.7643337061904%2C%22lon%22%3A128.954844024035%7D%2C%7B%22lat%22%3A37.765592927550614%2C%22lon%22%3A128.9525713449356%7D%2C%7B%22lat%22%3A37.7801011%2C%22lon%22%3A128.9371318%7D%2C%7B%22lat%22%3A37.78545766662671%2C%22lon%22%3A128.9273280169806%7D%2C%7B%22lat%22%3A37.75363136%2C%22lon%22%3A128.89890872%7D%5D%2C%22targets%22%3A%5B%7B%22lat%22%3A37.7559700411569%2C%22lon%22%3A128.895826398452%7D%2C%7B%22lat%22%3A37.7525948%2C%22lon%22%3A128.8919443%7D%2C%7B%22lat%22%3A37.7742852%2C%22lon%22%3A128.9451009%7D%2C%7B%22lat%22%3A37.77263198939384%2C%22lon%22%3A128.947241042645%7D%2C%7B%22lat%22%3A37.768135288333%2C%22lon%22%3A128.951362699457%7D%2C%7B%22lat%22%3A37.7643337061904%2C%22lon%22%3A128.954844024035%7D%2C%7B%22lat%22%3A37.765592927550614%2C%22lon%22%3A128.9525713449356%7D%2C%7B%22lat%22%3A37.7801011%2C%22lon%22%3A128.9371318%7D%2C%7B%22lat%22%3A37.78545766662671%2C%22lon%22%3A128.9273280169806%7D%2C%7B%22lat%22%3A37.75363136%2C%22lon%22%3A128.89890872%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%7D",
+      "current": {
+        "placeIds": [
+          "g33",
+          "g27",
+          "g4",
+          "g189",
+          "g37",
+          "g38",
+          "g297",
+          "g14",
+          "g36",
+          "g58"
+        ],
+        "allPedestrianMeters": 16862,
+        "walkOnlyMeters": 3831,
+        "legs": [
+          {
+            "from": "g33",
+            "to": "g27",
+            "mode": "walk",
+            "meters": 657,
+            "minutes": 9
+          },
+          {
+            "from": "g27",
+            "to": "g4",
+            "mode": "transit",
+            "meters": 5921,
+            "minutes": 71
+          },
+          {
+            "from": "g4",
+            "to": "g189",
+            "mode": "walk",
+            "meters": 283,
+            "minutes": 4
+          },
+          {
+            "from": "g189",
+            "to": "g37",
+            "mode": "walk",
+            "meters": 794,
+            "minutes": 10
+          },
+          {
+            "from": "g37",
+            "to": "g38",
+            "mode": "walk",
+            "meters": 551,
+            "minutes": 8
+          },
+          {
+            "from": "g38",
+            "to": "g297",
+            "mode": "walk",
+            "meters": 205,
+            "minutes": 3
+          },
+          {
+            "from": "g297",
+            "to": "g14",
+            "mode": "transit",
+            "meters": 2233,
+            "minutes": 27
+          },
+          {
+            "from": "g14",
+            "to": "g36",
+            "mode": "walk",
+            "meters": 1341,
+            "minutes": 17
+          },
+          {
+            "from": "g36",
+            "to": "g58",
+            "mode": "transit",
+            "meters": 4877,
+            "minutes": 59
+          }
+        ]
+      },
+      "best": {
+        "score": 107,
+        "placeIds": [
+          "g33",
+          "g27",
+          "g38",
+          "g297",
+          "g37",
+          "g189",
+          "g4",
+          "g14",
+          "g36",
+          "g58"
+        ],
+        "legs": [
+          {
+            "from": "g33",
+            "to": "g27",
+            "meters": 657,
+            "minutes": 9
+          },
+          {
+            "from": "g27",
+            "to": "g38",
+            "meters": 6218,
+            "minutes": 77
+          },
+          {
+            "from": "g38",
+            "to": "g297",
+            "meters": 205,
+            "minutes": 3
+          },
+          {
+            "from": "g297",
+            "to": "g37",
+            "meters": 346,
+            "minutes": 4
+          },
+          {
+            "from": "g37",
+            "to": "g189",
+            "meters": 794,
+            "minutes": 10
+          },
+          {
+            "from": "g189",
+            "to": "g4",
+            "meters": 283,
+            "minutes": 4
+          },
+          {
+            "from": "g4",
+            "to": "g14",
+            "meters": 953,
+            "minutes": 12
+          },
+          {
+            "from": "g14",
+            "to": "g36",
+            "meters": 1341,
+            "minutes": 17
+          },
+          {
+            "from": "g36",
+            "to": "g58",
+            "meters": 4877,
+            "minutes": 59
+          }
+        ],
+        "busLegs": [
+          {
+            "from": "g27",
+            "to": "g38",
+            "meters": 6218,
+            "minutes": 77
+          },
+          {
+            "from": "g36",
+            "to": "g58",
+            "meters": 4877,
+            "minutes": 59
+          }
+        ]
+      },
+      "alternatives": [
+        {
+          "score": 107,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g38",
+            "g297",
+            "g37",
+            "g189",
+            "g4",
+            "g14",
+            "g36",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g38",
+              "meters": 6218,
+              "minutes": 77
+            },
+            {
+              "from": "g38",
+              "to": "g297",
+              "meters": 205,
+              "minutes": 3
+            },
+            {
+              "from": "g297",
+              "to": "g37",
+              "meters": 346,
+              "minutes": 4
+            },
+            {
+              "from": "g37",
+              "to": "g189",
+              "meters": 794,
+              "minutes": 10
+            },
+            {
+              "from": "g189",
+              "to": "g4",
+              "meters": 283,
+              "minutes": 4
+            },
+            {
+              "from": "g4",
+              "to": "g14",
+              "meters": 953,
+              "minutes": 12
+            },
+            {
+              "from": "g14",
+              "to": "g36",
+              "meters": 1341,
+              "minutes": 17
+            },
+            {
+              "from": "g36",
+              "to": "g58",
+              "meters": 4877,
+              "minutes": 59
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g27",
+              "to": "g38",
+              "meters": 6218,
+              "minutes": 77
+            },
+            {
+              "from": "g36",
+              "to": "g58",
+              "meters": 4877,
+              "minutes": 59
+            }
+          ]
+        },
+        {
+          "score": 111,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g38",
+            "g297",
+            "g37",
+            "g4",
+            "g189",
+            "g14",
+            "g36",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g38",
+              "meters": 6218,
+              "minutes": 77
+            },
+            {
+              "from": "g38",
+              "to": "g297",
+              "meters": 205,
+              "minutes": 3
+            },
+            {
+              "from": "g297",
+              "to": "g37",
+              "meters": 346,
+              "minutes": 4
+            },
+            {
+              "from": "g37",
+              "to": "g4",
+              "meters": 934,
+              "minutes": 11
+            },
+            {
+              "from": "g4",
+              "to": "g189",
+              "meters": 283,
+              "minutes": 4
+            },
+            {
+              "from": "g189",
+              "to": "g14",
+              "meters": 1236,
+              "minutes": 15
+            },
+            {
+              "from": "g14",
+              "to": "g36",
+              "meters": 1341,
+              "minutes": 17
+            },
+            {
+              "from": "g36",
+              "to": "g58",
+              "meters": 4877,
+              "minutes": 59
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g27",
+              "to": "g38",
+              "meters": 6218,
+              "minutes": 77
+            },
+            {
+              "from": "g36",
+              "to": "g58",
+              "meters": 4877,
+              "minutes": 59
+            }
+          ]
+        },
+        {
+          "score": 114,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g37",
+            "g297",
+            "g38",
+            "g189",
+            "g4",
+            "g14",
+            "g36",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g37",
+              "meters": 6485,
+              "minutes": 78
+            },
+            {
+              "from": "g37",
+              "to": "g297",
+              "meters": 346,
+              "minutes": 5
+            },
+            {
+              "from": "g297",
+              "to": "g38",
+              "meters": 205,
+              "minutes": 3
+            },
+            {
+              "from": "g38",
+              "to": "g189",
+              "meters": 1345,
+              "minutes": 16
+            },
+            {
+              "from": "g189",
+              "to": "g4",
+              "meters": 283,
+              "minutes": 4
+            },
+            {
+              "from": "g4",
+              "to": "g14",
+              "meters": 953,
+              "minutes": 12
+            },
+            {
+              "from": "g14",
+              "to": "g36",
+              "meters": 1341,
+              "minutes": 17
+            },
+            {
+              "from": "g36",
+              "to": "g58",
+              "meters": 4877,
+              "minutes": 59
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g27",
+              "to": "g37",
+              "meters": 6485,
+              "minutes": 78
+            },
+            {
+              "from": "g36",
+              "to": "g58",
+              "meters": 4877,
+              "minutes": 59
+            }
+          ]
+        },
+        {
+          "score": 114,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g36",
+            "g38",
+            "g297",
+            "g37",
+            "g189",
+            "g4",
+            "g14",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g36",
+              "meters": 5232,
+              "minutes": 63
+            },
+            {
+              "from": "g36",
+              "to": "g38",
+              "meters": 3484,
+              "minutes": 43
+            },
+            {
+              "from": "g38",
+              "to": "g297",
+              "meters": 205,
+              "minutes": 3
+            },
+            {
+              "from": "g297",
+              "to": "g37",
+              "meters": 346,
+              "minutes": 4
+            },
+            {
+              "from": "g37",
+              "to": "g189",
+              "meters": 794,
+              "minutes": 10
+            },
+            {
+              "from": "g189",
+              "to": "g4",
+              "meters": 283,
+              "minutes": 4
+            },
+            {
+              "from": "g4",
+              "to": "g14",
+              "meters": 953,
+              "minutes": 12
+            },
+            {
+              "from": "g14",
+              "to": "g58",
+              "meters": 4847,
+              "minutes": 60
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g27",
+              "to": "g36",
+              "meters": 5232,
+              "minutes": 63
+            },
+            {
+              "from": "g14",
+              "to": "g58",
+              "meters": 4847,
+              "minutes": 60
+            },
+            {
+              "from": "g36",
+              "to": "g38",
+              "meters": 3484,
+              "minutes": 43
+            }
+          ]
+        },
+        {
+          "score": 115,
+          "placeIds": [
+            "g33",
+            "g36",
+            "g14",
+            "g4",
+            "g189",
+            "g297",
+            "g38",
+            "g37",
+            "g27",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g36",
+              "meters": 4699,
+              "minutes": 56
+            },
+            {
+              "from": "g36",
+              "to": "g14",
+              "meters": 1341,
+              "minutes": 17
+            },
+            {
+              "from": "g14",
+              "to": "g4",
+              "meters": 953,
+              "minutes": 12
+            },
+            {
+              "from": "g4",
+              "to": "g189",
+              "meters": 283,
+              "minutes": 4
+            },
+            {
+              "from": "g189",
+              "to": "g297",
+              "meters": 1140,
+              "minutes": 14
+            },
+            {
+              "from": "g297",
+              "to": "g38",
+              "meters": 205,
+              "minutes": 3
+            },
+            {
+              "from": "g38",
+              "to": "g37",
+              "meters": 551,
+              "minutes": 7
+            },
+            {
+              "from": "g37",
+              "to": "g27",
+              "meters": 6485,
+              "minutes": 80
+            },
+            {
+              "from": "g27",
+              "to": "g58",
+              "meters": 800,
+              "minutes": 10
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g37",
+              "to": "g27",
+              "meters": 6485,
+              "minutes": 80
+            },
+            {
+              "from": "g33",
+              "to": "g36",
+              "meters": 4699,
+              "minutes": 56
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "themeId": "shops",
+      "title": "시내 아침·관아·중앙시장·월화거리 · 식사 3회",
+      "matrixUrl": "https://valhalla1.openstreetmap.de/sources_to_targets?json=%7B%22sources%22%3A%5B%7B%22lat%22%3A37.7559700411569%2C%22lon%22%3A128.895826398452%7D%2C%7B%22lat%22%3A37.7525948%2C%22lon%22%3A128.8919443%7D%2C%7B%22lat%22%3A37.7546925%2C%22lon%22%3A128.8949965%7D%2C%7B%22lat%22%3A37.754585717463065%2C%22lon%22%3A128.89737644257792%7D%2C%7B%22lat%22%3A37.7540251%2C%22lon%22%3A128.8986238%7D%2C%7B%22lat%22%3A37.75315860186623%2C%22lon%22%3A128.8994003845463%7D%2C%7B%22lat%22%3A37.7559098%2C%22lon%22%3A128.8974965%7D%2C%7B%22lat%22%3A37.7522636%2C%22lon%22%3A128.901498%7D%2C%7B%22lat%22%3A37.74836402941369%2C%22lon%22%3A128.8948305181144%7D%2C%7B%22lat%22%3A37.75363136%2C%22lon%22%3A128.89890872%7D%5D%2C%22targets%22%3A%5B%7B%22lat%22%3A37.7559700411569%2C%22lon%22%3A128.895826398452%7D%2C%7B%22lat%22%3A37.7525948%2C%22lon%22%3A128.8919443%7D%2C%7B%22lat%22%3A37.7546925%2C%22lon%22%3A128.8949965%7D%2C%7B%22lat%22%3A37.754585717463065%2C%22lon%22%3A128.89737644257792%7D%2C%7B%22lat%22%3A37.7540251%2C%22lon%22%3A128.8986238%7D%2C%7B%22lat%22%3A37.75315860186623%2C%22lon%22%3A128.8994003845463%7D%2C%7B%22lat%22%3A37.7559098%2C%22lon%22%3A128.8974965%7D%2C%7B%22lat%22%3A37.7522636%2C%22lon%22%3A128.901498%7D%2C%7B%22lat%22%3A37.74836402941369%2C%22lon%22%3A128.8948305181144%7D%2C%7B%22lat%22%3A37.75363136%2C%22lon%22%3A128.89890872%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%7D",
+      "current": {
+        "placeIds": [
+          "g33",
+          "g27",
+          "g8",
+          "g145",
+          "g1",
+          "g73",
+          "g3",
+          "g7",
+          "g18",
+          "g58"
+        ],
+        "allPedestrianMeters": 5055,
+        "walkOnlyMeters": 5055,
+        "legs": [
+          {
+            "from": "g33",
+            "to": "g27",
+            "mode": "walk",
+            "meters": 657,
+            "minutes": 9
+          },
+          {
+            "from": "g27",
+            "to": "g8",
+            "mode": "walk",
+            "meters": 500,
+            "minutes": 6
+          },
+          {
+            "from": "g8",
+            "to": "g145",
+            "mode": "walk",
+            "meters": 295,
+            "minutes": 4
+          },
+          {
+            "from": "g145",
+            "to": "g1",
+            "mode": "walk",
+            "meters": 188,
+            "minutes": 3
+          },
+          {
+            "from": "g1",
+            "to": "g73",
+            "mode": "walk",
+            "meters": 166,
+            "minutes": 2
+          },
+          {
+            "from": "g73",
+            "to": "g3",
+            "mode": "walk",
+            "meters": 419,
+            "minutes": 6
+          },
+          {
+            "from": "g3",
+            "to": "g7",
+            "mode": "walk",
+            "meters": 619,
+            "minutes": 8
+          },
+          {
+            "from": "g7",
+            "to": "g18",
+            "mode": "walk",
+            "meters": 1165,
+            "minutes": 15
+          },
+          {
+            "from": "g18",
+            "to": "g58",
+            "mode": "walk",
+            "meters": 1046,
+            "minutes": 13
+          }
+        ]
+      },
+      "best": {
+        "score": 53,
+        "placeIds": [
+          "g33",
+          "g8",
+          "g3",
+          "g145",
+          "g27",
+          "g18",
+          "g7",
+          "g73",
+          "g1",
+          "g58"
+        ],
+        "legs": [
+          {
+            "from": "g33",
+            "to": "g8",
+            "meters": 207,
+            "minutes": 3
+          },
+          {
+            "from": "g8",
+            "to": "g3",
+            "meters": 335,
+            "minutes": 5
+          },
+          {
+            "from": "g3",
+            "to": "g145",
+            "meters": 197,
+            "minutes": 3
+          },
+          {
+            "from": "g145",
+            "to": "g27",
+            "meters": 638,
+            "minutes": 9
+          },
+          {
+            "from": "g27",
+            "to": "g18",
+            "meters": 876,
+            "minutes": 11
+          },
+          {
+            "from": "g18",
+            "to": "g7",
+            "meters": 1165,
+            "minutes": 14
+          },
+          {
+            "from": "g7",
+            "to": "g73",
+            "meters": 334,
+            "minutes": 5
+          },
+          {
+            "from": "g73",
+            "to": "g1",
+            "meters": 166,
+            "minutes": 2
+          },
+          {
+            "from": "g1",
+            "to": "g58",
+            "meters": 30,
+            "minutes": 1
+          }
+        ],
+        "busLegs": []
+      },
+      "alternatives": [
+        {
+          "score": 53,
+          "placeIds": [
+            "g33",
+            "g8",
+            "g3",
+            "g145",
+            "g27",
+            "g18",
+            "g7",
+            "g73",
+            "g1",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g8",
+              "meters": 207,
+              "minutes": 3
+            },
+            {
+              "from": "g8",
+              "to": "g3",
+              "meters": 335,
+              "minutes": 5
+            },
+            {
+              "from": "g3",
+              "to": "g145",
+              "meters": 197,
+              "minutes": 3
+            },
+            {
+              "from": "g145",
+              "to": "g27",
+              "meters": 638,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g18",
+              "meters": 876,
+              "minutes": 11
+            },
+            {
+              "from": "g18",
+              "to": "g7",
+              "meters": 1165,
+              "minutes": 14
+            },
+            {
+              "from": "g7",
+              "to": "g73",
+              "meters": 334,
+              "minutes": 5
+            },
+            {
+              "from": "g73",
+              "to": "g1",
+              "meters": 166,
+              "minutes": 2
+            },
+            {
+              "from": "g1",
+              "to": "g58",
+              "meters": 30,
+              "minutes": 1
+            }
+          ],
+          "busLegs": []
+        },
+        {
+          "score": 53,
+          "placeIds": [
+            "g33",
+            "g8",
+            "g27",
+            "g18",
+            "g145",
+            "g3",
+            "g1",
+            "g73",
+            "g7",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g8",
+              "meters": 207,
+              "minutes": 3
+            },
+            {
+              "from": "g8",
+              "to": "g27",
+              "meters": 500,
+              "minutes": 7
+            },
+            {
+              "from": "g27",
+              "to": "g18",
+              "meters": 876,
+              "minutes": 11
+            },
+            {
+              "from": "g18",
+              "to": "g145",
+              "meters": 1079,
+              "minutes": 14
+            },
+            {
+              "from": "g145",
+              "to": "g3",
+              "meters": 197,
+              "minutes": 3
+            },
+            {
+              "from": "g3",
+              "to": "g1",
+              "meters": 312,
+              "minutes": 4
+            },
+            {
+              "from": "g1",
+              "to": "g73",
+              "meters": 166,
+              "minutes": 2
+            },
+            {
+              "from": "g73",
+              "to": "g7",
+              "meters": 334,
+              "minutes": 4
+            },
+            {
+              "from": "g7",
+              "to": "g58",
+              "meters": 407,
+              "minutes": 5
+            }
+          ],
+          "busLegs": []
+        },
+        {
+          "score": 54,
+          "placeIds": [
+            "g33",
+            "g8",
+            "g27",
+            "g18",
+            "g145",
+            "g3",
+            "g7",
+            "g73",
+            "g1",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g8",
+              "meters": 207,
+              "minutes": 3
+            },
+            {
+              "from": "g8",
+              "to": "g27",
+              "meters": 500,
+              "minutes": 7
+            },
+            {
+              "from": "g27",
+              "to": "g18",
+              "meters": 876,
+              "minutes": 11
+            },
+            {
+              "from": "g18",
+              "to": "g145",
+              "meters": 1079,
+              "minutes": 14
+            },
+            {
+              "from": "g145",
+              "to": "g3",
+              "meters": 197,
+              "minutes": 3
+            },
+            {
+              "from": "g3",
+              "to": "g7",
+              "meters": 619,
+              "minutes": 8
+            },
+            {
+              "from": "g7",
+              "to": "g73",
+              "meters": 334,
+              "minutes": 5
+            },
+            {
+              "from": "g73",
+              "to": "g1",
+              "meters": 166,
+              "minutes": 2
+            },
+            {
+              "from": "g1",
+              "to": "g58",
+              "meters": 30,
+              "minutes": 1
+            }
+          ],
+          "busLegs": []
+        },
+        {
+          "score": 54,
+          "placeIds": [
+            "g33",
+            "g8",
+            "g3",
+            "g145",
+            "g27",
+            "g18",
+            "g73",
+            "g7",
+            "g1",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g8",
+              "meters": 207,
+              "minutes": 3
+            },
+            {
+              "from": "g8",
+              "to": "g3",
+              "meters": 335,
+              "minutes": 5
+            },
+            {
+              "from": "g3",
+              "to": "g145",
+              "meters": 197,
+              "minutes": 3
+            },
+            {
+              "from": "g145",
+              "to": "g27",
+              "meters": 638,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g18",
+              "meters": 876,
+              "minutes": 11
+            },
+            {
+              "from": "g18",
+              "to": "g73",
+              "meters": 997,
+              "minutes": 12
+            },
+            {
+              "from": "g73",
+              "to": "g7",
+              "meters": 334,
+              "minutes": 4
+            },
+            {
+              "from": "g7",
+              "to": "g1",
+              "meters": 421,
+              "minutes": 6
+            },
+            {
+              "from": "g1",
+              "to": "g58",
+              "meters": 30,
+              "minutes": 1
+            }
+          ],
+          "busLegs": []
+        },
+        {
+          "score": 54,
+          "placeIds": [
+            "g33",
+            "g8",
+            "g27",
+            "g18",
+            "g145",
+            "g3",
+            "g1",
+            "g7",
+            "g73",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g8",
+              "meters": 207,
+              "minutes": 3
+            },
+            {
+              "from": "g8",
+              "to": "g27",
+              "meters": 500,
+              "minutes": 7
+            },
+            {
+              "from": "g27",
+              "to": "g18",
+              "meters": 876,
+              "minutes": 11
+            },
+            {
+              "from": "g18",
+              "to": "g145",
+              "meters": 1079,
+              "minutes": 14
+            },
+            {
+              "from": "g145",
+              "to": "g3",
+              "meters": 197,
+              "minutes": 3
+            },
+            {
+              "from": "g3",
+              "to": "g1",
+              "meters": 312,
+              "minutes": 4
+            },
+            {
+              "from": "g1",
+              "to": "g7",
+              "meters": 421,
+              "minutes": 5
+            },
+            {
+              "from": "g7",
+              "to": "g73",
+              "meters": 334,
+              "minutes": 5
+            },
+            {
+              "from": "g73",
+              "to": "g58",
+              "meters": 145,
+              "minutes": 2
+            }
+          ],
+          "busLegs": []
+        }
+      ]
+    },
+    {
+      "themeId": "cafe",
+      "title": "특색 카페 하루 코스 · 시내→초당→안목 · 10곳",
+      "matrixUrl": "https://valhalla1.openstreetmap.de/sources_to_targets?json=%7B%22sources%22%3A%5B%7B%22lat%22%3A37.7510368%2C%22lon%22%3A128.8924254%7D%2C%7B%22lat%22%3A37.755880812412244%2C%22lon%22%3A128.8932522703908%7D%2C%7B%22lat%22%3A37.7497493%2C%22lon%22%3A128.890473%7D%2C%7B%22lat%22%3A37.792853268313756%2C%22lon%22%3A128.914529131473%7D%2C%7B%22lat%22%3A37.78777042884899%2C%22lon%22%3A128.91288597760834%7D%2C%7B%22lat%22%3A37.78818396918906%2C%22lon%22%3A128.91449034217882%7D%2C%7B%22lat%22%3A37.78575400683453%2C%22lon%22%3A128.915235806526%7D%2C%7B%22lat%22%3A37.77263198939384%2C%22lon%22%3A128.947241042645%7D%2C%7B%22lat%22%3A37.77220533189159%2C%22lon%22%3A128.9477655048886%7D%2C%7B%22lat%22%3A37.7720457%2C%22lon%22%3A128.9478294%7D%5D%2C%22targets%22%3A%5B%7B%22lat%22%3A37.7510368%2C%22lon%22%3A128.8924254%7D%2C%7B%22lat%22%3A37.755880812412244%2C%22lon%22%3A128.8932522703908%7D%2C%7B%22lat%22%3A37.7497493%2C%22lon%22%3A128.890473%7D%2C%7B%22lat%22%3A37.792853268313756%2C%22lon%22%3A128.914529131473%7D%2C%7B%22lat%22%3A37.78777042884899%2C%22lon%22%3A128.91288597760834%7D%2C%7B%22lat%22%3A37.78818396918906%2C%22lon%22%3A128.91449034217882%7D%2C%7B%22lat%22%3A37.78575400683453%2C%22lon%22%3A128.915235806526%7D%2C%7B%22lat%22%3A37.77263198939384%2C%22lon%22%3A128.947241042645%7D%2C%7B%22lat%22%3A37.77220533189159%2C%22lon%22%3A128.9477655048886%7D%2C%7B%22lat%22%3A37.7720457%2C%22lon%22%3A128.9478294%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%7D",
+      "current": {
+        "placeIds": [
+          "g24",
+          "g258",
+          "g25",
+          "g98",
+          "g195",
+          "g193",
+          "g223",
+          "g189",
+          "g187",
+          "g17"
+        ],
+        "allPedestrianMeters": 12680,
+        "walkOnlyMeters": 2913,
+        "legs": [
+          {
+            "from": "g24",
+            "to": "g258",
+            "mode": "walk",
+            "meters": 704,
+            "minutes": 9
+          },
+          {
+            "from": "g258",
+            "to": "g25",
+            "mode": "walk",
+            "meters": 873,
+            "minutes": 11
+          },
+          {
+            "from": "g25",
+            "to": "g98",
+            "mode": "transit",
+            "meters": 6003,
+            "minutes": 72
+          },
+          {
+            "from": "g98",
+            "to": "g195",
+            "mode": "walk",
+            "meters": 725,
+            "minutes": 9
+          },
+          {
+            "from": "g195",
+            "to": "g193",
+            "mode": "walk",
+            "meters": 144,
+            "minutes": 2
+          },
+          {
+            "from": "g193",
+            "to": "g223",
+            "mode": "walk",
+            "meters": 384,
+            "minutes": 5
+          },
+          {
+            "from": "g223",
+            "to": "g189",
+            "mode": "transit",
+            "meters": 3764,
+            "minutes": 46
+          },
+          {
+            "from": "g189",
+            "to": "g187",
+            "mode": "walk",
+            "meters": 66,
+            "minutes": 1
+          },
+          {
+            "from": "g187",
+            "to": "g17",
+            "mode": "walk",
+            "meters": 17,
+            "minutes": 1
+          }
+        ]
+      },
+      "best": {
+        "score": 77,
+        "placeIds": [
+          "g24",
+          "g25",
+          "g258",
+          "g223",
+          "g195",
+          "g193",
+          "g98",
+          "g189",
+          "g187",
+          "g17"
+        ],
+        "legs": [
+          {
+            "from": "g24",
+            "to": "g25",
+            "meters": 240,
+            "minutes": 3
+          },
+          {
+            "from": "g25",
+            "to": "g258",
+            "meters": 873,
+            "minutes": 11
+          },
+          {
+            "from": "g258",
+            "to": "g223",
+            "meters": 4424,
+            "minutes": 54
+          },
+          {
+            "from": "g223",
+            "to": "g195",
+            "meters": 336,
+            "minutes": 4
+          },
+          {
+            "from": "g195",
+            "to": "g193",
+            "meters": 144,
+            "minutes": 2
+          },
+          {
+            "from": "g193",
+            "to": "g98",
+            "meters": 581,
+            "minutes": 7
+          },
+          {
+            "from": "g98",
+            "to": "g189",
+            "meters": 4045,
+            "minutes": 50
+          },
+          {
+            "from": "g189",
+            "to": "g187",
+            "meters": 66,
+            "minutes": 1
+          },
+          {
+            "from": "g187",
+            "to": "g17",
+            "meters": 17,
+            "minutes": 1
+          }
+        ],
+        "busLegs": [
+          {
+            "from": "g258",
+            "to": "g223",
+            "meters": 4424,
+            "minutes": 54
+          },
+          {
+            "from": "g98",
+            "to": "g189",
+            "meters": 4045,
+            "minutes": 50
+          }
+        ]
+      },
+      "alternatives": [
+        {
+          "score": 77,
+          "placeIds": [
+            "g24",
+            "g25",
+            "g258",
+            "g223",
+            "g195",
+            "g193",
+            "g98",
+            "g189",
+            "g187",
+            "g17"
+          ],
+          "legs": [
+            {
+              "from": "g24",
+              "to": "g25",
+              "meters": 240,
+              "minutes": 3
+            },
+            {
+              "from": "g25",
+              "to": "g258",
+              "meters": 873,
+              "minutes": 11
+            },
+            {
+              "from": "g258",
+              "to": "g223",
+              "meters": 4424,
+              "minutes": 54
+            },
+            {
+              "from": "g223",
+              "to": "g195",
+              "meters": 336,
+              "minutes": 4
+            },
+            {
+              "from": "g195",
+              "to": "g193",
+              "meters": 144,
+              "minutes": 2
+            },
+            {
+              "from": "g193",
+              "to": "g98",
+              "meters": 581,
+              "minutes": 7
+            },
+            {
+              "from": "g98",
+              "to": "g189",
+              "meters": 4045,
+              "minutes": 50
+            },
+            {
+              "from": "g189",
+              "to": "g187",
+              "meters": 66,
+              "minutes": 1
+            },
+            {
+              "from": "g187",
+              "to": "g17",
+              "meters": 17,
+              "minutes": 1
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g258",
+              "to": "g223",
+              "meters": 4424,
+              "minutes": 54
+            },
+            {
+              "from": "g98",
+              "to": "g189",
+              "meters": 4045,
+              "minutes": 50
+            }
+          ]
+        },
+        {
+          "score": 77,
+          "placeIds": [
+            "g24",
+            "g25",
+            "g258",
+            "g223",
+            "g195",
+            "g193",
+            "g98",
+            "g187",
+            "g189",
+            "g17"
+          ],
+          "legs": [
+            {
+              "from": "g24",
+              "to": "g25",
+              "meters": 240,
+              "minutes": 3
+            },
+            {
+              "from": "g25",
+              "to": "g258",
+              "meters": 873,
+              "minutes": 11
+            },
+            {
+              "from": "g258",
+              "to": "g223",
+              "meters": 4424,
+              "minutes": 54
+            },
+            {
+              "from": "g223",
+              "to": "g195",
+              "meters": 336,
+              "minutes": 4
+            },
+            {
+              "from": "g195",
+              "to": "g193",
+              "meters": 144,
+              "minutes": 2
+            },
+            {
+              "from": "g193",
+              "to": "g98",
+              "meters": 581,
+              "minutes": 7
+            },
+            {
+              "from": "g98",
+              "to": "g187",
+              "meters": 4111,
+              "minutes": 51
+            },
+            {
+              "from": "g187",
+              "to": "g189",
+              "meters": 66,
+              "minutes": 1
+            },
+            {
+              "from": "g189",
+              "to": "g17",
+              "meters": 83,
+              "minutes": 1
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g258",
+              "to": "g223",
+              "meters": 4424,
+              "minutes": 54
+            },
+            {
+              "from": "g98",
+              "to": "g187",
+              "meters": 4111,
+              "minutes": 51
+            }
+          ]
+        },
+        {
+          "score": 78,
+          "placeIds": [
+            "g24",
+            "g25",
+            "g258",
+            "g98",
+            "g193",
+            "g195",
+            "g223",
+            "g189",
+            "g187",
+            "g17"
+          ],
+          "legs": [
+            {
+              "from": "g24",
+              "to": "g25",
+              "meters": 240,
+              "minutes": 3
+            },
+            {
+              "from": "g25",
+              "to": "g258",
+              "meters": 873,
+              "minutes": 11
+            },
+            {
+              "from": "g258",
+              "to": "g98",
+              "meters": 5291,
+              "minutes": 63
+            },
+            {
+              "from": "g98",
+              "to": "g193",
+              "meters": 581,
+              "minutes": 8
+            },
+            {
+              "from": "g193",
+              "to": "g195",
+              "meters": 144,
+              "minutes": 2
+            },
+            {
+              "from": "g195",
+              "to": "g223",
+              "meters": 336,
+              "minutes": 4
+            },
+            {
+              "from": "g223",
+              "to": "g189",
+              "meters": 3764,
+              "minutes": 46
+            },
+            {
+              "from": "g189",
+              "to": "g187",
+              "meters": 66,
+              "minutes": 1
+            },
+            {
+              "from": "g187",
+              "to": "g17",
+              "meters": 17,
+              "minutes": 1
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g258",
+              "to": "g98",
+              "meters": 5291,
+              "minutes": 63
+            },
+            {
+              "from": "g223",
+              "to": "g189",
+              "meters": 3764,
+              "minutes": 46
+            }
+          ]
+        },
+        {
+          "score": 78,
+          "placeIds": [
+            "g24",
+            "g25",
+            "g258",
+            "g98",
+            "g193",
+            "g195",
+            "g223",
+            "g187",
+            "g189",
+            "g17"
+          ],
+          "legs": [
+            {
+              "from": "g24",
+              "to": "g25",
+              "meters": 240,
+              "minutes": 3
+            },
+            {
+              "from": "g25",
+              "to": "g258",
+              "meters": 873,
+              "minutes": 11
+            },
+            {
+              "from": "g258",
+              "to": "g98",
+              "meters": 5291,
+              "minutes": 63
+            },
+            {
+              "from": "g98",
+              "to": "g193",
+              "meters": 581,
+              "minutes": 8
+            },
+            {
+              "from": "g193",
+              "to": "g195",
+              "meters": 144,
+              "minutes": 2
+            },
+            {
+              "from": "g195",
+              "to": "g223",
+              "meters": 336,
+              "minutes": 4
+            },
+            {
+              "from": "g223",
+              "to": "g187",
+              "meters": 3830,
+              "minutes": 46
+            },
+            {
+              "from": "g187",
+              "to": "g189",
+              "meters": 66,
+              "minutes": 1
+            },
+            {
+              "from": "g189",
+              "to": "g17",
+              "meters": 83,
+              "minutes": 1
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g258",
+              "to": "g98",
+              "meters": 5291,
+              "minutes": 63
+            },
+            {
+              "from": "g223",
+              "to": "g187",
+              "meters": 3830,
+              "minutes": 46
+            }
+          ]
+        },
+        {
+          "score": 80,
+          "placeIds": [
+            "g24",
+            "g25",
+            "g258",
+            "g223",
+            "g193",
+            "g195",
+            "g98",
+            "g189",
+            "g187",
+            "g17"
+          ],
+          "legs": [
+            {
+              "from": "g24",
+              "to": "g25",
+              "meters": 240,
+              "minutes": 3
+            },
+            {
+              "from": "g25",
+              "to": "g258",
+              "meters": 873,
+              "minutes": 11
+            },
+            {
+              "from": "g258",
+              "to": "g223",
+              "meters": 4424,
+              "minutes": 54
+            },
+            {
+              "from": "g223",
+              "to": "g193",
+              "meters": 384,
+              "minutes": 5
+            },
+            {
+              "from": "g193",
+              "to": "g195",
+              "meters": 144,
+              "minutes": 2
+            },
+            {
+              "from": "g195",
+              "to": "g98",
+              "meters": 725,
+              "minutes": 9
+            },
+            {
+              "from": "g98",
+              "to": "g189",
+              "meters": 4045,
+              "minutes": 50
+            },
+            {
+              "from": "g189",
+              "to": "g187",
+              "meters": 66,
+              "minutes": 1
+            },
+            {
+              "from": "g187",
+              "to": "g17",
+              "meters": 17,
+              "minutes": 1
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g258",
+              "to": "g223",
+              "meters": 4424,
+              "minutes": 54
+            },
+            {
+              "from": "g98",
+              "to": "g189",
+              "meters": 4045,
+              "minutes": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "themeId": "history",
+      "title": "시내 출발 역사·문화 하루 코스 · 식사 3회",
+      "matrixUrl": "https://valhalla1.openstreetmap.de/sources_to_targets?json=%7B%22sources%22%3A%5B%7B%22lat%22%3A37.7559700411569%2C%22lon%22%3A128.895826398452%7D%2C%7B%22lat%22%3A37.7525948%2C%22lon%22%3A128.8919443%7D%2C%7B%22lat%22%3A37.74836402941369%2C%22lon%22%3A128.8948305181144%7D%2C%7B%22lat%22%3A37.78626062590557%2C%22lon%22%3A128.88764811113037%7D%2C%7B%22lat%22%3A37.7854492%2C%22lon%22%3A128.8847671%7D%2C%7B%22lat%22%3A37.7791902%2C%22lon%22%3A128.8798026%7D%2C%7B%22lat%22%3A37.7950742%2C%22lon%22%3A128.8966363%7D%2C%7B%22lat%22%3A37.796464660594374%2C%22lon%22%3A128.89621326826912%7D%2C%7B%22lat%22%3A37.8051381%2C%22lon%22%3A128.9078036%7D%2C%7B%22lat%22%3A37.75363136%2C%22lon%22%3A128.89890872%7D%5D%2C%22targets%22%3A%5B%7B%22lat%22%3A37.7559700411569%2C%22lon%22%3A128.895826398452%7D%2C%7B%22lat%22%3A37.7525948%2C%22lon%22%3A128.8919443%7D%2C%7B%22lat%22%3A37.74836402941369%2C%22lon%22%3A128.8948305181144%7D%2C%7B%22lat%22%3A37.78626062590557%2C%22lon%22%3A128.88764811113037%7D%2C%7B%22lat%22%3A37.7854492%2C%22lon%22%3A128.8847671%7D%2C%7B%22lat%22%3A37.7791902%2C%22lon%22%3A128.8798026%7D%2C%7B%22lat%22%3A37.7950742%2C%22lon%22%3A128.8966363%7D%2C%7B%22lat%22%3A37.796464660594374%2C%22lon%22%3A128.89621326826912%7D%2C%7B%22lat%22%3A37.8051381%2C%22lon%22%3A128.9078036%7D%2C%7B%22lat%22%3A37.75363136%2C%22lon%22%3A128.89890872%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%7D",
+      "current": {
+        "placeIds": [
+          "g33",
+          "g27",
+          "g18",
+          "g210",
+          "g10",
+          "g9",
+          "g11",
+          "g289",
+          "g6",
+          "g58"
+        ],
+        "allPedestrianMeters": 20001,
+        "walkOnlyMeters": 4844,
+        "legs": [
+          {
+            "from": "g33",
+            "to": "g27",
+            "mode": "walk",
+            "meters": 657,
+            "minutes": 9
+          },
+          {
+            "from": "g27",
+            "to": "g18",
+            "mode": "walk",
+            "meters": 876,
+            "minutes": 11
+          },
+          {
+            "from": "g18",
+            "to": "g210",
+            "mode": "transit",
+            "meters": 5377,
+            "minutes": 67
+          },
+          {
+            "from": "g210",
+            "to": "g10",
+            "mode": "walk",
+            "meters": 272,
+            "minutes": 4
+          },
+          {
+            "from": "g10",
+            "to": "g9",
+            "mode": "walk",
+            "meters": 1261,
+            "minutes": 16
+          },
+          {
+            "from": "g9",
+            "to": "g11",
+            "mode": "transit",
+            "meters": 2890,
+            "minutes": 35
+          },
+          {
+            "from": "g11",
+            "to": "g289",
+            "mode": "walk",
+            "meters": 301,
+            "minutes": 4
+          },
+          {
+            "from": "g289",
+            "to": "g6",
+            "mode": "walk",
+            "meters": 1477,
+            "minutes": 19
+          },
+          {
+            "from": "g6",
+            "to": "g58",
+            "mode": "transit",
+            "meters": 6890,
+            "minutes": 83
+          }
+        ]
+      },
+      "best": {
+        "score": 132,
+        "placeIds": [
+          "g33",
+          "g9",
+          "g10",
+          "g210",
+          "g11",
+          "g289",
+          "g6",
+          "g18",
+          "g27",
+          "g58"
+        ],
+        "legs": [
+          {
+            "from": "g33",
+            "to": "g9",
+            "meters": 3399,
+            "minutes": 43
+          },
+          {
+            "from": "g9",
+            "to": "g10",
+            "meters": 1261,
+            "minutes": 15
+          },
+          {
+            "from": "g10",
+            "to": "g210",
+            "meters": 272,
+            "minutes": 4
+          },
+          {
+            "from": "g210",
+            "to": "g11",
+            "meters": 1604,
+            "minutes": 20
+          },
+          {
+            "from": "g11",
+            "to": "g289",
+            "meters": 301,
+            "minutes": 4
+          },
+          {
+            "from": "g289",
+            "to": "g6",
+            "meters": 1477,
+            "minutes": 19
+          },
+          {
+            "from": "g6",
+            "to": "g18",
+            "meters": 7540,
+            "minutes": 93
+          },
+          {
+            "from": "g18",
+            "to": "g27",
+            "meters": 876,
+            "minutes": 12
+          },
+          {
+            "from": "g27",
+            "to": "g58",
+            "meters": 800,
+            "minutes": 10
+          }
+        ],
+        "busLegs": [
+          {
+            "from": "g6",
+            "to": "g18",
+            "meters": 7540,
+            "minutes": 93
+          },
+          {
+            "from": "g33",
+            "to": "g9",
+            "meters": 3399,
+            "minutes": 43
+          }
+        ]
+      },
+      "alternatives": [
+        {
+          "score": 132,
+          "placeIds": [
+            "g33",
+            "g9",
+            "g10",
+            "g210",
+            "g11",
+            "g289",
+            "g6",
+            "g18",
+            "g27",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g9",
+              "meters": 3399,
+              "minutes": 43
+            },
+            {
+              "from": "g9",
+              "to": "g10",
+              "meters": 1261,
+              "minutes": 15
+            },
+            {
+              "from": "g10",
+              "to": "g210",
+              "meters": 272,
+              "minutes": 4
+            },
+            {
+              "from": "g210",
+              "to": "g11",
+              "meters": 1604,
+              "minutes": 20
+            },
+            {
+              "from": "g11",
+              "to": "g289",
+              "meters": 301,
+              "minutes": 4
+            },
+            {
+              "from": "g289",
+              "to": "g6",
+              "meters": 1477,
+              "minutes": 19
+            },
+            {
+              "from": "g6",
+              "to": "g18",
+              "meters": 7540,
+              "minutes": 93
+            },
+            {
+              "from": "g18",
+              "to": "g27",
+              "meters": 876,
+              "minutes": 12
+            },
+            {
+              "from": "g27",
+              "to": "g58",
+              "meters": 800,
+              "minutes": 10
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g6",
+              "to": "g18",
+              "meters": 7540,
+              "minutes": 93
+            },
+            {
+              "from": "g33",
+              "to": "g9",
+              "meters": 3399,
+              "minutes": 43
+            }
+          ]
+        },
+        {
+          "score": 132,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g18",
+            "g6",
+            "g289",
+            "g11",
+            "g210",
+            "g10",
+            "g9",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g18",
+              "meters": 876,
+              "minutes": 11
+            },
+            {
+              "from": "g18",
+              "to": "g6",
+              "meters": 7862,
+              "minutes": 94
+            },
+            {
+              "from": "g6",
+              "to": "g289",
+              "meters": 1477,
+              "minutes": 19
+            },
+            {
+              "from": "g289",
+              "to": "g11",
+              "meters": 301,
+              "minutes": 5
+            },
+            {
+              "from": "g11",
+              "to": "g210",
+              "meters": 1604,
+              "minutes": 20
+            },
+            {
+              "from": "g210",
+              "to": "g10",
+              "meters": 272,
+              "minutes": 4
+            },
+            {
+              "from": "g10",
+              "to": "g9",
+              "meters": 1261,
+              "minutes": 16
+            },
+            {
+              "from": "g9",
+              "to": "g58",
+              "meters": 3796,
+              "minutes": 49
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g18",
+              "to": "g6",
+              "meters": 7862,
+              "minutes": 94
+            },
+            {
+              "from": "g9",
+              "to": "g58",
+              "meters": 3796,
+              "minutes": 49
+            }
+          ]
+        },
+        {
+          "score": 134,
+          "placeIds": [
+            "g33",
+            "g9",
+            "g10",
+            "g210",
+            "g11",
+            "g289",
+            "g6",
+            "g27",
+            "g18",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g9",
+              "meters": 3399,
+              "minutes": 43
+            },
+            {
+              "from": "g9",
+              "to": "g10",
+              "meters": 1261,
+              "minutes": 15
+            },
+            {
+              "from": "g10",
+              "to": "g210",
+              "meters": 272,
+              "minutes": 4
+            },
+            {
+              "from": "g210",
+              "to": "g11",
+              "meters": 1604,
+              "minutes": 20
+            },
+            {
+              "from": "g11",
+              "to": "g289",
+              "meters": 301,
+              "minutes": 4
+            },
+            {
+              "from": "g289",
+              "to": "g6",
+              "meters": 1477,
+              "minutes": 19
+            },
+            {
+              "from": "g6",
+              "to": "g27",
+              "meters": 6818,
+              "minutes": 86
+            },
+            {
+              "from": "g27",
+              "to": "g18",
+              "meters": 876,
+              "minutes": 11
+            },
+            {
+              "from": "g18",
+              "to": "g58",
+              "meters": 1046,
+              "minutes": 13
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g6",
+              "to": "g27",
+              "meters": 6818,
+              "minutes": 86
+            },
+            {
+              "from": "g33",
+              "to": "g9",
+              "meters": 3399,
+              "minutes": 43
+            }
+          ]
+        },
+        {
+          "score": 134,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g6",
+            "g289",
+            "g11",
+            "g210",
+            "g10",
+            "g9",
+            "g18",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g6",
+              "meters": 6852,
+              "minutes": 84
+            },
+            {
+              "from": "g6",
+              "to": "g289",
+              "meters": 1477,
+              "minutes": 19
+            },
+            {
+              "from": "g289",
+              "to": "g11",
+              "meters": 301,
+              "minutes": 5
+            },
+            {
+              "from": "g11",
+              "to": "g210",
+              "meters": 1604,
+              "minutes": 20
+            },
+            {
+              "from": "g210",
+              "to": "g10",
+              "meters": 272,
+              "minutes": 4
+            },
+            {
+              "from": "g10",
+              "to": "g9",
+              "meters": 1261,
+              "minutes": 16
+            },
+            {
+              "from": "g9",
+              "to": "g18",
+              "meters": 4410,
+              "minutes": 55
+            },
+            {
+              "from": "g18",
+              "to": "g58",
+              "meters": 1046,
+              "minutes": 13
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g27",
+              "to": "g6",
+              "meters": 6852,
+              "minutes": 84
+            },
+            {
+              "from": "g9",
+              "to": "g18",
+              "meters": 4410,
+              "minutes": 55
+            }
+          ]
+        },
+        {
+          "score": 134,
+          "placeIds": [
+            "g33",
+            "g27",
+            "g18",
+            "g11",
+            "g289",
+            "g6",
+            "g9",
+            "g10",
+            "g210",
+            "g58"
+          ],
+          "legs": [
+            {
+              "from": "g33",
+              "to": "g27",
+              "meters": 657,
+              "minutes": 9
+            },
+            {
+              "from": "g27",
+              "to": "g18",
+              "meters": 876,
+              "minutes": 11
+            },
+            {
+              "from": "g18",
+              "to": "g11",
+              "meters": 6031,
+              "minutes": 75
+            },
+            {
+              "from": "g11",
+              "to": "g289",
+              "meters": 301,
+              "minutes": 4
+            },
+            {
+              "from": "g289",
+              "to": "g6",
+              "meters": 1477,
+              "minutes": 19
+            },
+            {
+              "from": "g6",
+              "to": "g9",
+              "meters": 4356,
+              "minutes": 53
+            },
+            {
+              "from": "g9",
+              "to": "g10",
+              "meters": 1261,
+              "minutes": 15
+            },
+            {
+              "from": "g10",
+              "to": "g210",
+              "meters": 272,
+              "minutes": 4
+            },
+            {
+              "from": "g210",
+              "to": "g58",
+              "meters": 4763,
+              "minutes": 61
+            }
+          ],
+          "busLegs": [
+            {
+              "from": "g18",
+              "to": "g11",
+              "meters": 6031,
+              "minutes": 75
+            },
+            {
+              "from": "g210",
+              "to": "g58",
+              "meters": 4763,
+              "minutes": 61
+            },
+            {
+              "from": "g6",
+              "to": "g9",
+              "meters": 4356,
+              "minutes": 53
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
