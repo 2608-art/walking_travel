@@ -90,6 +90,7 @@
   const weekday = (date) => new Date(date + 'T12:00:00Z').getUTCDay();
   const findByName = (name) => state.places.find((p) => p.name === name);
   const getPlace = (id) => state.places.find((p) => p.id === id) || state.lodgings.find((p) => p.id === id);
+  const isLodgingPoint = (place) => typeof place?.id === 'string' && place.id.startsWith('lodging-');
   const routePlace = (id, route=state.route?.results?.[state.route.selected]) => route?.routingPlaces?.find((p) => p.id === id) || getPlace(id);
   const coord = (p) => p && Number.isFinite(p.lat) && Number.isFinite(p.lon);
   const pinPoint = (p) => coord(p) ? [p.lat, p.lon] :
