@@ -24,6 +24,7 @@
   const regionStorage = activeRegion.id === 'mokpo' ? '' : '-' + activeRegion.id;
   const STORAGE_DRAFT = 'hangeoreum-draft-v1' + regionStorage;
   const STORAGE_SAVED = 'hangeoreum-saved-v1' + regionStorage;
+  const STORAGE_THEME_ROUTE_DRAFTS = 'hangeoreum-theme-route-drafts-v1' + regionStorage;
   const STORAGE_GEOCODES = 'hangeoreum-' + activeRegion.id + '-address-pins-v1';
   const STORAGE_WALK_PATH_CHOICES = 'hangeoreum-walk-path-choices-v1' + regionStorage;
   const STORAGE_LODGING_PINS = 'hangeoreum-' + activeRegion.id + '-lodging-pins-v1';
@@ -74,6 +75,13 @@
   }
   const load = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch { return fallback; } };
   const save = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch { toast('저장 공간이 부족하거나 차단되었습니다.'); return false; } };
+  function storeThemeRouteDraft(review) {
+    const route=state.route, saved=load(STORAGE_THEME_ROUTE_DRAFTS,[]);
+    const draft={id:Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8),theme:route.theme,date:route.date,start:route.themeStart || '10:00',review:JSON.parse(JSON.stringify(review)),savedAt:new Date().toISOString()};
+    const didSave=save(STORAGE_THEME_ROUTE_DRAFTS,[draft,...saved]);
+    if(didSave) toast('검토용 테마 초안을 이 기기에 저장했습니다.');
+    return didSave;
+  }
   const today = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
   const hhmm = (m) => (m >= 1440 ? '다음 날 ' : '') + String(Math.floor((m % 1440) / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
   const toMin = (value) => { const [h, m] = String(value || '09:00').split(':').map(Number); return h * 60 + m; };
@@ -962,10 +970,11 @@
     };
     if (preset) {
       const routes=await routeEngine.generateThemeDay({places:routePlaces,origin,destination,date:r.date,start:r.themeStart || '10:00',theme:r.theme,validate:validateRoute,...providers});
-      if(!routes.length && r.themeReviewOnly) {
+      if(!routes.length) {
         const window=routeEngine.themeWindow(r.themeStart || '10:00');
-        const review=await routeEngine.generateReviewRoute({places:routePlaces,origin,destination,date:r.date,start:r.themeStart || '10:00',end:window.end,theme:r.theme,validate:validateRoute,...providers});
-        r.review=review ? {...review,issues:['선택한 테마가 방문 수·영업시간·실제 이동 경로 확인 기준을 충족하지 않아, 가까운 장소를 검토용으로 표시했습니다.',...review.issues],originPoint:origin,destinationPoint:destination} : null;
+        const review=await routeEngine.generateReviewRoute({places:routePlaces,origin,destination,date:r.date,start:r.themeStart || '10:00',end:window.end,theme:r.theme,validate:validateRoute,offlineOnly:!apiAvailable,...providers});
+        r.review=review ? {...review,issues:['선택한 테마가 방문 수·영업시간·실제 이동 경로 확인 기준을 충족하지 않아, 가까운 장소를 검토용 초안으로 표시했습니다.',...review.issues],originPoint:origin,destinationPoint:destination} : null;
+        if(r.review) r.themeReviewOnly=true;
       }
       return routes.map((route) => ({...route,originId:origin.id,destinationId:destination.id,originPoint:origin,destinationPoint:destination}));
     }
@@ -975,7 +984,7 @@
       validate:validateRoute,...providers};
     const routes=await routeEngine.generateAdaptive(input);
     if(!routes.length) {
-      const review=await routeEngine.generateReviewRoute(input);
+      const review=await routeEngine.generateReviewRoute({...input,offlineOnly:!apiAvailable});
       r.review=review ? {...review,originPoint:origin,destinationPoint:destination} : null;
     }
     return routes.map((route) => ({...route,
@@ -1074,7 +1083,9 @@
     $('#main .page-head p').textContent = r.mode === 'theme' ? '날짜, 시작시간과 테마를 고르면 운영정보에 맞춰 하루 시간표를 만듭니다.' : '출발·도착 위치와 가고 싶은 장소를 정하세요. 끝낼 시각까지 도착하고, 식당과 방문 시각은 결과에서 직접 고릅니다.';
     const modeTabs='<div class="route-mode-tabs"><button type="button" class="filter-chip ' + (r.mode !== 'theme' ? 'active' : '') + '" data-route-mode="custom">출발·도착 맞춤</button><button type="button" class="filter-chip ' + (r.mode === 'theme' ? 'active' : '') + '" data-route-mode="theme">테마별 추천 코스</button></div>';
     const themeCards=r.mode === 'theme' ? '<div class="card route-theme-panel"><p class="small">테마 코스는 걷기 좋은 권역의 하루 동선을 자동으로 짭니다. 방문 시간과 식사 시간도 선택한 날짜의 운영정보를 고려해 배치합니다.</p><div class="route-theme-grid">' + routeEngine.THEMES.filter((t) => t.id !== 'balanced').map((t) => '<button type="button" class="route-theme-choice ' + (r.theme === t.id ? 'active' : '') + '" data-theme-choice="' + t.id + '"><strong>' + esc(t.name) + '</strong><small>' + esc(routeEngine.THEME_PRESETS[t.id].description) + '</small></button>').join('') + '</div><p class="small">선택한 코스: ' + esc(routeEngine.THEME_PRESETS[r.theme]?.description || '') + '</p></div>' : '';
-    $('#main .page-head').insertAdjacentHTML('afterend', modeTabs+themeCards);
+    const savedThemeDrafts=load(STORAGE_THEME_ROUTE_DRAFTS,[]).filter(item=>item && item.review && item.theme);
+    const savedThemeDraftPanel=r.mode==='theme' ? '<div class="card saved-theme-drafts"><h3>저장한 테마 초안</h3>'+(savedThemeDrafts.length ? savedThemeDrafts.map(draft=>'<div class="route-stop"><div class="route-stop-time">초안</div><div><strong>'+esc(routeEngine.THEMES.find(theme=>theme.id===draft.theme)?.name || '테마 코스')+'</strong><p>'+esc(draft.date)+' · '+esc(draft.start)+' 시작 · '+draft.review.rows.length+'곳 방문 초안</p><button type="button" class="btn btn-outline btn-sm" data-open-theme-draft="'+esc(draft.id)+'">다시 열기</button> <button type="button" class="btn btn-outline btn-sm" data-delete-theme-draft="'+esc(draft.id)+'">삭제</button></div></div>').join('') : '<p class="small">아직 저장한 초안이 없습니다. 검토용 테마 동선에서 저장할 수 있어요.</p>')+'</div>' : '';
+    $('#main .page-head').insertAdjacentHTML('afterend', modeTabs+themeCards+savedThemeDraftPanel);
     if(activeRegion.id==='gangneung' && r.mode==='theme' && r.theme==='sea')
       $('#main .notice.warn').textContent='바다와 커피 테마는 카페에서 쉬어 가는 해변 동선으로, 한 번에 최대 2.4km·40분까지 걷습니다. 하루 도보는 8km 이내로 계산하고, 실제 길을 확인하지 못하면 확정 코스를 만들지 않습니다. 날씨와 현장 보행 여건은 출발 전에 확인해 주세요.';
     $('#route-theme').closest('.field-group').style.display='none';
@@ -1092,6 +1103,14 @@
     document.querySelectorAll('[data-route-mode]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.mode=button.dataset.routeMode; r.results=[]; r.selected=-1; renderRoutes(); });
     $('#route-solo').onchange=(event) => { captureRouteInputs(); r.solo=event.target.checked; r.results=[]; r.selected=-1; renderRoutes(); };
     document.querySelectorAll('[data-theme-choice]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.theme=button.dataset.themeChoice; r.results=[]; r.selected=-1; renderRoutes(); });
+    document.querySelectorAll('[data-open-theme-draft]').forEach(button=>button.onclick=()=>{
+      const draft=savedThemeDrafts.find(item=>item.id===button.dataset.openThemeDraft); if(!draft) return;
+      r.mode='theme'; r.theme=draft.theme; r.date=draft.date; r.themeStart=draft.start; r.review=JSON.parse(JSON.stringify(draft.review)); r.themeReviewOnly=true; r.results=[]; r.selected=-1; r.skipThemeTimeRefreshOnce=true;
+      renderRoutes(); showRouteResults();
+    });
+    document.querySelectorAll('[data-delete-theme-draft]').forEach(button=>button.onclick=()=>{
+      const drafts=load(STORAGE_THEME_ROUTE_DRAFTS,[]).filter(item=>item.id!==button.dataset.deleteThemeDraft); save(STORAGE_THEME_ROUTE_DRAFTS,drafts); renderRoutes();
+    });
     $('#routes-back').onclick = () => nav('region');
     $('#route-date').onchange=() => { r.date=$('#route-date').value || today(); r.results=[]; r.review=null; r.selected=-1; $('#route-results').innerHTML=''; if(r.mode==='theme') refreshThemeStartTimes(); };
     $('#route-midnight').onchange = (e) => { $('#route-end').disabled=e.target.checked; };
@@ -1113,7 +1132,8 @@
       finally { button.disabled=false; button.textContent=r.mode === 'theme' ? (r.themeReviewOnly ? '검토용 동선 보기' : '하루 시간표 만들기') : '코스 찾기'; }
     };
     if (r.results.length) showRouteResults();
-    if (r.mode==='theme') refreshThemeStartTimes();
+    if (r.mode==='theme' && r.skipThemeTimeRefreshOnce) r.skipThemeTimeRefreshOnce=false;
+    else if (r.mode==='theme') refreshThemeStartTimes();
   }
   function routeLegText(row) {
     const leg=row.busLeg || row;
@@ -1183,12 +1203,16 @@
       return '약 '+Math.floor(seconds/60)+'분'+(seconds%60 ? ' '+seconds%60+'초' : '');
     };
     const legText=(leg)=>leg.mode==='bus' ? '버스 탑승 '+busRideText(leg.busRideMinutes)+' · 정류장 도보 약 '+leg.walkMinutes+'분 (배차 대기 미확인)' :
-      leg.actual ? '도보 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km (실제 경로)' : '방향만 표시 · 실제 이동 경로 미확인';
+      leg.actual ? '도보 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km (실제 경로)' : '좌표 추정 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km 참고치 (실제 경로 미확인)';
     const stops=review.rows.map((row,index)=>'<div class="route-stop"><div class="route-stop-time">'+(index+1)+'</div><div><strong>'+esc(getPlace(row.placeId)?.name || '장소')+'</strong><p>앞 장소에서 '+esc(legText(row.busLeg || {mode:row.mode,minutes:row.walkEstimate,meters:row.walkMeters,actual:row.actual,walkMinutes:0,busRideMinutes:0}))+'</p></div></div>').join('');
     const issues=review.issues.length ? review.issues.map(issue=>'<li>'+esc(issue)+'</li>').join('') : '<li>확정 코스 탐색에서 모든 이동·운영 조건을 함께 검증하지 못했습니다.</li>';
-    root.innerHTML='<div class="card route-review"><span class="eyebrow">검토용 루트</span><h2>'+esc(review.originName)+' → '+esc(review.destinationName)+'</h2><p>입력한 위치와 가까운 장소를 방문 순서대로 이었습니다. 확정 추천이나 실제 버스 배차를 뜻하지 않습니다.</p><div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="검토용 방문 순서 지도"></div><p class="small">숫자는 방문 순서입니다. 점선은 실제 경로를 확인하지 못한 구간입니다. 지도 위에서 휠·두 손가락으로 확대·축소하고, 드래그로 이동할 수 있습니다.</p></div>'+stops+'<div class="route-stop"><div class="route-stop-time">도착</div><div><strong>'+esc(review.destinationName)+'</strong><p>앞 장소에서 '+esc(legText(review.endWalk))+'</p></div></div><div class="notice warn"><strong>확정 코스가 되지 않은 이유·확인할 점</strong><ul>'+issues+'</ul></div><p class="small">버스 60분 기준은 탑승시간만 계산합니다. 정류장 도보·환승·실제 배차 대기는 별도입니다.</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
+    root.innerHTML='<div class="card route-review"><span class="eyebrow">검토용 루트 초안</span><h2>'+esc(review.originName)+' → '+esc(review.destinationName)+'</h2><p>가까운 장소를 방문 순서로 이은 초안입니다. 이동시간은 좌표로 계산한 참고치이며, 실제 보행 경로·버스·영업 여부를 확인한 추천 코스가 아닙니다.</p><div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="검토용 방문 순서 지도"></div><p class="small">숫자는 방문 순서입니다. 점선은 실제 경로를 확인하지 못한 구간입니다. 지도 위에서 휠·두 손가락으로 확대·축소하고, 드래그로 이동할 수 있습니다.</p></div>'+stops+'<div class="route-stop"><div class="route-stop-time">도착</div><div><strong>'+esc(review.destinationName)+'</strong><p>앞 장소에서 '+esc(legText(review.endWalk))+'</p></div></div><div class="notice warn"><strong>확정 코스가 되지 않은 이유·확인할 점</strong><ul>'+issues+'</ul></div><p class="small">버스 60분 기준은 탑승시간만 계산합니다. 정류장 도보·환승·실제 배차 대기는 별도입니다.</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
+    if(state.route.mode==='theme') root.querySelector('.route-review').insertAdjacentHTML('beforeend','<button type="button" class="btn btn-primary" id="save-theme-route-draft">테마 초안 저장</button>');
     initResultMap(review);
     $('#go-own-plan').onclick=()=>nav('plan');
+    if($('#save-theme-route-draft')) $('#save-theme-route-draft').onclick=()=>{
+      if(storeThemeRouteDraft(review)) { state.route.skipThemeTimeRefreshOnce=true; renderRoutes(); showRouteResults(); }
+    };
   }
   function showRouteResults() {
     const r = state.route, root = $('#route-results');
