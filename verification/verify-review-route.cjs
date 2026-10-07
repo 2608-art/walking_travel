@@ -59,8 +59,8 @@ const nearby=[
   vm.runInNewContext(renderer+'\nshowReviewRoute(root,review);',{...view,root:belowRoot,review:justBelow});
   assert(belowRoot.innerHTML.includes('59분 59초'),'60분 미만을 60분으로 반올림해 표시하지 않음');
   const makeRoutesSource=app.slice(app.indexOf('  async function makeRoutes('),app.indexOf('  function captureRouteInputs('));
-  const themeState={route:{mode:'theme',theme:'food',date:'2026-10-05',review:null},places:[far]};
-  const appEngine={THEME_PRESETS:{food:{originId:'station',destinationId:'station'}},generateThemeDay:async()=>[],
+  const themeState={route:{mode:'theme',theme:'food',date:'2026-10-05',review:null,themeReviewOnly:true},places:[far]};
+  const appEngine={THEME_PRESETS:{food:{originId:'station',destinationId:'station'}},prepareRoutePlaces:values=>values,themeWindow:()=>({start:'10:00',end:'19:00'}),generateThemeDay:async()=>[],
     generateReviewRoute:async(input)=>({review:true,theme:input.theme,start:input.start,end:input.end,rows:[],issues:[]})};
   const makeRoutes=vm.runInNewContext(makeRoutesSource+'\nmakeRoutes',{routeCache:new Map(),state:themeState,
     routeEngine:appEngine,getPlace:()=>origin,STATION:origin,routeOrigin:()=>origin,routeDestination:()=>origin,
