@@ -1,0 +1,1475 @@
+[
+  {
+    "name": "향화정",
+    "category": "food",
+    "lat": 35.83800982,
+    "lon": 129.20919354,
+    "locationText": "경주시 사정로57번길 17",
+    "source": "https://its-memory.tistory.com/16",
+    "rating": 4.2,
+    "ratingCount": 375,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%ED%96%A5%ED%99%94%EC%A0%95/data=!4m4!3m3!1s0x35664f89e64a5c71:0x9b2f93c22f57fd79!16s%2Fg%2F11h5kf84n6!20s8Q7FR6Q5%2B6M46XR3?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "매일 11:00–15:00 / 17:00–21:30 · 브레이크: 15:00–17:00",
+    "closureText": "별도 정기휴무 미확인",
+    "deadlineText": "20:30",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=z0JuCZ8zYdOJ",
+    "description": "실제 주문·대기·식사 사진이 있는 경주 방문 후기. 꼬막비빔밥, 육회비빔밥, 해물파전을 긍정적으로 평가. Google와 DC 운영시간 일치. 후기의 과거 가격은 사용하지 않음.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://its-memory.tistory.com/16",
+        "date": "2022-07-30",
+        "author": "its-memory",
+        "recommendation": "실제 주문·대기·식사 사진이 있는 경주 방문 후기. 꼬막비빔밥, 육회비빔밥, 해물파전을 긍정적으로 평가.",
+        "sponsorship": "협찬 여부 미표시"
+      }
+    ],
+    "priceInfo": {
+      "label": "꼬막무침비빔밥 2인",
+      "price": "31,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=z0JuCZ8zYdOJ",
+      "checked": "2026-10-06",
+      "note": "꼬막무침비빔밥 2인 31,000원 · 해물파전 16,000원 · 육회비빔밥 15,900원. Google와 DC 운영시간 일치. 후기의 과거 가격은 사용하지 않음."
+    },
+    "minimumOrder": "꼬막무침비빔밥은 2인 구성 메뉴. 혼자 주문 가능한지와 다른 단품의 1인 조건은 확인되지 않았습니다.",
+    "minimumOrderSource": "https://www.diningcode.com/profile.php?rid=z0JuCZ8zYdOJ",
+    "id": "j139"
+  },
+  {
+    "name": "청온채",
+    "category": "food",
+    "lat": 35.83761282,
+    "lon": 129.20880536,
+    "locationText": "경주시 포석로1079번길 8-5",
+    "source": "https://minmin-mukroad.tistory.com/75?category=1279978",
+    "rating": 4.1,
+    "ratingCount": 131,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EC%B2%AD%EC%98%A8%EC%B1%84/data=!4m4!3m3!1s0x35664f2ac49a783b:0xc25da763c6d977ba!16s%2Fg%2F11pzkk65bz!20s8Q7FR6Q5%2B2GVHCV3?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "Google 월–목 11:00–21:00 / 금–일 11:00–21:30; DC 월–목 11:00–20:30 / 금–일 11:00–21:00 · 브레이크: DC 15:30–17:00",
+    "closureText": "별도 정기휴무 미확인",
+    "deadlineText": "DC 월–목 15:00/20:00, 금–일 15:00/20:30",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=DosLOZ7SqTv6",
+    "description": "어머니와 경주 여행 중 향화정·소향몽 대기를 피해서 방문. 간장 미나리 육회비빔밥과 새우치즈감자전을 추천. 지도와 DC 마감시간 차이 30분. 휴식·최종 주문은 DC 안내이며 방문 전 확인 필요.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://minmin-mukroad.tistory.com/75?category=1279978",
+        "date": "2025-03-30",
+        "author": "minmin-mukroad",
+        "recommendation": "어머니와 경주 여행 중 향화정·소향몽 대기를 피해서 방문. 간장 미나리 육회비빔밥과 새우치즈감자전을 추천.",
+        "sponsorship": "내돈내산 명시"
+      }
+    ],
+    "priceInfo": {
+      "label": "청도미나리육회비빔밥",
+      "price": "14,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=DosLOZ7SqTv6",
+      "checked": "2026-10-06",
+      "note": "청도미나리육회비빔밥 14,500원 · 육회물회 14,500원 · 들기름메밀국수 10,000원 · 치즈감자전 13,000원. 지도와 DC 마감시간 차이 30분. 휴식·최종 주문은 DC 안내이며 방문 전 확인 필요."
+    },
+    "id": "j140"
+  },
+  {
+    "name": "함양집 북군",
+    "category": "food",
+    "lat": 35.8520429,
+    "lon": 129.26218256,
+    "locationText": "경주시 북군1길 10-1",
+    "source": "https://www.crispystory.com/2023/06/hamyang.html",
+    "rating": 4,
+    "ratingCount": 1982,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%ED%95%A8%EC%96%91%EC%A7%91%20%EB%B6%81%EA%B5%B0/data=!4m4!3m3!1s0x356652746d324c35:0x9c9a58a008cb834!16s%2Fg%2F1hc21hjs0!20s8Q7FV726%2BRV7QFVH?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "수요일 제외 10:30–19:40 · 브레이크: DC 15:30–17:00",
+    "closureText": "수요일",
+    "deadlineText": "DC 19:10",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=1246iEICOgZS",
+    "description": "경주 여행에서 저녁 조기종료로 실패한 뒤 다음 날 점심 재방문. 42팀 대기·주문·실제 음식 사진과 함께 자극적이지 않은 한우물회를 긍정 평가. 같은 상호 보불로점(3.9)은 이번 지도 별점 기준에 쓰지 않음.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://www.crispystory.com/2023/06/hamyang.html",
+        "date": "2023-06-13",
+        "author": "Crispy",
+        "recommendation": "경주 여행에서 저녁 조기종료로 실패한 뒤 다음 날 점심 재방문. 42팀 대기·주문·실제 음식 사진과 함께 자극적이지 않은 한우물회를 긍정 평가.",
+        "sponsorship": "협찬 여부 미표시"
+      }
+    ],
+    "priceInfo": {
+      "label": "한우물회 보통",
+      "price": "14,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=1246iEICOgZS",
+      "checked": "2026-10-06",
+      "note": "한우물회 보통 14,000원/특 16,000원 · 전통비빔밥 14,000원 · 떡불고기 15,000원 · 곰탕 10,000원. 같은 상호 보불로점(3.9)은 이번 지도 별점 기준에 쓰지 않음."
+    },
+    "id": "j141"
+  },
+  {
+    "name": "소향몽",
+    "category": "food",
+    "lat": 35.83784822,
+    "lon": 129.20933685,
+    "locationText": "경주시 사정로57번길 16 1층",
+    "source": "https://yeddorii.tistory.com/96",
+    "rating": 4.2,
+    "ratingCount": 66,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EC%86%8C%ED%96%A5%EB%AA%BD/data=!4m4!3m3!1s0x35664f4891caa9dd:0xe73f2c6ec8a06970!16s%2Fg%2F11t6kpkpj8!20s8Q7FR6Q5%2B4PPXJ75?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "매일 11:00–15:00 / 17:00–21:00 · 브레이크: 15:00–17:00",
+    "closureText": "별도 정기휴무 미확인",
+    "deadlineText": "DC 20:00",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=jWukVMJerlqJ",
+    "description": "2024년 6월 경주 여행에서 일주일 전 예약 후 비 오는 날 방문. 육전 강추천. 차돌삼합의 채소 양·감태 취향에는 아쉬움도 남김. 과거 후기의 육전·차돌삼합 현재 판매 여부 미확인. 현재 DC 가격과 메뉴 구분.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://yeddorii.tistory.com/96",
+        "date": "2024-07-22",
+        "author": "예돌맨",
+        "recommendation": "2024년 6월 경주 여행에서 일주일 전 예약 후 비 오는 날 방문. 육전 강추천. 차돌삼합의 채소 양·감태 취향에는 아쉬움도 남김.",
+        "sponsorship": "내돈내산 명시"
+      }
+    ],
+    "priceInfo": {
+      "label": "육회비빔밥",
+      "price": "17,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=jWukVMJerlqJ",
+      "checked": "2026-10-06",
+      "note": "육회비빔밥 17,000원 · 감태육회주먹밥 12,000원 · 궁중소갈비찜 28,000원 · 통새우햇미나리전 16,000원 · 육회물회 14,000원. 과거 후기의 육전·차돌삼합 현재 판매 여부 미확인. 현재 DC 가격과 메뉴 구분."
+    },
+    "id": "j142"
+  },
+  {
+    "name": "료미",
+    "category": "food",
+    "lat": 35.83561062,
+    "lon": 129.20974176,
+    "locationText": "경주시 포석로 1058-1",
+    "source": "https://teacherso.tistory.com/841",
+    "rating": 4.4,
+    "ratingCount": 925,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EB%A3%8C%EB%AF%B8/data=!4m4!3m3!1s0x35664fcb5cdf0275:0x1303b1250d087f5!16s%2Fg%2F11j0xm7nr1!20s8Q7FR6P5%2B6VXG5Q2?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "Google 매일 11:00–15:00 / 17:00–20:30; DC 11:00–21:00 · 브레이크: 15:00–17:00",
+    "closureText": "별도 정기휴무 미확인",
+    "deadlineText": "DC 20:30",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=wTudDdwnl4SP",
+    "description": "실제 일요일 저녁 여자친구와 방문. 허브 취향이 있어도 고마소바가 맛있었고 재주문 의사를 표현. 음식 사진·주문 구체적. DC 마감 21:00과 Google 20:30 차이. 롱링의 2023-03-03 여행 원문 https://daily-jingnee.tistory.com/74도 긍정하나 후토마키 가격 아쉬움.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://teacherso.tistory.com/841",
+        "date": "2022-05-04",
+        "author": "지리오타쿠",
+        "recommendation": "실제 일요일 저녁 여자친구와 방문. 허브 취향이 있어도 고마소바가 맛있었고 재주문 의사를 표현. 음식 사진·주문 구체적.",
+        "sponsorship": "내돈내산 명시"
+      }
+    ],
+    "priceInfo": {
+      "label": "고마소바",
+      "price": "12,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=wTudDdwnl4SP",
+      "checked": "2026-10-06",
+      "note": "고마소바 12,000원 · 후토마키 5개 17,000원 · 직화가브리살덮밥 16,000원 · 2인 세트 40,000원. DC 마감 21:00과 Google 20:30 차이. 롱링의 2023-03-03 여행 원문 https://daily-jingnee.tistory.com/74도 긍정하나 후토마키 가격 아쉬움."
+    },
+    "minimumOrder": "2인 세트가 있으나 고마소바·후토마키 단품도 등록. 혼자 주문 가능한지와 좌석 배정은 확인되지 않았습니다.",
+    "minimumOrderSource": "https://www.diningcode.com/profile.php?rid=wTudDdwnl4SP",
+    "id": "j143"
+  },
+  {
+    "name": "남정부일기사식당",
+    "category": "food",
+    "lat": 35.7908185,
+    "lon": 129.20573871,
+    "locationText": "경주시 배리1길 3 (배동 948-3)",
+    "source": "https://green82.tistory.com/542",
+    "rating": 4.1,
+    "ratingCount": 1219,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EB%82%A8%EC%A0%95%EB%B6%80%EC%9D%BC%EA%B8%B0%EC%82%AC%EC%8B%9D%EB%8B%B9/data=!4m4!3m3!1s0x3566492e055dd34d:0x12af14cfc402b59c!16s%2Fg%2F1tj50g6y!20s8Q7FQ6R4%2B87HPPCH?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "화요일 제외 09:00–20:00 · 브레이크: 미확인",
+    "closureText": "화요일",
+    "deadlineText": "후기 19:20–19:30 안내 차이 / 재료 소진 가능",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=XsdCfCdN2fWr",
+    "description": "실제 4인분 포장해 먹은 후기에서 낙지·돼지 짬뽕을 추천. 짬뽕은 볶음 메뉴임. DC 직접 여행 리뷰(밥쟁이2025-01-11)는 택시 기사 추천 후 아버지와 재방문·호평. 최종 주문시간은 원문끼리 차이.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://green82.tistory.com/542",
+        "date": "2024-04-08",
+        "author": "그루양",
+        "recommendation": "실제 4인분 포장해 먹은 후기에서 낙지·돼지 짬뽕을 추천. 짬뽕은 볶음 메뉴임.",
+        "sponsorship": "협찬 여부 미표시"
+      }
+    ],
+    "priceInfo": {
+      "label": "짬뽕",
+      "price": "12,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=XsdCfCdN2fWr",
+      "checked": "2026-10-06",
+      "note": "짬뽕 12,000원 · 낙지볶음/돼지볶음 12,000원 · 공기밥 1,000원. DC 직접 여행 리뷰(밥쟁이2025-01-11)는 택시 기사 추천 후 아버지와 재방문·호평. 최종 주문시간은 원문끼리 차이."
+    },
+    "id": "j144"
+  },
+  {
+    "name": "단향회",
+    "category": "food",
+    "lat": 35.8355441,
+    "lon": 129.21124921,
+    "locationText": "경주시 첨성로81번길 28-1",
+    "source": "https://guide-to-sweet.tistory.com/35",
+    "rating": 4.3,
+    "ratingCount": 49,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EB%8B%A8%ED%96%A5%ED%9A%8C/data=!4m4!3m3!1s0x35664f003a185c57:0x3c0a7f1adafffd1b!16s%2Fg%2F11vz3t16l8!20s8Q7FR6P6%2B6F9QX4F?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "Google 매일 11:00–21:00 · 브레이크: DC 15:40–17:00",
+    "closureText": "별도 정기휴무 미확인",
+    "deadlineText": "DC 15:00/20:20",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=PmDDeeRoB0Ud",
+    "description": "더운 날 5분 대기 후 실제 식사. 손말이고기와 된장찌개 조합 추천하나 단독 맛이 약하고 좌석 간격 좁다는 의견 함께 기록. Google 지도에 브레이크 상세 없음. DC 안내 별도.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://guide-to-sweet.tistory.com/35",
+        "date": "2025-02-03",
+        "author": "비앙코오",
+        "recommendation": "더운 날 5분 대기 후 실제 식사. 손말이고기와 된장찌개 조합 추천하나 단독 맛이 약하고 좌석 간격 좁다는 의견 함께 기록.",
+        "sponsorship": "내돈내산 명시"
+      }
+    ],
+    "priceInfo": {
+      "label": "손말이고기 기본",
+      "price": "16,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=PmDDeeRoB0Ud",
+      "checked": "2026-10-06",
+      "note": "손말이고기 기본 16,500원/갈비맛 17,000원 · 미나리버섯 추가 4,000원. Google 지도에 브레이크 상세 없음. DC 안내 별도."
+    },
+    "id": "j145"
+  },
+  {
+    "name": "승진식당",
+    "category": "food",
+    "lat": 35.99015562,
+    "lon": 129.22499359,
+    "locationText": "경주시 안강읍 비화동길 22",
+    "source": "https://jjbadboy1026.tistory.com/384",
+    "rating": 4.1,
+    "ratingCount": 209,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EC%8A%B9%EC%A7%84%EC%8B%9D%EB%8B%B9/data=!4m4!3m3!1s0x3566566d04ceee9d:0x34c9430649252477!16s%2Fg%2F1tg4j7j1!20s8Q7FX6RF%2B3X992P5?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "Google 매일 10:00–22:00; DC 10:30–21:00 · 브레이크: 미확인",
+    "closureText": "미확인",
+    "deadlineText": "미확인",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=JlXkz9erhgf5",
+    "description": "가족 경주 여행 첫 식사. 30분 대기 후 돼지두루치기를 먹고 고기·국물을 강추천, 아이들도 잘 먹었다는 구체적 후기. Google/DC 운영시간 1시간가량 차이. 작은 매장·대기 가능.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://jjbadboy1026.tistory.com/384",
+        "date": "2024-10-17",
+        "author": "모악산다람쥐",
+        "recommendation": "가족 경주 여행 첫 식사. 30분 대기 후 돼지두루치기를 먹고 고기·국물을 강추천, 아이들도 잘 먹었다는 구체적 후기.",
+        "sponsorship": "협찬 여부 미표시"
+      }
+    ],
+    "priceInfo": {
+      "label": "돼지두루치기 소",
+      "price": "17,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=JlXkz9erhgf5",
+      "checked": "2026-10-06",
+      "note": "돼지두루치기 소 17,000원/중 23,000원/대 30,000원/특 35,000원 · 공기밥 1,000원 · 볶음밥 2,000원. Google/DC 운영시간 1시간가량 차이. 작은 매장·대기 가능."
+    },
+    "id": "j146"
+  },
+  {
+    "name": "신라제면",
+    "category": "food",
+    "lat": 35.83509942,
+    "lon": 129.21236334,
+    "locationText": "경주시 첨성로81번길 22-11",
+    "source": "https://haenii.tistory.com/14",
+    "rating": 4.2,
+    "ratingCount": 131,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EC%8B%A0%EB%9D%BC%EC%A0%9C%EB%A9%B4/data=!4m4!3m3!1s0x35664f8071ad3f59:0xd6844e652414872b!16s%2Fg%2F11s_tn08ld!20s8Q7FR6P6%2B2WQWWC2?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "Google 운영시간 미등록; DC 10:00–21:00 · 브레이크: 2025 후기 15:30–17:00; DC 별도 미표시",
+    "closureText": "미확인",
+    "deadlineText": "DC 20:20",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=RbBwKnYGrmja",
+    "description": "유튜버 좋은희를 보고 경주 여행 중 방문. 앱 대기 2팀인데 30분 걸린 구체적 상황·식사 사진. 칼낙지와 감자전 조합 추천. 옛 후기 20:00 마감/브레이크와 DC21:00 안내 차이; 방문 전 현행 운영시간 확인 필요.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://haenii.tistory.com/14",
+        "date": "2025-02-16",
+        "author": "비타밍혀니",
+        "recommendation": "유튜버 좋은희를 보고 경주 여행 중 방문. 앱 대기 2팀인데 30분 걸린 구체적 상황·식사 사진. 칼낙지와 감자전 조합 추천.",
+        "sponsorship": "협찬 여부 미표시; 네이버 리뷰 음료 쿠폰 언급"
+      }
+    ],
+    "priceInfo": {
+      "label": "칼낙지 (2인 이상)",
+      "price": "13,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=RbBwKnYGrmja",
+      "checked": "2026-10-06",
+      "note": "칼낙지 13,000원(2인 이상) · 칼낙새 15,000원(2인 이상) · 감자전 10,000원 · 바지락칼국수 10,000원. 옛 후기 20:00 마감/브레이크와 DC21:00 안내 차이; 방문 전 현행 운영시간 확인 필요."
+    },
+    "minimumOrder": "칼낙지·칼낙새는 2인 이상 주문 안내. 바지락칼국수의 혼자 주문 가능 여부는 별도 확인.",
+    "minimumOrderSource": "https://www.diningcode.com/profile.php?rid=RbBwKnYGrmja",
+    "id": "j147"
+  },
+  {
+    "name": "늘곰탕",
+    "category": "food",
+    "lat": 35.8288561,
+    "lon": 129.20984528,
+    "locationText": "경주시 포석로 986 1층 (황남동 467)",
+    "source": "https://daily-jingnee.tistory.com/71",
+    "rating": 4.2,
+    "ratingCount": 88,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EB%8A%98%EA%B3%B0%ED%83%95/data=!4m4!3m3!1s0x35664f3ddf7b4d33:0xbec0f2f24b1f9618!16s%2Fg%2F11rvhmn7f1!20s8Q7FR6H5%2BGWX665C?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "Google 운영시간 미등록; DC 10:00–19:30 · 브레이크: 미확인",
+    "closureText": "DC 금요일 휴무(2026-09-25 금요일 일정 표시)",
+    "deadlineText": "DC 19:00",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=sSJlR0YtAxhK",
+    "description": "친구들과 경주 1박2일 여행에서 추운 날 기차 도착 뒤 첫 식사. 담백한 곰탕과 수육을 긍정 추천. 덜 붐비는 외곽·주차 맥락 있음. Google 운영시간 없음. 휴무는 DC 주간 표시로 확인했으며 고정 휴무 변경 가능.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://daily-jingnee.tistory.com/71",
+        "date": "2023-02-28",
+        "author": "롱링",
+        "recommendation": "친구들과 경주 1박2일 여행에서 추운 날 기차 도착 뒤 첫 식사. 담백한 곰탕과 수육을 긍정 추천. 덜 붐비는 외곽·주차 맥락 있음.",
+        "sponsorship": "협찬 여부 미표시"
+      }
+    ],
+    "priceInfo": {
+      "label": "늘곰탕",
+      "price": "13,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=sSJlR0YtAxhK",
+      "checked": "2026-10-06",
+      "note": "늘곰탕/나주곰탕/한우육회비빔밥 각 13,000원 · 산더미갈비곰탕 17,000원 · 아롱사태수육 24,000원. Google 운영시간 없음. 휴무는 DC 주간 표시로 확인했으며 고정 휴무 변경 가능."
+    },
+    "id": "j148"
+  },
+  {
+    "name": "경주밀면 본점",
+    "category": "food",
+    "lat": 35.7733763,
+    "lon": 129.30310675,
+    "locationText": "경주시 시래둑길 7",
+    "source": "https://notes625.tistory.com/entry/경주-시래동불국사-근처-현지인-맛집-로컬맛집-린정한-경주밀면-본점",
+    "rating": 4.3,
+    "ratingCount": 586,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EA%B2%BD%EC%A3%BC%EB%B0%80%EB%A9%B4%20%EB%B3%B8%EC%A0%90/data=!4m4!3m3!1s0x35664cbe8b460493:0x30a6c76ea480fd08!16s%2Fg%2F1tz73vgd!20s8Q7FQ8F3%2B965388G?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "Google 매일 10:40–20:00; DC 10:40–19:00 · 브레이크: DC 15:50–16:30",
+    "closureText": "미확인",
+    "deadlineText": "DC 18:30",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=cAoGmm8CwziA",
+    "description": "2024-06-16 친구 추천으로 실제 방문. 일요일 12:30 27팀/1시간 대기와 주차·선결제 구체적 기록. 숯불 곁들인 밀면을 긍정 추천. Google/DC 마감 1시간 차이. 과거 후기 가격과 현행 DC 가격 구분.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://notes625.tistory.com/entry/경주-시래동불국사-근처-현지인-맛집-로컬맛집-린정한-경주밀면-본점",
+        "date": "2024-06-18",
+        "author": "맛돌희",
+        "recommendation": "2024-06-16 친구 추천으로 실제 방문. 일요일 12:30 27팀/1시간 대기와 주차·선결제 구체적 기록. 숯불 곁들인 밀면을 긍정 추천.",
+        "sponsorship": "내돈내산 명시"
+      }
+    ],
+    "priceInfo": {
+      "label": "물밀면+숯불",
+      "price": "8,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=cAoGmm8CwziA",
+      "checked": "2026-10-06",
+      "note": "물밀면+숯불 8,500원 · 비빔밀면+숯불 9,000원 · 매운비빔 9,500원 · 곱빼기 1,000원 추가 · 어린이밀면 3,000원 · 만두 6,000원. Google/DC 마감 1시간 차이. 과거 후기 가격과 현행 DC 가격 구분."
+    },
+    "id": "j149"
+  },
+  {
+    "name": "빼돌린숯불뒷고기",
+    "category": "food",
+    "lat": 35.84417222,
+    "lon": 129.18263104,
+    "locationText": "경주시 충효중앙길 78",
+    "source": "https://ninninanna.tistory.com/80",
+    "rating": 4.4,
+    "ratingCount": 98,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EB%B9%BC%EB%8F%8C%EB%A6%B0%EC%88%AF%EB%B6%88%EB%92%B7%EA%B3%A0%EA%B8%B0/data=!4m4!3m3!1s0x35664fa702226c0d:0x9a39f80ef3b0b399!16s%2Fg%2F11f3xw_d8b!20s8Q7FR5VM%2BM36RH63?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "화–일 17:00–24:00 · 브레이크: 미확인",
+    "closureText": "월요일",
+    "deadlineText": "2024 후기 23:00, 현재 미확인",
+    "scheduleSource": "https://ninninanna.tistory.com/80",
+    "description": "경주 여행 중 또간집을 떠올리고 방문. 식감·냄새 없는 막창은 호평이나 반판 이후 느끼해 물리고 본인 취향에는 아니었다는 혼합 평가. 강추천 후기라고 표현 금지. 실제 여행 방문과 높은 지도 평점을 가진 검토 후보. 과거 가격은 현행으로 단정 금지.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://ninninanna.tistory.com/80",
+        "date": "2024-01-07",
+        "author": "닌니난나",
+        "recommendation": "경주 여행 중 또간집을 떠올리고 방문. 식감·냄새 없는 막창은 호평이나 반판 이후 느끼해 물리고 본인 취향에는 아니었다는 혼합 평가.",
+        "sponsorship": "내돈내산 명시"
+      }
+    ],
+    "priceInfo": {
+      "label": "뒷고기",
+      "price": "현행 가격 미확인",
+      "source": "https://ninninanna.tistory.com/80",
+      "checked": "2026-10-06",
+      "note": "현재 가격 미확인. 2024-01 후기: 뒷고기500g35,000원/추가200g14,000원 · 생막창120g9,000원 · 삼겹살120g9,000원. 강추천 후기라고 표현 금지. 실제 여행 방문과 높은 지도 평점을 가진 검토 후보. 과거 가격은 현행으로 단정 금지."
+    },
+    "id": "j150"
+  },
+  {
+    "name": "물천한우",
+    "category": "food",
+    "lat": 35.8695387,
+    "lon": 129.27529999,
+    "locationText": "경주시 천북면 천북남로 451",
+    "source": "https://dasima4874.tistory.com/238",
+    "rating": 4.1,
+    "ratingCount": 387,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/place/%EB%AC%BC%EC%B2%9C%ED%95%9C%EC%9A%B0/data=!4m4!3m3!1s0x35665259966b3701:0x4635aadb805cfdee!16s%2Fg%2F11c54cnrvl!20s8Q7FV79G%2BR47GMPF?entry=ttu",
+    "ratingChecked": "2026-10-06",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "scheduleText": "화–일 11:30–15:00 / 16:00–21:00 · 브레이크: Google15:00–16:00 / DC15:00–16:30",
+    "closureText": "월요일",
+    "deadlineText": "DC14:00/20:00",
+    "scheduleSource": "https://www.diningcode.com/profile.php?rid=baP6ZV7OVNmw",
+    "description": "연인과 경주 당일치기 여행에서 직접 방문. 1층에서 꽃등심·살치살·부채살을 고른 뒤 2층에서 구운 실물 사진·서비스·주문 과정이 있음. 한우 육즙·맛을 호평하며 가족·데이트 방문 추천. 기름 많은 부위만 고르면 물리고 육회·된장찌개는 취향에 안 맞았다는 의견도 남김. Google/DC 오후 재개30분 차이. Google지번978와 DC977차이 있으나 도로주소·같은 가게 확인. 과거 후기 상차림4,000원은 현행으로 쓰지 않음; 2024-07-12 친절한뇽실장 원문 https://uandmekiki.tistory.com/19?category=1202053 에는 5,000원 안내와 여러 부위·육회·된장찌개 실제 재방문 호평 있음.",
+    "researchOnly": true,
+    "reviewSources": [
+      {
+        "url": "https://dasima4874.tistory.com/238",
+        "date": "2021-05-19",
+        "author": "즐거운다시마",
+        "recommendation": "연인과 경주 당일치기 여행에서 직접 방문. 1층에서 꽃등심·살치살·부채살을 고른 뒤 2층에서 구운 실물 사진·서비스·주문 과정이 있음. 한우 육즙·맛을 호평하며 가족·데이트 방문 추천. 기름 많은 부위만 고르면 물리고 육회·된장찌개는 취향에 안 맞았다는 의견도 남김.",
+        "sponsorship": "내돈내산·홍보글 아님 명시"
+      }
+    ],
+    "priceInfo": {
+      "label": "한우구이",
+      "price": "부위·중량별 변동",
+      "source": "https://www.diningcode.com/profile.php?rid=baP6ZV7OVNmw",
+      "checked": "2026-10-06",
+      "note": "한우구이 부위·중량별 변동 · 육회200g30,000원 · 한우불고기/육회비빔밥/집된장한우찌개 각17,000원 · 된장국수5,000원; DC방문후기 상차림성인5,000원. Google/DC 오후 재개30분 차이. Google지번978와 DC977차이 있으나 도로주소·같은 가게 확인. 과거 후기 상차림4,000원은 현행으로 쓰지 않음; 2024-07-12 친절한뇽실장 원문 https://uandmekiki.tistory.com/19?category=1202053 에는 5,000원 안내와 여러 부위·육회·된장찌개 실제 재방문 호평 있음."
+    },
+    "id": "j151"
+  },
+  {
+    "name": "향미사",
+    "category": "cafe",
+    "locationText": "경주시 태종로 734 1층",
+    "lat": 35.83905876569267,
+    "lon": 129.20838952631127,
+    "source": "https://kimscatch.tistory.com/47",
+    "rating": 4.5,
+    "ratingCount": 251,
+    "ratingSource": "카카오맵",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵에 연중무휴 10:00~18:00로 표시되어 있습니다. 경주시 관광 안내도 10:00~18:00입니다.",
+    "closureText": "연중무휴로 표시되어 있습니다. 임시 휴무는 공식 SNS에서 확인하세요.",
+    "deadlineText": "마지막 주문은 17:30입니다.",
+    "priceInfo": {
+      "label": "아메리카노",
+      "price": "4,800원",
+      "source": "https://place.map.kakao.com/730708466",
+      "checked": "2026-10-06",
+      "note": "카페라떼 5,300원, 에스프레소 4,800원입니다. 필터커피 가격은 원두에 따라 달라집니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://kimscatch.tistory.com/47",
+        "date": "2024-11-08",
+        "author": "마니오다",
+        "recommendation": "사촌과 경주 여행 중 반복 방문. 커피 맛과 관리된 공간, 여유로운 좌석 간격을 좋게 평가.",
+        "sponsorship": "협찬 여부 명시를 확인하지 못함."
+      },
+      {
+        "url": "https://thedeeper.tistory.com/2",
+        "date": "2024-01-13",
+        "author": "딮신라",
+        "recommendation": "직접 방문 추천. 필터커피·로열밀크티·티라미수를 추천.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "officialUrl": "https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=374&listType=thumb&mnu_uid=2287&pageNo=5&sortKwd=&srchKwd=",
+    "description": "여행객이 커피 맛과 차분한 공간을 추천한 로스터리입니다. 경주체육관 간판이 있는 건물에 자리합니다.",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "ratingUrl": "https://place.map.kakao.com/730708466",
+    "scheduleSource": "https://place.map.kakao.com/730708466",
+    "researchOnly": true,
+    "id": "j152"
+  },
+  {
+    "name": "커피플레이스 노동점",
+    "category": "cafe",
+    "locationText": "경주시 중앙로 18 1층",
+    "lat": 35.841436092258704,
+    "lon": 129.21179744929205,
+    "source": "https://freezinespace.tistory.com/entry/경주-카페-커피플레이스-경주-노동동",
+    "rating": 4.6,
+    "ratingCount": 247,
+    "ratingSource": "카카오맵",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵 조회 주간에는 수~월 08:00~18:00, 화요일 휴무로 표시되어 있습니다. 2025-08 방문 블로그의 매일 운영 안내와 달라 지도 표시를 우선합니다.",
+    "closureText": "카카오맵에는 화요일 휴무로 표시되어 있습니다. 과거 블로그는 설·추석 당일과 근로자의 날만 휴무로 안내하므로 방문일에 확인하세요.",
+    "deadlineText": "지도에 표시된 마지막 주문은 17:30입니다. 과거 블로그의 17:45와 차이가 있습니다.",
+    "priceInfo": {
+      "label": "블렌드 아메리카노",
+      "price": "3,500원",
+      "source": "https://place.map.kakao.com/13101482",
+      "checked": "2026-10-06",
+      "note": "카페라떼 4,000원이며, 오늘의 커피 가격은 달라질 수 있습니다. 직원용 라떼는 방문 후기에 나온 추천 메뉴로, 현재 가격은 별도 확인이 필요합니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://freezinespace.tistory.com/entry/경주-카페-커피플레이스-경주-노동동",
+        "date": "2025-08-21",
+        "author": "새근 집",
+        "recommendation": "경주 여행 중 방문. 직원용 라떼와 봉황대가 보이는 바 좌석을 추천.",
+        "sponsorship": "협찬 여부 미표시."
+      },
+      {
+        "url": "https://alsseuljabri.tistory.com/272",
+        "date": "2023-10-08",
+        "author": "시도우",
+        "recommendation": "여행 일행의 추천으로 방문, 직원용 라떼 맛과 차분한 분위기를 추천.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "officialUrl": "https://www.instagram.com/coffeeplace.go/",
+    "description": "봉황대 앞의 로컬 커피점입니다. 여행객이 직원용 라떼를 추천했으며, 좌석은 제한적입니다.",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "ratingUrl": "https://place.map.kakao.com/13101482",
+    "scheduleSource": "https://place.map.kakao.com/13101482",
+    "researchOnly": true,
+    "id": "j153"
+  },
+  {
+    "name": "카페 바흐",
+    "category": "cafe",
+    "locationText": "경주시 하동1길 43-12 2층",
+    "lat": 35.79365354798855,
+    "lon": 129.30941856955047,
+    "source": "https://thedeeper.tistory.com/2",
+    "rating": 5,
+    "ratingCount": 21,
+    "ratingSource": "카카오맵",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵 조회 당시에는 다음 날 11:00에 영업을 시작한다고 표시되었습니다. 다이닝코드는 11:00~21:00로 안내하지만 요일표가 서로 달라 영업 요일과 종료 시간을 방문 전에 확인하세요.",
+    "closureText": "카카오맵에는 매주 화·일요일 휴무로 표시되어 있습니다. 다이닝코드의 일부 요일표와 차이가 있습니다.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "priceInfo": {
+      "label": "오미자·매실",
+      "price": "5,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=RP8ErnJo8T6f",
+      "checked": "2026-10-06",
+      "note": "베리팥빙수는 1인 8,000원, 2인 14,000원이며 그린티 레몬에이드는 6,000원입니다. 지도에는 메뉴 가격이 표시되지 않았습니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://thedeeper.tistory.com/2",
+        "date": "2024-01-13",
+        "author": "딮신라",
+        "recommendation": "직접 방문 추천. 클래식 음악과 커피를 즐기며 쉬기 좋은 공간.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "description": "클래식 음악을 들으며 쉬기 좋은 작은 카페입니다.",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "ratingUrl": "https://place.map.kakao.com/27390292",
+    "scheduleSource": "https://place.map.kakao.com/27390292",
+    "researchOnly": true,
+    "id": "j154"
+  },
+  {
+    "name": "아무카페",
+    "category": "cafe",
+    "locationText": "경주시 보문마을4길 1 1~2층",
+    "lat": 35.8330445208164,
+    "lon": 129.25258457028406,
+    "source": "https://thedeeper.tistory.com/2",
+    "rating": 5,
+    "ratingCount": 16,
+    "ratingSource": "카카오맵",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵에는 영업시간이 표시되지 않았습니다. 디에디트 방문 기사는 10:00~20:00로 안내하지만, 현재 확정된 시간은 아닙니다.",
+    "closureText": "휴무는 별도로 공지하므로 방문 전에 확인하세요.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "priceInfo": {
+      "label": "아메리카노",
+      "price": "4,000원",
+      "source": "https://place.map.kakao.com/1489767367",
+      "checked": "2026-10-06",
+      "note": "카페라떼는 5,000원입니다. 핸드드립 가격은 원두별로 확인하세요."
+    },
+    "reviewSources": [
+      {
+        "url": "https://thedeeper.tistory.com/2",
+        "date": "2024-01-13",
+        "author": "딮신라",
+        "recommendation": "직접 방문 추천. 진평왕릉 앞 풍경과 핸드드립 커피.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "supplementalReview": "https://v.daum.net/v/9mzQu5qFzA",
+    "description": "진평왕릉 앞의 작은 로스터리입니다. 용인시에 있는 같은 이름의 카페와 구별해야 합니다.",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "ratingUrl": "https://place.map.kakao.com/1489767367",
+    "scheduleSource": "https://place.map.kakao.com/1489767367",
+    "researchOnly": true,
+    "id": "j155"
+  },
+  {
+    "name": "카페드립",
+    "category": "cafe",
+    "locationText": "경주시 초당길55번길 6 상가동 108호",
+    "lat": 35.84462128975398,
+    "lon": 129.23501517328046,
+    "source": "https://thedeeper.tistory.com/2",
+    "rating": 4.3,
+    "ratingCount": 7,
+    "ratingSource": "카카오맵",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵 조회 주간에는 월~토 07:00~18:00로 표시되어 있습니다. 다이닝코드의 최근 후기에는 07:30으로 나와 차이가 있으므로 방문일에 확인하세요.",
+    "closureText": "일요일 휴무로 표시되어 있습니다.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "priceInfo": {
+      "label": "페이퍼 핸드드립",
+      "price": "5,000원",
+      "source": "https://place.map.kakao.com/1893789387",
+      "checked": "2026-10-06",
+      "note": "카페라떼 4,000원, 에스프레소 2,500원입니다. 다이닝코드에는 아메리카노 2,500원으로 안내되어 있습니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://thedeeper.tistory.com/2",
+        "date": "2024-01-13",
+        "author": "딮신라",
+        "recommendation": "직접 방문 추천. 로스팅·핸드드립을 하는 작은 동네 커피점.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "officialUrl": "https://www.instagram.com/cafedrip_cafe/",
+    "description": "동천동의 로스터리이자 핸드드립 카페입니다. 지도 평점은 후기 수가 적은 표본입니다.",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "ratingUrl": "https://place.map.kakao.com/1893789387",
+    "scheduleSource": "https://place.map.kakao.com/1893789387",
+    "researchOnly": true,
+    "id": "j156"
+  },
+  {
+    "name": "소디스커피 현곡 본점",
+    "category": "cafe",
+    "locationText": "경주시 현곡면 형산로 161",
+    "lat": 35.88431976767773,
+    "lon": 129.20388846060268,
+    "source": "https://thedeeper.tistory.com/2",
+    "rating": 4,
+    "ratingCount": 36,
+    "ratingSource": "카카오맵",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵에는 연중무휴 11:00~22:00로 표시되어 있습니다.",
+    "closureText": "연중무휴로 표시되어 있으나 임시 휴무는 확인하세요.",
+    "deadlineText": "마지막 주문은 21:00입니다.",
+    "priceInfo": {
+      "label": "너티크레마",
+      "price": "6,000원",
+      "source": "https://place.map.kakao.com/2039388998",
+      "checked": "2026-10-06",
+      "note": "아메리카노는 5,500원입니다. 다이닝코드는 스카치크림라떼를 6,500원으로 안내합니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://thedeeper.tistory.com/2",
+        "date": "2024-01-13",
+        "author": "딮신라",
+        "recommendation": "직접 방문 추천. 숲을 바라보는 야외 캠핑 의자와 편안한 분위기.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "officialUrl": "https://www.instagram.com/sodiscoffee/",
+    "description": "현곡면에 있으며 숲 풍경과 야외 좌석을 즐길 수 있는 카페입니다. 기존 안강점과 다른 지점입니다.",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "ratingUrl": "https://place.map.kakao.com/2039388998",
+    "scheduleSource": "https://place.map.kakao.com/2039388998",
+    "researchOnly": true,
+    "id": "j157"
+  },
+  {
+    "name": "커피명가 경주무장산점",
+    "category": "cafe",
+    "locationText": "경주시 보덕로 123",
+    "lat": 35.8530491328158,
+    "lon": 129.30116653950162,
+    "source": "https://thedeeper.tistory.com/2",
+    "rating": 4.5,
+    "ratingCount": 13,
+    "ratingSource": "카카오맵",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵에는 연중무휴 10:00~21:00로 표시되어 있습니다.",
+    "closureText": "연중무휴로 표시되어 있으나 임시 휴무는 확인하세요.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "priceInfo": {
+      "label": "명가치노",
+      "price": "5,300원",
+      "source": "https://place.map.kakao.com/1991018274",
+      "checked": "2026-10-06",
+      "note": "따뜻한 아메리카노는 4,800원입니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://thedeeper.tistory.com/2",
+        "date": "2024-01-13",
+        "author": "딮신라",
+        "recommendation": "직접 방문 추천. 카페 뒤로 펼쳐지는 산 풍경.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "snsRepost": {
+      "url": "https://neer.my/7E4hrn?smp=onZmNAqmZqj3ayabMgB",
+      "date": "2026-09-15",
+      "author": "츄릅켠",
+      "recommendation": "캠핑 후 세 가족 방문, 마당·산 풍경·빈백 추천. 주말 핸드드립 불가가 아쉬웠다고 기록.",
+      "sponsorship": "내돈내산 표기. Instagram 원문 직접 확인 전 재게시 출처로만 분류."
+    },
+    "officialUrl": "https://myungga.com/",
+    "description": "무장산 권역의 산 풍경을 즐길 수 있는 카페입니다. 주말 드립커피 제공 여부는 별도 확인이 필요합니다.",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "ratingUrl": "https://place.map.kakao.com/1991018274",
+    "scheduleSource": "https://place.map.kakao.com/1991018274",
+    "researchOnly": true,
+    "id": "j158"
+  },
+  {
+    "name": "투핸즈커피",
+    "category": "cafe",
+    "locationText": "경주시 충효녹지길 142-5 1층",
+    "lat": 35.84543201415241,
+    "lon": 129.1757465425035,
+    "source": "https://so-what-dip-thinks-happen.tistory.com/entry/리뷰-경주카페추천-경주-투핸즈커피-방문후기내돈내산?category=934516",
+    "rating": 5,
+    "ratingCount": 2,
+    "ratingSource": "카카오맵",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵에는 운영시간이 표시되지 않았습니다.",
+    "closureText": "휴무일은 미확인입니다.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "priceInfo": {
+      "label": "에스프레소·아메리카노",
+      "price": "현행 가격 미확인",
+      "source": "https://place.map.kakao.com/1841880533",
+      "checked": "2026-10-06",
+      "note": "지도에는 메뉴가 표시되지 않았습니다. 2022년 방문 후기에서 추천한 커피, 제철 수박주스와 수제 치즈케이크가 현재도 제공되는지는 확인이 필요합니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://so-what-dip-thinks-happen.tistory.com/entry/리뷰-경주카페추천-경주-투핸즈커피-방문후기내돈내산?category=934516",
+        "date": "2022-06-16",
+        "author": "걸어서광기속으로",
+        "recommendation": "반복 방문과 내돈내산 표기. 커피 맛, 제철 수박주스, 친절함을 추천.",
+        "sponsorship": "내돈내산 표기."
+      }
+    ],
+    "identityNote": "2022 후기의 Kakao804847580은 현재1841880533로 og:url이 연결된다. 도로명·지번(충효동2927-1)이 동일하여 매장 주소를 대조했다. 점수는 새 원본 페이지의2건.",
+    "description": "충효동의 동네 커피점입니다. 지도 평점 표본은 2건이며 가격과 영업시간은 미확인입니다. 평가 수가 적어 평점 해석에 주의가 필요합니다.",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "ratingUrl": "https://place.map.kakao.com/1841880533",
+    "scheduleSource": "https://place.map.kakao.com/1841880533",
+    "researchOnly": true,
+    "id": "j159"
+  },
+  {
+    "name": "포워드",
+    "category": "cafe",
+    "locationText": "경주시 통일로 109-4 1~2층",
+    "lat": 35.7967671781801,
+    "lon": 129.25381582802274,
+    "source": "https://klio0717.tistory.com/entry/경주-카페-포워드-후기-내돈내산",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "rating": 4.3,
+    "ratingCount": 60,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%ED%8F%AC%EC%9B%8C%EB%93%9C%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%86%B5%EC%9D%BC%EB%A1%9C%20109-4%201~2%EC%B8%B5",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵 조회 주간에는 화~일 11:00~20:00로 표시되어 있습니다.",
+    "closureText": "월요일 휴무로 표시되어 있습니다.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "scheduleSource": "https://place.map.kakao.com/1515998544",
+    "description": "방문자는 넓은 주차장, 수공간, 숲길, 사진을 찍기 좋은 공간과 2층 전망을 추천했습니다. 내돈내산으로 표기한 후기입니다.",
+    "priceInfo": {
+      "label": "아메리카노",
+      "price": "5,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=eEzzwwRkN7EG",
+      "checked": "2026-10-06",
+      "note": "카페라떼는 6,000원입니다. 카카오맵은 3.7점·후기 31건, Google 지도는 4.3점·후기 60건으로 Google 지도 점수가 사용자의 기준을 충족합니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://klio0717.tistory.com/entry/경주-카페-포워드-후기-내돈내산",
+        "date": "2022-08-02",
+        "recommendation": "넓은 주차장·수공간·숲길·사진 공간·2층 전망 추천, 내돈내산 표기.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "identityNote": "",
+    "researchOnly": true,
+    "id": "j160"
+  },
+  {
+    "name": "바실라",
+    "category": "cafe",
+    "locationText": "경주시 하동못안길 88",
+    "lat": 35.80174612171951,
+    "lon": 129.31159954440753,
+    "source": "https://interiormoon.tistory.com/entry/경주-당일치기-여행-비용-KTX-쏘카-추천-내돈내산",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "rating": 4.4,
+    "ratingCount": 797,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EB%B0%94%EC%8B%A4%EB%9D%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%95%98%EB%8F%99%EB%AA%BB%EC%95%88%EA%B8%B8%2088",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵에는 월~목 09:30~20:30, 금~일 09:30~21:00로 표시되어 있습니다.",
+    "closureText": "정기 휴무는 별도 확인이 필요합니다.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "scheduleSource": "https://place.map.kakao.com/1776638798",
+    "description": "서울에서 출발한 당일 여행의 방문자가 커피와 호수 풍경을 추천했습니다. 아메리카노 6,000원의 실제 지출을 기록한 후기입니다.",
+    "priceInfo": {
+      "label": "해바라기라떼",
+      "price": "8,500원",
+      "source": "https://place.map.kakao.com/1776638798",
+      "checked": "2026-10-06",
+      "note": "선플라워에이드 8,000원, 팥빙수 18,000원입니다. 운영시간은 2024년 방문 후기보다 지도 게시값을 우선합니다. 꽃이 피는 시기는 계절에 따라 다릅니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://interiormoon.tistory.com/entry/경주-당일치기-여행-비용-KTX-쏘카-추천-내돈내산",
+        "date": "2024-05-27",
+        "recommendation": "서울출발 당일여행에서 커피·호수풍경 추천, 아메리카노6000 실지출 기록.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "identityNote": "",
+    "additionalReview": "https://luluj-australia.tistory.com/185",
+    "photoNote": "방문블로그 사진 이용허가 미확인.",
+    "researchOnly": true,
+    "id": "j161"
+  },
+  {
+    "name": "조르바",
+    "category": "cafe",
+    "locationText": "경주시 태종로 735 2층",
+    "lat": 35.83949542804954,
+    "lon": 129.2087513188813,
+    "source": "https://foodanddaily.tistory.com/10",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "rating": 4,
+    "ratingCount": 22,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EC%A1%B0%EB%A5%B4%EB%B0%94%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%83%9C%EC%A2%85%EB%A1%9C%20735%202%EC%B8%B5",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵에는 매일 11:00~19:00로 표시되어 있습니다.",
+    "closureText": "정기 휴무는 별도 확인이 필요합니다.",
+    "deadlineText": "마지막 주문은 18:30입니다.",
+    "scheduleSource": "https://place.map.kakao.com/544901989",
+    "description": "벚꽃 여행 중 방문한 후기에서 통창 전망과 차분하게 쉬기 좋은 공간을 추천했습니다. 라떼는 무난했다고 평가했습니다.",
+    "priceInfo": {
+      "label": "조르바라떼",
+      "price": "6,500원",
+      "source": "https://place.map.kakao.com/544901989",
+      "checked": "2026-10-06",
+      "note": "아메리카노 5,500원, 카페라떼 6,000원입니다. 2025년 방문 당시에는 어린이 출입 불가, 1인 1음료와 90분 이용 제한이 안내되었으므로 현재 조건을 확인하세요."
+    },
+    "reviewSources": [
+      {
+        "url": "https://foodanddaily.tistory.com/10",
+        "date": "2025-04-14",
+        "recommendation": "벚꽃여행 중 방문. 통창 전망·차분한 휴식, 라떼는 무난했다고 기록.",
+        "sponsorship": "협찬·광고 아닌 내돈내산 명시"
+      }
+    ],
+    "identityNote": "Google 노서동219-1과 도로명 태종로735 2층의 일치는 방문블로그 https://v60filtercoffee.tistory.com/entry/조르바ZORBA-경주-카페 및 다이닝코드에서 대조.",
+    "photoNote": "CC BY-NC-ND와 무단복제금지 안내가 함께 있어 앱 재사용 보류.",
+    "researchOnly": true,
+    "id": "j162"
+  },
+  {
+    "name": "슈만과클라라 본점",
+    "category": "cafe",
+    "locationText": "경주시 한빛길36번길 36-1",
+    "lat": 35.85360737824647,
+    "lon": 129.2031705965752,
+    "source": "https://thedeeper.tistory.com/2",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "rating": 4,
+    "ratingCount": 561,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EC%8A%88%EB%A7%8C%EA%B3%BC%ED%81%B4%EB%9D%BC%EB%9D%BC%20%EB%B3%B8%EC%A0%90%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%95%9C%EB%B9%9B%EA%B8%B836%EB%B2%88%EA%B8%B8%2036-1",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "다이닝코드에는 매일 10:30~22:30로 표시되어 있습니다. Google 지도와 카카오맵의 상세 영업시간은 재확인이 필요합니다.",
+    "closureText": "정기 휴무는 별도 확인이 필요합니다.",
+    "deadlineText": "다이닝코드는 마지막 주문을 22:00로 안내합니다. 현재 조건을 확인하세요.",
+    "scheduleSource": "https://place.map.kakao.com/7967241",
+    "description": "직접 방문한 후기가 강변 본점의 진한 커피와 빵을 추천했습니다.",
+    "priceInfo": {
+      "label": "케냐 핸드드립 HOT",
+      "price": "9,000원",
+      "source": "https://place.map.kakao.com/7967241",
+      "checked": "2026-10-06",
+      "note": "카카오맵 등록 메뉴. 에이징 탄자니아 HOT 10,000원·ICE 11,000원, 아이스 핸드드립 9,000원. 원두별 가격 확인."
+    },
+    "reviewSources": [
+      {
+        "url": "https://thedeeper.tistory.com/2",
+        "date": "2024-01-13",
+        "recommendation": "직접 방문, 강변 본점의 진한 커피·빵 추천.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "identityNote": "Kakao 본사 표시가 있으나 Google 본점 및 성건동690-14=한빛길36번길36-1 동일주소. https://impresident.tistory.com/731 여행직접방문, DiningCode14DiHY1sSlzV 현재카페운영자료.",
+    "researchOnly": true,
+    "id": "j163"
+  },
+  {
+    "name": "바넘커피",
+    "category": "cafe",
+    "locationText": "경주시 원화로 178-4",
+    "lat": 35.83692785665329,
+    "lon": 129.22016618147987,
+    "source": "https://thedeeper.tistory.com/2",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "rating": 4.5,
+    "ratingCount": 66,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EB%B0%94%EB%84%98%EC%BB%A4%ED%94%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%9B%90%ED%99%94%EB%A1%9C%20178-4",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "테이블링은 월~토 10:00~22:00, 일요일 10:00~18:00로 안내합니다. 다이닝코드의 화요일 19:00 마감 안내와 차이가 있으므로 방문일에 확인하세요.",
+    "closureText": "정기 휴무는 별도 확인이 필요합니다.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "scheduleSource": "https://place.map.kakao.com/809241114",
+    "description": "직접 방문한 후기가 단순한 메뉴 구성, 간결한 공간과 커피 맛을 추천했습니다.",
+    "priceInfo": {
+      "label": "카이막",
+      "price": "9,900원",
+      "source": "https://www.tabling.co.kr/place/677cd05b66de5f069885ec09",
+      "checked": "2026-10-06",
+      "note": "테이블링은 치즈케이크 6,900원, 에스프레소 콘파냐 5,400원으로 안내합니다. 카카오맵은 3.5점·후기 49건, Google 지도는 4.5점·후기 66건입니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://thedeeper.tistory.com/2",
+        "date": "2024-01-13",
+        "recommendation": "직접 방문, 단순한 메뉴·미니멀 공간·커피 맛 추천.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "identityNote": "",
+    "researchOnly": true,
+    "id": "j164"
+  },
+  {
+    "name": "벤자마스",
+    "category": "cafe",
+    "locationText": "경주시 알천북로 369 A동 (윗동천길 2)",
+    "lat": 35.84360426167294,
+    "lon": 129.2381472050298,
+    "source": "https://thedeeper.tistory.com/2",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "rating": 4.2,
+    "ratingCount": 2288,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EB%B2%A4%EC%9E%90%EB%A7%88%EC%8A%A4%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%95%8C%EC%B2%9C%EB%B6%81%EB%A1%9C%20369%20A%EB%8F%99%20(%EC%9C%97%EB%8F%99%EC%B2%9C%EA%B8%B8%202)",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "다이닝코드는 매일 10:00~24:00로 안내합니다. 지도의 상세 영업시간과 대조가 필요합니다.",
+    "closureText": "정기 휴무는 별도 확인이 필요합니다.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "scheduleSource": "https://place.map.kakao.com/21655553",
+    "description": "직접 방문한 후기가 여러 건물, 잔디와 야외 공간을 추천했습니다. 커피 맛을 추천한 것으로 확대해 해석하지 않았습니다.",
+    "priceInfo": {
+      "label": "아메리카노 HOT",
+      "price": "5,000원",
+      "source": "https://place.map.kakao.com/21655553",
+      "checked": "2026-10-06",
+      "note": "카카오맵 등록 메뉴. 디카페인 아메리카노 HOT 5,500원. 동명 건물별 메뉴·가격은 현장 확인."
+    },
+    "reviewSources": [
+      {
+        "url": "https://thedeeper.tistory.com/2",
+        "date": "2024-01-13",
+        "recommendation": "직접 방문, 여러 건물·잔디·야외공간 추천. 커피맛 추천으로 확대하지 않음.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "identityNote": "업체 채용공고 https://www.alba.co.kr/job/Detail?adid=146799393 에 윗동천길2(동천동160)와알천북로369를 함께표기, 동일시설 주소대조.",
+    "researchOnly": true,
+    "id": "j165"
+  },
+  {
+    "name": "가배향주",
+    "category": "cafe",
+    "locationText": "경주시 포석로 1063",
+    "lat": 35.83606249999999,
+    "lon": 129.2094375,
+    "source": "https://tyslgh.tistory.com/entry/경주-카페-황리단길-아침-오픈-감성-카페-추천-핸드드립과-오레그랏세가-매력적인-가배향주-내돈내산-후기?category=1319735",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "rating": 4.6,
+    "ratingCount": 58,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EA%B0%80%EB%B0%B0%ED%96%A5%EC%A3%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%8F%AC%EC%84%9D%EB%A1%9C%201063",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "2026-09-03 방문 후기와 다이닝코드의 주간 안내는 09:00~19:00이며, 수요일은 12:00에 영업을 시작합니다. 다른 2026년 후기의 11:00 시작 안내와 차이가 있으므로 방문일에 공식 SNS를 확인하세요.",
+    "closureText": "화요일 휴무로 기록되어 있으나 현재 조건을 확인하세요.",
+    "deadlineText": "다이닝코드가 안내하는 마지막 주문은 18:30입니다.",
+    "scheduleSource": "https://www.google.com/maps/search/?api=1&query=%EA%B0%80%EB%B0%B0%ED%96%A5%EC%A3%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%8F%AC%EC%84%9D%EB%A1%9C%201063",
+    "description": "경주 여행 중 아침에 방문한 후기가 드립커피, 오레그랏세와 차분한 공간을 추천했습니다. 내돈내산으로 표기했습니다.",
+    "priceInfo": {
+      "label": "오레그랏세",
+      "price": "6,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=3bOZViD0FKd5",
+      "checked": "2026-10-06",
+      "note": "콜드브루 아메리카노 5,500원, 라떼 6,000원, 오늘의 융드립 8,000원입니다. 필터커피 가격은 원두에 따라 달라집니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://tyslgh.tistory.com/entry/경주-카페-황리단길-아침-오픈-감성-카페-추천-핸드드립과-오레그랏세가-매력적인-가배향주-내돈내산-후기?category=1319735",
+        "date": "2026-09-03",
+        "recommendation": "경주여행 중 아침 방문, 드립커피·오레그랏세·차분한 공간 추천, 내돈내산 표기.",
+        "sponsorship": "내돈내산 표기."
+      }
+    ],
+    "photoNote": "2021공식관광 사진 발견했으나 해당페이지에 개별KOGL유형 없어서 재사용 보류.",
+    "researchOnly": true,
+    "id": "j166"
+  },
+  {
+    "name": "예스터데이",
+    "category": "cafe",
+    "locationText": "경주시 양정로 90 1층",
+    "lat": 35.843687499999994,
+    "lon": 129.2229375,
+    "source": "https://studio-jessy.tistory.com/37?category=613021",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "rating": 4.7,
+    "ratingCount": 38,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EC%98%88%EC%8A%A4%ED%84%B0%EB%8D%B0%EC%9D%B4%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%96%91%EC%A0%95%EB%A1%9C%2090%201%EC%B8%B5",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "2026년 4월 경주시 관광 안내는 벚꽃 시즌 10:00~19:00, 그 외 기간 13:00~18:00입니다. 일반 운영시간은 2023년 방문 후기와 일치합니다. 현재 지도의 상세 영업시간은 미확인입니다.",
+    "closureText": "2023년 방문 후기는 월·화요일 휴무로 안내합니다. 현재 조건을 확인하세요.",
+    "deadlineText": "2023년 방문 후기는 마지막 주문을 17:30로 안내합니다. 현재 조건을 확인하세요.",
+    "scheduleSource": "https://www.google.com/maps/search/?api=1&query=%EC%98%88%EC%8A%A4%ED%84%B0%EB%8D%B0%EC%9D%B4%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%96%91%EC%A0%95%EB%A1%9C%2090%201%EC%B8%B5",
+    "description": "친구와 방문한 후기가 빈티지 소품, 따뜻한 공간, 친절함과 커피를 추천했습니다. 봄에 다시 방문하고 싶다고 기록했습니다.",
+    "priceInfo": {
+      "label": "아메리카노",
+      "price": "현행 가격 미확인",
+      "source": "https://cafe.ambitstock.com/gyeongju/cafe/예스터데이/",
+      "checked": "2026-10-06",
+      "note": "다른 사이트에서 수집한 메뉴 자료는 원본과 대조하기 전까지 확정 가격으로 사용하지 않았습니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://studio-jessy.tistory.com/37?category=613021",
+        "date": "2023-03-06",
+        "recommendation": "친구와 방문, 빈티지 소품·따뜻한 공간·친절함·커피 추천. 봄 재방문 희망.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "researchOnly": true,
+    "officialUrl": "https://www.gyeongju.go.kr/tour/page.do?mnu_uid=4710",
+    "id": "j167"
+  },
+  {
+    "name": "공간민화카페",
+    "category": "cafe",
+    "locationText": "경주시 내남면 이조1길 28",
+    "lat": 35.752937499999994,
+    "lon": 129.1971875,
+    "source": "https://zinizoa.tistory.com/m/12",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "rating": 5,
+    "ratingCount": 1,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EA%B3%B5%EA%B0%84%EB%AF%BC%ED%99%94%EC%B9%B4%ED%8E%98%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EB%82%B4%EB%82%A8%EB%A9%B4%20%EC%9D%B4%EC%A1%B01%EA%B8%B8%2028",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "2025년 방문 후기는 10:00~20:00, 월요일 휴무로 안내합니다. 다이닝코드의 10:00~19:00와 서로 달라 방문일에 확인하세요.",
+    "closureText": "2025년 방문 후기는 월요일 휴무로 안내합니다. 현재 조건을 확인하세요.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "scheduleSource": "https://www.google.com/maps/search/?api=1&query=%EA%B3%B5%EA%B0%84%EB%AF%BC%ED%99%94%EC%B9%B4%ED%8E%98%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EB%82%B4%EB%82%A8%EB%A9%B4%20%EC%9D%B4%EC%A1%B01%EA%B8%B8%2028",
+    "description": "부모님과 직접 방문한 후기가 민화 작품, 전통차와 조용한 공간에 만족하며 재방문 의사를 기록했습니다. 내돈내산으로 표기했습니다. 평가 수가 적어 평점 해석에 주의가 필요합니다.",
+    "priceInfo": {
+      "label": "아메리카노",
+      "price": "4,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=nyLcQiucBQXU",
+      "checked": "2026-10-06",
+      "note": "다이닝코드는 아이스 아메리카노 5,000원, 라떼 5,000원으로 안내합니다. 2025년 방문 영수증의 쌍화차와 대추차 각 6,000원은 당시 가격입니다. Google 지도 평점 표본은 1건입니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://zinizoa.tistory.com/m/12",
+        "date": "2025-02-19",
+        "recommendation": "부모님과 직접 방문, 민화 작품·전통차·조용한 공간에 만족해 재방문 의사. 내돈내산.",
+        "sponsorship": "내돈내산 표기."
+      }
+    ],
+    "researchOnly": true,
+    "id": "j168"
+  },
+  {
+    "name": "아레나피나",
+    "category": "cafe",
+    "locationText": "경주시 감포읍 동해안로 1957-7",
+    "lat": 35.78128708423552,
+    "lon": 129.48978699862732,
+    "source": "https://melogkorea.tistory.com/92",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "rating": 4.4,
+    "ratingCount": 48,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EC%95%84%EB%A0%88%EB%82%98%ED%94%BC%EB%82%98%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EA%B0%90%ED%8F%AC%EC%9D%8D%20%EB%8F%99%ED%95%B4%EC%95%88%EB%A1%9C%201957-7",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "Google 지도 조회 주간에는 매일 10:00~20:30로 표시되어 있습니다. 2025년 경주시 관광 안내의 수요일 휴무와 다이닝코드의 요일별 운영시간이 서로 달라 방문일에 확인하세요.",
+    "closureText": "Google 지도 조회 주간에는 휴무가 표시되지 않았습니다. 2025년 경주시 관광 안내의 수요일 휴무와 차이가 있습니다.",
+    "deadlineText": "다이닝코드는 평일 마지막 주문 19:30, 주말 20:30로 안내합니다. Google 지도의 20:30 마감과 서로 달라 확인이 필요합니다.",
+    "scheduleSource": "https://www.google.com/maps/search/?api=1&query=%EC%95%84%EB%A0%88%EB%82%98%ED%94%BC%EB%82%98%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EA%B0%90%ED%8F%AC%EC%9D%8D%20%EB%8F%99%ED%95%B4%EC%95%88%EB%A1%9C%201957-7",
+    "description": "13명 가족 여행의 마무리로 방문한 후기가 땅콩크림라떼 고운모래, 바다 전망과 넓은 공간을 추천했습니다. 결제 내역도 제시했습니다.",
+    "priceInfo": {
+      "label": "고운모래 땅콩크림라떼",
+      "price": "8,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=9wbp5pdvGA61",
+      "checked": "2026-10-06",
+      "note": "다이닝코드는 나정 블루레몬에이드 7,500원, 소금빵과 에그타르트 각 3,800원으로 안내합니다. 2026-03-01 가족 여행 결제 내역도 고운모래 5잔 40,000원으로 일치합니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://melogkorea.tistory.com/92",
+        "date": "2026-05-16",
+        "visitDate": "2026-03-01",
+        "recommendation": "13명 가족여행 마무리로 방문, 땅콩크림라떼 고운모래·바다전망·넓은 공간을 추천. 결제내역 제시.",
+        "sponsorship": "협찬 여부 미표시"
+      }
+    ],
+    "officialUrl": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=4121",
+    "researchOnly": true,
+    "id": "j169"
+  },
+  {
+    "name": "커피업",
+    "category": "cafe",
+    "locationText": "경주시 원효로163번길 46",
+    "lat": 35.842812499999994,
+    "lon": 129.22206250000002,
+    "source": "https://hijei.tistory.com/17",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "rating": 4.5,
+    "ratingCount": 64,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EC%BB%A4%ED%94%BC%EC%97%85%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%9B%90%ED%9A%A8%EB%A1%9C163%EB%B2%88%EA%B8%B8%2046",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "Google 지도 조회 주간에는 수~월 11:30~19:30로 표시되어 있습니다. 경주시 관광 안내의 12:00~18:00와 서로 달라 방문일에 확인하세요.",
+    "closureText": "Google 지도는 화요일 휴무로 표시합니다. 관광 소개의 화·수요일 휴무와 차이가 있습니다.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "scheduleSource": "https://www.google.com/maps/search/?api=1&query=%EC%BB%A4%ED%94%BC%EC%97%85%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%9B%90%ED%9A%A8%EB%A1%9C163%EB%B2%88%EA%B8%B8%2046",
+    "priceInfo": {
+      "label": "모카포트·핸드드립 커피",
+      "price": "현행 가격 미확인",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=57&mnu_uid=2287",
+      "checked": "2026-10-06",
+      "note": "2020년 방문 메뉴와 테이크아웃 할인이 현재도 적용되는지는 확인이 필요합니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://hijei.tistory.com/17",
+        "date": "2020-04-30",
+        "author": "빵하마",
+        "recommendation": "반복 방문자가 조용한 분위기와 재방문 의사를 추천. 아인슈페너 커피와 크림의 조화는 취향에 맞지 않았다고 기록; 커피맛 호평으로 확대하지 않음.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "description": "반복 방문자가 조용한 분위기와 재방문 의사를 기록했습니다. 아인슈페너의 커피와 크림 조화는 취향에 맞지 않았다고 평가하여 커피 맛의 호평으로 확대하지 않았습니다.",
+    "researchOnly": true,
+    "officialUrl": "https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=57&mnu_uid=2287",
+    "id": "j170"
+  },
+  {
+    "name": "오베르",
+    "category": "cafe",
+    "locationText": "경주시 충현로3길 5",
+    "lat": 35.848437499999996,
+    "lon": 129.16993750000003,
+    "source": "https://uvuzubap.tistory.com/10",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "rating": 4.4,
+    "ratingCount": 152,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EC%98%A4%EB%B2%A0%EB%A5%B4%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%B6%A9%ED%98%84%EB%A1%9C3%EA%B8%B8%205",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "Google 지도에서 22:00 마감을 확인했습니다. 다이닝코드는 매일 10:00~22:00로 안내합니다.",
+    "closureText": "다이닝코드에는 정기 휴무가 표시되지 않았습니다. 방문일에 확인하세요.",
+    "deadlineText": "2022년 방문 후기는 마지막 주문을 21:00로 안내합니다. 현재 조건을 확인하세요.",
+    "scheduleSource": "https://www.google.com/maps/search/?api=1&query=%EC%98%A4%EB%B2%A0%EB%A5%B4%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%B6%A9%ED%98%84%EB%A1%9C3%EA%B8%B8%205",
+    "priceInfo": {
+      "label": "아메리카노 HOT",
+      "price": "2,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=JzctoDCpszUf",
+      "checked": "2026-10-06",
+      "note": "다이닝코드는 아이스 아메리카노 2,500원, 카페라떼 4,900원, 수제 쌍화차 5,500원으로 안내합니다. 2023년 후기의 4,500원과 차이가 있으므로 현재 매장 메뉴를 확인하세요."
+    },
+    "reviewSources": [
+      {
+        "url": "https://uvuzubap.tistory.com/10",
+        "date": "2023-03-10",
+        "author": "유부주밥",
+        "recommendation": "업무 중 점심시간 두 차례 방문. 식물원 같은 공간과 이색 데이트 장소로 추천. 여행객으로 분류하지 않음.",
+        "sponsorship": "내돈내먹 표기."
+      },
+      {
+        "url": "https://do-something-new-2021.tistory.com/238",
+        "date": "2022-02-27",
+        "author": "멋 & 맛 & @",
+        "recommendation": "두 차례 방문자가 식물과 베이커리를 추천. 글은 개인 경험에 경주시청 사진·글을 참고했다고 밝혀 독립 여행기와 구별.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "description": "업무 중 점심시간에 두 차례 방문한 후기가 식물원 같은 공간과 이색 데이트 장소로 추천했습니다. 해당 작성자는 여행객으로 분류하지 않았습니다.",
+    "researchOnly": true,
+    "officialUrl": "https://www.instagram.com/cafe_auvert/",
+    "identityNote": "도로명 충현로3길5가 지도·후기·다이닝코드에서 일치. 오래된 후기 지번은 지도 대표주소로 사용하지 않았다.",
+    "id": "j171"
+  },
+  {
+    "name": "소디스 에스프레소바 황성점",
+    "category": "cafe",
+    "locationText": "경주시 황성로28번길 15 1~2층",
+    "lat": 35.8649375,
+    "lon": 129.2160625,
+    "source": "https://jjoing.tistory.com/31",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "rating": 4.8,
+    "ratingCount": 16,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EC%86%8C%EB%94%94%EC%8A%A4%20%EC%97%90%EC%8A%A4%ED%94%84%EB%A0%88%EC%86%8C%EB%B0%94%20%ED%99%A9%EC%84%B1%EC%A0%90%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%99%A9%EC%84%B1%EB%A1%9C28%EB%B2%88%EA%B8%B8%2015%201~2%EC%B8%B5",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "Google 지도의 마감 시간은 22:00입니다. 다이닝코드는 평일 09:30~22:00, 주말 10:00~22:00로 안내하며 10/9 한글날에는 12:00에 영업을 시작한다고 표시합니다.",
+    "closureText": "정기 휴무는 표시되지 않았습니다. 명절과 공휴일 운영시간은 확인하세요.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "scheduleSource": "https://www.google.com/maps/search/?api=1&query=%EC%86%8C%EB%94%94%EC%8A%A4%20%EC%97%90%EC%8A%A4%ED%94%84%EB%A0%88%EC%86%8C%EB%B0%94%20%ED%99%A9%EC%84%B1%EC%A0%90%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%99%A9%EC%84%B1%EB%A1%9C28%EB%B2%88%EA%B8%B8%2015%201~2%EC%B8%B5",
+    "priceInfo": {
+      "label": "에스프레소",
+      "price": "2,300원",
+      "source": "https://www.diningcode.com/profile.php?rid=BUs06SbDlvjC",
+      "checked": "2026-10-06",
+      "note": "테네로와 살라토 각 2,800원, 말차라떼 6,000원, 패션히비스커스 6,500원입니다. 현곡 본점과 안강점은 다른 지점입니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://jjoing.tistory.com/31",
+        "date": "2025-04-27",
+        "author": "쪼잉쪼잉",
+        "recommendation": "황성점 직접 방문. 에스프레소·티라미수와 넓은 1~2층 공간 추천.",
+        "sponsorship": "내돈내산 표기."
+      }
+    ],
+    "description": "황성점에 직접 방문한 후기가 에스프레소, 티라미수와 넓은 1~2층 공간을 추천했습니다.",
+    "researchOnly": true,
+    "id": "j172"
+  },
+  {
+    "name": "바이닐바이브",
+    "category": "cafe",
+    "locationText": "경주시 첨성로81번길 29 2층",
+    "lat": 35.83568749999999,
+    "lon": 129.2109375,
+    "source": "https://musicall.tistory.com/4",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "rating": 4.7,
+    "ratingCount": 3,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EB%B0%94%EC%9D%B4%EB%8B%90%EB%B0%94%EC%9D%B4%EB%B8%8C%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%B2%A8%EC%84%B1%EB%A1%9C81%EB%B2%88%EA%B8%B8%2029%202%EC%B8%B5",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "2026년 1월 경주시 관광 안내는 11:30~22:00입니다. Google 지도에는 운영시간이 제공되지 않았습니다.",
+    "closureText": "정기 휴무는 미확인입니다.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "scheduleSource": "https://www.google.com/maps/search/?api=1&query=%EB%B0%94%EC%9D%B4%EB%8B%90%EB%B0%94%EC%9D%B4%EB%B8%8C%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%B2%A8%EC%84%B1%EB%A1%9C81%EB%B2%88%EA%B8%B8%2029%202%EC%B8%B5",
+    "priceInfo": {
+      "label": "LP 청음 이용료",
+      "price": "2025 방문 당시 1인 14,500원",
+      "source": "https://musicall.tistory.com/4",
+      "checked": "2026-10-06",
+      "note": "2025년 서로 다른 두 후기에서 음료와 팝콘이 포함된 것을 확인했습니다. 당시에는 이용시간 제한이 없었으나 현재 이용요금, 음료 추가금과 시간 제한은 별도 확인이 필요합니다. 개별 음료 가격과 LP 이용료는 구별해야 합니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://musicall.tistory.com/4",
+        "date": "2025-02-07",
+        "author": "고로뮤직",
+        "recommendation": "남편 출장에 동행한 경주 방문객. 다음날 대기 후 입장, 취향에 맞는 LP를 고르고 편히 음악 듣기 추천.",
+        "sponsorship": "협찬 여부 미표시."
+      },
+      {
+        "url": "https://jjoing.tistory.com/32",
+        "date": "2025-05-04",
+        "author": "쪼잉쪼잉",
+        "recommendation": "직접 방문하여 LP 청음과 편안한 소파에서 쉬기 추천.",
+        "sponsorship": "내돈내산 표기."
+      }
+    ],
+    "description": "남편의 출장에 동행한 경주 방문객이 다음 날 대기 후 입장했습니다. 취향에 맞는 LP를 고르고 편하게 음악을 듣기 좋다고 추천했습니다. 평가 수가 적어 평점 해석에 주의가 필요합니다.",
+    "researchOnly": true,
+    "officialUrl": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=4186",
+    "identityNote": "Google·방문후기 황남동305-4와 경주시 공식 도로명 첨성로81번길29는 https://bizno.net/article/5460903068 에 함께 표시된다.",
+    "id": "j173"
+  },
+  {
+    "name": "로머스커피",
+    "category": "cafe",
+    "locationText": "경주시 불국신택지7길 11",
+    "lat": 35.78504916908312,
+    "lon": 129.32779580518095,
+    "source": "https://jinscoffee.tistory.com/37",
+    "mapPinBasis": "카카오맵에 등록된 장소의 대표 위치",
+    "rating": 4.5,
+    "ratingCount": 68,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EB%A1%9C%EB%A8%B8%EC%8A%A4%EC%BB%A4%ED%94%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EB%B6%88%EA%B5%AD%EC%8B%A0%ED%83%9D%EC%A7%807%EA%B8%B8%2011",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "카카오맵 조회 주간에는 수~월 08:30~18:00로 표시되어 있습니다. Google 지도의 19:00 마감과 서로 다릅니다.",
+    "closureText": "카카오맵에는 화요일 휴무로 표시되어 있습니다.",
+    "deadlineText": "쉬는 시간과 마지막 주문 시간은 미확인입니다.",
+    "scheduleSource": "https://place.map.kakao.com/1183023826",
+    "priceInfo": {
+      "label": "흑임자크림라떼",
+      "price": "6,500원",
+      "source": "https://place.map.kakao.com/1183023826",
+      "checked": "2026-10-06",
+      "note": "카카오맵은 아메리카노 5,000원, 플랫화이트 5,500원으로 안내합니다. 후기의 아메리카노 4,500원과 레몬 마들렌 2,500원은 2022년 당시 가격입니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://jinscoffee.tistory.com/37",
+        "date": "2022-02-15",
+        "author": "in everyday life",
+        "recommendation": "불리단길 첫 방문. 토함산 전망·커피와 레몬 마들렌을 추천하고 다른 계절 재방문 의사.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "description": "불리단길에 처음 방문한 후기가 토함산 전망, 커피와 레몬 마들렌을 추천했습니다. 다른 계절에도 다시 방문하고 싶다고 기록했습니다.",
+    "researchOnly": true,
+    "identityNote": "방문 원문이 불국신택지7길11과 진현동71-14를 함께 표시하여 Google·Kakao 동일 주소 대조.",
+    "id": "j174"
+  },
+  {
+    "name": "오크냅 러스틱커피",
+    "category": "cafe",
+    "locationText": "경주시 외동읍 영지로 447-26 2층",
+    "lat": 35.754062499999996,
+    "lon": 129.2935625,
+    "source": "https://blime.tistory.com/1189",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "rating": 4.7,
+    "ratingCount": 57,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EC%98%A4%ED%81%AC%EB%83%85%20%EB%9F%AC%EC%8A%A4%ED%8B%B1%EC%BB%A4%ED%94%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%99%B8%EB%8F%99%EC%9D%8D%20%EC%98%81%EC%A7%80%EB%A1%9C%20447-26%202%EC%B8%B5",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "Google 지도 조회 주간에는 10:00~19:00로 표시되어 있습니다. 공식 CONTACT의 시작 시간은 10PM로 오타가 추정되지만 임의로 교정하지 않았습니다. 다이닝코드의 10:00~18:30와 종료 시간에 차이가 있습니다.",
+    "closureText": "Google 지도는 수요일 휴무, 공식 CONTACT는 월요일 휴무로 안내하여 서로 다릅니다. 방문일에 확인하세요.",
+    "deadlineText": "공식 CONTACT가 안내하는 마지막 주문은 18:30입니다.",
+    "scheduleSource": "https://www.google.com/maps/search/?api=1&query=%EC%98%A4%ED%81%AC%EB%83%85%20%EB%9F%AC%EC%8A%A4%ED%8B%B1%EC%BB%A4%ED%94%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%99%B8%EB%8F%99%EC%9D%8D%20%EC%98%81%EC%A7%80%EB%A1%9C%20447-26%202%EC%B8%B5",
+    "priceInfo": {
+      "label": "아메리카노",
+      "price": "5,900원",
+      "source": "https://www.diningcode.com/profile.php?rid=p6x16gSiKXNw",
+      "checked": "2026-10-06",
+      "note": "카페라떼 6,500원, 시골빵 7,000원(11시부터 판매), 포레스트 샌드위치 12,000원입니다. 2022년 방문 후기의 키위에이드 6,500원은 당시 가격입니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://blime.tistory.com/1189",
+        "date": "2022-01-08",
+        "author": "블로그 라임",
+        "recommendation": "경주 드라이브 중 직접 방문. 수제 키위에이드·원목가구·논 전망과 아늑함을 추천, 재방문 의사.",
+        "sponsorship": "협찬 여부 미표시."
+      },
+      {
+        "url": "https://daydream-jakepark.tistory.com/21",
+        "date": "2023-04-21",
+        "author": "Daydream_Jake.Park",
+        "recommendation": "반복 방문. 평일의 조용하고 아늑한 공간과 논밭 전망 추천.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "description": "경주 드라이브 중 직접 방문한 후기가 수제 키위에이드, 원목가구, 논 전망과 아늑함을 추천하며 재방문 의사를 기록했습니다.",
+    "researchOnly": true,
+    "officialUrl": "https://oaknap.com/contact",
+    "identityNote": "공식 https://oaknap.com/about 는 1층 가구제작실·2층 쇼룸겸러스틱커피 설명. Google 전화0547051212·영지로447-26·oaknap.com이 공식과 일치.",
+    "id": "j175"
+  },
+  {
+    "name": "산내그로브",
+    "category": "cafe",
+    "locationText": "경주시 산내면 문복로 734-4 (후기·회원자료 734-14와 차이)",
+    "lat": 35.6959375,
+    "lon": 129.05693750000003,
+    "source": "https://chojang2.tistory.com/entry/sanne-grove",
+    "mapPinBasis": "Google 지도에 등록된 장소의 대표 위치",
+    "rating": 4.1,
+    "ratingCount": 28,
+    "ratingSource": "Google 지도",
+    "ratingUrl": "https://www.google.com/maps/search/?api=1&query=%EC%82%B0%EB%82%B4%EA%B7%B8%EB%A1%9C%EB%B8%8C%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%82%B0%EB%82%B4%EB%A9%B4%20%EB%AC%B8%EB%B3%B5%EB%A1%9C%20734-4%20(%ED%9B%84%EA%B8%B0%C2%B7%ED%9A%8C%EC%9B%90%EC%9E%90%EB%A3%8C%20734-14%EC%99%80%20%EC%B0%A8%EC%9D%B4)",
+    "ratingChecked": "2026-10-06",
+    "scheduleText": "Google 지도 조회 주간에는 매일 10:00~18:00로 표시되어 있습니다. 2024년 후기의 목~월 11:00~18:00와 차이가 있습니다.",
+    "closureText": "Google 지도 조회 주간에는 휴무가 표시되지 않았습니다. 2024년 후기의 화·수요일 정기 휴무와 서로 다릅니다.",
+    "deadlineText": "2024년 후기는 마지막 주문을 17:30로 안내합니다. 현재 조건을 확인하세요.",
+    "scheduleSource": "https://www.google.com/maps/search/?api=1&query=%EC%82%B0%EB%82%B4%EA%B7%B8%EB%A1%9C%EB%B8%8C%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%82%B0%EB%82%B4%EB%A9%B4%20%EB%AC%B8%EB%B3%B5%EB%A1%9C%20734-4%20(%ED%9B%84%EA%B8%B0%C2%B7%ED%9A%8C%EC%9B%90%EC%9E%90%EB%A3%8C%20734-14%EC%99%80%20%EC%B0%A8%EC%9D%B4)",
+    "priceInfo": {
+      "label": "말차크림라떼·계절에이드",
+      "price": "현행 가격 미확인",
+      "source": "https://chojang2.tistory.com/entry/sanne-grove",
+      "checked": "2026-10-06",
+      "note": "2024년 가족 방문 당시 주문한 메뉴입니다. 현재 가격과 계절 메뉴는 확인이 필요합니다."
+    },
+    "reviewSources": [
+      {
+        "url": "https://chojang2.tistory.com/entry/sanne-grove",
+        "date": "2024-06-10",
+        "author": "바둑바둑이",
+        "recommendation": "아이들과 두 가족 방문. 말차크림라떼·계절에이드, 정원과 숲 풍경, 아이들이 놀기 좋은 야외공간 추천.",
+        "sponsorship": "협찬 여부 미표시."
+      }
+    ],
+    "description": "아이들과 두 가족이 방문한 후기가 말차크림라떼, 계절에이드, 정원과 숲 풍경, 아이들이 놀기 좋은 야외 공간을 추천했습니다.",
+    "researchOnly": true,
+    "identityNote": "Google 원본주소734-4와 재게시 회원자료734-14 상충. 현재 길찾기는 지도원본 핀 기준이며 주소 숫자의 정확성은 매장 확인 필요.",
+    "id": "j176"
+  }
+]

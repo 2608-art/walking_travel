@@ -1,0 +1,323 @@
+[
+  {
+    "id": "j5",
+    "name": "월정교",
+    "hours": {
+      "open": "09:00",
+      "close": "22:00"
+    },
+    "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=49&cmd=2&code_uid=1012&mnu_uid=4716",
+    "checkedAt": "2026-10-06",
+    "note": "공개 운영 안내를 계산용 시간표에 연결했습니다. 임시휴무·행사·재료 소진은 방문 전 확인하세요. 공개되지 않은 브레이크·마감은 추정하지 않습니다.",
+    "scope": "교량 관람. 문루 전시관 종료시각은 포함하지 않음"
+  },
+  {
+    "id": "j11",
+    "name": "성동시장",
+    "hours": {
+      "open": "07:00",
+      "close": "20:00",
+      "closedDates": [
+        "2026-01-04",
+        "2026-01-18",
+        "2026-02-01",
+        "2026-02-15",
+        "2026-03-01",
+        "2026-03-15",
+        "2026-04-05",
+        "2026-04-19",
+        "2026-05-03",
+        "2026-05-17",
+        "2026-06-07",
+        "2026-06-21",
+        "2026-07-05",
+        "2026-07-19",
+        "2026-08-02",
+        "2026-08-16",
+        "2026-09-06",
+        "2026-09-20",
+        "2026-10-04",
+        "2026-10-18",
+        "2026-11-01",
+        "2026-11-15",
+        "2026-12-06",
+        "2026-12-20"
+      ]
+    },
+    "source": "https://www.gyeongju.go.kr/tour_bak/page.do?area_uid=78&cmd=2&code_uid=1012&listType=&mnu_uid=2292&pageNo=3&sortKwd=&srchKwd=",
+    "checkedAt": "2026-10-06",
+    "note": "공개 운영 안내를 계산용 시간표에 연결했습니다. 임시휴무·행사·재료 소진은 방문 전 확인하세요. 공개되지 않은 브레이크·마감은 추정하지 않습니다.",
+    "scope": "시장 일반 둘러보기. 개별 점포 식사 영업시간과 구분"
+  },
+  {
+    "id": "j36",
+    "name": "교리김밥 경주본점",
+    "hours": {
+      "open": "08:30",
+      "close": "17:30",
+      "closedWeekdays": [
+        3
+      ]
+    },
+    "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=1717&mnu_uid=4830",
+    "checkedAt": "2026-10-07",
+    "note": "공개 운영 안내를 계산용 시간표에 연결했습니다. 임시휴무·행사·재료 소진은 방문 전 확인하세요. 공개되지 않은 브레이크·마감은 추정하지 않습니다.",
+    "weeklyHours": {
+      "0": {
+        "close": "18:30"
+      },
+      "6": {
+        "close": "18:30"
+      }
+    }
+  },
+  {
+    "id": "j38",
+    "name": "스컹크웍스",
+    "hours": {
+      "open": "10:00",
+      "close": "22:00"
+    },
+    "source": "https://gyeongju.go.kr/tour/page.do?cmd=2&con_uid=27&listType=&mnu_uid=2501&sortKwd=&srchKwd=",
+    "checkedAt": "2026-10-07",
+    "note": "공개 운영 안내를 계산용 시간표에 연결했습니다. 임시휴무·행사·재료 소진은 방문 전 확인하세요. 공개되지 않은 브레이크·마감은 추정하지 않습니다."
+  },
+  {
+    "id": "j39",
+    "name": "카페 오버랩",
+    "hours": {
+      "open": "11:00",
+      "close": "24:00"
+    },
+    "source": "https://visitgyeongju.or.kr/cuisine/view/535f40400605094d084102474c514a4649",
+    "checkedAt": "2026-10-07",
+    "note": "공개 운영 안내를 계산용 시간표에 연결했습니다. 임시휴무·행사·재료 소진은 방문 전 확인하세요. 공개되지 않은 브레이크·마감은 추정하지 않습니다."
+  },
+  {
+    "id": "j40",
+    "name": "황남빵",
+    "hours": {
+      "open": "08:00",
+      "close": "22:00"
+    },
+    "source": "https://www.hwangnam.co.kr/shopinfo/store.html",
+    "checkedAt": "2026-10-07",
+    "note": "공개 운영 안내를 계산용 시간표에 연결했습니다. 임시휴무·행사·재료 소진은 방문 전 확인하세요. 공개되지 않은 브레이크·마감은 추정하지 않습니다."
+  },
+  {
+    "id": "j142",
+    "name": "소향몽",
+    "hours": {
+      "open": "11:00",
+      "close": "21:00",
+      "breaks": [
+        [
+          "15:00",
+          "17:00"
+        ]
+      ],
+      "lastOrder": "20:00"
+    },
+    "source": "https://www.diningcode.com/profile.php?rid=jWukVMJerlqJ",
+    "checkedAt": "2026-10-07",
+    "note": "공개 운영 안내를 계산용 시간표에 연결했습니다. 임시휴무·행사·재료 소진은 방문 전 확인하세요. 공개되지 않은 브레이크·마감은 추정하지 않습니다.",
+    "verifiedLegs": [
+      {
+        "from": "j3",
+        "to": "j142",
+        "meters": 118,
+        "minutes": 2,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      },
+      {
+        "from": "j142",
+        "to": "j3",
+        "meters": 118,
+        "minutes": 2,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      }
+    ]
+  },
+  {
+    "id": "j72",
+    "name": "경주향교",
+    "hours": {
+      "open": "09:00",
+      "close": "18:00"
+    },
+    "source": "https://www.gyeongju.go.kr/tour/page.do?mnu_uid=3507",
+    "checkedAt": "2026-10-06",
+    "scope": "일반 관람·구매. 체험·교육의 예약 회차와 구분",
+    "note": "기존 2026-10-06 장소 조사에 저장된 공개 시간만 계산에 연결. 정기휴무 미확인은 무휴 확정이 아니며 방문 전 확인.",
+    "verifiedLegs": [
+      {
+        "from": "j6",
+        "to": "j72",
+        "meters": 338,
+        "minutes": 5,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      },
+      {
+        "from": "j72",
+        "to": "j6",
+        "meters": 338,
+        "minutes": 5,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      }
+    ]
+  },
+  {
+    "id": "j95",
+    "name": "제로스페이스 경주",
+    "hours": {
+      "open": "11:00",
+      "close": "19:00"
+    },
+    "source": "https://place.map.kakao.com/558090783",
+    "checkedAt": "2026-10-06",
+    "scope": "일반 관람·구매. 체험·교육의 예약 회차와 구분",
+    "note": "두 지도 운영시간 중 겹치는 11:00~19:00만 계산에 사용. 주말 연장·임시휴무는 방문 전 확인.",
+    "verifiedLegs": [
+      {
+        "from": "j3",
+        "to": "j95",
+        "meters": 138,
+        "minutes": 2,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      },
+      {
+        "from": "j95",
+        "to": "j3",
+        "meters": 138,
+        "minutes": 2,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      }
+    ]
+  },
+  {
+    "id": "j102",
+    "name": "북샵라벤더",
+    "hours": {
+      "open": "12:00",
+      "close": "18:00"
+    },
+    "source": "https://place.map.kakao.com/2044160811",
+    "checkedAt": "2026-10-06",
+    "scope": "일반 관람·구매. 체험·교육의 예약 회차와 구분",
+    "note": "기존 2026-10-06 장소 조사에 저장된 공개 시간만 계산에 연결. 정기휴무 미확인은 무휴 확정이 아니며 방문 전 확인.",
+    "verifiedLegs": [
+      {
+        "from": "j10",
+        "to": "j102",
+        "meters": 311,
+        "minutes": 5,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      },
+      {
+        "from": "j102",
+        "to": "j10",
+        "meters": 311,
+        "minutes": 5,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      }
+    ]
+  },
+  {
+    "id": "j103",
+    "name": "미피스토어 경주",
+    "hours": {
+      "open": "10:00",
+      "close": "20:00"
+    },
+    "source": "https://place.map.kakao.com/210891597",
+    "checkedAt": "2026-10-06",
+    "scope": "일반 관람·구매. 체험·교육의 예약 회차와 구분",
+    "note": "기존 2026-10-06 장소 조사에 저장된 공개 시간만 계산에 연결. 정기휴무 미확인은 무휴 확정이 아니며 방문 전 확인.",
+    "verifiedLegs": [
+      {
+        "from": "j3",
+        "to": "j103",
+        "meters": 381,
+        "minutes": 6,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      },
+      {
+        "from": "j103",
+        "to": "j3",
+        "meters": 381,
+        "minutes": 6,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      }
+    ]
+  },
+  {
+    "id": "j104",
+    "name": "하우해브유빈",
+    "hours": {
+      "open": "10:00",
+      "close": "22:00"
+    },
+    "source": "https://place.map.kakao.com/275022679",
+    "checkedAt": "2026-10-06",
+    "scope": "일반 관람·구매. 체험·교육의 예약 회차와 구분",
+    "note": "기존 2026-10-06 장소 조사에 저장된 공개 시간만 계산에 연결. 정기휴무 미확인은 무휴 확정이 아니며 방문 전 확인.",
+    "verifiedLegs": [
+      {
+        "from": "j3",
+        "to": "j104",
+        "meters": 289,
+        "minutes": 4,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      },
+      {
+        "from": "j104",
+        "to": "j3",
+        "meters": 289,
+        "minutes": 4,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      }
+    ]
+  },
+  {
+    "id": "j105",
+    "name": "사가소",
+    "hours": {
+      "open": "10:00",
+      "close": "21:00"
+    },
+    "source": "https://place.map.kakao.com/44090233",
+    "checkedAt": "2026-10-06",
+    "scope": "일반 관람·구매. 체험·교육의 예약 회차와 구분",
+    "note": "기존 2026-10-06 장소 조사에 저장된 공개 시간만 계산에 연결. 정기휴무 미확인은 무휴 확정이 아니며 방문 전 확인.",
+    "verifiedLegs": [
+      {
+        "from": "j3",
+        "to": "j105",
+        "meters": 200,
+        "minutes": 3,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      },
+      {
+        "from": "j105",
+        "to": "j3",
+        "meters": 200,
+        "minutes": 3,
+        "checkedAt": "2026-10-07",
+        "source": "https://mokpo-day-planner.sooyeon-jun-0389.chatgpt.site/api/route"
+      }
+    ]
+  }
+]

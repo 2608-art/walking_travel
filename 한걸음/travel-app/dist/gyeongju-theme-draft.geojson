@@ -1,0 +1,3510 @@
+{
+  "type": "FeatureCollection",
+  "name": "경주 테마별 장소 초안 핀",
+  "checkedAt": "2026-10-07",
+  "notes": "장소 후보 점만 표시한 초안. 경로선·방문순서·운영정보 없음. 장소는 여러 테마에 중복 포함될 수 있음.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j3",
+        "name": "황리단길",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.209953809161,
+          35.8374081139238
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j95",
+        "name": "제로스페이스 경주",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2103125,
+          35.8375625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j93",
+        "name": "어서어서책방",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2096347347,
+          35.837673485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j142",
+        "name": "소향몽",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20933685,
+          35.83784822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j89",
+        "name": "황남우엉김밥",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2097641887,
+          35.8367556411
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j98",
+        "name": "소소밀밀 대릉원점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2108125,
+          35.8374375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j85",
+        "name": "경주약과방",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2098125,
+          35.8366875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j139",
+        "name": "향화정",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20919354,
+          35.83800982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j140",
+        "name": "청온채",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20880536,
+          35.83761282
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j99",
+        "name": "책방무제",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2106716507,
+          35.8364397968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j115",
+        "name": "참치향 경주본점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2087634,
+          35.8364208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j166",
+        "name": "가배향주",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2094375,
+          35.83606249999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j105",
+        "name": "사가소",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2097422267,
+          35.8388356586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j106",
+        "name": "심상",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2094694167,
+          35.8360222057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j96",
+        "name": "디스모먼트",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2084375,
+          35.8365625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j84",
+        "name": "최영화빵 황리단점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2097679454,
+          35.838964936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j104",
+        "name": "하우해브유빈",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2112579588,
+          35.8361947333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j143",
+        "name": "료미",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20974176,
+          35.83561062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j38",
+        "name": "스컹크웍스",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.210037456348,
+          35.8355972750305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j129",
+        "name": "고유한우국밥",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2106933,
+          35.8356249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j173",
+        "name": "바이닐바이브",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2109375,
+          35.83568749999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j152",
+        "name": "향미사",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20838952631127,
+          35.83905876569267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j145",
+        "name": "단향회",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.21124921,
+          35.8355441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j111",
+        "name": "황리화덕가",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2083487,
+          35.8356716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j162",
+        "name": "조르바",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2087513188813,
+          35.83949542804954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j4",
+        "name": "대릉원",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.213333992314,
+          35.838191058762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j103",
+        "name": "미피스토어 경주",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2095850345,
+          35.8342864664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j40",
+        "name": "황남빵",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.21364442351,
+          35.8408398161359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j1",
+        "name": "첨성대",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.219000182596,
+          35.834714812336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "royal",
+        "themeName": "왕경·황리단길",
+        "placeId": "j2",
+        "name": "동궁과 월지",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.226975518857,
+          35.8347762643542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j6",
+        "name": "교촌한옥마을",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.214695038002,
+          35.8296330738302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j72",
+        "name": "경주향교",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2169375,
+          35.8311875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j5",
+        "name": "월정교",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.218121296919,
+          35.8292995462011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j42",
+        "name": "경주원조콩국",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2147315243,
+          35.8334528343
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j148",
+        "name": "늘곰탕",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20984528,
+          35.8288561
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j107",
+        "name": "화목토",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2138003181,
+          35.8343458152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j55",
+        "name": "두낫디스터브 베이커스 경주",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2103125,
+          35.8331875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j114",
+        "name": "복길",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.209988,
+          35.8331762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j117",
+        "name": "황남두꺼비",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2109096,
+          35.8344892
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j147",
+        "name": "신라제면",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.21236334,
+          35.83509942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j109",
+        "name": "료코",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2127376,
+          35.8352845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j88",
+        "name": "이상복명과 본점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2087971932,
+          35.8331692411
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j1",
+        "name": "첨성대",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.219000182596,
+          35.834714812336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j103",
+        "name": "미피스토어 경주",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2095850345,
+          35.8342864664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j145",
+        "name": "단향회",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.21124921,
+          35.8355441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j173",
+        "name": "바이닐바이브",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2109375,
+          35.83568749999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j129",
+        "name": "고유한우국밥",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2106933,
+          35.8356249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j38",
+        "name": "스컹크웍스",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.210037456348,
+          35.8355972750305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j104",
+        "name": "하우해브유빈",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2112579588,
+          35.8361947333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j143",
+        "name": "료미",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20974176,
+          35.83561062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j86",
+        "name": "이상복경주빵 본가",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2193842976,
+          35.8358718652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j99",
+        "name": "책방무제",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2106716507,
+          35.8364397968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j106",
+        "name": "심상",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2094694167,
+          35.8360222057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j166",
+        "name": "가배향주",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2094375,
+          35.83606249999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j111",
+        "name": "황리화덕가",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2083487,
+          35.8356716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j85",
+        "name": "경주약과방",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2098125,
+          35.8366875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j89",
+        "name": "황남우엉김밥",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2097641887,
+          35.8367556411
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j2",
+        "name": "동궁과 월지",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.226975518857,
+          35.8347762643542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j8",
+        "name": "분황사",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.233639851398,
+          35.8405669628174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "wolseong",
+        "themeName": "월성·교촌·동부 유적",
+        "placeId": "j69",
+        "name": "신라왕경숲공원",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2388225694,
+          35.8399154336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j11",
+        "name": "성동시장",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.216354826459,
+          35.8453437100019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j90",
+        "name": "혜진분식",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2158603701,
+          35.8450735096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j91",
+        "name": "명동김밥 성동시장점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2158536533,
+          35.8448321538
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j10",
+        "name": "경주읍성",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.213747746092,
+          35.8466262196792
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j100",
+        "name": "너른벽",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2151642564,
+          35.842646323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j97",
+        "name": "서점 북미",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2131875,
+          35.8474375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j83",
+        "name": "최영화빵 본점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2153512812,
+          35.8415724334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j102",
+        "name": "북샵라벤더",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2118126715,
+          35.8470835587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j108",
+        "name": "라이팅룸",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2129698896,
+          35.8420524368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j40",
+        "name": "황남빵",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.21364442351,
+          35.8408398161359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j170",
+        "name": "커피업",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.22206250000002,
+          35.842812499999994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j41",
+        "name": "영양숯불갈비",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2099754626,
+          35.8466019799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j153",
+        "name": "커피플레이스 노동점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.21179744929205,
+          35.841436092258704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j167",
+        "name": "예스터데이",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2229375,
+          35.843687499999994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j110",
+        "name": "도미",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2117655,
+          35.8407627
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j81",
+        "name": "신라대종",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2119375,
+          35.8404375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j4",
+        "name": "대릉원",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.213333992314,
+          35.838191058762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j12",
+        "name": "경주중앙시장",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20674378595,
+          35.8439618671375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j84",
+        "name": "최영화빵 황리단점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2097679454,
+          35.838964936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j105",
+        "name": "사가소",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2097422267,
+          35.8388356586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j162",
+        "name": "조르바",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2087513188813,
+          35.83949542804954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j164",
+        "name": "바넘커피",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.22016618147987,
+          35.83692785665329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j152",
+        "name": "향미사",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20838952631127,
+          35.83905876569267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j98",
+        "name": "소소밀밀 대릉원점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2108125,
+          35.8374375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j95",
+        "name": "제로스페이스 경주",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2103125,
+          35.8375625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j139",
+        "name": "향화정",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20919354,
+          35.83800982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j93",
+        "name": "어서어서책방",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2096347347,
+          35.837673485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j142",
+        "name": "소향몽",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.20933685,
+          35.83784822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j3",
+        "name": "황리단길",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.209953809161,
+          35.8374081139238
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "market",
+        "themeName": "성동·중앙시장",
+        "placeId": "j86",
+        "name": "이상복경주빵 본가",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2193842976,
+          35.8358718652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j13",
+        "name": "보문호",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.277537955915,
+          35.8446063858245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j48",
+        "name": "경주전복해물뚝배기",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2815009719,
+          35.8456142105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j54",
+        "name": "엘로우",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2718125,
+          35.8450625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j123",
+        "name": "보문민속식당",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2879971,
+          35.8447662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j15",
+        "name": "경주월드",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.282065989924,
+          35.8362525746299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j78",
+        "name": "경주루지월드",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2891875,
+          35.8448125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j118",
+        "name": "보문갈비",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2853312,
+          35.8370176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j80",
+        "name": "라원",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2619375,
+          35.8469375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j14",
+        "name": "경주동궁원",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.261660603897,
+          35.8495070925255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j79",
+        "name": "주렁주렁 경주점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2895625,
+          35.8346875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j49",
+        "name": "아화전통국수 보문점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.26347888,
+          35.8525796021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j141",
+        "name": "함양집 북군",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.26218256,
+          35.8520429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j56",
+        "name": "레스트205",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2575625,
+          35.8449375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j16",
+        "name": "경주엑스포대공원",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.288347916435,
+          35.8308656368076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j76",
+        "name": "경주솔거미술관",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2890625,
+          35.8286875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j158",
+        "name": "커피명가 경주무장산점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.30116653950162,
+          35.8530491328158
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j43",
+        "name": "보문뜰",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2517063368,
+          35.8426840673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j155",
+        "name": "아무카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.25258457028406,
+          35.8330445208164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j151",
+        "name": "물천한우",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.27529999,
+          35.8695387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j69",
+        "name": "신라왕경숲공원",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2388225694,
+          35.8399154336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j165",
+        "name": "벤자마스",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2381472050298,
+          35.84360426167294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j156",
+        "name": "카페드립",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.23501517328046,
+          35.84462128975398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j8",
+        "name": "분황사",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.233639851398,
+          35.8405669628174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j130",
+        "name": "꼬푸GGOPU",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2304905,
+          35.8412005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j2",
+        "name": "동궁과 월지",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.226975518857,
+          35.8347762643542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j7",
+        "name": "국립경주박물관",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.227950264925,
+          35.8292338953534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j167",
+        "name": "예스터데이",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2229375,
+          35.843687499999994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j170",
+        "name": "커피업",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.22206250000002,
+          35.842812499999994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j164",
+        "name": "바넘커피",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.22016618147987,
+          35.83692785665329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bomun",
+        "themeName": "보문",
+        "placeId": "j101",
+        "name": "오늘은책방",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2217954321,
+          35.8593084507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j17",
+        "name": "불국사",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.331842609049,
+          35.7899146617238
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j74",
+        "name": "불국사박물관",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.3331875,
+          35.7885625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j119",
+        "name": "경춘재",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.3267969,
+          35.7868958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j77",
+        "name": "동리목월문학관",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.3340625,
+          35.7850625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j124",
+        "name": "전주시골밥상",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.3282501,
+          35.7851557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j125",
+        "name": "울산식당",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.3284937,
+          35.7848627
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j174",
+        "name": "로머스커피",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.32779580518095,
+          35.78504916908312
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j18",
+        "name": "석굴암",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.350520734467,
+          35.795241662003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j44",
+        "name": "쑥부쟁이",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.3126399624,
+          35.7973470955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j154",
+        "name": "카페 바흐",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.30941856955047,
+          35.79365354798855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j161",
+        "name": "바실라",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.31159954440753,
+          35.80174612171951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j149",
+        "name": "경주밀면 본점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.30310675,
+          35.7733763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j175",
+        "name": "오크냅 러스틱커피",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2935625,
+          35.754062499999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j76",
+        "name": "경주솔거미술관",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2890625,
+          35.8286875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j16",
+        "name": "경주엑스포대공원",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.288347916435,
+          35.8308656368076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j79",
+        "name": "주렁주렁 경주점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2895625,
+          35.8346875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j118",
+        "name": "보문갈비",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2853312,
+          35.8370176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j15",
+        "name": "경주월드",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.282065989924,
+          35.8362525746299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j24",
+        "name": "골굴사",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.406628310821,
+          35.8023528294465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j160",
+        "name": "포워드",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.25381582802274,
+          35.7967671781801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j78",
+        "name": "경주루지월드",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2891875,
+          35.8448125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j123",
+        "name": "보문민속식당",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2879971,
+          35.8447662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j158",
+        "name": "커피명가 경주무장산점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.30116653950162,
+          35.8530491328158
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j48",
+        "name": "경주전복해물뚝배기",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.2815009719,
+          35.8456142105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "bulguksa",
+        "themeName": "불국사",
+        "placeId": "j13",
+        "name": "보문호",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.277537955915,
+          35.8446063858245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j21",
+        "name": "감포항",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.505506378971,
+          35.8067935977834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j120",
+        "name": "푸른바다회센터",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.5044773,
+          35.8041734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j53",
+        "name": "호성식육식당",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.5021393985,
+          35.804957271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j59",
+        "name": "1925감포",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.5015625,
+          35.8056875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j62",
+        "name": "모카커피 감포",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.5002526757,
+          35.8047514785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j22",
+        "name": "송대말등대",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.511355667762,
+          35.8072282852616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j58",
+        "name": "키키리키",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4999375,
+          35.8138125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j132",
+        "name": "뷰델카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.5083536,
+          35.8188722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j71",
+        "name": "전촌용굴",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4989375,
+          35.7926875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j45",
+        "name": "황포식당",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4899386963,
+          35.7879909478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j57",
+        "name": "히든씨",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.5124375,
+          35.8296875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j23",
+        "name": "전촌솔밭해변",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.49131969869,
+          35.7860738417643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j169",
+        "name": "아레나피나",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.48978699862732,
+          35.78128708423552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j133",
+        "name": "카페 나이프",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4949963,
+          35.7740152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j134",
+        "name": "EGO 카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4922516,
+          35.7518118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j116",
+        "name": "해맞이회타운",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4865816,
+          35.7469605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j126",
+        "name": "갈매기횟집",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4866903,
+          35.7460501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j19",
+        "name": "감은사지",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.477214857251,
+          35.7480008437986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j131",
+        "name": "감포이견대카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.484622,
+          35.7452325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j68",
+        "name": "이견대",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4836875,
+          35.7441875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "gampo",
+        "themeName": "감포·전촌",
+        "placeId": "j20",
+        "name": "문무대왕릉",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.486876732783,
+          35.7382615855879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j19",
+        "name": "감은사지",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.477214857251,
+          35.7480008437986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j68",
+        "name": "이견대",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4836875,
+          35.7441875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j131",
+        "name": "감포이견대카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.484622,
+          35.7452325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j116",
+        "name": "해맞이회타운",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4865816,
+          35.7469605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j126",
+        "name": "갈매기횟집",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4866903,
+          35.7460501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j20",
+        "name": "문무대왕릉",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.486876732783,
+          35.7382615855879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j134",
+        "name": "EGO 카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4922516,
+          35.7518118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j133",
+        "name": "카페 나이프",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4949963,
+          35.7740152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j169",
+        "name": "아레나피나",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.48978699862732,
+          35.78128708423552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j23",
+        "name": "전촌솔밭해변",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.49131969869,
+          35.7860738417643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j45",
+        "name": "황포식당",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4899386963,
+          35.7879909478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j71",
+        "name": "전촌용굴",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4989375,
+          35.7926875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j27",
+        "name": "읍천항",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.475670915367,
+          35.6914278467318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j62",
+        "name": "모카커피 감포",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.5002526757,
+          35.8047514785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j120",
+        "name": "푸른바다회센터",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.5044773,
+          35.8041734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j53",
+        "name": "호성식육식당",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.5021393985,
+          35.804957271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j59",
+        "name": "1925감포",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.5015625,
+          35.8056875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j26",
+        "name": "양남 주상절리 전망대",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.474229010739,
+          35.6860838852533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j21",
+        "name": "감포항",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.505506378971,
+          35.8067935977834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j136",
+        "name": "주상절리 더킹 베이커리 카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4722272,
+          35.683855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j22",
+        "name": "송대말등대",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.511355667762,
+          35.8072282852616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j63",
+        "name": "삼십오밀리미터",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4627835959,
+          35.6813631371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j58",
+        "name": "키키리키",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4999375,
+          35.8138125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "munmu",
+        "themeName": "문무왕릉 일대",
+        "placeId": "j128",
+        "name": "파도회식당",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.469062,
+          35.6795442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j27",
+        "name": "읍천항",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.475670915367,
+          35.6914278467318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j26",
+        "name": "양남 주상절리 전망대",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.474229010739,
+          35.6860838852533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j136",
+        "name": "주상절리 더킹 베이커리 카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4722272,
+          35.683855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j128",
+        "name": "파도회식당",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.469062,
+          35.6795442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j63",
+        "name": "삼십오밀리미터",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4627835959,
+          35.6813631371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j135",
+        "name": "소풍가다 경주양남본점",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4599499,
+          35.6767884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j122",
+        "name": "동남식당",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4636497,
+          35.6741914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j28",
+        "name": "하서해안공원",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.463884507845,
+          35.6721322375636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j60",
+        "name": "이스트앵글 베이커리카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4646875,
+          35.6691875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j20",
+        "name": "문무대왕릉",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.486876732783,
+          35.7382615855879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j68",
+        "name": "이견대",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4836875,
+          35.7441875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j131",
+        "name": "감포이견대카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.484622,
+          35.7452325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j126",
+        "name": "갈매기횟집",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4866903,
+          35.7460501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j116",
+        "name": "해맞이회타운",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4865816,
+          35.7469605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j19",
+        "name": "감은사지",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.477214857251,
+          35.7480008437986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "yangnam",
+        "themeName": "양남 주상절리",
+        "placeId": "j134",
+        "name": "EGO 카페",
+        "draft": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.4922516,
+          35.7518118
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "checkedAt": "2026-10-06",
+  "scope": "경주 기존176곳 예약 누락 독립 검토. 추가 검색 종료 시점까지 직접 확인한 새 근거만 저장. 전수 전화 확인 아님.",
+  "rows": [
+    {
+      "checkedAt": "2026-10-06",
+      "postedAt": null,
+      "visitedAt": null,
+      "id": "j14",
+      "name": "경주동궁원",
+      "status": "required",
+      "scope": "동궁원 단체 체험 신청",
+      "scopeType": "group",
+      "method": "전화 054-779-8987 또는 054-779-8983 (평일 09:00~18:00)",
+      "url": "https://www.gyeongju.go.kr/epg/?c=2/12",
+      "sessions": "단체 체험 회차는 전화 협의. 09:00~18:00은 신청 가능 시간이며 체험 회차가 아닙니다.",
+      "deadline": "신청 마감 일수 미확인. 예약 2일 전 예약 사항 확인 안내.",
+      "note": "공식 단체체험 공지에서 유선 신청만 가능하다고 안내. 장소 전체 관람 또는 개인 현장 체험의 예약 필수 조건이 아닙니다. '예약 2일 전 사항 확인'을 '2일 전 접수 마감'으로 해석하지 않습니다.",
+      "sources": [
+        "https://www.gyeongju.go.kr/epg/?c=2/12"
+      ]
+    },
+    {
+      "checkedAt": "2026-10-06",
+      "postedAt": "2026-04-24",
+      "visitedAt": null,
+      "id": "j80",
+      "name": "라원",
+      "status": "unknown",
+      "scope": "라원 놀아봄 단체 이용",
+      "scopeType": "group",
+      "method": "사전 이용문의 전화 054-779-8725",
+      "url": "https://www.gyeongju.go.kr/epg/?c=6/35",
+      "sessions": "별도 회차 미확인",
+      "deadline": "사전 문의 안내, 예약 필수 여부와 접수 마감 미확인",
+      "note": "2026-04-24 공식 FAQ는 단체의 사전 이용문의만 안내합니다. 사전 문의를 예약 필수로 확정하지 않습니다. 놀아봄 개인·가족 이용은 아동 1명당 보호자 1명 필수동반 안내이며 일반 라원 전체 관람과 구분합니다.",
+      "sources": [
+        "https://www.gyeongju.go.kr/epg/?c=6/35"
+      ]
+    },
+    {
+      "checkedAt": "2026-10-06",
+      "postedAt": null,
+      "visitedAt": null,
+      "id": "j43",
+      "name": "보문뜰",
+      "status": "unknown",
+      "scope": "식사 좌석 예약",
+      "scopeType": "visit",
+      "method": "전화 010-7373-8251로 예약 조건 문의",
+      "url": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400604084d0b4202414551474349",
+      "sessions": "예약 가능 시간·회차 미확인",
+      "deadline": "예약 필수 여부·마감 미확인",
+      "note": "업소 본문 '시설 및 서비스' 목록에서 예약 확인(공통 검색 필터 아님). 예약 가능 서비스는 확인했으나 운영자 현행 필수·권장 규정은 미확인.",
+      "sources": [
+        "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400604084d0b4202414551474349"
+      ]
+    },
+    {
+      "checkedAt": "2026-10-06",
+      "postedAt": null,
+      "visitedAt": null,
+      "id": "j114",
+      "name": "복길",
+      "status": "unknown",
+      "scope": "식사 좌석 예약",
+      "scopeType": "visit",
+      "method": "전화 010-6501-9084로 예약 조건 문의",
+      "url": "https://visitgyeongju.or.kr/kr/cuisine/view/535f41490606094508480441435145444b",
+      "sessions": "예약 가능 시간·회차 미확인",
+      "deadline": "예약 필수 여부·마감 미확인",
+      "note": "업소 본문 '시설 및 서비스' 목록에서 예약 확인(공통 검색 필터 아님). 경주시 첨성로 71 업소 대조. 예약 가능 서비스는 확인했으나 필수·권장 규정은 미확인.",
+      "sources": [
+        "https://visitgyeongju.or.kr/kr/cuisine/view/535f41490606094508480441435145444b"
+      ]
+    },
+    {
+      "checkedAt": "2026-10-06",
+      "postedAt": null,
+      "visitedAt": null,
+      "id": "j118",
+      "name": "보문갈비",
+      "status": "unknown",
+      "scope": "식사 좌석 예약",
+      "scopeType": "visit",
+      "method": "전화 0507-1480-9399로 예약 조건 문의",
+      "url": "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040944084204424351424d49",
+      "sessions": "예약 가능 시간·회차 미확인",
+      "deadline": "예약 필수 여부·마감 미확인",
+      "note": "업소 본문 '시설 및 서비스' 목록에서 예약 확인(공통 검색 필터 아님). 경주시 보문로 529, 1층 대조. 예약 가능 서비스는 확인했으나 필수·권장 규정은 미확인.",
+      "sources": [
+        "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040944084204424351424d49"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "id": "j14",
+      "name": "동궁원 블루베리 체험",
+      "source": "https://www.gyeongju.go.kr/epg/?c=6/35",
+      "reason": "2024-02-21 FAQ는 현장 신청·예약 불가 안내. 계절 체험의 현행 운영은 미확인, 단체체험 예약 조건과 분리."
+    },
+    {
+      "id": "j78",
+      "name": "경주루지월드",
+      "source": "https://gyeongju-luge.kr/Usagefee",
+      "reason": "공식 이용료 원문 접근 실패. 저장 자료의 1회권 현장판매를 전체 예약 필수 또는 불필요 규정으로 확대하지 않음."
+    },
+    {
+      "id": "j100",
+      "name": "너른벽",
+      "source": "https://www.gyeongju.go.kr/gjlll/main/placelend/rt_calendar.do?menu_idx=254",
+      "reason": "공식 학습공간 목록에 장소는 있으나 화면 기본 회차가 너른벽 선택 결과인지 미확인. 회차·예약 조건 미채택."
+    },
+    {
+      "id": "j102",
+      "name": "북샵라벤더",
+      "source": "https://qak.purpleo.kr/article/224",
+      "reason": "예약 표시가 있는 2차 공공데이터 집계 페이지. 원문·적용범위·운영자 현행 규정 미확인으로 미채택."
+    },
+    {
+      "id": "j101",
+      "name": "오늘은책방",
+      "source": null,
+      "reason": "검색 중 위층 느림보상점의 예약 서비스가 섞임. 다른 업소 예약 조건을 책방에 적용하지 않음."
+    },
+    {
+      "id": "j109",
+      "name": "료코",
+      "source": null,
+      "reason": "관광 테마 설명의 예약 필수 표현과 업소 서비스 목록이 일치하지 않아 운영자 현행 규정으로 확정하지 않음. 재검증되지 않은 URL·필수 상태 미채택."
+    },
+    {
+      "id": "j99",
+      "name": "책방무제",
+      "source": null,
+      "reason": "독립 검색에서 직접 예약 근거 확보 못함. 예약 불필요 확정 아님."
+    },
+    {
+      "id": "j108",
+      "name": "라이팅룸",
+      "source": null,
+      "reason": "독립 검색에서 직접 예약 근거 확보 못함. 예약 불필요 확정 아님."
+    }
+  ]
+}

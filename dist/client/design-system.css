@@ -293,6 +293,21 @@ small, .small { font-size: var(--type-caption); line-height: 1.65; color: var(--
 .theme-art.theme-custom { background: #f2f4e8 url('./assets/diary/custom-route.svg') center/contain no-repeat; }
 .theme-art:before, .theme-art .ui-icon { visibility: hidden; }
 .theme-first { background-position: 0% 0; }.theme-history { background-position: 20% 0; }.theme-sea { background-position: 40% 0; }.theme-shops { background-position: 60% 0; }.theme-food { background-position: 80% 0; }.theme-cafe { background-position: 100% 0; }
+/* Each Gyeongju card shows the landmark that defines its regional theme. */
+.theme-art.theme-royal, .theme-art.theme-wolseong, .theme-art.theme-market,
+.theme-art.theme-bomun, .theme-art.theme-bulguksa, .theme-art.theme-gampo,
+.theme-art.theme-munmu, .theme-art.theme-yangnam {
+  background-image: url('./assets/diary/gyeongju-themes.svg');
+  background-size: 800% 100%;
+}
+.theme-art.theme-royal { background-position: 0% 0; }
+.theme-art.theme-wolseong { background-position: 14.2857% 0; }
+.theme-art.theme-market { background-position: 28.5714% 0; }
+.theme-art.theme-bomun { background-position: 42.8571% 0; }
+.theme-art.theme-bulguksa { background-position: 57.1429% 0; }
+.theme-art.theme-gampo { background-position: 71.4286% 0; }
+.theme-art.theme-munmu { background-position: 85.7143% 0; }
+.theme-art.theme-yangnam { background-position: 100% 0; }
 .place-page-body:before { content: ''; display: block; position: absolute; top: 10px; right: 15px; width: 39px; height: 44px; background: url('./assets/diary/flowers.svg') center/contain no-repeat; pointer-events: none; opacity: .8; }
 .place-page-body>.eyebrow { padding-right: 38px; }
 .empty-state { background-image: url('./assets/diary/flowers.svg'); background-position: right 16px bottom 14px; background-size: 48px 56px; background-repeat: no-repeat; }
@@ -431,3 +446,39 @@ small, .small { font-size: var(--type-caption); line-height: 1.65; color: var(--
 .place-price p { margin: 8px 0; line-height: 1.6; font-size: .78rem; }
 .place-price a { display: inline-block; margin-top: 5px; color: #32624e; font-size: .78rem; text-decoration: underline; text-underline-offset: 3px; }
 .place-price .place-price-caveat { margin-bottom: 0; }
+.reservation-card{display:block;margin:8px 0 0;font-size:12px;line-height:1.5;color:#684d31;text-align:left}
+.reservation-card>span,.reservation-card b,.reservation-card span span{display:block}
+.reservation-card>span+span{margin-top:6px}
+.reservation-item{padding:12px 0;border-bottom:1px solid #e5dccf}
+.reservation-item p{margin:8px 0;overflow-wrap:anywhere}
+.reservation-warning{z-index:2000}
+.reservation-warning .modal{max-height:85dvh;overflow-y:auto}
+.reservation-warning .modal-actions{position:sticky;bottom:0;background:#fffdf8;padding:12px 0}
+.reservation-warning .btn{min-height:44px}
+.reservation-warning :focus-visible{outline:3px solid #49634b;outline-offset:3px}
+.evidence-date{display:block;color:#666;font-size:12px;margin:4px 0 8px}
+.solo-research p{overflow-wrap:anywhere}
+/* Saved Gyeongju route selector and stop list */
+.saved-route-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.saved-route-tabs .filter-chip{min-height:44px}
+.saved-route-overview h2{margin:0 0 6px}
+.saved-route-overview>p:first-of-type{margin:0 0 14px;color:var(--ink2)}
+.saved-route-stops{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px}
+.saved-route-stop{display:flex;align-items:flex-start;gap:11px;min-width:0;padding:10px 2px;border-top:1px solid var(--line)}
+.saved-route-number{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:50%;background:#123348;color:#fff;font-size:.8rem;font-weight:800}
+.saved-route-stop>div{min-width:0}
+.saved-route-stop strong,.saved-route-stop small{display:block}
+.saved-route-stop strong{font-size:.91rem;line-height:1.45}
+.saved-route-stop small{margin-top:3px;color:var(--ink2);font-size:.75rem;line-height:1.5}
+.saved-route-stops h3,.saved-route-meals h3,.saved-route-transit h3{grid-column:1/-1;margin:18px 0 8px;font-size:1rem}
+.saved-route-meals,.saved-route-transit{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:16px;background:#fffefa}
+.saved-route-meals>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.saved-route-meal{display:grid;align-content:start;gap:5px;padding:12px;border-radius:12px;background:#f4f3e9}
+.saved-route-meal strong,.saved-route-meal small,.saved-route-transit li strong,.saved-route-transit li small{display:block}
+.saved-route-meal strong,.saved-route-transit li strong{font-size:.85rem;line-height:1.5}
+.saved-route-meal small,.saved-route-transit li small{color:var(--ink2);font-size:.72rem;line-height:1.55}
+.saved-route-transit ol{display:grid;gap:8px;padding-left:22px}
+.saved-route-transit li{padding:5px 0 5px 3px}
+.saved-route-source{line-height:1.7}
+.saved-route-tabs .filter-chip:focus-visible,.route-theme-choice:focus-visible{outline:3px solid #087a61;outline-offset:2px}
+@media(max-width:620px){.saved-route-stops{grid-template-columns:1fr}.saved-route-tabs{gap:6px}.saved-route-tabs .filter-chip{flex:1 1 42%;white-space:normal}.saved-route-meals>div{grid-template-columns:1fr}.saved-route-meal{padding:10px}}
