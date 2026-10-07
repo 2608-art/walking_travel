@@ -1,0 +1,114 @@
+{
+  "checkedAtKst": "2026-10-06",
+  "scope": "강릉 음식점·시장 먹거리의 Instagram 및 X 공개 게시물에서 현행 운영·휴무·가격을 대조",
+  "method": {
+    "instagram": "공개 웹 검색과 알려진 계정 URL 직접 열기 시도. Instagram 본문은 429 또는 가져오기 오류로 열리지 않았고, 공개 브라우저도 제공되지 않았다. 검색 결과의 외부 링크는 계정 후보 발견에만 사용했다.",
+    "x": "상호별 공개 웹 검색과 X 검색 URL 직접 열기 시도. 직접 검색 화면은 HTTP 403으로 열리지 않았다.",
+    "evidenceRule": "계정 이름·외부 사이트 링크만으로 점포 공식 계정이라고 확정하지 않는다. 게시물 본문과 게시일을 직접 확인하지 못한 값은 앱의 현행 운영·휴무·가격 검증 근거로 사용하지 않는다."
+  },
+  "platformAccess": [
+    {
+      "platform": "Instagram",
+      "testUrl": "https://www.instagram.com/bbang.dabang/",
+      "result": "웹 열기 실패; Instagram 홈페이지는 HTTP 429. 계정·게시물 본문 직접 확인 불가."
+    },
+    {
+      "platform": "X",
+      "testUrl": "https://x.com/search?q=%EC%84%9C%EC%9A%B8%EC%96%91%EA%B3%84&src=typed_query",
+      "result": "HTTP 403. 검색 결과와 게시물 본문 직접 확인 불가."
+    }
+  ],
+  "places": [
+    {
+      "name": "서울양계",
+      "inCurrentApp": true,
+      "instagram": {
+        "accountStatus": "공식 계정 미발견·미확인",
+        "postStatus": "본문·게시일 미확인",
+        "indirectEvidence": [
+          {
+            "url": "https://www.diningcode.com/profile.php?rid=KkKa6014UT08",
+            "type": "방문자 후기 모음의 검색 결과",
+            "finding": "후기 작성자가 Instagram 검색으로 서울양계를 알게 됐다고 언급. 특정 게시물이나 공식 계정을 제시하지 않음."
+          }
+        ]
+      },
+      "x": { "accountStatus": "미발견·미확인", "postStatus": "직접 접근 불가" },
+      "verifiedFromSns": [],
+      "unresolved": ["현행 영업시간", "휴무", "메뉴 가격", "공식 계정 여부"]
+    },
+    {
+      "name": "엄지네포장마차 본점",
+      "inCurrentApp": true,
+      "instagram": {
+        "accountCandidate": "https://www.instagram.com/umjinae_gangneung/",
+        "accountStatus": "방문자 블로그 2곳이 매장 Instagram으로 링크·표기했으나, 점포 소유·운영 계정이라는 직접 확인 없음",
+        "postStatus": "본문·게시일 미확인",
+        "indirectEvidence": [
+          { "url": "https://jmtgogo.tistory.com/entry/%EA%B0%95%EB%A6%89-%EC%97%84%EC%A7%80%EB%84%A4%ED%8F%AC%EC%9E%A5%EB%A7%88%EC%B0%A8-%EA%BC%AC%EB%A7%89%EB%AC%B4%EC%B9%A8%EB%B9%84%EB%B9%94%EB%B0%A5%EC%9D%84-%EC%B5%9C%EC%B4%88-%EA%B0%9C%EB%B0%9C%ED%95%9C-%EA%B0%95%EB%A6%89%EC%97%AC%ED%96%89-%ED%95%84%EC%88%98-%EB%A7%9B%EC%A7%91", "type": "2020년 방문자 블로그", "finding": "계정 URL을 소개" },
+          { "url": "https://with-g0.tistory.com/entry/%EA%B0%95%EB%A6%89-%EB%A7%9B%EC%A7%91-%EC%97%84%EC%A7%80%EB%84%A4-%ED%8F%AC%EC%9E%A5%EB%A7%88%EC%B0%A8-%ED%9B%84%EA%B8%B0-%EA%BC%AC%EB%A7%89%EB%B9%84%EB%B9%94%EB%B0%A5-%EC%98%A4%EC%A7%95%EC%96%B4%EC%88%9C%EB%8C%80%EB%8A%94-%EB%AC%B4%EC%A1%B0%EA%B1%B4", "type": "2026년 방문자 블로그", "finding": "@umjinae_gangneung으로 표기" }
+        ]
+      },
+      "x": { "accountStatus": "미발견·미확인", "postStatus": "직접 접근 불가" },
+      "verifiedFromSns": [],
+      "unresolved": ["현행 홀·포장 영업시간", "휴무", "메뉴 가격", "계정 소유·최근 공지"]
+    },
+    {
+      "name": "동화가든 본점",
+      "inCurrentApp": true,
+      "instagram": {
+        "accountCandidate": "https://www.instagram.com/donghwagarden/",
+        "accountStatus": "제3자 여행 목록에 본점 링크로 기재. 운영사 공식몰에는 이 계정 링크가 확인되지 않아 공식성 미확인",
+        "postStatus": "본문·게시일 미확인",
+        "indirectEvidence": [
+          { "url": "https://wanderlog.com/ko/list/geoCategory/310635/gangneung%EC%97%90%EC%84%9C-%EC%A0%90%EC%8B%AC%EC%9D%84-%EC%9C%84%ED%95%9C-32-%EC%B5%9C%EA%B3%A0%EC%9D%98-%EC%9E%A5%EC%86%8C", "type": "제3자 여행 목록", "finding": "본점 정보에 Instagram URL 기재" },
+          { "url": "https://donghwagarden.com/", "type": "운영사 공식몰", "finding": "상호·주소 일치 확인; Instagram 계정 연결은 찾지 못함. 공식몰 상품 가격은 식당 메뉴 가격이 아님." }
+        ]
+      },
+      "x": { "accountStatus": "미발견·미확인", "postStatus": "직접 접근 불가" },
+      "verifiedFromSns": [],
+      "unresolved": ["식당 현행 영업시간", "휴무", "식당 메뉴 가격", "계정 소유·최근 공지"]
+    },
+    {
+      "name": "강릉중앙시장",
+      "inCurrentApp": true,
+      "instagram": { "accountStatus": "시장 번영회 공식 계정 미발견·미확인", "postStatus": "본문·게시일 미확인", "indirectEvidence": [{ "url": "https://www.gn.go.kr/www/contents.do?key=568", "type": "강릉시 시장 안내", "finding": "번영회 연락처·시장 홈페이지는 확인했으나 공식 Instagram 링크는 표시되지 않음" }] },
+      "x": { "accountStatus": "미발견·미확인", "postStatus": "직접 접근 불가" },
+      "verifiedFromSns": [],
+      "unresolved": ["시장 전체 공통 운영시간", "개별 점포 운영·가격", "공식 SNS 계정"]
+    },
+    {
+      "name": "배니닭강정",
+      "inCurrentApp": true,
+      "instagram": { "accountStatus": "공식 계정 미발견·미확인", "postStatus": "본문·게시일 미확인" },
+      "x": { "accountStatus": "미발견·미확인", "postStatus": "직접 접근 불가" },
+      "verifiedFromSns": [],
+      "unresolved": ["현행 운영·휴무", "가격", "공식 계정"]
+    },
+    {
+      "name": "강릉감자닭강정",
+      "inCurrentApp": true,
+      "instagram": { "accountStatus": "공식 계정 미발견·미확인", "postStatus": "본문·게시일 미확인" },
+      "x": { "accountStatus": "미발견·미확인", "postStatus": "직접 접근 불가" },
+      "verifiedFromSns": [],
+      "unresolved": ["현행 운영·휴무", "가격", "공식 계정"]
+    },
+    {
+      "name": "초당할머니순두부",
+      "inCurrentApp": true,
+      "instagram": { "accountStatus": "공식 계정 미발견·미확인", "postStatus": "본문·게시일 미확인" },
+      "x": { "accountStatus": "미발견·미확인", "postStatus": "직접 접근 불가" },
+      "verifiedFromSns": [],
+      "unresolved": ["현행 운영·휴무", "가격", "공식 계정"]
+    },
+    {
+      "name": "수제 어묵 고로케",
+      "inCurrentApp": true,
+      "instagram": { "accountStatus": "공식 계정 미발견·미확인", "postStatus": "본문·게시일 미확인" },
+      "x": { "accountStatus": "미발견·미확인", "postStatus": "직접 접근 불가" },
+      "verifiedFromSns": [],
+      "unresolved": ["현행 운영·휴무", "품목별 가격", "공식 계정"]
+    }
+  ],
+  "conclusion": "이번 확인에서 Instagram 또는 X의 개별 게시물 본문·게시일을 직접 검증한 장소는 0곳이다. 계정 후보 2개는 제3자 링크만으로 얻었으므로 공식 계정으로 확정하거나 가격·운영시간 갱신의 근거로 사용하지 않는다."
+}

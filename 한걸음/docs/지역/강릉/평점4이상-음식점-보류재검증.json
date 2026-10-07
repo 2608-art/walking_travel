@@ -1,0 +1,1116 @@
+{
+  "checkedAtKst": "2026-10-06",
+  "scope": "카카오맵 평점 4.0 이상 보류 중 앱 미등재 음식점 20곳; 평가 수·핵심권 우선",
+  "selection": "기존 앱 상호·주소 중복, 초반 3곳의 기존 점포 중복, 별도 주소 충돌 후보를 제외. 평가 수 상위 후보에서 핵심권을 우선하고 20곳 선정.",
+  "evidenceBoundary": "기존 조사 파일의 2026-10-06 카카오 상세 값과 이번 정적 HTML 상호·주소 재조회 구분. 이번 접속으로 운영시간·휴무·가격·평점을 독립 재확인하지 못함. provisional은 확정 영업 일정에 사용 불가.",
+  "candidates": [
+    {
+      "name": "기동이네장칼국수",
+      "category": "food",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/11591219",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.4,
+        "reviewCount": 29,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 강릉대로 461 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "기동이네장칼국수",
+        "ogAddress": "강원특별자치도 강릉시 강릉대로 461 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": null,
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "장칼국수",
+            "priceKRW": 9000
+          },
+          {
+            "name": "떡손만두국 (계절메뉴 10월~4월)",
+            "priceKRW": 10000
+          },
+          {
+            "name": "콩국수 (계절메뉴 5월~9월) (2인이상)",
+            "priceKRW": 10000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "missing",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 미표시",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "청솔반점",
+      "category": "food",
+      "areaPriority": "outer_or_unspecified",
+      "kakaoUrl": "https://place.map.kakao.com/27510209",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.4,
+        "reviewCount": 28,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 연곡면 영진1길 67 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "청솔반점",
+        "ogAddress": "강원특별자치도 강릉시 연곡면 영진1길 67 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "영업시간 월~토 11:00 ~ 15:00",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "간짜장",
+            "priceKRW": 8000
+          },
+          {
+            "name": "미니탕수육",
+            "priceKRW": 12000
+          },
+          {
+            "name": "착한짜장",
+            "priceKRW": 5000
+          },
+          {
+            "name": "청솔짬뽕",
+            "priceKRW": 8000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "summary_only",
+      "promotionStatus": "provisional_visit_info_only",
+      "caveats": [
+        "정기 휴무 미확인",
+        "다이닝코드 방문 후기에서 일요일 휴무·14:30 주문마감·재료 소진 조기 마감 언급; 운영사 직접 공지 아님"
+      ],
+      "additionalSourceUrls": [
+        "https://www.diningcode.com/profile.php?rid=NwDaiHhZJ3wf"
+      ],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "부영식당",
+      "category": "food",
+      "areaPriority": "outer_or_unspecified",
+      "kakaoUrl": "https://place.map.kakao.com/989844181",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.8,
+        "reviewCount": 26,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 연곡면 연주로 40",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "부영식당",
+        "ogAddress": "강원특별자치도 강릉시 연곡면 연주로 40",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "월~토 14:30 ~ 17:00",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "제육백반",
+            "priceKRW": 11000
+          },
+          {
+            "name": "생선구이백반",
+            "priceKRW": 13000
+          },
+          {
+            "name": "백반",
+            "priceKRW": 8000
+          },
+          {
+            "name": "김치찌개 (2인 이상)",
+            "priceKRW": 10000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "ambiguous_or_break_only",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 텍스트가 휴게시간만 가리키거나 요일별 시간이 미확인",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "강릉장칼국수",
+      "category": "food",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/2020007368",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.2,
+        "reviewCount": 24,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 옥천로19번길 13 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "강릉장칼국수",
+        "ogAddress": "강원특별자치도 강릉시 옥천로19번길 13 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": null,
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "장칼국수",
+            "priceKRW": 8000
+          },
+          {
+            "name": "알곤이장칼국수",
+            "priceKRW": 12000
+          },
+          {
+            "name": "꼬맹이만두",
+            "priceKRW": 6000
+          },
+          {
+            "name": "시래기칼국수",
+            "priceKRW": 10000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "missing",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 미표시",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "원영장칼국수",
+      "category": "food",
+      "areaPriority": "outer_or_unspecified",
+      "kakaoUrl": "https://place.map.kakao.com/894733228",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.4,
+        "reviewCount": 24,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 사천면 가둔지길 12 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "원영장칼국수",
+        "ogAddress": "강원특별자치도 강릉시 사천면 가둔지길 12 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": null,
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "장칼국수",
+            "priceKRW": 9000
+          },
+          {
+            "name": "돼지곰탕칼국수",
+            "priceKRW": 10000
+          },
+          {
+            "name": "해물볶음칼국수(2인)",
+            "priceKRW": 22000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "missing",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 미표시",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "고깃집 담",
+      "category": "food",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/681453814",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.5,
+        "reviewCount": 24,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 솔올로 35 1층 103호",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "고깃집 담",
+        "ogAddress": "강원특별자치도 강릉시 솔올로 35 1층 103호",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "요일별 실제 영업시간 미확인 · 월~토 11:00 ~ 22:30 · 휴게시간 월~토 14:00 ~ 16:00 · 라스트오더 월~토 22:00",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "수제양념돼지갈비(250g)",
+            "priceKRW": 16000
+          },
+          {
+            "name": "삼겹살(180g)",
+            "priceKRW": 16000
+          },
+          {
+            "name": "열무국수",
+            "priceKRW": 8000
+          },
+          {
+            "name": "항정살(160g)",
+            "priceKRW": 18000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "ambiguous_or_break_only",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 텍스트가 휴게시간만 가리키거나 요일별 시간이 미확인",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "강릉초록김밥 강릉점",
+      "category": "market",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/26774849",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.5,
+        "reviewCount": 22,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 금성로31번길 10 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "강릉초록김밥 강릉점",
+        "ogAddress": "강원특별자치도 강릉시 금성로31번길 10 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": null,
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "진미채김밥",
+            "priceKRW": 4500
+          },
+          {
+            "name": "초록김밥",
+            "priceKRW": 3500
+          },
+          {
+            "name": "치즈김밥",
+            "priceKRW": 4000
+          },
+          {
+            "name": "야채김밥",
+            "priceKRW": 4000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "missing",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 미표시",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "솔담한정식 강릉본점",
+      "category": "food",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/25707388",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.1,
+        "reviewCount": 21,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 저동골길 10",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "솔담한정식 강릉본점",
+        "ogAddress": "강원특별자치도 강릉시 저동골길 10",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "화~일 15:00 ~ 17:00",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "솔담 연잎밥정식A(2인이상주문)",
+            "priceKRW": 23000
+          },
+          {
+            "name": "솔담 연잎밥정식 기본(2인이상주문)",
+            "priceKRW": 19000
+          },
+          {
+            "name": "솔담 연잎밥정식B(8인이상예약주문)",
+            "priceKRW": 35000
+          },
+          {
+            "name": "송고버섯 흑미솥밥(2인이상주문)",
+            "priceKRW": 23000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "ambiguous_or_break_only",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 텍스트가 휴게시간만 가리키거나 요일별 시간이 미확인",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "까막장이야기",
+      "category": "food",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/871959365",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.1,
+        "reviewCount": 20,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 저동길 165 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "까막장이야기",
+        "ogAddress": "강원특별자치도 강릉시 저동길 165 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": null,
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "까막 묵면",
+            "priceKRW": 11000
+          },
+          {
+            "name": "까막 비빔면",
+            "priceKRW": 10000
+          },
+          {
+            "name": "까막 기본면(물)",
+            "priceKRW": 10000
+          },
+          {
+            "name": "추전골(추어탕)",
+            "priceKRW": 10000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "missing",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 미표시",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "초당해장국",
+      "category": "food",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/209642484",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.5,
+        "reviewCount": 20,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 연당길 63 1층 107호",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "초당해장국",
+        "ogAddress": "강원특별자치도 강릉시 연당길 63 1층 107호",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "월~금 09:00 ~ 19:30",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "사골 돼지국밥",
+            "priceKRW": 10000
+          },
+          {
+            "name": "뼈다귀 해장국",
+            "priceKRW": 10000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "summary_only",
+      "promotionStatus": "provisional_visit_info_only",
+      "caveats": [
+        "정기 휴무 미확인",
+        "다이닝코드 방문 후기에서 일요일 휴무 및 09:00~20:30 표기; 카카오 요약 월~금 09:00~19:30과 차이"
+      ],
+      "additionalSourceUrls": [
+        "https://www.diningcode.com/profile.php?rid=c6SxUYpDYOVG"
+      ],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "무진장돼지순대국밥",
+      "category": "food",
+      "areaPriority": "outer_or_unspecified",
+      "kakaoUrl": "https://place.map.kakao.com/603025795",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.8,
+        "reviewCount": 20,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 주문진읍 연주로 538",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "무진장돼지순대국밥",
+        "ogAddress": "강원특별자치도 강릉시 주문진읍 연주로 538",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "화~일 10:00 ~ 19:00",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "돼지국밥",
+            "priceKRW": 10000
+          },
+          {
+            "name": "순대국밥",
+            "priceKRW": 10000
+          },
+          {
+            "name": "땡초국밥",
+            "priceKRW": 11000
+          },
+          {
+            "name": "국밥메뉴 (특)",
+            "priceKRW": 12000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "summary_only",
+      "promotionStatus": "provisional_visit_info_only",
+      "caveats": [
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "금화식당",
+      "category": "food",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/896413874",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.5,
+        "reviewCount": 18,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 강릉대로 337-4 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "금화식당",
+        "ogAddress": "강원특별자치도 강릉시 강릉대로 337-4 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "요일별 실제 영업시간 미확인 · 화요일",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "화덕모듬구이 (2인이상)",
+            "priceKRW": 15000
+          },
+          {
+            "name": "고등어조림 (2인이상)",
+            "priceKRW": 15000
+          },
+          {
+            "name": "제주은갈치조림",
+            "priceKRW": 15000
+          },
+          {
+            "name": "화덕생오겹살구이 (2인이상)",
+            "priceKRW": 16000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "ambiguous_or_break_only",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 텍스트가 휴게시간만 가리키거나 요일별 시간이 미확인",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "샌드위치730",
+      "category": "food",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/1279202726",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.4,
+        "reviewCount": 18,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 창해로 419 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "샌드위치730",
+        "ogAddress": "강원특별자치도 강릉시 창해로 419 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "매일 08:00 ~ 19:00",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "홍게살샌드위치",
+            "priceKRW": 14800
+          },
+          {
+            "name": "명란에그샌드위치",
+            "priceKRW": 9800
+          },
+          {
+            "name": "햄치즈샌드위치",
+            "priceKRW": 7300
+          },
+          {
+            "name": "소세지라구샌드위치",
+            "priceKRW": 9800
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "summary_only",
+      "promotionStatus": "provisional_visit_info_only",
+      "caveats": [
+        "정기 휴무 미확인",
+        "다이닝코드 후기 07:30~21:00, 테이블링 08:00~22:00로 카카오 08:00~19:00과 충돌; 확정 시각으로 사용 금지"
+      ],
+      "additionalSourceUrls": [
+        "https://www.diningcode.com/profile.php?rid=59WH42wn4eSd",
+        "https://www.tabling.co.kr/restaurant/15959"
+      ],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "지영이네",
+      "category": "food",
+      "areaPriority": "outer_or_unspecified",
+      "kakaoUrl": "https://place.map.kakao.com/16302743",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.4,
+        "reviewCount": 18,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 중앙시장1길 6 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "지영이네",
+        "ogAddress": "강원특별자치도 강릉시 중앙시장1길 6 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": null,
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "바지락장칼국수",
+            "priceKRW": 6000
+          },
+          {
+            "name": "바지락칼국수",
+            "priceKRW": 6000
+          },
+          {
+            "name": "바지락칼수제비",
+            "priceKRW": 7000
+          },
+          {
+            "name": "떡만두국",
+            "priceKRW": 9000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "missing",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 미표시",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "정동진막국수해장국",
+      "category": "food",
+      "areaPriority": "outer_or_unspecified",
+      "kakaoUrl": "https://place.map.kakao.com/238670432",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.7,
+        "reviewCount": 17,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 강동면 헌화로 912 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "정동진막국수해장국",
+        "ogAddress": "강원특별자치도 강릉시 강동면 헌화로 912 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "요일별 실제 영업시간 미확인 · 화요일",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "한우보양해장국",
+            "priceKRW": 13000
+          },
+          {
+            "name": "물막국수",
+            "priceKRW": 10000
+          },
+          {
+            "name": "비빔막국수",
+            "priceKRW": 10000
+          },
+          {
+            "name": "비빔회막국수",
+            "priceKRW": 12000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "ambiguous_or_break_only",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 텍스트가 휴게시간만 가리키거나 요일별 시간이 미확인",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "진고개냉면",
+      "category": "food",
+      "areaPriority": "outer_or_unspecified",
+      "kakaoUrl": "https://place.map.kakao.com/9987504",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.1,
+        "reviewCount": 17,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 연곡면 진고개로 2539",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "진고개냉면",
+        "ogAddress": "강원특별자치도 강릉시 연곡면 진고개로 2539",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "월, 화, 수, 목, 토, 일 10:00 ~ 19:00",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "수육",
+            "priceKRW": 30000
+          },
+          {
+            "name": "물막국수",
+            "priceKRW": 9000
+          },
+          {
+            "name": "회냉면",
+            "priceKRW": 9000
+          },
+          {
+            "name": "물냉면",
+            "priceKRW": 9000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "summary_only",
+      "promotionStatus": "provisional_visit_info_only",
+      "caveats": [
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "장원군산횟집",
+      "category": "food",
+      "areaPriority": "outer_or_unspecified",
+      "kakaoUrl": "https://place.map.kakao.com/9375163",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.3,
+        "reviewCount": 16,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 경포로 477",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "장원군산횟집",
+        "ogAddress": "강원특별자치도 강릉시 경포로 477",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": null,
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "활어 물회",
+            "priceKRW": 20000
+          },
+          {
+            "name": "전복죽",
+            "priceKRW": 20000
+          },
+          {
+            "name": "모듬",
+            "priceKRW": 99000
+          },
+          {
+            "name": "광어",
+            "priceKRW": 45000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "missing",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 미표시",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "한뚝배기",
+      "category": "food",
+      "areaPriority": "outer_or_unspecified",
+      "kakaoUrl": "https://place.map.kakao.com/1825379387",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.1,
+        "reviewCount": 16,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 회산로383번길 54-5 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "한뚝배기",
+        "ogAddress": "강원특별자치도 강릉시 회산로383번길 54-5 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "월~토 15:00 ~ 17:00",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "돼지국밥",
+            "priceKRW": 12000
+          },
+          {
+            "name": "순대국밥",
+            "priceKRW": 12000
+          },
+          {
+            "name": "돼지불고기",
+            "priceKRW": 13000
+          },
+          {
+            "name": "술국",
+            "priceKRW": 14000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "ambiguous_or_break_only",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 텍스트가 휴게시간만 가리키거나 요일별 시간이 미확인",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "일미소문난생선구이",
+      "category": "food",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/21910940",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.3,
+        "reviewCount": 15,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 강변로 122 2층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "일미소문난생선구이",
+        "ogAddress": "강원특별자치도 강릉시 강변로 122 2층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": null,
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "생선구이 (1인분)",
+            "priceKRW": 15000
+          },
+          {
+            "name": "돼지두루치기 (한판)",
+            "priceKRW": 35000
+          },
+          {
+            "name": "수육",
+            "priceKRW": 30000
+          },
+          {
+            "name": "돌솥비빔밥",
+            "priceKRW": 10000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "missing",
+      "promotionStatus": "hold",
+      "caveats": [
+        "영업시간 미표시",
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    },
+    {
+      "name": "신흥소머리국밥",
+      "category": "food",
+      "areaPriority": "core_or_near_core",
+      "kakaoUrl": "https://place.map.kakao.com/892306822",
+      "kakaoRating": {
+        "provider": "Kakao Map",
+        "score": 4.7,
+        "reviewCount": 14,
+        "checkedAt": "2026-10-06"
+      },
+      "locationText": "강원특별자치도 강릉시 경강로2119번길 13 1층",
+      "recheckedAtKst": "2026-10-06",
+      "htmlRecheck": {
+        "status": "HTTP 200",
+        "ogTitle": "신흥소머리국밥",
+        "ogAddress": "강원특별자치도 강릉시 경강로2119번길 13 1층",
+        "addressExactMatch": true,
+        "detailLimit": "정적 HTML은 상호·주소만 제공. 영업·휴무·메뉴·평점은 JS로 표시돼 이번 접속에서 새로 확인되지 않음"
+      },
+      "priorKakaoDetail": {
+        "checkedAt": "2026-10-06",
+        "scheduleText": "월~금 10:00 ~ 20:00",
+        "closureText": "정기 휴무는 별도 확인 필요",
+        "menuItems": [
+          {
+            "name": "소머리국밥",
+            "priceKRW": 8000
+          },
+          {
+            "name": "얼큰장터국밥",
+            "priceKRW": 9000
+          },
+          {
+            "name": "사골떡만두국",
+            "priceKRW": 8000
+          },
+          {
+            "name": "사골콩나물국밥",
+            "priceKRW": 8000
+          }
+        ],
+        "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인"
+      },
+      "timeQuality": "summary_only",
+      "promotionStatus": "provisional_visit_info_only",
+      "caveats": [
+        "정기 휴무 미확인"
+      ],
+      "additionalSourceUrls": [],
+      "photo": {
+        "actualPlacePhotoLicense": "unverified",
+        "use": "No actual-place image; use only a clearly labelled illustrative image with a separately verified reuse license"
+      }
+    }
+  ]
+}

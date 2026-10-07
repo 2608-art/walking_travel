@@ -3,6 +3,7 @@
   'use strict';
   const SHOP_IDS = new Set(['p113','p117','p118','p123','p124','p125','p126','p127','p128','p129','p130']);
   const HISTORY_IDS = new Set(['p2','p8','p9','p12','p13','p20','p22','p29','p30','p31','p40']);
+  const FIRST_IDS = new Set(HISTORY_IDS);
   const SEA_IDS = new Set(['p3','p4','p5','p6','p7','p14','p19','p24','p25','p32','p34','p36','p37']);
   const NIGHT_OUTDOOR_IDS = new Set(['p14']);
   const EXCLUDED_IDS = new Set(['p3','p4','p5','p24','p35','p41','p44','p45','p51']);
@@ -23,6 +24,33 @@
     food:{originId:'station',destinationId:'station',description:'식사는 최대 두 번, 그 사이에는 원도심 구경과 산책'},
     cafe:{originId:'station',destinationId:'station',description:'카페는 최대 두 곳, 책방과 골목을 함께 걷는 여유 코스'}
   };
+  let activeRegionId = 'mokpo';
+  function configureRegion(regionId) {
+    activeRegionId = regionId;
+    if (regionId !== 'gangneung') return;
+    SHOP_IDS.clear(); ['g1','g2','g3','g7','g8','g23','g24','g25','g34'].forEach((id) => SHOP_IDS.add(id));
+    HISTORY_IDS.clear(); ['g9','g10','g11','g18','g22','g27','g31','g32'].forEach((id) => HISTORY_IDS.add(id));
+    FIRST_IDS.clear(); ['g3','g7','g8','g27','g34'].forEach((id) => FIRST_IDS.add(id));
+    SEA_IDS.clear(); ['g4','g5','g6','g12','g14','g15','g17','g21','g22','g35','g36'].forEach((id) => SEA_IDS.add(id));
+    NIGHT_OUTDOOR_IDS.clear();
+    EXCLUDED_IDS.clear(); ['g16'].forEach((id) => EXCLUDED_IDS.add(id));
+    THEMES.splice(0, THEMES.length,
+      {id:'balanced',name:'강릉 기본 코스'},
+      {id:'first',name:'처음 가는 강릉'},
+      {id:'sea',name:'바다와 커피'},
+      {id:'history',name:'오죽헌·선교장 역사'},
+      {id:'shops',name:'월화거리·중앙시장'},
+      {id:'food',name:'초당 먹거리·산책'}
+    );
+    for (const key of Object.keys(THEME_PRESETS)) delete THEME_PRESETS[key];
+    Object.assign(THEME_PRESETS, {
+      first:{originId:'gangneung-station',destinationId:'g7',description:'강릉역에서 시내 골목과 시장 주변을 지나 월화교로 걷는 첫 방문 코스'},
+      sea:{originId:'g17',destinationId:'g6',description:'안목 카페에서 송정 송림과 중간 카페를 쉬어 가며 강문·경포로 걷는 코스'},
+      history:{originId:'g9',destinationId:'g10',description:'오죽헌과 선교장을 중심으로 강릉의 역사를 살피는 코스'},
+      shops:{originId:'g27',destinationId:'g7',description:'대도호부 관아에서 월화거리·중앙시장 골목을 지나 월화교로 걷는 코스'},
+      food:{originId:'g22',destinationId:'g5',description:'초당의 먹거리와 산책길을 지나 강문해변으로 가는 코스'}
+    });
+  }
   const THEME_START_TIMES = Array.from({length:48},(_,index)=>String(Math.floor(index/2)).padStart(2,'0')+':'+(index%2?'30':'00'));
   const minutes = (value) => value === '24:00' ? 1440 : Number(value.slice(0,2)) * 60 + Number(value.slice(3,5));
   const clockTime = value => value === 1440 ? '24:00' : String(Math.floor(value/60)).padStart(2,'0')+':'+String(value%60).padStart(2,'0');
@@ -217,11 +245,15 @@
   }
   const validResult = (result) => result.kind !== 'bad' &&
     !(result.kind === 'warn' && /체류 중 브레이크|폐관을 넘/.test(result.title));
-  const validLeg = (walk) => walk.meters <= 1600 && (walk.mode==='bus' ? walk.actual && walk.walkMinutes<=30 && walk.minutes<=90 : walk.minutes <= 30);
+  const validLeg = (walk,input={}) => {
+    if (walk.mode==='bus') return walk.meters<=1600 && walk.actual && walk.walkMinutes<=30 && walk.minutes<=90;
+    const coast=activeRegionId==='gangneung' && input.theme==='sea';
+    return walk.meters<=(coast ? 2400 : 1600) && walk.minutes<=(coast ? 40 : 30);
+  };
   const pointLeg = (a,b) => distanceKm(a,b) < .015 ? {meters:0,minutes:0,actual:true,points:[]} : estimate(a,b);
   const samePoint=(a,b)=>a && b && a.lat===b.lat && a.lon===b.lon;
   const inputLeg=(a,b,input)=>input.busConnection && samePoint(a,input.busConnection.from) && samePoint(b,input.busConnection.to) ? input.busConnection.leg : pointLeg(a,b);
-  const themedPlace=(p,theme)=>theme==='first' ? HISTORY_IDS.has(p.id) : theme==='history' ? HISTORY_IDS.has(p.id) : theme==='sea' ? SEA_IDS.has(p.id) : theme==='shops' ? SHOP_IDS.has(p.id) : theme==='food' ? p.category==='food' : theme==='cafe' ? p.category==='cafe' : false;
+  const themedPlace=(p,theme)=>theme==='first' ? FIRST_IDS.has(p.id) : theme==='history' ? HISTORY_IDS.has(p.id) : theme==='sea' ? SEA_IDS.has(p.id) : theme==='shops' ? SHOP_IDS.has(p.id) : theme==='food' ? p.category==='food' : theme==='cafe' ? p.category==='cafe' : false;
 
   // 초기 탐색·대체 탐색·최종 API 확인에 동일한 시간표 규칙을 적용한다.
   function scheduleVisits(order,input,walks) {
@@ -233,7 +265,7 @@
       const p=order[i], template=input.scheduledRows?.[i], walk=walks ? walks[i] : inputLeg(prior,p,input);
       const kind=template?.kind || (input.theme!=='balanced' && p.category==='food' ? 'meal' : input.theme!=='balanced' && p.category==='cafe' ? 'cafe' : 'visit');
       const duration=template?.duration || stay(p,kind==='meal');
-      if (!validLeg(walk)) return null;
+      if (!validLeg(walk,input)) return null;
       let minute=round5(now+walk.minutes+3), result;
       let fixed=input.fixedMeals && template && ['meal','cafe'].includes(kind) ? template.minute : null;
       if(input.flexibleMeals && fixed!=null && minute>fixed && minute<=fixed+30 && minute<15*60) fixed=minute;
@@ -254,7 +286,7 @@
       now=minute+duration; walked+=walk.meters; prior=p;
     }
     const endWalk=walks ? walks[order.length] : inputLeg(prior,destination,input);
-    if (!validLeg(endWalk) || now+endWalk.minutes>end || walked+endWalk.meters>8000) return null;
+    if (!validLeg(endWalk,input) || now+endWalk.minutes>end || walked+endWalk.meters>8000) return null;
     if (requiredPlaceId && ![origin.id,destination.id,...order.map(p=>p.id)].includes(requiredPlaceId)) return null;
     return {theme:input.theme || 'balanced',rows,start,end,walkMeters:walked+endWalk.meters,
       endWalk,endArrival:now+endWalk.minutes,originName:origin.name,destinationName:destination.name,
@@ -341,7 +373,7 @@
       for (let i=1;i<nodes.length;i++) {
         if (done.has(i)) continue;
         const walk=inputLeg(nodes[current],nodes[i],input);
-        if (!validLeg(walk)) continue;
+        if (!validLeg(walk,input)) continue;
         // 거리가 같으면 불필요한 중간 방문을 늘리지 않는다.
         const cost=costs[current]+walk.meters+5;
         if (cost<costs[i]) {costs[i]=cost;previous[i]=current;}
@@ -390,7 +422,8 @@
         const points=[origin,...order,destination], options=[];
         for(const p of available) {
           if(order.some(x=>x.id===p.id)) continue;
-          if(['food','cafe'].includes(p.category) && order.filter(x=>x.category===p.category).length >= (input.theme===p.category ? 2 : 1)) continue;
+          const maxCategoryStops=p.category==='cafe' && activeRegionId==='gangneung' && ['first','shops','sea'].includes(input.theme) ? 2 : input.theme===p.category ? 2 : 1;
+          if(['food','cafe'].includes(p.category) && order.filter(x=>x.category===p.category).length >= maxCategoryStops) continue;
           for(let i=0;i<points.length-1;i++) {
             const extra=distanceKm(points[i],p)+distanceKm(p,points[i+1])-distanceKm(points[i],points[i+1]);
             if(p.shortScenicWalk && extra>.25) continue;
@@ -540,7 +573,7 @@
           travelMeters:bus.meters,points:bus.points || [],steps:bus.steps,busRideMinutes:riding,
           savedBusId:bus.savedBusId,busStops:bus.busStops,busPoints:bus.busPoints,
           timetable:bus.timetable,serviceNotice:bus.serviceNotice,estimated:bus.estimated};
-        if(!validLeg(leg)) continue;
+        if(!validLeg(leg,input)) continue;
         const connected={...input,busConnection:{...pair,leg}};
         for(const focus of ['through','start','end']) for(const proposed of makeGeographicRoutes(connected,focus)) {
           if(proposed.transport!=='walk-bus') continue;
@@ -720,7 +753,7 @@
   function mealChoices({route,places,origin,destination,date,validate,requiredPlaceId='',kind='lunch',cuisineTags=[],candidateFilter=()=>true,mealDuration}) {
     const window=kind === 'dinner' ? [17*60,21*60] : kind === 'lunch' ? [11*60,15*60] : [route.start,route.end];
     const duration=mealDuration || (kind === 'cafe' ? 40 : 60);
-    const restaurants=places.filter((p) => hasCoord(p) && p.category === (kind === 'cafe' ? 'cafe' : 'food') && !EXCLUDED_IDS.has(p.id) && candidateFilter(p) &&
+    const restaurants=places.filter((p) => hasCoord(p) && (kind === 'cafe' ? p.category === 'cafe' : (p.category === 'food' || p.category === 'market' && p.soloMeal === true)) && !EXCLUDED_IDS.has(p.id) && candidateFilter(p) &&
       !route.rows.some((row) => row.placeId === p.id) &&
       (!cuisineTags.length || cuisineTags.some(tag => p.cuisineTags?.includes(tag))));
     const byPlace=new Map();
@@ -736,7 +769,7 @@
       const earliest=previous ? previous.minute+previous.duration : route.start;
       for (const p of restaurants) {
         const incoming=estimate(from,p), outgoing=estimate(p,to);
-        if (incoming.meters > 1600 || outgoing.meters > 1600 || incoming.minutes > 30 || outgoing.minutes > 30) continue;
+        if (!validLeg(incoming,{theme:route.theme}) || !validLeg(outgoing,{theme:route.theme})) continue;
         const oldMinute=replaceIndex == null ? earliest : route.rows[replaceIndex].minute;
         const first=round5(Math.max(earliest+incoming.minutes+3,window[0],oldMinute));
         const last=Math.min(window[1],route.end-duration);
@@ -804,7 +837,7 @@
       droppedPlaceNames.push(places.find(p=>p.id===removed.placeId)?.name || removed.placeId);
       const before=places.find(p=>p.id===rows[remove-1].placeId), after=places.find(p=>p.id===rows[remove].placeId);
       const walk=pointLeg(before,after);
-      if(!validLeg(walk)) return false;
+      if(!validLeg(walk,{theme:route.theme})) return false;
       Object.assign(rows[remove],{walkEstimate:walk.minutes,walkMeters:walk.meters,actual:walk.actual,walkPoints:[]});
       for(const reset of rows.slice(choice.insertAt+1)) reset.minute=originalMinutes.get(reset.placeId);
       return true;
@@ -841,7 +874,7 @@
       const finalLeg=last.placeId===route.rows.at(-1)?.placeId ? route.endWalk : last.placeId===choice.placeId ? choice.outgoing : pointLeg(lastPlace,destination);
       const endArrival=last.minute+last.duration+finalLeg.minutes;
       const walkMeters=rows.reduce((sum,row) => sum+row.walkMeters,0)+finalLeg.meters;
-      if (last.minute+last.duration <= route.end && validLeg(finalLeg) &&
+      if (last.minute+last.duration <= route.end && validLeg(finalLeg,{theme:route.theme}) &&
           endArrival <= route.end && walkMeters <= 8000) {
         const chosenMeals=[...(route.chosenMeals || []).map((item) => ({...item})),
           {kind:choice.kind,placeId:choice.placeId,minute:choice.minute}];
@@ -881,11 +914,11 @@
     // 테마에 맞는 장소를 가까운 동선으로 묶고, 식사·휴식 여유를 남긴다.
     const plans=(input.start ? [input.start] : ['10:00','11:00']).map(themeWindow);
     for(const plan of plans) {
-      for(const allowRestStops of (input.theme==='sea' ? [false,true] : [false])) {
+      for(const allowRestStops of (activeRegionId==='gangneung' || input.theme==='sea' ? [false,true] : [false])) {
         const context={...input,...plan,maxStops:8,variants:2,allowRestStops,flexibleMeals:true};
         let found=false;
         for(const focus of ['through','start','end']) {
-          const routes=makeGeographicRoutes(context,focus).filter(themedCount);
+          const routes=makeGeographicRoutes(context,focus).filter(route=>route.rows.length>=5 && themedCount(route));
           if(routes.length) {candidates.push(...routes.map(route=>({route,context})));found=true;break;}
         }
         if(found) break;
@@ -928,7 +961,7 @@
     }
     return [];
   }
-  const api={THEMES,THEME_PRESETS,THEME_START_TIMES,themeWindow,themeStartCandidate,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive,generateReviewRoute,verifyEditedRoute,reverseRoundTrip,generateThemeDay,mealChoices,recommendMealTimes,restoreFixedMeals,addMeal};
+  const api={THEMES,THEME_PRESETS,THEME_START_TIMES,configureRegion,themeWindow,themeStartCandidate,SHOP_IDS,EXCLUDED_IDS,minutes,distanceKm,estimate,themeScore,stay,datedHours,generate,generateAdaptive,generateReviewRoute,verifyEditedRoute,reverseRoundTrip,generateThemeDay,mealChoices,recommendMealTimes,restoreFixedMeals,addMeal};
   if (typeof module !== 'undefined' && module.exports) module.exports=api;
   if (typeof window !== 'undefined') window.HangeoreumRouteEngine=api;
 })();

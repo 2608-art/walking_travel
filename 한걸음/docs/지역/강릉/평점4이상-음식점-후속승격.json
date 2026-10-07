@@ -1,0 +1,1318 @@
+{
+  "updated": "2026-10-06",
+  "scope": "강릉시 음식점·시장 간식 카카오맵 평점 4.0+ 후속 14곳 재검증",
+  "method": "기존 후속 14곳의 각 카카오맵 장소 상세 URL을 2026-10-06 재방문하여 별점·후기 수·도로명 주소·메뉴 가격·표시된 7일 영업 일정을 확인하고, 현행 앱 상호 및 도로명 주소와 중복 대조. 카카오맵 표시값은 업체 공식 확정 공지가 아니며 방문 전 재확인 필요.",
+  "appComparedCount": 300,
+  "promoted": [
+    {
+      "name": "내곡강정선생",
+      "category": "market",
+      "mapCategory": "닭강정",
+      "locationText": "강원특별자치도 강릉시 하슬라로 26 1층",
+      "source": "https://place.map.kakao.com/2116651963",
+      "mapUrl": "https://place.map.kakao.com/2116651963",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.9,
+        "reviewCount": 56,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월·화·수·금 10:00~24:00 · 휴게 14:00~16:00; 목 휴무; 토·일 10:00~24:00",
+      "scheduleDetail": "영업정보펼치기영업 중24:00 까지화(10/6)10:00 ~ 24:0014:00 ~ 16:00 브레이크타임수(10/7)10:00 ~ 24:0014:00 ~ 16:00 브레이크타임목(10/8)휴무일금(10/9)10:00 ~ 24:0014:00 ~ 16:00 브레이크타임토(10/10)10:00 ~ 24:00일(10/11)10:00 ~ 24:00월(10/12)10:00 ~ 24:0014:00 ~ 16:00 브레이크타임",
+      "closureText": "조회 주간 목요일 휴무 표시; 정기 휴무 여부 확인 필요",
+      "menuItems": [
+        {
+          "name": "한마리 \"매운양념\" 닭강정",
+          "priceKRW": 24900
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/2116651963",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인; 카카오 메뉴 목록에는 표시 가격 1종만 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "open": "10:00",
+          "close": "24:00",
+          "breakStart": "14:00",
+          "breakEnd": "16:00",
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "10:00",
+          "close": "24:00",
+          "breakStart": "14:00",
+          "breakEnd": "16:00",
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "10:00",
+          "close": "24:00",
+          "breakStart": "14:00",
+          "breakEnd": "16:00",
+          "displayDate": "10/7"
+        },
+        "목": {
+          "closed": true,
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "10:00",
+          "close": "24:00",
+          "breakStart": "14:00",
+          "breakEnd": "16:00",
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "10:00",
+          "close": "24:00",
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "10:00",
+          "close": "24:00",
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/2116651963",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "은화식당",
+      "category": "food",
+      "mapCategory": "해물,생선",
+      "locationText": "강원특별자치도 강릉시 강릉대로313번길 7-8 1층",
+      "source": "https://place.map.kakao.com/2112306027",
+      "mapUrl": "https://place.map.kakao.com/2112306027",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.4,
+        "reviewCount": 54,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월·화·수·금·토·일 10:30~20:30; 목 휴무",
+      "scheduleDetail": "영업정보펼치기영업 중20:30 까지화(10/6)10:30 ~ 20:30수(10/7)10:30 ~ 20:30목(10/8)휴무일금(10/9)10:30 ~ 20:30토(10/10)10:30 ~ 20:30일(10/11)10:30 ~ 20:30월(10/12)10:30 ~ 20:30",
+      "closureText": "조회 주간 목요일 휴무 표시; 정기 휴무 여부 확인 필요",
+      "menuItems": [
+        {
+          "name": "쭈차돌불고기",
+          "priceKRW": 16000
+        },
+        {
+          "name": "오징어불고기",
+          "priceKRW": 15000
+        },
+        {
+          "name": "쭈꾸미불고기",
+          "priceKRW": 15000
+        },
+        {
+          "name": "직화쭈꾸미",
+          "priceKRW": 13000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/2112306027",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "open": "10:30",
+          "close": "20:30",
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "10:30",
+          "close": "20:30",
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "10:30",
+          "close": "20:30",
+          "displayDate": "10/7"
+        },
+        "목": {
+          "closed": true,
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "10:30",
+          "close": "20:30",
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "10:30",
+          "close": "20:30",
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "10:30",
+          "close": "20:30",
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/2112306027",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "전망대횟집",
+      "category": "food",
+      "mapCategory": "회",
+      "locationText": "강원특별자치도 강릉시 강동면 헌화로 982-2",
+      "source": "https://place.map.kakao.com/9391577",
+      "mapUrl": "https://place.map.kakao.com/9391577",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.2,
+        "reviewCount": 53,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월·수·목·금·토·일 11:00~21:30; 화 휴무",
+      "scheduleDetail": "영업정보펼치기휴무일내일 11:00 오픈매주 화요일 휴무화(10/6)휴무일수(10/7)11:00 ~ 21:30목(10/8)11:00 ~ 21:30금(10/9)11:00 ~ 21:30토(10/10)11:00 ~ 21:30일(10/11)11:00 ~ 21:30월(10/12)11:00 ~ 21:30",
+      "closureText": "매주 화요일 휴무(카카오맵 표시); 공휴일·변경 공지 확인",
+      "menuItems": [
+        {
+          "name": "광어(2인)",
+          "priceKRW": 100000
+        },
+        {
+          "name": "우럭(2인)",
+          "priceKRW": 100000
+        },
+        {
+          "name": "모듬회(2인)",
+          "priceKRW": 120000
+        },
+        {
+          "name": "광어+우럭",
+          "priceKRW": 120000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/9391577",
+      "snsLinks": [
+        "https://www.instagram.com/jeonmangdea/"
+      ],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "open": "11:00",
+          "close": "21:30",
+          "displayDate": "10/12"
+        },
+        "화": {
+          "closed": true,
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "11:00",
+          "close": "21:30",
+          "displayDate": "10/7"
+        },
+        "목": {
+          "open": "11:00",
+          "close": "21:30",
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "11:00",
+          "close": "21:30",
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "11:00",
+          "close": "21:30",
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "11:00",
+          "close": "21:30",
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/9391577",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "사돈네닭강정",
+      "category": "market",
+      "mapCategory": "닭강정",
+      "locationText": "강원특별자치도 강릉시 주문진읍 주문로 153 1층",
+      "source": "https://place.map.kakao.com/21921824",
+      "mapUrl": "https://place.map.kakao.com/21921824",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.4,
+        "reviewCount": 49,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월 휴무; 화·수·목·금·토·일 12:00~20:00",
+      "scheduleDetail": "영업정보펼치기영업 중20:00 까지화(10/6)12:00 ~ 20:00수(10/7)12:00 ~ 20:00목(10/8)12:00 ~ 20:00금(10/9)12:00 ~ 20:00토(10/10)12:00 ~ 20:00일(10/11)12:00 ~ 20:00월(10/12)휴무일",
+      "closureText": "조회 주간 월요일 휴무 표시; 정기 휴무 여부 확인 필요",
+      "menuItems": [
+        {
+          "name": "중간맛 닭강정 (순살)",
+          "priceKRW": 24000
+        },
+        {
+          "name": "순한맛 닭강정 (순살)",
+          "priceKRW": 24000
+        },
+        {
+          "name": "매운맛 닭강정 (순살)",
+          "priceKRW": 25000
+        },
+        {
+          "name": "후라이드 (순살)",
+          "priceKRW": 23000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/21921824",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "closed": true,
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "12:00",
+          "close": "20:00",
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "12:00",
+          "close": "20:00",
+          "displayDate": "10/7"
+        },
+        "목": {
+          "open": "12:00",
+          "close": "20:00",
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "12:00",
+          "close": "20:00",
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "12:00",
+          "close": "20:00",
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "12:00",
+          "close": "20:00",
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/21921824",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "가온",
+      "category": "food",
+      "mapCategory": "국밥",
+      "locationText": "강원특별자치도 강릉시 해안로 280 1층 2호",
+      "source": "https://place.map.kakao.com/1535618464",
+      "mapUrl": "https://place.map.kakao.com/1535618464",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.7,
+        "reviewCount": 49,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월·화·수·목·금·토·일 10:00~22:00 · 주문마감 21:00",
+      "scheduleDetail": "영업정보펼치기영업 중22:00 까지화(10/6)10:00 ~ 22:0021:00 라스트오더수(10/7)10:00 ~ 22:0021:00 라스트오더목(10/8)10:00 ~ 22:0021:00 라스트오더금(10/9)10:00 ~ 22:0021:00 라스트오더토(10/10)10:00 ~ 22:0021:00 라스트오더일(10/11)10:00 ~ 22:0021:00 라스트오더월(10/12)10:00 ~ 22:0021:00 라스트오더",
+      "closureText": "조회 주간 휴무 표시 없음; 정기 휴무·임시휴무 확인 필요",
+      "menuItems": [
+        {
+          "name": "순대국밥",
+          "priceKRW": 12000
+        },
+        {
+          "name": "소고기국밥",
+          "priceKRW": 15000
+        },
+        {
+          "name": "수육",
+          "priceKRW": 35000
+        },
+        {
+          "name": "모듬순대",
+          "priceKRW": 23000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/1535618464",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "open": "10:00",
+          "close": "22:00",
+          "lastOrders": [
+            "21:00"
+          ],
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "10:00",
+          "close": "22:00",
+          "lastOrders": [
+            "21:00"
+          ],
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "10:00",
+          "close": "22:00",
+          "lastOrders": [
+            "21:00"
+          ],
+          "displayDate": "10/7"
+        },
+        "목": {
+          "open": "10:00",
+          "close": "22:00",
+          "lastOrders": [
+            "21:00"
+          ],
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "10:00",
+          "close": "22:00",
+          "lastOrders": [
+            "21:00"
+          ],
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "10:00",
+          "close": "22:00",
+          "lastOrders": [
+            "21:00"
+          ],
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "10:00",
+          "close": "22:00",
+          "lastOrders": [
+            "21:00"
+          ],
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/1535618464",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "초우당막국수",
+      "category": "food",
+      "mapCategory": "국수",
+      "locationText": "강원특별자치도 강릉시 초당원길 41",
+      "source": "https://place.map.kakao.com/997064285",
+      "mapUrl": "https://place.map.kakao.com/997064285",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.7,
+        "reviewCount": 47,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월·화·수·목·금·토·일 10:00~20:30 · 주문마감 20:00",
+      "scheduleDetail": "영업정보펼치기영업 중20:30 까지화(10/6)10:00 ~ 20:3020:00 라스트오더수(10/7)10:00 ~ 20:3020:00 라스트오더목(10/8)10:00 ~ 20:3020:00 라스트오더금(10/9)10:00 ~ 20:3020:00 라스트오더토(10/10)10:00 ~ 20:3020:00 라스트오더일(10/11)10:00 ~ 20:3020:00 라스트오더월(10/12)10:00 ~ 20:3020:00 라스트오더",
+      "closureText": "조회 주간 휴무 표시 없음; 정기 휴무·임시휴무 확인 필요",
+      "menuItems": [
+        {
+          "name": "전복막국수",
+          "priceKRW": 16000
+        },
+        {
+          "name": "순두부 들기름 막국수",
+          "priceKRW": 14000
+        },
+        {
+          "name": "젓갈막국수",
+          "priceKRW": 15000
+        },
+        {
+          "name": "비빔막국수",
+          "priceKRW": 11000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/997064285",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "open": "10:00",
+          "close": "20:30",
+          "lastOrders": [
+            "20:00"
+          ],
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "10:00",
+          "close": "20:30",
+          "lastOrders": [
+            "20:00"
+          ],
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "10:00",
+          "close": "20:30",
+          "lastOrders": [
+            "20:00"
+          ],
+          "displayDate": "10/7"
+        },
+        "목": {
+          "open": "10:00",
+          "close": "20:30",
+          "lastOrders": [
+            "20:00"
+          ],
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "10:00",
+          "close": "20:30",
+          "lastOrders": [
+            "20:00"
+          ],
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "10:00",
+          "close": "20:30",
+          "lastOrders": [
+            "20:00"
+          ],
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "10:00",
+          "close": "20:30",
+          "lastOrders": [
+            "20:00"
+          ],
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/997064285",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "사천물회전문",
+      "category": "food",
+      "mapCategory": "회",
+      "locationText": "강원특별자치도 강릉시 사천면 진리항구1길 36 1층",
+      "source": "https://place.map.kakao.com/26396245",
+      "mapUrl": "https://place.map.kakao.com/26396245",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4,
+        "reviewCount": 43,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월 휴무; 화·수·목·금·토·일 10:00~20:00 · 주문마감 19:20",
+      "scheduleDetail": "영업정보펼치기영업 중20:00 까지화(10/6)10:00 ~ 20:0019:20 라스트오더수(10/7)10:00 ~ 20:0019:20 라스트오더목(10/8)10:00 ~ 20:0019:20 라스트오더금(10/9)10:00 ~ 20:0019:20 라스트오더토(10/10)10:00 ~ 20:0019:20 라스트오더일(10/11)10:00 ~ 20:0019:20 라스트오더월(10/12)휴무일",
+      "closureText": "조회 주간 월요일 휴무 표시; 정기 휴무 여부 확인 필요",
+      "menuItems": [
+        {
+          "name": "광어스페셜",
+          "priceKRW": 24000
+        },
+        {
+          "name": "잡어",
+          "priceKRW": 18000
+        },
+        {
+          "name": "잡어스페셜",
+          "priceKRW": 21000
+        },
+        {
+          "name": "참가자미",
+          "priceKRW": 22000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/26396245",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "closed": true,
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:20"
+          ],
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:20"
+          ],
+          "displayDate": "10/7"
+        },
+        "목": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:20"
+          ],
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:20"
+          ],
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:20"
+          ],
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:20"
+          ],
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/26396245",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "송천식당",
+      "category": "food",
+      "mapCategory": "닭요리",
+      "locationText": "강원특별자치도 강릉시 연곡면 진고개로 777 1층",
+      "source": "https://place.map.kakao.com/9845417",
+      "mapUrl": "https://place.map.kakao.com/9845417",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.7,
+        "reviewCount": 42,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월·화·수·목·금·토·일 10:00~19:30 · 주문마감 19:00",
+      "scheduleDetail": "영업정보펼치기영업 중19:30 까지화(10/6)10:00 ~ 19:3019:00 라스트오더수(10/7)10:00 ~ 19:3019:00 라스트오더목(10/8)10:00 ~ 19:3019:00 라스트오더금(10/9)10:00 ~ 19:3019:00 라스트오더토(10/10)10:00 ~ 19:3019:00 라스트오더일(10/11)10:00 ~ 19:3019:00 라스트오더월(10/12)10:00 ~ 19:3019:00 라스트오더하절기하절기",
+      "closureText": "조회 주간 휴무 표시 없음; 정기 휴무·임시휴무 확인 필요",
+      "menuItems": [
+        {
+          "name": "산채정식",
+          "priceKRW": 23000
+        },
+        {
+          "name": "토종닭백숙",
+          "priceKRW": 80000
+        },
+        {
+          "name": "토종닭볶음탕",
+          "priceKRW": 85000
+        },
+        {
+          "name": "국물닭한마리",
+          "priceKRW": 85000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/9845417",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인; 장소 상세에 하절기 표기가 있으나 계절별 세부 영업시간은 확인하지 못함",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "open": "10:00",
+          "close": "19:30",
+          "lastOrders": [
+            "19:00"
+          ],
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "10:00",
+          "close": "19:30",
+          "lastOrders": [
+            "19:00"
+          ],
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "10:00",
+          "close": "19:30",
+          "lastOrders": [
+            "19:00"
+          ],
+          "displayDate": "10/7"
+        },
+        "목": {
+          "open": "10:00",
+          "close": "19:30",
+          "lastOrders": [
+            "19:00"
+          ],
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "10:00",
+          "close": "19:30",
+          "lastOrders": [
+            "19:00"
+          ],
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "10:00",
+          "close": "19:30",
+          "lastOrders": [
+            "19:00"
+          ],
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "10:00",
+          "close": "19:30",
+          "lastOrders": [
+            "19:00"
+          ],
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/9845417",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "홍질목",
+      "category": "food",
+      "mapCategory": "추어",
+      "locationText": "강원특별자치도 강릉시 연곡면 홍질목길 54",
+      "source": "https://place.map.kakao.com/11892482",
+      "mapUrl": "https://place.map.kakao.com/11892482",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4,
+        "reviewCount": 42,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월·화·수·목·금·토·일 10:00~20:00 · 주문마감 19:15",
+      "scheduleDetail": "영업정보펼치기영업 중20:00 까지화(10/6)10:00 ~ 20:0019:15 라스트오더수(10/7)10:00 ~ 20:0019:15 라스트오더목(10/8)10:00 ~ 20:0019:15 라스트오더금(10/9)10:00 ~ 20:0019:15 라스트오더토(10/10)10:00 ~ 20:0019:15 라스트오더일(10/11)10:00 ~ 20:0019:15 라스트오더월(10/12)10:00 ~ 20:0019:15 라스트오더",
+      "closureText": "조회 주간 휴무 표시 없음; 정기 휴무·임시휴무 확인 필요",
+      "menuItems": [
+        {
+          "name": "감자전",
+          "priceKRW": 6000
+        },
+        {
+          "name": "추어튀김",
+          "priceKRW": 10000
+        },
+        {
+          "name": "왕감자전",
+          "priceKRW": 10000
+        },
+        {
+          "name": "홍질목추어탕",
+          "priceKRW": 11000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/11892482",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:15"
+          ],
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:15"
+          ],
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:15"
+          ],
+          "displayDate": "10/7"
+        },
+        "목": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:15"
+          ],
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:15"
+          ],
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:15"
+          ],
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "10:00",
+          "close": "20:00",
+          "lastOrders": [
+            "19:15"
+          ],
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/11892482",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "해돋이식당",
+      "category": "food",
+      "mapCategory": "한식",
+      "locationText": "강원특별자치도 강릉시 강동면 헌화로 1015 1층",
+      "source": "https://place.map.kakao.com/12895239",
+      "mapUrl": "https://place.map.kakao.com/12895239",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.2,
+        "reviewCount": 41,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월·화·수·목·금 09:00~17:00; 토·일 08:30~19:00 · 휴게 15:00~16:30",
+      "scheduleDetail": "영업정보펼치기영업 중17:00 까지화(10/6)09:00 ~ 17:00수(10/7)09:00 ~ 17:00목(10/8)09:00 ~ 17:00금(10/9)09:00 ~ 17:00토(10/10)08:30 ~ 19:0015:00 ~ 16:30 브레이크타임일(10/11)08:30 ~ 19:0015:00 ~ 16:30 브레이크타임월(10/12)09:00 ~ 17:00",
+      "closureText": "조회 주간 휴무 표시 없음; 정기 휴무·임시휴무 확인 필요",
+      "menuItems": [
+        {
+          "name": "순두부찌개",
+          "priceKRW": 9000
+        },
+        {
+          "name": "수제돈까스",
+          "priceKRW": 12000
+        },
+        {
+          "name": "초당순두부",
+          "priceKRW": 9000
+        },
+        {
+          "name": "황태해장국",
+          "priceKRW": 9000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/12895239",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "open": "09:00",
+          "close": "17:00",
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "09:00",
+          "close": "17:00",
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "09:00",
+          "close": "17:00",
+          "displayDate": "10/7"
+        },
+        "목": {
+          "open": "09:00",
+          "close": "17:00",
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "09:00",
+          "close": "17:00",
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "08:30",
+          "close": "19:00",
+          "breakStart": "15:00",
+          "breakEnd": "16:30",
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "08:30",
+          "close": "19:00",
+          "breakStart": "15:00",
+          "breakEnd": "16:30",
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/12895239",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "남향막국수 본점",
+      "category": "food",
+      "mapCategory": "국수",
+      "locationText": "강원특별자치도 강릉시 저동골길 30 1층",
+      "source": "https://place.map.kakao.com/10189611",
+      "mapUrl": "https://place.map.kakao.com/10189611",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.2,
+        "reviewCount": 38,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월·화·목·금·토·일 10:00~20:00; 수 휴무",
+      "scheduleDetail": "영업정보펼치기영업 중20:00 까지화(10/6)10:00 ~ 20:00수(10/7)휴무일목(10/8)10:00 ~ 20:00금(10/9)10:00 ~ 20:00토(10/10)10:00 ~ 20:00일(10/11)10:00 ~ 20:00월(10/12)10:00 ~ 20:00",
+      "closureText": "조회 주간 수요일 휴무 표시; 정기 휴무 여부 확인 필요",
+      "menuItems": [
+        {
+          "name": "물막국수",
+          "priceKRW": 10000
+        },
+        {
+          "name": "비빔막국수",
+          "priceKRW": 10000
+        },
+        {
+          "name": "회비빔막국수",
+          "priceKRW": 12000
+        },
+        {
+          "name": "수육(대)",
+          "priceKRW": 35000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/10189611",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "open": "10:00",
+          "close": "20:00",
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "10:00",
+          "close": "20:00",
+          "displayDate": "10/6"
+        },
+        "수": {
+          "closed": true,
+          "displayDate": "10/7"
+        },
+        "목": {
+          "open": "10:00",
+          "close": "20:00",
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "10:00",
+          "close": "20:00",
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "10:00",
+          "close": "20:00",
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "10:00",
+          "close": "20:00",
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/10189611",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    },
+    {
+      "name": "인생물회",
+      "category": "food",
+      "mapCategory": "회",
+      "locationText": "강원특별자치도 강릉시 금성로13번길 5-2 1",
+      "source": "https://place.map.kakao.com/1465192519",
+      "mapUrl": "https://place.map.kakao.com/1465192519",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.3,
+        "reviewCount": 32,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": "월·화·수·목·금 10:30~21:00; 토·일 10:00~21:00",
+      "scheduleDetail": "영업정보펼치기영업 중21:00 까지화(10/6)10:30 ~ 21:00수(10/7)10:30 ~ 21:00목(10/8)10:30 ~ 21:00금(10/9)10:30 ~ 21:00토(10/10)10:00 ~ 21:00일(10/11)10:00 ~ 21:00월(10/12)10:30 ~ 21:00",
+      "closureText": "조회 주간 휴무 표시 없음; 정기 휴무·임시휴무 확인 필요",
+      "menuItems": [
+        {
+          "name": "자연산 가자미 물회+소면",
+          "priceKRW": 17000
+        },
+        {
+          "name": "한우 육회 물회+소면",
+          "priceKRW": 19000
+        },
+        {
+          "name": "한우 육회 컵물회+소면",
+          "priceKRW": 9000
+        },
+        {
+          "name": "자연산 가자미 회무침+소면",
+          "priceKRW": 17000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/1465192519",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인; 카카오맵 도로명 주소 끝의 단독 숫자 1은 층/호수 뜻을 확인하지 못함",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": {
+        "월": {
+          "open": "10:30",
+          "close": "21:00",
+          "displayDate": "10/12"
+        },
+        "화": {
+          "open": "10:30",
+          "close": "21:00",
+          "displayDate": "10/6"
+        },
+        "수": {
+          "open": "10:30",
+          "close": "21:00",
+          "displayDate": "10/7"
+        },
+        "목": {
+          "open": "10:30",
+          "close": "21:00",
+          "displayDate": "10/8"
+        },
+        "금": {
+          "open": "10:30",
+          "close": "21:00",
+          "displayDate": "10/9"
+        },
+        "토": {
+          "open": "10:00",
+          "close": "21:00",
+          "displayDate": "10/10"
+        },
+        "일": {
+          "open": "10:00",
+          "close": "21:00",
+          "displayDate": "10/11"
+        }
+      },
+      "scheduleBasis": "카카오맵 장소 상세의 2026-10-06~10-12 표시 일정 재구성; 공휴일·변경 가능",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/1465192519",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      }
+    }
+  ],
+  "deferred": [
+    {
+      "name": "동춘해물마을",
+      "category": "food",
+      "mapCategory": "매운탕,해물탕",
+      "locationText": "강원특별자치도 강릉시 강동면 헌화로 976-2 1층",
+      "source": "https://place.map.kakao.com/25969848",
+      "mapUrl": "https://place.map.kakao.com/25969848",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.8,
+        "reviewCount": 44,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": null,
+      "scheduleDetail": "영업정보영업시간을 알려주세요",
+      "closureText": "카카오맵 영업시간·휴무 미등록; 방문 전 업체 확인",
+      "menuItems": [
+        {
+          "name": "생선구이",
+          "priceKRW": 15000
+        },
+        {
+          "name": "곰치+생대구",
+          "priceKRW": 20000
+        },
+        {
+          "name": "순두부",
+          "priceKRW": 10000
+        },
+        {
+          "name": "칼국수",
+          "priceKRW": 8000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/25969848",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": null,
+      "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인",
+      "followupReason": "평점 4.0 이상 직접 확인; 우선 후보 반영·추가 교차확인 이후 검토",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/25969848",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      },
+      "deferReason": "영업시간·휴무 확인 불가"
+    },
+    {
+      "name": "고향촌",
+      "category": "food",
+      "mapCategory": "중국요리",
+      "locationText": "강원특별자치도 강릉시 강동면 헌화로 1080 1층",
+      "source": "https://place.map.kakao.com/10166945",
+      "mapUrl": "https://place.map.kakao.com/10166945",
+      "rating": {
+        "provider": "Kakao Map",
+        "score": 4.7,
+        "reviewCount": 62,
+        "checkedAt": "2026-10-06"
+      },
+      "scheduleText": null,
+      "scheduleDetail": "영업정보영업시간을 알려주세요",
+      "closureText": "카카오맵 영업시간·휴무 미등록; 방문 전 업체 확인",
+      "menuItems": [
+        {
+          "name": "짜장",
+          "priceKRW": 7000
+        },
+        {
+          "name": "탕수육 (소)",
+          "priceKRW": 23000
+        },
+        {
+          "name": "콩국수",
+          "priceKRW": 8000
+        },
+        {
+          "name": "짬뽕",
+          "priceKRW": 10000
+        }
+      ],
+      "priceSource": "https://place.map.kakao.com/10166945",
+      "snsLinks": [],
+      "uncertainty": "영업시간·메뉴 가격은 변동 가능; 방문 전 업체 확인",
+      "checkedAt": "2026-10-06",
+      "evidenceLevel": "카카오맵 검색 결과의 별점·평가 수·주소와 장소 상세의 메뉴·영업정보 직접 확인; 점포 소유자 확인 아님",
+      "hoursByDay": null,
+      "scheduleBasis": "카카오맵 영업 요약만 확인; 요일별 상세 미확인",
+      "followupReason": "카카오맵 장소 상세에서 영업시간을 확인하지 못해 우선 반영 보류",
+      "recheckedAt": "2026-10-06",
+      "recheckEvidence": {
+        "mapUrl": "https://place.map.kakao.com/10166945",
+        "ratingAndAddress": "카카오맵 장소 상세에서 별점·후기 수·도로명 주소 직접 재확인",
+        "hours": "카카오맵 장소 상세의 2026-10-06~10-12 영업 일정 직접 재확인",
+        "menu": "카카오맵 메뉴 목록의 메뉴명·표시 가격 직접 재확인"
+      },
+      "appDuplicateCheck": {
+        "appPlaceCount": 300,
+        "matchedNames": [],
+        "matchedRoadAddresses": []
+      },
+      "deferReason": "영업시간·휴무 확인 불가"
+    }
+  ],
+  "limitations": [
+    "지도 평점과 후기 수는 조회 시점 값이며 변동 가능.",
+    "요일별 영업 일정은 2026-10-06~10-12 표시값으로 임시휴무·공휴일 변동 가능.",
+    "강릉시 전체 음식점 전수조사가 아니라 이전 조사 후속 14곳의 재검증이다.",
+    "지도와 메뉴 화면의 사진 재사용 허가는 확인되지 않아 이미지 URL은 제시하지 않는다."
+  ]
+}

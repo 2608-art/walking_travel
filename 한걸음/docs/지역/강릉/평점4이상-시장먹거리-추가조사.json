@@ -1,0 +1,394 @@
+{
+  "checkedAtKST": "2026-10-06",
+  "method": "카카오맵 웹 검색 결과의 장소명·주소·별점·평가 수·장소 ID를 직접 대조했다. 별점은 카카오맵 점수이며 다이닝코드 점수와 혼동하지 않았다. 메뉴·가격·시간은 링크된 출처별로 분리해 기록했다. 기존 앱 market 장소명과 중복되는 후보는 제외했다. 카카오맵 장소 상세의 요일별 영업시간·메뉴를 2026-10-06 재확인했으며, 충돌 시 이를 명시했다.",
+  "candidates": [
+    {
+      "name": "꼬꼬닭집",
+      "category": "market",
+      "address": "강원특별자치도 강릉시 금성로13번길 1-1",
+      "area": "중앙시장",
+      "kakao": {
+        "url": "https://place.map.kakao.com/1628946872",
+        "rating": 4.0,
+        "reviewCount": 12,
+        "checkedAtKST": "2026-10-06"
+      },
+      "hours": "매일 09:00~20:00 (카카오맵 2026-10-06 표시)",
+      "closure": "매달 첫째·셋째 일요일 휴무 (카카오맵 표시)",
+      "menu": [
+        {
+          "name": "순살닭강정 중",
+          "priceKRW": 22000
+        },
+        {
+          "name": "순살닭강정 대",
+          "priceKRW": 24000
+        },
+        {
+          "name": "닭다리 3개",
+          "priceKRW": 6000
+        }
+      ],
+      "priceSources": [
+        "https://www.diningcode.com/profile.php?rid=5mwLKdl5nvmC"
+      ],
+      "otherSources": [
+        "https://findby.co.kr/details/25543-511504460218-st-652b047d8c641f9e388378e2"
+      ],
+      "snsUrl": null,
+      "uncertainty": "카카오맵은 2026-10-06 기준 매일 09:00~20:00와 첫째·셋째 일요일 휴무를 함께 표시. 특정 일요일 방문 전 확인 필요. 순살 중 22,000원은 2026-05-26 방문 후기, 나머지는 다이닝코드 메뉴 표기.",
+      "imageLicense": "매장·메뉴 사진을 볼 수 있으나 재사용 허락·라이선스가 확인되지 않아 앱 이미지로 사용할 수 없음",
+      "hoursSource": "https://place.map.kakao.com/1628946872"
+    },
+    {
+      "name": "강릉감자닭강정 중앙시장점",
+      "category": "market",
+      "address": "강원특별자치도 강릉시 금성로 16 2동 2층",
+      "area": "중앙시장 인근",
+      "kakao": {
+        "url": "https://place.map.kakao.com/755610421",
+        "rating": 4.7,
+        "reviewCount": 36,
+        "checkedAtKST": "2026-10-06"
+      },
+      "hours": "매일 10:00~21:20, 라스트오더 20:50",
+      "closure": "다이닝코드 기준 연중무휴",
+      "menu": [
+        {
+          "name": "감자닭강정 달콤한맛",
+          "priceKRW": 26000
+        },
+        {
+          "name": "감자닭강정 매콤한맛",
+          "priceKRW": 26000
+        },
+        {
+          "name": "감자닭강정 반반",
+          "priceKRW": 28000
+        }
+      ],
+      "priceSources": [
+        "https://www.diningcode.com/profile.php?rid=lRWFqW5TzIet"
+      ],
+      "otherSources": [],
+      "snsUrl": null,
+      "uncertainty": "앱의 기존 '강릉감자닭강정'(창해로 343-1)은 다른 지점. 카카오 검색에서 동일 상호의 충남 부여 점포도 나타나므로 장소 ID 755610421로 고정해야 함. 다이닝코드 방문 후기에는 포장 전용이라고 적힘. 명절 운영은 별도 확인 필요.",
+      "imageLicense": "다이닝코드 음식·매장 사진의 앱 재사용 권리 미확인"
+    },
+    {
+      "name": "강릉이래요",
+      "category": "market",
+      "address": "강원특별자치도 강릉시 금성로 21 1층 147호",
+      "area": "중앙시장",
+      "kakao": {
+        "url": "https://place.map.kakao.com/1004538025",
+        "rating": 4.6,
+        "reviewCount": 58,
+        "checkedAtKST": "2026-10-06"
+      },
+      "hours": "수~월 11:00~20:00 (카카오맵 2026-10-06 표시)",
+      "closure": "매주 화요일 휴무",
+      "menu": [
+        {
+          "name": "감자빵 6개입",
+          "priceKRW": 21000
+        },
+        {
+          "name": "감자빵 12개입",
+          "priceKRW": 40000
+        },
+        {
+          "name": "(수제)꿀감자빵 1개",
+          "priceKRW": 3500
+        },
+        {
+          "name": "순두부아이스크림컵",
+          "priceKRW": 3500
+        },
+        {
+          "name": "순두부아이스크림와플",
+          "priceKRW": 5000
+        }
+      ],
+      "priceSources": [
+        "https://www.diningcode.com/profile.php?rid=ugkl6eTTmGo7",
+        "https://place.map.kakao.com/1004538025"
+      ],
+      "otherSources": [],
+      "snsUrl": null,
+      "uncertainty": "기존 방문 후기의 19:30 종료와 카카오맵의 20:00 종료가 충돌하므로 카카오맵 최신 표시를 사용. 6·12개입 가격은 택배 주문 후기 기준으로 매장 판매가와 다를 수 있음.",
+      "imageLicense": "후기 사진의 앱 재사용 권리 미확인",
+      "hoursSource": "https://place.map.kakao.com/1004538025"
+    },
+    {
+      "name": "에그릿",
+      "category": "market",
+      "address": "강원특별자치도 강릉시 중앙시장2길 53-1 1층",
+      "area": "중앙시장",
+      "kakao": {
+        "url": "https://place.map.kakao.com/1319740074",
+        "rating": 4.1,
+        "reviewCount": 7,
+        "checkedAtKST": "2026-10-06"
+      },
+      "hours": "화~일 10:00~17:00, 라스트오더 16:30",
+      "closure": "월요일 휴무",
+      "menu": [
+        {
+          "name": "오리지널 에그타르트",
+          "priceKRW": 4500
+        },
+        {
+          "name": "두바이초코 에그타르트",
+          "priceKRW": 6500
+        }
+      ],
+      "priceSources": [
+        "https://www.diningcode.com/profile.php?rid=FYdJt0ancyZX"
+      ],
+      "otherSources": [],
+      "snsUrl": null,
+      "uncertainty": "다이닝코드 및 인용된 방문 후기 기준. 두바이초코 등 일부 맛은 판매 시기별 변동 가능. 포장 중심이며 후기에는 실내 취식 공간이 없다고 기재.",
+      "imageLicense": "매장·제품 후기 사진의 앱 재사용 권리 미확인"
+    },
+    {
+      "name": "삼양닭집",
+      "category": "market",
+      "address": "강원특별자치도 강릉시 금성로 21 186호",
+      "area": "중앙시장",
+      "kakao": {
+        "url": "https://place.map.kakao.com/9094999",
+        "rating": 4.8,
+        "reviewCount": 21,
+        "checkedAtKST": "2026-10-06"
+      },
+      "hours": null,
+      "closure": "첫째·셋째 일요일 휴무라는 방문 후기, 현행 여부 미확인",
+      "menu": [
+        {
+          "name": "오륜미쌀닭강정",
+          "priceKRW": 22000,
+          "priceNote": "카카오맵 표기 22,000~24,000원"
+        },
+        {
+          "name": "오륜미 후라이드",
+          "priceKRW": 20000,
+          "priceNote": "카카오맵 표기 20,000~22,000원"
+        },
+        {
+          "name": "매콤후라이드",
+          "priceKRW": 20000,
+          "priceNote": "카카오맵 표기 20,000~22,000원"
+        },
+        {
+          "name": "옛날통닭",
+          "priceKRW": 18000,
+          "priceNote": "카카오맵 표기 18,000·20,000·22,000원; 크기별 구분 미확인"
+        }
+      ],
+      "priceSources": [
+        "https://www.diningcode.com/profile.php?rid=zRiYCu1lmiNT",
+        "https://place.map.kakao.com/9094999"
+      ],
+      "otherSources": [],
+      "snsUrl": null,
+      "uncertainty": "카카오맵 상세는 영업시간 미등록. 첫째·셋째 일요일 휴무는 후기 정보로 현행 확인 불가. 가격은 카카오맵 표기 중 최저가만 priceKRW에 적고 범위를 priceNote에 남김. 옛날통닭은 조리 30분 이상이라는 카카오맵 메뉴 설명.",
+      "imageLicense": "후기 사진의 앱 재사용 권리 미확인"
+    },
+    {
+      "name": "강릉당커피콩빵 중앙시장점",
+      "category": "market",
+      "address": "강원특별자치도 강릉시 중앙시장1길 17 1층",
+      "area": "중앙시장",
+      "kakao": {
+        "url": "https://place.map.kakao.com/31497390",
+        "rating": 4.4,
+        "reviewCount": 13,
+        "checkedAtKST": "2026-10-06"
+      },
+      "hours": "월~목 12:00~19:30, 금~일 10:00~21:00 (카카오맵 2026-10-06 표시)",
+      "closure": "카카오맵 주간 표시에는 정기휴무 없음",
+      "menu": [
+        {
+          "name": "강릉 커피콩빵 10구",
+          "priceKRW": 12000
+        },
+        {
+          "name": "강릉 커피콩빵 5구",
+          "priceKRW": 6500
+        },
+        {
+          "name": "강릉 커피잼 에스프레소",
+          "priceKRW": 10000
+        }
+      ],
+      "priceSources": [
+        "https://place.map.kakao.com/31497390"
+      ],
+      "otherSources": [
+        "https://place.map.kakao.com/31497390"
+      ],
+      "snsUrl": "https://www.instagram.com/gangneungdang",
+      "uncertainty": "2026-09-10 방문 후기의 토~목 10:00~21:00·금 11:00~21:00와 카카오맵 최신 요일별 표시가 충돌. 카카오맵 기준으로 기록. 유사 상호 강릉커피콩빵 중앙시장점과 혼동 금지.",
+      "imageLicense": "정확한 점포의 재사용 허락 있는 사진 미확인",
+      "hoursSource": "https://place.map.kakao.com/31497390"
+    },
+    {
+      "name": "강릉감자빵",
+      "category": "market",
+      "address": "강원특별자치도 강릉시 강릉대로210번길 24 지하1층",
+      "area": "임당동·중앙시장 인근",
+      "kakao": {
+        "url": "https://place.map.kakao.com/2103858257",
+        "rating": 4.8,
+        "reviewCount": 13,
+        "checkedAtKST": "2026-10-06"
+      },
+      "hours": "매일 11:00~18:00 (카카오맵 2026-10-06 표시)",
+      "closure": "카카오맵 주간 표시에는 정기휴무 없음",
+      "menu": [
+        {
+          "name": "감자빵",
+          "priceKRW": null
+        },
+        {
+          "name": "아메리카노",
+          "priceKRW": 3800
+        },
+        {
+          "name": "카페라떼",
+          "priceKRW": 4500
+        }
+      ],
+      "priceSources": [
+        "https://place.map.kakao.com/2103858257"
+      ],
+      "otherSources": [
+        "https://www.daangn.com/kr/local-profile/%EA%B0%95%EB%A6%89%EA%B0%90%EC%9E%90%EB%B9%B5-qd2k72jsoi2u/",
+        "https://www.diningcode.com/profile.php?rid=23MoCnC3EEnv"
+      ],
+      "snsUrl": null,
+      "uncertainty": "카카오맵은 매일 11:00~18:00, 다른 후기/다이닝코드는 19:00·20:00 종료도 기재해 충돌. 핵심 제품 감자빵 가격은 카카오맵 첫 화면 메뉴에 나타나지 않아 미확인.",
+      "imageLicense": "매장·제품 사진의 앱 재사용 권리 미확인",
+      "hoursSource": "https://place.map.kakao.com/2103858257"
+    },
+    {
+      "name": "동해기정",
+      "category": "market",
+      "address": "강원특별자치도 강릉시 교동광장로 29",
+      "area": "교동·유천동",
+      "kakao": {
+        "url": "https://place.map.kakao.com/21836633",
+        "rating": 4.0,
+        "reviewCount": 86,
+        "checkedAtKST": "2026-10-06"
+      },
+      "hours": "화~토 09:00~18:30",
+      "closure": "일·월 휴무, 단 카카오맵에 셋째주 월요일 정상영업 별도 표기",
+      "hoursSource": "https://place.map.kakao.com/21836633",
+      "menu": [
+        {
+          "name": "한판기정 30조각×2",
+          "priceKRW": 22000
+        },
+        {
+          "name": "한판기정 30조각",
+          "priceKRW": 12000
+        },
+        {
+          "name": "커피 도시락기정",
+          "priceKRW": 6000
+        },
+        {
+          "name": "카스테라버무리",
+          "priceKRW": 5500
+        }
+      ],
+      "priceSources": [
+        "https://place.map.kakao.com/21836633"
+      ],
+      "otherSources": [
+        "https://www.dhgijung.com/"
+      ],
+      "snsUrl": "https://www.instagram.com/dhgijeong_official/",
+      "uncertainty": "강릉 전체 범위 후보이며 중앙시장과는 다른 교동권. 카카오맵 상세의 셋째주 월요일 정상영업 예외는 정확한 날짜별 확인 필요. 공식 홈페이지는 온라인 주문/매장 수령 기능을 제공하나 시간·메뉴가격은 카카오맵 표기에서 확인.",
+      "imageLicense": "공식 사이트·SNS의 제품 사진도 앱 재사용 허락이 확인되지 않음"
+    }
+  ],
+  "deferred": [
+    {
+      "name": "초당순두부당",
+      "kakao": {
+        "url": "https://place.map.kakao.com/2081230884",
+        "rating": 5.0,
+        "reviewCount": 6
+      },
+      "address": "강원특별자치도 강릉시 중앙시장1길 15-1 1층",
+      "reason": "지도 평점은 4 이상이나 시장 간식보다 식사 음식점에 가까움. 다이닝코드가 전일 휴무로 표시하는 반면 후기는 운영시간을 기재해 실제 영업 여부 충돌.",
+      "source": "https://www.diningcode.com/profile.php?rid=tMOoiD25orLA"
+    },
+    {
+      "name": "팡파미유 중앙시장점",
+      "kakao": {
+        "url": "https://place.map.kakao.com/477814527",
+        "rating": 3.7,
+        "reviewCount": 114
+      },
+      "address": "강원특별자치도 강릉시 금성로13번길 11-1 1층",
+      "reason": "카카오 평점 4.0 미만. 주문진 본점 4.0과 혼동 금지."
+    },
+    {
+      "name": "황금오징어순대",
+      "kakao": {
+        "url": "https://place.map.kakao.com/51051351",
+        "rating": 3.9,
+        "reviewCount": 96
+      },
+      "address": "강원특별자치도 강릉시 금성로 4 1층",
+      "reason": "카카오 평점 4.0 미만."
+    },
+    {
+      "name": "중앙닭강정",
+      "kakao": {
+        "url": "https://place.map.kakao.com/1448618215",
+        "rating": 3.2,
+        "reviewCount": 111
+      },
+      "reason": "카카오 평점 4.0 미만."
+    },
+    {
+      "name": "중앙시장왕족발",
+      "kakao": {
+        "url": "https://place.map.kakao.com/12028442",
+        "rating": 2.3,
+        "reviewCount": 6
+      },
+      "reason": "카카오 평점 4.0 미만."
+    },
+    {
+      "name": "강릉커피콩빵 중앙시장점",
+      "kakao": {
+        "rating": 3.1,
+        "reviewCount": 21
+      },
+      "reason": "카카오 평점 4.0 미만이며 '강릉당커피콩빵 중앙시장점'과 다른 점포."
+    },
+    {
+      "name": "중화짬뽕빵",
+      "kakao": null,
+      "reason": "다이닝코드에는 존재하나 카카오맵 직접 검색에서 정확한 점포 별점을 검증하지 못함.",
+      "source": "https://www.diningcode.com/profile.php?rid=PmSBNdXpfL6i"
+    },
+    {
+      "name": "서울양계",
+      "kakao": {
+        "url": "https://place.map.kakao.com/760986230",
+        "rating": 4.3,
+        "reviewCount": 445
+      },
+      "address": "강원특별자치도 강릉시 창해로 367",
+      "reason": "사용자 언급 참조 점포. 강문해변권 닭강정으로 시장 먹거리 범위 밖. 다른 출처의 366 주소와 카카오 367 주소가 충돌.",
+      "source": "https://www.diningcode.com/profile.php?rid=5T7jbzRcWOUa"
+    }
+  ]
+}
