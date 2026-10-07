@@ -46,6 +46,7 @@ const input = {
   assert.equal(cafeRoutes.length,1,'전역 특색 카페 투어의 합성 경로를 만들지 못함');
   const cafeStops=cafeRoutes[0].rows.filter(row=>byId(row.placeId).category==='cafe');
   assert(cafeStops.length>=3&&cafeStops.length<=4,'카페 투어의 카페 방문 수가 예상 범위를 벗어남');
+  assert(!cafeRoutes[0].rows.some(row=>row.kind==='meal'),'카페 투어에 별도 식사 정차를 끼워 넣음');
   assert(cafeStops.filter(row=>['g24','g30','g43','g95','g98','g187','g189','g190','g191','g192','g193','g195','g198','g217','g223','g227','g258'].includes(row.placeId)).length>=2,'특색 카페 우선 배치가 작동하지 않음');
   console.log('PASS: 목적형 테마, 안목·바다 연계, 특색 카페 3~4곳, 합성 전역 버스 루트, 실제 경로 부재 시 미확정');
 })().catch(error=>{console.error(error);process.exitCode=1;});
