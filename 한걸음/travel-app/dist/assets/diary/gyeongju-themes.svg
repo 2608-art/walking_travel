@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 100" fill="none" stroke="#627449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<!-- Eight regional motifs in the existing soft travel-diary line style. -->
+<g transform="translate(0 0)">
+  <path d="M7 84q18-7 36 0t36 0 14 0M12 76q15-5 30 0t30 0 20 0" stroke="#9ccbd1" stroke-width="4"/>
+  <path d="M15 77 23 39h21l8 38Z" fill="#e8ccb0"/><path d="M21 67h30m-27-9h24m-22-9h20m-17-9h15" stroke="#c3906c" stroke-width="2.5"/>
+  <path d="M29 53h9v9h-9Z" fill="#fff9e6"/><path d="M20 37h27m-23-4h19" stroke="#627449" stroke-width="3"/>
+  <path d="M59 77V47h26v30Z" fill="#e8ccb0"/><path d="m55 48 17-15 17 15Z" fill="#c3906c"/><path d="M65 77V58h9v19" fill="#fff9e6"/>
+  <circle cx="76" cy="17" r="6" fill="#edc879"/><path d="M76 7V4m9 7 3-3M67 10l-3-3" stroke="#d69d77"/>
+</g>
+<g transform="translate(100 0)">
+  <path d="M8 80q20-7 42 0t42 0" stroke="#9ccbd1" stroke-width="4"/>
+  <path d="M13 62h74" stroke="#c3906c" stroke-width="6"/><path d="M18 59q32-43 64 0" fill="#f2e4c3" stroke-width="4"/><path d="M24 60q26-31 52 0M21 62v13m58-13v13"/>
+  <path d="M10 77h80" stroke="#a5b780" stroke-width="4"/><path d="M31 51v8m38-8v8" stroke="#627449"/>
+  <path d="M14 34q7-9 13 0m46-9q7-9 13 0" stroke="#d69d77"/>
+</g>
+<g transform="translate(200 0)">
+  <path d="M13 80h74" stroke="#b8c796" stroke-width="4"/><path d="M18 76V42h64v34Z" fill="#e5dbb6"/>
+  <path d="m13 44 8-19h58l8 19Z" fill="#f8edc8"/><path d="M21 27v16m14-16v16m15-16v16m15-16v16m14-16v16" stroke="#d69d77" stroke-width="6"/>
+  <path d="M30 76V54h14v22m17 0V54h14v22" fill="#fffdf2"/><path d="M51 32v9" stroke="#fffdf2"/>
+  <path d="M11 19h15m48 0h15" stroke="#a5b780" stroke-width="3"/>
+</g>
+<g transform="translate(300 0)">
+  <path d="M8 72q14-6 28 0t28 0 28 0M8 82q14-6 28 0t28 0 28 0" stroke="#9ccbd1" stroke-width="4"/>
+  <path d="M27 63V45h47v18" fill="#e8ccb0"/><path d="m22 46 29-22 29 22Z" fill="#c3906c"/>
+  <path d="M22 47h58M34 63V49m28 14V49"/><path d="M51 31v31" stroke="#fff9e6" stroke-width="3"/>
+  <circle cx="15" cy="28" r="6" fill="#edc879"/><path d="M14 69q6-7 12 0m48-3q6-7 12 0" stroke="#a5b780"/>
+</g>
+<g transform="translate(400 0)">
+  <path d="M8 84q15-7 30 0t30 0 24 0M9 76q15-7 30 0t30 0 23 0" stroke="#9ccbd1" stroke-width="4"/>
+  <path d="M21 76V57h29v19Z" fill="#e8ccb0"/><path d="m17 58 18-13 19 13Z" fill="#c3906c"/><path d="M31 76V64h9v12" fill="#fff9e6"/>
+  <path d="M57 72V54h24v18Z" fill="#e3cda7"/><path d="m53 55 16-12 16 12Z" fill="#c3906c"/><path d="M61 72V61h8v11" fill="#fff9e6"/>
+  <path d="m21 45 4-8h21l4 8-15 5Z" fill="#d9ad7d"/><path d="M25 37 29 28h13l4 9-10 4Z" fill="#e5c395"/><path d="m29 28 4-8h6l4 8-7 4Z" fill="#d9ad7d"/><path d="M30 39h12m-9-10h6" stroke="#627449" stroke-width="1.5"/>
+  <circle cx="70" cy="26" r="5" fill="#edc879"/><path d="M12 32q7-7 14 0m54 8q7-7 14 0" stroke="#a5b780"/>
+</g>
+<g transform="translate(500 0)">
+  <path d="M8 83q15-7 30 0t30 0 22 0" stroke="#9ccbd1" stroke-width="4"/>
+  <path d="M14 78V46h27v32Z" fill="#e8ccb0"/><path d="m10 47 18-17 18 17Z" fill="#c3906c"/><path d="M17 55h6m10 0h6M23 78V64h9v14" fill="#fff9e6"/>
+  <path d="M58 78V35h20v43Z" fill="#fff9df"/><path d="M55 36h26l-5-10H61Z" fill="#e7ad72"/><path d="M53 25h30L68 14Z" fill="#cb7f55"/><path d="M63 46h10M63 56h10" stroke="#d99268"/>
+  <path d="M57 78h24" stroke="#627449" stroke-width="4"/><path d="M17 25q5-7 10 0m60 9 6-4" stroke="#edc879"/>
+</g>
+<g transform="translate(600 0)">
+  <path d="M7 74q16-7 32 0t32 0 23 0M7 84q16-6 32 0t32 0 23 0" stroke="#9ccbd1" stroke-width="5"/>
+  <path d="M37 65q3-18 15-20 14 2 17 20-12 8-32 0Z" fill="#e8ccb0"/><path d="M32 66q20-5 42 0M47 46v-8m10 8v-8"/>
+  <circle cx="72" cy="22" r="8" fill="#edc879"/><path d="M72 8v-4m12 9 4-3M60 13l-4-3" stroke="#d69d77"/>
+  <path d="M14 51q8-9 16 0m46 30q7-6 14 0" stroke="#fff9e6" stroke-width="3"/>
+</g>
+<g transform="translate(700 0)">
+  <path d="M8 82q15-7 30 0t30 0 23 0" stroke="#9ccbd1" stroke-width="4"/>
+  <path d="M18 76V38h14v38Zm19 0V26h14v50Zm19 0V34h14v42Zm19 0V44h12v32Z" fill="#e8ccb0"/>
+  <path d="M18 50h14m5-9h14m5 7h14m5 8h12" stroke="#c3906c" stroke-width="3"/>
+  <path d="M13 80h74" stroke="#a5b780" stroke-width="4"/><circle cx="19" cy="23" r="4" fill="#edc879"/><circle cx="80" cy="29" r="4" fill="#edc879"/>
+</g>
+</svg>

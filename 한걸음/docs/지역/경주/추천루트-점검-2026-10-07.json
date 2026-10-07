@@ -1,0 +1,126 @@
+{
+  "checkedAt": "2026-10-07",
+  "scope": "경주만",
+  "themeChecks": [
+    {
+      "date": "2026-10-07",
+      "theme": "처음 가는 경주",
+      "start": "가능한 시작시간 없음",
+      "buttonEnabled": false
+    },
+    {
+      "date": "2026-10-07",
+      "theme": "신라 유적·골목",
+      "start": "가능한 시작시간 없음",
+      "buttonEnabled": false
+    },
+    {
+      "date": "2026-10-07",
+      "theme": "경주 동해안",
+      "start": "가능한 시작시간 없음",
+      "buttonEnabled": false
+    },
+    {
+      "date": "2026-10-07",
+      "theme": "시장·황리단길",
+      "start": "가능한 시작시간 없음",
+      "buttonEnabled": false
+    },
+    {
+      "date": "2026-10-07",
+      "theme": "경주 먹거리",
+      "start": "가능한 시작시간 없음",
+      "buttonEnabled": false
+    },
+    {
+      "date": "2026-10-10",
+      "theme": "경주 먹거리",
+      "start": "가능한 시작시간 없음",
+      "buttonEnabled": false
+    },
+    {
+      "date": "2026-10-10",
+      "theme": "처음 가는 경주",
+      "start": "가능한 시작시간 없음",
+      "buttonEnabled": false
+    },
+    {
+      "date": "2026-10-10",
+      "theme": "신라 유적·골목",
+      "start": "가능한 시작시간 없음",
+      "buttonEnabled": false
+    },
+    {
+      "date": "2026-10-10",
+      "theme": "경주 동해안",
+      "start": "가능한 시작시간 없음",
+      "buttonEnabled": false
+    },
+    {
+      "date": "2026-10-10",
+      "theme": "시장·황리단길",
+      "start": "가능한 시작시간 없음",
+      "buttonEnabled": false
+    }
+  ],
+  "customChecks": [
+    {
+      "date": "2026-10-07",
+      "start": "10:00",
+      "end": "18:00",
+      "origin": "황리단길",
+      "destination": "동궁과 월지",
+      "solo": false,
+      "result": "검토용 루트만 표시",
+      "stops": [
+        "스컹크웍스",
+        "카페 오버랩"
+      ],
+      "issues": [
+        "운영시간 미확인",
+        "실제 보행 경로 미확인",
+        "마지막 추정 이동이 구간 제한 초과"
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "start": "10:00",
+      "end": "18:00",
+      "origin": "황리단길",
+      "destination": "동궁과 월지",
+      "solo": true,
+      "result": "검토용 루트만 표시",
+      "stops": [
+        "스컹크웍스",
+        "카페 오버랩"
+      ],
+      "issues": [
+        "운영시간 미확인",
+        "실제 보행 경로 미확인",
+        "마지막 추정 이동이 구간 제한 초과"
+      ]
+    }
+  ],
+  "dataAudit": {
+    "places": 176,
+    "researchOnly": 136,
+    "excludedIds": [
+      "j9",
+      "j37"
+    ],
+    "autoPool": 38,
+    "hoursCount": 6,
+    "unrestrictedAccessCount": 10
+  },
+  "localRouteApi": {
+    "pair": [
+      "황리단길",
+      "대릉원"
+    ],
+    "httpStatus": 503,
+    "error": "REST API 키가 설정되지 않았습니다.",
+    "checkedAt": "2026-10-07",
+    "initialServerState": "8765 포트 연결 거부",
+    "action": "로컬 서버 재실행 후 확인"
+  }
+}

@@ -45,3 +45,5 @@ main{min-height:calc(100vh - 68px)}.page{max-width:1240px;margin:auto;padding:28
 .route-path-choice .route-tabs{margin:6px 0;flex-wrap:wrap}
 .route-path-choice small{display:block;color:#4e6560}
 #route-result-map.leaflet-container{touch-action:none;overscroll-behavior:contain}
+
+.theme-draft-map-control{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 8px}.theme-draft-map-pin{background:transparent;border:0}.theme-draft-map-pin span{display:block;width:14px;height:14px;border-radius:50%;background:#e0a633;border:2px solid #fff;box-shadow:0 1px 5px #263a3155}

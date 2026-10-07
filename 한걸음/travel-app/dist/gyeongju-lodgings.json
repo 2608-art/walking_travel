@@ -1,0 +1,17 @@
+{
+  "source": "경주시 문화관광 숙박 자료에서 확인한 경주시 전역의 선별 숙소",
+  "updatedAt": "2026-10-06",
+  "usage": "출발·도착 위치 검색 전용. 지도핀·여행지 카드·추천 방문지에는 표시하지 않음",
+  "lodgings": [
+    {"id":"lodging-gj-you","name":"유 게스트하우스","address":"경주시 사정로 9","sourceUrl":"https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=601&mnu_uid=4821"},
+    {"id":"lodging-gj-ye","name":"예 게스트하우스","address":"경주시 포석로 1040-3","sourceUrl":"https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=467&listType=list&mnu_uid=2338&pageNo=9"},
+    {"id":"lodging-gj-lahan","name":"라한셀렉트 경주","address":"경주시 보문로 338","sourceUrl":"https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=7245&mnu_uid=2336"},
+    {"id":"lodging-gj-kinock","name":"키녹","address":"경주시 보문로 280-12","sourceUrl":"https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=428&mnu_uid=2336"},
+    {"id":"lodging-gj-commodore","name":"코모도호텔 경주","address":"경주시 보문로 422","sourceUrl":"https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=427&mnu_uid=4817"},
+    {"id":"lodging-gj-arisu","name":"아리수 경주 호텔","address":"경주시 영불로 207","sourceUrl":"https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=430&mnu_uid=4817"},
+    {"id":"lodging-gj-gampo-hanok","name":"경주감포한옥펜션","address":"경주시 감포읍 감포리 139-2","sourceUrl":"https://gyeongju.go.kr/tour/page.do?cmd=2&con_uid=511&listType=list&mnu_uid=4133&pageNo=18"},
+    {"id":"lodging-gj-oceancliff","name":"경주 오션클리프 양남점","address":"경주시 양남면 양남항구길 8","sourceUrl":"https://www.gyeongju.go.kr/tour/page.do?code_uid=1031&listType=list&mnu_uid=2340&pageNo=1"},
+    {"id":"lodging-gj-sagyesaek","name":"사계사색","address":"경주시 서악1길 61","sourceUrl":"https://www.gyeongju.go.kr/tour/page.do?code_uid=1031&listType=list&mnu_uid=2340&pageNo=1"},
+    {"id":"lodging-gj-hanok1","name":"경주 한옥1번가","address":"경주시 천원1길 22","sourceUrl":"https://www.gyeongju.go.kr/tour/page.do?listType=list&mnu_uid=4816&pageNo=22"}
+  ]
+}
