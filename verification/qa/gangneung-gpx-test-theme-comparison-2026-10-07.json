@@ -1,0 +1,70 @@
+{
+  "checkedOn": "2026-10-07",
+  "status": "local polyline display verified; theme visit sequence not verified",
+  "gpx": {
+    "source": "../fixtures/gangneung-gpx-test-2026-10-07.gpx",
+    "sha256": "bff2cb4d204bbe7bfda004cab9250945f88a40a28acfd1d09bc3367fa354f20d",
+    "trackPoints": 29,
+    "lengthMeters": 1279,
+    "start": [37.75308, 128.894558],
+    "end": [37.752927, 128.901026]
+  },
+  "themeCandidate": {
+    "id": "shops-01",
+    "title": "시장 A — 관아·임당 굿즈·중앙시장·닭강정·월화교",
+    "source": "gangneung-theme-routes-naver-2026-10-07.json",
+    "placeIdsInOrder": ["g27", "g8", "g1", "g72", "g26", "g7"]
+  },
+  "method": "앱 장소 대표 좌표와 GPX의 모든 인접 선분 사이에서 가장 가까운 거리를 강릉 위도의 평면 근사로 계산했다. alongMeters는 GPX 시작점부터 해당 선분의 최근접 위치까지의 거리다. 가까움은 실제 문·시장 입구·방문 완료 또는 보행 가능성을 입증하지 않는다.",
+  "placeComparison": [
+    {
+      "id": "g27",
+      "name": "강릉 대도호부 관아·임영관삼문",
+      "nearestTrackMeters": 236,
+      "alongMeters": 0,
+      "placeSource": "https://www.gn.go.kr/www/contents.do?key=1322",
+      "assessment": "공식 주소는 임영로131번길 6이다. GPX가 대표 핀에서 236m 떨어진 곳에서 시작해 관아 방문 또는 출입구 접근을 확인할 수 없다. 개별 입구 위치는 미확인."
+    },
+    {
+      "id": "g8",
+      "name": "굿즈임당·임당생활문화센터",
+      "nearestTrackMeters": 110,
+      "alongMeters": 288,
+      "placeSource": "https://www.gn.go.kr/www/contents.do?key=1765",
+      "assessment": "공식 주소는 문화의길 6이다. 건물 대표점에서 110m 떨어진 길을 지나므로 상점·센터 방문을 확인할 수 없다. 개별 출입구 위치는 미확인."
+    },
+    {
+      "id": "g1",
+      "name": "강릉중앙시장",
+      "nearestTrackMeters": 43,
+      "alongMeters": 558,
+      "placeSource": "https://data.visitkorea.or.kr/linkedview/132771",
+      "assessment": "시장 대표점 인근을 지난다. 시장은 넓은 권역이므로 특정 입구나 내부 통로 방문은 확인되지 않았다."
+    },
+    {
+      "id": "g72",
+      "name": "배니닭강정",
+      "nearestTrackMeters": 93,
+      "alongMeters": 569,
+      "placeSource": "https://place.map.kakao.com/19660110",
+      "assessment": "카카오 장소 대표점에서 93m 떨어져 있다. 가게 앞을 지나거나 포장 방문했다고 확인할 수 없다."
+    },
+    {
+      "id": "g26",
+      "name": "장미경양식 강릉중앙시장점",
+      "nearestTrackMeters": 21,
+      "alongMeters": 528,
+      "placeSource": "https://www.daangn.com/kr/local-profile/%EC%9E%A5%EB%AF%B8%EA%B2%BD%EC%96%91%EC%8B%9D-%EA%B0%95%EB%A6%89%EC%A4%91%EC%95%99%EC%8B%9C%EC%9E%A5%EC%A0%90-g3a64ykp973g/",
+      "assessment": "가게 건물 대표점에서 21m를 지난다. GPX 순서상 중앙시장·배니닭강정보다 먼저 지나므로 시장 A 후보의 방문 순서와 맞지 않는다. 실제 문은 미확인."
+    },
+    {
+      "id": "g7",
+      "name": "월화교",
+      "nearestTrackMeters": 82,
+      "alongMeters": 1260,
+      "placeSource": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=fb44a3d5-78e8-4913-83b2-f4ca917d068e",
+      "assessment": "GPX 끝점은 다리 대표점에서 약 82m 떨어져 있다. 북쪽 접근점일 수 있으나 다리 진입점은 확인되지 않아 월화교 보행으로 단정하지 않는다."
+    }
+  ],
+  "decision": "이 파일은 길선 렌더링 기술 시험으로만 사용한다. 시장 A의 출발·경유·도착 또는 순서가 일치한다는 증거가 없어 추천 경로·계획표·저장 도보 카탈로그에 연결하지 않는다."
+}

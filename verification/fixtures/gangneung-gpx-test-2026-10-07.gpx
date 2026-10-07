@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="https://gpx.studio" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>New file 1</name>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+  </metadata>
+  <trk>
+    <name>New file 1</name>
+    <trkseg>
+      <trkpt lat="37.75308" lon="128.894558">
+        <ele>14.75</ele>
+      </trkpt>
+      <trkpt lat="37.753026" lon="128.894596">
+        <ele>14.93</ele>
+      </trkpt>
+      <trkpt lat="37.752772" lon="128.894696">
+        <ele>18.07</ele>
+      </trkpt>
+      <trkpt lat="37.752917" lon="128.894946">
+        <ele>16.02</ele>
+      </trkpt>
+      <trkpt lat="37.753498" lon="128.895947">
+        <ele>17</ele>
+      </trkpt>
+      <trkpt lat="37.753674" lon="128.896227">
+        <ele>17.97</ele>
+      </trkpt>
+      <trkpt lat="37.753851" lon="128.896506">
+        <ele>15.98</ele>
+      </trkpt>
+      <trkpt lat="37.754145" lon="128.896044">
+        <ele>17.11</ele>
+      </trkpt>
+      <trkpt lat="37.753851" lon="128.896506">
+        <ele>15.98</ele>
+      </trkpt>
+      <trkpt lat="37.753344" lon="128.896996">
+        <ele>15.93</ele>
+      </trkpt>
+      <trkpt lat="37.753537" lon="128.897262">
+        <ele>15.08</ele>
+      </trkpt>
+      <trkpt lat="37.753832" lon="128.897738">
+        <ele>14.45</ele>
+      </trkpt>
+      <trkpt lat="37.754012" lon="128.898028">
+        <ele>14.06</ele>
+      </trkpt>
+      <trkpt lat="37.753894" lon="128.898138">
+        <ele>14.37</ele>
+      </trkpt>
+      <trkpt lat="37.753894" lon="128.898138">
+        <ele>14.37</ele>
+      </trkpt>
+      <trkpt lat="37.753582" lon="128.89843">
+        <ele>15.2</ele>
+      </trkpt>
+      <trkpt lat="37.753286" lon="128.898653">
+        <ele>16</ele>
+      </trkpt>
+      <trkpt lat="37.753012" lon="128.898888">
+        <ele>14.06</ele>
+      </trkpt>
+      <trkpt lat="37.752769" lon="128.899112">
+        <ele>14</ele>
+      </trkpt>
+      <trkpt lat="37.752321" lon="128.898402">
+        <ele>14.94</ele>
+      </trkpt>
+      <trkpt lat="37.752153" lon="128.898088">
+        <ele>14</ele>
+      </trkpt>
+      <trkpt lat="37.751827" lon="128.897559">
+        <ele>15</ele>
+      </trkpt>
+      <trkpt lat="37.751436" lon="128.89791">
+        <ele>13.47</ele>
+      </trkpt>
+      <trkpt lat="37.751254" lon="128.898083">
+        <ele>11.24</ele>
+      </trkpt>
+      <trkpt lat="37.751166" lon="128.898168">
+        <ele>11.78</ele>
+      </trkpt>
+      <trkpt lat="37.75159" lon="128.89896">
+        <ele>11.03</ele>
+      </trkpt>
+      <trkpt lat="37.751918" lon="128.899536">
+        <ele>10.47</ele>
+      </trkpt>
+      <trkpt lat="37.752253" lon="128.900089">
+        <ele>9.93</ele>
+      </trkpt>
+      <trkpt lat="37.752927" lon="128.901026">
+        <ele>8.97</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

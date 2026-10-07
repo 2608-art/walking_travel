@@ -1,0 +1,23 @@
+{
+  "id": "gangneung-market-first-design-2026-10-07",
+  "label": "시장·먹거리 첫 코스 설계",
+  "status": "design-only",
+  "checkedOn": "2026-10-07",
+  "note": "장소를 위치와 방문 내용으로 고른 직선 연결 초안이다. 선분 길이는 실제 걷기 거리·시간이 아니며 도로·횡단보도·출입구를 반영하지 않는다.",
+  "places": [
+    {"id":"g27","name":"강릉 대도호부 관아·임영관삼문","purpose":"역사 방문","lat":37.7525948,"lon":128.8919443,"pinCaveat":"부지 대표점, 개별 출입문 미확인"},
+    {"id":"g8","name":"굿즈임당·임당생활문화센터","purpose":"로컬 굿즈 구경","lat":37.7546925,"lon":128.8949965,"pinCaveat":"건물 대표점, 실제 문 미확인"},
+    {"id":"g26","name":"장미경양식 강릉중앙시장점","purpose":"식사","lat":37.7542002,"lon":128.8979872,"pinCaveat":"건물 대표점, 실제 문 미확인"},
+    {"id":"g1","name":"강릉중앙시장","purpose":"시장 구경","lat":37.7540251,"lon":128.8986238,"pinCaveat":"시장 대표점, 특정 출입문 아님"},
+    {"id":"g72","name":"배니닭강정","purpose":"포장 간식","lat":37.75421481,"lon":128.89915055,"pinCaveat":"카카오 장소 대표점, 현장 입구 미확인"},
+    {"id":"g7","name":"월화교","purpose":"마무리 산책","lat":37.7522636,"lon":128.901498,"pinCaveat":"다리 대표점, 양끝 진입점 미확인"}
+  ],
+  "straightDistancesMeters": [356,269,59,51,299],
+  "locationSources": [
+    "https://www.gn.go.kr/www/contents.do?key=1322",
+    "https://www.gn.go.kr/www/contents.do?key=1765",
+    "https://data.visitkorea.or.kr/linkedview/132771",
+    "https://place.map.kakao.com/19660110",
+    "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=fb44a3d5-78e8-4913-83b2-f4ca917d068e"
+  ]
+}

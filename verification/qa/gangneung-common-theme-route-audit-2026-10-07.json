@@ -1,0 +1,32 @@
+{
+  "title": "강릉 공통 테마 코스 보행·식사 기준 검토",
+  "checkedAtKst": "2026-10-07",
+  "mapProvider": "Naver Map mobile directions",
+  "principles": {
+    "start": "숙소가 많은 시내권에서 시작",
+    "meals": "카페 전용 코스를 제외하고 아침·점심·저녁 한 끼씩을 표시",
+    "cafes": "카페 전용 코스는 식당 제외; 그 외 코스는 최대 식사 횟수에 맞춘 카페·디저트 수",
+    "transit": "노선 수보다 버스 탑승 구간 수로 세고 한 코스에 최대 3구간",
+    "walk": "직선거리로 걷기 쉬움을 확정하지 않으며, 실제 지도 보행 시간·거리 확인이 필요한 구간은 미확인으로 표시"
+  },
+  "verifiedSegments": [
+    {
+      "from": "g12",
+      "fromName": "경포호",
+      "to": "g20",
+      "toName": "경포가시연습지",
+      "mode": "walk",
+      "minutes": 28,
+      "meters": 1900,
+      "checkedAtKst": "2026-10-07",
+      "summaryAtLookup": "도보 28분, 1.9km, 8개 안내 단계",
+      "routeUrl": "https://way-m.map.naver.com/quick-path/128.9095224784%2C37.7977913781%2C%EA%B2%BD%ED%8F%AC%ED%98%B8%2Cundefined%2CADDRESS_POI/128.89652591272056%2C37.79199868134902%2C%EA%B2%BD%ED%8F%AC%EA%B0%80%EC%8B%9C%EC%97%B0%EC%8A%B5%EC%A7%80%2Cundefined%2CADDRESS_POI/-/walk/0",
+      "caveat": "대표 핀 사이 지도 안내 거리이며, 호수·습지 현장 진입로와 공사·통행 상태는 방문일에 확인"
+    }
+  ],
+  "limits": [
+    "이 자료는 다섯 코스 전체의 시간표, 날짜별 운영시간, 버스 대기·환승, 체류시간을 검증한 기록이 아니다.",
+    "각 코스의 미조회 구간은 정확한 거리·시간을 표시하지 않고 지도 길찾기 링크로 재확인하도록 남긴다.",
+    "10개 장소를 모두 하루에 완주할 수 있다고 보증하지 않으며 검토용 방문 순서다."
+  ]
+}

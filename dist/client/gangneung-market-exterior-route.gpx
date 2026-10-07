@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Hangeoreum — OSM/Valhalla saved pedestrian geometry" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>강릉 시장 외곽 보행 코스</name><desc>1.377km. OSM/Valhalla 보행망에서 저장. 시장 내부 통로와 실제 출입문 미확인. GPX Studio 내보내기 파일 아님.</desc><link href="https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A37.7525948%2C%22lon%22%3A128.8919443%7D%2C%7B%22lat%22%3A37.7546925%2C%22lon%22%3A128.8949965%7D%2C%7B%22lat%22%3A37.7542002%2C%22lon%22%3A128.8979872%7D%2C%7B%22lat%22%3A37.753816%2C%22lon%22%3A128.898818%7D%2C%7B%22lat%22%3A37.7522636%2C%22lon%22%3A128.901498%7D%5D%2C%22costing%22%3A%22pedestrian%22%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%7D"><text>OSM/Valhalla 원본 요청</text></link></metadata>
+  <wpt lat="37.752761" lon="128.891846"><name>강릉 대도호부 관아·임영관삼문</name><desc>건물 밖 보행망 접근점. 실제 출입구 확인 전.</desc></wpt>
+  <wpt lat="37.754768" lon="128.895075"><name>굿즈임당·임당생활문화센터</name><desc>건물 밖 보행망 접근점. 실제 출입구 확인 전.</desc></wpt>
+  <wpt lat="37.754152" lon="128.897902"><name>장미경양식 강릉중앙시장점</name><desc>건물 밖 보행망 접근점. 실제 출입구 확인 전.</desc></wpt>
+  <wpt lat="37.753816" lon="128.898818"><name>강릉중앙시장 외곽 접근점</name><desc>건물 밖 보행망 접근점. 실제 출입구 확인 전.</desc></wpt>
+  <wpt lat="37.75225" lon="128.901477"><name>월화교</name><desc>건물 밖 보행망 접근점. 실제 출입구 확인 전.</desc></wpt>
+  <trk><name>강릉 시장 외곽 보행 코스</name><trkseg>
+    <trkpt lat="37.752761" lon="128.891846"/>
+    <trkpt lat="37.753052" lon="128.892632"/>
+    <trkpt lat="37.752682" lon="128.893007"/>
+    <trkpt lat="37.753037" lon="128.893538"/>
+    <trkpt lat="37.753248" lon="128.893853"/>
+    <trkpt lat="37.753293" lon="128.893922"/>
+    <trkpt lat="37.753498" lon="128.89427"/>
+    <trkpt lat="37.754154" lon="128.895324"/>
+    <trkpt lat="37.754374" lon="128.895683"/>
+    <trkpt lat="37.754768" lon="128.895075"/>
+    <trkpt lat="37.754374" lon="128.895683"/>
+    <trkpt lat="37.753851" lon="128.896506"/>
+    <trkpt lat="37.754535" lon="128.897555"/>
+    <trkpt lat="37.754152" lon="128.897902"/>
+    <trkpt lat="37.754012" lon="128.898028"/>
+    <trkpt lat="37.753582" lon="128.89843"/>
+    <trkpt lat="37.753768" lon="128.898736"/>
+    <trkpt lat="37.753816" lon="128.898818"/>
+    <trkpt lat="37.753906" lon="128.898974"/>
+    <trkpt lat="37.754057" lon="128.899219"/>
+    <trkpt lat="37.753713" lon="128.899593"/>
+    <trkpt lat="37.753395" lon="128.899939"/>
+    <trkpt lat="37.753427" lon="128.900018"/>
+    <trkpt lat="37.75346" lon="128.900097"/>
+    <trkpt lat="37.753363" lon="128.900207"/>
+    <trkpt lat="37.753398" lon="128.900308"/>
+    <trkpt lat="37.753342" lon="128.900252"/>
+    <trkpt lat="37.75338" lon="128.900369"/>
+    <trkpt lat="37.7533" lon="128.900301"/>
+    <trkpt lat="37.753336" lon="128.900423"/>
+    <trkpt lat="37.753238" lon="128.900362"/>
+    <trkpt lat="37.753272" lon="128.900492"/>
+    <trkpt lat="37.753172" lon="128.900426"/>
+    <trkpt lat="37.75321" lon="128.900554"/>
+    <trkpt lat="37.753107" lon="128.900489"/>
+    <trkpt lat="37.753137" lon="128.900602"/>
+    <trkpt lat="37.753077" lon="128.900604"/>
+    <trkpt lat="37.75225" lon="128.901477"/>
+  </trkseg></trk>
+</gpx>

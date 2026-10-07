@@ -1,0 +1,485 @@
+{
+  "type": "FeatureCollection",
+  "name": "Gangneung shops pedestrian legs",
+  "metadata": {
+    "checkedOn": "2026-10-07",
+    "source": "OpenStreetMap/Valhalla public pedestrian router",
+    "attribution": "© OpenStreetMap contributors",
+    "note": "Only walk-mode legs are routed. Transit-mode gaps remain separate. Place pins may not be entrances."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "shops",
+        "legIndex": 1,
+        "from": "g33",
+        "to": "g3",
+        "fromName": "선채향",
+        "toName": "월화거리",
+        "meters": 268,
+        "minutes": 4,
+        "startSnapMeters": 11,
+        "endSnapMeters": 7,
+        "accepted": true,
+        "pinType": {
+          "from": "route-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.895931,
+            37.75603
+          ],
+          [
+            128.896037,
+            37.755913
+          ],
+          [
+            128.896264,
+            37.755765
+          ],
+          [
+            128.896843,
+            37.7551
+          ],
+          [
+            128.89697,
+            37.755186
+          ],
+          [
+            128.897221,
+            37.755338
+          ],
+          [
+            128.897727,
+            37.755606
+          ],
+          [
+            128.897439,
+            37.755871
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "shops",
+        "legIndex": 2,
+        "from": "g3",
+        "to": "g40",
+        "fromName": "월화거리",
+        "toName": "감자바우 옹심이장칼국수",
+        "meters": 436,
+        "minutes": 6,
+        "startSnapMeters": 7,
+        "endSnapMeters": 9,
+        "accepted": true,
+        "pinType": {
+          "from": "route-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.897439,
+            37.755871
+          ],
+          [
+            128.897727,
+            37.755606
+          ],
+          [
+            128.89804,
+            37.755328
+          ],
+          [
+            128.898907,
+            37.754515
+          ],
+          [
+            128.898793,
+            37.75445
+          ],
+          [
+            128.898028,
+            37.754012
+          ],
+          [
+            128.897262,
+            37.753537
+          ],
+          [
+            128.896996,
+            37.753344
+          ],
+          [
+            128.897161,
+            37.753153
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "shops",
+        "legIndex": 3,
+        "from": "g40",
+        "to": "g1",
+        "fromName": "감자바우 옹심이장칼국수",
+        "toName": "강릉중앙시장",
+        "meters": 191,
+        "minutes": 3,
+        "startSnapMeters": 9,
+        "endSnapMeters": 29,
+        "accepted": true,
+        "pinType": {
+          "from": "route-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.897161,
+            37.753153
+          ],
+          [
+            128.897351,
+            37.752933
+          ],
+          [
+            128.897647,
+            37.753119
+          ],
+          [
+            128.89843,
+            37.753582
+          ],
+          [
+            128.898736,
+            37.753768
+          ],
+          [
+            128.898818,
+            37.753816
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "shops",
+        "legIndex": 4,
+        "from": "g1",
+        "to": "g2",
+        "fromName": "강릉중앙시장",
+        "toName": "성남시장",
+        "meters": 36,
+        "minutes": 1,
+        "startSnapMeters": 29,
+        "endSnapMeters": 5,
+        "accepted": true,
+        "pinType": {
+          "from": "route-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.898818,
+            37.753816
+          ],
+          [
+            128.898974,
+            37.753906
+          ],
+          [
+            128.899096,
+            37.753763
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "shops",
+        "legIndex": 5,
+        "from": "g2",
+        "to": "g58",
+        "fromName": "성남시장",
+        "toName": "광덕식당 중앙시장점",
+        "meters": 66,
+        "minutes": 1,
+        "startSnapMeters": 5,
+        "endSnapMeters": 3,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.899096,
+            37.753763
+          ],
+          [
+            128.898974,
+            37.753906
+          ],
+          [
+            128.898736,
+            37.753768
+          ],
+          [
+            128.898877,
+            37.753613
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "shops",
+        "legIndex": 6,
+        "from": "g58",
+        "to": "g73",
+        "fromName": "광덕식당 중앙시장점",
+        "toName": "만복래닭강정",
+        "meters": 144,
+        "minutes": 2,
+        "startSnapMeters": 3,
+        "endSnapMeters": 3,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.898877,
+            37.753613
+          ],
+          [
+            128.899022,
+            37.753454
+          ],
+          [
+            128.898653,
+            37.753286
+          ],
+          [
+            128.898888,
+            37.753012
+          ],
+          [
+            128.899387,
+            37.753182
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "shops",
+        "legIndex": 7,
+        "from": "g73",
+        "to": "g200",
+        "fromName": "만복래닭강정",
+        "toName": "강릉 명주동 거리",
+        "meters": 634,
+        "minutes": 8,
+        "startSnapMeters": 3,
+        "endSnapMeters": 3,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.899387,
+            37.753182
+          ],
+          [
+            128.898888,
+            37.753012
+          ],
+          [
+            128.898018,
+            37.752722
+          ],
+          [
+            128.897665,
+            37.752594
+          ],
+          [
+            128.897057,
+            37.75239
+          ],
+          [
+            128.896488,
+            37.752167
+          ],
+          [
+            128.895998,
+            37.751974
+          ],
+          [
+            128.895691,
+            37.751853
+          ],
+          [
+            128.894945,
+            37.751557
+          ],
+          [
+            128.89474,
+            37.751535
+          ],
+          [
+            128.894389,
+            37.751338
+          ],
+          [
+            128.894293,
+            37.751428
+          ],
+          [
+            128.894142,
+            37.751566
+          ],
+          [
+            128.89314,
+            37.750901
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "shops",
+        "legIndex": 8,
+        "from": "g200",
+        "to": "g24",
+        "fromName": "강릉 명주동 거리",
+        "toName": "봉봉방앗간",
+        "meters": 72,
+        "minutes": 1,
+        "startSnapMeters": 3,
+        "endSnapMeters": 17,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.89314,
+            37.750901
+          ],
+          [
+            128.893058,
+            37.750846
+          ],
+          [
+            128.892783,
+            37.751083
+          ],
+          [
+            128.892549,
+            37.750923
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "shops",
+        "legIndex": 9,
+        "from": "g24",
+        "to": "g27",
+        "fromName": "봉봉방앗간",
+        "toName": "강릉 대도호부 관아·임영관삼문",
+        "meters": 374,
+        "minutes": 6,
+        "startSnapMeters": 17,
+        "endSnapMeters": 20,
+        "accepted": true,
+        "pinType": {
+          "from": "route-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.892549,
+            37.750923
+          ],
+          [
+            128.892783,
+            37.751083
+          ],
+          [
+            128.892528,
+            37.751303
+          ],
+          [
+            128.89218,
+            37.751615
+          ],
+          [
+            128.892513,
+            37.752061
+          ],
+          [
+            128.892901,
+            37.752561
+          ],
+          [
+            128.893007,
+            37.752682
+          ],
+          [
+            128.892632,
+            37.753052
+          ],
+          [
+            128.891846,
+            37.752761
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -54,34 +54,22 @@ const nearby=[
   assert(offlineDraft.issues.some(issue=>issue.includes('좌표 간 직선거리')),'오프라인 초안의 추정 한계를 설명');
   const app=fs.readFileSync(path.join(__dirname,'../public/app.js'),'utf8');
   const renderer=app.slice(app.indexOf('  function showReviewRoute('),app.indexOf('  function showRouteResults('));
-  let savedThemeDraft=false;
-  const makeRoot=()=>{const value={innerHTML:''};value.querySelector=()=>({insertAdjacentHTML:(_position,html)=>{value.innerHTML+=html;}});return value;};
+  const makeRoot=()=>{const value={innerHTML:''};value.querySelector=()=>({insertAdjacentHTML:(_position,html)=>{value.innerHTML+=html;}});value.querySelectorAll=()=>[];return value;};
   const root=makeRoot(),button={},view={
     esc:value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;'),
     getPlace:id=>nearby.find(p=>p.id===id),
     routePlace:id=>nearby.find(p=>p.id===id),
     initResultMap:()=>{},
-    $:()=>button,nav:()=>{},state:{route:{mode:'theme'}},storeThemeRouteDraft:()=>{savedThemeDraft=true;}
+    $:selector=>selector==='#view-market-short-route'?null:button,nav:()=>{},state:{route:{mode:'theme'}}
   };
   vm.runInNewContext(renderer+'\nshowReviewRoute(root,review);',{...view,root,review});
-  assert(root.innerHTML.includes('검토용 루트 초안') && root.innerHTML.includes('선택한 시간에는 닫음'));
-  assert(root.innerHTML.includes('테마 초안 저장'),'검토된 테마 초안을 별도 저장할 수 있음');
-  button.onclick();
-  assert(savedThemeDraft,'테마 초안 저장 동작이 호출됨');
-  const storeDraftSource=app.slice(app.indexOf('  function storeThemeRouteDraft('),app.indexOf('  const today ='));
-  let storedKey='',storedDrafts=[];
-  vm.runInNewContext(storeDraftSource+'\nstoreThemeRouteDraft(review);',{
-    STORAGE_THEME_ROUTE_DRAFTS:'hangeoreum-theme-route-drafts-v1-gangneung',
-    state:{route:{theme:'food',date:'2026-10-05',themeStart:'10:00'}},review,
-    load:()=>[],save:(key,value)=>{storedKey=key;storedDrafts=value;return true;},toast:()=>{}
-  });
-  assert.equal(storedKey,'hangeoreum-theme-route-drafts-v1-gangneung');
-  assert.equal(storedDrafts[0].theme,'food');
-  assert.equal(storedDrafts[0].review.rows.length,review.rows.length);
+  assert(root.innerHTML.includes('루트 초안') && root.innerHTML.includes('가고 싶은 장소'));
+  assert(!root.innerHTML.includes('테마 초안 저장'),'루트 미리보기에는 초안 저장 버튼이 없음');
+  assert(!renderer.includes('테마 초안 저장'),'루트 결과 카드에는 초안 저장 UI가 없음');
   assert(!root.innerHTML.includes('id="import-route"'),'미확정 경로를 확정 추천처럼 계획표에 넣지 않음');
   const draftRoot=makeRoot();
-  vm.runInNewContext(renderer+'\nshowReviewRoute(root,review);',{...view,root:draftRoot,review:offlineDraft});
-  assert(draftRoot.innerHTML.includes('좌표 추정 약') && draftRoot.innerHTML.includes('실제 경로 미확인'));
+  vm.runInNewContext(renderer+'\nshowReviewRoute(root,review);',{...view,state:{route:{mode:'theme',reviewDetailsPage:true}},root:draftRoot,review:offlineDraft});
+  assert(draftRoot.innerHTML.includes('좌표 간 직선거리') && draftRoot.innerHTML.includes('출입구'));
   const belowRoot=makeRoot();
   vm.runInNewContext(renderer+'\nshowReviewRoute(root,review);',{...view,root:belowRoot,review:justBelow});
   assert(belowRoot.innerHTML.includes('59분 59초'),'60분 미만을 60분으로 반올림해 표시하지 않음');
@@ -91,7 +79,7 @@ const nearby=[
   const appEngine={THEME_PRESETS:{food:{originId:'station',destinationId:'station'}},themeWindow:()=>({start:'10:00',end:'19:00'}),prepareRoutePlaces:values=>values,generateThemeDay:async(input)=>{try{await input.routeProvider(origin,far);}catch{}return[];},
     generateReviewRoute:async(input)=>{reviewOfflineOnly=input.offlineOnly;return {review:true,theme:input.theme,start:input.start,end:input.end,rows:[],issues:[]};}};
   const makeRoutes=vm.runInNewContext(makeRoutesSource+'\nmakeRoutes',{routeCache:new Map(),state:themeState,
-    routeEngine:appEngine,getPlace:()=>origin,STATION:origin,routeOrigin:()=>origin,routeDestination:()=>origin,
+    activeRegion:{id:'mokpo'},routeEngine:appEngine,getPlace:()=>origin,STATION:origin,routeOrigin:()=>origin,routeDestination:()=>origin,
     coord:point=>Number.isFinite(point?.lat)&&Number.isFinite(point?.lon),evaluate:()=>({kind:'ok'}),getRoute:async()=>{throw Error('429 안전 한도');}});
   assert.equal((await makeRoutes()).length,0);
   assert(themeState.route.review?.review && themeState.route.review.theme==='food','테마 확정 코스가 없을 때 검토용 루트 연결');
@@ -100,7 +88,7 @@ const nearby=[
   assert(themeState.route.review.start==='10:00' && themeState.route.review.end==='19:00');
   const missingState={route:{mode:'custom',date:'2026-10-05',review:null},places:nearby};
   const missingRoute=vm.runInNewContext(makeRoutesSource+'\nmakeRoutes',{routeCache:new Map(),state:missingState,
-    routeEngine:appEngine,getPlace:()=>origin,STATION:origin,routeOrigin:()=>({name:'좌표 없는 출발지'}),routeDestination:()=>origin,
+    activeRegion:{id:'mokpo'},routeEngine:appEngine,getPlace:()=>origin,STATION:origin,routeOrigin:()=>({name:'좌표 없는 출발지'}),routeDestination:()=>origin,
     coord:point=>Number.isFinite(point?.lat)&&Number.isFinite(point?.lon),evaluate:()=>({kind:'ok'}),getRoute:async()=>[]});
   assert.equal((await missingRoute()).length,0);
   assert(missingState.route.locationMissing && !missingState.route.review,'좌표 없는 위치에 임의의 검토 경로를 만들지 않음');

@@ -99,7 +99,8 @@
   const weekday = (date) => new Date(date + 'T12:00:00Z').getUTCDay();
   const findByName = (name) => state.places.find((p) => p.name === name);
   const getPlace = (id) => state.places.find((p) => p.id === id) || state.lodgings.find((p) => p.id === id);
-  const isLodgingPoint = (point) => activeRegion.id==='gyeongju' && String(point?.id || point?.lodgingSourceId || '').startsWith('lodging-');
+  const isLodgingPoint = (place) => typeof place?.id === 'string' && place.id.startsWith('lodging-');
+  const routePlace = (id, route=state.route?.results?.[state.route.selected]) => route?.routingPlaces?.find((p) => p.id === id) || getPlace(id);
   const coord = (p) => p && Number.isFinite(p.lat) && Number.isFinite(p.lon);
   const pinPoint = (p) => coord(p) ? [p.lat, p.lon] :
     p && Number.isFinite(p.mapLat) && Number.isFinite(p.mapLon) ? [p.mapLat, p.mapLon] : null;
@@ -108,6 +109,49 @@
   const routeCache = new Map();
   const walkPathChoices = new Map(Object.entries(load(STORAGE_WALK_PATH_CHOICES,{})));
   let savedWalkPathsReady;
+  let marketExteriorRouteReady;
+  let gangneungReviewRoutesReady;
+  let gangneungThemePlacePicksReady;
+  async function loadGangneungReviewRoutes() {
+    if (!gangneungReviewRoutesReady) gangneungReviewRoutesReady=fetch('./gangneung-theme-review-routes.json').then(async response=>{
+      if(!response.ok) throw Error('강릉 테마 초안을 불러오지 못했습니다.');
+      const data=await response.json();
+      const expectedStops={food:11,sea:9,shops:10,history:9,cafe:10};
+      if(data.version!==3 || data.status!=='review-only' || data.routes?.length!==5 || data.routes.some(route=>route.placeIds?.length!==expectedStops[route.themeId])) throw Error('강릉 테마 초안 자료가 올바르지 않습니다.');
+      return data.routes;
+    }).catch(error=>{gangneungReviewRoutesReady=null;throw error;});
+    return gangneungReviewRoutesReady;
+  }
+  async function loadGangneungThemePlacePicks() {
+    if (!gangneungThemePlacePicksReady) gangneungThemePlacePicksReady=fetch('./gangneung-theme-place-picks.json').then(async response=>{
+      if(!response.ok) throw Error('강릉 테마 루트 초안을 불러오지 못했습니다.');
+      const data=await response.json();
+      if(data.version!==1 || data.status!=='draft-place-picks-only' || data.themes?.length!==5 ||
+          data.themes.some(theme=>!Array.isArray(theme.placeIds) || new Set(theme.placeIds).size!==theme.placeIds.length ||
+            (theme.id==='cafe' ? theme.placeIds.length!==30 : (theme.id==='shops'?theme.placeIds.length>30:theme.placeIds.length>=30) || theme.pinScope?.radiusKm!==2 || !theme.pinScope.centers?.length)))
+        throw Error('강릉 테마 루트 초안 자료가 올바르지 않습니다.');
+      const pinDistanceKm=(point,center)=>Math.hypot((point[0]-center[0])*111,(point[1]-center[1])*88);
+      for(const theme of data.themes) for(const id of theme.placeIds) {
+        const place=getPlace(id),point=place&&pinPoint(place);
+        if(!place || !point || theme.pinScope && !theme.pinScope.centers.some(center=>pinDistanceKm(point,center)<=theme.pinScope.radiusKm))
+          throw Error('지도 위치를 확인할 수 없는 장소가 초안에 있습니다.');
+      }
+      return data;
+    }).catch(error=>{gangneungThemePlacePicksReady=null;throw error;});
+    return gangneungThemePlacePicksReady;
+  }
+  async function loadMarketExteriorRoute() {
+    if (!marketExteriorRouteReady) marketExteriorRouteReady=fetch('./gangneung-market-exterior-route.json').then(async response=>{
+      if (!response.ok) throw Error('저장된 시장 코스를 불러오지 못했습니다.');
+      const data=await response.json();
+      if (data.version!==1 || data.id!=='gangneung-market-exterior-2026-10-07' ||
+          data.stops?.map(p=>p.id).join(',')!=='g27,g8,g26,g1,g7' ||
+          data.legs?.length!==4 || data.geometry?.coordinates?.length<15 ||
+          data.geometry?.stopPointIndices?.length!==5) throw Error('저장된 시장 코스 자료가 올바르지 않습니다.');
+      return data;
+    }).catch(error=>{marketExteriorRouteReady=null;throw error;});
+    return marketExteriorRouteReady;
+  }
   function loadSavedWalkPaths() {
     if (!savedWalkPathsReady) savedWalkPathsReady=fetch('./walk-paths.json').then(async response=>{
       if (!response.ok) throw new Error('저장 도보 구간을 불러오지 못했습니다.');
@@ -372,7 +416,7 @@
       <div class="city-cover"><img src="${esc(region.image)}" alt="${esc(region.imageAlt)}"><button class="round-control city-back" id="city-back" aria-label="여행지 선택으로">‹</button><span class="cover-label">${esc(region.province)} · ${esc(region.imageLabel)}</span></div>
       <div class="city-body"><div class="city-intro"><div><span class="eyebrow">${esc(region.introTitle)}</span><h1>${esc(region.name)}</h1><p>${esc(region.teaser)}<br>${esc(region.introLine)}</p><span class="pill">⌖ ${esc(region.province)} ${esc(region.name)}시</span></div><span class="city-turtle-note" aria-hidden="true">${esc(region.name)} 같이<br>걸을까요?</span>${turtlePose('discover','새 여행지를 발견한 거북이')}</div>${region.ready?'':'<p class="notice warn">미리보기 지역입니다. 장소 자료와 테마 코스를 검증 중이며, 실제 도보 경로와 운영 정보는 방문 전 확인해 주세요.</p>'}
       <div class="city-tabs" role="tablist" aria-label="${esc(region.name)} 여행 정보"><button role="tab" aria-selected="${tab==='routes'}" data-city-tab="routes">추천 루트</button><button role="tab" aria-selected="${tab==='places'}" data-city-tab="places">여행지</button>${region.id==='gyeongju'?`<button role="tab" aria-selected="${tab==='themeDraft'}" data-city-tab="themeDraft">테마 후보 지도</button>`:''}<button role="tab" aria-selected="${tab==='info'}" data-city-tab="info">여행 정보</button></div>
-      <div class="city-content">${tab==='routes'?`<div class="diary-section-head"><h2>${region.id==='gyeongju'?'어떤 권역을 둘러볼까요?':'어떤 하루를 걸어볼까요?'}</h2></div><div class="theme-discovery-list"><button type="button" class="theme-discovery theme-discovery--custom" id="discover-custom-route"><span class="theme-art theme-custom" aria-hidden="true"></span><span><strong>출발·도착 맞춤</strong><small>원하는 출발지와 도착지를 정하고 하루 동선을 만들어요.</small><em>내 경로 직접 만들기</em></span><b aria-hidden="true">›</b></button>${themes.map(t=>`<button class="theme-discovery" data-discover-theme="${t.id}"><span class="theme-art theme-${t.art||t.id}" aria-hidden="true">${uiIcon(THEME_ICONS[t.id]||t.icon)}</span><span><strong>${esc(t.name)}</strong><small>${esc(t.description||routeEngine.THEME_PRESETS[t.id].description)}</small><em>${region.id==='gyeongju'?'테마 장소와 보행 길선 보기':'날짜에 맞춰 하루 코스 만들기'}</em></span><b aria-hidden="true">›</b></button>`).join('')}</div><div class="diary-section-head"><h2>${esc(region.name)}에서 만나는 풍경</h2><button class="text-button" data-city-tab="places">모두 보기 ›</button></div><div class="discovery-grid">${featured.map(destinationPlaceCard).join('')}</div>`:tab==='places'?`<div class="diary-section-head"><h2>한곳씩, 마음에 담기</h2><span class="small">${state.places.length}곳</span></div><div class="discovery-grid">${state.places.map(destinationPlaceCard).join('')}</div>`:tab==='themeDraft'?`<section class="theme-candidate-explorer"><div class="diary-section-head"><div><span class="eyebrow">장소 후보 초안</span><h2>가까이 모여 있는 경주 테마</h2></div><span class="pill">6개 테마 · 지도 핀</span></div><p class="theme-candidate-intro">저장된 경주 장소 중 테마 중심점 가까이에 있는 후보만 표시해요. 핀은 후보 위치이며 방문 순서나 보행 경로는 아닙니다.</p><div class="theme-candidate-layout"><div id="theme-candidate-controls" class="theme-candidate-controls" aria-label="경주 테마 선택"></div><div class="theme-candidate-map-wrap"><div id="theme-candidate-map" role="img" aria-label="선택한 경주 테마의 후보 장소 지도"></div><p class="small">지도 배경 © OpenStreetMap contributors · 핀 간 실제 보행 거리와 출입구는 별도 확인이 필요합니다.</p></div></div></section>`:`<div class="travel-note">${turtlePose('walk','산책하는 거북이')}<div><h2>내 속도로 걷는 ${esc(region.name)}</h2><p>${esc(region.description)}</p><p>지도에서 장소를 살펴보거나, 날짜와 테마를 골라 하루 코스를 만들어 보세요.</p></div></div><div class="info-pair"><div><strong>걸어서, 필요할 땐 버스로</strong><p>걷기 좋은 동선을 먼저 찾고, 도보 연결이 어려우면 확인 가능한 버스 경로를 살펴봐요.</p></div><div><strong>출발 전 한 번 더 확인</strong><p>장소의 운영시간과 실제 출입구, 버스 배차는 방문일에 확인해 주세요.</p></div></div>`}</div>
+      <div class="city-content">${tab==='routes'?`<div class="diary-section-head"><h2>${region.id==='gyeongju'?'어떤 권역을 둘러볼까요?':region.id==='gangneung'?'어떤 테마 루트를 볼까요?':'어떤 하루를 걸어볼까요?'}</h2></div><div class="theme-discovery-list"><button type="button" class="theme-discovery theme-discovery--custom" id="discover-custom-route"><span class="theme-art theme-custom" aria-hidden="true"></span><span><strong>출발·도착 맞춤</strong><small>원하는 출발지와 도착지를 정하고 하루 동선을 만들어요.</small><em>내 경로 직접 만들기</em></span><b aria-hidden="true">›</b></button>${themes.map(t=>`<button class="theme-discovery" data-discover-theme="${t.id}"><span class="theme-art theme-${t.art||t.id}" aria-hidden="true">${uiIcon(THEME_ICONS[t.id]||t.icon)}</span><span><strong>${esc(t.name)}</strong><small>${esc(t.description||routeEngine.THEME_PRESETS[t.id].description)}</small><em>${region.id==='gyeongju'?'테마 장소와 보행 길선 보기':region.id==='gangneung'?'테마 루트 보기':'날짜에 맞춰 하루 코스 만들기'}</em></span><b aria-hidden="true">›</b></button>`).join('')}</div><div class="diary-section-head"><h2>${esc(region.name)}에서 만나는 풍경</h2><button class="text-button" data-city-tab="places">모두 보기 ›</button></div><div class="discovery-grid">${featured.map(destinationPlaceCard).join('')}</div>`:tab==='places'?`<div class="diary-section-head"><h2>한곳씩, 마음에 담기</h2><span class="small">${state.places.length}곳</span></div><div class="discovery-grid">${state.places.map(destinationPlaceCard).join('')}</div>`:tab==='themeDraft'?`<section class="theme-candidate-explorer"><div class="diary-section-head"><div><span class="eyebrow">장소 후보 초안</span><h2>가까이 모여 있는 경주 테마</h2></div><span class="pill">6개 테마 · 지도 핀</span></div><p class="theme-candidate-intro">저장된 경주 장소 중 테마 중심점 가까이에 있는 후보만 표시해요. 핀은 후보 위치이며 방문 순서나 보행 경로는 아닙니다.</p><div class="theme-candidate-layout"><div id="theme-candidate-controls" class="theme-candidate-controls" aria-label="경주 테마 선택"></div><div class="theme-candidate-map-wrap"><div id="theme-candidate-map" role="img" aria-label="선택한 경주 테마의 후보 장소 지도"></div><p class="small">지도 배경 © OpenStreetMap contributors · 핀 간 실제 보행 거리와 출입구는 별도 확인이 필요합니다.</p></div></div></section>`:`<div class="travel-note">${turtlePose('walk','산책하는 거북이')}<div><h2>내 속도로 걷는 ${esc(region.name)}</h2><p>${esc(region.description)}</p><p>지도에서 장소를 살펴보거나, 날짜와 테마를 골라 하루 코스를 만들어 보세요.</p></div></div><div class="info-pair"><div><strong>걸어서, 필요할 땐 버스로</strong><p>걷기 좋은 동선을 먼저 찾고, 도보 연결이 어려우면 확인 가능한 버스 경로를 살펴봐요.</p></div><div><strong>출발 전 한 번 더 확인</strong><p>장소의 운영시간과 실제 출입구, 버스 배차는 방문일에 확인해 주세요.</p></div></div>`}</div>
       <div class="city-cta"><button class="btn btn-primary" id="choose-region">⌖ ${esc(region.name)} 지도 둘러보기</button><button class="btn btn-outline" id="city-plan">나의 하루 계획</button></div></div></section>`;
     if (region.id==='gyeongju' && tab==='info') {
       $('.info-pair').innerHTML=`
@@ -923,7 +967,7 @@
     const r = state.route, isOrigin = kind === 'origin';
     const select = $('#route-' + kind);
     const field = select.closest('.field-group');
-    const places = [STATION, ...state.places.filter((p) => coord(p) && !['p41','p51'].includes(p.id))];
+    const places = [STATION, ...routeEngine.prepareRoutePlaces(state.places).filter((p) => coord(p) && !['p41','p51'].includes(p.id))];
     field.querySelector('.field-label').outerHTML = '<div class="route-field-header"><label class="field-label" for="route-' + kind + '-query">' + (isOrigin ? '시작 위치' : '도착 위치') + '</label><button type="button" class="route-current-btn" id="route-' + kind + '-current" aria-label="현재 위치를 ' + (isOrigin ? '시작' : '도착') + ' 위치로 사용">📍 현재 위치</button></div>';
     field.querySelector('#use-location')?.remove();
     select.outerHTML = '<div class="route-place-search"><div class="route-search-line"><input class="text-field" id="route-' + kind + '-query" autocomplete="off" placeholder="장소명 또는 주소 입력" aria-controls="route-' + kind + '-matches"><button type="button" class="route-search-icon" id="route-' + kind + '-online" aria-label="온라인에서 ' + (isOrigin ? '시작' : '도착') + ' 위치 검색" title="온라인 주소·장소 검색">🔍</button></div><div class="route-place-selected" id="route-' + kind + '-selected" role="status"></div><div class="route-place-matches" id="route-' + kind + '-matches"></div></div>';
@@ -1036,29 +1080,38 @@
   async function makeRoutes() {
     for (const [key, entry] of routeCache) if (!entry.persistent) routeCache.delete(key);
     const r=state.route;
-    const routePlaces=r.solo && r.mode !== 'theme' ? state.places.filter(soloTravel.canVisit) : state.places;
+    if (activeRegion.id==='gangneung' && r.mode==='theme' && ['food','sea','shops','cafe','history'].includes(r.theme)) {
+      const candidates=(await loadGangneungReviewRoutes()).filter(route=>route.themeId===r.theme);
+      r.reviewOptions=candidates.map(buildGangneungReviewRoute).filter(Boolean);
+      r.review=r.reviewOptions[0] || null;
+      r.reviewSelected=0;
+      r.themeReviewOnly=true;
+      r.locationMissing=false;
+      return [];
+    }
+    const routePlaces=routeEngine.prepareRoutePlaces(r.solo && r.mode !== 'theme' ? state.places.filter(soloTravel.canVisit) : state.places);
     r.review=null;
     r.locationMissing=false;
     const preset=r.mode === 'theme' ? routeEngine.THEME_PRESETS[r.theme] : null;
-    const origin=preset ? (getPlace(preset.originId) || STATION) : routeOrigin();
-    const destination=preset ? (getPlace(preset.destinationId) || STATION) : routeDestination();
+    const origin=routeEngine.prepareRoutePlaces([preset ? (getPlace(preset.originId) || STATION) : routeOrigin()])[0];
+    const destination=routeEngine.prepareRoutePlaces([preset ? (getPlace(preset.destinationId) || STATION) : routeDestination()])[0];
     if(!coord(origin) || !coord(destination)) {r.locationMissing=true;return [];}
     const validateRoute=(p,minute,duration,date) => r.mode==='theme' ? validateThemeVisit(p,minute,duration,date) : evaluate({placeId:p.id,duration},minute,date);
     let apiAvailable=true;
     const unavailableRouteLegs=new Map();
     const providers={
-      routeProvider:async (a,b) => { if (!apiAvailable) { await loadSavedWalkPaths(); if (!savedWalkOptions(a,b).length) throw Error('도보 API 연결 불가'); } const key=[a.id,a.lat,a.lon,b.id,b.lat,b.lon].join('|'); if(unavailableRouteLegs.has(key))throw unavailableRouteLegs.get(key); try { const route=(await getRoute('walk',a,b))[0]; return {...route,points:route.points || []}; } catch (error) { if (/조회하지 못|연결하지 못|503|502|429|안전 한도|Unexpected token/.test(error.message)) apiAvailable=false; unavailableRouteLegs.set(key,error); throw error; } },
-      busProvider:async (a,b) => getRoute('transit',a,b)
+      routeProvider:async (a,b) => { if (!apiAvailable) { await loadSavedWalkPaths(); if (!savedWalkOptions(a,b).length) throw Error('도보 API 연결 불가'); } try { const route=(await getRoute('walk',a,b))[0]; return {...route,points:route.points || []}; } catch (error) { if (/조회하지 못|연결하지 못|503|502|429|안전 한도|Unexpected token/.test(error.message)) apiAvailable=false; throw error; } },
+      busProvider:async (a,b) => { if(!apiAvailable) return []; try{return await getRoute('transit',a,b);}catch(error){if(/조회하지 못|연결하지 못|503|502|429|안전 한도|Unexpected token/.test(error.message))apiAvailable=false;throw error;} }
     };
     if (preset) {
-      const routes=await routeEngine.generateThemeDay({places:routePlaces,origin,destination,date:r.date,start:r.themeStart || '10:00',theme:r.theme,validate:validateRoute,...providers});
+      const routes=await routeEngine.generateThemeDay({places:routePlaces,origin,destination,date:r.date,start:r.themeStart || '10:00',theme:r.theme,recommendationCount:10,validate:validateRoute,...providers});
       if(!routes.length) {
         const window=routeEngine.themeWindow(r.themeStart || '10:00');
         const review=await routeEngine.generateReviewRoute({places:routePlaces,origin,destination,date:r.date,start:r.themeStart || '10:00',end:window.end,theme:r.theme,validate:validateRoute,offlineOnly:!apiAvailable,...providers});
-        r.review=review ? {...review,issues:['선택한 테마가 방문 수·영업시간·실제 이동 경로 확인 기준을 충족하지 않아, 가까운 장소를 검토용 초안으로 표시했습니다.',...review.issues],originPoint:origin,destinationPoint:destination} : null;
+        r.review=review ? {...review,issues:['선택한 테마가 방문 수·영업시간·실제 이동 경로 확인 기준을 충족하지 않아, 가까운 장소를 검토용 초안으로 표시했습니다.',...review.issues],originPoint:origin,destinationPoint:destination,routingPlaces:routePlaces} : null;
         if(r.review) r.themeReviewOnly=true;
       }
-      return routes.map((route) => ({...route,originId:origin.id,destinationId:destination.id,originPoint:origin,destinationPoint:destination}));
+      return routes.map((route) => ({...route,originId:origin.id,destinationId:destination.id,originPoint:origin,destinationPoint:destination,routingPlaces:routePlaces}));
     }
     const input={places:routePlaces,origin,destination,
       start:r.start,end:r.end,date:r.date,theme:'balanced',mealTimes:[],routeFocus:r.focus,
@@ -1067,15 +1120,15 @@
     const routes=await routeEngine.generateAdaptive(input);
     if(!routes.length) {
       const review=await routeEngine.generateReviewRoute({...input,offlineOnly:!apiAvailable});
-      r.review=review ? {...review,originPoint:origin,destinationPoint:destination} : null;
+      r.review=review ? {...review,originPoint:origin,destinationPoint:destination,routingPlaces:routePlaces} : null;
     }
     return routes.map((route) => ({...route,
-      originId:origin.id,destinationId:destination.id,originPoint:origin,destinationPoint:destination}));
+      originId:origin.id,destinationId:destination.id,originPoint:origin,destinationPoint:destination,routingPlaces:routePlaces}));
   }
   function captureRouteInputs() {
     const r=state.route;
     r.date=$('#route-date').value || today();
-    if (r.mode === 'theme') { if(activeRegion.id!=='gyeongju') r.themeStart=$('#theme-route-start').value; return; }
+    if (r.mode === 'theme') { if(activeRegion.id!=='gyeongju'){const start=$('#theme-route-start');if(start)r.themeStart=start.value;} return; }
     r.start=$('#route-start').value;
     r.end=$('#route-midnight').checked ? '24:00' : $('#route-end').value;
     r.mustOptional=$('#route-must-optional').checked;
@@ -1087,18 +1140,97 @@
       return {kind:'bad',title:'야간 산책 여건 미확인'};
     return result;
   }
+  function buildGangneungReviewRoute(candidate) {
+    const locations=candidate.placeIds.map(id=>{const place=getPlace(id),point=pinPoint(place);return place&&point?{...place,lat:point[0],lon:point[1]}:null;});
+    if(locations.some(place=>!place)) return null;
+    const legs=candidate.legs.map(leg=>leg.mode==='transit' ? {
+      ...leg,mode:'transit',minutes:leg.minutes,meters:leg.meters??0,routeUrl:leg.routeUrl,buses:leg.buses,surveyed:leg.surveyed
+    } : {
+      ...leg,mode:'walk',minutes:leg.geometryMinutes??leg.minutes,meters:leg.geometryMeters??leg.straightLineMeters??leg.meters,actual:Boolean(leg.walkPoints?.length>1 && leg.geometrySource!=='straight-line-order-draft'),
+      walkPoints:leg.walkPoints||[],geometrySource:leg.geometrySource,routeUrl:candidate.directionStatus==='straight-line-order-draft'?undefined:leg.routeUrl,surveyed:leg.surveyed
+    });
+    const unknownNames=candidate.unknownHoursPlaceIds.map(id=>getPlace(id)?.name).filter(Boolean);
+    const issues=[
+      candidate.orderStatus==='user-confirmed' ? '장소 방문 순서는 확정했습니다. 방문 시각·영업일·대기·예약 조건은 날짜별로 검증하지 않았습니다.' : '방문 시각·영업일·대기·예약 조건을 날짜별로 검증하지 않은 순서 초안입니다.',
+      candidate.directionStatus==='straight-line-order-draft' ? '점선은 장소 핀 대표점 사이의 직선거리 순서를 보여줍니다. 실제 보행 가능한 길·방향·출입구는 확인하지 않았으며, 도보 시간이나 실제 거리를 뜻하지 않습니다.' : candidate.walkGeometry ? '도보 구간은 OSM 보행망 길선을 저장했습니다. 버스 구간과 핀 스냅 차이가 80m를 넘은 구간은 선을 잇지 않았습니다. 장소 대표 핀과 실제 출입구는 별도 확인이 필요합니다.' :
+        '일부 구간은 네이버 조회 당시 거리·시간을 담았고, 나머지는 지도 링크에서 재확인해야 합니다. 실제 길선과 건물 출입구도 미확인입니다.'
+    ];
+    if(unknownNames.length)issues.push('운영시간 미확인: '+unknownNames.join(', '));
+    if(!candidate.walkGeometry && candidate.directionStatus!=='straight-line-order-draft') issues.push('구간별 네이버 길찾기 링크를 제공하지만, 일부 구간만 조회 당시 거리·시간이 기록되어 있습니다. 나머지는 새로 조회해 주세요.');
+    issues.push('방문 시각·운영일·예약·체류시간은 코스 전체로 맞춰 검증하지 않았습니다. 장소별 체류시간과 이동 여유를 조정해 주세요.');
+    if(legs.some(leg=>leg.mode==='transit'))issues.push(legs.some(leg=>leg.mode==='transit'&&!leg.surveyed) ? '일부 대중교통 구간은 노선·승하차 위치·배차·대기시간을 확인하지 않았습니다. 지도 연결은 별도 표시를 확인해 주세요.' : '버스 노선·승하차 정류장·현재 지도 조회시간은 확인했습니다. 출발 시각별 운행·배차·대기시간은 달라질 수 있고, 버스 거리는 네이버 지도 눈금으로 추산한 값입니다. 지도 파란 점선은 실제 버스 도로 경로가 아니라 장소 사이를 잇는 표시입니다.');
+    if(candidate.themeId==='cafe')issues.push('카페 전용 코스라 식사 정차는 넣지 않았습니다. 카페 주문·휴식과 이동시간은 직접 조정해야 합니다.');
+    const routedWalkLegs=legs.filter(leg=>leg.mode==='walk'&&leg.actual);
+    const totalWalkMeters=routedWalkLegs.reduce((sum,leg)=>sum+(leg.meters||0),0);
+    const totalWalkMinutes=routedWalkLegs.reduce((sum,leg)=>sum+(leg.minutes||0),0);
+    const transitSummary=legs.filter(leg=>leg.mode==='transit'&&leg.surveyed).reduce((summary,leg)=>({busDistanceMetersApprox:summary.busDistanceMetersApprox+(leg.busDistanceMetersApprox||0),busRideMinutes:summary.busRideMinutes+(leg.busRideMinutes||0),totalRouteMinutes:summary.totalRouteMinutes+(leg.totalRouteMinutes||0),accessWalkMeters:summary.accessWalkMeters+(leg.accessWalkMeters||0),egressWalkMeters:summary.egressWalkMeters+(leg.egressWalkMeters||0)}),{busDistanceMetersApprox:0,busRideMinutes:0,totalRouteMinutes:0,accessWalkMeters:0,egressWalkMeters:0});
+    const naverWalkSummary=legs.filter(leg=>leg.mode==='walk'&&leg.naverMeters!=null).reduce((summary,leg)=>({meters:summary.meters+leg.naverMeters,minutes:summary.minutes+leg.naverMinutes,legs:summary.legs+1}),{meters:0,minutes:0,legs:0});
+    return {id:candidate.id,title:candidate.title,orderStatus:candidate.orderStatus||null,orderConfirmedOn:candidate.orderConfirmedOn||null,planNote:candidate.planNote,mealSlots:candidate.mealSlots||{},transitLegCount:candidate.transitLegCount||0,transitSummary,naverWalkSummary,totalWalkMeters,totalWalkMinutes,unroutedWalkLegCount:legs.filter(leg=>leg.mode==='walk'&&!leg.actual).length,theme:candidate.themeId,originId:locations[0].id,destinationId:locations.at(-1).id,
+      originName:locations[0].name,destinationName:locations.at(-1).name,
+      originPoint:locations[0],destinationPoint:locations.at(-1),routingPlaces:locations,
+      rows:locations.slice(1,-1).map((place,i)=>({placeId:place.id,stopKind:candidate.stopKinds?.[place.id],mode:legs[i].mode,
+        walkEstimate:legs[i].minutes,walkMeters:legs[i].meters,minutes:legs[i].minutes,meters:legs[i].meters,
+        actual:legs[i].actual,walkPoints:legs[i].walkPoints,geometrySource:legs[i].geometrySource,
+        ...legs[i]})),
+      endWalk:legs.at(-1),stopKinds:candidate.stopKinds||{},issues,walkGeometry:candidate.walkGeometry||null,reviewOnly:true,totalPlaceCount:locations.length,directionStatus:candidate.directionStatus};
+  }
+  async function buildMarketExteriorRoute(date,startTime) {
+    if (weekday(date)===1 || !['11:00','11:30'].includes(startTime)) return [];
+    const data=await loadMarketExteriorRoute();
+    const points=data.geometry.coordinates, indices=data.geometry.stopPointIndices;
+    if (indices[0]!==0 || indices.at(-1)!==points.length-1 ||
+        indices.some((index,i)=>!Number.isInteger(index) || index<0 || index>=points.length || (i>0 && index<=indices[i-1]))) return [];
+    const locations=data.stops.map((stop,i)=>{
+      const original=getPlace(stop.id), point=points[indices[i]];
+      if (!original || !point || !point.every(Number.isFinite)) throw Error('시장 코스 장소 좌표가 빠졌습니다.');
+      return {...original,lat:point[1],lon:point[0],name:stop.id==='g1'?'강릉중앙시장 외곽 접근점':original.name};
+    });
+    const start=toMin(startTime), visitTimes=startTime==='11:00' ? [670,720,785] : [700,750,815];
+    const durations=[30,60,45], kinds=['visit','meal','visit'];
+    const rows=[];
+    for (let i=0;i<3;i++) {
+      const leg=data.legs[i], place=locations[i+1];
+      const result=place.id==='g1' ? {kind:'unknown',title:'시장 점포별 운영 확인 필요'} :
+        evaluate({placeId:place.id,duration:durations[i]},visitTimes[i],date);
+      if (result.kind==='bad') return [];
+      rows.push({placeId:place.id,minute:visitTimes[i],duration:durations[i],kind:kinds[i],
+        walkEstimate:leg.minutes,walkMeters:leg.meters,actual:true,mode:'walk',
+        walkPoints:points.slice(indices[i],indices[i+1]+1),
+        savedPathId:data.id+'-leg-'+(i+1),savedPathLabel:'OSM 보행로 · 출입구 미확인',source:data.source,result});
+    }
+    const last=data.legs[3];
+    const endWalk={mode:'walk',minutes:last.minutes,meters:last.meters,walkEstimate:last.minutes,walkMeters:last.meters,
+      actual:true,walkPoints:points.slice(indices[3],indices[4]+1),savedPathId:data.id+'-leg-4',
+      savedPathLabel:'OSM 보행로 · 출입구 미확인',source:data.source};
+    const endArrival=rows.at(-1).minute+rows.at(-1).duration+last.minutes;
+    return [{id:data.id,title:'코스 1 · 관아·임당·중앙시장 외곽',theme:'shops',
+      start,end:endArrival,endArrival,rows,endWalk,walkMeters:data.meters,transport:'walk',
+      signature:data.stops.map(s=>s.id).join(','),originId:'g27',destinationId:'g7',
+      originName:locations[0].name,destinationName:locations.at(-1).name,
+      originPoint:locations[0],destinationPoint:locations.at(-1),routingPlaces:locations,
+      staticExteriorRoute:true,plannedMeals:[rows[1].minute],autoSchedule:true}];
+  }
   let themeTimeCheckId=0;
   const themeTimeCache=new Map();
   async function refreshThemeStartTimes() {
     const checkId=++themeTimeCheckId, r=state.route;
     const select=$('#theme-route-start'), help=$('#theme-time-help'), button=$('#make-routes');
     if (!select || r.mode!=='theme') return;
+    if (activeRegion.id==='gangneung' && ['food','sea','shops','cafe','history'].includes(r.theme)) {
+      const referenceStart=r.theme==='cafe'?'10:00':'08:00';
+      select.innerHTML='<option value="'+referenceStart+'">'+referenceStart+' (참고)</option>';
+      select.value=referenceStart;r.themeStart=referenceStart;r.themeReviewOnly=true;
+      select.disabled=false;button.disabled=false;button.textContent='10곳 코스 초안 보기';
+      help.textContent=r.theme==='cafe'?'특색 카페 10곳의 방문 순서 초안입니다. 식당 정차는 없습니다.':'시내에서 시작해 아침·점심·저녁을 한 번씩 배치한 초안입니다. 장소 영업과 구간별 길찾기는 확인이 필요합니다.';
+      return;
+    }
     select.disabled=true; button.disabled=true;
     select.innerHTML='<option value="">확인 중…</option>';
     help.textContent='선택한 날짜·테마의 시작시간을 확인하고 있어요.';
-    const preset=routeEngine.THEME_PRESETS[r.theme], origin=getPlace(preset.originId) || STATION;
-    const destination=getPlace(preset.destinationId) || STATION;
-    const input={places:state.places,origin,destination,date:$('#route-date').value || today(),theme:r.theme,
+    const preset=routeEngine.THEME_PRESETS[r.theme], routePlaces=routeEngine.prepareRoutePlaces(state.places);
+    const origin=routeEngine.prepareRoutePlaces([getPlace(preset.originId) || STATION])[0];
+    const destination=routeEngine.prepareRoutePlaces([getPlace(preset.destinationId) || STATION])[0];
+    const input={places:routePlaces,origin,destination,date:$('#route-date').value || today(),theme:r.theme,
       validate:validateThemeVisit};
     const cacheKey=input.date+'|'+input.theme;
     let available=themeTimeCache.get(cacheKey);
@@ -1118,7 +1250,7 @@
       for (const [index,start] of routeEngine.THEME_START_TIMES.entries()) {
         if (checkId!==themeTimeCheckId) return;
         if (index%4===0) { help.textContent='시작시간 확인 중… '+(index+1)+'/'+routeEngine.THEME_START_TIMES.length; await new Promise(resolve=>setTimeout(resolve,0)); }
-        if (await routeEngine.themeStartCandidate({...input,start,routeProvider,busProvider:async (a,b)=>getRoute('transit',a,b)})) available.push(start);
+        if (await routeEngine.themeStartCandidate({...input,start,routeProvider,busProvider:async (a,b)=>{if(!apiAvailable)return[];try{return await getRoute('transit',a,b);}catch(error){if(/조회하지 못|연결하지 못|503|502|429|안전 한도|Unexpected token/.test(error.message))apiAvailable=false;throw error;}}})) available.push(start);
       }
       themeTimeCache.set(cacheKey,available);
     }
@@ -1139,7 +1271,7 @@
     state.resultMap?.remove(); state.resultMap=null;
     const r = state.route;
     if(activeRegion.id==='gyeongju' && r.mode==='theme' && !GYEONGJU_THEMES.some(theme=>theme.id===r.theme)) r.theme='hwangridan';
-    const endpointPlaces = state.places.filter((p) => coord(p) && !['p41','p51'].includes(p.id));
+    const endpointPlaces = routeEngine.prepareRoutePlaces(state.places).filter((p) => coord(p) && !['p41','p51'].includes(p.id));
     const options = [STATION,...endpointPlaces].map((p) => '<option value="' + esc(p.id) + '" ' + (r.origin === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
     const destinationOptions = [STATION,...endpointPlaces].map((p) => '<option value="' + esc(p.id) + '" ' + (r.destination === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
     const must = '<option value="">선택 안 함</option>' + state.places.filter((p) => coord(p) && !routeEngine.EXCLUDED_IDS.has(p.id)).map((p) => '<option value="' + esc(p.id) + '" ' + (r.must === p.id ? 'selected' : '') + '>' + esc(p.name) + '</option>').join('');
@@ -1158,11 +1290,12 @@
     mealGrid.nextElementSibling.id='route-meal-guide';
     mealGrid.nextElementSibling.textContent='코스를 먼저 찾은 뒤, 그 길에서 들를 수 있는 식당과 식사 시각을 선택할 수 있습니다.';
     mealGrid.remove();
-    $('#main .page-head p').textContent = r.mode === 'theme' ? '날짜, 시작시간과 테마를 고르면 운영정보에 맞춰 하루 시간표를 만듭니다.' : '출발·도착 위치와 가고 싶은 장소를 정하세요. 끝낼 시각까지 도착하고, 식당과 방문 시각은 결과에서 직접 고릅니다.';
-    const modeTabs='<div class="route-mode-tabs"><button type="button" class="filter-chip ' + (r.mode !== 'theme' ? 'active' : '') + '" data-route-mode="custom">출발·도착 맞춤</button><button type="button" class="filter-chip ' + (r.mode === 'theme' ? 'active' : '') + '" data-route-mode="theme">테마별 추천 코스</button></div>';
-    const themeCards=r.mode === 'theme' ? '<div class="card route-theme-panel"><p class="small">'+(activeRegion.id==='gyeongju'?'테마를 고르고 저장된 루트 초안을 바로 확인하세요.':'테마 코스는 걷기 좋은 권역의 하루 동선을 자동으로 짭니다. 방문 시간과 식사·카페 휴식도 선택한 날짜의 운영정보를 고려해 배치합니다.')+'</p><div class="route-theme-grid">' + routeThemeOptions.filter((t) => t.id !== 'balanced').map((t) => '<button type="button" class="route-theme-choice ' + (r.theme === t.id ? 'active' : '') + '" data-theme-choice="' + t.id + '" aria-pressed="' + (r.theme === t.id) + '"><strong>' + esc(t.name) + '</strong><small>' + esc(t.description||routeEngine.THEME_PRESETS[t.id].description) + '</small></button>').join('') + '</div><p class="small">선택한 코스: ' + esc(routeThemeOptions.find(t=>t.id===r.theme)?.description||routeEngine.THEME_PRESETS[r.theme]?.description||'') + '</p></div>' : '';
+    $('#main .page-head p').textContent = r.mode === 'theme' ? activeRegion.id==='gangneung' ? '테마를 고르고 저장된 루트 초안을 바로 확인하세요.' : '날짜, 시작시간과 테마를 고르면 운영정보에 맞춰 하루 시간표를 만듭니다.' : '출발·도착 위치와 가고 싶은 장소를 정하세요. 끝낼 시각까지 도착하고, 식당과 방문 시각은 결과에서 직접 고릅니다.';
+    const modeTabs='<div class="route-mode-tabs"><button type="button" class="filter-chip ' + (r.mode !== 'theme' ? 'active' : '') + '" data-route-mode="custom">출발·도착 맞춤</button><button type="button" class="filter-chip ' + (r.mode === 'theme' ? 'active' : '') + '" data-route-mode="theme">'+(['gangneung','gyeongju'].includes(activeRegion.id)?'테마 루트':'테마별 추천 코스')+'</button></div>';
+    const themeNotice=activeRegion.id==='gangneung' ? '테마별로 저장한 루트 초안을 바로 볼 수 있습니다. 특색 카페 투어는 강릉 전역 구성을 유지합니다.' : '테마마다 최대 10개 루트를 만들고, 실제 이동 경로와 운영시간 조건을 통과한 코스만 추천합니다. 코스 방문지는 5~8곳으로 제한합니다.';
+    const themeCards=activeRegion.id==='gyeongju' ? (r.mode === 'theme' ? '<div class="card route-theme-panel"><p class="small">'+(activeRegion.id==='gyeongju'?'테마를 고르고 저장된 루트 초안을 바로 확인하세요.':'테마 코스는 걷기 좋은 권역의 하루 동선을 자동으로 짭니다. 방문 시간과 식사·카페 휴식도 선택한 날짜의 운영정보를 고려해 배치합니다.')+'</p><div class="route-theme-grid">' + routeThemeOptions.filter((t) => t.id !== 'balanced').map((t) => '<button type="button" class="route-theme-choice ' + (r.theme === t.id ? 'active' : '') + '" data-theme-choice="' + t.id + '" aria-pressed="' + (r.theme === t.id) + '"><strong>' + esc(t.name) + '</strong><small>' + esc(t.description||routeEngine.THEME_PRESETS[t.id].description) + '</small></button>').join('') + '</div><p class="small">선택한 코스: ' + esc(routeThemeOptions.find(t=>t.id===r.theme)?.description||routeEngine.THEME_PRESETS[r.theme]?.description||'') + '</p></div>' : '') : (r.mode === 'theme' ? '<div class="card route-theme-panel"><p class="small">'+themeNotice+'</p><div class="route-theme-grid">' + routeEngine.THEMES.filter((t) => t.id !== 'balanced').map((t) => '<button type="button" class="route-theme-choice ' + (r.theme === t.id ? 'active' : '') + '" data-theme-choice="' + t.id + '"><strong>' + esc(t.name) + '</strong><small>' + esc(routeEngine.THEME_PRESETS[t.id].description) + '</small></button>').join('') + '</div><p class="small">선택한 테마: ' + esc(routeEngine.THEME_PRESETS[r.theme]?.description || '') + '</p></div>' : '');
     const savedThemeDrafts=load(STORAGE_THEME_ROUTE_DRAFTS,[]).filter(item=>item && item.review && item.theme);
-    const savedThemeDraftPanel=r.mode==='theme' && activeRegion.id!=='gyeongju' ? '<div class="card saved-theme-drafts"><h3>저장한 테마 초안</h3>'+(savedThemeDrafts.length ? savedThemeDrafts.map(draft=>'<div class="route-stop"><div class="route-stop-time">초안</div><div><strong>'+esc(routeEngine.THEMES.find(theme=>theme.id===draft.theme)?.name || '테마 코스')+'</strong><p>'+esc(draft.date)+' · '+esc(draft.start)+' 시작 · '+draft.review.rows.length+'곳 방문 초안</p><button type="button" class="btn btn-outline btn-sm" data-open-theme-draft="'+esc(draft.id)+'">다시 열기</button> <button type="button" class="btn btn-outline btn-sm" data-delete-theme-draft="'+esc(draft.id)+'">삭제</button></div></div>').join('') : '<p class="small">아직 저장한 초안이 없습니다. 검토용 테마 동선에서 저장할 수 있어요.</p>')+'</div>' : '';
+    const savedThemeDraftPanel=r.mode==='theme' && !['gangneung','gyeongju'].includes(activeRegion.id) ? '<div class="card saved-theme-drafts"><h3>저장한 테마 초안</h3>'+(savedThemeDrafts.length ? savedThemeDrafts.map(draft=>'<div class="route-stop"><div class="route-stop-time">초안</div><div><strong>'+esc(routeEngine.THEMES.find(theme=>theme.id===draft.theme)?.name || '테마 코스')+'</strong><p>'+esc(draft.date)+' · '+esc(draft.start)+' 시작 · '+(draft.review.totalPlaceCount||draft.review.rows.length)+'곳 동선 초안</p><button type="button" class="btn btn-outline btn-sm" data-open-theme-draft="'+esc(draft.id)+'">다시 열기</button> <button type="button" class="btn btn-outline btn-sm" data-delete-theme-draft="'+esc(draft.id)+'">삭제</button></div></div>').join('') : '<p class="small">아직 저장한 초안이 없습니다. 검토용 테마 동선에서 저장할 수 있어요.</p>')+'</div>' : '';
     $('#main .page-head').insertAdjacentHTML('afterend', modeTabs+themeCards+savedThemeDraftPanel);
     if(activeRegion.id==='gyeongju' && r.mode==='theme') {
       $('#main .page-head .eyebrow').textContent='테마별 루트 초안';
@@ -1170,50 +1303,64 @@
       $('#main .page-head p').textContent='테마를 고르고 저장된 루트 초안을 바로 확인하세요.';
       $('[data-route-mode="theme"]').textContent='테마 루트';
     }
-    if(activeRegion.id==='gangneung' && r.mode==='theme' && r.theme==='sea')
-      $('#main .notice.warn').textContent='바다와 커피 테마는 카페에서 쉬어 가는 해변 동선으로, 한 번에 최대 2.4km·40분까지 걷습니다. 하루 도보는 8km 이내로 계산하고, 실제 길을 확인하지 못하면 확정 코스를 만들지 않습니다. 날씨와 현장 보행 여건은 출발 전에 확인해 주세요.';
+    if(activeRegion.id==='gangneung' && r.mode==='theme')
+      $('#main .notice.warn').textContent=themeNotice;
     $('#route-theme').closest('.field-group').style.display='none';
     if (r.mode === 'theme') {
       $('#route-start').closest('.field-group').style.display='none';
       $('#route-end').closest('.field-group').style.display='none';
       $('#route-date').closest('.form-grid').style.gridTemplateColumns='minmax(0,1fr)';
-      if(activeRegion.id==='gyeongju') {
+      if(activeRegion.id==='gangneung'){
+        $('#route-date').closest('.form-grid').style.display='none';
+        $('#route-date').closest('.form-grid').insertAdjacentHTML('afterend','<p class="small" id="theme-time-help">선택한 테마의 저장된 루트 초안을 불러옵니다.</p>');
+      } else if(activeRegion.id==='gyeongju') {
         const dateNotice=$('#main .notice.warn');
         dateNotice.textContent='저장된 루트 초안입니다. 선택한 날짜의 영업시간·현장 통제·버스 운행은 아직 반영되지 않았으므로 방문 전에 확인하세요.';
         $('#make-routes').closest('.modal-actions').insertAdjacentElement('beforebegin',dateNotice);
         dateNotice.style.marginTop='14px';
         $('#make-routes').textContent='테마 루트 보기';
-      } else {
-        $('#route-date').closest('.field-group').insertAdjacentHTML('afterend','<div class="field-group"><label class="field-label" for="theme-route-start">시작시간</label><select class="select-field" id="theme-route-start" disabled><option value="">확인 중…</option></select><span class="small" id="theme-time-help" aria-live="polite">선택한 날짜·테마의 시작시간을 확인하고 있어요.</span></div>');
-      }
+      } else $('#route-date').closest('.field-group').insertAdjacentHTML('afterend','<div class="field-group"><label class="field-label" for="theme-route-start">시작시간</label><select class="select-field" id="theme-route-start" disabled><option value="">확인 중…</option></select><span class="small" id="theme-time-help" aria-live="polite">선택한 날짜·테마의 시작시간을 확인하고 있어요.</span></div>');
       $('#route-origin-query').closest('.form-grid').style.display='none';
       $('.route-solo-control').style.display='none';
       $('#route-must-query').closest('.form-grid').style.display='none';
       $('#route-meal-guide').style.display='none';
-      $('#make-routes').textContent=activeRegion.id==='gyeongju'?'테마 루트 보기':'하루 시간표 만들기';
+      if(activeRegion.id!=='gyeongju') $('#make-routes').textContent=activeRegion.id==='gangneung' && r.mode==='theme' ? '테마 루트 보기' : r.themeReviewOnly ? '10곳 코스 초안 보기' : '하루 시간표 만들기';
     }
-    document.querySelectorAll('[data-route-mode]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.mode=button.dataset.routeMode; r.results=[]; r.selected=-1; renderRoutes(); });
+    if(activeRegion.id==='gangneung' && r.mode==='theme'){
+      $('#main .page-head h1').textContent='테마 루트';
+      $('#main .page-head .eyebrow').textContent='테마별 루트 초안';
+    }
+    document.querySelectorAll('[data-route-mode]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.mode=button.dataset.routeMode;r.reviewDetailsPage=false; r.results=[];r.review=null;r.reviewOptions=[]; r.selected=-1; renderRoutes(); });
     $('#route-solo').onchange=(event) => { captureRouteInputs(); r.solo=event.target.checked; r.results=[]; r.selected=-1; renderRoutes(); };
-    document.querySelectorAll('[data-theme-choice]').forEach((button) => button.onclick=() => {
-      captureRouteInputs(); r.theme=button.dataset.themeChoice; r.results=[]; r.selected=-1;
-      renderRoutes();
-    });
+    document.querySelectorAll('[data-theme-choice]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.theme=button.dataset.themeChoice;r.reviewDetailsPage=false; r.results=[];r.review=null;r.reviewOptions=[]; r.selected=-1; renderRoutes(); });
     document.querySelectorAll('[data-open-theme-draft]').forEach(button=>button.onclick=()=>{
       const draft=savedThemeDrafts.find(item=>item.id===button.dataset.openThemeDraft); if(!draft) return;
-      r.mode='theme'; r.theme=draft.theme; r.date=draft.date; r.themeStart=draft.start; r.review=JSON.parse(JSON.stringify(draft.review)); r.themeReviewOnly=true; r.results=[]; r.selected=-1; r.skipThemeTimeRefreshOnce=true;
+      r.mode='theme'; r.theme=draft.theme; r.date=draft.date; r.themeStart=draft.start; r.review=JSON.parse(JSON.stringify(draft.review));r.reviewOptions=[]; r.themeReviewOnly=true; r.results=[]; r.selected=-1; r.skipThemeTimeRefreshOnce=true;
       renderRoutes(); showRouteResults();
     });
     document.querySelectorAll('[data-delete-theme-draft]').forEach(button=>button.onclick=()=>{
       const drafts=load(STORAGE_THEME_ROUTE_DRAFTS,[]).filter(item=>item.id!==button.dataset.deleteThemeDraft); save(STORAGE_THEME_ROUTE_DRAFTS,drafts); renderRoutes();
     });
     $('#routes-back').onclick = () => nav('region');
-    $('#route-date').onchange=() => { r.date=$('#route-date').value || today(); r.results=[]; r.review=null; r.selected=-1; $('#route-results').innerHTML=''; if(r.mode==='theme' && activeRegion.id!=='gyeongju') refreshThemeStartTimes(); };
+    $('#route-date').onchange=() => { r.date=$('#route-date').value || today(); r.results=[]; r.review=null;r.reviewOptions=[]; r.selected=-1; $('#route-results').innerHTML=''; if(r.mode==='theme' && activeRegion.id!=='gyeongju') refreshThemeStartTimes(); };
     $('#route-midnight').onchange = (e) => { $('#route-end').disabled=e.target.checked; };
     $('#make-routes').onclick = async () => {
       if(activeRegion.id==='gyeongju' && r.mode==='theme') {
         captureRouteInputs();
         if(!$('#route-date').value) return toast('날짜를 선택해 주세요.');
         showSavedGyeongjuRoute(r.theme);
+        return;
+      }
+      if(activeRegion.id==='gangneung' && r.mode==='theme'){
+        const button=$('#make-routes');button.disabled=true;button.textContent='테마 루트를 불러오는 중…';
+        try{
+          const routes=(await loadGangneungReviewRoutes()).filter(route=>route.themeId===r.theme).map(buildGangneungReviewRoute).filter(Boolean);
+          if(!routes.length)throw Error('선택한 테마의 루트 초안이 없습니다.');
+          r.searched=true;r.reviewOptions=routes;r.reviewSelected=0;r.review=routes[0];r.results=[];r.selected=-1;
+          showRouteResults();
+          $('#route-results').scrollIntoView({behavior:'smooth',block:'start'});
+        }catch(error){toast(error.message||'테마 루트 초안을 불러오지 못했습니다.');}
+        finally{button.disabled=false;button.textContent='테마 루트 보기';}
         return;
       }
       if (r.mode !== 'theme' && ($('#route-origin-query').value.trim() || $('#route-destination-query').value.trim() || $('#route-must-query').value.trim())) { toast('검색 결과에서 위치와 가고 싶은 장소를 선택해 주세요.'); return; }
@@ -1230,17 +1377,13 @@
       r.searched=true;
       try { r.results=await makeRoutes(); r.baseResults=[...r.results]; r.selected=r.results.length ? 0 : -1; showRouteResults(); }
       catch { r.results=[]; r.review=null; r.selected=-1; showRouteResults(); toast('경로 계산에 실패했습니다. 다시 시도해 주세요.'); }
-      finally { button.disabled=false; button.textContent=r.mode === 'theme' ? '하루 시간표 만들기' : '코스 찾기'; }
+      finally { button.disabled=false; button.textContent=r.mode === 'theme' ? (activeRegion.id==='gangneung' ? '테마 루트 보기' : r.themeReviewOnly ? '10곳 코스 초안 보기' : '하루 시간표 만들기') : '코스 찾기'; }
     };
     if (activeRegion.id==='gyeongju' && r.mode==='theme') {
       const selected=GYEONGJU_THEMES.some(t=>t.id===r.theme)?r.theme:'hwangridan';
-      r.theme=selected; r.results=[]; r.selected=-1;
-      if(new URLSearchParams(location.search).has('routepreview') && !r.previewConsumed) {
-        r.previewConsumed=true;
-        showSavedGyeongjuRoute(selected);
-      }
+      r.theme=selected;r.results=[];r.selected=-1;
+      if(new URLSearchParams(location.search).has('routepreview') && !r.previewConsumed){r.previewConsumed=true;showSavedGyeongjuRoute(selected);}
     } else if (r.results.length || r.review) showRouteResults();
-    if (r.mode==='theme' && activeRegion.id==='gyeongju' && !r.searched && r.themeStart==='10:00') r.themeStart='11:00';
     if (r.mode==='theme' && r.skipThemeTimeRefreshOnce) r.skipThemeTimeRefreshOnce=false;
     else if (r.mode==='theme' && activeRegion.id!=='gyeongju') refreshThemeStartTimes();
   }
@@ -1250,12 +1393,11 @@
       const buses=leg.steps.filter(s=>s.type==='BUS').map(s=>(s.vehicle ? s.vehicle+(s.vehicle.endsWith('번')?'':'번')+' ' : '')+s.guidance).join(' → ');
       return (leg.savedBusId ? '버스 탑승 평균 '+leg.busRideMinutes+'분 · 계획상 총 ' : '버스 연결 ')+leg.minutes+'분 (정류장 도보 '+leg.walkMinutes+'분·추가 대기 여유 없음) · '+buses;
     }
-    const routeLabel=row.source?.provider==='OpenStreetMap' ? '(OpenStreetMap 보행망)' : row.savedPathId ? '(미리 저장한 길)' : row.actual ? '(카카오 경로)' : '(보수적 추정)';
-    return '앞 장소에서 도보 '+(row.walkEstimate ?? row.minutes)+'분 / '+((row.walkMeters ?? row.meters)/1000).toFixed(2)+'km '+routeLabel;
+    return '앞 장소에서 도보 '+(row.walkEstimate ?? row.minutes)+'분 / '+((row.walkMeters ?? row.meters)/1000).toFixed(2)+'km '+(row.savedPathId ? '('+(row.savedPathLabel || '미리 저장한 길')+')' : row.actual ? '(카카오 경로)' : '(보수적 추정)');
   }
   function routePathPicker(route,index) {
-    const from=index ? getPlace(route.rows[index-1]?.placeId) : route.originPoint;
-    const to=index<route.rows.length ? getPlace(route.rows[index].placeId) : route.destinationPoint;
+    const from=index ? routePlace(route.rows[index-1]?.placeId,route) : route.originPoint;
+    const to=index<route.rows.length ? routePlace(route.rows[index].placeId,route) : route.destinationPoint;
     const leg=index<route.rows.length ? route.rows[index] : route.endWalk;
     if (leg.mode==='bus' || !coord(from) || !coord(to)) return '';
     const variants=savedWalkOptions(from,to);
@@ -1264,8 +1406,8 @@
     return '<div class="route-path-choice"><small>이 구간의 길 선택</small><div class="route-tabs">'+variants.map(v=>'<button type="button" class="filter-chip '+(v.id===active?'active':'')+'" data-walk-choice="'+index+'" data-walk-id="'+esc(v.id)+'" aria-pressed="'+(v.id===active)+'">'+esc(v.label)+' · '+(v.meters/1000).toFixed(2)+'km</button>').join('')+'</div><small>저장한 실제 길선으로 표시합니다. 도착 시간이 달라질 수 있습니다.</small></div>';
   }
   function routeBusAlternatives(route,index) {
-    const from=index ? getPlace(route.rows[index-1]?.placeId) : route.originPoint;
-    const to=index<route.rows.length ? getPlace(route.rows[index].placeId) : route.destinationPoint;
+    const from=index ? routePlace(route.rows[index-1]?.placeId,route) : route.originPoint;
+    const to=index<route.rows.length ? routePlace(route.rows[index].placeId,route) : route.destinationPoint;
     const leg=index<route.rows.length ? route.rows[index] : route.endWalk;
     if (leg.mode==='bus' || !coord(from) || !coord(to)) return '';
     const options=savedBusLegs?.options(from,to) || [];
@@ -1282,16 +1424,14 @@
   }
   function routeSourceLinks(route) {
     const sources=[...route.rows,route.endWalk].map(leg=>leg.source).filter(Boolean);
-    const links=[...new Map(sources.map(source=>[source.url,source])).values()]
-      .map(source=>' · 길선 자료 <a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.label)+'</a>').join('');
-    const osm=sources.find(source=>source.provider==='OpenStreetMap');
-    return links+(osm?' · © <a href="'+esc(osm.attributionUrl||'https://www.openstreetmap.org/copyright')+'" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · <a href="'+esc(osm.fixMapUrl||'https://www.openstreetmap.org/edit')+'" target="_blank" rel="noopener noreferrer">길선 수정</a>':'');
+    return [...new Map(sources.map(source=>[source.url,source])).values()]
+      .map(source=>' · 길선 자료 <a href="'+esc(source.url)+'" target="_blank" rel="noopener noreferrer">'+esc(source.label)+'</a>'+(source.naverUrl?' · <a href="'+esc(source.naverUrl)+'" target="_blank" rel="noopener noreferrer">네이버 길찾기 확인</a>':'')).join('');
   }
   async function chooseRoutePath(index,id) {
     const r=state.route, chosen=r.results[r.selected];
     if (!chosen) return;
-    const from=index ? getPlace(chosen.rows[index-1]?.placeId) : chosen.originPoint;
-    const to=index<chosen.rows.length ? getPlace(chosen.rows[index].placeId) : chosen.destinationPoint;
+    const from=index ? routePlace(chosen.rows[index-1]?.placeId,chosen) : chosen.originPoint;
+    const to=index<chosen.rows.length ? routePlace(chosen.rows[index].placeId,chosen) : chosen.destinationPoint;
     if (!coord(from) || !coord(to)) return;
     const key=savedWalkPaths.choiceKey(from,to), before=walkPathChoices.get(key);
     if (before===id || (!before && savedWalkOptions(from,to)[0]?.id===id)) return;
@@ -1314,17 +1454,57 @@
       const seconds=Math.round(value*60);
       return '약 '+Math.floor(seconds/60)+'분'+(seconds%60 ? ' '+seconds%60+'초' : '');
     };
-    const legText=(leg)=>leg.mode==='bus' ? '버스 탑승 '+busRideText(leg.busRideMinutes)+' · 정류장 도보 약 '+leg.walkMinutes+'분 (배차 대기 미확인)' :
-      leg.actual ? '도보 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km (실제 경로)' : '좌표 추정 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km 참고치 (실제 경로 미확인)';
-    const stops=review.rows.map((row,index)=>'<div class="route-stop"><div class="route-stop-time">'+(index+1)+'</div><div><strong>'+esc(getPlace(row.placeId)?.name || '장소')+'</strong><p>앞 장소에서 '+esc(legText(row.busLeg || {mode:row.mode,minutes:row.walkEstimate,meters:row.walkMeters,actual:row.actual,walkMinutes:0,busRideMinutes:0}))+'</p></div></div>').join('');
+    const legText=(leg)=>leg.mode==='transit' && !leg.surveyed ? '버스 경로 미확인' : leg.mode==='transit' && leg.busDistanceMetersApprox ? '버스 '+(leg.buses||'')+' · '+(leg.boardingStop?.name||'승차 정류장')+' → '+(leg.alightingStop?.name||'하차 정류장')+' · 약 '+(leg.busDistanceMetersApprox/1000).toFixed(1)+'km · 탑승 '+leg.busRideMinutes+'분' : leg.mode==='transit' ? '버스 이동 약 '+leg.minutes+'분'+(leg.buses?' · '+leg.buses:'') : leg.mode==='bus' ? '버스 탑승 '+busRideText(leg.busRideMinutes)+' · 정류장 도보 약 '+leg.walkMinutes+'분' :
+      leg.geometrySource==='straight-line-order-draft' ? '핀 사이 직선 약 '+((leg.meters||0)/1000).toFixed(2)+'km · 실제 보행로·시간 미확인' :
+      leg.actual && leg.walkPoints?.length>1 && leg.naverMeters!=null ? '도보 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km / 지도 약 '+leg.naverMinutes+'분 · '+leg.naverMeters+'m' :
+      leg.actual && leg.walkPoints?.length>1 ? '도보 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km' : !leg.surveyed ? '도보 거리 미확인' : review.reviewOnly ? '도보 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km' : '약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km';
+    const straightDraft=review.directionStatus==='straight-line-order-draft';
+    const confirmedOrder=review.orderStatus==='user-confirmed';
+    const numberedStops=straightDraft||confirmedOrder;
+    const startStop=numberedStops?'<div class="route-stop"><div class="route-stop-time">1</div><div><strong>출발 · '+(review.mealSlots?.[review.originId]?esc(review.mealSlots[review.originId]+' 식사 · '):'')+esc(review.originName)+'</strong><p>코스 시작 장소</p></div></div>':'';
+    const showMapLink=review.theme!=='cafe';
+    const stops=review.rows.map((row,index)=>'<div class="route-stop"><div class="route-stop-time">'+(numberedStops?index+2:index+1)+'</div><div><strong>'+(review.mealSlots?.[row.placeId]?esc(review.mealSlots[row.placeId]+' 식사 · '):row.stopKind==='take-home'?'포장해 갈 먹거리 · ':'')+esc(routePlace(row.placeId,review)?.name || '장소')+'</strong><p>앞 장소에서 '+esc(legText(row.busLeg || {...row,mode:row.mode,minutes:row.walkEstimate,meters:row.walkMeters,actual:row.actual,walkPoints:row.walkPoints,geometrySource:row.geometrySource,walkMinutes:0,busRideMinutes:row.busRideMinutes||0,buses:row.buses,surveyed:row.surveyed}))+'</p>'+(showMapLink&&row.routeUrl?'<a href="'+esc(row.routeUrl)+'" target="_blank" rel="noopener noreferrer">네이버 구간 길찾기 확인</a>':'')+'</div></div>').join('');
     const issues=review.issues.length ? review.issues.map(issue=>'<li>'+esc(issue)+'</li>').join('') : '<li>확정 코스 탐색에서 모든 이동·운영 조건을 함께 검증하지 못했습니다.</li>';
-    root.innerHTML='<div class="card route-review"><span class="eyebrow">검토용 루트 초안</span><h2>'+esc(review.originName)+' → '+esc(review.destinationName)+'</h2><p>가까운 장소를 방문 순서로 이은 초안입니다. 이동시간은 좌표로 계산한 참고치이며, 실제 보행 경로·버스·영업 여부를 확인한 추천 코스가 아닙니다.</p><div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="검토용 방문 순서 지도"></div><p class="small">숫자는 방문 순서입니다. 점선은 실제 경로를 확인하지 못한 구간입니다. 지도 위에서 휠·두 손가락으로 확대·축소하고, 드래그로 이동할 수 있습니다.</p></div>'+stops+'<div class="route-stop"><div class="route-stop-time">도착</div><div><strong>'+esc(review.destinationName)+'</strong><p>앞 장소에서 '+esc(legText(review.endWalk))+'</p></div></div><div class="notice warn"><strong>확정 코스가 되지 않은 이유·확인할 점</strong><ul>'+issues+'</ul></div><p class="small">버스 60분 기준은 탑승시간만 계산합니다. 정류장 도보·환승·실제 배차 대기는 별도입니다.</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
-    if(state.route.mode==='theme') root.querySelector('.route-review').insertAdjacentHTML('beforeend','<button type="button" class="btn btn-primary" id="save-theme-route-draft">테마 초안 저장</button>');
+    const options=state.route.reviewOptions || [];
+    const tabs=options.length>1 ? '<div class="section-label">검토용 코스 '+options.length+'개</div><div class="route-tabs">'+options.map((option,i)=>'<button class="filter-chip '+(state.route.reviewSelected===i?'active':'')+'" data-review-tab="'+i+'">'+esc(option.title)+'</button>').join('')+'</div>' : '';
+    const intro=straightDraft ? '장소 '+(review.totalPlaceCount||review.rows.length+2)+'곳을 핀 간 직선거리 기준으로 이은 순서 초안입니다. 지도 점선은 실제 길이 아니며, 도보 경로와 이동시간은 아직 확인하지 않았습니다.' : confirmedOrder&&review.walkGeometry ? '장소 '+(review.totalPlaceCount||review.rows.length+2)+'곳의 방문 순서를 확정했습니다. 지도에는 저장된 GPX 보행 구간만 실선으로 표시하고, 연결 경로가 없는 구간은 잇지 않았습니다.' : review.reviewOnly ? '테마에 맞는 장소 '+(review.totalPlaceCount||review.rows.length+2)+'곳을 하나의 방문 순서로 묶은 초안입니다. 이동·영업 조건은 전체 경로로 검증되지 않았습니다.' : '가까운 장소를 방문 순서로 이은 초안입니다. 이동시간은 좌표로 계산한 참고치이며, 실제 보행 경로·버스·영업 여부를 확인한 추천 코스가 아닙니다.';
+    const transitNote=review.directionStatus==='straight-line-order-draft' ? '지도 점선은 지도 핀 대표점끼리의 직선 연결입니다. 실제 보행 가능한 길·방향·출입구를 확인하지 않았으므로 길찾기 선이나 예상 보행거리로 사용하지 마세요.' : review.walkGeometry ? (review.theme==='cafe' ? '초록 실선은 OpenStreetMap 보행망 GPX입니다. 파란 점선은 버스 이동 구간의 순서를 이어 보여주는 장소 간 직선 연결로, 실제 도로를 따라가는 버스 노선 선형은 아닙니다. 노선·정류장 정보와 네이버 경로 전체 시간은 각 구간 설명에 있습니다. 버스 거리는 지도 눈금 추산이며 출발시각별 운행·배차·대기시간은 달라질 수 있습니다.' : '실선은 OpenStreetMap 보행망에서 저장한 도보 길선입니다. 버스 구간은 지도에 연결선을 그리지 않습니다. 장소 핀 스냅과 출입구·현장 통행은 별도 확인이 필요합니다.') : review.directionStatus==='mixed-review' ? '각 구간의 네이버 길찾기 링크를 열어 이동방법과 소요시간을 확인하세요. 링크 조회값이 저장된 구간과 재조회가 필요한 구간을 구분해 표시합니다.' : review.reviewOnly ? '지도 핀은 장소 대표점이며 실제 출입구와 길선은 별도 확인이 필요합니다.' : '버스 60분 기준은 탑승시간만 계산합니다. 정류장 도보·환승·실제 배차 대기는 별도입니다.';
+    const totalWalkDuration=review.totalWalkMinutes>=60?Math.floor(review.totalWalkMinutes/60)+'시간 '+review.totalWalkMinutes%60+'분':review.totalWalkMinutes+'분';
+    const naverWalkNote=review.naverWalkSummary?.legs?'<br><strong>네이버 도보 '+review.naverWalkSummary.legs+'구간 합계</strong> · 약 '+(review.naverWalkSummary.meters/1000).toFixed(2)+'km · 약 '+review.naverWalkSummary.minutes+'분':'';
+    const busSummary=review.transitSummary?.busDistanceMetersApprox?'<br><strong>버스</strong> · 약 '+(review.transitSummary.busDistanceMetersApprox/1000).toFixed(1)+'km · 탑승 약 '+review.transitSummary.busRideMinutes+'분':'';
+    const walkSummary=confirmedOrder&&review.walkGeometry?'<p class="notice"><strong>도보 거리 합계</strong> · 약 '+(review.totalWalkMeters/1000).toFixed(1)+'km · 약 '+totalWalkDuration+naverWalkNote+busSummary+'</p>':'';
+    const startMeal=review.mealSlots?.[review.originId],endMeal=review.mealSlots?.[review.destinationId];
+    const endStop='<div class="route-stop"><div class="route-stop-time">'+(numberedStops?(review.totalPlaceCount+' · 도착'):'도착')+'</div><div><strong>'+(endMeal?esc(endMeal+' 식사 · '):'')+esc(review.destinationName)+'</strong><p>앞 장소에서 '+esc(legText(review.endWalk))+'</p>'+(showMapLink&&review.endWalk.routeUrl?'<a href="'+esc(review.endWalk.routeUrl)+'" target="_blank" rel="noopener noreferrer">네이버 구간 길찾기 확인</a>':'')+'</div></div>';
+    const geometryLinks=review.walkGeometry ? '<p class="small">파일: <a href="./'+esc(review.walkGeometry.gpx)+'" download>GPX 다운로드</a> · <a href="./'+esc(review.walkGeometry.file)+'" download>GeoJSON 다운로드</a> · © OpenStreetMap contributors</p>' : '';
+    if(state.route.reviewDetailsPage){
+      root.innerHTML='<div class="card route-review-details"><button type="button" class="back" id="review-details-back">← 루트로 돌아가기</button><span class="eyebrow">'+esc(review.title||'테마 루트')+'</span><h2>조사·동선 정보</h2><section><h3>초안과 순서 기준</h3><p>'+esc(intro)+'</p>'+(review.planNote?'<p class="notice">'+esc(review.planNote)+'</p>':'')+'</section><section><h3>거리·지도 표시 기준</h3><p>'+esc(transitNote)+'</p><p>표시된 도보 거리는 저장된 보행 경로 또는 지도 조회값입니다. 출입구·현장 통행, 신호 대기와 체류시간은 포함되지 않을 수 있습니다.</p></section><section><h3>확인할 점</h3><ul>'+issues+'</ul></section>'+geometryLinks+'</div>';
+      $('#review-details-back').onclick=()=>{state.route.reviewDetailsPage=false;showRouteResults();$('#route-results').scrollIntoView({behavior:'smooth',block:'start'});};
+      return;
+    }
+    const mapCaption=review.directionStatus==='straight-line-order-draft'?'번호는 방문 순서 · 점선은 핀 간 직선 참고입니다.':review.walkGeometry&&review.theme==='cafe'?'번호는 방문 순서 · 초록 선은 도보 · 파란 점선은 버스 구간 표시입니다.':review.walkGeometry?'번호는 방문 순서 · 선은 도보 구간입니다.':'번호는 방문 순서입니다.';
+    root.innerHTML=tabs+'<div class="card route-review"><span class="eyebrow">'+(confirmedOrder?'장소 순서 확정':'루트 초안')+' · '+(review.totalPlaceCount||review.rows.length)+'곳</span><h2>'+esc(review.title || review.originName+' → '+review.destinationName)+'</h2>'+(review.title?'<p><strong>출발 · '+(startMeal?esc(startMeal+' 식사 · '):'')+esc(review.originName)+' → 도착 · '+(endMeal?esc(endMeal+' 식사 · '):'')+esc(review.destinationName)+'</strong></p>':'')+walkSummary+'<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="검토용 방문 순서 지도"></div><p class="small">'+mapCaption+'</p></div>'+startStop+stops+endStop+geometryLinks+'<button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button><button type="button" class="text-button route-info-link" id="route-info-link">조사·이동 정보 자세히 보기 →</button></div>';
+    root.querySelectorAll('[data-review-tab]').forEach(button=>button.onclick=()=>{state.route.reviewDetailsPage=false;state.route.reviewSelected=Number(button.dataset.reviewTab);state.route.review=options[state.route.reviewSelected];showRouteResults();});
+    $('#route-info-link').onclick=()=>{state.route.reviewDetailsPage=true;showRouteResults();$('#route-results').scrollIntoView({behavior:'smooth',block:'start'});};
+    if(review.theme==='shops') root.querySelector('.route-review').insertAdjacentHTML('beforeend','<button type="button" class="btn btn-outline" id="view-market-short-route">경로선 확인된 기존 시장 외곽 5곳 코스 보기</button>');
     initResultMap(review);
     $('#go-own-plan').onclick=()=>nav('plan');
-    if($('#save-theme-route-draft')) $('#save-theme-route-draft').onclick=()=>{
-      if(storeThemeRouteDraft(review)) { state.route.skipThemeTimeRefreshOnce=true; renderRoutes(); showRouteResults(); }
+    if($('#view-market-short-route')) $('#view-market-short-route').onclick=async()=>{
+      const routes=await buildMarketExteriorRoute(state.route.date,'11:00');
+      if(!routes.length){toast('선택한 날짜에는 기존 시장 외곽 코스를 열 수 없습니다. 월요일 휴무를 확인해 주세요.');return;}
+      state.route.review=null;state.route.reviewOptions=[];state.route.results=routes;state.route.baseResults=[...routes];state.route.selected=0;showRouteResults();
     };
+  }
+  function showGangneungThemePlacePicks(picks) {
+    const root=$('#route-results');
+    state.resultMap?.remove();state.resultMap=null;
+    const places=picks.placeIds.map(id=>getPlace(id)).filter(Boolean);
+    const categoryName=(category)=>CATEGORIES.find(item=>item[0]===category)?.[1] || '장소';
+    const list=[...places].sort((a,b)=>a.name.localeCompare(b.name,'ko')).map(place=>
+      '<div class="theme-place-pick"><strong>'+esc(place.name)+'</strong><span>'+esc(categoryName(place.category))+'</span></div>'
+    ).join('');
+    root.hidden=false;
+    root.innerHTML='<div class="card theme-place-picks-card"><span class="eyebrow">검토용 장소 초안 · '+places.length+'곳</span><h2>'+esc(picks.title)+'</h2><p>테마에 어울리는 장소 후보만 골랐습니다. 방문 순서와 이동 경로는 아직 정하지 않았어요.</p><button type="button" class="btn btn-primary" id="show-straight-line-route">확정 방문 순서와 GPX 보기</button><div class="theme-place-picks-list">'+list+'</div><p class="small">장소 후보 미검증 초안 · 2km 권역 필터 적용 · 장소별 운영·예약·현장 출입구는 아직 확인하지 않았습니다.</p></div>';
+    $('#show-straight-line-route').onclick=async()=>{const button=$('#show-straight-line-route');button.disabled=true;button.textContent='확정 방문 순서를 불러오는 중…';try{const routes=(await loadGangneungReviewRoutes()).filter(route=>route.themeId===picks.id).map(buildGangneungReviewRoute).filter(Boolean);if(!routes.length)throw Error('이 테마의 확정 방문 순서가 없습니다.');state.route.reviewDetailsPage=false;state.route.reviewOptions=routes;state.route.reviewSelected=0;state.route.review=routes[0];state.route.results=[];state.route.selected=-1;showRouteResults();}catch(error){button.disabled=false;button.textContent='확정 방문 순서와 GPX 보기';toast(error.message||'방문 순서를 불러오지 못했습니다.');}};
   }
   function showRouteResults() {
     const r = state.route, root = $('#route-results');
@@ -1337,8 +1517,8 @@
       const previous=chosen.rows[i-1];
       const freeMinutes=x.minute-(previous ? previous.minute+previous.duration : chosen.start)-x.walkEstimate;
       const gap=freeMinutes > 25 ? '<div class="route-gap">' + esc(hhmm(previous ? previous.minute+previous.duration : chosen.start)) + ' 이후 약 ' + freeMinutes + '분 빈 시간 · 자유롭게 보내거나 이동 여유로 사용하세요.</div>' : '';
-      const scenic=getPlace(x.placeId)?.shortScenicWalk;
-      return gap + '<div class="route-stop"><div class="route-stop-time">' + esc(hhmm(x.minute)) + '<small>~ ' + esc(hhmm(x.minute+x.duration)) + '</small><button type="button" class="route-add-one" data-add-route-stop="' + i + '" aria-label="' + esc(getPlace(x.placeId)?.name) + '만 시간계획표에 넣기">+ 넣기</button></div><div><strong>' + (x.kind === 'meal' ? '식사 · ' : x.kind === 'snack' ? '간식 · ' : x.kind === 'cafe' ? '카페 휴식 · ' : '') + esc(getPlace(x.placeId)?.name) + '</strong><p>' + esc(x.duration) + '분 ' + (scenic?'일부 산책':'체류') + ' · ' + esc(routeLegText(x)) + '</p>' + (scenic?'<small>'+esc(scenic.label)+' · 표시점은 접근 기준이며 실제 산책길은 현장 안내를 확인하세요.</small><br>':'') + '<small>' + esc(x.result.title) + (x.result.kind === 'unknown' ? ' · 영업 확인 필요' : '') + '</small>' + routeBusDetails(x) + routePathPicker(chosen,i) + routeBusAlternatives(chosen,i) + '</div></div>';
+      const stopPlace=routePlace(x.placeId,chosen), scenic=stopPlace?.shortScenicWalk;
+      return gap + '<div class="route-stop"><div class="route-stop-time">' + esc(hhmm(x.minute)) + '<small>~ ' + esc(hhmm(x.minute+x.duration)) + '</small><button type="button" class="route-add-one" data-add-route-stop="' + i + '" aria-label="' + esc(stopPlace?.name) + '만 시간계획표에 넣기">+ 넣기</button></div><div><strong>' + (x.kind === 'meal' ? '식사 · ' : x.kind === 'cafe' ? '카페 휴식 · ' : '') + esc(stopPlace?.name) + '</strong><p>' + esc(x.duration) + '분 ' + (scenic?'일부 산책':'체류') + ' · ' + esc(routeLegText(x)) + '</p>' + (scenic?'<small>'+esc(scenic.label)+' · 표시점은 접근 기준이며 실제 산책길은 현장 안내를 확인하세요.</small><br>':'') + '<small>' + esc(x.result.title) + (x.result.kind === 'unknown' ? ' · 영업 확인 필요' : '') + '</small>' + routeBusDetails(x) + routePathPicker(chosen,i) + routeBusAlternatives(chosen,i) + '</div></div>';
     }).join('') : '';
     const endRow=chosen ? '<div class="route-stop"><div class="route-stop-time">' + esc(hhmm(chosen.endArrival)) + '</div><div><strong>도착 · ' + esc(chosen.destinationName) + '</strong><p>' + esc(routeLegText(chosen.endWalk)) + '</p>' + routeBusDetails(chosen.endWalk) + routePathPicker(chosen,chosen.rows.length) + routeBusAlternatives(chosen,chosen.rows.length) + '</div></div>' : '';
     const free=chosen && !chosen.autoSchedule && chosen.endArrival < chosen.end-15 ? '<div class="notice" style="margin-top:12px">' + esc(hhmm(chosen.endArrival)) + ' 도착 후 ' + esc(hhmm(chosen.end)) + '까지 자유시간입니다. 확인되지 않은 야간 영업 장소를 임의로 넣지 않았습니다.</div>' : '';
@@ -1346,6 +1526,8 @@
     if (chosen) {
       root.querySelector('.route-tabs').insertAdjacentHTML('afterend','<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="추천 코스 이동 순서 지도"></div><p class="small">숫자는 방문 순서, 화살표는 이동 방향입니다. 초록 선은 도보, 파란 선은 버스 연결입니다. 점선은 경로 미확인 구간의 방향입니다. 지도 위에서 휠·두 손가락으로 확대·축소하고, 드래그로 이동할 수 있습니다.'+routeSourceLinks(chosen)+'</p></div>');
       initResultMap(chosen);
+      if (chosen.staticExteriorRoute) root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend',
+        '<div class="notice warn">중앙시장은 건물 밖 보행로의 접근점까지 표시합니다. 시장 내부 통로와 각 건물 출입문은 경로선에 포함되지 않았으니 현장 안내를 확인하세요. 시장 간식은 영업 중인 점포에서 자유롭게 선택할 수 있습니다. 배니닭강정 개별 정차는 포함하지 않았습니다. 관아는 출발 전에 둘러보는 일정으로 잡아 주세요.</div>');
       if(chosen.actualTimeAdjusted) root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<p class="notice">실제 도보 시간과 운영시간에 맞춰 방문 순서를 조정했어요.' + (chosen.adjustedDroppedNames?.length ? ' 시간에 맞지 않는 선택 장소(' + esc(chosen.adjustedDroppedNames.join(', ')) + ')는 제외했어요.' : ' 출발·도착과 필수 조건은 유지했어요.') + '</p>');
       if(chosen.transport==='walk-bus') root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<p class="notice">도보만으로 연결하기 어려워 버스를 포함했습니다. 버스 구간에는 추가 대기 여유를 더하지 않았습니다. 실제 배차·막차는 출발 전에 확인하세요.</p>');
       if(chosen.autoSchedule && !chosen.plannedMeals.length) root.querySelector('.route-result-map-wrap').insertAdjacentHTML('afterend','<p class="notice">동선과 운영시간에 맞는 식사를 자동으로 넣지 못했습니다. 식사는 시간계획표에서 추가해 주세요.</p>');
@@ -1495,14 +1677,14 @@
     root.insertAdjacentHTML('afterbegin',`<div class="route-overview-heading"><button class="round-control" id="edit-route-conditions" aria-label="추천 조건으로 돌아가기">${uiIcon('back')}</button><div><span class="eyebrow">나의 ${esc(activeRegion.name)} 하루</span><h1>${esc(chosen.title)}</h1></div></div><div class="result-view-switch view-switch" aria-label="추천 코스 보기"><button data-result-view="map">지도</button><button data-result-view="list">방문 순서</button></div>`);
     root.querySelector('.route-result-map-wrap')?.insertAdjacentHTML('afterend',`<div class="route-overview-stats"><div><small>도보 거리</small><strong>${(chosen.walkMeters/1000).toFixed(2)}<span> km</span></strong></div><div><small>예상 일정</small><strong>${Math.floor(elapsed/60)}<span>시간 ${elapsed%60?elapsed%60+'분':''}</span></strong></div><div><small>방문 장소</small><strong>${chosen.rows.length}<span>곳</span></strong></div></div>`);
     const sync=()=>{const list=r.presentation==='list';root.classList.toggle('result-list-view',list);root.querySelectorAll('[data-result-view]').forEach(b=>{const active=b.dataset.resultView===(list?'list':'map');b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);});if(!list)requestAnimationFrame(()=>state.resultMap?.invalidateSize());};
-    $('#edit-route-conditions').onclick=()=>{page.classList.remove('has-route-result');root.hidden=true;window.scrollTo(0,0);};
+    $('#edit-route-conditions').onclick=()=>{state.resultMap?.remove();state.resultMap=null;page.classList.remove('has-route-result');root.hidden=true;window.scrollTo(0,0);};
     root.querySelectorAll('[data-result-view]').forEach(b=>b.onclick=()=>{r.presentation=b.dataset.resultView;sync();});
     sync();
   }
   function initResultMap(route) {
     const mapElement=$('#route-result-map');
     if (!window.L || !mapElement) return;
-    const stops=[route.originPoint,...route.rows.map((row) => getPlace(row.placeId)),route.destinationPoint];
+    const stops=[route.originPoint,...route.rows.map((row) => routePlace(row.placeId,route)),route.destinationPoint];
     if (stops.some((place) => !coord(place))) return;
     const map=L.map(mapElement,{scrollWheelZoom:false,dragging:true,touchZoom:true}); state.resultMap=map;
     // Handle wheel input directly so embedded browsers use the same zoom gesture as desktop browsers.
@@ -1535,7 +1717,7 @@
       const point=[place.lat,place.lon]; bounds.extend(point);
       if (isLodgingPoint(place)) return;
       if (roundTrip && (index === 0 || index === stops.length-1)) return;
-      const label=index === 0 ? '출발' : index === stops.length-1 ? '도착' : String(index);
+      const label=route.directionStatus==='straight-line-order-draft'||route.orderStatus==='user-confirmed' ? String(index+1) : index === 0 ? '출발' : index === stops.length-1 ? '도착' : String(index);
       L.marker(point,{icon:L.divIcon({className:'route-map-pin',html:'<span>' + label + '</span>',iconSize:[30,30],iconAnchor:[15,15]})}).addTo(map).bindTooltip(place.name || label);
     });
     if (roundTrip && !isLodgingPoint(route.originPoint)) {
@@ -1550,13 +1732,17 @@
         L.circleMarker(point,{radius:7,color:'#c36b2e'}).addTo(map).bindTooltip(label+' · '+stop.name);
       }
       const points=leg.walkPoints || leg.points || [];
+      const busConnector=route.reviewOnly&&route.theme==='cafe'&&leg.mode==='transit';
+      if (route.reviewOnly && points.length < 2 && !busConnector) continue;
       const path=points.length > 1 ? points.map(([lon,lat]) => [lat,lon]) : [[stops[i].lat,stops[i].lon],[stops[i+1].lat,stops[i+1].lon]];
-      const line=L.polyline(path,{color:leg.mode==='bus' ? '#386acb' : leg.actual && points.length>1 ? '#087a61' : '#6c8290',weight:4,opacity:.85,dashArray:leg.actual && points.length>1 ? null : '6,7'}).addTo(map);
+      const line=L.polyline(path,{color:busConnector||leg.mode==='bus' ? '#2864c8' : leg.actual && points.length>1 ? '#087a61' : '#6c8290',weight:busConnector?5:4,opacity:.9,dashArray:busConnector?'9,8':leg.actual && points.length>1 ? null : '6,7'}).addTo(map);
+      if(busConnector) line.bindTooltip('버스 '+(leg.buses||'')+' · 장소 간 연결 표시, 실제 노선 형상 미표시');
       bounds.extend(line.getBounds());
       const pointIndex=Math.floor((path.length-1)/2), from=path[pointIndex], to=path[pointIndex+1];
       const middle=[(from[0]+to[0])/2,(from[1]+to[1])/2];
       const angle=Math.atan2(-(to[0]-from[0]),(to[1]-from[1])*Math.cos(from[0]*Math.PI/180))*180/Math.PI;
-      L.marker(middle,{interactive:false,icon:L.divIcon({className:'route-map-arrow',html:'<span style="transform:rotate(' + angle + 'deg)">➜</span>',iconSize:[25,25],iconAnchor:[12,12]})}).addTo(map);
+      L.marker(middle,{interactive:false,icon:L.divIcon({className:'route-map-arrow'+(busConnector?' route-map-arrow--bus':''),html:'<span style="transform:rotate(' + angle + 'deg)">➜</span>',iconSize:[25,25],iconAnchor:[12,12]})}).addTo(map);
+      if(busConnector) L.marker([middle[0]+(i%2===0?0.0012:-0.0012),middle[1]],{interactive:false,icon:L.divIcon({className:'route-map-bus-label',html:'🚌 '+esc(leg.buses||'버스')+' · 약 '+(leg.busDistanceMetersApprox/1000).toFixed(1)+'km',iconSize:[108,24],iconAnchor:[54,12]})}).addTo(map);
     }
     map.fitBounds(bounds,{padding:[35,35],maxZoom:15});
     setTimeout(() => { if (state.resultMap === map) map.invalidateSize(); },50);

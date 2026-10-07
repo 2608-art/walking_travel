@@ -1,0 +1,431 @@
+{
+  "type": "FeatureCollection",
+  "name": "Gangneung cafe pedestrian legs",
+  "metadata": {
+    "checkedOn": "2026-10-07",
+    "source": "OpenStreetMap/Valhalla public pedestrian router",
+    "attribution": "© OpenStreetMap contributors",
+    "note": "Only walk-mode legs are routed. Transit-mode gaps remain separate. Place pins may not be entrances."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "cafe",
+        "legIndex": 1,
+        "from": "g24",
+        "to": "g25",
+        "fromName": "봉봉방앗간",
+        "toName": "새바람이 오는 그늘",
+        "meters": 240,
+        "minutes": 3,
+        "startSnapMeters": 17,
+        "endSnapMeters": 10,
+        "accepted": true,
+        "pinType": {
+          "from": "route-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.892549,
+            37.750923
+          ],
+          [
+            128.891758,
+            37.750384
+          ],
+          [
+            128.891269,
+            37.750051
+          ],
+          [
+            128.890878,
+            37.749907
+          ],
+          [
+            128.890677,
+            37.749644
+          ],
+          [
+            128.890569,
+            37.749793
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "cafe",
+        "legIndex": 2,
+        "from": "g25",
+        "to": "g258",
+        "fromName": "새바람이 오는 그늘",
+        "toName": "베리베리딸기",
+        "meters": 872,
+        "minutes": 11,
+        "startSnapMeters": 10,
+        "endSnapMeters": 2,
+        "accepted": true,
+        "pinType": {
+          "from": "route-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.890569,
+            37.749793
+          ],
+          [
+            128.890677,
+            37.749644
+          ],
+          [
+            128.890878,
+            37.749907
+          ],
+          [
+            128.891463,
+            37.750679
+          ],
+          [
+            128.892072,
+            37.751482
+          ],
+          [
+            128.89218,
+            37.751615
+          ],
+          [
+            128.892513,
+            37.752061
+          ],
+          [
+            128.892901,
+            37.752561
+          ],
+          [
+            128.893007,
+            37.752682
+          ],
+          [
+            128.892632,
+            37.753052
+          ],
+          [
+            128.892492,
+            37.75324
+          ],
+          [
+            128.892246,
+            37.753663
+          ],
+          [
+            128.892039,
+            37.754004
+          ],
+          [
+            128.891892,
+            37.754486
+          ],
+          [
+            128.892209,
+            37.754601
+          ],
+          [
+            128.89244,
+            37.754725
+          ],
+          [
+            128.892643,
+            37.754868
+          ],
+          [
+            128.893247,
+            37.755242
+          ],
+          [
+            128.893494,
+            37.755397
+          ],
+          [
+            128.893275,
+            37.755887
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "cafe",
+        "legIndex": 4,
+        "from": "g223",
+        "to": "g195",
+        "fromName": "말차로",
+        "toName": "쵸딩 초당옥수수 푸딩 카페",
+        "meters": 336,
+        "minutes": 4,
+        "startSnapMeters": 17,
+        "endSnapMeters": 12,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.915083,
+            37.785655
+          ],
+          [
+            128.914586,
+            37.786136
+          ],
+          [
+            128.91454,
+            37.78618
+          ],
+          [
+            128.914433,
+            37.786284
+          ],
+          [
+            128.914067,
+            37.786832
+          ],
+          [
+            128.913955,
+            37.787024
+          ],
+          [
+            128.913903,
+            37.787114
+          ],
+          [
+            128.913591,
+            37.787575
+          ],
+          [
+            128.913444,
+            37.787881
+          ],
+          [
+            128.913313,
+            37.787857
+          ],
+          [
+            128.912908,
+            37.787876
+          ],
+          [
+            128.912898,
+            37.787877
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "cafe",
+        "legIndex": 5,
+        "from": "g195",
+        "to": "g193",
+        "fromName": "쵸딩 초당옥수수 푸딩 카페",
+        "toName": "카페콥스",
+        "meters": 143,
+        "minutes": 2,
+        "startSnapMeters": 12,
+        "endSnapMeters": 15,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.912898,
+            37.787877
+          ],
+          [
+            128.912908,
+            37.787876
+          ],
+          [
+            128.913313,
+            37.787857
+          ],
+          [
+            128.913444,
+            37.787881
+          ],
+          [
+            128.913644,
+            37.787969
+          ],
+          [
+            128.91382,
+            37.788043
+          ],
+          [
+            128.913904,
+            37.788078
+          ],
+          [
+            128.91418,
+            37.788177
+          ],
+          [
+            128.914307,
+            37.788248
+          ],
+          [
+            128.914392,
+            37.788295
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "cafe",
+        "legIndex": 6,
+        "from": "g193",
+        "to": "g98",
+        "fromName": "카페콥스",
+        "toName": "카페 툇마루",
+        "meters": 580,
+        "minutes": 7,
+        "startSnapMeters": 15,
+        "endSnapMeters": 42,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.914392,
+            37.788295
+          ],
+          [
+            128.914408,
+            37.788304
+          ],
+          [
+            128.914683,
+            37.788501
+          ],
+          [
+            128.915153,
+            37.788924
+          ],
+          [
+            128.915086,
+            37.788991
+          ],
+          [
+            128.914325,
+            37.790837
+          ],
+          [
+            128.91415,
+            37.791379
+          ],
+          [
+            128.913893,
+            37.792791
+          ],
+          [
+            128.914135,
+            37.793068
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "cafe",
+        "legIndex": 8,
+        "from": "g189",
+        "to": "g187",
+        "fromName": "커피커퍼 안목1호점",
+        "toName": "레오파드",
+        "meters": 66,
+        "minutes": 1,
+        "startSnapMeters": 10,
+        "endSnapMeters": 5,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "representative-map-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.947324,
+            37.772687
+          ],
+          [
+            128.947807,
+            37.772233
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "themeId": "cafe",
+        "legIndex": 9,
+        "from": "g187",
+        "to": "g17",
+        "fromName": "레오파드",
+        "toName": "보사노바 커피로스터스 강릉점",
+        "meters": 17,
+        "minutes": 1,
+        "startSnapMeters": 5,
+        "endSnapMeters": 12,
+        "accepted": true,
+        "pinType": {
+          "from": "representative-map-pin",
+          "to": "route-pin"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.947807,
+            37.772233
+          ],
+          [
+            128.947933,
+            37.772115
+          ]
+        ]
+      }
+    }
+  ]
+}
