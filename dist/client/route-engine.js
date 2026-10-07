@@ -1078,7 +1078,7 @@
     }
     if(results.length) return results;
     // 모든 도보 후보가 불가능한 경우에만 실제 버스 연결을 조회한다.
-    const context={...input,...plans[0],maxStops,variants:1};
+    const context={...input,...plans[0],maxStops:8,variants:1};
     for(const route of await busFallback(context,cache)) {
       const result=await finish(route,context);
       if(result) return [result];

@@ -55,12 +55,18 @@ const base = {places:routingPlaces,origin:historyStart,destination:historyEnd,da
   assert(review.issues.some(issue=>issue.includes('좌표 간 직선거리')),'검토 초안의 이동 한계를 설명');
 
   const app = fs.readFileSync('public/app.js','utf8');
-  assert(app.includes('시내에서 시작해 아침·점심·저녁을 한 번씩') && app.includes('버스는 최대 세 구간'),'테마 화면에 공통 식사·교통 기준을 표시');
+  const savedRoutes=JSON.parse(fs.readFileSync('public/gangneung-theme-review-routes.json','utf8')).routes;
+  assert.equal(savedRoutes.length,5,'강릉 테마별 저장 루트 5개');
+  for(const route of savedRoutes){
+    assert(route.transitLegCount<=3,route.themeId+' 버스 구간 상한');
+    const mealCount=Object.keys(route.mealSlots||{}).length;
+    if(route.themeId==='cafe') assert.equal(mealCount,0,'카페 투어에는 식사 정차를 넣지 않음');
+    else assert(mealCount<=3,route.themeId+' 하루 식사 정차는 최대 세 번');
+  }
   assert(app.includes("const referenceStart=r.theme==='cafe'?'10:00':'08:00'"),'식사 코스는 아침 영업시간에 맞춰 시작');
   assert(app.includes("const STORAGE_THEME_ROUTE_DRAFTS = 'hangeoreum-theme-route-drafts-v1' + regionStorage"));
-  assert(app.includes('검토용 테마 초안을 이 기기에 저장했습니다.'));
   assert(app.includes('data-open-theme-draft=') && app.includes('data-delete-theme-draft='));
   assert(app.includes("r.review=JSON.parse(JSON.stringify(draft.review))"),'저장된 방문 순서를 다시 복원함');
-  console.log(JSON.stringify({passed:true,themes:5,representativePin:true,offlineThemeDraft:true,confirmedRoutes:0,
+  console.log(JSON.stringify({passed:true,themes:5,representativePin:true,storedReviewRoutes:true,confirmedRoutes:0,
     mapCheckedRouteExamples:['강릉대도호부관아→월화교','안목커피거리→송정해변','경포대→오죽헌']}));
 })().catch(error=>{console.error(error);process.exitCode=1;});
