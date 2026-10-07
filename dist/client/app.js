@@ -222,9 +222,14 @@
   };
   const geocodeCache = load(STORAGE_GEOCODES, {});
   const lodgingPins = load(STORAGE_LODGING_PINS, {});
+  let mapQuickForm = null;
+  let mapQuickOutsideHandler = null;
+  let mapQuickResizeHandler = null;
+  let mapQuickTransparency = 10;
+  let mapQuickPosition = null;
   function persistDraft() { save(STORAGE_DRAFT, state.draft); }
   function statusConnection() { const el = $('#connection'); if (!el) return; el.textContent = navigator.onLine ? '온라인' : '오프라인 · 저장한 글만'; el.classList.toggle('offline', !navigator.onLine); }
-  function nav(view) { if (state.view === 'region' && view !== 'region') { if(state.mapProvider === 'leaflet') state.map?.remove(); state.map=null; } if (state.view === 'routes' && view !== 'routes') { state.resultMap?.remove(); state.resultMap=null; } if (state.view === 'plan' && view !== 'plan') { state.planMap?.remove(); state.planMap=null; } if (view !== 'destination' && state.themeCandidateMap) { state.themeCandidateMap.remove(); state.themeCandidateMap=null; } state.view = view; render(); window.scrollTo(0, 0); }
+  function nav(view) { closeMapQuickAdd(); if (state.view === 'region' && view !== 'region') { if(state.mapProvider === 'leaflet') state.map?.remove(); state.map=null; } if (state.view === 'routes' && view !== 'routes') { state.resultMap?.remove(); state.resultMap=null; } if (state.view === 'plan' && view !== 'plan') { state.planMap?.remove(); state.planMap=null; } if (view !== 'destination' && state.themeCandidateMap) { state.themeCandidateMap.remove(); state.themeCandidateMap=null; } state.view = view; render(); window.scrollTo(0, 0); }
   function render() {
     statusConnection();
     document.body.classList.toggle('destination-home', state.view === 'home');
@@ -441,6 +446,7 @@
     document.querySelectorAll('[data-open-place]').forEach(b=>b.onclick=()=>{state.selected=b.dataset.openPlace;state.placeTab='intro';renderPlacePage();window.scrollTo(0,0);});
   }
   function renderRegionMap() {
+    closeMapQuickAdd();
     const region = REGIONS.find((x) => x.id === state.region) || REGIONS[0];
     const list = state.places.filter((p) => !state.categories.size || state.categories.has(p.category));
     const chosen = CATEGORIES.filter(([id]) => state.categories.has(id)).map(([, label]) => label);
@@ -460,7 +466,7 @@
     document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>{const offset=$('.filter-strip').scrollLeft;const id=b.dataset.category;if(id==='all')state.categories.clear();else if(state.categories.has(id))state.categories.delete(id);else state.categories.add(id);state.selected=null;renderRegionMap();$('.filter-strip').scrollLeft=offset;});
     document.querySelectorAll('.explore-sheet .place-row').forEach(row=>row.onclick=(event)=>{if(event.target.closest('[data-open-map-place]'))return;focusMapPlace(row.querySelector('[data-place]').dataset.place);});
     document.querySelectorAll('[data-open-map-place]').forEach(b=>b.onclick=()=>selectPlace(b.dataset.openMapPlace));
-    document.querySelectorAll('[data-map-display]').forEach(b=>b.onclick=()=>{state.mapDisplay=b.dataset.mapDisplay;$('.explore-page').classList.toggle('list-mode',state.mapDisplay==='list');document.querySelectorAll('[data-map-display]').forEach(x=>{const active=x.dataset.mapDisplay===state.mapDisplay;x.classList.toggle('active',active);x.setAttribute('aria-pressed',active);});if(state.mapProvider==='kakao')state.map?.relayout();else state.map?.invalidateSize();});
+    document.querySelectorAll('[data-map-display]').forEach(b=>b.onclick=()=>{closeMapQuickAdd();state.mapDisplay=b.dataset.mapDisplay;$('.explore-page').classList.toggle('list-mode',state.mapDisplay==='list');document.querySelectorAll('[data-map-display]').forEach(x=>{const active=x.dataset.mapDisplay===state.mapDisplay;x.classList.toggle('active',active);x.setAttribute('aria-pressed',active);});if(state.mapProvider==='kakao')state.map?.relayout();else state.map?.invalidateSize();});
   }
   async function initHomeMap(list) {
     const container = $('#map');
@@ -474,7 +480,7 @@
     const colors = CATEGORY_COLORS;
     pinned.forEach((p) => {
       const marker = L.circleMarker(pinPoint(p), { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
-      marker.bindTooltip(esc(p.name)); marker.on('click', () => selectPlace(p.id));
+      marker.bindTooltip(esc(p.name)); marker.on('click', () => openMapQuickAdd(p));
       state.mapMarkers.set(p.id, marker);
     });
     if (KAKAO_KEY && list.some((p) => !hasPin(p) && p.addressQuery)) loadKakao().then(() => {
@@ -504,7 +510,7 @@
           Math.abs(lat - REGION_CENTER[0]) > .15 || Math.abs(lon - REGION_CENTER[1]) > .2) continue;
       p.lat = lat; p.lon = lon; p.pinBasis = 'address';
       const marker = L.circleMarker([lat, lon], { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
-      marker.bindTooltip(esc(p.name + ' · 건물 주소 위치')); marker.on('click', () => selectPlace(p.id));
+      marker.bindTooltip(esc(p.name + ' · 건물 주소 위치')); marker.on('click', () => openMapQuickAdd(p));
       state.mapMarkers.set(p.id, marker);
       if ($('#pin-count')) $('#pin-count').textContent = '지도 핀 ' + list.filter(hasPin).length + '곳';
     }
@@ -528,6 +534,86 @@
   function selectPlace(id) {
     if(!getPlace(id))return;
     state.selected=id;state.placeBack='region';state.placeTab='intro';nav('place');
+  }
+  function closeMapQuickAdd() {
+    mapQuickForm?.remove();
+    mapQuickForm = null;
+    if (mapQuickOutsideHandler) document.removeEventListener('pointerdown', mapQuickOutsideHandler, true);
+    mapQuickOutsideHandler = null;
+    if (mapQuickResizeHandler) window.removeEventListener('resize', mapQuickResizeHandler);
+    mapQuickResizeHandler = null;
+  }
+  function positionMapQuickAdd(form, left, top) {
+    const x = Math.min(Math.max(0, left), Math.max(0, window.innerWidth - form.offsetWidth));
+    const y = Math.min(Math.max(0, top), Math.max(0, window.innerHeight - form.offsetHeight));
+    form.style.transform = 'none';
+    form.style.left = x + 'px';
+    form.style.top = y + 'px';
+    mapQuickPosition = { left: x, top: y };
+  }
+  function openMapQuickAdd(place) {
+    closeMapQuickAdd();
+    const duration = routeEngine.stay(place, false);
+    const form = document.createElement('form');
+    form.className = 'map-quick-add';
+    form.setAttribute('role', 'dialog');
+    form.setAttribute('aria-label', place.name + ' 계획표 추가');
+    form.tabIndex = -1;
+    form.innerHTML = '<strong class="map-quick-add-name" title="잡아서 창 이동">' + esc(place.name) + '</strong>' +
+      '<label for="map-quick-time">방문 시각</label><input id="map-quick-time" type="time" required step="60" class="text-field" value="' + esc(state.draft.start) + '">' +
+      '<label for="map-quick-duration">체류시간 (분)</label><input id="map-quick-duration" type="number" min="1" step="1" required inputmode="numeric" class="text-field" value="' + esc(duration) + '">' +
+      '<div class="map-quick-transparency"><label for="map-quick-transparency">투명도 <output for="map-quick-transparency">' + mapQuickTransparency + '%</output></label><input id="map-quick-transparency" type="range" min="0" max="30" step="5" value="' + mapQuickTransparency + '" aria-valuetext="' + mapQuickTransparency + '% 투명"></div>' +
+      '<div class="map-quick-add-actions"><button type="button" class="btn btn-outline">취소</button><button type="submit" class="btn btn-primary">추가</button></div>';
+    form.style.opacity = String(1 - mapQuickTransparency / 100);
+    const transparencySlider = form.querySelector('#map-quick-transparency');
+    transparencySlider.oninput = () => {
+      mapQuickTransparency = Number(transparencySlider.value);
+      form.style.opacity = String(1 - mapQuickTransparency / 100);
+      form.querySelector('output').textContent = mapQuickTransparency + '%';
+      transparencySlider.setAttribute('aria-valuetext', mapQuickTransparency + '% 투명');
+    };
+    document.body.appendChild(form);
+    mapQuickForm = form;
+    if (mapQuickPosition) positionMapQuickAdd(form, mapQuickPosition.left, mapQuickPosition.top);
+    mapQuickResizeHandler = () => { if (mapQuickPosition) positionMapQuickAdd(form, mapQuickPosition.left, mapQuickPosition.top); };
+    window.addEventListener('resize', mapQuickResizeHandler);
+    const dragHandle = form.querySelector('.map-quick-add-name');
+    dragHandle.onpointerdown = (event) => {
+      if (event.button !== 0) return;
+      event.preventDefault();
+      const rect = form.getBoundingClientRect();
+      const offsetX = event.clientX - rect.left;
+      const offsetY = event.clientY - rect.top;
+      dragHandle.setPointerCapture(event.pointerId);
+      dragHandle.classList.add('dragging');
+      dragHandle.onpointermove = (moveEvent) => {
+        if (moveEvent.pointerId === event.pointerId) positionMapQuickAdd(form, moveEvent.clientX - offsetX, moveEvent.clientY - offsetY);
+      };
+      const finish = () => { dragHandle.classList.remove('dragging'); dragHandle.onpointermove = null; };
+      dragHandle.onpointerup = finish;
+      dragHandle.onpointercancel = finish;
+    };
+    form.focus({preventScroll:true});
+    mapQuickOutsideHandler = (event) => { if (!form.contains(event.target) && !event.target.closest('#modal-root')) closeMapQuickAdd(); };
+    setTimeout(() => { if (mapQuickForm === form) document.addEventListener('pointerdown', mapQuickOutsideHandler, true); }, 0);
+    form.querySelector('[type="button"]').onclick = closeMapQuickAdd;
+    form.onsubmit = (event) => {
+      event.preventDefault();
+      const time = form.querySelector('[type="time"]').value;
+      const minutes = Number(form.querySelector('[type="number"]').value);
+      if (!time) return toast('방문 시각을 입력해 주세요.');
+      if (!Number.isSafeInteger(minutes) || minutes < 1) return toast('체류시간을 1분 이상의 정수로 입력해 주세요.');
+      const selected = toMin(time), draft = state.draft, end = routeEngine.minutes(draft.end || '24:00');
+      if (selected < toMin(draft.start) || selected + minutes > end) return toast('방문 시각과 체류시간을 계획표의 시작·종료 범위 안으로 정해 주세요.');
+      const conflict = Object.entries(draft.entries || {}).find(([at, entry]) => selected < Number(at) + (Number(entry.duration) || 60) && selected + minutes > Number(at));
+      if (conflict) return toast(hhmm(Number(conflict[0])) + ' 일정과 시간이 겹칩니다. 다른 시각을 골라 주세요.');
+      beforeAddReservation([place], () => {
+        draft.entries[selected] = {placeId:place.id, duration:minutes, memo:''};
+        persistDraft();
+        closeMapQuickAdd();
+        toast(place.name + '을(를) ' + hhmm(selected) + ' 계획표에 넣었습니다.');
+      });
+    };
   }
   async function searchMap(event) {
     event.preventDefault(); const q = $('#map-search').value.trim(); if (!q) return;
