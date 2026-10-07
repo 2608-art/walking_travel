@@ -431,3 +431,17 @@ small, .small { font-size: var(--type-caption); line-height: 1.65; color: var(--
 .place-price p { margin: 8px 0; line-height: 1.6; font-size: .78rem; }
 .place-price a { display: inline-block; margin-top: 5px; color: #32624e; font-size: .78rem; text-decoration: underline; text-underline-offset: 3px; }
 .place-price .place-price-caveat { margin-bottom: 0; }
+
+.map-quick-add { position: fixed; top: 50%; left: 50%; z-index: 1100; transform: translate(-50%, -50%); display: grid; gap: 5px; width: min(244px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow-y: auto; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--white); box-shadow: 0 12px 36px #07192444; }
+#modal-root .modal-backdrop { z-index: 1150; }
+.map-quick-add-name { margin-bottom: 3px; overflow-wrap: anywhere; font-size: .9rem; line-height: 1.35; }
+.map-quick-add-name { cursor: grab; touch-action: none; user-select: none; }
+.map-quick-add-name.dragging { cursor: grabbing; }
+.map-quick-add label { font-size: .76rem; font-weight: 700; color: var(--ink2); }
+.map-quick-add .text-field { min-height: 40px; padding: 7px 9px; font-size: .9rem; }
+.map-quick-transparency { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+.map-quick-transparency label { white-space: nowrap; }
+.map-quick-transparency input { flex: 1; min-width: 0; min-height: 40px; accent-color: var(--mint-dark); }
+.map-quick-add-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 5px; }
+.map-quick-add-actions .btn { min-height: 44px; padding: 7px; }
+.map-quick-add :focus-visible { outline: 3px solid var(--mint-dark); outline-offset: 2px; }
