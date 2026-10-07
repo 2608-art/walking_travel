@@ -21,5 +21,15 @@ window.HangeoreumRegions = Object.freeze({
     introTitle: '바다와 골목을 걷는 강릉', introLine: '시장 길을 지나, 동해 곁으로.',
     tags: ['바다·커피', '시장·골목', '뚜벅이 여행'], placesFile: './gangneung-places.json?v=7',
     lodgingsFile: null, featuredIds: ['g1','g3','g4','g9'], themeCount: 5, dataChecked: '2026-10-06'
+  }),
+  gyeongju: Object.freeze({
+    id: 'gyeongju', name: '경주', province: '경상북도', ready: false, center: [35.84, 129.22],
+    station: {id:'gyeongju-station',name:'경주역',lat:35.7983772522824,lon:129.138999419567},
+    image: './gyeongju-card.png', imageAlt: '경주의 역사 유적과 동궁과 월지 풍경을 그린 상징 일러스트',
+    imageLabel: '경주 상징 일러스트', teaser: '천년의 유적과 동네 골목을 잇는 경주',
+    description: '황리단길과 왕경 유적, 보문과 동해안까지 권역마다 다른 풍경을 만나요.',
+    introTitle: '천천히 걷는 신라의 시간', introLine: '골목과 유적, 가까운 풍경부터. ',
+    tags: ['왕경 유적', '골목·시장', '동해안'], placesFile: './gyeongju-places.json?v=1',
+    lodgingsFile: './gyeongju-lodgings.json?v=1', featuredIds: ['j3','j1','j2','j17'], themeCount: 8, dataChecked: '2026-10-06'
   })
 });
