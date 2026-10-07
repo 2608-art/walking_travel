@@ -969,10 +969,11 @@
     };
     if (preset) {
       const routes=await routeEngine.generateThemeDay({places:routePlaces,origin,destination,date:r.date,start:r.themeStart || '10:00',theme:r.theme,validate:validateRoute,...providers});
-      if(!routes.length && r.themeReviewOnly) {
+      if(!routes.length) {
         const window=routeEngine.themeWindow(r.themeStart || '10:00');
-        const review=await routeEngine.generateReviewRoute({places:routePlaces,origin,destination,date:r.date,start:r.themeStart || '10:00',end:window.end,theme:r.theme,validate:validateRoute,...providers});
-        r.review=review ? {...review,issues:['선택한 테마가 방문 수·영업시간·실제 이동 경로 확인 기준을 충족하지 않아, 가까운 장소를 검토용으로 표시했습니다.',...review.issues],originPoint:origin,destinationPoint:destination,routingPlaces:routePlaces,usesRepresentativePins:origin.routeCoordinateBasis==='representative_map_pin'||destination.routeCoordinateBasis==='representative_map_pin'||review.rows.some(row=>routePlaces.find(place=>place.id===row.placeId)?.routeCoordinateBasis==='representative_map_pin')} : null;
+        const review=await routeEngine.generateReviewRoute({places:routePlaces,origin,destination,date:r.date,start:r.themeStart || '10:00',end:window.end,theme:r.theme,validate:validateRoute,offlineOnly:!apiAvailable,...providers});
+        r.review=review ? {...review,issues:['선택한 테마가 방문 수·영업시간·실제 이동 경로 확인 기준을 충족하지 않아, 가까운 장소를 검토용 초안으로 표시했습니다.',...review.issues],originPoint:origin,destinationPoint:destination,routingPlaces:routePlaces,usesRepresentativePins:origin.routeCoordinateBasis==='representative_map_pin'||destination.routeCoordinateBasis==='representative_map_pin'||review.rows.some(row=>routePlaces.find(place=>place.id===row.placeId)?.routeCoordinateBasis==='representative_map_pin')} : null;
+        if(r.review) r.themeReviewOnly=true;
       }
       return routes.map((route) => ({...route,originId:origin.id,destinationId:destination.id,originPoint:origin,destinationPoint:destination,routingPlaces:routePlaces,usesRepresentativePins:origin.routeCoordinateBasis==='representative_map_pin'||destination.routeCoordinateBasis==='representative_map_pin'||route.rows.some(row=>routePlaces.find(place=>place.id===row.placeId)?.routeCoordinateBasis==='representative_map_pin')}));
     }
@@ -982,7 +983,7 @@
       validate:validateRoute,...providers};
     const routes=await routeEngine.generateAdaptive(input);
     if(!routes.length) {
-      const review=await routeEngine.generateReviewRoute(input);
+      const review=await routeEngine.generateReviewRoute({...input,offlineOnly:!apiAvailable});
       r.review=review ? {...review,originPoint:origin,destinationPoint:destination,routingPlaces:routePlaces,usesRepresentativePins:origin.routeCoordinateBasis==='representative_map_pin'||destination.routeCoordinateBasis==='representative_map_pin'||review.rows.some(row=>routePlaces.find(place=>place.id===row.placeId)?.routeCoordinateBasis==='representative_map_pin')} : null;
     }
     return routes.map((route) => ({...route,
@@ -1191,11 +1192,11 @@
       return '약 '+Math.floor(seconds/60)+'분'+(seconds%60 ? ' '+seconds%60+'초' : '');
     };
     const legText=(leg)=>leg.mode==='bus' ? '버스 탑승 '+busRideText(leg.busRideMinutes)+' · 정류장 도보 약 '+leg.walkMinutes+'분 (배차 대기 미확인)' :
-      leg.actual ? '도보 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km (실제 경로)' : '방향만 표시 · 실제 이동 경로 미확인';
+      leg.actual ? '도보 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km (실제 경로)' : '좌표 추정 약 '+leg.minutes+'분 · '+(leg.meters/1000).toFixed(2)+'km 참고치 (실제 경로 미확인)';
     const stops=review.rows.map((row,index)=>'<div class="route-stop"><div class="route-stop-time">'+(index+1)+'</div><div><strong>'+esc(reviewedPlace(row.placeId)?.name || '장소')+'</strong><p>앞 장소에서 '+esc(legText(row.busLeg || {mode:row.mode,minutes:row.walkEstimate,meters:row.walkMeters,actual:row.actual,walkMinutes:0,busRideMinutes:0}))+'</p></div></div>').join('');
     const issues=review.issues.length ? review.issues.map(issue=>'<li>'+esc(issue)+'</li>').join('') : '<li>확정 코스 탐색에서 모든 이동·운영 조건을 함께 검증하지 못했습니다.</li>';
     const pinNotice=review.usesRepresentativePins ? '<p class="notice warn">일부 장소는 지도 대표 핀을 기준으로 연결한 검토용 동선입니다. 실제 출입구와 보행 경로는 현장에서 확인해 주세요.</p>' : '';
-    root.innerHTML='<div class="card route-review"><span class="eyebrow">검토용 루트</span><h2>'+esc(review.originName)+' → '+esc(review.destinationName)+'</h2><p>입력한 위치와 가까운 장소를 방문 순서대로 이었습니다. 확정 추천이나 실제 버스 배차를 뜻하지 않습니다.</p>'+pinNotice+'<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="검토용 방문 순서 지도"></div><p class="small">숫자는 방문 순서입니다. 점선은 실제 경로를 확인하지 못한 구간입니다. 지도 위에서 휠·두 손가락으로 확대·축소하고, 드래그로 이동할 수 있습니다.</p></div>'+stops+'<div class="route-stop"><div class="route-stop-time">도착</div><div><strong>'+esc(review.destinationName)+'</strong><p>앞 장소에서 '+esc(legText(review.endWalk))+'</p></div></div><div class="notice warn"><strong>확정 코스가 되지 않은 이유·확인할 점</strong><ul>'+issues+'</ul></div><p class="small">버스 60분 기준은 탑승시간만 계산합니다. 정류장 도보·환승·실제 배차 대기는 별도입니다.</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
+    root.innerHTML='<div class="card route-review"><span class="eyebrow">검토용 루트 초안</span><h2>'+esc(review.originName)+' → '+esc(review.destinationName)+'</h2><p>가까운 장소를 방문 순서로 이은 초안입니다. 이동시간은 좌표로 계산한 참고치이며, 실제 보행 경로·버스·영업 여부를 확인한 추천 코스가 아닙니다.</p>'+pinNotice+'<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="검토용 방문 순서 지도"></div><p class="small">숫자는 방문 순서입니다. 점선은 실제 경로를 확인하지 못한 구간입니다. 지도 위에서 휠·두 손가락으로 확대·축소하고, 드래그로 이동할 수 있습니다.</p></div>'+stops+'<div class="route-stop"><div class="route-stop-time">도착</div><div><strong>'+esc(review.destinationName)+'</strong><p>앞 장소에서 '+esc(legText(review.endWalk))+'</p></div></div><div class="notice warn"><strong>확정 코스가 되지 않은 이유·확인할 점</strong><ul>'+issues+'</ul></div><p class="small">버스 60분 기준은 탑승시간만 계산합니다. 정류장 도보·환승·실제 배차 대기는 별도입니다.</p><button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button></div>';
     initResultMap(review);
     $('#go-own-plan').onclick=()=>nav('plan');
   }

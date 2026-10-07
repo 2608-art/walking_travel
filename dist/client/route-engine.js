@@ -607,7 +607,7 @@
   // 확정 코스가 없더라도 선택한 위치와 가까운 방문지를 지도에서 검토할 수 있게 잇는다.
   // 이 결과는 영업·도착·이동 가능 판정을 통과한 추천 코스가 아니다.
   async function generateReviewRoute(input) {
-    const {places,origin,destination,requiredPlaceId='',date,validate,routeProvider,busProvider}=input;
+    const {places,origin,destination,requiredPlaceId='',date,validate,routeProvider,busProvider,offlineOnly=false}=input;
     if(!hasCoord(origin) || !hasCoord(destination)) return null;
     const required=places.find(p=>p.id===requiredPlaceId && hasCoord(p));
     const anchors=[origin,...(required?[required]:[]),destination];
@@ -634,6 +634,7 @@
       order=best.candidate;
     }
     const issues=[];
+    if(offlineOnly) issues.push('실제 경로 API 확인 없이 좌표 간 직선거리로 만든 검토용 초안입니다. 보행로·버스·이동시간은 확인되지 않았습니다.');
     if(requiredPlaceId && !required)
       issues.push('꼭 가고 싶은 장소의 위치를 확인하지 못해 지도에 연결하지 않았습니다.');
     if(input.theme && input.theme!=='balanced' && !themed.length)
@@ -643,7 +644,7 @@
       const key=[a.id,a.lat,a.lon,b.id,b.lat,b.lon].join(':');
       if(!transitCache.has(key)) {
         let routes=[];
-        if(busProvider) try { routes=await busProvider(a,b) || []; } catch { /* 미확인으로 남긴다. */ }
+        if(!offlineOnly && busProvider) try { routes=await busProvider(a,b) || []; } catch { /* 미확인으로 남긴다. */ }
         transitCache.set(key,routes.filter(route=>route.steps?.some(step=>step.type==='BUS')));
       }
       return transitCache.get(key);
@@ -663,7 +664,7 @@
       const a=points[i],b=points[i+1],direct=distanceKm(a,b);
       if(direct<.015) {legs.push({meters:0,minutes:0,actual:true,points:[]});continue;}
       let walk=null;
-      if(direct<=1.3 && routeProvider) try {
+      if(!offlineOnly && direct<=1.3 && routeProvider) try {
         const actual=await routeProvider(a,b);
         if(actual?.meters>0 && actual?.minutes>0) walk={...actual,actual:true};
       } catch { /* 아래에서 추정 이동으로 표시한다. */ }

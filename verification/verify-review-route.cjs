@@ -44,6 +44,14 @@ const nearby=[
   assert(!themeReview.rows.some(row=>row.placeId==='near-cafe'),'가까운 비테마 장소만으로 테마 검토안을 채우지 않음');
   const unknown=await engine.generateReviewRoute({...distant,busProvider:async()=>[]});
   assert(unknown.review && unknown.issues.some(issue=>issue.includes('탑승시간을 확인하지 못했습니다')));
+  let offlineProviderCalls=0;
+  const offlineDraft=await engine.generateReviewRoute({...base,offlineOnly:true,
+    routeProvider:async()=>{offlineProviderCalls++;throw Error('API should not be called');},
+    busProvider:async()=>{offlineProviderCalls++;throw Error('API should not be called');}});
+  assert.equal(offlineProviderCalls,0,'오프라인 초안이 도보·버스 API를 추가 호출하지 않음');
+  assert(offlineDraft.review && offlineDraft.rows.length>0);
+  assert(offlineDraft.rows.every(row=>!row.actual),'오프라인 초안의 추정 구간을 실제 경로로 표시하지 않음');
+  assert(offlineDraft.issues.some(issue=>issue.includes('좌표 간 직선거리')),'오프라인 초안의 추정 한계를 설명');
   const app=fs.readFileSync(path.join(__dirname,'../public/app.js'),'utf8');
   const renderer=app.slice(app.indexOf('  function showReviewRoute('),app.indexOf('  function showRouteResults('));
   const root={innerHTML:''},button={},view={
@@ -53,20 +61,26 @@ const nearby=[
     $:()=>button,nav:()=>{}
   };
   vm.runInNewContext(renderer+'\nshowReviewRoute(root,review);',{...view,root,review});
-  assert(root.innerHTML.includes('검토용 루트') && root.innerHTML.includes('선택한 시간에는 닫음'));
+  assert(root.innerHTML.includes('검토용 루트 초안') && root.innerHTML.includes('선택한 시간에는 닫음'));
   assert(!root.innerHTML.includes('id="import-route"'),'미확정 경로를 확정 추천처럼 계획표에 넣지 않음');
+  const draftRoot={innerHTML:''};
+  vm.runInNewContext(renderer+'\nshowReviewRoute(root,review);',{...view,root:draftRoot,review:offlineDraft});
+  assert(draftRoot.innerHTML.includes('좌표 추정 약') && draftRoot.innerHTML.includes('실제 경로 미확인'));
   const belowRoot={innerHTML:''};
   vm.runInNewContext(renderer+'\nshowReviewRoute(root,review);',{...view,root:belowRoot,review:justBelow});
   assert(belowRoot.innerHTML.includes('59분 59초'),'60분 미만을 60분으로 반올림해 표시하지 않음');
   const makeRoutesSource=app.slice(app.indexOf('  async function makeRoutes('),app.indexOf('  function captureRouteInputs('));
-  const themeState={route:{mode:'theme',theme:'food',date:'2026-10-05',review:null,themeReviewOnly:true},places:[far]};
-  const appEngine={THEME_PRESETS:{food:{originId:'station',destinationId:'station'}},prepareRoutePlaces:values=>values,themeWindow:()=>({start:'10:00',end:'19:00'}),generateThemeDay:async()=>[],
-    generateReviewRoute:async(input)=>({review:true,theme:input.theme,start:input.start,end:input.end,rows:[],issues:[]})};
+  const themeState={route:{mode:'theme',theme:'food',date:'2026-10-05',review:null,themeReviewOnly:false},places:[far]};
+  let reviewOfflineOnly=false;
+  const appEngine={THEME_PRESETS:{food:{originId:'station',destinationId:'station'}},prepareRoutePlaces:values=>values,themeWindow:()=>({start:'10:00',end:'19:00'}),generateThemeDay:async(input)=>{try{await input.routeProvider(origin,far);}catch{}return[];},
+    generateReviewRoute:async(input)=>{reviewOfflineOnly=input.offlineOnly;return {review:true,theme:input.theme,start:input.start,end:input.end,rows:[],issues:[]};}};
   const makeRoutes=vm.runInNewContext(makeRoutesSource+'\nmakeRoutes',{routeCache:new Map(),state:themeState,
     routeEngine:appEngine,getPlace:()=>origin,STATION:origin,routeOrigin:()=>origin,routeDestination:()=>origin,
-    coord:point=>Number.isFinite(point?.lat)&&Number.isFinite(point?.lon),evaluate:()=>({kind:'ok'}),getRoute:async()=>[]});
+    coord:point=>Number.isFinite(point?.lat)&&Number.isFinite(point?.lon),evaluate:()=>({kind:'ok'}),getRoute:async()=>{throw Error('429 안전 한도');}});
   assert.equal((await makeRoutes()).length,0);
   assert(themeState.route.review?.review && themeState.route.review.theme==='food','테마 확정 코스가 없을 때 검토용 루트 연결');
+  assert(reviewOfflineOnly,'API 한도 응답 뒤 검토 초안은 추가 API 호출 없이 생성');
+  assert(themeState.route.themeReviewOnly,'검토 초안이 생성되면 다음 버튼도 검토용으로 표시');
   assert(themeState.route.review.start==='10:00' && themeState.route.review.end==='19:00');
   const missingState={route:{mode:'custom',date:'2026-10-05',review:null},places:nearby};
   const missingRoute=vm.runInNewContext(makeRoutesSource+'\nmakeRoutes',{routeCache:new Map(),state:missingState,
@@ -74,5 +88,5 @@ const nearby=[
     coord:point=>Number.isFinite(point?.lat)&&Number.isFinite(point?.lon),evaluate:()=>({kind:'ok'}),getRoute:async()=>[]});
   assert.equal((await missingRoute()).length,0);
   assert(missingState.route.locationMissing && !missingState.route.review,'좌표 없는 위치에 임의의 검토 경로를 만들지 않음');
-  console.log(JSON.stringify({passed:true,reviewStops:review.rows.length,busRideBoundary:'59초/60분',themeReview:true,unknownTransit:'검토용 유지'}));
+  console.log(JSON.stringify({passed:true,reviewStops:review.rows.length,busRideBoundary:'59초/60분',themeReview:true,offlineDraft:true,unknownTransit:'검토용 유지'}));
 })().catch(error=>{console.error(error);process.exitCode=1;});
