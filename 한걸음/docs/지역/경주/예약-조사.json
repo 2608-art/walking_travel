@@ -1,0 +1,1770 @@
+{
+  "checkedAt": "2026-10-06",
+  "scope": "경주 기존176곳. 저장 자료 전체 선별 후 예약·체험 근거가 있는 장소와 공방·서점 관련 공개검색·공식 운영 안내를 후속 확인. 모든176곳의 현재 현장 정책을 확정한 전수 연락 조사는 아님.",
+  "rows": [
+    {
+      "id": "j6",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "program",
+          "status": "required",
+          "scope": "교촌 내 미경 전통식문화연구소 고추장·막장 담그기 체험",
+          "generalVisit": "마을 거리 산책과 일반 상품 구매에 적용되는 예약 조건이 아닙니다. 이 체험만 예약 필수입니다.",
+          "method": "전화 054-749-5989",
+          "url": "https://gyeongju.go.kr/gyochon/page.do?mnu_uid=3008",
+          "sessions": "체험 11:00~16:00, 약 40~50분. 월·화 휴무 안내.",
+          "deadline": "사전 예약 필수, 마감 일수 미확인.",
+          "note": "공식 체험 인원 4~60명. 혼자 참여 가능한 합류 회차는 전화로 확인하세요.",
+          "sources": [
+            "https://gyeongju.go.kr/gyochon/page.do?mnu_uid=3008"
+          ]
+        },
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "program",
+          "status": "required",
+          "scope": "교촌 내 다연 1인 다기·다식 체험",
+          "generalVisit": "마을 산책에 적용되지 않습니다. 해당 체험만 예약 필수입니다.",
+          "method": "전화 010-9772-4471",
+          "url": "https://www.gyeongju.go.kr/design/tour2019/file/tourMap/tourMap2_250821.pdf",
+          "sessions": "공식 안내 지도 매장 10:00~21:00·일요일 휴무. 체험 회차 별도 문의.",
+          "deadline": "사전 예약 필수, 마감 일수 미확인.",
+          "note": "2025년 교촌 안내 지도 기준입니다. 현행 체험 운영은 전화로 확인하세요.",
+          "sources": [
+            "https://www.gyeongju.go.kr/design/tour2019/file/tourMap/tourMap2_250821.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j7",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": "2025-09-05 (휴관 공지)",
+          "visitedAt": null,
+          "scopeType": "program",
+          "status": "required",
+          "scope": "어린이박물관 개인 관람 · 2026-10-31까지 휴관 안내",
+          "generalVisit": "국립경주박물관 일반 상설전시 개인 관람과 구분되는 별도 전시실입니다. 일반 상설전시 전체의 예약 필수 조건이 아닙니다.",
+          "method": "공식 인터넷 개인 관람 예약. 문의 054-740-7591",
+          "url": "https://gyeongju.museum.go.kr/kor/html/sub09/0909.html",
+          "sessions": "관람안내는 10:00~17:50, 1일 8회·회당 50분·60명 인터넷 선착순.",
+          "deadline": "회차별 마감 시각은 현행 예약 페이지 확인.",
+          "note": "어린이 누리집은 별도 공지까지 휴관, 본관 공사 안내의 수정 본문은 2026-10-31까지 휴관으로 안내합니다. 2026-01 보도자료의 10월 재개관 예정은 확정 개관일로 사용하지 않습니다. 재개관 공지를 확인하기 전에는 체험 가능한 일정으로 보지 마세요.",
+          "sources": [
+            "https://gyeongju.museum.go.kr/kid/html/sub01/0103.html",
+            "https://gyeongju.museum.go.kr/kid/html/sub01/0101.html?menu_dvs_cd=0101&mode=V&no=5358&site_dvs_cd=kid",
+            "https://gyeongju.museum.go.kr/kor/html/sub07/0701.html?GotoPage=2&mode=V&no=5320"
+          ]
+        },
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "group",
+          "status": "required",
+          "scope": "학생단체 관람",
+          "generalVisit": "혼자 하는 일반 상설관 관람에 적용되는 조건이 아닙니다. 2026 큐레이터와의 대화는 별도 사전 예약 없이 현장 참여하는 프로그램으로 안내됩니다.",
+          "method": "박물관 공식 학생단체 예약 메뉴",
+          "url": "https://gyeongju.museum.go.kr/kor/html/sub01/0101.html",
+          "sessions": "단체 방문일·회차는 공식 예약 메뉴 확인.",
+          "deadline": "접수 마감 미확인.",
+          "note": "공식 일반 관람 안내에서 학생단체 사전예약을 요구합니다.",
+          "sources": [
+            "https://gyeongju.museum.go.kr/kor/html/sub01/0101.html",
+            "https://gyeongju.museum.go.kr/_prog/bbs/?code=0705&menu_dvs_cd=0705&mode=V&no=5415&site_dvs_cd=kor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j17",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "program",
+          "status": "required",
+          "scope": "2026 천년의 향기 국악문화공연 특별 템플스테이",
+          "generalVisit": "일반 불국사 주간 관람과 별개 프로그램입니다. 이 템플스테이만 사전 신청·예약이 필요합니다.",
+          "method": "템플스테이 공식 온라인 신청 · 문의 054-746-0983",
+          "url": "https://www.templestay.com/fe/MI000000000000000062/reserve/view.do?templestaySeq=28248",
+          "sessions": "2026-04-15~12-31 운영 안내. 1일차 14:00 도착, 다음날 10:00~10:30 회향.",
+          "deadline": "시작 7일 전까지 예약 가능. 신청 후 7일 이내 미입금 시 취소 가능.",
+          "note": "템플관은 불국사 경내와 떨어져 있으며 공식 안내상 도보 약 25분. 일반 관람용 지도 핀을 숙박 접수 장소로 사용하지 마세요.",
+          "sources": [
+            "https://www.templestay.com/fe/MI000000000000000062/reserve/view.do?templestaySeq=28248"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j24",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "program",
+          "status": "required",
+          "scope": "골굴사 휴식형 템플스테이",
+          "generalVisit": "일반 사찰 방문과 공개 선무도 공연 관람은 이 숙박·수련 프로그램과 별개입니다. 템플스테이 참여만 사전 예약이 필요합니다.",
+          "method": "템플스테이 공식 온라인 신청 · 문의 054-775-1689",
+          "url": "https://www.templestay.com/fe/MI000000000000000062/reserve/view.do?templeId=Golgulsa&templestaySeq=1858",
+          "sessions": "2025-04-15~2026-12-31 운영 안내. 14:30 접수, 다음날 12:00 하산.",
+          "deadline": "시작 2일 전까지 예약 가능.",
+          "note": "다른 당일형·수련 프로그램에 이 마감 조건을 확대 적용하지 않습니다.",
+          "sources": [
+            "https://www.templestay.com/fe/MI000000000000000062/reserve/view.do?templeId=Golgulsa&templestaySeq=1858"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j65",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "program",
+          "status": "required",
+          "scope": "황성공원 호림정 주말 국궁체험",
+          "generalVisit": "솔숲 산책과 구분됩니다. 공원 산책 전체에 적용되는 예약 조건이 아니며 국궁체험만 예약 필수입니다.",
+          "method": "경주 공공서비스예약 온라인 신청·선결제 · 문의 054-750-8556",
+          "url": "https://www.gyeongju.go.kr/reserve/exp_facilities/facility_view.jsp?item_id=E0000016&mem_id=B0000002",
+          "sessions": "토·일 10:00~15:00, 회차 약 50분·6~8명. 실제 잔여 회차 확인.",
+          "deadline": "사전예약·선결제 필수. 마감 일수 미표시.",
+          "note": "체험 장소는 원화로 431-79 호림정입니다. 솔숲 대표 지도 핀과 체험 접수 장소를 구분하세요.",
+          "sources": [
+            "https://www.gyeongju.go.kr/reserve/exp_facilities/facility_view.jsp?item_id=E0000016&mem_id=B0000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j81",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "program",
+          "status": "recommended",
+          "scope": "신라대종 타종 체험",
+          "generalVisit": "야외 광장·종 조망과 타종 체험은 별개입니다. 체험은 인터넷 또는 현장 선착순 접수가 가능하며 광장 조망 전체의 예약 조건이 아닙니다.",
+          "method": "공공서비스예약 인터넷 신청·결제 또는 현장 선착순 예약 · 문의 054-741-2594",
+          "url": "https://www.gyeongju.go.kr/reserve/exp_facilities/facility_view.jsp?item_id=E0000001&mem_id=B0000030",
+          "sessions": "매일 11:00~17:00 중 13시 제외, 1일 6회. 팀당 3타. 5인 이하 5,000원·6~10인 10,000원.",
+          "deadline": "당일 포함 1개월 내 접수 가능·매일 00:00 새 날짜 개시. 취소는 회차 1시간 전까지. 결제 대기 하루 경과 시 자동 취소.",
+          "note": "공식 상세 화면의 현장 예약 가능·선착순 조기 마감 조건을 확인했습니다. 잔여석에 따른 앱의 사전 예약 권장으로, 사전 인터넷 예약만 필수인 것은 아닙니다. 실제 예약은 결제 완료·알림톡 수신으로 확인하며 앱 시간표 저장과 무관합니다.",
+          "sources": [
+            "https://www.gyeongju.go.kr/reserve/exp_facilities/facility_view.jsp?item_id=E0000001&mem_id=B0000030"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j82",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "program",
+          "status": "recommended",
+          "scope": "화랑마을 용화향도2 방탈출 체험",
+          "generalVisit": "화랑마을 산책·일반 전시 관람과 구분되는 체험입니다. 사전 예약만으로 입장하는 방식은 아니며 당일 현장 접수도 있습니다.",
+          "method": "공공서비스예약 온라인 10명 + 당일 09:00 전시관 1층 현장 선착순 5명 · 문의 054-760-2442",
+          "url": "https://www.gyeongju.go.kr/reserve/exp_facilities/facility_view.jsp?item_id=E0000014&mem_id=B0000034",
+          "sessions": "10:30·11:30·13:30·14:30·15:30. 10분 전 도착, 지각 시 참여 불가 안내.",
+          "deadline": "체험 10일 전 00:00 온라인 접수 개시. 잔여석·단체 활동 일정 확인.",
+          "note": "정원 제한에 따른 앱의 사전 예약 권장입니다. 공식 예약 필수 규정으로 표현하지 않습니다. 2인 1조 활동 안내가 있으므로 혼자 합류 가능 여부도 확인하세요.",
+          "sources": [
+            "https://www.gyeongju.go.kr/reserve/exp_facilities/facility_view.jsp?item_id=E0000014&mem_id=B0000034"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j41",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "visit",
+          "status": "unknown",
+          "scope": "영양숯불갈비 식사 예약",
+          "method": "전화 054-771-2626으로 접수 가능 여부 확인",
+          "url": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400605094c0a40054747514b464d",
+          "sessions": "식사 예약 회차 미확인.",
+          "deadline": "예약 필수 여부·마감 미확인.",
+          "note": "관광 안내 서비스 항목에 예약이 있으나 모든 방문·메뉴에 필수인지는 확인하지 못했습니다.",
+          "sources": [
+            "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400605094c0a40054747514b464d"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j44",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "visit",
+          "status": "unknown",
+          "scope": "쑥부쟁이 식사 예약",
+          "method": "전화 010-5066-3903으로 접수 조건 확인",
+          "url": "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040946094902414151444d4e",
+          "sessions": "식사 예약 회차 미확인.",
+          "deadline": "예약 필수 여부·마감 미확인.",
+          "note": "관광 안내는 예약 서비스를 표시합니다. 예약 가능과 예약 필수는 구분합니다.",
+          "sources": [
+            "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040946094902414151444d4e"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j138",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": "2026-03-29",
+          "scopeType": "menu",
+          "status": "unknown",
+          "scope": "우드페커 함박스테이크 식사 메뉴",
+          "generalVisit": "음료·일반 카페 방문 전체의 예약 조건이 아닙니다. 함박스테이크 메뉴의 예약 조건만 확인해 주세요.",
+          "method": "매장 연락으로 현행 식사 예약·최소 인원 확인",
+          "url": "https://www.diningcode.com/profile.php?rid=rwXPaTLZRlST",
+          "sessions": "식사 제공 회차 미확인.",
+          "deadline": "2026-03-29 방문 후기: 최소 하루 전 예약 시 함박스테이크 가능. 현재 필수 조건은 매장 재확인.",
+          "note": "다이닝코드에 수록된 한입여행 방문 글의 조건입니다. 원 블로그 접근이 안 되어 현행 확정 규칙으로 올리지 않았습니다.",
+          "sources": [
+            "https://www.diningcode.com/profile.php?rid=rwXPaTLZRlST"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j142",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": "2024-07-22",
+          "visitedAt": "2024-06 (일자 미확인)",
+          "scopeType": "visit",
+          "status": "unknown",
+          "scope": "소향몽 식사 예약",
+          "method": "후기상 네이버 예약. 현재 채널·접수 여부는 매장 안내에서 확인",
+          "url": "https://yeddorii.tistory.com/96",
+          "sessions": "현행 식사 예약 회차 미확인.",
+          "deadline": "후기는 방문 1주 전 예약 경험. 접수 마감 기준을 의미하지 않습니다.",
+          "note": "방문자의 실제 예약 경험은 확인했으나 현재 예약 필수 여부는 미확인입니다.",
+          "sources": [
+            "https://yeddorii.tistory.com/96",
+            "https://haanaa.tistory.com/409"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j15",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "ticket",
+          "status": "recommended",
+          "scope": "경주월드 스마트예약 할인권 구매",
+          "generalVisit": "공식 안내에 현장 매표 방법도 있습니다. 일반 입장 전체의 사전 예약 필수 조건이 아닙니다.",
+          "method": "공식 스마트예약 온라인 결제 또는 권종별 현장 매표 · 문의 1544-8765",
+          "url": "https://www.gjw.co.kr/Contents/contents.php?cmsNo=DA0400",
+          "sessions": "방문 날짜·권종·우대 혜택별 이용 조건 확인.",
+          "deadline": "권종별 판매·사용 기한 확인. 공통 마감은 미확인.",
+          "note": "온라인 할인 조건을 비교하도록 앱이 권장하는 안내입니다. 놀이기구 탑승 회차 예약이나 공식 예약 필수 규정으로 표현하지 않습니다.",
+          "sources": [
+            "https://www.gjw.co.kr/Contents/contents.php?cmsNo=DA0400%2Fview%2F314",
+            "https://www.gjw.co.kr/Contents/contents.php?cmsNo=DA0400"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j112",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "visit",
+          "status": "recommended",
+          "scope": "마장동숯불구이 경주본점 주말·식사 피크 좌석",
+          "method": "전화 예약 054-772-0128",
+          "url": "https://majangdong-gj.com/gyeongju/",
+          "sessions": "식사 예약 시간은 전화 협의.",
+          "deadline": "사전 접수 마감 미표시.",
+          "note": "운영자는 예약 없이도 방문 가능하다고 명시하고 피크 시간 전화 확인을 권합니다. 대기 대비 앱의 예약 권장으로, 사전 예약 필수 규정이 아닙니다.",
+          "sources": [
+            "https://majangdong-gj.com/gyeongju/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j113",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "visit",
+          "status": "recommended",
+          "scope": "마장동숯불구이 황성점 주말·저녁 피크 좌석",
+          "method": "운영자 페이지의 네이버 예약 링크 또는 전화 0507-1356-1691",
+          "url": "https://majangdong-gj.com/hwangseong/",
+          "sessions": "방문 날짜·인원 선택 또는 전화 좌석 협의.",
+          "deadline": "사전 접수 마감 미표시.",
+          "note": "운영자는 예약 없이도 방문 가능하며 주말·저녁 피크 예약 또는 전화 확인을 권합니다. 단체 좌석은 미리 문의하세요.",
+          "sources": [
+            "https://majangdong-gj.com/hwangseong/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j175",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": "2023-11-14",
+          "visitedAt": null,
+          "scopeType": "program",
+          "status": "unknown",
+          "scope": "수요일 오크냅 쇼룸 방문 · 카페 방문과 별개",
+          "generalVisit": "2023년 방문 글은 수요일 카페 휴무와 예약한 쇼룸 방문을 구분합니다. 일반 카페 방문 전체의 예약 필수 조건이 아닙니다. 현재 휴무 안내도 출처 간 차이가 있어 방문 전 확인하세요.",
+          "method": "운영자 공식 연락 안내에서 쇼룸 방문 접수 확인",
+          "url": "https://oaknap.com/contact",
+          "sessions": "2023년 글의 수요일 쇼룸 방문 안내. 현행 회차 미확인.",
+          "deadline": "현재 예약 필수 여부·접수 마감 미확인.",
+          "note": "과거 방문 후기의 쇼룸 예약 정보입니다. 이를 현재 모든 카페 방문의 필수 조건이나 확정 휴무로 적용하지 않습니다.",
+          "sources": [
+            "https://clara727.tistory.com/11",
+            "https://oaknap.com/contact"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j14",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "group",
+          "status": "required",
+          "scope": "동궁원 단체 체험 신청",
+          "method": "전화 054-779-8987 또는 054-779-8983 (평일 09:00~18:00)",
+          "url": "https://www.gyeongju.go.kr/epg/?c=2/12",
+          "sessions": "단체 체험 회차는 전화 협의. 09:00~18:00은 신청 가능 시간이며 체험 회차가 아닙니다.",
+          "deadline": "신청 마감 일수 미확인. 예약 2일 전 예약 사항 확인 안내.",
+          "note": "공식 단체체험 공지에서 유선 신청만 가능하다고 안내. 장소 전체 관람 또는 개인 현장 체험의 예약 필수 조건이 아닙니다. '예약 2일 전 사항 확인'을 '2일 전 접수 마감'으로 해석하지 않습니다.",
+          "sources": [
+            "https://www.gyeongju.go.kr/epg/?c=2/12"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j80",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": "2026-04-24",
+          "visitedAt": null,
+          "scopeType": "group",
+          "status": "unknown",
+          "scope": "라원 놀아봄 단체 이용",
+          "method": "사전 이용문의 전화 054-779-8725",
+          "url": "https://www.gyeongju.go.kr/epg/?c=6/35",
+          "sessions": "별도 회차 미확인",
+          "deadline": "사전 문의 안내, 예약 필수 여부와 접수 마감 미확인",
+          "note": "2026-04-24 공식 FAQ는 단체의 사전 이용문의만 안내합니다. 사전 문의를 예약 필수로 확정하지 않습니다. 놀아봄 개인·가족 이용은 아동 1명당 보호자 1명 필수동반 안내이며 일반 라원 전체 관람과 구분합니다.",
+          "sources": [
+            "https://www.gyeongju.go.kr/epg/?c=6/35"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j43",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "visit",
+          "status": "unknown",
+          "scope": "식사 좌석 예약",
+          "method": "전화 010-7373-8251로 예약 조건 문의",
+          "url": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400604084d0b4202414551474349",
+          "sessions": "예약 가능 시간·회차 미확인",
+          "deadline": "예약 필수 여부·마감 미확인",
+          "note": "업소 본문 '시설 및 서비스' 목록에서 예약 확인(공통 검색 필터 아님). 예약 가능 서비스는 확인했으나 운영자 현행 필수·권장 규정은 미확인.",
+          "sources": [
+            "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400604084d0b4202414551474349"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j114",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "visit",
+          "status": "unknown",
+          "scope": "식사 좌석 예약",
+          "method": "전화 010-6501-9084로 예약 조건 문의",
+          "url": "https://visitgyeongju.or.kr/kr/cuisine/view/535f41490606094508480441435145444b",
+          "sessions": "예약 가능 시간·회차 미확인",
+          "deadline": "예약 필수 여부·마감 미확인",
+          "note": "업소 본문 '시설 및 서비스' 목록에서 예약 확인(공통 검색 필터 아님). 경주시 첨성로 71 업소 대조. 예약 가능 서비스는 확인했으나 필수·권장 규정은 미확인.",
+          "sources": [
+            "https://visitgyeongju.or.kr/kr/cuisine/view/535f41490606094508480441435145444b"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "j118",
+      "items": [
+        {
+          "checkedAt": "2026-10-06",
+          "postedAt": null,
+          "visitedAt": null,
+          "scopeType": "visit",
+          "status": "unknown",
+          "scope": "식사 좌석 예약",
+          "method": "전화 0507-1480-9399로 예약 조건 문의",
+          "url": "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040944084204424351424d49",
+          "sessions": "예약 가능 시간·회차 미확인",
+          "deadline": "예약 필수 여부·마감 미확인",
+          "note": "업소 본문 '시설 및 서비스' 목록에서 예약 확인(공통 검색 필터 아님). 경주시 보문로 529, 1층 대조. 예약 가능 서비스는 확인했으나 필수·권장 규정은 미확인.",
+          "sources": [
+            "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040944084204424351424d49"
+          ]
+        }
+      ]
+    }
+  ],
+  "audit": [
+    {
+      "id": "j1",
+      "name": "첨성대",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=47&cmd=2&code_uid=1012&mnu_uid=4716",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j2",
+      "name": "동궁과 월지",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?mnu_uid=4727",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j3",
+      "name": "황리단길",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/hwangridan/images/gj_map_kor.pdf",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j4",
+      "name": "대릉원",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/tour/page.do?mnu_uid=4709",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j5",
+      "name": "월정교",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=49&cmd=2&code_uid=1012&mnu_uid=4716",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j6",
+      "name": "교촌한옥마을",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/hwangridan/images/gj_map_kor.pdf",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j7",
+      "name": "국립경주박물관",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.museum.go.kr/kor/html/sub01/0101.html",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j8",
+      "name": "분황사",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/hwangridan/images/gj_map_kor.pdf",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j9",
+      "name": "황룡사역사문화관",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/open_content/ko/page.do?mnu_uid=423&pageNo=1&pageOrder=0&pagePrvNxt=1&pageRef=0&parm_bod_uid=322719&parm_mnu_uid=0&srchBgpUid=-1&srchColumn=&srchEDate=9999-12-31&srchEnable=1&srchKeyword=&srchSDate=1960-01-01&srchVoteType=-1&step=258",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j10",
+      "name": "경주읍성",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j11",
+      "name": "성동시장",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?area_uid=78&cmd=2&code_uid=1012&listType=&mnu_uid=2292&pageNo=3&sortKwd=&srchKwd=",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j12",
+      "name": "경주중앙시장",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?mnu_uid=4826",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j13",
+      "name": "보문호",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?mnu_uid=4728",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j14",
+      "name": "경주동궁원",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/epg/?c=3",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j15",
+      "name": "경주월드",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gjw.co.kr/Contents/contents.php?cmsNo=DA0100&month=2026-10",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j16",
+      "name": "경주엑스포대공원",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gtc.co.kr/resources/templates/front/assets/file/leaflet.pdf",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j17",
+      "name": "불국사",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=2533",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j18",
+      "name": "석굴암",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=2533",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j19",
+      "name": "감은사지",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/tour/page.do?mnu_uid=4750",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j20",
+      "name": "문무대왕릉",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=152&cmd=2&mnu_uid=2294",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j21",
+      "name": "감포항",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=4121",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j22",
+      "name": "송대말등대",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/tour/page.do?mnu_uid=4708",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j23",
+      "name": "전촌솔밭해변",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=261&mnu_uid=4715",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j24",
+      "name": "골굴사",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=167&cmd=2&code_uid=1016&mnu_uid=4718",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j25",
+      "name": "기림사",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/tour/page.do?area_uid=168&cmd=2&code_uid=1016&mnu_uid=4718",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j26",
+      "name": "양남 주상절리 전망대",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=265&mnu_uid=4715",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j27",
+      "name": "읍천항",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=2535",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j28",
+      "name": "하서해안공원",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/tour/page.do?mnu_uid=4677",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j29",
+      "name": "양동마을",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=106&cmd=2&code_uid=1010&mnu_uid=4720",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j30",
+      "name": "옥산서원",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=2550",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j31",
+      "name": "독락당",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=2550",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j32",
+      "name": "금척리고분군",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=3165",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j33",
+      "name": "건천 편백나무숲",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=4367",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j34",
+      "name": "포석정",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=96&cmd=2&code_uid=1014&mnu_uid=2295",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j35",
+      "name": "삼릉숲",
+      "checkedAt": "2026-10-06",
+      "source": "https://search.gyeongju.go.kr/tour/page.do?mnu_uid=4753",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j36",
+      "name": "교리김밥 경주본점",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=1717&mnu_uid=4830",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j37",
+      "name": "아덴 황리단길점",
+      "checkedAt": "2026-10-06",
+      "source": "https://polle.com/place/3tKQCi/%EC%95%84%EB%8D%B4",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j38",
+      "name": "스컹크웍스",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/tour/page.do?cmd=2&con_uid=27&mnu_uid=4812",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j39",
+      "name": "카페 오버랩",
+      "checkedAt": "2026-10-06",
+      "source": "https://visitgyeongju.or.kr/cuisine/view/535f40400605094d084102474c514a4649",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j40",
+      "name": "황남빵",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.hwangnam.co.kr/shopinfo/store.html",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j41",
+      "name": "영양숯불갈비",
+      "checkedAt": "2026-10-06",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400605094c0a40054747514b464d",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j42",
+      "name": "경주원조콩국",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=6733&mnu_uid=4830",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j43",
+      "name": "보문뜰",
+      "checkedAt": "2026-10-06",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400604084d0b4202414551474349",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j44",
+      "name": "쑥부쟁이",
+      "checkedAt": "2026-10-06",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040946094902414151444d4e",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j45",
+      "name": "황포식당",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1235626380",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j46",
+      "name": "미니만두 안강",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/10422982",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j47",
+      "name": "장시돼지국밥",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/10732055",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j48",
+      "name": "경주전복해물뚝배기",
+      "checkedAt": "2026-10-06",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040944084104464151424749",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j49",
+      "name": "아화전통국수 보문점",
+      "checkedAt": "2026-10-06",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400604084d0c4001404051474c4a",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j50",
+      "name": "영남식육식당",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/16550064",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j51",
+      "name": "비학산한식",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1929679929",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j52",
+      "name": "안강밀면",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1863926243",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j53",
+      "name": "호성식육식당",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=7289&mnu_uid=4830",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j54",
+      "name": "엘로우",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=17&listType=&mnu_uid=2287&sortKwd=name&srchKwd=",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j55",
+      "name": "두낫디스터브 베이커스 경주",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?mnu_uid=4671",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j56",
+      "name": "레스트205",
+      "checkedAt": "2026-10-06",
+      "source": "https://visitgyeongju.or.kr/cuisine/view/535f4040060409440a4100434c51424d41",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j57",
+      "name": "히든씨",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=7264&mnu_uid=4812",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j58",
+      "name": "키키리키",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=3749",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j59",
+      "name": "1925감포",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=7113&mnu_uid=2287",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j60",
+      "name": "이스트앵글 베이커리카페",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=6731&mnu_uid=2287",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j61",
+      "name": "소디스커피 경주안강점",
+      "checkedAt": "2026-10-06",
+      "source": "https://sodiscoffee.com/store/",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j62",
+      "name": "모카커피 감포",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1865718011",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j63",
+      "name": "삼십오밀리미터",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/642041528",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j64",
+      "name": "카페논",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1303970424",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j65",
+      "name": "황성공원 솔숲",
+      "checkedAt": "2026-10-06",
+      "source": "https://search.gyeongju.go.kr/tour/page.do?mnu_uid=4753",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j66",
+      "name": "도리마을 은행나무숲",
+      "checkedAt": "2026-10-06",
+      "source": "https://search.gyeongju.go.kr/tour/page.do?mnu_uid=4753",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j67",
+      "name": "화랑의 언덕",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/tour/page.do?mnu_uid=4647",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j68",
+      "name": "이견대",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=3880",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j69",
+      "name": "신라왕경숲공원",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/27572563",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j70",
+      "name": "흥덕왕릉 솔숲",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/26112466",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j71",
+      "name": "전촌용굴",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/2122409870",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j72",
+      "name": "경주향교",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?mnu_uid=3507",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j73",
+      "name": "오릉",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=2546",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j74",
+      "name": "불국사박물관",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=252&cmd=2&code_uid=1015&mnu_uid=4717",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j75",
+      "name": "정혜사지 십삼층석탑",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=382&cmd=2&code_uid=1010&mnu_uid=4720",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j76",
+      "name": "경주솔거미술관",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gjsam.or.kr/ko/page.aspx?mnu_uid=60",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j77",
+      "name": "동리목월문학관",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=85&cmd=2&code_uid=1015&mnu_uid=4717",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j78",
+      "name": "경주루지월드",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju-luge.kr/Usagefee",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j79",
+      "name": "주렁주렁 경주점",
+      "checkedAt": "2026-10-06",
+      "source": "https://zoolungzoolung.com/%EC%9D%B4%EC%9A%A9%EC%95%88%EB%82%B4/%EC%9D%B4%EC%9A%A9%EC%8B%9C%EA%B0%84-%EC%9A%94%EA%B8%88%EC%95%88%EB%82%B4/",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j80",
+      "name": "라원",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/epg/?c=1%2F8",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j81",
+      "name": "신라대종",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/reserve/exp_facilities/list.jsp?pg=1",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j82",
+      "name": "화랑마을",
+      "checkedAt": "2026-10-06",
+      "source": "https://gyeongju.go.kr/reserve/exp_facilities/facility_view.jsp?item_id=E0000014&mem_id=B0000034",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j83",
+      "name": "최영화빵 본점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/26348190",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j84",
+      "name": "최영화빵 황리단점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1012514158",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j85",
+      "name": "경주약과방",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=6WxfYoO0103a",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j86",
+      "name": "이상복경주빵 본가",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/189135948",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j87",
+      "name": "단석가찰보리빵 오릉점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/15716735",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j88",
+      "name": "이상복명과 본점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/221863013",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j89",
+      "name": "황남우엉김밥",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/433901433",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j90",
+      "name": "혜진분식",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/25989371",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j91",
+      "name": "명동김밥 성동시장점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/11083230",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j92",
+      "name": "랑콩뜨레 황성본점",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EB%9E%91%EC%BD%A9%EB%9C%A8%EB%A0%88%20%ED%99%A9%EC%84%B1%EB%B3%B8%EC%A0%90",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j93",
+      "name": "어서어서책방",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=386&cmd=2&code_uid=1012&listType=&mnu_uid=4716&pageNo=1&sortKwd=&srchKwd=",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j94",
+      "name": "누군가의책방",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/webzine/GJstory/vol163/html/post/4332.html",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j95",
+      "name": "제로스페이스 경주",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/558090783",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j96",
+      "name": "디스모먼트",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?mnu_uid=4827",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j97",
+      "name": "서점 북미",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/webzine/GJstory/vol163/html/post/4332.html",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j98",
+      "name": "소소밀밀 대릉원점",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.gyeongju.go.kr/webzine/GJstory/vol163/html/post/4332.html",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j99",
+      "name": "책방무제",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/658083838",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j100",
+      "name": "너른벽",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1211832207",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j101",
+      "name": "오늘은책방",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1040352701",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j102",
+      "name": "북샵라벤더",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/2044160811",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j103",
+      "name": "미피스토어 경주",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/210891597",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j104",
+      "name": "하우해브유빈",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/275022679",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j105",
+      "name": "사가소",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/44090233",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j106",
+      "name": "심상",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1004298339",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j107",
+      "name": "화목토",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/167602366",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j108",
+      "name": "라이팅룸",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/817496325",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j109",
+      "name": "료코",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/822374476",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j110",
+      "name": "도미",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1783751879",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j111",
+      "name": "황리화덕가",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/658428",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j112",
+      "name": "마장동숯불구이 경주본점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1652198909",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j113",
+      "name": "마장동숯불구이 황성점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/247313728",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j114",
+      "name": "복길",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1055466429",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j115",
+      "name": "참치향 경주본점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1217713531",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j116",
+      "name": "해맞이회타운",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/10920114",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j117",
+      "name": "황남두꺼비",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1952344699",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j118",
+      "name": "보문갈비",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/779852793",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j119",
+      "name": "경춘재",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/908617905",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j120",
+      "name": "푸른바다회센터",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/8605174",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j121",
+      "name": "까치식당",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/15532346",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j122",
+      "name": "동남식당",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/12591251",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j123",
+      "name": "보문민속식당",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/9043565",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j124",
+      "name": "전주시골밥상",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/2100699560",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j125",
+      "name": "울산식당",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/10698632",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j126",
+      "name": "갈매기횟집",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1061058370",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j127",
+      "name": "안강할매고디탕",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/9913756",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j128",
+      "name": "파도회식당",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/8567086",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j129",
+      "name": "고유한우국밥",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/2012283904",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j130",
+      "name": "꼬푸GGOPU",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=8Q7FR6RJ%2BF5Q45CG",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j131",
+      "name": "감포이견대카페",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=8Q7FPFWM%2B3RX9GFH",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j132",
+      "name": "뷰델카페",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=8Q7FRG95%2BG8XVF62",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j133",
+      "name": "카페 나이프",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=8Q7FQFFV%2BJX5Q463",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j134",
+      "name": "EGO 카페",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=8Q7FQF2R%2BPWCC6X3",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j135",
+      "name": "소풍가다 경주양남본점",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=8Q7FMFG5%2BPX8FPF3",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j136",
+      "name": "주상절리 더킹 베이커리 카페",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=8Q7FMFMC%2BGVX7233",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j137",
+      "name": "봄갤러리 카페",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=8Q7FX5V8%2BVVHPRW4",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j138",
+      "name": "우드페커",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=8Q7FM8QX%2BQJ97MGF",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j139",
+      "name": "향화정",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=z0JuCZ8zYdOJ",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j140",
+      "name": "청온채",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=DosLOZ7SqTv6",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j141",
+      "name": "함양집 북군",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=1246iEICOgZS",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j142",
+      "name": "소향몽",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=jWukVMJerlqJ",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j143",
+      "name": "료미",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=wTudDdwnl4SP",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j144",
+      "name": "남정부일기사식당",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=XsdCfCdN2fWr",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j145",
+      "name": "단향회",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=PmDDeeRoB0Ud",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j146",
+      "name": "승진식당",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=JlXkz9erhgf5",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j147",
+      "name": "신라제면",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=RbBwKnYGrmja",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j148",
+      "name": "늘곰탕",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=sSJlR0YtAxhK",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j149",
+      "name": "경주밀면 본점",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=cAoGmm8CwziA",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j150",
+      "name": "빼돌린숯불뒷고기",
+      "checkedAt": "2026-10-06",
+      "source": "https://ninninanna.tistory.com/80",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j151",
+      "name": "물천한우",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.diningcode.com/profile.php?rid=baP6ZV7OVNmw",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j152",
+      "name": "향미사",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/730708466",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j153",
+      "name": "커피플레이스 노동점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/13101482",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j154",
+      "name": "카페 바흐",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/27390292",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j155",
+      "name": "아무카페",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1489767367",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j156",
+      "name": "카페드립",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1893789387",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j157",
+      "name": "소디스커피 현곡 본점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/2039388998",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j158",
+      "name": "커피명가 경주무장산점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1991018274",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j159",
+      "name": "투핸즈커피",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1841880533",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j160",
+      "name": "포워드",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1515998544",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j161",
+      "name": "바실라",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1776638798",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j162",
+      "name": "조르바",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/544901989",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j163",
+      "name": "슈만과클라라 본점",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/7967241",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j164",
+      "name": "바넘커피",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/809241114",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j165",
+      "name": "벤자마스",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/21655553",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j166",
+      "name": "가배향주",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EA%B0%80%EB%B0%B0%ED%96%A5%EC%A3%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%8F%AC%EC%84%9D%EB%A1%9C%201063",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j167",
+      "name": "예스터데이",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EC%98%88%EC%8A%A4%ED%84%B0%EB%8D%B0%EC%9D%B4%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%96%91%EC%A0%95%EB%A1%9C%2090%201%EC%B8%B5",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j168",
+      "name": "공간민화카페",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EA%B3%B5%EA%B0%84%EB%AF%BC%ED%99%94%EC%B9%B4%ED%8E%98%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EB%82%B4%EB%82%A8%EB%A9%B4%20%EC%9D%B4%EC%A1%B01%EA%B8%B8%2028",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j169",
+      "name": "아레나피나",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EC%95%84%EB%A0%88%EB%82%98%ED%94%BC%EB%82%98%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EA%B0%90%ED%8F%AC%EC%9D%8D%20%EB%8F%99%ED%95%B4%EC%95%88%EB%A1%9C%201957-7",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j170",
+      "name": "커피업",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EC%BB%A4%ED%94%BC%EC%97%85%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%9B%90%ED%9A%A8%EB%A1%9C163%EB%B2%88%EA%B8%B8%2046",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j171",
+      "name": "오베르",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EC%98%A4%EB%B2%A0%EB%A5%B4%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%B6%A9%ED%98%84%EB%A1%9C3%EA%B8%B8%205",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j172",
+      "name": "소디스 에스프레소바 황성점",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EC%86%8C%EB%94%94%EC%8A%A4%20%EC%97%90%EC%8A%A4%ED%94%84%EB%A0%88%EC%86%8C%EB%B0%94%20%ED%99%A9%EC%84%B1%EC%A0%90%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%99%A9%EC%84%B1%EB%A1%9C28%EB%B2%88%EA%B8%B8%2015%201~2%EC%B8%B5",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j173",
+      "name": "바이닐바이브",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EB%B0%94%EC%9D%B4%EB%8B%90%EB%B0%94%EC%9D%B4%EB%B8%8C%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%B2%A8%EC%84%B1%EB%A1%9C81%EB%B2%88%EA%B8%B8%2029%202%EC%B8%B5",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j174",
+      "name": "로머스커피",
+      "checkedAt": "2026-10-06",
+      "source": "https://place.map.kakao.com/1183023826",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    },
+    {
+      "id": "j175",
+      "name": "오크냅 러스틱커피",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EC%98%A4%ED%81%AC%EB%83%85%20%EB%9F%AC%EC%8A%A4%ED%8B%B1%EC%BB%A4%ED%94%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%99%B8%EB%8F%99%EC%9D%8D%20%EC%98%81%EC%A7%80%EB%A1%9C%20447-26%202%EC%B8%B5",
+      "result": "별도 예약 근거·적용 범위 조사"
+    },
+    {
+      "id": "j176",
+      "name": "산내그로브",
+      "checkedAt": "2026-10-06",
+      "source": "https://www.google.com/maps/search/?api=1&query=%EC%82%B0%EB%82%B4%EA%B7%B8%EB%A1%9C%EB%B8%8C%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%82%B0%EB%82%B4%EB%A9%B4%20%EB%AC%B8%EB%B3%B5%EB%A1%9C%20734-4%20(%ED%9B%84%EA%B8%B0%C2%B7%ED%9A%8C%EC%9B%90%EC%9E%90%EB%A3%8C%20734-14%EC%99%80%20%EC%B0%A8%EC%9D%B4)",
+      "result": "저장된 장소 조사·운영·가격 자료에서 예약 근거를 특정하지 못함. 예약 불필요 확정 아님"
+    }
+  ],
+  "excluded": [
+    {
+      "name": "화목토 원데이 클래스 링크",
+      "source": "https://m.place.naver.com/place/1369951022/home",
+      "reason": "이천시 도예연구소로 경주 j107과 다른 장소. 제외."
+    },
+    {
+      "name": "너른벽 뜨개 프로그램",
+      "source": "https://members.garts.kr/index.do?bbsId=BBSMSTR_000000000081&bbsMode=view&menuId=00000780&nttId=17011",
+      "reason": "지난5월 행사. 상시 서점 전체 예약 조건으로 적용하지 않음."
+    },
+    {
+      "id": "j14",
+      "name": "동궁원 블루베리 체험",
+      "source": "https://www.gyeongju.go.kr/epg/?c=6/35",
+      "reason": "2024-02-21 FAQ는 현장 신청·예약 불가 안내. 계절 체험의 현행 운영은 미확인, 단체체험 예약 조건과 분리."
+    },
+    {
+      "id": "j78",
+      "name": "경주루지월드",
+      "source": "https://gyeongju-luge.kr/Usagefee",
+      "reason": "공식 이용료 원문 접근 실패. 저장 자료의 1회권 현장판매를 전체 예약 필수 또는 불필요 규정으로 확대하지 않음."
+    },
+    {
+      "id": "j100",
+      "name": "너른벽",
+      "source": "https://www.gyeongju.go.kr/gjlll/main/placelend/rt_calendar.do?menu_idx=254",
+      "reason": "공식 학습공간 목록에 장소는 있으나 화면 기본 회차가 너른벽 선택 결과인지 미확인. 회차·예약 조건 미채택."
+    },
+    {
+      "id": "j102",
+      "name": "북샵라벤더",
+      "source": "https://qak.purpleo.kr/article/224",
+      "reason": "예약 표시가 있는 2차 공공데이터 집계 페이지. 원문·적용범위·운영자 현행 규정 미확인으로 미채택."
+    },
+    {
+      "id": "j101",
+      "name": "오늘은책방",
+      "source": null,
+      "reason": "검색 중 위층 느림보상점의 예약 서비스가 섞임. 다른 업소 예약 조건을 책방에 적용하지 않음."
+    },
+    {
+      "id": "j109",
+      "name": "료코",
+      "source": null,
+      "reason": "관광 테마 설명의 예약 필수 표현과 업소 서비스 목록이 일치하지 않아 운영자 현행 규정으로 확정하지 않음. 재검증되지 않은 URL·필수 상태 미채택."
+    },
+    {
+      "id": "j99",
+      "name": "책방무제",
+      "source": null,
+      "reason": "독립 검색에서 직접 예약 근거 확보 못함. 예약 불필요 확정 아님."
+    },
+    {
+      "id": "j108",
+      "name": "라이팅룸",
+      "source": null,
+      "reason": "독립 검색에서 직접 예약 근거 확보 못함. 예약 불필요 확정 아님."
+    }
+  ]
+}

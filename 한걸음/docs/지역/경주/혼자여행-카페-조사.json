@@ -1,0 +1,2518 @@
+[
+  {
+    "id": "j37",
+    "name": "아덴 황리단길점",
+    "verdict": "unknown",
+    "menu": {
+      "text": "현재 공개 메뉴·가격 미확인",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=37&mnu_uid=2287",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=37&mnu_uid=2287",
+          "https://polle.com/place/3tKQCi/%EC%95%84%EB%8D%B4"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j38",
+    "name": "스컹크웍스",
+    "verdict": "solo_visit_review",
+    "menu": {
+      "text": "아메리카노 · 5,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=qEmeVMYzMxCc",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "solo_visit",
+        "url": "https://seoddaji.tistory.com/205",
+        "author": "서따지",
+        "postedAt": "2024-12-22",
+        "visitedAt": "미확인",
+        "summary": "혼자 떠난 경주 여행에서 스컹크웍스를 직접 방문해 콜드브루와 쑥인절미 쿠키를 주문하고 쉬었다고 기록합니다. 창가 이용만으로 전용 1인석을 추정하지 않습니다.",
+        "checkedAt": "2026-10-06"
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=qEmeVMYzMxCc",
+          "https://gyeongju.go.kr/tour/page.do?cmd=2&con_uid=27&mnu_uid=4812",
+          "https://gyeongju.go.kr/tour/page.do?cmd=2&con_uid=27&mnu_uid=4812"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      },
+      {
+        "query": "스컹크웍스 경주 혼자 방문 원문 확인",
+        "urls": [
+          "https://seoddaji.tistory.com/205"
+        ],
+        "result": "상호·지역과 혼자 방문·주문 경험을 원문에서 확인했습니다. 모든 메뉴·현재 최소 주문 조건은 미확인입니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j39",
+    "name": "카페 오버랩",
+    "verdict": "unknown",
+    "menu": {
+      "text": "피스타치오 아몬드 펌 · 7,000원",
+      "source": "https://visitgyeongju.or.kr/cuisine/view/535f40400605094d084102474c514a4649",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://visitgyeongju.or.kr/cuisine/view/535f40400605094d084102474c514a4649",
+          "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=7450&mnu_uid=2287",
+          "https://visitgyeongju.or.kr/cuisine/view/535f40400605094d084102474c514a4649"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j54",
+    "name": "엘로우",
+    "verdict": "solo_visit_review",
+    "menu": {
+      "text": "슬로우커피 · 8,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=msM0ksEb6YDn",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "solo_visit",
+        "url": "https://psyworld.co.kr/1271",
+        "author": "박하씨 (파카씨)",
+        "postedAt": "2020-10-09",
+        "visitedAt": "미확인",
+        "summary": "혼자 경주 여행 중 엘로우에 방문해 커피와 크루아상을 주문하고 오래 머문 직접 후기입니다. 추가 주문은 작성자의 선택이며 매장의 최소 주문 조건으로 해석하지 않습니다.",
+        "checkedAt": "2026-10-06"
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=msM0ksEb6YDn",
+          "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=17&listType=&mnu_uid=2287&sortKwd=name&srchKwd=",
+          "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=17&listType=&mnu_uid=2287&sortKwd=name&srchKwd="
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      },
+      {
+        "query": "엘로우 경주 혼자 방문 원문 확인",
+        "urls": [
+          "https://psyworld.co.kr/1271"
+        ],
+        "result": "상호·지역과 혼자 방문·주문 경험을 원문에서 확인했습니다. 모든 메뉴·현재 최소 주문 조건은 미확인입니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j55",
+    "name": "두낫디스터브 베이커스 경주",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 5,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=pQ0NBjpKhGma",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=pQ0NBjpKhGma",
+          "https://www.gyeongju.go.kr/tour/page.do?mnu_uid=4671",
+          "https://www.gyeongju.go.kr/tour/page.do?mnu_uid=4671"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j56",
+    "name": "레스트205",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 5,000원",
+      "source": "https://visitgyeongju.or.kr/cuisine/view/535f4040060409440a4100434c51424d41",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://visitgyeongju.or.kr/cuisine/view/535f4040060409440a4100434c51424d41",
+          "https://visitgyeongju.or.kr/cuisine/view/535f4040060409440a4100434c51424d41",
+          "https://visitgyeongju.or.kr/cuisine/view/535f4040060409440a4100434c51424d41"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j57",
+    "name": "히든씨",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 6,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=AFuvH6hz5M9U",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=AFuvH6hz5M9U",
+          "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=7264&mnu_uid=4812",
+          "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=7264&mnu_uid=4812"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j58",
+    "name": "키키리키",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 5,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=QWcjyKr0sASa",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=QWcjyKr0sASa",
+          "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=3749",
+          "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=3749"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j59",
+    "name": "1925감포",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 4,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=2oyieKbGnZaQ",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=2oyieKbGnZaQ",
+          "https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=7113&mnu_uid=2287",
+          "https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=7113&mnu_uid=2287"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j60",
+    "name": "이스트앵글 베이커리카페",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 6,000원",
+      "source": "https://www.tel-co.net/cafe/spot/11008",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.tel-co.net/cafe/spot/11008",
+          "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=6731&mnu_uid=2287",
+          "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=6731&mnu_uid=2287"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j61",
+    "name": "소디스커피 경주안강점",
+    "verdict": "unknown",
+    "menu": {
+      "text": "너티크레마 · 5,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=GlGSRksfERGV",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=GlGSRksfERGV",
+          "https://sodiscoffee.com/store/",
+          "https://sodiscoffee.com/store/"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j62",
+    "name": "모카커피 감포",
+    "verdict": "unknown",
+    "menu": {
+      "text": "커피·음료 · 개별 메뉴 가격 미확인",
+      "source": "https://place.map.kakao.com/1865718011",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/1865718011",
+          "https://place.map.kakao.com/1865718011",
+          "https://place.map.kakao.com/1865718011"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j63",
+    "name": "삼십오밀리미터",
+    "verdict": "unknown",
+    "menu": {
+      "text": "커피·음료 · 개별 메뉴 가격 미확인",
+      "source": "https://place.map.kakao.com/642041528",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/642041528",
+          "https://place.map.kakao.com/642041528",
+          "https://place.map.kakao.com/642041528"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j64",
+    "name": "카페논",
+    "verdict": "unknown",
+    "menu": {
+      "text": "커피·음료 · 개별 메뉴 가격 미확인",
+      "source": "https://place.map.kakao.com/1303970424",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/1303970424",
+          "https://place.map.kakao.com/1303970424",
+          "https://place.map.kakao.com/1303970424"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j130",
+    "name": "꼬푸GGOPU",
+    "verdict": "unknown",
+    "menu": {
+      "text": "오늘의 커피 · 6,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=VT7jexjQxwoc",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=VT7jexjQxwoc",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FR6RJ%2BF5Q45CG",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FR6RJ%2BF5Q45CG"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j131",
+    "name": "감포이견대카페",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 5,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=bxUKbBBYIMeD",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=bxUKbBBYIMeD",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FPFWM%2B3RX9GFH",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FPFWM%2B3RX9GFH"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j132",
+    "name": "뷰델카페",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아이스 아메리카노 · 6,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=fxgHIZuvKGLX",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=fxgHIZuvKGLX",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FRG95%2BG8XVF62",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FRG95%2BG8XVF62"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j133",
+    "name": "카페 나이프",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 4,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=fomA5gIL0RoI",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=fomA5gIL0RoI",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FQFFV%2BJX5Q463",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FQFFV%2BJX5Q463"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j134",
+    "name": "EGO 카페",
+    "verdict": "unknown",
+    "menu": {
+      "text": "EGO블랙라떼 · 7,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=9ry1SL8j30OR",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=9ry1SL8j30OR",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FQF2R%2BPWCC6X3",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FQF2R%2BPWCC6X3"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j135",
+    "name": "소풍가다 경주양남본점",
+    "verdict": "solo_visit_review",
+    "menu": {
+      "text": "아메리카노 · 4,800원",
+      "source": "https://www.diningcode.com/profile.php?rid=qqgtF3tl8GBO",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "solo_visit",
+        "url": "https://s-record.tistory.com/entry/초대형-신상-카페-경주-양남-소풍가다",
+        "author": "슬아",
+        "postedAt": "2021-07-20",
+        "visitedAt": "미확인",
+        "summary": "혼자 방문하여 트리플 먹물식빵과 리얼 카카오 라떼를 주문한 직접 후기입니다. 2021년의 주문 경험이며 현재 1인 1음료 규정이나 식사 메뉴의 근거는 아닙니다.",
+        "checkedAt": "2026-10-06"
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=qqgtF3tl8GBO",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FMFG5%2BPX8FPF3",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FMFG5%2BPX8FPF3"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      },
+      {
+        "query": "소풍가다 경주양남본점 경주 혼자 방문 원문 확인",
+        "urls": [
+          "https://s-record.tistory.com/entry/초대형-신상-카페-경주-양남-소풍가다"
+        ],
+        "result": "상호·지역과 혼자 방문·주문 경험을 원문에서 확인했습니다. 모든 메뉴·현재 최소 주문 조건은 미확인입니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j136",
+    "name": "주상절리 더킹 베이커리 카페",
+    "verdict": "unknown",
+    "menu": {
+      "text": "더블랙 · 7,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=Ix9mpPKcFraK",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=Ix9mpPKcFraK",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FMFMC%2BGVX7233",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FMFMC%2BGVX7233"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j137",
+    "name": "봄갤러리 카페",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 5,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=g7NzfCp4OCSM",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=g7NzfCp4OCSM",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FX5V8%2BVVHPRW4",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FX5V8%2BVVHPRW4"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j138",
+    "name": "우드페커",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 4,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=rwXPaTLZRlST",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": true,
+      "text": "2026-03-29 방문 후기의 함박스테이크 식사 메뉴. 최소 하루 전 예약 경험이 있어 현재 주문·인원·예약 조건은 별도 확인해야 합니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=rwXPaTLZRlST",
+      "visitedAt": "2026-03-29",
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=rwXPaTLZRlST",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FM8QX%2BQJ97MGF",
+          "https://www.google.com/maps/search/?api=1&query=8Q7FM8QX%2BQJ97MGF"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j152",
+    "name": "향미사",
+    "verdict": "solo_visit_review",
+    "menu": {
+      "text": "아메리카노 · 4,800원",
+      "source": "https://place.map.kakao.com/730708466",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "available",
+      "text": "2021년 혼자 방문 글에서 커피 포장 경험 확인. 포장 전용이라는 뜻은 아니며 현행 가능 범위는 미확인.",
+      "source": "https://theqoo.net/travel/1994428152",
+      "postedAt": "2021-05-21",
+      "visitedAt": "2021-05-05~08 (본문 여행 기간)",
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "solo_visit",
+        "url": "https://theqoo.net/travel/1994428152",
+        "author": "무명의 더쿠",
+        "postedAt": "2021-05-21",
+        "visitedAt": "2021-05-05~08 (본문 여행 기간)",
+        "summary": "인원을 나 혼자로 명시한 경주 여행기에서 향미사 커피 한 잔을 포장했다고 기록합니다. 매장에 앉아 식사했다는 근거는 아닙니다.",
+        "checkedAt": "2026-10-06"
+      },
+      {
+        "kind": "observation",
+        "url": "https://otter93.tistory.com/8",
+        "author": "태양과 구름",
+        "postedAt": "2025-02-14",
+        "visitedAt": "미확인",
+        "checkedAt": "2026-10-06",
+        "summary": "배우자와 방문한 글의 바 좌석 설명을 좌석 유형 근거로만 사용합니다. 혼자 방문한 직접 후기로 세지 않습니다."
+      }
+    ],
+    "seat": {
+      "status": "confirmed",
+      "type": "bar",
+      "text": "2025년 방문 원문에 바 좌석이 명시됩니다. 전용 독립 1인석 여부와 현재 배치는 미확인입니다.",
+      "source": "https://otter93.tistory.com/8",
+      "postedAt": "2025-02-14",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/730708466",
+          "https://kimscatch.tistory.com/47",
+          "https://place.map.kakao.com/730708466"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      },
+      {
+        "query": "향미사 경주 혼자 방문 원문 확인",
+        "urls": [
+          "https://theqoo.net/travel/1994428152"
+        ],
+        "result": "상호·지역과 혼자 방문·주문 경험을 원문에서 확인했습니다. 모든 메뉴·현재 최소 주문 조건은 미확인입니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j153",
+    "name": "커피플레이스 노동점",
+    "verdict": "unknown",
+    "menu": {
+      "text": "블렌드 아메리카노 · 3,500원",
+      "source": "https://place.map.kakao.com/13101482",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/13101482",
+          "https://freezinespace.tistory.com/entry/경주-카페-커피플레이스-경주-노동동",
+          "https://place.map.kakao.com/13101482"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j154",
+    "name": "카페 바흐",
+    "verdict": "unknown",
+    "menu": {
+      "text": "오미자·매실 · 5,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=RP8ErnJo8T6f",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=RP8ErnJo8T6f",
+          "https://thedeeper.tistory.com/2",
+          "https://place.map.kakao.com/27390292"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j155",
+    "name": "아무카페",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 4,000원",
+      "source": "https://place.map.kakao.com/1489767367",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/1489767367",
+          "https://thedeeper.tistory.com/2",
+          "https://place.map.kakao.com/1489767367"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j156",
+    "name": "카페드립",
+    "verdict": "unknown",
+    "menu": {
+      "text": "페이퍼 핸드드립 · 5,000원",
+      "source": "https://place.map.kakao.com/1893789387",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/1893789387",
+          "https://thedeeper.tistory.com/2",
+          "https://place.map.kakao.com/1893789387"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j157",
+    "name": "소디스커피 현곡 본점",
+    "verdict": "unknown",
+    "menu": {
+      "text": "너티크레마 · 6,000원",
+      "source": "https://place.map.kakao.com/2039388998",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/2039388998",
+          "https://thedeeper.tistory.com/2",
+          "https://place.map.kakao.com/2039388998"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j158",
+    "name": "커피명가 경주무장산점",
+    "verdict": "unknown",
+    "menu": {
+      "text": "명가치노 · 5,300원",
+      "source": "https://place.map.kakao.com/1991018274",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/1991018274",
+          "https://thedeeper.tistory.com/2",
+          "https://place.map.kakao.com/1991018274"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j159",
+    "name": "투핸즈커피",
+    "verdict": "unknown",
+    "menu": {
+      "text": "에스프레소·아메리카노 · 현행 가격 미확인",
+      "source": "https://place.map.kakao.com/1841880533",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/1841880533",
+          "https://so-what-dip-thinks-happen.tistory.com/entry/리뷰-경주카페추천-경주-투핸즈커피-방문후기내돈내산?category=934516",
+          "https://place.map.kakao.com/1841880533"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j160",
+    "name": "포워드",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 5,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=eEzzwwRkN7EG",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=eEzzwwRkN7EG",
+          "https://klio0717.tistory.com/entry/경주-카페-포워드-후기-내돈내산",
+          "https://place.map.kakao.com/1515998544"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j161",
+    "name": "바실라",
+    "verdict": "unknown",
+    "menu": {
+      "text": "해바라기라떼 · 8,500원",
+      "source": "https://place.map.kakao.com/1776638798",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/1776638798",
+          "https://interiormoon.tistory.com/entry/경주-당일치기-여행-비용-KTX-쏘카-추천-내돈내산",
+          "https://place.map.kakao.com/1776638798"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j162",
+    "name": "조르바",
+    "verdict": "unknown",
+    "menu": {
+      "text": "조르바라떼 · 6,500원",
+      "source": "https://place.map.kakao.com/544901989",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/544901989",
+          "https://foodanddaily.tistory.com/10",
+          "https://place.map.kakao.com/544901989"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j163",
+    "name": "슈만과클라라 본점",
+    "verdict": "unknown",
+    "menu": {
+      "text": "케냐 핸드드립 HOT · 9,000원",
+      "source": "https://place.map.kakao.com/7967241",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/7967241",
+          "https://thedeeper.tistory.com/2",
+          "https://place.map.kakao.com/7967241"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j164",
+    "name": "바넘커피",
+    "verdict": "unknown",
+    "menu": {
+      "text": "카이막 · 9,900원",
+      "source": "https://www.tabling.co.kr/place/677cd05b66de5f069885ec09",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.tabling.co.kr/place/677cd05b66de5f069885ec09",
+          "https://thedeeper.tistory.com/2",
+          "https://place.map.kakao.com/809241114"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j165",
+    "name": "벤자마스",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 HOT · 5,000원",
+      "source": "https://place.map.kakao.com/21655553",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/21655553",
+          "https://thedeeper.tistory.com/2",
+          "https://place.map.kakao.com/21655553"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j166",
+    "name": "가배향주",
+    "verdict": "unknown",
+    "menu": {
+      "text": "오레그랏세 · 6,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=3bOZViD0FKd5",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=3bOZViD0FKd5",
+          "https://tyslgh.tistory.com/entry/경주-카페-황리단길-아침-오픈-감성-카페-추천-핸드드립과-오레그랏세가-매력적인-가배향주-내돈내산-후기?category=1319735",
+          "https://www.google.com/maps/search/?api=1&query=%EA%B0%80%EB%B0%B0%ED%96%A5%EC%A3%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%8F%AC%EC%84%9D%EB%A1%9C%201063"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j167",
+    "name": "예스터데이",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 현행 가격 미확인",
+      "source": "https://cafe.ambitstock.com/gyeongju/cafe/예스터데이/",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://cafe.ambitstock.com/gyeongju/cafe/예스터데이/",
+          "https://studio-jessy.tistory.com/37?category=613021",
+          "https://www.google.com/maps/search/?api=1&query=%EC%98%88%EC%8A%A4%ED%84%B0%EB%8D%B0%EC%9D%B4%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%96%91%EC%A0%95%EB%A1%9C%2090%201%EC%B8%B5"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j168",
+    "name": "공간민화카페",
+    "verdict": "unknown",
+    "menu": {
+      "text": "아메리카노 · 4,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=nyLcQiucBQXU",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=nyLcQiucBQXU",
+          "https://zinizoa.tistory.com/m/12",
+          "https://www.google.com/maps/search/?api=1&query=%EA%B3%B5%EA%B0%84%EB%AF%BC%ED%99%94%EC%B9%B4%ED%8E%98%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EB%82%B4%EB%82%A8%EB%A9%B4%20%EC%9D%B4%EC%A1%B01%EA%B8%B8%2028"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j169",
+    "name": "아레나피나",
+    "verdict": "unknown",
+    "menu": {
+      "text": "고운모래 땅콩크림라떼 · 8,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=9wbp5pdvGA61",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=9wbp5pdvGA61",
+          "https://melogkorea.tistory.com/92",
+          "https://www.google.com/maps/search/?api=1&query=%EC%95%84%EB%A0%88%EB%82%98%ED%94%BC%EB%82%98%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EA%B0%90%ED%8F%AC%EC%9D%8D%20%EB%8F%99%ED%95%B4%EC%95%88%EB%A1%9C%201957-7"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j170",
+    "name": "커피업",
+    "verdict": "unknown",
+    "menu": {
+      "text": "모카포트·핸드드립 커피 · 현행 가격 미확인",
+      "source": "https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=57&mnu_uid=2287",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.gyeongju.go.kr/tour_bak/page.do?cmd=2&con_uid=57&mnu_uid=2287",
+          "https://hijei.tistory.com/17",
+          "https://www.google.com/maps/search/?api=1&query=%EC%BB%A4%ED%94%BC%EC%97%85%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%9B%90%ED%9A%A8%EB%A1%9C163%EB%B2%88%EA%B8%B8%2046"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j171",
+    "name": "오베르",
+    "verdict": "solo_visit_review",
+    "menu": {
+      "text": "아메리카노 HOT · 2,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=JzctoDCpszUf",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "available",
+      "text": "2024년 방문 글에 남은 빵 셀프 포장 공간 설명. 현재 포장 범위·포장 전용 여부는 미확인.",
+      "source": "https://wldud0926.tistory.com/entry/경주-충효동-대형-식물원-카페-오베르-다녀온-후기",
+      "postedAt": "2024-09-06",
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "solo_visit",
+        "url": "https://wldud0926.tistory.com/entry/경주-충효동-대형-식물원-카페-오베르-다녀온-후기",
+        "author": "겸이네맘",
+        "postedAt": "2024-09-06",
+        "visitedAt": "게시 당일 (본문 현장에서 작성)",
+        "summary": "혼자 방문했다고 명시하고 아메리카노와 크림치즈 마늘 바게트볼·베이커리 오믈렛을 주문한 직접 후기입니다. 빵 주문을 식사 메뉴나 현행 최소 주문 조건 확인으로 확대하지 않습니다.",
+        "checkedAt": "2026-10-06"
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=JzctoDCpszUf",
+          "https://uvuzubap.tistory.com/10",
+          "https://www.google.com/maps/search/?api=1&query=%EC%98%A4%EB%B2%A0%EB%A5%B4%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%B6%A9%ED%98%84%EB%A1%9C3%EA%B8%B8%205"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      },
+      {
+        "query": "오베르 경주 혼자 방문 원문 확인",
+        "urls": [
+          "https://wldud0926.tistory.com/entry/경주-충효동-대형-식물원-카페-오베르-다녀온-후기"
+        ],
+        "result": "상호·지역과 혼자 방문·주문 경험을 원문에서 확인했습니다. 모든 메뉴·현재 최소 주문 조건은 미확인입니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j172",
+    "name": "소디스 에스프레소바 황성점",
+    "verdict": "unknown",
+    "menu": {
+      "text": "에스프레소 · 2,300원",
+      "source": "https://www.diningcode.com/profile.php?rid=BUs06SbDlvjC",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=BUs06SbDlvjC",
+          "https://jjoing.tistory.com/31",
+          "https://www.google.com/maps/search/?api=1&query=%EC%86%8C%EB%94%94%EC%8A%A4%20%EC%97%90%EC%8A%A4%ED%94%84%EB%A0%88%EC%86%8C%EB%B0%94%20%ED%99%A9%EC%84%B1%EC%A0%90%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%99%A9%EC%84%B1%EB%A1%9C28%EB%B2%88%EA%B8%B8%2015%201~2%EC%B8%B5"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j173",
+    "name": "바이닐바이브",
+    "verdict": "unknown",
+    "menu": {
+      "text": "LP 청음 이용료 · 2025 방문 당시 1인 14,500원",
+      "source": "https://musicall.tistory.com/4",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://musicall.tistory.com/4",
+          "https://musicall.tistory.com/4",
+          "https://www.google.com/maps/search/?api=1&query=%EB%B0%94%EC%9D%B4%EB%8B%90%EB%B0%94%EC%9D%B4%EB%B8%8C%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%B2%A8%EC%84%B1%EB%A1%9C81%EB%B2%88%EA%B8%B8%2029%202%EC%B8%B5"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j174",
+    "name": "로머스커피",
+    "verdict": "unknown",
+    "menu": {
+      "text": "흑임자크림라떼 · 6,500원",
+      "source": "https://place.map.kakao.com/1183023826",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://place.map.kakao.com/1183023826",
+          "https://jinscoffee.tistory.com/37",
+          "https://place.map.kakao.com/1183023826"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j175",
+    "name": "오크냅 러스틱커피",
+    "verdict": "solo_visit_review",
+    "menu": {
+      "text": "아메리카노 · 5,900원",
+      "source": "https://www.diningcode.com/profile.php?rid=p6x16gSiKXNw",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": true,
+      "text": "2023년 직접 방문 글에 샌드위치 판매와 다른 손님의 브런치 이용이 기록됩니다. 작성자의 혼자 식사 후기와 현행 최소 주문 조건은 미확인입니다.",
+      "source": "https://clara727.tistory.com/11",
+      "postedAt": "2023-11-14",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "solo_visit",
+        "url": "https://clara727.tistory.com/11",
+        "author": "라라see",
+        "postedAt": "2023-11-14",
+        "visitedAt": "미확인",
+        "summary": "배우자 없이 혼자 나들이해 오트라떼를 주문하고 창가의 낮은 소파를 이용한 직접 후기입니다. 일반 소파를 전용 1인석으로 판정하지 않습니다. 다른 손님의 브런치 식사는 작성자의 혼자 식사 경험과 구분합니다.",
+        "checkedAt": "2026-10-06"
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=p6x16gSiKXNw",
+          "https://blime.tistory.com/1189",
+          "https://www.google.com/maps/search/?api=1&query=%EC%98%A4%ED%81%AC%EB%83%85%20%EB%9F%AC%EC%8A%A4%ED%8B%B1%EC%BB%A4%ED%94%BC%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%99%B8%EB%8F%99%EC%9D%8D%20%EC%98%81%EC%A7%80%EB%A1%9C%20447-26%202%EC%B8%B5"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      },
+      {
+        "query": "오크냅 러스틱커피 경주 혼자 방문 원문 확인",
+        "urls": [
+          "https://clara727.tistory.com/11"
+        ],
+        "result": "상호·지역과 혼자 방문·주문 경험을 원문에서 확인했습니다. 모든 메뉴·현재 최소 주문 조건은 미확인입니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j176",
+    "name": "산내그로브",
+    "verdict": "unknown",
+    "menu": {
+      "text": "말차크림라떼·계절에이드 · 현행 가격 미확인",
+      "source": "https://chojang2.tistory.com/entry/sanne-grove",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "현행 1인 주문·1인 1음료·최소 주문 조건과 적용 메뉴 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "mealMenu": {
+      "confirmed": false,
+      "text": "식사 메뉴의 현행 판매·주문 조건 미확인. 커피·빵·디저트 주문만으로 식사 후보로 판정하지 않습니다.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "전용 1인석 근거 미확인. 좌석이 없다는 뜻은 아니며 혼자 방문 후기만으로 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "공개 메뉴와 직접 혼자 방문 후기, 현행 주문 조건 및 1인석을 별개로 표시합니다. 오래된 방문 경험이 현재 정책을 보증하지 않습니다.",
+    "searchAudit": [
+      {
+        "query": "기존 경주 카페 공개 메뉴·운영·방문 자료 대조",
+        "urls": [
+          "https://chojang2.tistory.com/entry/sanne-grove",
+          "https://chojang2.tistory.com/entry/sanne-grove",
+          "https://www.google.com/maps/search/?api=1&query=%EC%82%B0%EB%82%B4%EA%B7%B8%EB%A1%9C%EB%B8%8C%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%EC%82%B0%EB%82%B4%EB%A9%B4%20%EB%AC%B8%EB%B3%B5%EB%A1%9C%20734-4%20(%ED%9B%84%EA%B8%B0%C2%B7%ED%9A%8C%EC%9B%90%EC%9E%90%EB%A3%8C%20734-14%EC%99%80%20%EC%B0%A8%EC%9D%B4)"
+        ],
+        "result": "저장된 공개 자료를 대조했습니다. 별도 직접 후기의 확인 여부는 reviews에 기록했습니다. 기존 원문 전체를 이번에 새로 열람하거나 현행 정책을 전화 확인한 것은 아닙니다."
+      }
+    ],
+    "reservationHints": []
+  }
+]

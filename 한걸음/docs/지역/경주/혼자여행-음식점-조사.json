@@ -1,0 +1,2174 @@
+[
+  {
+    "id": "j36",
+    "name": "교리김밥 경주본점",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "김밥 2줄 도시락 · 13,000원",
+      "source": "https://polle.com/place/3dtYe7/%EA%B5%90%EB%A6%AC%EA%B9%80%EB%B0%A5",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "시 관광 안내의 1인 2줄은 구매 상한 안내이며, 최소 주문 2줄로 단정하지 않습니다. 김밥 홀 식사·국수 동반 조건은 현행 확인 필요.",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=1717&mnu_uid=4830",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "available",
+      "text": "시 관광 안내는 포장 편의를 명시합니다. 전체 포장 전용인지는 확인되지 않았습니다.",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=1717&mnu_uid=4830",
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "observation",
+        "url": "https://pisthachiok.tistory.com/542",
+        "author": "pistachiok",
+        "postedAt": "2022-09-09",
+        "visitedAt": "미확인",
+        "checkedAt": "2026-10-06",
+        "summary": "본점 리모델링 공간에서 혼밥석을 확인한 방문기. 글쓴이 본인은 둘이 방문해 혼밥 직접 후기와는 구분합니다."
+      }
+    ],
+    "seat": {
+      "status": "confirmed",
+      "type": "single",
+      "text": "2022년 경주본점 방문 원문에서 혼밥석이 있다고 명시. 배치 상세·2026년 현행 유지 여부 미확인.",
+      "source": "https://pisthachiok.tistory.com/542",
+      "postedAt": "2022-09-09",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "2022년 혼밥석 직접 기록과 2026년 홀 조건은 구별합니다. easyyyy.tistory.com/79의 혼자 김밥+국수 방문기는 지점 미식별이므로 본점 확정 식사 후기로 채택하지 않았습니다. 보문점 후기도 제외.",
+    "searchAudit": [
+      {
+        "query": "교리김밥 경주본점 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "교리김밥 본점 혼밥석 포장",
+        "urls": [
+          "https://pisthachiok.tistory.com/542",
+          "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=1717&mnu_uid=4830",
+          "https://easyyyy.tistory.com/79"
+        ],
+        "result": "본점 혼밥석 과거 기록·포장 편의 확인. 지점 불명 혼밥 후기는 확정 제외."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j41",
+    "name": "영양숯불갈비",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "한우 갈비살 110g · 27,000원",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400605094c0a40054747514b464d",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400605094c0a40054747514b464d",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "observation",
+        "url": "https://holic1020.tistory.com/147",
+        "author": "아주 작은거인",
+        "postedAt": "2023-03-04",
+        "visitedAt": "미확인",
+        "checkedAt": "2026-10-06",
+        "summary": "봉황로79 식당에 가족 방문한 글쓴이가 옆 테이블에서 혼자 치마살 양념 2인분과 소주를 먹는 손님을 관찰합니다. 본인 혼밥은 아닙니다."
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "영양숯불갈비 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "영양숯불갈비 혼자 치마살",
+        "urls": [
+          "https://holic1020.tistory.com/147"
+        ],
+        "result": "같은 경주 주소에서 타인 혼고기 관찰 확인. 이를 전체 현행 최소2인분 정책으로 확대하지 않습니다."
+      },
+      {
+        "query": "영양숯불갈비 혼자 치마살",
+        "urls": [
+          "https://holic1020.tistory.com/147"
+        ],
+        "result": "타인 혼자 식사 관찰은 확인했지만 본인 혼밥 확정 후기와 분리."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j42",
+    "name": "경주원조콩국",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "따뜻한 콩국 1 · 8,000원",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400605094c0949044347514a414d",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400605094c0949044347514a414d",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "경주원조콩국 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "경주원조콩국 혼자 후기",
+        "urls": [
+          "https://walking-star.tistory.com/entry/한국식-디저트-맛집-경주원조콩국",
+          "https://www.diningcode.com/profile.php?rid=KHhUoY6xPrRx"
+        ],
+        "result": "원문은 저희·동행 식사. 혼밥 태그를 실제 단독 경험으로 확대하지 않음."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j43",
+    "name": "보문뜰",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "돼지갈비찜 · 20,000원",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400604084d0b4202414551474349",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400604084d0b4202414551474349",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "보문뜰 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j44",
+    "name": "쑥부쟁이",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "연잎밥정식 · 21,000원",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040946094902414151444d4e",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040946094902414151444d4e",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "쑥부쟁이 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j45",
+    "name": "황포식당",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "회정식·가자미조림 · 각 17,000원",
+      "source": "https://polle.com/place/4EH7bM/%ED%99%A9%ED%8F%AC%EC%8B%9D%EB%8B%B9",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://polle.com/place/4EH7bM/%ED%99%A9%ED%8F%AC%EC%8B%9D%EB%8B%B9",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "황포식당 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j46",
+    "name": "미니만두 안강",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "군만두·찐고기만두 8개 · 각 4,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=4xr1MBf3sQAU",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=4xr1MBf3sQAU",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "미니만두 안강 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j47",
+    "name": "장시돼지국밥",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "돼지국밥·순대국밥 · 각 8,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=1CGSH2duy6D3",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=1CGSH2duy6D3",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "장시돼지국밥 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j48",
+    "name": "경주전복해물뚝배기",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "전복해물뚝배기 · 20,000원",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040944084104464151424749",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f404006040944084104464151424749",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "경주전복해물뚝배기 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j49",
+    "name": "아화전통국수 보문점",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "동지칼국수 · 8,500원",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400604084d0c4001404051474c4a",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://visitgyeongju.or.kr/kr/cuisine/view/535f40400604084d0c4001404051474c4a",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다. 황성점·동천점·대구점 혼밥을 보문점에 적용하지 않았습니다.",
+    "searchAudit": [
+      {
+        "query": "아화전통국수 보문점 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j50",
+    "name": "영남식육식당",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "한우모듬 600g · 110,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=k3J7CCOcvo2p",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=k3J7CCOcvo2p",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다. 부산 서면 식당의 혼자 식사 후기를 경주 건천점에 적용하지 않았습니다.",
+    "searchAudit": [
+      {
+        "query": "영남식육식당 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j51",
+    "name": "비학산한식",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "정식 · 8,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=u0pqmqyvFh0l",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=u0pqmqyvFh0l",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "비학산한식 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "비학산한식 1인",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=u0pqmqyvFh0l"
+        ],
+        "result": "재게시 블로그 요약에 정식1인·찌개볶음2인 조건이 있으나 원문 링크 확보 못함. 조건 확정 반영하지 않음."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j52",
+    "name": "안강밀면",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "밀면·만두 · 가격 미확인",
+      "source": "https://place.map.kakao.com/1863926243",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/1863926243",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다. 밀모 등 인근 별도 상호의 1인 추천을 이 장소에 적용하지 않았습니다.",
+    "searchAudit": [
+      {
+        "query": "안강밀면 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j53",
+    "name": "호성식육식당",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "한돈 삼겹살·목살·한우 · 가격 미확인",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=7289&mnu_uid=4830",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=7289&mnu_uid=4830",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "호성식육식당 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j109",
+    "name": "료코",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "료코카츠 · 14,000원",
+      "source": "https://place.map.kakao.com/822374476",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/822374476",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "료코 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j110",
+    "name": "도미",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "마르게리따 피자 · 15,000원",
+      "source": "https://place.map.kakao.com/1783751879",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/1783751879",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "observation",
+        "url": "https://everyday3friday13.tistory.com/130",
+        "author": "조이풀_조이",
+        "postedAt": "2021-12-29",
+        "visitedAt": "미확인",
+        "checkedAt": "2026-10-06",
+        "summary": "경주시 중앙로10 도미 방문 원문은 바 좌석과 혼밥·혼술 손님을 관찰했다고 기록. 본인 혼자 방문이라고는 하지 않아 직접 혼밥 후기로 채택하지 않습니다."
+      }
+    ],
+    "seat": {
+      "status": "confirmed",
+      "type": "bar",
+      "text": "2021년 방문 원문에서 오픈키친 옆 바 5~6자리를 명시. 2026년 현행 배치 유지 여부 미확인.",
+      "source": "https://everyday3friday13.tistory.com/130",
+      "postedAt": "2021-12-29",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "도미 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "도미 경주 혼밥 바",
+        "urls": [
+          "https://everyday3friday13.tistory.com/130"
+        ],
+        "result": "동일 중앙로10 지점 원문에서 바 좌석 명시. 타인 혼밥 관찰과 본인 식사는 구분."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j111",
+    "name": "황리화덕가",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "콰트로포르마지 피자 · 25,000원",
+      "source": "https://place.map.kakao.com/658428",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/658428",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "황리화덕가 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j112",
+    "name": "마장동숯불구이 경주본점",
+    "verdict": "solo_dining_review",
+    "menu": {
+      "text": "돼지갈비 200g 10,000원·생갈비 150g 11,000원·한우등심 130g 17,000원. 표시 가격은 1인분 단가입니다.",
+      "source": "https://majangdong-gj.com/gyeongju/",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "운영자 안내는 1인 방문을 허용하지만 고기 기본 주문은 3인분부터입니다. 1인 방문 허용과 1인분만 주문 가능은 다릅니다.",
+      "source": "https://majangdong-gj.com/gyeongju/",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "available",
+      "text": "양념게장 별도 포장 판매 확인. 고기·식사 전 메뉴의 포장 가능 여부는 미확인.",
+      "source": "https://majangdong-gj.com/",
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "solo_dining",
+        "url": "https://m.place.naver.com/my/review/6a12ef3cad7d1a11558d6f7e?v=2",
+        "author": "생존먹부림",
+        "postedAt": "미확인",
+        "visitedAt": "5월 24일 (연도 미표시; 운영자 소개는 2026년 5월)",
+        "checkedAt": "2026-10-06",
+        "summary": "원본 네이버 리뷰에서 혼자 등심을 구워 먹은 경험과 환대를 서술합니다. 예약 없이 저녁 방문·바로 입장 표기. 방문일은 5월24일 일요일로 표시되나 연도는 없습니다. 운영자 연결 페이지의 2026년5월 소개는 별도 정보입니다."
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "직접 혼자 고기를 먹은 후기와 운영자의 1인 방문 허용 안내를 각각 확인했습니다. 고기 기본 주문은 3인분부터이며 전용 1인석은 미확인입니다.",
+    "searchAudit": [
+      {
+        "query": "마장동숯불구이 경주본점 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "마장동숯불구이 경주본점 1인 방문 최소주문",
+        "urls": [
+          "https://majangdong-gj.com/gyeongju/"
+        ],
+        "result": "공식 지점 페이지의 1인 방문 허용·3인분 기본 주문 원문 확인."
+      },
+      {
+        "query": "마장동 경주본점 혼고기 생존먹부림",
+        "urls": [
+          "https://m.place.naver.com/my/review/6a12ef3cad7d1a11558d6f7e?v=2"
+        ],
+        "result": "원본 네이버 리뷰·경주 성건동 상호 재검증. 방문일 5월24일(연도 미표시), 게시일 미확인. 운영자 소개 연도를 방문일 확정값으로 추론하지 않았습니다."
+      }
+    ],
+    "reservationHints": [
+      {
+        "id": "j112",
+        "scope": "장소 식사 방문",
+        "source": "https://majangdong-gj.com/gyeongju/",
+        "method": "전화 예약",
+        "postedAt": "미확인",
+        "visitedAt": "미확인",
+        "summary": "예약 없이 방문 가능하다고 명시. 주말·피크에는 예약 또는 전화 확인 권장. 단체는 사전 문의."
+      }
+    ]
+  },
+  {
+    "id": "j113",
+    "name": "마장동숯불구이 황성점",
+    "verdict": "solo_allowed_conditions",
+    "menu": {
+      "text": "돼지갈비 200g 10,000원·생갈비 150g 11,000원·오겹살 130g 10,000원·한우차돌박이 100g 10,000원. 표시 가격은 1인분 단가입니다.",
+      "source": "https://majangdong-gj.com/hwangseong/",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "운영자 안내는 1인 방문을 허용하지만 고기 기본 주문은 3인분부터입니다. 1인 방문 허용과 1인분만 주문 가능은 다릅니다.",
+      "source": "https://majangdong-gj.com/hwangseong/",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "available",
+      "text": "양념게장 별도 포장 판매 확인. 고기·식사 전 메뉴의 포장 가능 여부는 미확인.",
+      "source": "https://majangdong-gj.com/",
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "운영자 안내로 1인 방문 허용을 확인했습니다. 고기는 3인분 이상 주문해야 하며, 1인분만 주문 가능한 메뉴라는 의미는 아닙니다. 전용 1인석은 미확인입니다.",
+    "searchAudit": [
+      {
+        "query": "마장동숯불구이 황성점 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "마장동숯불구이 황성점 1인 방문 최소주문",
+        "urls": [
+          "https://majangdong-gj.com/hwangseong/"
+        ],
+        "result": "공식 지점 페이지의 1인 방문 허용·3인분 기본 주문 원문 확인."
+      }
+    ],
+    "reservationHints": [
+      {
+        "id": "j113",
+        "scope": "장소 식사 방문",
+        "source": "https://majangdong-gj.com/hwangseong/",
+        "method": "네이버 예약·전화",
+        "postedAt": "미확인",
+        "visitedAt": "미확인",
+        "summary": "예약 없이 방문 가능하다고 명시. 주말·피크에는 예약 또는 전화 확인 권장. 단체는 사전 문의."
+      }
+    ]
+  },
+  {
+    "id": "j114",
+    "name": "복길",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "전복솥밥 · 17,000원",
+      "source": "https://place.map.kakao.com/1055466429",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/1055466429",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "복길 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j115",
+    "name": "참치향 경주본점",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "2인 세트 A · 49,000원",
+      "source": "https://place.map.kakao.com/1217713531",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/1217713531",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "용강동 신리길21-7 참치향 DC 페이지(HoUd94q8a3so)에 1인 참치 메뉴와 황리단길 후기 혼재가 있으나 저장 지점은 사정로50번길1-2입니다. 지점 불일치 자료의 1인 메뉴·좌석을 이식하지 않았습니다.",
+    "searchAudit": [
+      {
+        "query": "참치향 경주본점 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "참치향 경주본점 1인 좌석",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=HoUd94q8a3so"
+        ],
+        "result": "주소가 용강동으로 다른 페이지. 1인 메뉴·1인석 재게시 문구는 채택 제외."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j116",
+    "name": "해맞이회타운",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "해맞이코스 1인 · 35,000원",
+      "source": "https://place.map.kakao.com/10920114",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/10920114",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "해맞이회타운 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j117",
+    "name": "황남두꺼비",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "60일 숙성 묵은지 등갈비찜 · 15,900원",
+      "source": "https://place.map.kakao.com/1952344699",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/1952344699",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "황남두꺼비 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j118",
+    "name": "보문갈비",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "수제 양념돼지갈비 220g · 22,000원",
+      "source": "https://place.map.kakao.com/779852793",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/779852793",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "보문갈비 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j119",
+    "name": "경춘재",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "문어비빔밥 · 16,000원",
+      "source": "https://place.map.kakao.com/908617905",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/908617905",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "observation",
+        "url": "https://www.diningcode.com/profile.php?rid=Gkwt86JnlPvL",
+        "author": "내가먹어봤어내가",
+        "postedAt": "2023-08-07",
+        "visitedAt": "미확인",
+        "checkedAt": "2026-10-06",
+        "summary": "개인 식사 리뷰에서 혼밥도 환영해 준다고 적었지만 작성자 본인의 혼자 방문 여부를 명시하지 않습니다."
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "경춘재 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "경춘재 혼밥 후기",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=Gkwt86JnlPvL"
+        ],
+        "result": "환영 문구·혼밥 태그는 확인했으나 본인 혼자 식사 명시 없이 확정하지 않았습니다."
+      },
+      {
+        "query": "경춘재 혼밥 먹었",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=Gkwt86JnlPvL"
+        ],
+        "result": "혼밥 환영 평가는 확인했지만 본인 단독 방문 명시 없음."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j120",
+    "name": "푸른바다회센터",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "모듬회 소 · 60,000원",
+      "source": "https://place.map.kakao.com/8605174",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/8605174",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "푸른바다회센터 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j121",
+    "name": "까치식당",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "돼지찌개 · 10,000원",
+      "source": "https://place.map.kakao.com/15532346",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/15532346",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다. 서울 강서·병점 동명 까치식당 혼밥을 경주 안강에 적용하지 않았습니다.",
+    "searchAudit": [
+      {
+        "query": "까치식당 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j122",
+    "name": "동남식당",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "회국수 · 9,000원",
+      "source": "https://place.map.kakao.com/12591251",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/12591251",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "동남식당 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j123",
+    "name": "보문민속식당",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "곱창전골 · 25,000원",
+      "source": "https://place.map.kakao.com/9043565",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/9043565",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "보문민속식당 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j124",
+    "name": "전주시골밥상",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "시골밥상·산채불고기·된장한식 A세트 · 18,000원",
+      "source": "https://place.map.kakao.com/2100699560",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "등록 메뉴에는 떡갈비정식·갈비탕·우렁차돌된장·산채비빔밥·순두부·청국장이 1인분으로 표기됩니다. A/B 세트는 2인이상 후기. 1인분 단가와 혼자 입장 정책은 별개이며 현행 전체 허용은 미확인.",
+      "source": "https://www.tabling.co.kr/place/677cd48266de5f06988d86a1",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "전주시골밥상 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "전주시골밥상 경주 1인",
+        "urls": [
+          "https://www.tabling.co.kr/place/677cd48266de5f06988d86a1"
+        ],
+        "result": "경주 불국신택지7길10 장소 확인. 전주·완주 동명 식당의 후기 제외. 단품 식사 메뉴만으로 혼자 입장 확정 금지."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j125",
+    "name": "울산식당",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "산채불고기정식 · 25,000원",
+      "source": "https://place.map.kakao.com/10698632",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/10698632",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다. 울산시·경주 다른 동명 식당과 진현동 지점을 구별했습니다.",
+    "searchAudit": [
+      {
+        "query": "울산식당 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j126",
+    "name": "갈매기횟집",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "모둠회 소 · 70,000원",
+      "source": "https://place.map.kakao.com/1061058370",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/1061058370",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다. 홍성·동해 동명 갈매기횟집의 1인혼술 후기를 제외했습니다. 경주 코스 1인 가격은 1인 입장 허용 근거가 아닙니다.",
+    "searchAudit": [
+      {
+        "query": "갈매기횟집 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j127",
+    "name": "안강할매고디탕",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "고디탕 1인 · 13,000원",
+      "source": "https://place.map.kakao.com/9913756",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/9913756",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "안강할매고디탕 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j128",
+    "name": "파도회식당",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "모듬회 소 · 40,000원",
+      "source": "https://place.map.kakao.com/8567086",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/8567086",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "파도회식당 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j129",
+    "name": "고유한우국밥",
+    "verdict": "solo_dining_review",
+    "menu": {
+      "text": "한우국밥 · 12,000원",
+      "source": "https://place.map.kakao.com/2012283904",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://place.map.kakao.com/2012283904",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "solo_dining",
+        "url": "https://seoddaji.tistory.com/205",
+        "author": "서따지",
+        "postedAt": "2024-12-22",
+        "visitedAt": "미확인",
+        "checked_at": "2026-10-06",
+        "checkedAt": "2026-10-06",
+        "summary": "혼자 여행 분류와 작성자의 혼자 떠난 실제 혼밥·혼술 기록 설명을 함께 확인. 본문에서 황리단길 아침 방문 후 한우국밥과 소주를 직접 식사한 경험을 서술. 동행자는 등장하지 않습니다."
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "혼자 여행 카테고리·작성자 자기소개(혼자 떠난 혼밥·혼술 직접 기록)·실제 국밥 식사 본문을 결합해 채택했습니다. 과거 만원 가격은 현행 메뉴 가격으로 적용하지 않았습니다. 1인 전용석은 별도 미확인.",
+    "searchAudit": [
+      {
+        "query": "고유한우국밥 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "고유한우국밥 혼자",
+        "urls": [
+          "https://seoddaji.tistory.com/205"
+        ],
+        "result": "원문 본문·혼자 여행 분류·혼자 직접 기록한다는 작성자 설명을 대조해 실제 국밥 식사 확인."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j139",
+    "name": "향화정",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "꼬막무침비빔밥 2인 · 31,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=z0JuCZ8zYdOJ",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "꼬막무침비빔밥은 2인 구성 메뉴. 혼자 주문 가능한지와 다른 단품의 1인 조건은 확인되지 않았습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=z0JuCZ8zYdOJ",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "향화정 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j140",
+    "name": "청온채",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "청도미나리육회비빔밥 · 14,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=DosLOZ7SqTv6",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=DosLOZ7SqTv6",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "청온채 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j141",
+    "name": "함양집 북군",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "한우물회 보통 · 14,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=1246iEICOgZS",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=1246iEICOgZS",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다. 울산 함양집 혼밥 후기를 경주 북군점에 적용하지 않았습니다.",
+    "searchAudit": [
+      {
+        "query": "함양집 북군 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j142",
+    "name": "소향몽",
+    "verdict": "solo_dining_review",
+    "menu": {
+      "text": "육회비빔밥 · 17,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=jWukVMJerlqJ",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "2023년 원문에서 혼자 국수 1개 주문·식사 확인. 현행 전체 메뉴의 최소주문 조건은 미확인.",
+      "source": "https://haanaa.tistory.com/409",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "solo_dining",
+        "url": "https://haanaa.tistory.com/409",
+        "author": "단_하나",
+        "postedAt": "2023-09-04",
+        "visitedAt": "미확인",
+        "checked_at": "2026-10-06",
+        "checkedAt": "2026-10-06",
+        "summary": "친구를 만나기 전 혼자 방문했다고 명시하고 동궁과월지 국수 1개를 주문·식사한 내돈내산 원문. 1인 반찬과 11시30분 네이버 예약 경험도 기록."
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "소향몽 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "소향몽 혼밥 후기",
+        "urls": [
+          "https://haanaa.tistory.com/409"
+        ],
+        "result": "원문에서 본인 혼자 방문·국수1개 식사 확인."
+      }
+    ],
+    "reservationHints": [
+      {
+        "id": "j142",
+        "scope": "장소 식사 방문",
+        "source": "https://haanaa.tistory.com/409",
+        "method": "네이버 예약",
+        "postedAt": "2023-09-04",
+        "visitedAt": "미확인",
+        "summary": "11:30 네이버 예약 후 혼자 방문 경험. 만석일 때 예약 시간에도 이용 못할 수 있다고 기록. 필수라는 뜻은 아니며 2026년 현행 정책 재확인 필요."
+      }
+    ]
+  },
+  {
+    "id": "j143",
+    "name": "료미",
+    "verdict": "solo_dining_review",
+    "menu": {
+      "text": "고마소바 · 12,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=wTudDdwnl4SP",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "2023년 직접 후기에서 고마소바 혼자 식사 확인. 2인 세트와 단품은 별개이며, 현행 모든 메뉴의 최소 주문 조건은 미확인.",
+      "source": "https://nanas-marriagelife.tistory.com/entry/나홀로경주-3박4일-황리단길-맛집편-놋전국수-회국수-한옥-료미-고마소바-여도가주-스페셜-장어텐동-솔직맛후기",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "solo_dining",
+        "url": "https://nanas-marriagelife.tistory.com/entry/나홀로경주-3박4일-황리단길-맛집편-놋전국수-회국수-한옥-료미-고마소바-여도가주-스페셜-장어텐동-솔직맛후기",
+        "author": "NANA_S",
+        "postedAt": "2023-01-28",
+        "visitedAt": "미확인",
+        "checkedAt": "2026-10-06",
+        "summary": "나홀로 경주 여행 글에서 료미의 고마소바를 여유 있게 혼밥했다고 명시합니다. 혼자라 후토마키를 함께 못 먹은 아쉬움도 기록합니다."
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "료미 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "료미 경주 혼밥 후기",
+        "urls": [
+          "https://nanas-marriagelife.tistory.com/entry/나홀로경주-3박4일-황리단길-맛집편-놋전국수-회국수-한옥-료미-고마소바-여도가주-스페셜-장어텐동-솔직맛후기"
+        ],
+        "result": "원문 제목·본문·상호를 대조해 직접 혼자 고마소바 식사 확인. 2023년 후기이므로 현행 정책 보증 아님."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j144",
+    "name": "남정부일기사식당",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "짬뽕 · 12,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=XsdCfCdN2fWr",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=XsdCfCdN2fWr",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "남정부일기사식당 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "남정부일기사식당 혼자 후기 후속 검증",
+        "urls": [
+          "https://qaz001.tistory.com/316"
+        ],
+        "result": "2026-05-18 글은 짬뽕3개 주문과 공깃밥 기억을 서술하지만 본인 혼자 식사 명시가 없어 확정 근거 제외."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j145",
+    "name": "단향회",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "손말이고기 기본 · 16,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=PmDDeeRoB0Ud",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "손말이고기는 2인분 이상이라는 방문기와 단품 면 식사 가능 등록 메뉴가 있습니다. 면류까지 모두 2인 주문으로 확대하지 않습니다. 현행 혼자 입장·최소주문은 미확인.",
+      "source": "https://www.diningcode.com/profile.php?rid=PmDDeeRoB0Ud",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [
+      {
+        "kind": "observation",
+        "url": "https://kr.trip.com/moments/detail/gyeongju-431-132243288/",
+        "author": "여행기록은 대한민국",
+        "postedAt": "2025-05-20",
+        "visitedAt": "미확인",
+        "checkedAt": "2026-10-06",
+        "summary": "게시자가 혼밥 가능한 좌석을 일반적으로 소개했지만 본인 혼자 식사·구체 좌석 유형을 확인하지 못했습니다."
+      }
+    ],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "단향회 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      },
+      {
+        "query": "단향회 혼자 단품식사",
+        "urls": [
+          "https://www.diningcode.com/profile.php?rid=PmDDeeRoB0Ud",
+          "https://kr.trip.com/moments/detail/gyeongju-431-132243288/"
+        ],
+        "result": "일반 소개 문구만으로 직접 혼밥·특정1인석 확정하지 않았습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j146",
+    "name": "승진식당",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "돼지두루치기 소 · 17,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=JlXkz9erhgf5",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=JlXkz9erhgf5",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "승진식당 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j147",
+    "name": "신라제면",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "칼낙지 (2인 이상) · 13,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=RbBwKnYGrmja",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "칼낙지·칼낙새는 2인 이상 주문 안내. 바지락칼국수의 혼자 주문 가능 여부는 별도 확인.",
+      "source": "https://www.diningcode.com/profile.php?rid=RbBwKnYGrmja",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "신라제면 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j148",
+    "name": "늘곰탕",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "늘곰탕 · 13,000원",
+      "source": "https://www.diningcode.com/profile.php?rid=sSJlR0YtAxhK",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=sSJlR0YtAxhK",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다. 금천구청 늘곰탕 혼밥 후기를 경주점에 적용하지 않았습니다.",
+    "searchAudit": [
+      {
+        "query": "늘곰탕 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j149",
+    "name": "경주밀면 본점",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "물밀면+숯불 · 8,500원",
+      "source": "https://www.diningcode.com/profile.php?rid=cAoGmm8CwziA",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=cAoGmm8CwziA",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다. 혼자 방에 있기 아쉬워 여행했다는 글은 실제 데이트 동행으로 혼자 식사 후기가 아닙니다.",
+    "searchAudit": [
+      {
+        "query": "경주밀면 본점 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j150",
+    "name": "빼돌린숯불뒷고기",
+    "verdict": "unknown",
+    "menu": {
+      "text": "뒷고기 현행 가격 미확인. 2024년 1월 후기 가격: 뒷고기500g 35,000원·추가200g 14,000원·생막창120g 9,000원·삼겹살120g 9,000원",
+      "source": "https://ninninanna.tistory.com/80",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://ninninanna.tistory.com/80",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "빼돌린숯불뒷고기 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  },
+  {
+    "id": "j151",
+    "name": "물천한우",
+    "verdict": "single_item_unverified",
+    "menu": {
+      "text": "한우구이 · 부위·중량별 변동",
+      "source": "https://www.diningcode.com/profile.php?rid=baP6ZV7OVNmw",
+      "checkedAt": "2026-10-06"
+    },
+    "minimumOrder": {
+      "text": "최소 주문 수량·전체 1인 방문 허용 조건 미확인. 단품 가격 표기를 1인 허용으로 간주하지 않습니다.",
+      "source": "https://www.diningcode.com/profile.php?rid=baP6ZV7OVNmw",
+      "checkedAt": "2026-10-06"
+    },
+    "takeout": {
+      "status": "unknown",
+      "text": "현행 포장 가능 범위·포장 전용 여부 미확인.",
+      "source": null,
+      "checkedAt": "2026-10-06"
+    },
+    "reviews": [],
+    "seat": {
+      "status": "unknown",
+      "type": null,
+      "text": "1인석 유무·유형 미확인. 혼밥 후기 또는 단품 메뉴로 좌석을 추정하지 않습니다.",
+      "source": null,
+      "postedAt": "미확인",
+      "visitedAt": "미확인",
+      "checkedAt": "2026-10-06"
+    },
+    "note": "메뉴 공개 정보, 혼자 식사 후기, 현행 주문 조건과 1인석 근거는 각각 구분해 확인했습니다.",
+    "searchAudit": [
+      {
+        "query": "물천한우 경주 혼자 혼밥",
+        "urls": [],
+        "result": "초기 상호·혼자/혼밥 검색은 미확정 상태로 시작했습니다. 후속 원문 검증 여부는 아래 추가 조사와 최종 판정을 참고하세요. 태그·동명 타지역·일반 추천은 직접 혼자 식사 확정 근거에서 제외했습니다."
+      }
+    ],
+    "reservationHints": []
+  }
+]

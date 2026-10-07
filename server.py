@@ -32,8 +32,10 @@ def registered_points():
     """저장 자격은 클라이언트 플래그가 아닌 앱 원본 장소 데이터로 판정한다."""
     places = json.loads((DIST / "places.json").read_text(encoding="utf-8"))["places"]
     places.extend(json.loads((DIST / "gangneung-places.json").read_text(encoding="utf-8"))["places"])
+    places.extend(json.loads((DIST / "gyeongju-places.json").read_text(encoding="utf-8"))["places"])
     places.append({"id": "station", "lat": 34.7914, "lon": 126.3859})
     places.append({"id": "gangneung-station", "lat": 37.7641331, "lon": 128.8997106})
+    places.append({"id": "gyeongju-station", "lat": 35.7983772522824, "lon": 129.138999419567})
     return {p["id"]: (f'{p["lon"]:.7f}', f'{p["lat"]:.7f}') for p in places
             if isinstance(p.get("lat"), (int, float)) and isinstance(p.get("lon"), (int, float))}
 

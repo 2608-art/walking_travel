@@ -144,21 +144,9 @@
 
 검색 결과의 이름만 비슷한 사진은 실제 장소 사진으로 취급하지 않았다. 원본의 라이선스와 저작자는 연결된 출처에서 다시 확인할 수 있다.
 
-2026-10-06 추가 카페 7곳은 실제 점포 사진의 재사용 허락을 확인하지 못해 아래 CC0 예시 사진을 재사용한다. 각 카드에서 실제 점포 사진이 아님을 표시한다.
-
-| 장소 | 사용 파일·주제 | 제작자·조건 | 출처 |
-| --- | --- | --- | --- |
-| p131 오거리숭커피 | `p130-example.webp` · 카페 커피 예시 | Maciej Korsan · CC0 1.0 | [원본](https://stocksnap.io/photo/cafe-coffee-0DFCQK31OQ) |
-| p132 마메종 | `p97-example.webp` · 커피 예시 | Sergey Zolkin · CC0 1.0 | [원본](https://stocksnap.io/photo/coffee-latte-MK3VLNK8NA) |
-| p133 토브공작소 | `p100-example.webp` · 커피 예시 | David Bares · CC0 1.0 | [원본](https://stocksnap.io/photo/coffee-latte-WDJES619M1) |
-| p134 가비1935 | `p96-example.webp` · 카페 커피 예시 | Maciej Korsan · CC0 1.0 | [원본](https://stocksnap.io/photo/cafe-coffee-TUIRU743JZ) |
-| p135 커피창고로 얼리버드점 | `p101-example.webp` · 카페 커피 예시 | Chiara Pinna · CC0 1.0 | [원본](https://stocksnap.io/photo/cafe-coffee-9QXZ4Q9PXX) |
-| p136 페어링 | `p99-example.webp` · 커피·차 예시 | Lia Leslie · CC0 1.0 | [원본](https://stocksnap.io/photo/coffee-tea-4VHE7E68OE) |
-| p137 카페델마르 | `p103-example.webp` · 카페 커피 예시 | Leeroy · CC0 1.0 | [원본](https://stocksnap.io/photo/coffee-cafe-ME0VNF7K74) |
-
 ## 강릉 장소 사진 (2026-10-06 조사)
 
-강릉 55곳에는 실제 장소 사진 **18곳**, 실제 장소·상품으로 확인되지 않은 **예시 사진 37곳**을 연결했다. 실제 장소 사진은 피사체와 재사용 라이선스를 파일 페이지에서 대조하고 Wikimedia Commons가 제공하는 최대 1280px 축소본을 내려받았다. 별도 화소 편집은 하지 않았으며 카드 비율에 따라 화면에서 일부가 잘릴 수 있다. CC BY-SA 축소본도 동일 라이선스로 제공한다. 촬영 당시 모습이므로 현행 영업·출입 상태는 보증하지 않는다.
+강릉 35곳에는 실제 장소 사진 **15곳**, 실제 장소·상품으로 확인되지 않은 **예시 사진 20곳**을 연결했다. 실제 장소 사진은 피사체와 재사용 라이선스를 파일 페이지에서 대조하고 Wikimedia Commons가 제공하는 최대 1280px 축소본을 내려받았다. 별도 화소 편집은 하지 않았으며 카드 비율에 따라 화면에서 일부가 잘릴 수 있다. CC BY-SA 축소본도 동일 라이선스로 제공한다. 촬영 당시 모습이므로 현행 영업·출입 상태는 보증하지 않는다.
 
 | 장소 | 로컬 파일·피사체 | 저작자 | 원본·라이선스 |
 | --- | --- | --- | --- |
@@ -177,52 +165,103 @@
 | g24 봉봉방앗간 | `gangneung-bonbon.jpg` · 2016년 매장 | 최광모 | [원본](https://commons.wikimedia.org/wiki/File:2016%EB%85%84_4%EC%9B%94_%EA%B0%95%EC%9B%90%EB%8F%84_%EA%B0%95%EB%A6%89%EC%8B%9C_%EB%B4%89%EB%B4%89%EB%B0%A9%EC%95%97%EA%B0%84_DSC00109.jpg) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | g27 대도호부 관아 | `gangneung-daedohobu.jpg` · 야경 | 심선영 | [원본](https://commons.wikimedia.org/wiki/File:20190913_194956_%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80_%EA%B4%80%EC%95%84.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | g35 강문솟대다리 | `gangneung-sotdae-bridge.jpg` · 다리 | Christophe95 | [원본](https://commons.wikimedia.org/wiki/File:Gangmun_Sotdae_Bridge_1.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| g37 솔바람다리 | `gangneung-solbaram-bridge.jpg` · 다리 | Mobius6 | [원본](https://commons.wikimedia.org/wiki/File:Solbaram_Bridge_20220430_001.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| g38 남항진해변 | `gangneung-namhangjin-beach.jpg` · 2016년 해변 | 최광모 | [원본](https://commons.wikimedia.org/wiki/File:%EA%B0%95%EB%A6%89%EC%8B%9C_%EB%82%A8%ED%95%AD%EC%A7%84%ED%95%B4%EB%B3%80_2016-10-09_12.13.31.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| g39 경포생태저류지 | `gangneung-ecological-reservoir.jpg` · 저류지 | Christophe95 | [원본](https://commons.wikimedia.org/wiki/File:Gyeongpo_Ecological_Reservoir_1.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 
 실제 장소 사진의 재사용권을 확인하지 못한 곳은 화면에 **예시 사진 · 실제 장소 아님**으로 표시한다. 새로 내려받은 주제 예시는 다음과 같다.
 
 | 적용 장소 | 로컬 파일·주제 | 저작자 | 원본·라이선스 |
 | --- | --- | --- | --- |
-| g16·g29·g41·g42 | `gangneung-sundubu-example.jpg` · 순두부 음식 | 국립국어원 | [원본](https://commons.wikimedia.org/wiki/File:Sun-dubu.jpg) · [CC BY-SA 2.0 KR](https://creativecommons.org/licenses/by-sa/2.0/kr/) |
+| g16·g29 | `gangneung-sundubu-example.jpg` · 순두부 음식 | 국립국어원 | [원본](https://commons.wikimedia.org/wiki/File:Sun-dubu.jpg) · [CC BY-SA 2.0 KR](https://creativecommons.org/licenses/by-sa/2.0/kr/) |
 | g20 | `gangneung-wetland-example.jpg` · 경포습지 일반 풍경, 가시연 구역 미확인 | VaneTrz20 | [원본](https://commons.wikimedia.org/wiki/File:Gyeongpo_Wetland.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | g26 | `gangneung-cutlet-example.jpg` · 돈가스, 해당 식당 메뉴 아님 | Shene81 | [원본](https://commons.wikimedia.org/wiki/File:Korean_Tonkatsu_Meal.jpg) · [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) |
-| g28·g40 | `gangneung-jangkalguksu-example.jpg` · 장칼국수, 해당 식당 메뉴 아님 | Tmannya | [원본](https://commons.wikimedia.org/wiki/File:Jangkalguksu.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
-| g45 | `gangneung-media-art-example.jpg` · 나고야 과학관 프로젝션 매핑, 강릉 전시 아님 | KKPCW | [원본](https://commons.wikimedia.org/wiki/File:Projection_Mapping_In_Nagoya_City_Science_Museum_(2015)_-_3.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| g47 | `gangneung-vr-example.jpg` · 가상현실 헤드셋, 강릉 시설 기기 아님 | Bert Niehaus | [원본](https://commons.wikimedia.org/wiki/File:VR_headset_with_smartphone_and_stereoscopy_image.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| g48 | `gangneung-aquarium-example.jpg` · 부산 국립해양박물관 수족관, 경포 시설 아님 | VN.NguyenDucDuy | [원본](https://commons.wikimedia.org/wiki/File:Aquarium_exhibit_at_the_National_Maritime_Museum_of_Korea,_Busan.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| g49 | `gangneung-tea-example.jpg` · 한국 다례 상차림, 초희전통차체험관 아님 | Aaron Logan | [원본](https://commons.wikimedia.org/wiki/File:Lightmatter_korean_tea_ceremonytable.jpg) · [CC BY 1.0](https://creativecommons.org/licenses/by/1.0/) |
-| g51 | `gangneung-croquette-example.jpg` · 생선 고로케, 해당 점포 상품 아님 | ChristianCelestial | [원본](https://commons.wikimedia.org/wiki/File:Delicious_Crunchy_Fish_Croquettes.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| g56 | `gangneung-sea-glass-example.jpg` · 씨글래스 재료, 해당 점포 상품 아님 | Quercus acuta | [원본](https://commons.wikimedia.org/wiki/File:Sea_glass_-_01.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| g28 | `gangneung-jangkalguksu-example.jpg` · 장칼국수, 해당 식당 메뉴 아님 | Tmannya | [원본](https://commons.wikimedia.org/wiki/File:Jangkalguksu.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 
 기존 목포용으로 이미 검증한 주제 사진도 예시로 재사용한다. 대응은 g2→p122, g8→p113, g17→p95, g18→p20, g19→p17, g21→p101, g23→p96, g25→p103, g30→p107, g32→p25, g33→p53, g34→p116, g36→p104다. 각 파일의 저작자·원본·라이선스는 위 목록과 [기계 판독용 목록](example-sources.json)에 있다. g7은 g3의 월화거리 사진을 **월화교 주변 예시**로, g31은 g22의 공원 입구 사진을 **생가터 주변 예시**로 사용한다. 구분과 대체텍스트는 [강릉 사진 설정](../../gangneung-media.js)에 기록했다.
 
-추가 장소에서는 g43→p95, g44→p116, g46→p17, g52→p119, g53→p113, g54→p117, g55→p118의 기존 검증 사진을 주제 예시로 재사용한다. g50은 월화거리 실제 사진을 야시장 **행사 모습이 아닌 거리 예시**로 쓴다. 매장·행사 사진의 저작권과 정확한 피사체를 함께 확인하지 못한 경우 지도·블로그·SNS 사진을 앱에 복사하지 않았다.
+## 경주 장소 사진 (2026-10-06)
 
-## 강릉 확대 조사 사진 (2026-10-06)
+Wikimedia Commons 등의 원본과 저작자·라이선스를 대조했다. 화면 비율에 따라 CSS에서 일부 영역이 잘릴 수 있으며, 촬영 당시 모습은 현재 운영·출입 상태를 보증하지 않는다. 경주 후보 138곳에 실제 장소·메뉴 사진 **37곳**과 명시적 주제 예시 **101곳**을 연결했다. 기존 40곳의 실제 사진은 27곳, 신규 98곳의 실제 사진은 10곳이다. 아래 첫 4곳은 초기 적용 사진이며, 이어 추가 사진을 기록한다. 예시는 `예시 사진 · 실제 장소 아님`으로 표시한다.
 
-55곳 이후 추가 장소는 [확대 사진 대응](../../gangneung-media-expansion.js)에 연결했다. 다음 일곱 사진은 실제 장소와 재사용 조건을 함께 확인했다. 촬영 당시의 모습이며 현행 시설 배치를 보증하지 않는다.
-
-| 장소 | 로컬 파일 | 저작자 | 원본·이용 조건 |
+| 장소 | 로컬 파일·피사체 | 저작자 | 원본·라이선스 |
 | --- | --- | --- | --- |
-| 사근진해변 | `gangneung-sageunjin-beach.jpg` | 최광모 | [원본](https://commons.wikimedia.org/wiki/File:2016%EB%85%84_5%EC%9B%94_28%EC%9D%BC_%EA%B0%95%EC%9B%90%EB%8F%84_%EA%B0%95%EB%A6%89%EC%8B%9C_%EC%82%AC%EA%B7%BC%EC%A7%84%ED%95%B4%EB%B3%80_DSC01265.jpg) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
-| 사천진해변 | `gangneung-sacheonjin-beach.jpg` | 최광모 | [원본](https://commons.wikimedia.org/wiki/File:%EA%B0%95%EB%A6%89%EC%8B%9C_%EC%82%AC%EC%B2%9C%EC%A7%84%ED%95%B4%EB%B3%80_2016-08-11_13.43.05.jpg) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
-| 강릉솔향수목원 | `gangneung-solhyang-arboretum.jpg` | 최광모 | [원본](https://commons.wikimedia.org/wiki/File:2016%EB%85%84_5%EC%9B%94_22%EC%9D%BC_%EA%B0%95%EC%9B%90%EB%8F%84_%EA%B0%95%EB%A6%89%EC%8B%9C_%EC%86%94%ED%96%A5%EC%88%98%EB%AA%A9%EC%9B%90_DSC00629.jpg) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
-| 영진해변 | `gangneung-yeongjin-beach.jpg` | 최광모 | [원본](https://commons.wikimedia.org/wiki/File:%EA%B0%95%EB%A6%89%EC%8B%9C_%EC%98%81%EC%A7%84%ED%95%B4%EB%B3%80_2016-08-15_19.50.17.jpg) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
-| 등명낙가사 영산전 내부(2007년) | `gangneung-deungmyeongnakgasa.jpg` | parhessiastes | [원본](https://commons.wikimedia.org/wiki/File:Korea-Gangneung-Deungmyeongnakgasa-Gilt_Buddha_and_500_celadon_arahant_statues-01.jpg) · [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
-| 주문진해변(2022년) | `gangneung-jumunjin-beach.jpg` | Mobius6 | [원본](https://commons.wikimedia.org/wiki/File:Jumunjin_Beach_20220501_034.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| 정동진해변(2008년) | `gangneung-jeongdongjin-beach.jpg` | Loewelad | [원본](https://commons.wikimedia.org/wiki/File:Jeongdongjin_Beach.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| j1 첨성대 | `gyeongju-cheomseongdae.jpg` · 유적 | Basile Morin | [원본](https://commons.wikimedia.org/wiki/File:Cheomseongdae_Observatory_under_blue_sky_in_Gyeongju_South_Korea.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j2 동궁과 월지 | `gyeongju-donggung-wolji.jpg` · 야경 | Heera7 | [원본](https://commons.wikimedia.org/wiki/File:Donggung_Palace_and_Wolji_Pond_in_Gyeongju_%EB%8F%99%EA%B6%81%EA%B3%BC_%EC%9B%94%EC%A7%802.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j17 불국사 | `gyeongju-bulguksa.jpg` · 경내 | yeowatzup | [원본](https://commons.wikimedia.org/wiki/File:Bulguksa,_Gyeongju,_South_Korea_(3184873966).jpg) · [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
+| j26 양남 주상절리 전망대 | `gyeongju-yangnam-joint.jpg` · 주상절리군(전망대 건물 아님) | vatar/편성재 | [원본](https://commons.wikimedia.org/wiki/File:Gyeongsanganamo_Gyeongju_Yangnam_columnar_joint.jpeg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 
-다른 추가 장소는 음식·카페·시장·책방·해변·전시·체험의 관련 사진을 **주제 예시**로 재사용한다. 카드와 상세에 실제 장소 사진이 아니라는 표시와 원본·저작자·라이선스를 함께 보여준다. 사진을 찾지 못했다는 사실을 실제 매장 사진인 것처럼 숨기지 않았다.
+추가한 실제 장소 사진 **21곳**:
 
-### 누락 장소 보강에 사용한 예시 사진
-
-| 장소 | 로컬 파일 | 저작자 | 원본·이용 조건 |
+| 장소 | 로컬 파일 | 저작자 | 원본·라이선스 |
 | --- | --- | --- | --- |
-| 서울양계 · 닭강정 예시(실제 상품 아님) | `gangneung-dakgangjeong-example.jpg` | Dr 방원장 | [원본](https://commons.wikimedia.org/wiki/File:Dak-gangjeong.jpg) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| 베리베리딸기 · 딸기빙수 예시(실제 상품 아님) | `gangneung-strawberry-bingsu-example.jpg` | CYAN | [원본](https://commons.wikimedia.org/wiki/File:Strawberry_bingsu_0b.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j3 황리단길 | `gyeongju-hwangridan.jpg` | Seefooddiet | [원본](https://commons.wikimedia.org/wiki/File%3AHwangnidan-gil_01.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j4 대릉원 | `gyeongju-daereungwon.jpg` | Bernard Gagnon | [원본](https://commons.wikimedia.org/wiki/File%3ADaereungwon_Tomb_Complex.jpg) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| j5 월정교 | `gyeongju-woljeonggyo.jpg` | Basile Morin | [원본](https://commons.wikimedia.org/wiki/File%3AIlluminated_Woljeonggyo_Bridge_at_blue_hour_in_Gyeongju_South_Korea.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j6 교촌한옥마을 | `gyeongju-gyochon.jpg` | Seefooddiet | [원본](https://commons.wikimedia.org/wiki/File%3AGyochon_Traditional_Village_07.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j7 국립경주박물관 | `gyeongju-museum.jpg` | Seaton1456 | [원본](https://commons.wikimedia.org/wiki/File%3AGyeongju_National_Museum.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| j8 분황사 | `gyeongju-bunhwangsa.jpg` | Adil | [원본](https://commons.wikimedia.org/wiki/File%3ABunhwangsa_Temple.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| j10 경주읍성 | `gyeongju-eupseong.jpg` | Qkqhrhkdtn | [원본](https://commons.wikimedia.org/wiki/File%3AGyeongjueupseong_Town_Wall_Site.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| j11 성동시장 | `gyeongju-seongdong-market.jpg` | riNux | [원본](https://commons.wikimedia.org/wiki/File%3AKorea-Gyeongju-Seongdong_Market-Hallway-01.jpg) · [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
+| j13 보문호 | `gyeongju-bomun-lake.jpg` | ProjectManhattan | [원본](https://commons.wikimedia.org/wiki/File%3ABomun_Lake.jpg) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| j14 경주동궁원 | `gyeongju-donggungwon.jpg` | Mobius6 | [원본](https://commons.wikimedia.org/wiki/File%3AGyeongju_Donggungwon_20191111_06.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j15 경주월드 | `gyeongju-world.jpg` | Christophe95 | [원본](https://commons.wikimedia.org/wiki/File%3AGyeongju_World.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j16 경주엑스포대공원 | `gyeongju-expo.jpg` | InSapphoWeTrust | [원본](https://commons.wikimedia.org/wiki/File%3AGyeongju_Expo_Park_%285334478441%29.jpg) · [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
+| j18 석굴암 | `gyeongju-seokguram.jpg` | eimoberg | [원본](https://commons.wikimedia.org/wiki/File%3AKorea-Gyeongju-Seokguram-13.jpg) · [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
+| j19 감은사지 | `gyeongju-gameunsa.jpg` | InSapphoWeTrust | [원본](https://commons.wikimedia.org/wiki/File%3AGameunsa_%EA%B0%90%EC%9D%80%EC%82%AC%EC%A7%80_%E6%84%9F%E6%81%A9%E5%AF%BA%E5%9D%80_%285334476869%29.jpg) · [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
+| j20 문무대왕릉 | `gyeongju-munmu.jpg` | J. Patrick Fischer | [원본](https://commons.wikimedia.org/wiki/File%3ASea_Tomb_of_king_Munmu.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| j21 감포항 | `gyeongju-gampo.jpg` | Junho Jung | [원본](https://commons.wikimedia.org/wiki/File:Korea-Gyeongju-Gampo_Port-Bank-01.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| j24 골굴사 | `gyeongju-golgulsa.jpg` | Seefooddiet | [원본](https://commons.wikimedia.org/wiki/File%3AGolgulsa%2C_Gyeongju_02.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j25 기림사 | `gyeongju-girimsa.jpg` | nzj© at w:Picasa | [원본](https://commons.wikimedia.org/wiki/File%3ADaejeokgwangjeon_at_Girimsa-Gyeongju-Korea-01.jpg) · [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) |
+| j29 양동마을 | `gyeongju-yangdong.jpg` | sprklg | [원본](https://commons.wikimedia.org/wiki/File%3AKorea-Gyeongju-Yangdong.Village.jpg) · [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
+| j34 포석정 | `gyeongju-poseokjeong.jpg` | Steve46814 | [원본](https://commons.wikimedia.org/wiki/File%3AKorea-Gyeongju-Poseokjeong_site_3832-06.JPG) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| j35 삼릉숲 | `gyeongju-samneung.jpg` | Christophe95 | [원본](https://commons.wikimedia.org/wiki/File%3ASamneung_Pine_Forest_1.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 
-두 이미지는 원본의 축소본으로 표시한다. 매장·메뉴 실물을 촬영한 사진이 아니므로 해당 카드에도 예시로 표기한다.
+추가한 실제 사진 **2곳**(촬영 시점의 모습):
 
-카카오맵 음식점 재조사에서 추가한 74곳의 카드 이미지는 [음식점 재조사 사진 대응](../../gangneung-media-audit.js)에서 기존의 허용된 음식·주방 사진을 주제 예시로 연결한다. 사진 속 음식·주방은 해당 매장이나 실제 메뉴를 촬영한 것이 아니다.
+| 장소 | 로컬 파일·피사체 | 저작자 | 원본·라이선스 |
+| --- | --- | --- | --- |
+| j36 교리김밥 경주본점 | `gyeongju-gyori-gimbap.jpg` · 2023년 교리김밥 제품. 현 본점의 현재 메뉴 모습은 미확인 | Fred Cherrygarden | [원본](https://commons.wikimedia.org/wiki/File:Gyori_Gimbap_Gyeongju.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j39 카페 오버랩 | `gyeongju-overlap-official.jpg` · 2024년 실내 | 경주시청 | [원본](https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=3861) · [공공누리 제1유형](https://www.kogl.or.kr/info/license.do) |
+
+추가 예시 사진 **1곳**(해당 가게의 실제 상품으로 확인되지 않음):
+
+| 장소 | 로컬 파일 | 저작자 | 원본·라이선스 |
+| --- | --- | --- | --- |
+| j40 황남빵 | `gyeongju-hwangnam-bread-example.jpg` | ProjectManhattan | [원본](https://commons.wikimedia.org/wiki/File%3AHwangnam_bread.JPG) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+
+기존에 검증한 사진의 **관련 주제 예시** 대응: j9→j8(분황사), j12→j11(성동시장), j22→j21(감포항), j23→j20(경주 동해안), j27·j28→j26(양남 주상절리군), j30·j31→j29(양동마을), j32→j4(대릉원), j33→j35(삼릉숲). 카페 j37→p95, j38→p101의 기존 목포 예시 사진을 재사용한다. 각각 다른 장소·매장임을 대체 텍스트와 화면 배지에 명시했다. 대응은 [경주 사진 설정](../../gyeongju-media.js), 기존 예시의 저작자·원본·라이선스는 위 목록과 [기계 판독용 목록](example-sources.json)을 참고한다.
+
+### 7개 분야 추가 조사 사진
+
+| 장소 | 로컬 파일·피사체 | 저작자 | 원본·라이선스 |
+|---|---|---|---|
+| j58 키키리키 | `gyeongju-kikiriki-official.jpg` · 실제 테라스·바다 | 경주시청 | [원본 관광 글](https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=3749) · [공공누리 제1유형](https://www.kogl.or.kr/info/license.do) |
+| j65 황성공원 | `gyeongju-hwangseong-forest.jpg` · 실제 숲 | Seaton1456 | [원본](https://commons.wikimedia.org/wiki/File:Hwangseong_Forest.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| j66 도리마을 | `gyeongju-dori-village.jpg` · 실제 은행나무숲 | Choi2451 | [원본](https://commons.wikimedia.org/wiki/File:Dori_Village,_Gyeonju.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| j68 이견대 | `gyeongju-igyeondae.jpg` · 실제 장소 | Lee Geonju | [원본](https://commons.wikimedia.org/wiki/File:Igyeondae.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j72 경주향교 | `gyeongju-hyanggyo.jpg` · 실제 건물 | Christophe95 | [원본](https://commons.wikimedia.org/wiki/File:Gyeongju_Hyanggyo_1.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j73 오릉 | `gyeongju-oreung.jpg` · 실제 유적 | Hiyotchi | [원본](https://commons.wikimedia.org/wiki/File:Oreung.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| j76 솔거미술관 | `gyeongju-solgeo.jpg` · 실제 미술관 | Choi2451 | [원본](https://commons.wikimedia.org/wiki/File:Solgeo_Art_Museum,_Gyeongju_on_December_25th,_2018.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| j81 신라대종 | `gyeongju-silla-great-bell.jpg` · 실제 종 | Christophe95 | [원본](https://commons.wikimedia.org/wiki/File:Silla_Great_Bell_2.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+
+새 주제 예시 파일: `gyeongju-yakgwa-example.jpg`([약과](https://commons.wikimedia.org/wiki/File:Yakgwa.jpg), Lawren00, CC BY-SA 3.0), `gyeongju-bookstore-example.jpg`([일반 서점 서가](https://commons.wikimedia.org/wiki/File:Bookstore_shelves.jpg), Punker1999, CC0 1.0), `gyeongju-sundubu-example.jpg`([두부 요리](https://commons.wikimedia.org/wiki/File:Sundubu_jjigae_stew.jpg), P1898, CC BY 4.0), `gyeongju-galbisal-example.jpg`([갈비살](https://commons.wikimedia.org/wiki/File:Korean_BBQ-Galbisal-01.jpg), Home Cooking Diary, CC BY-SA 3.0). 모두 해당 경주 매장의 실제 제품이 아니며, 장소 카드에 예시로 표시한다. 나머지 신규 장소는 기존 라이선스 확인 사진을 관련 주제로 재사용하되 다른 장소의 사진임을 대체텍스트에 쓴다. 지도앱·SNS·블로그에 보이는 사진은 재배포 허가로 간주하지 않았다.
+
+### 음식점·카페 추가 보강 사진
+
+| 장소·용도 | 로컬 파일·피사체 | 저작자 | 원본·라이선스 |
+|---|---|---|---|
+| j131 감포이견대카페 실제 사진 | `gyeongju-gampo-igyeondae-cafe.jpg` · 매장 컵과 바다 | 경주시청 | [2023년 7월 관광 글](https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=3749) · [공공누리 제1유형](https://www.kogl.or.kr/info/license.do) |
+| j137 봄갤러리 카페 실제 사진 | `gyeongju-bom-gallery-cafe.jpg` · 봄철 목향장미 정원 | 경주시청 | [2026년 5월 관광 글](https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=4276) · [공공누리 제1유형](https://www.kogl.or.kr/info/license.do) |
+| 피자 관련 장소의 주제 예시 | `gyeongju-pizza-example.jpg` · 다른 피자 | Arnaud 25 | [원본](https://commons.wikimedia.org/wiki/File:Pizza_Margherita_01.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| 회 요리 관련 장소의 주제 예시 | `gyeongju-sashimi-example.jpg` · 다른 회 요리 | Luca.favorido | [원본](https://commons.wikimedia.org/wiki/File:Sashimi_mix.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+
+음식점·카페 신규 30곳 중 나머지 28곳에는 기존 허가 사진 또는 위 주제 예시를 사용했다. 카카오맵·Google 지도 후기 사진은 별도 재배포 권한을 확인하지 못해 복사하지 않았다.
+
+### 여행객·직접 방문 추천 추가 사진 (2026-10-06)
+
+| 장소 | 파일·촬영 자료 시점 | 저작자 | 출처·이용 조건 |
+|---|---|---|---|
+| j139 향화정 | `gyeongju-hyanghwajeong-blog.jpg` · 2022 꼬막비빔밥 | its-memory | [방문 원문](https://its-memory.tistory.com/16) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| j143 료미 | `gyeongju-ryomi-blog.jpg` · 2022 고마소바 | 지리오타쿠 | [방문 원문](https://teacherso.tistory.com/841) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| j169 아레나피나 | `gyeongju-arenapina-official.jpg` · 2025 실제 테라스 | 경주시청 | [7월 관광 글](https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=4121) · [공공누리 제1유형](https://www.kogl.or.kr/info/license.do) |
+| j173 바이닐바이브 | `gyeongju-vinylvibe-official.jpg` · 2026 실제 턴테이블·음료 | 경주시청 | [1월 관광 글](https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=4186) · [공공누리 제1유형](https://www.kogl.or.kr/info/license.do) |
+
+위 4개는 원본 이미지로 저장하고 시각적으로 피사체를 확인했다. 화면의 사진 출처 링크에 저작자·이용 조건을 표시하며, 과거 메뉴 모습은 현재 모습으로 보장하지 않는다. 나머지 신규 34곳은 기존 허가 사진을 카페·음식 주제 예시로 연결했다. 전체 경주 176곳 중 실제 사진 41곳·명시적 예시 135곳이다. 투핸즈·로머스 등 추가 사진 후보는 조사 JSON에 남아 있으며 이번 화면에 연결하지 않았다.
