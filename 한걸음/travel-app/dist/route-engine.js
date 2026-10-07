@@ -2,30 +2,40 @@
 (() => {
   'use strict';
   const SHOP_IDS = new Set(['p113','p117','p118','p123','p124','p125','p126','p127','p128','p129','p130']);
+  const SNACK_IDS = new Set(['p115','p116']);
+  const MOKPO_MENU_IDS = new Set(['p46','p47','p48','p49','p50','p51','p53','p55','p60','p61','p68','p69','p85','p88']);
+  const CAFE_SPECIALTY_IDS = new Set(['p93','p94','p95','p96','p97','p98','p99','p102','p103','p106','p109','p111','p131','p132','p134','p136']);
+  const THEME_PLACE_IDS = {
+    oldtown:new Set(['p2','p8','p9','p13','p22','p23','p29','p40','p113','p114','p115','p116','p117','p118','p119','p120','p125','p127','p128','p130']),
+    seosandong:new Set(['p10','p11','p12','p13','p17','p31','p40','p65','p68','p81','p94','p95','p96','p97','p119','p120','p126']),
+    gatbawi:new Set(['p7','p16','p20','p21','p25','p33','p35','p42','p43','p14','p15']),
+    peace:new Set(['p14','p15']),
+    samhakdo:new Set(['p26','p30','p32','p114']),
+    cafeWalk:new Set(['p1','p2','p8','p9','p10','p11','p12','p13','p18','p19','p22','p23','p29','p37','p39','p40','p93','p94','p95','p96','p97','p98','p99','p102','p103','p105','p106','p108','p109','p111','p113','p117','p118','p119','p120','p125','p126','p127','p128','p130','p131','p132','p134','p136'])
+  };
   const HISTORY_IDS = new Set(['p2','p8','p9','p12','p13','p20','p22','p29','p30','p31','p40']);
   const FIRST_IDS = new Set(HISTORY_IDS);
   const SEA_IDS = new Set(['p3','p4','p5','p6','p7','p14','p19','p24','p25','p32','p34','p36','p37']);
   const NIGHT_OUTDOOR_IDS = new Set(['p14']);
-  const SNACK_IDS = new Set();
   const GEOGRAPHIC_THEME_IDS = Object.create(null);
   const EXCLUDED_IDS = new Set(['p3','p4','p5','p24','p35','p41','p44','p45','p51']);
   const isExcluded = (p) => EXCLUDED_IDS.has(p.id) || p.researchOnly;
   const THEMES = [
     {id:'balanced', name:'목포 기본 코스'},
-    {id:'first', name:'처음 가는 목포'},
-    {id:'history', name:'역사·골목'},
-    {id:'sea', name:'바다·풍경'},
-    {id:'shops', name:'소품샵·책방'},
-    {id:'food', name:'목포 먹거리'},
-    {id:'cafe', name:'카페·여유'}
+    {id:'oldtown', name:'근대거리·시장'},
+    {id:'seosandong', name:'서산동 골목'},
+    {id:'gatbawi', name:'갓바위 문화타운'},
+    {id:'peace', name:'평화광장·밤바다'},
+    {id:'samhakdo', name:'삼학도 해양·평화'},
+    {id:'cafeWalk', name:'원도심 카페 산책'}
   ];
   const THEME_PRESETS = {
-    first:{originId:'station',destinationId:'station',description:'목포역에서 역사거리와 골목, 점심을 함께 즐기는 첫 방문 코스'},
-    history:{originId:'station',destinationId:'station',description:'목포역에서 근대역사거리와 원도심 골목을 걷는 코스'},
-    sea:{originId:'p7',destinationId:'p14',description:'갓바위에서 출발해 박물관권을 거쳐 평화광장으로 걷는 코스'},
-    shops:{originId:'station',destinationId:'station',description:'목포역 근처의 책방과 소품샵을 잇는 코스'},
-    food:{originId:'station',destinationId:'station',description:'식사는 최대 두 번, 그 사이에는 원도심 구경과 산책'},
-    cafe:{originId:'station',destinationId:'station',description:'카페는 최대 두 곳, 책방과 골목을 함께 걷는 여유 코스'}
+    oldtown:{originId:'station',destinationId:'station',description:'목포역에서 근대역사거리와 시장을 걷고 목포식 별미와 간식을 곁들이는 코스'},
+    seosandong:{originId:'station',destinationId:'p11',description:'시내에서 시작해 시화골목·보리마당과 서산동 주변을 둘러보는 반일 산책'},
+    gatbawi:{originId:'station',destinationId:'station',description:'시내에서 출발해 갓바위 문화타운의 박물관과 해안 산책을 둘러보는 코스'},
+    peace:{originId:'station',destinationId:'station',description:'시내에서 출발해 평화광장 저녁과 밤바다를 즐기는 코스 · 분수는 운영일 확인'},
+    samhakdo:{originId:'station',destinationId:'station',description:'난영공원→기념관→바다과학관→항구포차 순으로 걷는 코스 · 지도 순서 7→5→6→8'},
+    cafeWalk:{originId:'station',destinationId:'station',description:'원도심·서산동 카페의 시그니처 음료와 디저트를 우선해 걷는 코스 · 음식점 제외'}
   };
   let activeRegionId = 'mokpo';
   function configureRegion(regionId) {
@@ -105,7 +115,7 @@
   const THEME_START_TIMES = Array.from({length:48},(_,index)=>String(Math.floor(index/2)).padStart(2,'0')+':'+(index%2?'30':'00'));
   const minutes = (value) => value === '24:00' ? 1440 : Number(value.slice(0,2)) * 60 + Number(value.slice(3,5));
   const clockTime = value => value === 1440 ? '24:00' : String(Math.floor(value/60)).padStart(2,'0')+':'+String(value%60).padStart(2,'0');
-  const themeWindow = start => ({start,end:clockTime(Math.min(minutes(start)+540,20*60))});
+  const themeWindow = (start,theme) => ({start,end:clockTime(Math.min(minutes(start)+540,(theme==='peace'?22:20)*60))});
   const round5 = (value) => Math.ceil(value / 5) * 5;
   const distanceKm = (a,b) => {
     const r = Math.PI / 180;
@@ -169,14 +179,8 @@
     const shop = SHOP_IDS.has(p.id), history = HISTORY_IDS.has(p.id), sea = SEA_IDS.has(p.id);
     const category = routeCategory(p);
     const base = {spot:7,food:4,cafe:5,shop:5}[category] || 0;
-    const focused = {
-      balanced: (history ? 3 : 0) + (sea ? 2 : 0) + (shop ? 1 : 0),
-      history: history ? 13 : category === 'spot' ? 5 : 0,
-      sea: sea ? 15 : category === 'spot' ? 2 : 0,
-      shops: shop ? 17 : category === 'shop' ? -4 : 0,
-      food: p.category === 'food' ? 15 : p.category === 'cafe' ? 5 : 0,
-      cafe: p.category === 'cafe' ? 16 : shop ? 2 : 0
-    }[theme] || 0;
+      const focused=theme==='balanced' ? (history ? 3 : 0) + (sea ? 2 : 0) + (shop ? 1 : 0) :
+      themedPlace(p,theme) ? 15 : theme==='cafeWalk' && p.category==='cafe' ? 12 : 0;
     const variantBoost = variant === 1 ? (category === 'shop' ? 3 : p.category === 'cafe' ? 2 : 0) :
       variant === 2 ? (sea ? 4 : p.category === 'food' ? 2 : 0) : 0;
     return base + focused + variantBoost;
@@ -187,7 +191,7 @@
     const category = routeCategory(p);
     const knownHours = p.hours || datedHours(p,date)?.open;
     if (minute >= 19*60 && !knownHours && ['shop','food','cafe'].includes(category)) return false;
-    if (meal) return p.category === 'food' || p.category === 'cafe';
+    if (meal) return p.category === 'food' || p.category === 'cafe' || SNACK_IDS.has(p.id);
     if (category === 'spot') {
       if (minute >= 17*60 && !NIGHT_OUTDOOR_IDS.has(p.id) && !knownHours) return false;
       if (minute >= 19*60) return NIGHT_OUTDOOR_IDS.has(p.id) || !!knownHours;
@@ -272,7 +276,7 @@
           break;
         }
         const {p,walk,visit,duration,result}=choice;
-        rows.push({minute:visit,placeId:p.id,duration,walkEstimate:walk.minutes,walkMeters:walk.meters,actual:walk.actual,walkPoints:walk.points || [],savedPathId:walk.savedPathId,savedPathLabel:walk.savedPathLabel,source:walk.source,result,kind:mealDue?'meal':'visit'});
+        rows.push({minute:visit,placeId:p.id,duration,walkEstimate:walk.minutes,walkMeters:walk.meters,actual:walk.actual,walkPoints:walk.points || [],savedPathId:walk.savedPathId,savedPathLabel:walk.savedPathLabel,source:walk.source,result,kind:mealDue?'meal':SNACK_IDS.has(p.id)?'snack':'visit'});
         if (rows.length === 1) usedFirst.add(p.id);
         used.add(p.id); walked+=walk.meters; prior=p; now=visit+duration;
         if (mealDue) mealIndex++;
@@ -367,7 +371,9 @@
   }
   const routeQuality=(route,order,origin)=>route.walkMeters+routeDetourPenalty(order,origin);
   const routePreference=(route,origin,places,theme)=>routeQuality(route,route.rows.map(row=>places.find(p=>p.id===row.placeId)),origin)
-    -400*route.rows.length-250*route.rows.filter(row=>themedPlace(places.find(p=>p.id===row.placeId),theme)).length;
+    -400*route.rows.length-250*route.rows.filter(row=>themedPlace(places.find(p=>p.id===row.placeId),theme)).length
+    -180*route.rows.filter(row=>MOKPO_MENU_IDS.has(row.placeId)).length
+    -(theme==='cafeWalk'?180:0)*route.rows.filter(row=>CAFE_SPECIALTY_IDS.has(row.placeId)).length;
   // 같은 방문지를 유지하면서 실제 도보 구간과 방문 가능한 시각을 다시 확인한다.
   async function improveRoute(route,input,cache) {
     if(route.transport==='walk-bus' || route.chosenMeals?.length || route.rows.length<3) return route;
@@ -487,7 +493,9 @@
         options.sort((a,b)=>
           (step===skeleton.length && variant>0 ? Number(firstChoices.has(a.p.id))-Number(firstChoices.has(b.p.id)) : 0) ||
           Number(b.p.id===input.preferredPlaceId)-Number(a.p.id===input.preferredPlaceId) ||
-          (input.theme==='first' && order.filter(p=>themedPlace(p,'first')).length>=3 ? 0 : Number(themedPlace(b.p,input.theme))-Number(themedPlace(a.p,input.theme))) ||
+          Number(input.theme==='cafeWalk' && CAFE_SPECIALTY_IDS.has(b.p.id))-Number(input.theme==='cafeWalk' && CAFE_SPECIALTY_IDS.has(a.p.id)) ||
+          Number(input.theme!=='cafeWalk' && MOKPO_MENU_IDS.has(b.p.id))-Number(input.theme!=='cafeWalk' && MOKPO_MENU_IDS.has(a.p.id)) ||
+          Number(themedPlace(b.p,input.theme))-Number(themedPlace(a.p,input.theme)) ||
           (focus==='through' || close ? a.extra-b.extra : a.near-b.near) ||
           a.extra-b.extra || a.near-b.near || a.p.id.localeCompare(b.p.id));
         let next=null;
@@ -841,7 +849,8 @@
           if (!preview) continue;
           option.preview=preview;
           option.score=(replaceIndex == null ? 0 : 2)+preview.droppedVisits*5+
-            Math.max(0,preview.walkMeters-route.walkMeters)/500+(result.kind === 'unknown' ? 2 : 0);
+            Math.max(0,preview.walkMeters-route.walkMeters)/500+(result.kind === 'unknown' ? 2 : 0)-
+            (kind!=='cafe' && kind!=='snack' && MOKPO_MENU_IDS.has(p.id) ? 4 : 0);
           if (!byPlace.has(p.id)) byPlace.set(p.id,new Map());
           const times=byPlace.get(p.id), existing=times.get(minute);
           if (!existing || option.score < existing.score) times.set(minute,option);
@@ -946,7 +955,7 @@
   function restoreFixedMeals(route,meals,context) {
     let current=route;
     for(const meal of [...meals].sort((a,b)=>a.minute-b.minute)) {
-      const choice=mealChoices({...context,route:current,kind:meal.kind==='cafe'?'cafe':'meal'})
+      const choice=mealChoices({...context,route:current,kind:meal.kind==='cafe'?'cafe':meal.kind==='snack'?'snack':'meal'})
         .find(item=>item.placeId===meal.placeId)?.slots.find(slot=>slot.minute===meal.minute);
       if(!choice) return null;
       current=addMeal(current,choice);
@@ -974,7 +983,7 @@
       (activeRegionId==='gyeongju' ? Math.abs(route.rows.length-targetStops)*100000 : 0);
     const themedCount=route=>route.rows.filter(row=>themedPlace(input.places.find(p=>p.id===row.placeId),input.theme)).length+(input.theme==='sea' && (themedPlace(input.origin,'sea') || themedPlace(input.destination,'sea')) ? 1 : 0);
     // 테마에 맞는 장소를 가까운 동선으로 묶고, 식사·휴식 여유를 남긴다.
-    const plans=(input.start ? [input.start] : ['10:00','11:00']).map(themeWindow);
+    const plans=(input.start ? [input.start] : ['10:00','11:00']).map(start=>themeWindow(start,input.theme));
     for(const plan of plans) {
       for(const allowRestStops of (activeRegionId==='gangneung' || activeRegionId==='gyeongju' || input.theme==='sea' ? [false,true] : [false])) {
         const context={...input,...plan,maxStops,variants:2,allowRestStops,flexibleMeals:true};
@@ -991,9 +1000,9 @@
     candidates.sort((a,b)=>preference(a.route,a.context)-preference(b.route,b.context));
     async function finish(route,context) {
       let checked=await confirmOrRepairRoute(route,context,cache);
-      if(!checked || !themedCount(checked)) return null;
+      if(!checked || !themedCount(checked) || !enoughThemeStops(checked)) return null;
       // 실제 도보 시간으로 먼저 맞춘 뒤 식사를 넣어 뒤 일정의 밀림을 확인한다.
-      if(!checked.rows.some(row=>row.kind==='meal')) {
+      if(input.theme!=='cafeWalk' && !checked.rows.some(row=>row.kind==='meal')) {
         const options=recommendMealTimes(mealChoices({...context,route:checked,kind:'lunch'}),{from:660,to:900,target:750});
         options.sort((a,b)=>a.slot.preview.droppedVisits-b.slot.preview.droppedVisits || Math.abs(a.slot.minute-750)-Math.abs(b.slot.minute-750) || a.slot.preview.walkMeters-b.slot.preview.walkMeters);
         for(const item of options) {
