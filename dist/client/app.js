@@ -1084,7 +1084,7 @@
     const modeTabs='<div class="route-mode-tabs"><button type="button" class="filter-chip ' + (r.mode !== 'theme' ? 'active' : '') + '" data-route-mode="custom">출발·도착 맞춤</button><button type="button" class="filter-chip ' + (r.mode === 'theme' ? 'active' : '') + '" data-route-mode="theme">테마별 추천 코스</button></div>';
     const themeCards=r.mode === 'theme' ? '<div class="card route-theme-panel"><p class="small">테마 코스는 걷기 좋은 권역의 하루 동선을 자동으로 짭니다. 방문 시간과 식사 시간도 선택한 날짜의 운영정보를 고려해 배치합니다.</p><div class="route-theme-grid">' + routeEngine.THEMES.filter((t) => t.id !== 'balanced').map((t) => '<button type="button" class="route-theme-choice ' + (r.theme === t.id ? 'active' : '') + '" data-theme-choice="' + t.id + '"><strong>' + esc(t.name) + '</strong><small>' + esc(routeEngine.THEME_PRESETS[t.id].description) + '</small></button>').join('') + '</div><p class="small">선택한 코스: ' + esc(routeEngine.THEME_PRESETS[r.theme]?.description || '') + '</p></div>' : '';
     const savedThemeDrafts=load(STORAGE_THEME_ROUTE_DRAFTS,[]).filter(item=>item && item.review && item.theme);
-    const savedThemeDraftPanel=r.mode==='theme' ? '<div class="card saved-theme-drafts"><h3>저장한 테마 초안</h3>'+(savedThemeDrafts.length ? savedThemeDrafts.map((draft,index)=>'<div class="route-stop"><div class="route-stop-time">초안</div><div><strong>'+esc(routeEngine.THEMES.find(theme=>theme.id===draft.theme)?.name || '테마 코스')+'</strong><p>'+esc(draft.date)+' · '+esc(draft.start)+' 시작 · '+draft.review.rows.length+'곳 방문 초안</p><button type="button" class="btn btn-outline btn-sm" data-open-theme-draft="'+index+'">다시 열기</button> <button type="button" class="btn btn-outline btn-sm" data-delete-theme-draft="'+index+'">삭제</button></div></div>').join('') : '<p class="small">아직 저장한 초안이 없습니다. 검토용 테마 동선에서 저장할 수 있어요.</p>')+'</div>' : '';
+    const savedThemeDraftPanel=r.mode==='theme' ? '<div class="card saved-theme-drafts"><h3>저장한 테마 초안</h3>'+(savedThemeDrafts.length ? savedThemeDrafts.map(draft=>'<div class="route-stop"><div class="route-stop-time">초안</div><div><strong>'+esc(routeEngine.THEMES.find(theme=>theme.id===draft.theme)?.name || '테마 코스')+'</strong><p>'+esc(draft.date)+' · '+esc(draft.start)+' 시작 · '+draft.review.rows.length+'곳 방문 초안</p><button type="button" class="btn btn-outline btn-sm" data-open-theme-draft="'+esc(draft.id)+'">다시 열기</button> <button type="button" class="btn btn-outline btn-sm" data-delete-theme-draft="'+esc(draft.id)+'">삭제</button></div></div>').join('') : '<p class="small">아직 저장한 초안이 없습니다. 검토용 테마 동선에서 저장할 수 있어요.</p>')+'</div>' : '';
     $('#main .page-head').insertAdjacentHTML('afterend', modeTabs+themeCards+savedThemeDraftPanel);
     if(activeRegion.id==='gangneung' && r.mode==='theme' && r.theme==='sea')
       $('#main .notice.warn').textContent='바다와 커피 테마는 카페에서 쉬어 가는 해변 동선으로, 한 번에 최대 2.4km·40분까지 걷습니다. 하루 도보는 8km 이내로 계산하고, 실제 길을 확인하지 못하면 확정 코스를 만들지 않습니다. 날씨와 현장 보행 여건은 출발 전에 확인해 주세요.';
@@ -1104,12 +1104,12 @@
     $('#route-solo').onchange=(event) => { captureRouteInputs(); r.solo=event.target.checked; r.results=[]; r.selected=-1; renderRoutes(); };
     document.querySelectorAll('[data-theme-choice]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.theme=button.dataset.themeChoice; r.results=[]; r.selected=-1; renderRoutes(); });
     document.querySelectorAll('[data-open-theme-draft]').forEach(button=>button.onclick=()=>{
-      const draft=savedThemeDrafts[Number(button.dataset.openThemeDraft)]; if(!draft) return;
+      const draft=savedThemeDrafts.find(item=>item.id===button.dataset.openThemeDraft); if(!draft) return;
       r.mode='theme'; r.theme=draft.theme; r.date=draft.date; r.themeStart=draft.start; r.review=JSON.parse(JSON.stringify(draft.review)); r.themeReviewOnly=true; r.results=[]; r.selected=-1; r.skipThemeTimeRefreshOnce=true;
       renderRoutes(); showRouteResults();
     });
     document.querySelectorAll('[data-delete-theme-draft]').forEach(button=>button.onclick=()=>{
-      const index=Number(button.dataset.deleteThemeDraft), drafts=load(STORAGE_THEME_ROUTE_DRAFTS,[]); drafts.splice(index,1); save(STORAGE_THEME_ROUTE_DRAFTS,drafts); renderRoutes();
+      const drafts=load(STORAGE_THEME_ROUTE_DRAFTS,[]).filter(item=>item.id!==button.dataset.deleteThemeDraft); save(STORAGE_THEME_ROUTE_DRAFTS,drafts); renderRoutes();
     });
     $('#routes-back').onclick = () => nav('region');
     $('#route-date').onchange=() => { r.date=$('#route-date').value || today(); r.results=[]; r.review=null; r.selected=-1; $('#route-results').innerHTML=''; if(r.mode==='theme') refreshThemeStartTimes(); };

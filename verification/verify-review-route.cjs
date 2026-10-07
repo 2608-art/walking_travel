@@ -59,6 +59,7 @@ const nearby=[
   const root=makeRoot(),button={},view={
     esc:value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;'),
     getPlace:id=>nearby.find(p=>p.id===id),
+    routePlace:id=>nearby.find(p=>p.id===id),
     initResultMap:()=>{},
     $:()=>button,nav:()=>{},state:{route:{mode:'theme'}},storeThemeRouteDraft:()=>{savedThemeDraft=true;}
   };
