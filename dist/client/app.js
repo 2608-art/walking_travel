@@ -443,7 +443,7 @@
       <div class="city-cover"><img src="${esc(region.image)}" alt="${esc(region.imageAlt)}"><button class="round-control city-back" id="city-back" aria-label="여행지 선택으로">‹</button><span class="cover-label">${esc(region.province)} · ${esc(region.imageLabel)}</span></div>
       <div class="city-body"><div class="city-intro"><div><span class="eyebrow">${esc(region.introTitle)}</span><h1>${esc(region.name)}</h1><p>${esc(region.teaser)}<br>${esc(region.introLine)}</p><span class="pill">⌖ ${esc(region.province)} ${esc(region.name)}시</span></div><span class="city-turtle-note" aria-hidden="true">${esc(region.name)} 같이<br>걸을까요?</span>${turtlePose('discover','새 여행지를 발견한 거북이')}</div>${region.ready?'':'<p class="notice warn">미리보기 지역입니다. 장소 자료와 테마 코스를 검증 중이며, 실제 도보 경로와 운영 정보는 방문 전 확인해 주세요.</p>'}
       <div class="city-tabs" role="tablist" aria-label="${esc(region.name)} 여행 정보"><button role="tab" aria-selected="${tab==='routes'}" data-city-tab="routes">추천 루트</button><button role="tab" aria-selected="${tab==='places'}" data-city-tab="places">여행지</button>${region.id==='gyeongju'?`<button role="tab" aria-selected="${tab==='themeDraft'}" data-city-tab="themeDraft">테마 후보 지도</button>`:''}<button role="tab" aria-selected="${tab==='info'}" data-city-tab="info">여행 정보</button></div>
-      <div class="city-content">${tab==='routes'?`<div class="diary-section-head"><h2>${region.id==='gyeongju'?'어떤 권역을 둘러볼까요?':region.id==='gangneung'?'어떤 테마 루트를 볼까요?':'어떤 하루를 걸어볼까요?'}</h2></div><div class="theme-discovery-list"><button type="button" class="theme-discovery theme-discovery--custom" id="discover-custom-route"><span class="theme-art theme-custom" aria-hidden="true"></span><span><strong>출발·도착 맞춤</strong><small>원하는 출발지와 도착지를 정하고 하루 동선을 만들어요.</small><em>내 경로 직접 만들기</em></span><b aria-hidden="true">›</b></button>${themes.map(t=>`<button class="theme-discovery" data-discover-theme="${t.id}"><span class="theme-art theme-${t.art||t.id}" aria-hidden="true">${uiIcon(THEME_ICONS[t.id]||t.icon)}</span><span><strong>${esc(t.name)}</strong><small>${esc(t.description||routeEngine.THEME_PRESETS[t.id].description)}</small><em>${region.id==='gyeongju'?'테마 장소와 보행 길선 보기':region.id==='gangneung'?'테마 루트 보기':'날짜에 맞춰 하루 코스 만들기'}</em></span><b aria-hidden="true">›</b></button>`).join('')}</div><div class="diary-section-head"><h2>${esc(region.name)}에서 만나는 풍경</h2><button class="text-button" data-city-tab="places">모두 보기 ›</button></div><div class="discovery-grid">${featured.map(destinationPlaceCard).join('')}</div>`:tab==='places'?`<div class="diary-section-head"><h2>한곳씩, 마음에 담기</h2><span class="small">${state.places.length}곳</span></div><div class="discovery-grid">${state.places.map(destinationPlaceCard).join('')}</div>`:tab==='themeDraft'?`<section class="theme-candidate-explorer"><div class="diary-section-head"><div><span class="eyebrow">장소 후보 초안</span><h2>가까이 모여 있는 경주 테마</h2></div><span class="pill">6개 테마 · 지도 핀</span></div><p class="theme-candidate-intro">저장된 경주 장소 중 테마 중심점 가까이에 있는 후보만 표시해요. 핀은 후보 위치이며 방문 순서나 보행 경로는 아닙니다.</p><div class="theme-candidate-layout"><div id="theme-candidate-controls" class="theme-candidate-controls" aria-label="경주 테마 선택"></div><div class="theme-candidate-map-wrap"><div id="theme-candidate-map" role="img" aria-label="선택한 경주 테마의 후보 장소 지도"></div><p class="small">지도 배경 © OpenStreetMap contributors · 핀 간 실제 보행 거리와 출입구는 별도 확인이 필요합니다.</p></div></div></section>`:`<div class="travel-note">${turtlePose('walk','산책하는 거북이')}<div><h2>내 속도로 걷는 ${esc(region.name)}</h2><p>${esc(region.description)}</p><p>지도에서 장소를 살펴보거나, 날짜와 테마를 골라 하루 코스를 만들어 보세요.</p></div></div><div class="info-pair"><div><strong>걸어서, 필요할 땐 버스로</strong><p>걷기 좋은 동선을 먼저 찾고, 도보 연결이 어려우면 확인 가능한 버스 경로를 살펴봐요.</p></div><div><strong>출발 전 한 번 더 확인</strong><p>장소의 운영시간과 실제 출입구, 버스 배차는 방문일에 확인해 주세요.</p></div></div>`}</div>
+      <div class="city-content">${tab==='routes'?`<div class="diary-section-head"><h2>${region.id==='gyeongju'?'어떤 권역을 둘러볼까요?':region.id==='gangneung'?'어떤 테마 루트를 볼까요?':'어떤 하루를 걸어볼까요?'}</h2></div><div class="theme-discovery-list"><button type="button" class="theme-discovery theme-discovery--custom" id="discover-custom-route"><span class="theme-art theme-custom" aria-hidden="true"></span><span><strong>출발·도착 맞춤</strong><small>원하는 출발지와 도착지를 정하고 하루 동선을 만들어요.</small><em>내 경로 직접 만들기</em></span><b aria-hidden="true">›</b></button>${themes.map(t=>`<button class="theme-discovery" data-discover-theme="${t.id}"><span class="theme-art theme-${t.art||t.id}" aria-hidden="true">${uiIcon(THEME_ICONS[t.id]||t.icon)}</span><span><strong>${esc(t.name)}</strong><small>${esc(t.description||routeEngine.THEME_PRESETS[t.id].description)}</small><em>${region.id==='gyeongju'?'테마 장소와 보행 길선 보기':'테마 루트 보기'}</em></span><b aria-hidden="true">›</b></button>`).join('')}</div><div class="diary-section-head"><h2>${esc(region.name)}에서 만나는 풍경</h2><button class="text-button" data-city-tab="places">모두 보기 ›</button></div><div class="discovery-grid">${featured.map(destinationPlaceCard).join('')}</div>`:tab==='places'?`<div class="diary-section-head"><h2>한곳씩, 마음에 담기</h2><span class="small">${state.places.length}곳</span></div><div class="discovery-grid">${state.places.map(destinationPlaceCard).join('')}</div>`:tab==='themeDraft'?`<section class="theme-candidate-explorer"><div class="diary-section-head"><div><span class="eyebrow">장소 후보 초안</span><h2>가까이 모여 있는 경주 테마</h2></div><span class="pill">6개 테마 · 지도 핀</span></div><p class="theme-candidate-intro">저장된 경주 장소 중 테마 중심점 가까이에 있는 후보만 표시해요. 핀은 후보 위치이며 방문 순서나 보행 경로는 아닙니다.</p><div class="theme-candidate-layout"><div id="theme-candidate-controls" class="theme-candidate-controls" aria-label="경주 테마 선택"></div><div class="theme-candidate-map-wrap"><div id="theme-candidate-map" role="img" aria-label="선택한 경주 테마의 후보 장소 지도"></div><p class="small">지도 배경 © OpenStreetMap contributors · 핀 간 실제 보행 거리와 출입구는 별도 확인이 필요합니다.</p></div></div></section>`:`<div class="travel-note">${turtlePose('walk','산책하는 거북이')}<div><h2>내 속도로 걷는 ${esc(region.name)}</h2><p>${esc(region.description)}</p><p>지도에서 장소를 살펴보거나, 날짜와 테마를 골라 하루 코스를 만들어 보세요.</p></div></div><div class="info-pair"><div><strong>걸어서, 필요할 땐 버스로</strong><p>걷기 좋은 동선을 먼저 찾고, 도보 연결이 어려우면 확인 가능한 버스 경로를 살펴봐요.</p></div><div><strong>출발 전 한 번 더 확인</strong><p>장소의 운영시간과 실제 출입구, 버스 배차는 방문일에 확인해 주세요.</p></div></div>`}</div>
       <div class="city-cta"><button class="btn btn-primary" id="choose-region">⌖ ${esc(region.name)} 지도 둘러보기</button><button class="btn btn-outline" id="city-plan">나의 하루 계획</button></div></div></section>`;
     if (region.id==='gyeongju' && tab==='info') {
       $('.info-pair').innerHTML=`
@@ -1330,12 +1330,10 @@
     mealGrid.remove();
     $('#main .page-head h1').textContent = r.mode === 'theme' ? '테마 루트' : '추천 루트';
     $('#main .page-head p').textContent = r.mode === 'theme' ? '테마를 고르면 제목과 설명, 저장된 방문 순서와 지도를 아래에서 확인할 수 있어요.' : '출발·도착 위치와 가고 싶은 장소를 정하세요. 끝낼 시각까지 도착하고, 식당과 방문 시각은 결과에서 직접 고릅니다.';
-    const modeTabs='<div class="route-mode-tabs"><button type="button" class="filter-chip ' + (r.mode !== 'theme' ? 'active' : '') + '" data-route-mode="custom">출발·도착 맞춤</button><button type="button" class="filter-chip ' + (r.mode === 'theme' ? 'active' : '') + '" data-route-mode="theme">'+(['gangneung','gyeongju'].includes(activeRegion.id)?'테마 루트':'테마별 추천 코스')+'</button></div>';
-    const themeNotice=activeRegion.id==='gangneung' ? '테마별로 저장한 루트 초안을 바로 볼 수 있습니다. 특색 카페 투어는 강릉 전역 구성을 유지합니다.' : '테마마다 최대 10개 루트를 만들고, 실제 이동 경로와 운영시간 조건을 통과한 코스만 추천합니다. 코스 방문지는 5~8곳으로 제한합니다.';
+    const modeTabs='<div class="route-mode-tabs"><button type="button" class="filter-chip ' + (r.mode !== 'theme' ? 'active' : '') + '" data-route-mode="custom">출발·도착 맞춤</button><button type="button" class="filter-chip ' + (r.mode === 'theme' ? 'active' : '') + '" data-route-mode="theme">테마 루트</button></div>';
+    const themeNotice=activeRegion.id==='gangneung' ? '테마별로 저장한 루트 초안을 바로 볼 수 있습니다. 특색 카페 투어는 강릉 전역 구성을 유지합니다.' : activeRegion.id==='mokpo' ? '테마와 날짜를 고른 뒤 저장된 방문 순서와 보행 길선을 확인하세요. 방문일의 운영·교통은 별도 확인이 필요합니다.' : '테마마다 최대 10개 루트를 만들고, 실제 이동 경로와 운영시간 조건을 통과한 코스만 추천합니다. 코스 방문지는 5~8곳으로 제한합니다.';
     const themeCards=activeRegion.id==='gyeongju' ? (r.mode === 'theme' ? '<div class="card route-theme-panel"><p class="small">'+(activeRegion.id==='gyeongju'?'테마를 고르고 저장된 루트 초안을 바로 확인하세요.':'테마 코스는 걷기 좋은 권역의 하루 동선을 자동으로 짭니다. 방문 시간과 식사·카페 휴식도 선택한 날짜의 운영정보를 고려해 배치합니다.')+'</p><div class="route-theme-grid">' + routeThemeOptions.filter((t) => t.id !== 'balanced').map((t) => '<button type="button" class="route-theme-choice ' + (r.theme === t.id ? 'active' : '') + '" data-theme-choice="' + t.id + '" aria-pressed="' + (r.theme === t.id) + '"><strong>' + esc(t.name) + '</strong><small>' + esc(t.description||routeEngine.THEME_PRESETS[t.id].description) + '</small></button>').join('') + '</div><p class="small">선택한 코스: ' + esc(routeThemeOptions.find(t=>t.id===r.theme)?.description||routeEngine.THEME_PRESETS[r.theme]?.description||'') + '</p></div>' : '') : (r.mode === 'theme' ? '<div class="card route-theme-panel"><p class="small">'+themeNotice+'</p><div class="route-theme-grid">' + routeEngine.THEMES.filter((t) => t.id !== 'balanced').map((t) => '<button type="button" class="route-theme-choice ' + (r.theme === t.id ? 'active' : '') + '" data-theme-choice="' + t.id + '"><strong>' + esc(t.name) + '</strong><small>' + esc(routeEngine.THEME_PRESETS[t.id].description) + '</small></button>').join('') + '</div><p class="small">선택한 테마: ' + esc(routeEngine.THEME_PRESETS[r.theme]?.description || '') + '</p></div>' : '');
-    const savedThemeDrafts=load(STORAGE_THEME_ROUTE_DRAFTS,[]).filter(item=>item && item.review && item.theme);
-    const savedThemeDraftPanel=r.mode==='theme' && !['gangneung','gyeongju'].includes(activeRegion.id) ? '<div class="card saved-theme-drafts"><h3>저장한 테마 초안</h3>'+(savedThemeDrafts.length ? savedThemeDrafts.map(draft=>'<div class="route-stop"><div class="route-stop-time">초안</div><div><strong>'+esc(routeEngine.THEMES.find(theme=>theme.id===draft.theme)?.name || '테마 코스')+'</strong><p>'+esc(draft.date)+' · '+esc(draft.start)+' 시작 · '+(draft.review.totalPlaceCount||draft.review.rows.length)+'곳 동선 초안</p><button type="button" class="btn btn-outline btn-sm" data-open-theme-draft="'+esc(draft.id)+'">다시 열기</button> <button type="button" class="btn btn-outline btn-sm" data-delete-theme-draft="'+esc(draft.id)+'">삭제</button></div></div>').join('') : '<p class="small">아직 저장한 초안이 없습니다. 검토용 테마 동선에서 저장할 수 있어요.</p>')+'</div>' : '';
-    $('#main .page-head').insertAdjacentHTML('afterend', modeTabs+themeCards+savedThemeDraftPanel);
+    $('#main .page-head').insertAdjacentHTML('afterend', modeTabs+themeCards);
     if(activeRegion.id==='gyeongju' && r.mode==='theme') {
       $('#main .page-head .eyebrow').textContent='테마별 루트 초안';
       $('#main .page-head h1').textContent='테마 루트';
@@ -1346,26 +1344,28 @@
       $('#main .notice.warn').textContent=themeNotice;
     $('#route-theme').closest('.field-group').style.display='none';
     if (r.mode === 'theme') {
-      $('#route-date').closest('.card').style.display='none';
       $('#route-start').closest('.field-group').style.display='none';
       $('#route-end').closest('.field-group').style.display='none';
       $('#route-date').closest('.form-grid').style.gridTemplateColumns='minmax(0,1fr)';
       if(activeRegion.id==='gangneung'){
-        $('#route-date').closest('.form-grid').style.display='none';
-        $('#route-date').closest('.form-grid').insertAdjacentHTML('afterend','<p class="small" id="theme-time-help">선택한 테마의 저장된 루트 초안을 불러옵니다.</p>');
+        $('#route-date').closest('.form-grid').insertAdjacentHTML('afterend','<p class="small" id="theme-time-help">날짜를 고르면 확인된 휴일 대체 루트가 있을 때 별도 버전을 보여줍니다.</p>');
       } else if(activeRegion.id==='gyeongju') {
         const dateNotice=$('#main .notice.warn');
         dateNotice.textContent='저장된 루트 초안입니다. 선택한 날짜의 영업시간·현장 통제·버스 운행은 아직 반영되지 않았으므로 방문 전에 확인하세요.';
         $('#make-routes').closest('.modal-actions').insertAdjacentElement('beforebegin',dateNotice);
         dateNotice.style.marginTop='14px';
         $('#make-routes').textContent='테마 루트 보기';
-      } else $('#route-date').closest('.field-group').insertAdjacentHTML('afterend','<div class="field-group"><label class="field-label" for="theme-route-start">시작시간</label><select class="select-field" id="theme-route-start" disabled><option value="">확인 중…</option></select><span class="small" id="theme-time-help" aria-live="polite">선택한 날짜·테마의 시작시간을 확인하고 있어요.</span></div>');
+      } else {
+        $('#main .page-head .eyebrow').textContent='테마별 저장 루트';
+        $('#main .page-head p').textContent='테마와 날짜를 고른 뒤 저장된 방문 순서를 확인하세요.';
+        $('#main .notice.warn').textContent='저장된 루트 초안입니다. 선택 날짜의 영업시간·현장 통제·교통 운행은 방문 전에 확인하세요.';
+        $('#make-routes').textContent='테마 루트 보기';
+      }
       $('#route-origin-query').closest('.form-grid').style.display='none';
       $('.route-solo-control').style.display='none';
       $('#route-must-query').closest('.form-grid').style.display='none';
       $('#route-meal-guide').style.display='none';
       if(activeRegion.id==='gangneung') $('#make-routes').textContent='테마 루트 보기';
-      else if(activeRegion.id!=='gyeongju') { $('#make-routes').closest('.modal-actions').style.display='none'; $('.route-common-notice').style.display='none'; }
     }
     if(activeRegion.id==='gangneung' && r.mode==='theme'){
       $('#main .page-head h1').textContent='테마 루트';
@@ -1374,37 +1374,45 @@
     document.querySelectorAll('[data-route-mode]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.mode=button.dataset.routeMode;r.reviewDetailsPage=false; r.results=[];r.review=null;r.reviewOptions=[]; r.selected=-1; renderRoutes(); });
     $('#route-solo').onchange=(event) => { captureRouteInputs(); r.solo=event.target.checked; r.results=[]; r.selected=-1; renderRoutes(); };
     document.querySelectorAll('[data-theme-choice]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.theme=button.dataset.themeChoice;r.reviewDetailsPage=false; r.results=[];r.review=null;r.reviewOptions=[]; r.selected=-1; renderRoutes(); });
-    document.querySelectorAll('[data-open-theme-draft]').forEach(button=>button.onclick=()=>{
-      const draft=savedThemeDrafts.find(item=>item.id===button.dataset.openThemeDraft); if(!draft) return;
-      r.mode='theme'; r.theme=draft.theme; r.date=draft.date; r.themeStart=draft.start; r.review=JSON.parse(JSON.stringify(draft.review));r.reviewOptions=[]; r.themeReviewOnly=true; r.results=[]; r.selected=-1; r.skipThemeTimeRefreshOnce=true;
-      renderRoutes(); showRouteResults();
-    });
-    document.querySelectorAll('[data-delete-theme-draft]').forEach(button=>button.onclick=()=>{
-      const drafts=load(STORAGE_THEME_ROUTE_DRAFTS,[]).filter(item=>item.id!==button.dataset.deleteThemeDraft); save(STORAGE_THEME_ROUTE_DRAFTS,drafts); renderRoutes();
-    });
     $('#routes-back').onclick = () => nav('region');
-    $('#route-date').onchange=() => { r.date=$('#route-date').value || today(); r.results=[]; r.review=null;r.reviewOptions=[]; r.selected=-1; $('#route-results').innerHTML=''; if(r.mode==='theme' && activeRegion.id!=='gyeongju') refreshThemeStartTimes(); };
+    $('#route-date').onchange=() => { r.date=$('#route-date').value || today(); r.results=[]; r.review=null;r.reviewOptions=[]; r.selected=-1; $('#route-results').innerHTML=''; if(r.mode==='theme' && activeRegion.id==='gangneung') refreshThemeStartTimes(); };
     $('#route-midnight').onchange = (e) => { $('#route-end').disabled=e.target.checked; };
     $('#make-routes').onclick = async () => {
       if(activeRegion.id==='gyeongju' && r.mode==='theme') {
         captureRouteInputs();
         if(!$('#route-date').value) return toast('날짜를 선택해 주세요.');
-        showSavedGyeongjuRoute(r.theme);
+        const holiday=await holidayRouteForDate('gyeongju',r.theme,r.date);
+        if(holiday.variant){showSavedHolidayRoute(holiday.variant);return;}
+        await showSavedGyeongjuRoute(r.theme);
+        if(holiday.isHoliday) showUnverifiedHolidayNotice();
         return;
       }
       if(activeRegion.id==='gangneung' && r.mode==='theme'){
+        captureRouteInputs();
+        const holiday=await holidayRouteForDate('gangneung',r.theme,r.date);
+        if(holiday.variant){showSavedHolidayRoute(holiday.variant);return;}
         const button=$('#make-routes');button.disabled=true;button.textContent='테마 루트를 불러오는 중…';
         try{
           const routes=(await loadGangneungReviewRoutes()).filter(route=>route.themeId===r.theme).map(buildGangneungReviewRoute).filter(Boolean);
           if(!routes.length)throw Error('선택한 테마의 루트 초안이 없습니다.');
           r.searched=true;r.reviewOptions=routes;r.reviewSelected=0;r.review=routes[0];r.results=[];r.selected=-1;
           showRouteResults();
+          if(holiday.isHoliday) showUnverifiedHolidayNotice();
           $('#route-results').scrollIntoView({behavior:'smooth',block:'start'});
         }catch(error){toast(error.message||'테마 루트 초안을 불러오지 못했습니다.');}
         finally{button.disabled=false;button.textContent='테마 루트 보기';}
         return;
       }
-      if (r.mode === 'theme') { $('#theme-course-list')?.scrollIntoView({behavior:'smooth',block:'start'}); return; }
+      if(activeRegion.id==='mokpo' && r.mode==='theme'){
+        captureRouteInputs();
+        const holiday=await holidayRouteForDate('mokpo',r.theme,r.date);
+        if(holiday.variant){showSavedHolidayRoute(holiday.variant);return;}
+        const button=$('#make-routes');button.disabled=true;button.textContent='테마 루트를 불러오는 중…';
+        try{const catalog=await loadThemeCourseCatalog(),course=catalog.courses.find(item=>item.theme===r.theme);if(!course)throw Error('선택한 테마의 저장 루트가 없습니다.');showSavedMokpoRoute(course);if(holiday.isHoliday)showUnverifiedHolidayNotice();}
+        catch(error){toast(error.message||'테마 루트를 불러오지 못했습니다.');}
+        finally{button.disabled=false;button.textContent='테마 루트 보기';}
+        return;
+      }
       if (r.mode !== 'theme' && ($('#route-origin-query').value.trim() || $('#route-destination-query').value.trim() || $('#route-must-query').value.trim())) { toast('검색 결과에서 위치와 가고 싶은 장소를 선택해 주세요.'); return; }
       captureRouteInputs();
       if (r.solo && r.mode !== 'theme' && r.must && !soloTravel.canVisit(getPlace(r.must))) { toast('선택한 필수 장소는 혼자 여행 후보에서 제외됩니다. 장소를 바꾸거나 혼자 여행 체크를 해제해 주세요.'); return; }
@@ -1427,7 +1435,7 @@
       if(new URLSearchParams(location.search).has('routepreview') && !r.previewConsumed){r.previewConsumed=true;showSavedGyeongjuRoute(selected);}
     } else if (r.results.length || r.review) showRouteResults();
     if (r.mode==='theme' && r.skipThemeTimeRefreshOnce) r.skipThemeTimeRefreshOnce=false;
-    else if (r.mode==='theme' && activeRegion.id!=='gyeongju') refreshThemeStartTimes();
+    else if (r.mode==='theme' && activeRegion.id==='gangneung') refreshThemeStartTimes();
   }
   function routeLegText(row) {
     const leg=row.busLeg || row;
@@ -1524,12 +1532,12 @@
       return;
     }
     const mapCaption=review.directionStatus==='straight-line-order-draft'?'번호는 방문 순서 · 점선은 핀 간 직선 참고입니다.':review.walkGeometry&&review.theme==='cafe'?'번호는 방문 순서 · 초록 선은 도보 · 파란 점선은 버스 구간 표시입니다.':review.walkGeometry?'번호는 방문 순서 · 선은 도보 구간입니다.':'번호는 방문 순서입니다.';
-    root.innerHTML=tabs+'<div class="card route-review"><span class="eyebrow">'+(confirmedOrder?'장소 순서 확정':'루트 초안')+' · '+(review.totalPlaceCount||review.rows.length)+'곳</span><h2>'+esc(review.title || review.originName+' → '+review.destinationName)+'</h2>'+(review.title?'<p><strong>출발 · '+(startMeal?esc(startMeal+' 식사 · '):'')+esc(review.originName)+' → 도착 · '+(endMeal?esc(endMeal+' 식사 · '):'')+esc(review.destinationName)+'</strong></p>':'')+walkSummary+'<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="검토용 방문 순서 지도"></div><p class="small">'+mapCaption+'</p></div>'+startStop+stops+endStop+geometryLinks+'<button class="btn btn-outline" id="go-own-plan">내 계획 만들기</button><button type="button" class="text-button route-info-link" id="route-info-link">조사·이동 정보 자세히 보기 →</button></div>';
+    root.innerHTML=tabs+'<div class="card route-review"><span class="eyebrow">'+(confirmedOrder?'장소 순서 확정':'루트 초안')+' · '+(review.totalPlaceCount||review.rows.length)+'곳</span><h2>'+esc(review.title || review.originName+' → '+review.destinationName)+'</h2>'+(review.title?'<p><strong>출발 · '+(startMeal?esc(startMeal+' 식사 · '):'')+esc(review.originName)+' → 도착 · '+(endMeal?esc(endMeal+' 식사 · '):'')+esc(review.destinationName)+'</strong></p>':'')+walkSummary+'<div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="검토용 방문 순서 지도"></div><p class="small">'+mapCaption+'</p></div>'+startStop+stops+endStop+geometryLinks+'<button class="btn btn-primary" id="import-theme-route">내 계획표에 넣기</button><button type="button" class="text-button route-info-link" id="route-info-link">조사·이동 정보 자세히 보기 →</button></div>';
     root.querySelectorAll('[data-review-tab]').forEach(button=>button.onclick=()=>{state.route.reviewDetailsPage=false;state.route.reviewSelected=Number(button.dataset.reviewTab);state.route.review=options[state.route.reviewSelected];showRouteResults();});
     $('#route-info-link').onclick=()=>{state.route.reviewDetailsPage=true;showRouteResults();$('#route-results').scrollIntoView({behavior:'smooth',block:'start'});};
     if(review.theme==='shops') root.querySelector('.route-review').insertAdjacentHTML('beforeend','<button type="button" class="btn btn-outline" id="view-market-short-route">경로선 확인된 기존 시장 외곽 5곳 코스 보기</button>');
     initResultMap(review);
-    $('#go-own-plan').onclick=()=>nav('plan');
+    $('#import-theme-route').onclick=()=>importThemeRoutePlan({title:review.title||'테마 루트',theme:review.theme,start:activeRegion.id==='gangneung'&&review.theme!=='cafe'?'08:00':'10:00',stops:[review.originId,...review.rows.map(row=>row.placeId),review.destinationId].map((placeId,index)=>({placeId,travelMinutes:index ? review.rows[index-1]?.minutes||review.endWalk?.minutes||15 : 0}))});
     if($('#view-market-short-route')) $('#view-market-short-route').onclick=async()=>{
       const routes=await buildMarketExteriorRoute(state.route.date,'11:00');
       if(!routes.length){toast('선택한 날짜에는 기존 시장 외곽 코스를 열 수 없습니다. 월요일 휴무를 확인해 주세요.');return;}
@@ -1615,6 +1623,75 @@
     if ($('#go-own-plan')) $('#go-own-plan').onclick = () => nav('plan');
     if (chosen) presentRouteResult(chosen);
   }
+  let holidayThemeCatalog=null;
+  async function holidayRouteForDate(region,theme,date) {
+    if(!holidayThemeCatalog) {
+      try{const response=await fetch('./holiday-theme-routes-2026.json');if(!response.ok)throw Error('holiday catalog');holidayThemeCatalog=await response.json();}
+      catch{holidayThemeCatalog={publicHolidays:[],variants:[]};}
+    }
+    const weekday=/^\d{4}-\d{2}-\d{2}$/.test(date)?new Date(date+'T12:00:00').getDay():-1;
+    const isHoliday=weekday===0||weekday===6||holidayThemeCatalog.publicHolidays.includes(date);
+    const variant=holidayThemeCatalog.variants.find(item=>item.region===region&&item.themeId===theme&&item.year===Number(date?.slice(0,4))&&item.weekdays.includes(weekday));
+    return {variant,isHoliday};
+  }
+  function showUnverifiedHolidayNotice() {
+    const root=$('#route-results');
+    if(root&&!root.querySelector('.holiday-route-notice'))root.insertAdjacentHTML('afterbegin','<p class="notice warn holiday-route-notice">선택한 휴일에 적용할 검증된 별도 루트가 없습니다. 이 저장 루트는 휴일 영업과 이동을 확인한 버전이 아니므로 각 장소를 확인한 뒤 계획표에 넣어 주세요.</p>');
+  }
+  function showSavedHolidayRoute(variant) {
+    const root=$('#route-results');if(!root)return;
+    state.resultMap?.remove();state.resultMap=null;root.hidden=false;
+    const places=variant.placeIds.map(getPlace);
+    if(places.some(place=>!place)){root.innerHTML='<p class="notice warn">휴일 루트의 장소 데이터를 찾지 못했습니다.</p>';return;}
+    const legByPair=new Map();
+    variant.walkGroups.forEach((group,groupIndex)=>group.slice(1).forEach((id,index)=>legByPair.set(group[index]+'>'+id,{meters:variant.walkPaths[groupIndex].legMeters[index],minutes:variant.walkPaths[groupIndex].legMinutes[index]})));
+    const transitByPair=new Map((variant.transitLegs||[]).map(leg=>[leg.from+'>'+leg.to,leg]));
+    let nextMinute=toMin(variant.start||'10:00');
+    const stops=variant.placeIds.map((id,index)=>{
+      const previous=variant.placeIds[index-1],leg=index?legByPair.get(previous+'>'+id):null,transit=index?transitByPair.get(previous+'>'+id):null;
+      const place=places[index],duration=place.category==='cafe'?25:place.category==='food'?45:35;
+      const openText=place.hours?.open||(id==='p105'?'10:30':id==='j117'?'11:00':null);
+      const openMinute=openText?toMin(openText):0;
+      const mealMinimum=variant.mealSlots?.[id]==='저녁'?toMin('17:00'):variant.mealSlots?.[id]==='점심'?toMin('11:30'):0;
+      const minute=Math.max(nextMinute+(index?Math.max(1,leg?.minutes??transit?.minutes??30):0),openMinute,mealMinimum);
+      nextMinute=minute+duration;
+      return {placeId:id,minute,duration,travelMinutes:leg?.minutes??transit?.minutes??15,busBefore:index>0&&!leg};
+    });
+    const rows=places.map((place,index)=>{
+      const pair=variant.placeIds[index-1]+'>'+place.id,leg=index?legByPair.get(pair):null,transit=index?transitByPair.get(pair):null;
+      const movement=index===0?'하루 동선 시작':leg?'앞 장소에서 도보 '+leg.meters+'m · 약 '+Math.max(1,leg.minutes)+'분':transit?'앞 장소에서 버스 '+esc(transit.route)+' · 탑승 약 '+transit.minutes+'분 · 방문일 운행 확인 필요':'버스 이동 · 승차와 운행 시각 확인 필요';
+      return '<div class="route-stop"><div class="route-stop-time">'+(index+1)+'</div><div><strong>'+esc(place.name)+'</strong><p>기본 방문 '+hhmm(stops[index].minute)+' · '+movement+'</p></div></div>';
+    }).join('');
+    const sourceLinks=variant.operationSources.map((url,index)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">운영 근거 '+(index+1)+'</a>').join(' · ');
+    root.innerHTML='<div class="card saved-theme-route-card"><span class="eyebrow">2026년 휴일 별도 루트</span><h2>'+esc(variant.title)+'</h2><p>'+esc(variant.reason)+'</p><p class="saved-theme-route-summary">방문 '+places.length+'곳 · 저장 보행 구간 약 '+(variant.walkingMeters/1000).toFixed(2)+'km · 도보 약 '+variant.walkingMinutes+'분'+(variant.transitLegs?.length?' · 버스 '+variant.transitLegs.length+'구간':'')+'</p><p class="notice warn">'+esc(variant.limit)+'</p><div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="'+esc(variant.title)+' 방문 순서 지도"></div><p class="small">초록 선은 저장한 보행망 구간입니다. 버스 이동은 선으로 잇지 않았습니다.</p></div><section class="saved-theme-route-stops" aria-label="휴일 방문 순서">'+rows+'</section><button type="button" class="btn btn-primary" id="import-theme-route">내 계획표에 넣기</button><p class="small">'+sourceLinks+' · <a href="https://routing.openstreetmap.de/" target="_blank" rel="noopener noreferrer">보행 경로 출처</a> · 2026-10-08 확인. 특별휴무와 현장 통제는 방문일에 확인하세요.</p></div>';
+    $('#import-theme-route').onclick=()=>importThemeRoutePlan({title:variant.title,theme:variant.themeId,start:variant.start,stops});
+    if(!window.L)return;
+    const map=L.map($('#route-result-map'),{scrollWheelZoom:false,dragging:true,touchZoom:true});state.resultMap=map;
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:19}).addTo(map);
+    const bounds=L.latLngBounds([]);
+    variant.walkPaths.forEach(path=>{const line=path.coordinates.map(([lon,lat])=>[lat,lon]);if(line.length>1){L.polyline(line,{color:'#087a61',weight:5,opacity:.88}).addTo(map);line.forEach(point=>bounds.extend(point));}});
+    places.forEach((place,index)=>{const point=pinPoint(place);if(!point)return;bounds.extend(point);L.marker(point,{icon:L.divIcon({className:'route-map-pin',html:'<span>'+(index+1)+'</span>',iconSize:[30,30],iconAnchor:[15,15]})}).addTo(map).bindTooltip((index+1)+'. '+place.name);});
+    if(bounds.isValid())map.fitBounds(bounds,{padding:[32,32],maxZoom:15});else map.setView(REGION_CENTER,13);
+    setTimeout(()=>{if(state.resultMap===map)map.invalidateSize();},50);
+  }
+  function showSavedMokpoRoute(course) {
+    const root=$('#route-results');
+    if(!root || activeRegion.id!=='mokpo')return;
+    state.resultMap?.remove();state.resultMap=null;
+    root.hidden=false;
+    const stops=[...course.stops.map(stop=>({placeId:stop.placeId,name:stop.name,arrival:stop.arrival,duration:stop.stayMinutes})),...(course.events||[]).map(event=>({placeId:event.placeId,name:event.name,arrival:event.arrival,duration:event.durationMinutes}))].sort((a,b)=>toMin(a.arrival)-toMin(b.arrival));
+    const rows=stops.map((stop,index)=>'<div class="route-stop"><div class="route-stop-time">'+(index+1)+'</div><div><strong>'+esc(stop.name)+'</strong><p>기본 방문 '+esc(stop.arrival)+' · 체류 약 '+esc(stop.duration)+'분</p></div></div>').join('');
+    root.innerHTML='<div class="card saved-theme-route-card"><span class="eyebrow">저장된 테마 루트 초안</span><h2>'+esc(course.title)+'</h2><p class="saved-theme-route-description">'+esc(course.routeReview||'')+'</p><p class="saved-theme-route-summary">기본 출발 '+esc(course.start)+' · 방문 '+stops.length+'곳 · 저장 보행 구간 약 '+(course.distanceMeters/1000).toFixed(2)+'km</p><p class="small">선택한 날짜의 영업·교통·공연 운영은 검증되지 않았습니다. 기본 방문 시각은 계획표에서 수정할 수 있습니다.</p><div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="'+esc(course.title)+' 방문 순서 지도"></div><p class="small">번호는 방문 순서입니다. 초록 선은 저장된 보행 길선이며, 현장 출입구와 통행은 별도 확인이 필요합니다.</p></div><section class="saved-theme-route-stops" aria-label="번호별 방문 장소">'+rows+'</section><button type="button" class="btn btn-primary" id="import-theme-route">내 계획표에 넣기</button></div>';
+    $('#import-theme-route').onclick=()=>importThemeRoutePlan({title:course.title,theme:course.theme,start:course.start,stops:stops.map(stop=>({placeId:stop.placeId,minute:toMin(stop.arrival),duration:stop.duration}))});
+    if(!window.L)return;
+    const map=L.map($('#route-result-map'),{scrollWheelZoom:false,dragging:true,touchZoom:true});state.resultMap=map;
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:19}).addTo(map);
+    const bounds=L.latLngBounds([]);
+    (course.coordinateSegments||[]).forEach(segment=>{const line=segment.filter(point=>Number.isFinite(point[0])&&Number.isFinite(point[1])).map(([lon,lat])=>[lat,lon]);if(line.length>1){L.polyline(line,{color:'#087a61',weight:5,opacity:.88}).addTo(map);line.forEach(point=>bounds.extend(point));}});
+    stops.forEach((stop,index)=>{const place=getPlace(stop.placeId),point=pinPoint(place);if(!point)return;bounds.extend(point);L.marker(point,{icon:L.divIcon({className:'route-map-pin',html:'<span>'+(index+1)+'</span>',iconSize:[30,30],iconAnchor:[15,15]})}).addTo(map).bindTooltip((index+1)+'. '+stop.name);});
+    if(bounds.isValid())map.fitBounds(bounds,{padding:[32,32],maxZoom:15});else map.setView(REGION_CENTER,13);
+    setTimeout(()=>{if(state.resultMap===map)map.invalidateSize();},50);
+  }
   async function showSavedGyeongjuRoute(themeId) {
     const root=$('#route-results');
     if (!root || activeRegion.id !== 'gyeongju') return;
@@ -1668,8 +1745,9 @@
       state.gyeongjuRouteGuide={title:p.title,html:'<p class="notice warn">'+dateNotice+'</p><p>기본 출발 '+esc(p.startTime||'10:00')+' · '+esc(p.originArea||'경주 시내 숙소권')+'</p><p>테마 후보 '+(p.placePoolCount||p.stopCount)+'곳 중 방문 '+p.stopCount+'곳 · 카페 '+p.cafeCount+'곳 · 도보 '+(p.walkingDistanceMeters/1000).toFixed(2)+'km'+busText+'</p>'+routeFlowNote+'<p>'+esc(p.breakfastRule||'09:00 이전 출발이면 시내에서 아침 식사 후 합류')+'</p><section class="saved-route-itinerary" aria-label="장소별 상세 방문 안내">'+timelineRows+'</section>'+offsetNote+accessNotes+optional+'<p class="small saved-route-source">도보 이동 약 '+p.walkingMinutes+'분 · 확인 '+esc(p.checkedAt)+' · '+walkingSource+' · <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a>. 버스 구간과 방문·식사 체류시간은 도보 시간에 포함하지 않습니다. 운영시간·현장 통제·귀환 교통은 방문일에 확인하세요.</p><a class="btn btn-outline" href="./gyeongju-six-theme-routes.gpx" download>보행 구간 GPX 받기</a>'};
       root.classList.remove('result-list-view');
       $('.routes-page')?.classList.remove('has-route-result');
-      root.innerHTML='<div class="card saved-theme-route-card"><span class="eyebrow">저장된 테마 루트 초안</span><h2>'+esc(p.title)+'</h2><p class="saved-theme-route-description">'+esc(description)+'</p><p class="saved-theme-route-trip"><strong>'+esc(first)+' → '+esc(last)+'</strong></p><p class="saved-theme-route-summary">기본 출발 '+esc(p.startTime||'10:00')+' · 도보 거리 합계(확인 구간) 약 '+(p.walkingDistanceMeters/1000).toFixed(2)+'km · 방문 '+p.stopCount+'곳'+busText+'</p><div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="'+esc(p.title)+' 번호 방문 핀과 확인된 보행 구간 지도"></div><p class="small">'+routeMapCaption+'</p></div><section class="saved-theme-route-stops" aria-label="번호별 방문 장소와 이동 거리·시간">'+compactRows+'</section><div class="saved-theme-route-links"><a href="#route-guide" id="open-gyeongju-route-guide">장소별 방문 안내·검증 근거 보기 →</a></div></div>';
+      root.innerHTML='<div class="card saved-theme-route-card"><span class="eyebrow">저장된 테마 루트 초안</span><h2>'+esc(p.title)+'</h2><p class="saved-theme-route-description">'+esc(description)+'</p><p class="saved-theme-route-trip"><strong>'+esc(first)+' → '+esc(last)+'</strong></p><p class="saved-theme-route-summary">기본 출발 '+esc(p.startTime||'10:00')+' · 도보 거리 합계(확인 구간) 약 '+(p.walkingDistanceMeters/1000).toFixed(2)+'km · 방문 '+p.stopCount+'곳'+busText+'</p><div class="route-result-map-wrap"><div id="route-result-map" role="img" aria-label="'+esc(p.title)+' 번호 방문 핀과 확인된 보행 구간 지도"></div><p class="small">'+routeMapCaption+'</p></div><section class="saved-theme-route-stops" aria-label="번호별 방문 장소와 이동 거리·시간">'+compactRows+'</section><button type="button" class="btn btn-primary" id="import-theme-route">내 계획표에 넣기</button><div class="saved-theme-route-links"><a href="#route-guide" id="open-gyeongju-route-guide">장소별 방문 안내·검증 근거 보기 →</a></div></div>';
       initSavedGyeongjuRouteMap(feature,[]);
+      $('#import-theme-route').onclick=()=>importThemeRoutePlan({title:p.title,theme:themeId,start:p.startTime||'10:00',stops:visitItems.map(item=>({placeId:item.placeId,travelMinutes:p.legMetrics?.find(metric=>metric.to===item.name)?.minutes||15,busBefore:busBefore.has(item.sequence)}))});
       $('#open-gyeongju-route-guide').onclick=(event)=>{event.preventDefault();nav('routeGuide');};
     } catch(error) {
       root.innerHTML='<div class="card empty-state"><h3>저장 경로를 불러오지 못했습니다.</h3><p>'+esc(error.message||'잠시 뒤 다시 시도해 주세요.')+'</p></div>';
@@ -1939,6 +2017,24 @@
   }
   function planConflict(minute, entry) {
     return Object.entries(state.draft.entries || {}).find(([at,existing]) => minute < Number(at)+(Number(existing.duration)||60) && minute+(Number(entry.duration)||60) > Number(at));
+  }
+  function importThemeRoutePlan(route) {
+    const resolved=route.stops.map(stop=>({...stop,place:getPlace(stop.placeId)}));
+    if(!resolved.length || resolved.some(stop=>!stop.place))return toast('계획표에 넣을 장소 정보를 확인하지 못했습니다.');
+    const entries={};let next=toMin(route.start||'10:00');
+    for(const [index,stop] of resolved.entries()){
+      const duration=Math.max(20,Math.min(90,Number(stop.duration)||45));
+      const minute=Number.isFinite(stop.minute)?Math.max(stop.minute,next):index===0?next:next+Math.max(10,Math.min(60,Number(stop.travelMinutes)||15))+(stop.busBefore?30:0);
+      if(minute+duration>1440)return toast('기본 방문 시각이 자정을 넘습니다. 루트의 장소 수와 시간을 확인해 주세요.');
+      entries[minute]={placeId:stop.placeId,duration,memo:'테마 루트 기본 시각 · 방문 전 운영·이동 확인'};
+      next=minute+duration;
+    }
+    openModal('<h2>내 계획표에 넣을까요?</h2><p>'+esc(route.title)+' · '+resolved.length+'곳</p><p>현재 편집 중인 계획은 이 테마 루트로 바뀝니다. 기본 방문 시각과 체류시간은 계획표에서 수정할 수 있습니다. 선택한 날짜의 운영·교통은 방문 전 확인해 주세요.</p><div class="modal-actions"><button type="button" class="btn btn-outline" data-close>취소</button><button type="button" class="btn btn-primary" id="confirm-theme-import">넣기</button></div>',()=>{
+      $('#confirm-theme-import').onclick=()=>confirmPlaceReservation(resolved.map(stop=>stop.place),()=>{
+        state.draft={id:null,title:route.title,date:state.route.date,start:hhmm(Math.min(toMin(route.start||'10:00'),Number(Object.keys(entries)[0]))),end:'24:00',origin:null,theme:route.theme,mealTimes:[],solo:false,entries,pending:[]};
+        persistDraft();closeModal();nav('plan');
+      });
+    });
   }
   function holdRouteStop(minute,entry,date) {
     const pending=state.draft.pending ||= [];

@@ -12,6 +12,43 @@ from urllib.request import Request, urlopen
 REGION_NAMES = {"mokpo": "목포", "gangneung": "강릉", "gyeongju": "경주"}
 SCOPE_NAMES = {"weekly": "주간", "monthly": "월간"}
 MARKER = "<!-- hours-audit-state:"
+ROOT = Path(__file__).resolve().parents[1]
+THEME_ROUTE_FILES = {"mokpo": "public/theme-courses.json",
+                     "gangneung": "public/gangneung-theme-review-routes.json",
+                     "gyeongju": "public/gyeongju-six-theme-routes.geojson"}
+
+
+def theme_route_index(region):
+    data = json.loads((ROOT / THEME_ROUTE_FILES[region]).read_text(encoding="utf-8"))
+    routes = data["courses"] if region == "mokpo" else data["routes"] if region == "gangneung" else data["features"]
+    index = {}
+    for route in routes:
+        if region == "mokpo":
+            ids = [stop["placeId"] for stop in route["stops"]]
+            ids += [event["placeId"] for event in route.get("events", []) if event.get("placeId")]
+            title = route["title"]
+        elif region == "gangneung":
+            ids, title = route["placeIds"], route["title"]
+        else:
+            props = route["properties"]
+            ids = [stop["placeId"] for stop in props["stops"] if stop.get("placeId")]
+            ids += [meal["placeId"] for meal in props.get("meals", []) if meal.get("placeId")]
+            title = props["title"]
+        for place_id in ids:
+            names = index.setdefault(place_id, [])
+            if title not in names:
+                names.append(title)
+    holiday_path = ROOT / "public/holiday-theme-routes-2026.json"
+    if holiday_path.exists():
+        for variant in json.loads(holiday_path.read_text(encoding="utf-8"))["variants"]:
+            if variant["region"] != region:
+                continue
+            title = variant["title"]
+            for place_id in variant["placeIds"]:
+                names = index.setdefault(place_id, [])
+                if title not in names:
+                    names.append(title)
+    return index
 
 
 def api(method, path, payload=None):
@@ -42,7 +79,7 @@ def stored_state(body):
         return {}, body[:marker].rstrip()
 
 
-def format_row(row):
+def format_row(row, themes=()):
     status = {"ok": "출처 문구 확인", "no_source": "조회 출처 없음", "not_fetchable": "자동 조회 제한",
               "fetch_error": "조회 실패", "no_hours_visible": "시간 문구 추출 실패"}[row["status"]]
     source = "[출처](" + row["source"] + ")" if row["source"] else "출처 없음"
@@ -51,6 +88,8 @@ def format_row(row):
              "  - 앱 기록: " + row["appHours"][:180] + " / " + row["appClosure"][:180]]
     if row["evidence"]:
         lines.append("  - 현재 페이지: " + " | ".join(s[:180] for s in row["evidence"][:2]))
+    if themes:
+        lines.append("  - 포함된 테마 루트: " + ", ".join(themes))
     return "\n".join(lines)
 
 
@@ -71,15 +110,21 @@ def main(report_path):
         return
     place_file = {"mokpo": "public/places.json", "gangneung": "public/gangneung-places.json",
                   "gyeongju": "public/gyeongju-places.json"}[report["region"]]
+    theme_file = THEME_ROUTE_FILES[report["region"]]
+    route_index = theme_route_index(report["region"])
     header = ("이 이슈는 공개 출처의 운영시간 관련 문구를 자동 수집한 **검토 목록**입니다. "
               "페이지 문구는 실제 영업의 확정 근거가 아니며 앱 데이터는 자동 수정하지 않습니다. "
               "공식 페이지가 있으면 우선합니다. "
               + ("이 지역은 현재 앱에서 공개 전입니다. " if not report["regionReady"] else "") + "\n\n"
               "검토할 때 장소의 현행 운영시간·정기휴무·날짜별 예외·마지막 입장/주문을 확인하고, "
-              "확인한 내용만 `" + place_file + "`에 반영해 배포하세요. 새로 생성하는 추천 루트는 배포된 데이터를 사용합니다.\n")
+              "확인한 내용만 `" + place_file + "`에 반영해 배포하세요. "
+              "변경 장소가 저장 테마 루트에 있으면 `" + theme_file + "`의 방문 순서·기본 시각과 "
+              "`public/holiday-theme-routes-2026.json`의 해당 휴일 버전도 재검토하고, "
+              "필요한 변경은 이동 구간과 함께 검증한 뒤 반영하세요. 루트 파일은 자동 수정되지 않습니다. "
+              "새로 생성하는 추천 루트는 배포된 데이터를 사용합니다.\n")
     no_source = [row for row in changed if row["status"] == "no_source"]
     details = [row for row in changed if row["status"] != "no_source"]
-    detail_text = "\n".join(format_row(row) for row in details)
+    detail_text = "\n".join(format_row(row, route_index.get(row["id"], ())) for row in details)
     if len(detail_text) > 39000:
         detail_text = detail_text[:39000].rsplit("\n- **", 1)[0] + "\n\n나머지 상세 결과는 이 실행의 JSON 보고서를 확인하세요."
     run_url = ("https://github.com/" + os.environ["GITHUB_REPOSITORY"] + "/actions/runs/"
