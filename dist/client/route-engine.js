@@ -149,6 +149,10 @@
     return value>0 ? value : null;
   };
   function datedHours(p,date) {
+    // 검토·반영된 날짜별 예외는 특정 연도·날짜에만 적용한다.
+    const approved = p.dateHours?.[date];
+    if (approved && (approved.closed === true || (approved.open && approved.close)))
+      return {...approved,dated:true};
     // 운영자 사이트와 충돌하는 포도책방의 지도 주간표는 판정에 사용하지 않는다.
     if (p.id === 'p127') return null;
     if (date < '2026-10-03' || date > '2026-10-09') return null;
