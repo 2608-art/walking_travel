@@ -1,0 +1,53 @@
+name: Place hours review
+
+on:
+  schedule:
+    # GitHub schedules use UTC; these run Tuesday/1st at 09:17/09:23 Korea time.
+    - cron: '17 0 * * 2'
+    - cron: '23 0 1 * *'
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: Places to inspect
+        type: choice
+        options:
+          - weekly
+          - monthly
+        default: weekly
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: place-hours-audit
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        region: [mokpo, gangneung, gyeongju]
+    env:
+      SCOPE: ${{ inputs.scope || (github.event.schedule == '23 0 1 * *' && 'monthly' || 'weekly') }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect existing public sources
+        run: python scripts/audit-place-hours.py --scope "$SCOPE" --region "${{ matrix.region }}" --output hours-audit-report.json
+      - name: Save review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hours-audit-${{ matrix.region }}-${{ env.SCOPE }}-${{ github.run_id }}
+          path: hours-audit-report.json
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Update GitHub review issue
+        run: python scripts/publish-hours-audit.py hours-audit-report.json

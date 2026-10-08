@@ -26,3 +26,5 @@ npm test
 ```
 
 Sites 배포는 [HOSTING.md](HOSTING.md)의 절차와 `.openai/hosting.json`의 기존 Site ID를 따릅니다. GitHub에 병합하는 것만으로 사이트가 자동 배포되지는 않습니다.
+
+장소 운영정보의 GitHub 예약 점검·수동 실행·이슈 검토 범위는 [운영시간 자동 점검](docs/앱/운영시간-자동점검.md)에 정리했습니다. 이 점검은 앱 데이터와 사이트를 자동 수정하지 않습니다.
