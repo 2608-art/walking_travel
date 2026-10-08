@@ -1,5 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
+// The deployed bundle must include refreshed static theme routes when place availability changes.
+await import('./refresh-theme-route-changes.mjs');
+await import('./verify-theme-route-updates.mjs');
 const root=fs.realpathSync('.');
 const output=path.resolve(root,'dist');
 if(path.dirname(output)!==root || path.basename(output)!=='dist') throw Error('Unsafe output path');

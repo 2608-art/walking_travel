@@ -1,0 +1,2448 @@
+{
+  "version": 1,
+  "checkedOn": "2026-10-08",
+  "dayIndex": "JavaScript Sunday=0",
+  "status": "research-audit; not published as validated weekday routes",
+  "caveats": [
+    "Unconfirmed business hours and temporary closures are not interpreted as open.",
+    "Removing a closed stop changes the walking path; those variants require new geometry and visit-time validation.",
+    "Holiday, seasonal and month-specific closures need the actual travel date."
+  ],
+  "courses": [
+    {
+      "region": "mokpo",
+      "themeId": "oldtown",
+      "title": "근대거리·시장",
+      "stops": [
+        {
+          "placeId": "p115",
+          "name": "씨엘비베이커리(원도심점)",
+          "category": "market",
+          "mealRole": null
+        },
+        {
+          "placeId": "p113",
+          "name": "고호의 책방",
+          "category": "books",
+          "mealRole": null
+        },
+        {
+          "placeId": "p125",
+          "name": "비팡이네",
+          "category": "books",
+          "mealRole": null
+        },
+        {
+          "placeId": "p96",
+          "name": "무가보",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "p9",
+          "name": "목포근대역사관 2관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "p120",
+          "name": "목포쫀드기 본점",
+          "category": "market",
+          "mealRole": null
+        },
+        {
+          "placeId": "p64",
+          "name": "정성김밥",
+          "category": "food",
+          "mealRole": "점심"
+        },
+        {
+          "placeId": "p31",
+          "name": "소년 김대중 공부방",
+          "category": "culture",
+          "mealRole": null
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "일",
+            "화",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "p115",
+            "p113",
+            "p125",
+            "p96",
+            "p9",
+            "p120",
+            "p64",
+            "p31"
+          ],
+          "closed": [],
+          "remainingCount": 8,
+          "meals": 1,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1
+          ],
+          "dayNames": [
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "p115",
+            "p113",
+            "p125",
+            "p120",
+            "p64"
+          ],
+          "closed": [
+            {
+              "placeId": "p96",
+              "name": "무가보",
+              "reason": "월요일 휴무 표시. 2025년 방문기는 월·화 휴무와 11:30 시작으로 달라 당일 확인 · 최근 장소 정보",
+              "source": "https://pandarank.net/contents/69312e254d2586ed63528ee3"
+            },
+            {
+              "placeId": "p9",
+              "name": "목포근대역사관 2관",
+              "reason": "월요일·1월 1일 휴관. 최근 공식 명절표에 2관이 운영 장소로 등재됐으나 평시 폐관시각은 전화 재확인",
+              "source": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=134f2422-7820-41e6-bda8-4a6a3ad91851"
+            },
+            {
+              "placeId": "p31",
+              "name": "소년 김대중 공부방",
+              "reason": "월요일 휴무 안내; 임시휴관·출입구 재확인 · 한국관광공사 2026 방문",
+              "source": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=101dd63f-9cb9-482e-9fa2-f9d7ceba6b67"
+            }
+          ],
+          "remainingCount": 5,
+          "meals": 1,
+          "cafes": 0,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "mokpo",
+      "themeId": "seosandong",
+      "title": "서산동 골목",
+      "stops": [
+        {
+          "placeId": "p61",
+          "name": "유달콩물(호남로 본점)",
+          "category": "food",
+          "mealRole": "아침"
+        },
+        {
+          "placeId": "p8",
+          "name": "목포근대역사관 1관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "p128",
+          "name": "구보책방",
+          "category": "books",
+          "mealRole": null
+        },
+        {
+          "placeId": "p118",
+          "name": "물망초",
+          "category": "books",
+          "mealRole": null
+        },
+        {
+          "placeId": "p83",
+          "name": "라멘집아저씨",
+          "category": "food",
+          "mealRole": "점심"
+        },
+        {
+          "placeId": "p10",
+          "name": "서산동 시화골목",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "p11",
+          "name": "보리마당",
+          "category": "outdoors",
+          "mealRole": null
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "일",
+            "화",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "p61",
+            "p8",
+            "p128",
+            "p118",
+            "p83",
+            "p10",
+            "p11"
+          ],
+          "closed": [],
+          "remainingCount": 7,
+          "meals": 2,
+          "cafes": 0,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1
+          ],
+          "dayNames": [
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "p61",
+            "p128",
+            "p118",
+            "p83",
+            "p10",
+            "p11"
+          ],
+          "closed": [
+            {
+              "placeId": "p8",
+              "name": "목포근대역사관 1관",
+              "reason": "월요일·1월 1일 휴관. 명절 특별시간 변동 가능 · 목포시 관람 안내",
+              "source": "https://www.mokpo.go.kr/tour/tourguide/information/admission"
+            }
+          ],
+          "remainingCount": 6,
+          "meals": 2,
+          "cafes": 0,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "mokpo",
+      "themeId": "gatbawi",
+      "title": "갓바위 문화타운",
+      "stops": [
+        {
+          "placeId": "p61",
+          "name": "유달콩물(호남로 본점)",
+          "category": "food",
+          "mealRole": "아침"
+        },
+        {
+          "placeId": "p43",
+          "name": "옥공예전시관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "p33",
+          "name": "목포문학관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "p25",
+          "name": "수중유산박물관(옛 국립해양유물전시관)",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "p16",
+          "name": "목포자연사박물관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "p55",
+          "name": "해빔",
+          "category": "food",
+          "mealRole": "점심"
+        },
+        {
+          "placeId": "p101",
+          "name": "커피창고로(평화광장점)",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "p56",
+          "name": "어락",
+          "category": "food",
+          "mealRole": "저녁"
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "일",
+            "화",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "p61",
+            "p43",
+            "p33",
+            "p25",
+            "p16",
+            "p55",
+            "p101",
+            "p56"
+          ],
+          "closed": [],
+          "remainingCount": 8,
+          "meals": 3,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1
+          ],
+          "dayNames": [
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "p61",
+            "p55",
+            "p101",
+            "p56"
+          ],
+          "closed": [
+            {
+              "placeId": "p43",
+              "name": "옥공예전시관",
+              "reason": "월요일 휴무. 목포시 관광의 `0시~0시`는 유효한 운영시간으로 쓰지 않음. 실내 임시휴관과 체험 운영은 방문일 확인",
+              "source": "https://www.mpcc1897.or.kr/base/culturalSpace/read?culturalSpaceNo=12&menuLevel=3&menuNo=25"
+            },
+            {
+              "placeId": "p33",
+              "name": "목포문학관",
+              "reason": "월요일·1월 1일 휴관, 특별휴관 확인 · 공식 안내",
+              "source": "https://m.mokpo.go.kr/munhak/digital_munhak/digital_visit"
+            },
+            {
+              "placeId": "p25",
+              "name": "수중유산박물관(옛 국립해양유물전시관)",
+              "reason": "월요일 휴관. 관람안내에 코로나19 임시휴관 문구가 남아 있으나 공식 2026-09 행사 달력에 월요일 휴관과 다른 날 프로그램이 표시되어 상시 휴관은 아닌 것으로 판단(추론). 방문일 임시휴관은 공지·안내데스크 061-270-3001 확인. 1층 로비 확인, 실외 현관 좌표 미확인",
+              "source": "https://www.seamuse.go.kr/mokpo/preview/exhibition_preview"
+            },
+            {
+              "placeId": "p16",
+              "name": "목포자연사박물관",
+              "reason": "월요일(공휴일·연휴면 다음날)·1월 1일 휴관 · 목포시, 관광공사",
+              "source": "https://www.mokpo.go.kr/tour/tourguide/information/admission"
+            }
+          ],
+          "remainingCount": 4,
+          "meals": 3,
+          "cafes": 1,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "mokpo",
+      "themeId": "peace",
+      "title": "평화광장·밤바다",
+      "stops": [
+        {
+          "placeId": "p101",
+          "name": "커피창고로(평화광장점)",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "p14",
+          "name": "평화광장",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "p55",
+          "name": "해빔",
+          "category": "food",
+          "mealRole": "저녁"
+        },
+        {
+          "placeId": "p74",
+          "name": "88포장마차(원형로)",
+          "category": "food",
+          "mealRole": "간식"
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "일",
+            "월",
+            "화",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "p101",
+            "p14",
+            "p55",
+            "p74"
+          ],
+          "closed": [],
+          "remainingCount": 4,
+          "meals": 1,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "mokpo",
+      "themeId": "samhakdo",
+      "title": "삼학도 해양·평화",
+      "stops": [
+        {
+          "placeId": "p61",
+          "name": "유달콩물(호남로 본점)",
+          "category": "food",
+          "mealRole": "아침"
+        },
+        {
+          "placeId": "p114",
+          "name": "목포종합수산시장",
+          "category": "market",
+          "mealRole": null
+        },
+        {
+          "placeId": "p31",
+          "name": "소년 김대중 공부방",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "p51",
+          "name": "성식당(수강로 본점 후보)",
+          "category": "food",
+          "mealRole": "점심"
+        },
+        {
+          "placeId": "p26",
+          "name": "삼학도 공원·이난영공원",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "p30",
+          "name": "김대중노벨평화상기념관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "p32",
+          "name": "목포어린이바다과학관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "p53",
+          "name": "연희네포차(항구포차 9호)",
+          "category": "food",
+          "mealRole": "저녁"
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "일",
+            "화",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "p61",
+            "p114",
+            "p31",
+            "p51",
+            "p26",
+            "p30",
+            "p32",
+            "p53"
+          ],
+          "closed": [],
+          "remainingCount": 8,
+          "meals": 3,
+          "cafes": 0,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1
+          ],
+          "dayNames": [
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "p61",
+            "p114",
+            "p51",
+            "p26",
+            "p53"
+          ],
+          "closed": [
+            {
+              "placeId": "p31",
+              "name": "소년 김대중 공부방",
+              "reason": "월요일 휴무 안내; 임시휴관·출입구 재확인 · 한국관광공사 2026 방문",
+              "source": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=101dd63f-9cb9-482e-9fa2-f9d7ceba6b67"
+            },
+            {
+              "placeId": "p30",
+              "name": "김대중노벨평화상기념관",
+              "reason": "월요일 휴관; 특별휴관·행사 확인 · 목포시",
+              "source": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=1758703"
+            },
+            {
+              "placeId": "p32",
+              "name": "목포어린이바다과학관",
+              "reason": "월요일 휴관·특별휴관 확인 · 목포시 관람 안내",
+              "source": "https://biz.mokpo.go.kr/tour/tourguide/information/admission"
+            }
+          ],
+          "remainingCount": 5,
+          "meals": 3,
+          "cafes": 0,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "mokpo",
+      "themeId": "cafeWalk",
+      "title": "원도심 카페 산책",
+      "stops": [
+        {
+          "placeId": "p102",
+          "name": "혹호",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "p103",
+          "name": "인스파이어링 커피",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "p93",
+          "name": "화신연쇄점",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "p98",
+          "name": "쿠레레",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "p96",
+          "name": "무가보",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "p95",
+          "name": "유달동의로망스",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "p94",
+          "name": "송자르트",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "p97",
+          "name": "달몬트",
+          "category": "cafe",
+          "mealRole": null
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            6
+          ],
+          "dayNames": [
+            "일",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "p102",
+            "p93",
+            "p98",
+            "p96",
+            "p95",
+            "p94",
+            "p97"
+          ],
+          "closed": [
+            {
+              "placeId": "p103",
+              "name": "인스파이어링 커피",
+              "reason": "토·일 휴무 표시; 공휴일 예외 확인 · 장소 정보",
+              "source": "https://www.diningcode.com/profile.php?rid=OzMg3yu7a3L4"
+            }
+          ],
+          "remainingCount": 7,
+          "meals": 0,
+          "cafes": 7,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1
+          ],
+          "dayNames": [
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "p103",
+            "p93",
+            "p98",
+            "p94",
+            "p97"
+          ],
+          "closed": [
+            {
+              "placeId": "p102",
+              "name": "혹호",
+              "reason": "월요일 휴무 표시; 공휴일 예외 확인 · 장소 정보",
+              "source": "https://www.diningcode.com/profile.php?rid=QKWSqTtOp9IJ"
+            },
+            {
+              "placeId": "p96",
+              "name": "무가보",
+              "reason": "월요일 휴무 표시. 2025년 방문기는 월·화 휴무와 11:30 시작으로 달라 당일 확인 · 최근 장소 정보",
+              "source": "https://pandarank.net/contents/69312e254d2586ed63528ee3"
+            },
+            {
+              "placeId": "p95",
+              "name": "유달동의로망스",
+              "reason": "월요일 휴무 표시; 공휴일 예외 확인 · 장소 정보",
+              "source": "https://www.diningcode.com/profile.php?rid=vaMcp0NaCDg0"
+            }
+          ],
+          "remainingCount": 5,
+          "meals": 0,
+          "cafes": 5,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "dayNames": [
+            "화",
+            "수",
+            "목",
+            "금"
+          ],
+          "remainingPlaceIds": [
+            "p102",
+            "p103",
+            "p93",
+            "p98",
+            "p96",
+            "p95",
+            "p94",
+            "p97"
+          ],
+          "closed": [],
+          "remainingCount": 8,
+          "meals": 0,
+          "cafes": 8,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gangneung",
+      "themeId": "food",
+      "title": "강문·초당마을 · 확정 방문 순서",
+      "stops": [
+        {
+          "placeId": "g45",
+          "name": "아르떼뮤지엄 강릉",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "g22",
+          "name": "허균·허난설헌 기념공원",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "g49",
+          "name": "초희전통차체험관",
+          "category": "experience",
+          "mealRole": null
+        },
+        {
+          "placeId": "g88",
+          "name": "원조초당순두부",
+          "category": "food",
+          "mealRole": "점심"
+        },
+        {
+          "placeId": "g98",
+          "name": "카페 툇마루",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g30",
+          "name": "초당110",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g5",
+          "name": "강문해변",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "g181",
+          "name": "강문떡갈비",
+          "category": "food",
+          "mealRole": "저녁"
+        },
+        {
+          "placeId": "g56",
+          "name": "유리알유희",
+          "category": "books",
+          "mealRole": null
+        },
+        {
+          "placeId": "g257",
+          "name": "서울양계",
+          "category": "market",
+          "mealRole": null
+        },
+        {
+          "placeId": "g35",
+          "name": "강문솟대다리",
+          "category": "outdoors",
+          "mealRole": null
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "일",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "g45",
+            "g22",
+            "g49",
+            "g88",
+            "g98",
+            "g30",
+            "g5",
+            "g181",
+            "g56",
+            "g257",
+            "g35"
+          ],
+          "closed": [],
+          "remainingCount": 11,
+          "meals": 2,
+          "cafes": 2,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1
+          ],
+          "dayNames": [
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "g45",
+            "g22",
+            "g88",
+            "g98",
+            "g30",
+            "g5",
+            "g181",
+            "g56",
+            "g257",
+            "g35"
+          ],
+          "closed": [
+            {
+              "placeId": "g49",
+              "name": "초희전통차체험관",
+              "reason": "월요일 휴무 안내 · 공원 자체 운영과 구별",
+              "source": "https://www.ktriptips.com/kor/tourspot/3547622"
+            }
+          ],
+          "remainingCount": 10,
+          "meals": 2,
+          "cafes": 2,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            2
+          ],
+          "dayNames": [
+            "화"
+          ],
+          "remainingPlaceIds": [
+            "g45",
+            "g22",
+            "g49",
+            "g30",
+            "g5",
+            "g181",
+            "g56",
+            "g257",
+            "g35"
+          ],
+          "closed": [
+            {
+              "placeId": "g88",
+              "name": "원조초당순두부",
+              "reason": "화요일 휴무",
+              "source": "https://www.diningcode.com/profile.php?rid=urKeiU5dYru1"
+            },
+            {
+              "placeId": "g98",
+              "name": "카페 툇마루",
+              "reason": "매주 화요일 휴무",
+              "source": "https://www.diningcode.com/profile.php?rid=4y7XOluzyxxJ"
+            }
+          ],
+          "remainingCount": 9,
+          "meals": 1,
+          "cafes": 1,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            3
+          ],
+          "dayNames": [
+            "수"
+          ],
+          "remainingPlaceIds": [
+            "g45",
+            "g22",
+            "g49",
+            "g88",
+            "g98",
+            "g30",
+            "g5",
+            "g56",
+            "g257",
+            "g35"
+          ],
+          "closed": [
+            {
+              "placeId": "g181",
+              "name": "강문떡갈비",
+              "reason": "수요일 휴무",
+              "source": "https://www.diningcode.com/profile.php?rid=CfykzNYzxJUX"
+            }
+          ],
+          "remainingCount": 10,
+          "meals": 1,
+          "cafes": 2,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gangneung",
+      "themeId": "sea",
+      "title": "커피거리·안목 · 확정 방문 순서",
+      "stops": [
+        {
+          "placeId": "g14",
+          "name": "송정해변·송림",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "g156",
+          "name": "환희컵박물관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "g4",
+          "name": "안목해변",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "g171",
+          "name": "안목항물회",
+          "category": "food",
+          "mealRole": "점심"
+        },
+        {
+          "placeId": "g189",
+          "name": "커피커퍼 안목1호점",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g158",
+          "name": "강릉항",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "g37",
+          "name": "솔바람다리",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "g297",
+          "name": "삼교리동치미막국수 남항진점",
+          "category": "food",
+          "mealRole": "저녁"
+        },
+        {
+          "placeId": "g38",
+          "name": "남항진해변",
+          "category": "outdoors",
+          "mealRole": null
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "일",
+            "화",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "g14",
+            "g156",
+            "g4",
+            "g171",
+            "g189",
+            "g158",
+            "g37",
+            "g297",
+            "g38"
+          ],
+          "closed": [],
+          "remainingCount": 9,
+          "meals": 2,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1
+          ],
+          "dayNames": [
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "g14",
+            "g156",
+            "g4",
+            "g189",
+            "g158",
+            "g37",
+            "g297",
+            "g38"
+          ],
+          "closed": [
+            {
+              "placeId": "g171",
+              "name": "안목항물회",
+              "reason": "월요일 휴무",
+              "source": "https://www.diningcode.com/profile.php?rid=JARATlZC2Jvd"
+            }
+          ],
+          "remainingCount": 8,
+          "meals": 1,
+          "cafes": 1,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gangneung",
+      "themeId": "shops",
+      "title": "시장·먹거리 · 확정 방문 순서",
+      "stops": [
+        {
+          "placeId": "g33",
+          "name": "선채향",
+          "category": "food",
+          "mealRole": "아침"
+        },
+        {
+          "placeId": "g3",
+          "name": "월화거리",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "g40",
+          "name": "감자바우 옹심이장칼국수",
+          "category": "food",
+          "mealRole": "점심"
+        },
+        {
+          "placeId": "g1",
+          "name": "강릉중앙시장",
+          "category": "market",
+          "mealRole": null
+        },
+        {
+          "placeId": "g2",
+          "name": "성남시장",
+          "category": "market",
+          "mealRole": null
+        },
+        {
+          "placeId": "g58",
+          "name": "광덕식당 중앙시장점",
+          "category": "food",
+          "mealRole": "저녁"
+        },
+        {
+          "placeId": "g73",
+          "name": "만복래닭강정",
+          "category": "market",
+          "mealRole": null
+        },
+        {
+          "placeId": "g200",
+          "name": "강릉 명주동 거리",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "g24",
+          "name": "봉봉방앗간",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g27",
+          "name": "강릉 대도호부 관아·임영관삼문",
+          "category": "culture",
+          "mealRole": null
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0
+          ],
+          "dayNames": [
+            "일"
+          ],
+          "remainingPlaceIds": [
+            "g33",
+            "g3",
+            "g40",
+            "g1",
+            "g2",
+            "g58",
+            "g73",
+            "g200",
+            "g27"
+          ],
+          "closed": [
+            {
+              "placeId": "g24",
+              "name": "봉봉방앗간",
+              "reason": "일·월 휴무 · 추가 휴무 공지 확인",
+              "source": "https://bonboncoffee.com/location"
+            }
+          ],
+          "remainingCount": 9,
+          "meals": 3,
+          "cafes": 0,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1
+          ],
+          "dayNames": [
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "g33",
+            "g3",
+            "g40",
+            "g1",
+            "g2",
+            "g58",
+            "g73",
+            "g200"
+          ],
+          "closed": [
+            {
+              "placeId": "g24",
+              "name": "봉봉방앗간",
+              "reason": "일·월 휴무 · 추가 휴무 공지 확인",
+              "source": "https://bonboncoffee.com/location"
+            },
+            {
+              "placeId": "g27",
+              "name": "강릉 대도호부 관아·임영관삼문",
+              "reason": "월요일 휴관",
+              "source": "https://access.visitkorea.or.kr/ms/detail.do?cotId=5abe1748-2ee0-42bd-b8e7-52f754adaedc"
+            }
+          ],
+          "remainingCount": 8,
+          "meals": 3,
+          "cafes": 0,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "화",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "g33",
+            "g3",
+            "g40",
+            "g1",
+            "g2",
+            "g58",
+            "g73",
+            "g200",
+            "g24",
+            "g27"
+          ],
+          "closed": [],
+          "remainingCount": 10,
+          "meals": 3,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            3
+          ],
+          "dayNames": [
+            "수"
+          ],
+          "remainingPlaceIds": [
+            "g3",
+            "g40",
+            "g1",
+            "g2",
+            "g58",
+            "g200",
+            "g24",
+            "g27"
+          ],
+          "closed": [
+            {
+              "placeId": "g33",
+              "name": "선채향",
+              "reason": "업체 프로필 수요일 휴무 안내",
+              "source": "https://www.daangn.com/kr/local-profile/%EC%84%A0%EC%B1%84%ED%96%A5-troqn1ux43h7/"
+            },
+            {
+              "placeId": "g73",
+              "name": "만복래닭강정",
+              "reason": "수요일 휴무로 주간표 표시",
+              "source": "https://www.diningcode.com/profile.php?rid=ObBn0R8Y8XlN"
+            }
+          ],
+          "remainingCount": 8,
+          "meals": 2,
+          "cafes": 1,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gangneung",
+      "themeId": "history",
+      "title": "경포·오죽헌 역사·문화 · 확정 방문 순서",
+      "stops": [
+        {
+          "placeId": "g9",
+          "name": "오죽헌·시립박물관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "g10",
+          "name": "강릉 선교장",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "g11",
+          "name": "경포대",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "g121",
+          "name": "참소리축음기·에디슨과학박물관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "g236",
+          "name": "경포별난해물찜",
+          "category": "food",
+          "mealRole": "점심"
+        },
+        {
+          "placeId": "g12",
+          "name": "경포호",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "g181",
+          "name": "강문떡갈비",
+          "category": "food",
+          "mealRole": "저녁"
+        },
+        {
+          "placeId": "g22",
+          "name": "허균·허난설헌 기념공원",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "g21",
+          "name": "테라로사 경포호수점",
+          "category": "cafe",
+          "mealRole": null
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            1,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "일",
+            "월",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "g9",
+            "g10",
+            "g11",
+            "g121",
+            "g236",
+            "g12",
+            "g181",
+            "g22",
+            "g21"
+          ],
+          "closed": [],
+          "remainingCount": 9,
+          "meals": 2,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            2
+          ],
+          "dayNames": [
+            "화"
+          ],
+          "remainingPlaceIds": [
+            "g9",
+            "g10",
+            "g11",
+            "g236",
+            "g12",
+            "g181",
+            "g22",
+            "g21"
+          ],
+          "closed": [
+            {
+              "placeId": "g121",
+              "name": "참소리축음기·에디슨과학박물관",
+              "reason": "화요일 휴관, 화요일 공휴일이면 다음 날 휴관이라고 자료 표기",
+              "source": "https://www.ktriptips.com/kor/culture/130123"
+            }
+          ],
+          "remainingCount": 8,
+          "meals": 2,
+          "cafes": 1,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            3
+          ],
+          "dayNames": [
+            "수"
+          ],
+          "remainingPlaceIds": [
+            "g9",
+            "g10",
+            "g11",
+            "g121",
+            "g236",
+            "g12",
+            "g22",
+            "g21"
+          ],
+          "closed": [
+            {
+              "placeId": "g181",
+              "name": "강문떡갈비",
+              "reason": "수요일 휴무",
+              "source": "https://www.diningcode.com/profile.php?rid=CfykzNYzxJUX"
+            }
+          ],
+          "remainingCount": 8,
+          "meals": 1,
+          "cafes": 1,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gangneung",
+      "themeId": "cafe",
+      "title": "시내→초당→안목 카페 투어 · 10곳",
+      "stops": [
+        {
+          "placeId": "g24",
+          "name": "봉봉방앗간",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g25",
+          "name": "새바람이 오는 그늘",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g258",
+          "name": "베리베리딸기",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g223",
+          "name": "말차로",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g195",
+          "name": "쵸딩 초당옥수수 푸딩 카페",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g193",
+          "name": "카페콥스",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g98",
+          "name": "카페 툇마루",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g189",
+          "name": "커피커퍼 안목1호점",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g187",
+          "name": "레오파드",
+          "category": "cafe",
+          "mealRole": null
+        },
+        {
+          "placeId": "g17",
+          "name": "보사노바 커피로스터스 강릉점",
+          "category": "cafe",
+          "mealRole": null
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            1
+          ],
+          "dayNames": [
+            "일",
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "g25",
+            "g258",
+            "g223",
+            "g195",
+            "g193",
+            "g98",
+            "g189",
+            "g187",
+            "g17"
+          ],
+          "closed": [
+            {
+              "placeId": "g24",
+              "name": "봉봉방앗간",
+              "reason": "일·월 휴무 · 추가 휴무 공지 확인",
+              "source": "https://bonboncoffee.com/location"
+            }
+          ],
+          "remainingCount": 9,
+          "meals": 0,
+          "cafes": 9,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            2
+          ],
+          "dayNames": [
+            "화"
+          ],
+          "remainingPlaceIds": [
+            "g24",
+            "g25",
+            "g258",
+            "g195",
+            "g189",
+            "g187",
+            "g17"
+          ],
+          "closed": [
+            {
+              "placeId": "g223",
+              "name": "말차로",
+              "reason": "화요일 휴무",
+              "source": "https://www.diningcode.com/profile.php?rid=rgxE6dA4jyJs"
+            },
+            {
+              "placeId": "g193",
+              "name": "카페콥스",
+              "reason": "화요일 휴무로 표시",
+              "source": "https://www.diningcode.com/profile.php?rid=Cd4bEE4B8NLC"
+            },
+            {
+              "placeId": "g98",
+              "name": "카페 툇마루",
+              "reason": "매주 화요일 휴무",
+              "source": "https://www.diningcode.com/profile.php?rid=4y7XOluzyxxJ"
+            }
+          ],
+          "remainingCount": 7,
+          "meals": 0,
+          "cafes": 7,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            3
+          ],
+          "dayNames": [
+            "수"
+          ],
+          "remainingPlaceIds": [
+            "g24",
+            "g25",
+            "g258",
+            "g223",
+            "g193",
+            "g98",
+            "g189",
+            "g187",
+            "g17"
+          ],
+          "closed": [
+            {
+              "placeId": "g195",
+              "name": "쵸딩 초당옥수수 푸딩 카페",
+              "reason": "수요일 휴무; 시그니처 푸딩 일일 한정·조기 품절 가능",
+              "source": "https://www.diningcode.com/profile.php?rid=u3Xl1kvhjsDl"
+            }
+          ],
+          "remainingCount": 9,
+          "meals": 0,
+          "cafes": 9,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            4
+          ],
+          "dayNames": [
+            "목"
+          ],
+          "remainingPlaceIds": [
+            "g24",
+            "g223",
+            "g195",
+            "g193",
+            "g98",
+            "g189",
+            "g187",
+            "g17"
+          ],
+          "closed": [
+            {
+              "placeId": "g25",
+              "name": "새바람이 오는 그늘",
+              "reason": "목요일 휴무 안내",
+              "source": "https://www.daangn.com/kr/local-profile/%EA%B0%95%EB%A6%89%EC%B9%B4%ED%8E%98-%EC%83%88%EB%B0%94%EB%9E%8C%EC%9D%B4-%EC%98%A4%EB%8A%94-%EA%B7%B8%EB%8A%98-3w7eok36ew1w/"
+            },
+            {
+              "placeId": "g258",
+              "name": "베리베리딸기",
+              "reason": "목요일 휴무로 표시; 임시 운영은 방문 전 확인",
+              "source": "https://place.map.kakao.com/1037506521"
+            }
+          ],
+          "remainingCount": 8,
+          "meals": 0,
+          "cafes": 8,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            5,
+            6
+          ],
+          "dayNames": [
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "g24",
+            "g25",
+            "g258",
+            "g223",
+            "g195",
+            "g193",
+            "g98",
+            "g189",
+            "g187",
+            "g17"
+          ],
+          "closed": [],
+          "remainingCount": 10,
+          "meals": 0,
+          "cafes": 10,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gyeongju",
+      "themeId": "hwangridan",
+      "title": "황리단길·대릉원 골목",
+      "stops": [
+        {
+          "placeId": "j3",
+          "name": "황리단길",
+          "category": "market",
+          "mealRole": null
+        },
+        {
+          "placeId": "j103",
+          "name": "미피스토어 경주",
+          "category": "books",
+          "mealRole": null
+        },
+        {
+          "placeId": "j95",
+          "name": "제로스페이스 경주",
+          "category": "books",
+          "mealRole": null
+        },
+        {
+          "placeId": "j38",
+          "name": "스컹크웍스",
+          "category": "cafe",
+          "mealRole": "cafe"
+        },
+        {
+          "placeId": "j142",
+          "name": "소향몽",
+          "category": "food",
+          "mealRole": "lunch"
+        },
+        {
+          "placeId": "j4",
+          "name": "대릉원",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j1",
+          "name": "첨성대",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j2",
+          "name": "동궁과 월지",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j42",
+          "name": "경주원조콩국",
+          "category": "food",
+          "mealRole": "dinner"
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0
+          ],
+          "dayNames": [
+            "일"
+          ],
+          "remainingPlaceIds": [
+            "j3",
+            "j103",
+            "j95",
+            "j38",
+            "j142",
+            "j4",
+            "j1",
+            "j2"
+          ],
+          "closed": [
+            {
+              "placeId": "j42",
+              "name": "경주원조콩국",
+              "reason": "일요일 휴무 안내, 임시휴무 확인.",
+              "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=6733&mnu_uid=4830"
+            }
+          ],
+          "remainingCount": 8,
+          "meals": 1,
+          "cafes": 1,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "월",
+            "화",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "j3",
+            "j103",
+            "j95",
+            "j38",
+            "j142",
+            "j4",
+            "j1",
+            "j2",
+            "j42"
+          ],
+          "closed": [],
+          "remainingCount": 9,
+          "meals": 2,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gyeongju",
+      "themeId": "wolseong",
+      "title": "첨성대·교촌·월정교",
+      "stops": [
+        {
+          "placeId": "j2",
+          "name": "동궁과 월지",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j164",
+          "name": "바넘커피",
+          "category": "cafe",
+          "mealRole": "cafe"
+        },
+        {
+          "placeId": "j1",
+          "name": "첨성대",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j42",
+          "name": "경주원조콩국",
+          "category": "food",
+          "mealRole": "lunch"
+        },
+        {
+          "placeId": "j5",
+          "name": "월정교",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j6",
+          "name": "교촌한옥마을",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j114",
+          "name": "복길",
+          "category": "food",
+          "mealRole": "dinner"
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0
+          ],
+          "dayNames": [
+            "일"
+          ],
+          "remainingPlaceIds": [
+            "j2",
+            "j164",
+            "j1",
+            "j5",
+            "j6",
+            "j114"
+          ],
+          "closed": [
+            {
+              "placeId": "j42",
+              "name": "경주원조콩국",
+              "reason": "일요일 휴무 안내, 임시휴무 확인.",
+              "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=6733&mnu_uid=4830"
+            }
+          ],
+          "remainingCount": 6,
+          "meals": 1,
+          "cafes": 1,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "월",
+            "화",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "j2",
+            "j164",
+            "j1",
+            "j42",
+            "j5",
+            "j6",
+            "j114"
+          ],
+          "closed": [],
+          "remainingCount": 7,
+          "meals": 2,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gyeongju",
+      "themeId": "donggung",
+      "title": "동궁과 월지·동쪽 유적",
+      "stops": [
+        {
+          "placeId": "j42",
+          "name": "경주원조콩국",
+          "category": "food",
+          "mealRole": "lunch"
+        },
+        {
+          "placeId": "j7",
+          "name": "국립경주박물관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j2",
+          "name": "동궁과 월지",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j130",
+          "name": "꼬푸GGOPU",
+          "category": "cafe",
+          "mealRole": "cafe"
+        },
+        {
+          "placeId": "j8",
+          "name": "분황사",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j69",
+          "name": "신라왕경숲공원",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "j43",
+          "name": "보문뜰",
+          "category": "food",
+          "mealRole": "dinner"
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0
+          ],
+          "dayNames": [
+            "일"
+          ],
+          "remainingPlaceIds": [
+            "j7",
+            "j2",
+            "j130",
+            "j8",
+            "j69",
+            "j43"
+          ],
+          "closed": [
+            {
+              "placeId": "j42",
+              "name": "경주원조콩국",
+              "reason": "일요일 휴무 안내, 임시휴무 확인.",
+              "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=6733&mnu_uid=4830"
+            }
+          ],
+          "remainingCount": 6,
+          "meals": 1,
+          "cafes": 1,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1
+          ],
+          "dayNames": [
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "j42",
+            "j7",
+            "j2",
+            "j8",
+            "j69",
+            "j43"
+          ],
+          "closed": [
+            {
+              "placeId": "j130",
+              "name": "꼬푸GGOPU",
+              "reason": "월요일 휴무 표시, 방문일 재확인.",
+              "source": "https://www.google.com/maps/search/?api=1&query=8Q7FR6RJ%2BF5Q45CG"
+            }
+          ],
+          "remainingCount": 6,
+          "meals": 2,
+          "cafes": 0,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "화",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "j42",
+            "j7",
+            "j2",
+            "j130",
+            "j8",
+            "j69",
+            "j43"
+          ],
+          "closed": [],
+          "remainingCount": 7,
+          "meals": 2,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gyeongju",
+      "themeId": "bunhwang",
+      "title": "분황사·황룡사·왕경숲",
+      "stops": [
+        {
+          "placeId": "j42",
+          "name": "경주원조콩국",
+          "category": "food",
+          "mealRole": "lunch"
+        },
+        {
+          "placeId": "j8",
+          "name": "분황사",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j69",
+          "name": "신라왕경숲공원",
+          "category": "outdoors",
+          "mealRole": null
+        },
+        {
+          "placeId": "j165",
+          "name": "벤자마스",
+          "category": "cafe",
+          "mealRole": "cafe"
+        },
+        {
+          "placeId": "j43",
+          "name": "보문뜰",
+          "category": "food",
+          "mealRole": "dinner"
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0
+          ],
+          "dayNames": [
+            "일"
+          ],
+          "remainingPlaceIds": [
+            "j8",
+            "j69",
+            "j165",
+            "j43"
+          ],
+          "closed": [
+            {
+              "placeId": "j42",
+              "name": "경주원조콩국",
+              "reason": "일요일 휴무 안내, 임시휴무 확인.",
+              "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=6733&mnu_uid=4830"
+            }
+          ],
+          "remainingCount": 4,
+          "meals": 1,
+          "cafes": 1,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "월",
+            "화",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "j42",
+            "j8",
+            "j69",
+            "j165",
+            "j43"
+          ],
+          "closed": [],
+          "remainingCount": 5,
+          "meals": 2,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gyeongju",
+      "themeId": "market",
+      "title": "읍성·성동시장·중앙시장",
+      "stops": [
+        {
+          "placeId": "j12",
+          "name": "경주중앙시장",
+          "category": "market",
+          "mealRole": null
+        },
+        {
+          "placeId": "j153",
+          "name": "커피플레이스 노동점",
+          "category": "cafe",
+          "mealRole": "cafe"
+        },
+        {
+          "placeId": "j91",
+          "name": "명동김밥 성동시장점",
+          "category": "market",
+          "mealRole": "lunch"
+        },
+        {
+          "placeId": "j102",
+          "name": "북샵라벤더",
+          "category": "books",
+          "mealRole": null
+        },
+        {
+          "placeId": "j97",
+          "name": "서점 북미",
+          "category": "books",
+          "mealRole": null
+        },
+        {
+          "placeId": "j10",
+          "name": "경주읍성",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j11",
+          "name": "성동시장",
+          "category": "market",
+          "mealRole": null
+        },
+        {
+          "placeId": "j41",
+          "name": "영양숯불갈비",
+          "category": "food",
+          "mealRole": "dinner"
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0,
+            1,
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "일",
+            "월",
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "j12",
+            "j153",
+            "j91",
+            "j102",
+            "j97",
+            "j10",
+            "j11",
+            "j41"
+          ],
+          "closed": [],
+          "remainingCount": 8,
+          "meals": 2,
+          "cafes": 1,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            2
+          ],
+          "dayNames": [
+            "화"
+          ],
+          "remainingPlaceIds": [
+            "j12",
+            "j91",
+            "j102",
+            "j97",
+            "j10",
+            "j11",
+            "j41"
+          ],
+          "closed": [
+            {
+              "placeId": "j153",
+              "name": "커피플레이스 노동점",
+              "reason": "카카오맵에는 화요일 휴무로 표시되어 있습니다. 과거 블로그는 설·추석 당일과 근로자의 날만 휴무로 안내하므로 방문일에 확인하세요.",
+              "source": "https://place.map.kakao.com/13101482"
+            }
+          ],
+          "remainingCount": 7,
+          "meals": 2,
+          "cafes": 0,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    },
+    {
+      "region": "gyeongju",
+      "themeId": "bulguksa",
+      "title": "불국사 마을",
+      "stops": [
+        {
+          "placeId": "j42",
+          "name": "경주원조콩국",
+          "category": "food",
+          "mealRole": "점심"
+        },
+        {
+          "placeId": "j17",
+          "name": "불국사",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j74",
+          "name": "불국사박물관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j77",
+          "name": "동리목월문학관",
+          "category": "culture",
+          "mealRole": null
+        },
+        {
+          "placeId": "j114",
+          "name": "복길",
+          "category": "food",
+          "mealRole": "저녁"
+        }
+      ],
+      "variants": [
+        {
+          "days": [
+            0
+          ],
+          "dayNames": [
+            "일"
+          ],
+          "remainingPlaceIds": [
+            "j17",
+            "j74",
+            "j77",
+            "j114"
+          ],
+          "closed": [
+            {
+              "placeId": "j42",
+              "name": "경주원조콩국",
+              "reason": "일요일 휴무 안내, 임시휴무 확인.",
+              "source": "https://www.gyeongju.go.kr/tour/page.do?cmd=2&con_uid=6733&mnu_uid=4830"
+            }
+          ],
+          "remainingCount": 4,
+          "meals": 1,
+          "cafes": 0,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            1
+          ],
+          "dayNames": [
+            "월"
+          ],
+          "remainingPlaceIds": [
+            "j42",
+            "j17",
+            "j114"
+          ],
+          "closed": [
+            {
+              "placeId": "j74",
+              "name": "불국사박물관",
+              "reason": "월요일·1월1일·설·추석 휴관 안내.",
+              "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=252&cmd=2&code_uid=1015&mnu_uid=4717"
+            },
+            {
+              "placeId": "j77",
+              "name": "동리목월문학관",
+              "reason": "월·화요일 및 명절 휴관 안내.",
+              "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=85&cmd=2&code_uid=1015&mnu_uid=4717"
+            }
+          ],
+          "remainingCount": 3,
+          "meals": 2,
+          "cafes": 0,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            2
+          ],
+          "dayNames": [
+            "화"
+          ],
+          "remainingPlaceIds": [
+            "j42",
+            "j17",
+            "j74",
+            "j114"
+          ],
+          "closed": [
+            {
+              "placeId": "j77",
+              "name": "동리목월문학관",
+              "reason": "월·화요일 및 명절 휴관 안내.",
+              "source": "https://www.gyeongju.go.kr/tour/page.do?area_uid=85&cmd=2&code_uid=1015&mnu_uid=4717"
+            }
+          ],
+          "remainingCount": 4,
+          "meals": 2,
+          "cafes": 0,
+          "geometryStatus": "needs-new-walking-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        },
+        {
+          "days": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "dayNames": [
+            "수",
+            "목",
+            "금",
+            "토"
+          ],
+          "remainingPlaceIds": [
+            "j42",
+            "j17",
+            "j74",
+            "j77",
+            "j114"
+          ],
+          "closed": [],
+          "remainingCount": 5,
+          "meals": 2,
+          "cafes": 0,
+          "geometryStatus": "original-saved-geometry",
+          "scheduleStatus": "weekday-closure-audit-only"
+        }
+      ]
+    }
+  ]
+}
