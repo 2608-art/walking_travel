@@ -309,8 +309,8 @@
   function toast(message) { const el = $('#toast'); if (!el) return; el.textContent = message; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 3600); }
   const storedPlans = load(STORAGE_SAVED, []);
   const state = {
-    places: [], lodgings: [], gyeongjuRoutes:null, view: requestedView === 'routes' ? 'routes' : requestedView === 'destination' ? 'destination' : 'home', region: activeRegion.id, destinationTab: requestedTab === 'themes' && activeRegion.id === 'gyeongju' ? 'themeDraft' : 'routes', themeCandidateMap:null, categories: new Set(), selected: null, mapDisplay:'map', homeMood:'all',
-    mapCenter: REGION_CENTER, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null, planMap:null, planAudit:{key:'',status:'idle',legs:[],visitIssues:[]}, mapFocusedPlace:null, mapMarkers:new Map(),
+    places: [], lodgings: [], gyeongjuRoutes:null, view: requestedView === 'routes' ? 'routes' : requestedView === 'destination' ? 'destination' : 'home', region: activeRegion.id, destinationTab: requestedTab === 'themes' && activeRegion.id === 'gyeongju' ? 'themeDraft' : 'routes', themeCandidateMap:null, categories: new Set(), selected: null, mapDisplay:'map', mapLocked:false, homeMood:'all',
+    mapCenter: REGION_CENTER, mapZoom: 13, map: null, mapProvider: null, mapLine: null, resultMap:null, planMap:null, planAudit:{key:'',status:'idle',legs:[],visitIssues:[]}, mapFocusedPlace:null, mapMarkers:new Map(), customMapPlaces:new Map(),
     draft: load(STORAGE_DRAFT, null) || { id: null, title: '나의 ' + activeRegion.name + ' 하루', date: today(), start: '09:00', end: '24:00', origin: null, theme:'balanced', mealTimes:[], solo:false, entries: {}, pending:[] },
     saved: load(STORAGE_SAVED, []),
     route: { date: today(), start: '10:00', themeStart:'10:00', end: '24:00', origin: STATION.id, destination:STATION.id, mode:requestedView === 'routes' ? 'theme' : 'custom', theme:requestedTheme || 'first', solo:false, must: '', mustOptional:false, focus:'through', results: [], baseResults:[], selected: -1 },
@@ -552,45 +552,98 @@
   function renderRegionMap() {
     closeMapQuickAdd();
     const region = REGIONS.find((x) => x.id === state.region) || REGIONS[0];
-    const list = state.places.filter((p) => !state.categories.size || state.categories.has(p.category));
-    const chosen = CATEGORIES.filter(([id]) => state.categories.has(id)).map(([, label]) => label);
+    const plannedVisits=Object.entries(state.draft.entries || {}).sort(([a],[b])=>Number(a)-Number(b)).map(([at,entry],index)=>({minute:Number(at),number:index+1,entry,place:entryPlace(entry)||entry}));
+    const showPlan=state.categories.has('plan');
+    const plannedIds=new Set(plannedVisits.map(({entry})=>entry.placeId).filter(Boolean));
+    const customPlanPlaces=showPlan ? plannedVisits.filter(({entry})=>!entry.placeId && hasPin(entry)).map(({minute,entry})=>({...entry,id:'plan-custom-'+minute,name:entryLabel(entry),category:'custom',planMinute:minute,locationText:entry.locationText||hhmm(minute)+' 계획표 장소'})) : [];
+    state.customMapPlaces=new Map(customPlanPlaces.map((place)=>[place.id,place]));
+    const list=state.places.filter((p)=>!state.categories.size || state.categories.has(p.category) || (showPlan && plannedIds.has(p.id))).concat(customPlanPlaces);
+    const chosen = CATEGORIES.filter(([id]) => state.categories.has(id)).map(([, label]) => label).concat(showPlan?['시간표 장소']:[]);
     const resultLabel = chosen.length === 0 ? '전체' : chosen.length <= 2 ? chosen.join('·') : '선택한 분류 ' + chosen.length + '개';
     if (state.mapProvider === 'leaflet') state.map?.remove();
     state.map = null; state.mapProvider = null; state.mapFocusedPlace = null; state.mapMarkers = new Map();
     $('#main').innerHTML=`<section class="explore-page ${state.mapDisplay==='list'?'list-mode':''}">
       <div class="explore-topbar"><button class="round-control" id="region-back" aria-label="${esc(region.name)} 소개로">${uiIcon('back')}</button><h1>${esc(region.name)} 한 바퀴</h1><div class="view-switch" aria-label="탐색 방식"><button data-map-display="map" class="${state.mapDisplay==='map'?'active':''}" aria-pressed="${state.mapDisplay==='map'}">지도</button><button data-map-display="list" class="${state.mapDisplay==='list'?'active':''}" aria-pressed="${state.mapDisplay==='list'}">목록</button></div></div>
-      <div class="explore-workspace"><div class="explore-search"><form id="map-search-form" class="explore-search-form">${uiIcon('search')}<input id="map-search" aria-label="장소 또는 주소 검색" autocomplete="off" placeholder="${esc(region.name)}의 장소, 주소 검색"><button type="submit" aria-label="검색">${uiIcon('arrow')}</button></form><div class="filter-strip" aria-label="장소 유형 여러 개 선택 가능">${CATEGORIES.map(([id,label,emoji])=>{const active=id==='all'?!state.categories.size:state.categories.has(id);return `<button class="filter-chip ${active?'active':''}" data-category="${id}" aria-pressed="${active}"><span aria-hidden="true">${emoji}</span> ${label}</button>`;}).join('')}</div></div>
-      <div class="explore-map"><div id="map"></div><button class="round-control recenter-control" id="recenter" aria-label="${esc(region.name)} 중심으로 돌아가기" title="${esc(region.name)} 중심으로 돌아가기">${uiIcon('target')}</button><span class="map-location-label">${uiIcon('location')} ${esc(region.name)}</span></div>
-      <aside class="explore-sheet"><span class="sheet-handle" aria-hidden="true"></span><div class="explore-sheet-title"><div><span class="eyebrow">발걸음이 닿는 곳</span><h2>${esc(resultLabel==='전체'?region.name+'의 장소':resultLabel)} <small>${list.length}</small></h2></div><span class="small" id="pin-count">지도 핀 ${list.filter(hasPin).length}곳</span></div><div class="place-list">${list.map(p=>`<div class="place-row"><button type="button" class="place-row-main" data-place="${p.id}" aria-label="${esc(p.name)} ${hasPin(p)?'지도 위치 보기, 다시 누르면 설명 보기':'지도 위치 확인 중, 설명은 오른쪽 화살표'}">${placeVisual(p,true)}<span class="place-row-copy"><small class="place-row-category">${esc(categoryName(p.category))}</small><strong>${esc(p.name)}</strong><small>${esc(p.locationText||'위치 확인 필요')}</small>${reservationCardHtml(p)}</span></button><button type="button" class="place-row-open" data-open-map-place="${p.id}" aria-label="${esc(p.name)} 설명 보기"><span class="row-chevron" aria-hidden="true">›</span></button></div>`).join('')}</div><p class="map-evidence">지도 핀은 대표 위치예요. 실제 출입구는 방문 전 확인해 주세요.</p><div class="explore-actions"><button class="btn btn-outline" id="go-plan">${uiIcon('plan')} 직접 계획</button><button class="btn btn-primary" id="go-routes">${uiIcon('map')} 추천 루트</button></div></aside></div></section>`;
-    initHomeMap(list);
+      <div class="explore-workspace"><div class="explore-search"><form id="map-search-form" class="explore-search-form">${uiIcon('search')}<input id="map-search" aria-label="장소 또는 주소 검색" autocomplete="off" placeholder="${esc(region.name)}의 장소, 주소 검색"><button type="submit" aria-label="검색">${uiIcon('arrow')}</button></form><div class="filter-strip" aria-label="장소 유형 여러 개 선택 가능">${CATEGORIES.map(([id,label,emoji])=>{const active=id==='all'?!state.categories.size:state.categories.has(id);return `<button class="filter-chip ${active?'active':''}" data-category="${id}" aria-pressed="${active}"><span aria-hidden="true">${emoji}</span> ${label}</button>`+(id==='all'?`<button class="filter-chip ${showPlan?'active':''}" data-category="plan" aria-pressed="${showPlan}">🗓️ 시간표 장소</button>`:'');}).join('')}</div></div>
+      <div class="explore-map ${state.mapLocked?'map-is-locked':''}"><div id="map"></div><button type="button" class="map-lock-control" id="map-lock" aria-pressed="${state.mapLocked}" aria-label="${state.mapLocked?'지도 고정 해제':'지도 고정'}" title="${state.mapLocked?'지도 고정 해제':'지도 고정'}">${state.mapLocked?'🔒':'🔓'}</button><button class="round-control recenter-control" id="recenter" aria-label="${esc(region.name)} 중심으로 돌아가기" title="${esc(region.name)} 중심으로 돌아가기" ${state.mapLocked?'disabled':''}>${uiIcon('target')}</button><span class="map-location-label">${uiIcon('location')} ${esc(region.name)}</span></div>
+      <aside class="explore-sheet"><span class="sheet-handle" aria-hidden="true"></span><div class="explore-sheet-title"><div><span class="eyebrow">발걸음이 닿는 곳</span><h2>${esc(resultLabel==='전체'?region.name+'의 장소':resultLabel)} <small>${list.length}</small></h2></div><span class="small" id="pin-count">지도 핀 ${list.filter(hasPin).length}곳</span></div><div class="place-list">${list.length?list.map(p=>`<div class="place-row"><button type="button" class="place-row-main" data-place="${p.id}" aria-label="${esc(p.name)} ${hasPin(p)?'지도 위치 보기, 다시 누르면 설명 보기':'지도 위치 확인 중, 설명은 오른쪽 화살표'}">${placeVisual(p,true)}<span class="place-row-copy"><small class="place-row-category">${p.planMinute!=null?'직접 입력 · '+esc(hhmm(p.planMinute)):esc(categoryName(p.category))}</small><strong>${esc(p.name)}</strong><small>${esc(p.locationText||'위치 확인 필요')}</small>${p.planMinute!=null?'':reservationCardHtml(p)}</span></button><button type="button" class="place-row-open" data-open-map-place="${p.id}" aria-label="${esc(p.name)} ${p.planMinute!=null?'계획표에서 수정':'설명 보기'}"><span class="row-chevron" aria-hidden="true">›</span></button></div>`).join(''):'<p class="small">표시할 장소가 없습니다. 시간표 장소는 계획표에 장소를 넣으면 나타납니다.</p>'}</div><p class="map-evidence">지도 핀은 대표 위치예요. 실제 출입구는 방문 전 확인해 주세요.</p><div class="explore-actions"><button class="btn btn-outline" id="go-plan">${uiIcon('plan')} 직접 계획</button><button class="btn btn-primary" id="go-routes">${uiIcon('map')} 추천 루트</button></div></aside></div></section>`;
+    initHomeMap(list,showPlan?plannedVisits:[]);
     $('#region-back').onclick=()=>nav('destination');
     $('#go-plan').onclick=()=>nav('plan');$('#go-routes').onclick=()=>nav('routes');
     $('#recenter').onclick=()=>{const points=region.id==='gyeongju'?list.filter(hasPin).map(pinPoint):[];if(points.length && state.mapProvider==='leaflet')state.map?.fitBounds(points,{padding:[25,25]});else if(state.mapProvider==='kakao'){state.map?.setCenter(kakaoPoint(...region.center));state.map?.setLevel(kakaoLevel(13));}else state.map?.setView(region.center,13);};
+    $('#map-lock').onclick=()=>{
+      if (!state.mapLocked && state.map) { const center=state.map.getCenter(); state.mapCenter=[center.lat,center.lng]; state.mapZoom=state.map.getZoom(); }
+      state.mapLocked=!state.mapLocked;
+      setMapInteractionLock(state.map,state.mapLocked);
+      $('.explore-map').classList.toggle('map-is-locked',state.mapLocked);
+      $('#map-lock').setAttribute('aria-pressed',String(state.mapLocked));
+      $('#map-lock').setAttribute('aria-label',state.mapLocked?'지도 고정 해제':'지도 고정');
+      $('#map-lock').title=state.mapLocked?'지도 고정 해제':'지도 고정';
+      $('#map-lock').textContent=state.mapLocked?'🔒':'🔓';
+      $('#recenter').disabled=state.mapLocked;
+    };
     $('#map-search-form').onsubmit=searchMap;
     document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>{const offset=$('.filter-strip').scrollLeft;const id=b.dataset.category;if(id==='all')state.categories.clear();else if(state.categories.has(id))state.categories.delete(id);else state.categories.add(id);state.selected=null;renderRegionMap();$('.filter-strip').scrollLeft=offset;});
+    enableFilterDrag($('.filter-strip'));
     document.querySelectorAll('.explore-sheet .place-row').forEach(row=>row.onclick=(event)=>{if(event.target.closest('[data-open-map-place]'))return;focusMapPlace(row.querySelector('[data-place]').dataset.place);});
     document.querySelectorAll('[data-open-map-place]').forEach(b=>b.onclick=()=>selectPlace(b.dataset.openMapPlace));
     document.querySelectorAll('[data-map-display]').forEach(b=>b.onclick=()=>{closeMapQuickAdd();state.mapDisplay=b.dataset.mapDisplay;$('.explore-page').classList.toggle('list-mode',state.mapDisplay==='list');document.querySelectorAll('[data-map-display]').forEach(x=>{const active=x.dataset.mapDisplay===state.mapDisplay;x.classList.toggle('active',active);x.setAttribute('aria-pressed',active);});if(state.mapProvider==='kakao')state.map?.relayout();else state.map?.invalidateSize();});
   }
-  async function initHomeMap(list) {
+  function enableFilterDrag(strip) {
+    let startX=0, startScroll=0, pointerId=null, dragged=false;
+    strip.addEventListener('pointerdown',(event)=>{
+      if (event.pointerType==='touch' || event.button!==0) return;
+      startX=event.clientX; startScroll=strip.scrollLeft; pointerId=event.pointerId; dragged=false;
+    });
+    strip.addEventListener('pointermove',(event)=>{
+      if (event.pointerId!==pointerId) return;
+      const distance=event.clientX-startX;
+      if (Math.abs(distance)>5 && !dragged) { dragged=true; strip.setPointerCapture(event.pointerId); }
+      if (dragged) { strip.scrollLeft=startScroll-distance; event.preventDefault(); }
+    });
+    strip.addEventListener('pointerup',()=>{pointerId=null;});
+    strip.addEventListener('pointercancel',()=>{pointerId=null;dragged=false;});
+    strip.addEventListener('click',(event)=>{if(dragged){event.preventDefault();event.stopPropagation();dragged=false;}},true);
+  }
+  function setMapInteractionLock(map, locked) {
+    if (!map) return;
+    for (const control of ['dragging','touchZoom','doubleClickZoom','scrollWheelZoom','boxZoom','keyboard']) map[control]?.[locked?'disable':'enable']();
+  }
+  async function initHomeMap(list,plannedVisits=[]) {
     const container = $('#map');
     const pinned = list.filter(hasPin);
     if (!navigator.onLine) { container.innerHTML = '<div class="empty-state" style="margin:20px">지도는 인터넷에 연결하면 볼 수 있습니다.</div>'; return; }
     if (!window.L || container !== $('#map')) return;
     const map = L.map('map', { zoomControl: false }).setView(state.mapCenter, state.mapZoom);
     state.map = map; state.mapProvider = 'leaflet';
+    setMapInteractionLock(map,state.mapLocked);
     L.control.zoom({ position: 'bottomright' }).addTo(map);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
     const colors = CATEGORY_COLORS;
     pinned.forEach((p) => {
       const marker = L.circleMarker(pinPoint(p), { radius: 7, weight: 2, color: '#fff', fillColor: colors[p.category] || '#123348', fillOpacity: .95 }).addTo(map);
-      marker.bindTooltip(esc(p.name)); marker.on('click', () => openMapQuickAdd(p));
+      marker.bindTooltip(esc(p.name)); marker.on('click', () => p.planMinute!=null ? selectPlace(p.id) : openMapQuickAdd(p));
       state.mapMarkers.set(p.id, marker);
+    });
+    const planGroups=new Map();
+    plannedVisits.forEach(({minute,number,entry,place})=>{
+      if (isLodgingPoint(place)) return;
+      const point=pinPoint(place); if (!point) return;
+      const key=point.join(',');
+      if (!planGroups.has(key)) planGroups.set(key,{point,labels:[],place});
+      planGroups.get(key).labels.push({minute,number,name:entryLabel(entry)});
+    });
+    planGroups.forEach(({point,labels,place})=>{
+      const numbers=labels.map(({number})=>number).join('·');
+      const tooltip=labels.map(({number,name,minute})=>number+'번 · '+hhmm(minute)+' '+name).join(' / ');
+      const width=Math.max(34,Math.min(94,16+numbers.length*9));
+      L.marker(point,{icon:L.divIcon({className:'plan-number-pin',html:'<span>'+esc(numbers)+'</span>',iconSize:[width,34],iconAnchor:[width/2,17]})}).addTo(map).bindTooltip(tooltip)
+        .on('click',()=>place.id&&getPlace(place.id)?openMapQuickAdd(place):selectPlace('plan-custom-'+labels[0].minute));
     });
     if (KAKAO_KEY && list.some((p) => !hasPin(p) && p.addressQuery)) loadKakao().then(() => {
       if (container === $('#map')) geocodeAddressPlaces(list, map, colors, container);
     }).catch(() => {});
-    if ((state.categories.size || activeRegion.id==='gyeongju') && pinned.length) map.fitBounds(pinned.map(pinPoint), { padding: [25, 25], maxZoom: 14 });
+    if (!state.mapLocked && (state.categories.size || activeRegion.id==='gyeongju') && pinned.length) map.fitBounds(pinned.map(pinPoint), { padding: [25, 25], maxZoom: 14 });
     map.on('moveend', () => { state.mapCenter = [map.getCenter().lat, map.getCenter().lng]; state.mapZoom = map.getZoom(); });
     setTimeout(() => map.invalidateSize(), 50);
   }
@@ -621,7 +674,7 @@
   }
   function focusMapPlace(id) {
     if (state.mapFocusedPlace === id) { selectPlace(id); return; }
-    const place = getPlace(id);
+    const place = getPlace(id) || state.customMapPlaces.get(id);
     const point = pinPoint(place);
     if (!point) { toast('이 장소의 지도 위치를 확인하고 있어요.'); return; }
     document.querySelector('[data-map-display="map"]')?.click();
@@ -633,9 +686,11 @@
     marker?.setStyle({radius:11,weight:3,color:'#244c39'});
     marker?.bringToFront();
     marker?.openTooltip();
-    state.map?.flyTo(point, 15);
+    if (!state.mapLocked) state.map?.flyTo(point, 15);
   }
   function selectPlace(id) {
+    const custom=state.customMapPlaces.get(id);
+    if (custom) { nav('plan'); openSlotEditor(custom.planMinute); return; }
     if(!getPlace(id))return;
     state.selected=id;state.placeBack='region';state.placeTab='intro';nav('place');
   }
@@ -658,13 +713,16 @@
   function openMapQuickAdd(place) {
     closeMapQuickAdd();
     const duration = routeEngine.stay(place, false);
+    const draft = state.draft;
+    const nextMinute = Math.max(toMin(draft.start), ...Object.entries(draft.entries || {}).map(([at, entry]) => Number(at) + (Number(entry.duration) || 60)));
+    const suggestedTime = nextMinute < routeEngine.minutes(draft.end || '24:00') && nextMinute < 1440 ? hhmm(nextMinute) : '';
     const form = document.createElement('form');
     form.className = 'map-quick-add';
     form.setAttribute('role', 'dialog');
     form.setAttribute('aria-label', place.name + ' 계획표 추가');
     form.tabIndex = -1;
     form.innerHTML = '<strong class="map-quick-add-name" title="잡아서 창 이동">' + esc(place.name) + '</strong>' +
-      '<label for="map-quick-time">방문 시각</label><input id="map-quick-time" type="time" required step="60" class="text-field" value="' + esc(state.draft.start) + '">' +
+      '<label for="map-quick-time">방문 시각</label><input id="map-quick-time" type="time" required step="60" class="text-field" value="' + esc(suggestedTime) + '">' +
       '<label for="map-quick-duration">체류시간 (분)</label><input id="map-quick-duration" type="number" min="1" step="1" required inputmode="numeric" class="text-field" value="' + esc(duration) + '">' +
       '<div class="map-quick-transparency"><label for="map-quick-transparency">투명도 <output for="map-quick-transparency">' + mapQuickTransparency + '%</output></label><input id="map-quick-transparency" type="range" min="0" max="30" step="5" value="' + mapQuickTransparency + '" aria-valuetext="' + mapQuickTransparency + '% 투명"></div>' +
       '<div class="map-quick-add-actions"><button type="button" class="btn btn-outline">취소</button><button type="submit" class="btn btn-primary">추가</button></div>';
@@ -726,6 +784,7 @@
     }
     const match = state.places.find((p) => p.name.includes(q) && coord(p));
     if (match) { if (state.categories.size && !state.categories.has(match.category)) { state.categories.add(match.category); renderRegionMap(); } selectPlace(match.id); return; }
+    if (state.mapLocked) { toast('검색 위치로 이동하려면 지도 고정을 해제해 주세요.'); return; }
     if (!navigator.onLine) { toast('위치 검색은 인터넷이 필요합니다.'); return; }
     try {
       if (KAKAO_KEY && await loadKakao()) {
