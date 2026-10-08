@@ -5,3 +5,5 @@ node_modules/
 .sites-runtime/
 *.sqlite3
 .env.*
+.artifact-build/
+.codex-finalizer/

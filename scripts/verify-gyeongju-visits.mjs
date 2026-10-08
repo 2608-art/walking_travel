@@ -41,7 +41,8 @@ assert.equal(warnings.find(w=>w.placeId==='j82').message,'방문 전 확인 필�
 assert.match(warnings[0].scope,/국궁/);assert.match(warnings[0].generalVisit,/산책/);
 assert(!('bookingComplete' in warnings[0]));
 for(const p of data.filter(p=>p.reservation))for(const item of booking.items(p))assert(item.sources?.length && item.checkedAt && item.scope,p.name+' booking source and scope missing');
-assert.equal(data.length,176);
+assert.equal(data.length,179);
+assert.equal(new Set(data.map(p=>p.id)).size,data.length,'place ids must stay unique for route lookup and saved plans');
 for(const p of data.filter(p=>['food','cafe'].includes(p.category))){
   assert(p.soloResearch, p.name+' research missing');
   assert(p.soloResearch.searchAudit?.length,p.name+' search audit missing');
@@ -58,4 +59,4 @@ assert.match(app,/!d\.solo \|\| soloTravel\.canVisit\(p\)/,'plan recommendation 
 assert.match(app,/confirmPlaceReservation\(chosen\.rows\.map/,'bulk route import warning gate');
 assert.match(app,/confirmPlaceReservation\(\[getPlace\(item\.entry\.placeId\)\]/,'pending place insertion warning gate');
 assert.match(app,/confirmPlaceReservation\(\[getPlace\(entry\.placeId\)\]/,'manual and single route stop warning gate');
-console.log(JSON.stringify({gyeongjuPlaces:data.length,soloResearch:96,directDiningPlaces:reviewed.length,reservationPlaces:data.filter(p=>p.reservation).length,contracts:'passed'},null,2));
+console.log(JSON.stringify({gyeongjuPlaces:data.length,soloResearch:data.filter(p=>p.soloResearch).length,directDiningPlaces:reviewed.length,reservationPlaces:data.filter(p=>p.reservation).length,contracts:'passed'},null,2));

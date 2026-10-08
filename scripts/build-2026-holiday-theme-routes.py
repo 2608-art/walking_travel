@@ -19,7 +19,7 @@ BASE_FILES = {
 }
 SUBSTITUTIONS = [
     ("mokpo", "mokpo-cafeWalk", "p103", "p105", [0, 6],
-     "주말에 쉬는 인스파이어링 커피를 브릭레인으로 교체", 
+     "주말에 쉬는 인스파이어링 커피를 브릭레인으로 교체",
      ["https://www.diningcode.com/profile.php?rid=OzMg3yu7a3L4",
       "https://www.tabling.co.kr/place/677cc97a66de5f069879249c"]),
     ("gangneung", "gangneung-shops-straight-line-review", "g24", "g23", [0],

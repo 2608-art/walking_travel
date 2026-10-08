@@ -39,6 +39,18 @@ def theme_route_index(region):
             if title not in names:
                 names.append(title)
     holiday_path = ROOT / "public/holiday-theme-routes-2026.json"
+    for filename, key in (("public/theme-weekday-routes.json", "routes"),
+                          ("public/theme-route-updates.json", "overrides")):
+        path = ROOT / filename
+        if not path.exists():
+            continue
+        for route in json.loads(path.read_text(encoding="utf-8"))[key]:
+            if route["region"] != region:
+                continue
+            for stop in route.get("stops", []):
+                names = index.setdefault(stop["placeId"], [])
+                if route["title"] not in names:
+                    names.append(route["title"])
     if holiday_path.exists():
         for variant in json.loads(holiday_path.read_text(encoding="utf-8"))["variants"]:
             if variant["region"] != region:
@@ -118,9 +130,9 @@ def main(report_path):
               + ("이 지역은 현재 앱에서 공개 전입니다. " if not report["regionReady"] else "") + "\n\n"
               "검토할 때 장소의 현행 운영시간·정기휴무·날짜별 예외·마지막 입장/주문을 확인하고, "
               "확인한 내용만 `" + place_file + "`에 반영해 배포하세요. "
-              "변경 장소가 저장 테마 루트에 있으면 `" + theme_file + "`의 방문 순서·기본 시각과 "
-              "`public/holiday-theme-routes-2026.json`의 해당 휴일 버전도 재검토하고, "
-              "필요한 변경은 이동 구간과 함께 검증한 뒤 반영하세요. 루트 파일은 자동 수정되지 않습니다. "
+               "변경 장소가 저장 테마 루트에 있으면 `" + theme_file + "`, `public/theme-weekday-routes.json`, "
+               "`public/theme-route-updates.json`과 `public/holiday-theme-routes-2026.json`의 해당 방문 순서·이동 경로를 재검토하세요. "
+               "승인한 장소 자료 변경은 빌드 시 요일별 변경 루트 생성기로 재검토되지만, 휴일 대체 파일은 검증 후 별도 갱신해야 합니다. "
               "새로 생성하는 추천 루트는 배포된 데이터를 사용합니다.\n")
     no_source = [row for row in changed if row["status"] == "no_source"]
     details = [row for row in changed if row["status"] != "no_source"]
