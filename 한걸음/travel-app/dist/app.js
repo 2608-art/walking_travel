@@ -709,7 +709,7 @@
       if (selected < toMin(draft.start) || selected + minutes > end) return toast('방문 시각과 체류시간을 계획표의 시작·종료 범위 안으로 정해 주세요.');
       const conflict = Object.entries(draft.entries || {}).find(([at, entry]) => selected < Number(at) + (Number(entry.duration) || 60) && selected + minutes > Number(at));
       if (conflict) return toast(hhmm(Number(conflict[0])) + ' 일정과 시간이 겹칩니다. 다른 시각을 골라 주세요.');
-      beforeAddReservation([place], () => {
+      confirmPlaceReservation([place], () => {
         draft.entries[selected] = {placeId:place.id, duration:minutes, memo:''};
         persistDraft();
         closeMapQuickAdd();
