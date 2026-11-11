@@ -1,8 +1,8 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const engine = require('./dist/route-engine.js');
-const places = JSON.parse(fs.readFileSync(path.join(__dirname,'dist','places.json'),'utf8')).places;
+const engine = require('./load-public-engine.cjs');
+const places = JSON.parse(fs.readFileSync(path.join(__dirname,'../public','places.json'),'utf8')).places;
 const byId = (id) => places.find((p) => p.id === id);
 const station = {id:'station',name:'목포역',lat:34.7914,lon:126.3859};
 const validate = (p,minute,duration,date) => {

@@ -9,7 +9,7 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 places = json.loads((ROOT / "dist" / "places.json").read_text(encoding="utf-8"))["places"]
 out = ROOT / "address-pins.json"
 pins = json.loads(out.read_text(encoding="utf-8")) if out.exists() else {}

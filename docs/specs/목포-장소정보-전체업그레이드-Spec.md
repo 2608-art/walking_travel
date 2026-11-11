@@ -9,7 +9,7 @@
 ## 입력과 근거
 
 - 앱 등록 장소 130곳과 별도 숙소 151곳. 숙소는 관광지 핀이 아니라 출발·도착 후보로 사용한다.
-- 장소 조사표 `docs/지역/목포/장소.md`, 구조화된 혼자 이용 근거 `solo-evidence.json`, 생성기 `build-data.py`.
+- 장소 조사표 `docs/지역/목포/장소.md`, 구조화된 혼자 이용 근거 `solo-evidence.json`, 생성기 `scripts/build-data.py`.
 - 운영 주체와 목포시 관광 안내, 장소 사이트, 지도 시간표, 메뉴와 방문 후기. 확인 날짜와 출처를 보존하고 자료가 충돌하면 확정 운영시간으로 취급하지 않는다.
 - 고하도 해안데크와 서산동 시화골목은 공공 안내에서 접근 지점을 확인한 공개 구간만 사용한다. 내부 길선 전체를 검증한 것으로 표시하지 않는다.
 
@@ -24,7 +24,7 @@
 
 ## 데이터·구현
 
-- `build-data.py`가 조사 자료를 `public/places.json`에 반영한다. 배포용 `dist/client/places.json`은 같은 결과로 동기화한다.
+- `scripts/build-data.py`가 조사 자료를 `public/places.json`에 반영한다. 배포용 `dist/client/places.json`은 같은 결과로 동기화한다.
 - `public/app.js`와 `dist/client/app.js`는 장소 상세의 접근·혼자 이용 정보 및 결과의 일부 산책 안내를 표시한다.
 - `public/route-engine.js`와 `dist/client/route-engine.js`는 비공개 접근 후보 제외, 야외 접근 시간, 근처 산책 후보 조건을 적용한다.
 - `solo-evidence.json`은 메뉴·좌석·최소 인원 근거를 장소 이름별로 보관한다. 근거가 없는 장소에 위치 지도를 혼자 이용 근거로 붙이지 않는다.

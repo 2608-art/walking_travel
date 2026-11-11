@@ -1,11 +1,11 @@
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const vm=require('node:vm');
-const engine=require('./dist/route-engine.js');
-const places=JSON.parse(fs.readFileSync('./dist/places.json','utf8')).places;
+const engine=require('./load-public-engine.cjs');
+const places=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../public/places.json'),'utf8')).places;
 const station={id:'station',name:'목포역',lat:34.7914,lon:126.3859};
 const byId=id=>places.find(p=>p.id===id);
-const source=fs.readFileSync('./dist/app.js','utf8');
+const source=fs.readFileSync(require('node:path').join(__dirname,'../public/app.js'),'utf8');
 const evaluate=vm.runInNewContext(source.slice(source.indexOf('  function evaluate('),source.indexOf('  function pillFor('))+'\nevaluate;',{
   routeEngine:engine,entryPlace:e=>byId(e.placeId),toMin:engine.minutes,
   dateAt:(base,m)=>{const d=new Date(base+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+Math.floor(m/1440));return d.toISOString().slice(0,10);},

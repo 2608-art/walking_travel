@@ -1,7 +1,7 @@
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
-ROOT = Path(__file__).resolve().parent / "dist"
+ROOT = Path(__file__).resolve().parents[1] / "dist"
 for size in (192, 512):
     image = Image.new("RGB", (size, size), "#123348")
     draw = ImageDraw.Draw(image)
