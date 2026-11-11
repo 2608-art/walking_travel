@@ -12,6 +12,8 @@ from urllib.parse import urlencode
 from urllib.request import urlopen
 from unittest.mock import patch
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import server
 
 
@@ -19,7 +21,7 @@ import server
 def test_directory():
     # Python 3.14의 Windows 임시 폴더 전용 ACL 대신 작업 폴더 권한을 상속한다.
     directory = server.ROOT / 'qa' / ('cache-test-' + uuid.uuid4().hex)
-    directory.mkdir()
+    directory.mkdir(parents=True)
     try:
         yield directory
     finally:

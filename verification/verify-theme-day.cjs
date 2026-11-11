@@ -1,7 +1,7 @@
 const fs=require('node:fs');
 const assert=require('node:assert/strict');
-const engine=require('./dist/route-engine.js');
-const places=JSON.parse(fs.readFileSync('./dist/places.json','utf8')).places;
+const engine=require('./load-public-engine.cjs');
+const places=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../public/places.json'),'utf8')).places;
 const byId=(id)=>places.find((place)=>place.id===id);
 const station={id:'station',name:'목포역',lat:34.7914,lon:126.3859};
 function validate(p,minute,duration,date) {

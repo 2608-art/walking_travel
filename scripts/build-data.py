@@ -4,16 +4,16 @@ import json
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "docs" / "지역" / "목포" / "장소.md"
 PLACE_IDS = json.loads((ROOT / "place-ids.json").read_text(encoding="utf-8"))
 assert len(set(PLACE_IDS.values())) == len(PLACE_IDS), "Duplicate stable place ID"
 TARGETS = (ROOT / "public" / "places.json", ROOT / "dist" / "client" / "places.json")
-SOLO_EVIDENCE = Path(__file__).resolve().parent / "solo-evidence.json"
+SOLO_EVIDENCE = Path(__file__).resolve().parents[1] / "solo-evidence.json"
 solo_research = json.loads(SOLO_EVIDENCE.read_text(encoding="utf-8"))
-ADDRESS_PINS = Path(__file__).resolve().parent / "address-pins.json"
+ADDRESS_PINS = Path(__file__).resolve().parents[1] / "address-pins.json"
 verified_pins = json.loads(ADDRESS_PINS.read_text(encoding="utf-8")) if ADDRESS_PINS.exists() else {}
-MAP_PINS = Path(__file__).resolve().parent / "map-representative-pins.json"
+MAP_PINS = Path(__file__).resolve().parents[1] / "map-representative-pins.json"
 representative_pins = json.loads(MAP_PINS.read_text(encoding="utf-8"))
 
 
