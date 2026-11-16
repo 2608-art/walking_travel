@@ -28,6 +28,8 @@
   ];
   const routeEngine = window.HangeoreumRouteEngine;
   const planAudit = window.HangeoreumPlanAudit;
+  const tripBudget = window.HangeoreumBudget;
+  const budgetUI = window.HangeoreumBudgetUI;
   routeEngine.configureRegion(activeRegion.id);
   const soloTravel = window.HangeoreumSoloTravel;
   const savedWalkPaths = window.HangeoreumSavedWalkPaths;
@@ -329,6 +331,79 @@
   let mapQuickTransparency = 10;
   let mapQuickPosition = null;
   function persistDraft() { save(STORAGE_DRAFT, state.draft); }
+  function budgetModel(route) {
+    return tripBudget.routeItems(route,id=>route.routingPlaces?.find(p=>p.id===id)||getPlace(id));
+  }
+  function budgetEstimate(route) { return tripBudget.estimate(budgetModel(route),state.route.budget); }
+  function updateRouteBudget(value) {
+    const r=state.route, themeVisible=r.mode==='theme' && !!$('#import-theme-route-plan');
+    if(r.solo && value.enabled && value.people!==1) {toast('혼자 여행 조건에서는 인원을 1명으로 정해 주세요. 일행이 있다면 혼자 여행 체크를 해제해 주세요.');return;}
+    captureRouteInputs();r.budget=tripBudget.settings(value);renderRoutes();
+    if(themeVisible)showSavedWeekdayRoute(r.theme);
+  }
+  function mountRouteBudgetSettings() {
+    if(!tripBudget||!budgetUI)return;
+    const anchor=$('#make-routes')?.closest('.modal-actions');if(!anchor)return;
+    const host=document.createElement('div');host.id='route-budget-settings';
+    if(state.route.mode==='theme' && $('.route-theme-panel'))$('.route-theme-panel').before(host);else anchor.before(host);
+    budgetUI.mountSettings(host,state.route.budget,updateRouteBudget);
+  }
+  function overrideRouteBudget(key,value,refresh) {
+    const config=tripBudget.settings(state.route.budget);
+    if(value===null)delete config.overrides[key];else config.overrides[key]=value;
+    state.route.budget=config;state.route.budgetDetailsOpen=true;refresh();
+  }
+  function mountRouteBudgetResults(route,theme=false) {
+    if(!tripBudget||!budgetUI)return;
+    if(!tripBudget.settings(state.route.budget).enabled)return;
+    const root=$('#route-results');
+    const details=document.createElement('div');details.className='budget-route-details';
+    if(theme)root.querySelector('.saved-theme-route-links').before(details);
+    else root.append(details);
+    budgetUI.mountDetails(details,budgetEstimate(route),(key,value)=>overrideRouteBudget(key,value,()=>theme?showSavedWeekdayRoute(state.route.theme):showRouteResults()));
+    if(state.route.budgetDetailsOpen)details.querySelector('details').open=true;
+    if(!theme && state.route.results.length && root.querySelector('.route-compare-list')) {
+      const estimates=state.route.results.map(budgetEstimate);
+      root.querySelectorAll('[data-route-tab]').forEach(button=>button.insertAdjacentHTML('beforeend',budgetUI.compact(estimates[Number(button.dataset.routeTab)])));
+      const comparison=document.createElement('div');comparison.className='budget-route-profiles';
+      root.querySelector('.route-compare-list').before(comparison);
+      budgetUI.mountComparison(comparison,estimates,index=>{state.route.selected=index;showRouteResults();});
+    }
+  }
+  function attachImportedBudget(route) {
+    if(!tripBudget)return;
+    if(!tripBudget.settings(state.route.budget).enabled)return;
+    state.draft.budget=tripBudget.settings(state.route.budget);
+    const model=budgetModel(route);
+    state.draft.budgetRoute={signature:budgetPlanSignature(state.draft),busCount:model.busCount,unknownTransport:model.unknownTransport,walkMeters:model.walkMeters};
+  }
+  function budgetPlanSignature(d) {
+    return JSON.stringify({date:d.date,start:d.start,end:d.end,origin:d.origin,destination:d.destination,
+      currentOrigin:d.currentOrigin,currentDestination:d.currentDestination,customOrigin:d.customOrigin,customDestination:d.customDestination,
+      visits:Object.entries(d.entries||{}).sort((a,b)=>Number(a[0])-Number(b[0])).map(([at,entry])=>[at,entry.placeId,entry.duration,entry.lat,entry.lon,getPlace(entry.placeId)?.lat,getPlace(entry.placeId)?.lon])});
+  }
+  function mountPlanBudget() {
+    if(!tripBudget||!budgetUI)return;
+    const d=state.draft, host=document.createElement('div');host.id='plan-budget';
+    $('.planner-grid').before(host);
+    const settingsHost=document.createElement('div');host.append(settingsHost);
+    budgetUI.mountSettings(settingsHost,d.budget,value=>{d.budget=value;persistDraft();renderPlan();},true);
+    if(!tripBudget.settings(d.budget).enabled)return;
+    const rows=Object.entries(d.entries).sort((a,b)=>Number(a[0])-Number(b[0])).map(([at,entry])=>({placeId:entry.placeId||'custom-'+at,name:entryLabel(entry),category:entryPlace(entry)?.category}));
+    const model=tripBudget.routeItems({rows},getPlace), previous=d.budgetRoute;
+    const same=previous && previous.signature===budgetPlanSignature(d);
+    const manualCount=tripBudget.settings(d.budget).busCount;
+    model.busCount=manualCount??(same?previous.busCount:0);
+    model.transportManual=manualCount!==null;
+    model.unknownTransport=manualCount===null && (!same||previous.unknownTransport);
+    model.walkMeters=same?previous.walkMeters:0;
+    const details=document.createElement('div');host.append(details);
+    budgetUI.mountDetails(details,tripBudget.estimate(model,d.budget),(key,value)=>{
+      const config=tripBudget.settings(d.budget);if(value===null)delete config.overrides[key];else config.overrides[key]=value;
+      d.budget=config;state.budgetPlanDetailsOpen=true;persistDraft();renderPlan();
+    });
+    if(state.budgetPlanDetailsOpen)details.querySelector('details').open=true;
+  }
   function statusConnection() { const el = $('#connection'); if (!el) return; el.textContent = navigator.onLine ? '온라인' : '오프라인 · 저장한 글만'; el.classList.toggle('offline', !navigator.onLine); }
   function nav(view) { closeMapQuickAdd(); if (state.view === 'region' && view !== 'region') { if(state.mapProvider === 'leaflet') state.map?.remove(); state.map=null; } if (state.view === 'routes' && view !== 'routes') { state.resultMap?.remove(); state.resultMap=null; } if (state.view === 'plan' && view !== 'plan') { state.planMap?.remove(); state.planMap=null; } if (view !== 'destination' && state.themeCandidateMap) { state.themeCandidateMap.remove(); state.themeCandidateMap=null; } state.view = view; render(); window.scrollTo(0, 0); }
   function render() {
@@ -899,6 +974,7 @@
     if (navigator.onLine && window.L) initPlanMap(mapped);
     $('#refresh-plan-audit').onclick = () => refreshPlanAudit(mapped, true);
     refreshPlanAudit(mapped);
+    mountPlanBudget();
   }
   function planOrigin(d) {
     if (d.origin === 'current') return d.currentOrigin || null;
@@ -1586,7 +1662,7 @@
       $('#main .page-head .eyebrow').textContent='테마별 루트 초안';
     }
     document.querySelectorAll('[data-route-mode]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.mode=button.dataset.routeMode;r.reviewDetailsPage=false; r.results=[];r.review=null;r.reviewOptions=[]; r.selected=-1; renderRoutes(); });
-    $('#route-solo').onchange=(event) => { captureRouteInputs(); r.solo=event.target.checked; r.results=[]; r.selected=-1; renderRoutes(); };
+    $('#route-solo').onchange=(event) => { captureRouteInputs(); r.solo=event.target.checked; if(r.solo && r.budget)r.budget={...r.budget,people:1}; r.results=[]; r.selected=-1; renderRoutes(); };
     document.querySelectorAll('[data-theme-choice]').forEach((button) => button.onclick=() => { captureRouteInputs(); r.theme=button.dataset.themeChoice;r.reviewDetailsPage=false; r.results=[];r.review=null;r.reviewOptions=[]; r.selected=-1; renderRoutes(); });
     $('#routes-back').onclick = () => nav('region');
     $('#route-date').onchange=() => { r.date=$('#route-date').value || today(); r.results=[]; r.review=null;r.reviewOptions=[]; r.selected=-1; $('#route-results').innerHTML=''; if(r.mode==='theme'){renderThemeComparison();if(activeRegion.id==='gangneung') refreshThemeStartTimes();} };
@@ -1628,6 +1704,7 @@
     if (r.mode==='theme' && r.skipThemeTimeRefreshOnce) r.skipThemeTimeRefreshOnce=false;
     else if (r.mode==='theme' && activeRegion.id==='gangneung') refreshThemeStartTimes();
     if (r.mode==='theme') renderThemeComparison();
+    mountRouteBudgetSettings();
   }
   function routeLegText(row) {
     const leg=row.busLeg || row;
@@ -1753,7 +1830,7 @@
     state.resultMap?.remove(); state.resultMap=null;
     const chosen=r.results[r.selected];
     if(!chosen) $('.routes-page')?.classList.remove('has-route-result');
-    if(!chosen && r.review) { showReviewRoute(root,r.review);return; }
+    if(!chosen && r.review) { showReviewRoute(root,r.review);mountRouteBudgetResults(r.review);return; }
     const emptyReason=r.locationMissing ? '출발 또는 도착 위치의 좌표를 확인할 수 없습니다. 위치를 다시 지정해 주세요.' : r.mode === 'theme' ? '이 시각에는 방문 5곳 이상을 실제 이동 경로까지 확인한 코스를 만들지 못했습니다. 다른 시작시간이나 날짜·테마를 선택해 주세요.' : r.must && !r.mustOptional ? '선택한 장소를 반드시 포함하면서 끝낼 시각까지 도착하는 코스를 찾지 못했습니다. 시간이나 위치를 바꾸거나, 해당 장소의 ‘루트에 꼭 넣을 필요 없음’을 체크해 다시 찾아보세요.' : '출발·도착 위치가 멀거나 도착 시각을 맞추기 어려울 수 있습니다. 도보와 확인 가능한 버스 연결로 코스를 완성하지 못했습니다. 끝낼 시각이나 도착 위치를 조정해 보세요.';
     const stops=chosen ? chosen.rows.map((x,i) => {
       const previous=chosen.rows[i-1];
@@ -1819,6 +1896,7 @@
     if ($('#import-route')) $('#import-route').onclick = importRoute;
     if ($('#go-own-plan')) $('#go-own-plan').onclick = () => nav('plan');
     if (chosen) presentRouteResult(chosen);
+    if (chosen) mountRouteBudgetResults(chosen);
   }
   async function showSavedMokpoCourse(themeId) {
     const root=$('#route-results');
@@ -1896,9 +1974,11 @@
     if (!cards.length) return;
     const regionId=activeRegion.id, selectedDate=state.route.date;
     cards.forEach(card=>card.querySelector('.theme-compare-meta')?.remove());
+    $('#theme-budget-profiles')?.remove();
     try {
       const [all,updates,holidays]=await Promise.all([loadThemeWeekdayRoutes(),loadThemeRouteUpdates(),loadHolidayThemeRoutes()]);
       if (state.view!=='routes' || state.route.mode!=='theme' || state.route.date!==selectedDate) return;
+      if(!cards.some(card=>card.isConnected))return;
       cards.forEach(card=>{
         if (!card.isConnected) return;
         const {route}=savedThemeRouteForDate(all,updates,holidays,regionId,card.dataset.themeChoice,selectedDate);
@@ -1906,7 +1986,23 @@
         const details=route && route.status!=='suppressed' ? route.stops.length+'곳 · 도보 '+(route.walkMeters/1000).toFixed(2)+'km · 버스 '+(route.busCount||0)+'구간' : '';
         const places=route?.stops?.length ? route.stops[0].name+' → '+route.stops.at(-1).name : '';
         card.insertAdjacentHTML('beforeend','<span class="theme-compare-meta"><b>'+esc(status)+'</b>'+(details?'<span>'+esc(details)+'</span>':'')+(places?'<span>'+esc(places)+'</span>':'')+'<span>방문·종료 시각은 별도 확인</span></span>');
+        if(route && route.status!=='suppressed' && budgetUI && tripBudget?.settings(state.route.budget).enabled)card.querySelector('.theme-compare-meta').insertAdjacentHTML('beforeend',budgetUI.compact(budgetEstimate(route)));
       });
+      if(budgetUI && tripBudget?.settings(state.route.budget).enabled) {
+        const candidates=cards.map(card=>savedThemeRouteForDate(all,updates,holidays,regionId,card.dataset.themeChoice,selectedDate).route).filter(route=>route && route.status!=='suppressed');
+        if(candidates.length) {
+          $('#theme-budget-profiles')?.remove();
+          const host=document.createElement('div');host.id='theme-budget-profiles';
+          $('.route-theme-panel').after(host);
+          budgetUI.mountComparison(host,candidates.map(budgetEstimate),index=>{
+            captureRouteInputs();state.route.theme=candidates[index].themeId;state.route.results=[];state.route.review=null;state.route.selected=-1;
+            renderRoutes();showSavedWeekdayRoute(state.route.theme);
+          });
+          host.querySelectorAll('[data-budget-choice]').forEach(button=>{
+            button.querySelector(':scope > span').textContent=candidates[Number(button.dataset.budgetChoice)].title;
+          });
+        }
+      }
     } catch { cards.forEach(card=>{if(card.isConnected)card.insertAdjacentHTML('beforeend','<span class="theme-compare-meta">비교 자료를 불러오지 못했습니다.</span>');}); }
   }
   async function showSavedWeekdayRoute(themeId) {
@@ -1953,6 +2049,7 @@
       initSavedWeekdayRouteMap(route);
       $('#open-weekday-route-guide').onclick=(event)=>{event.preventDefault();nav('weekdayGuide');};
       $('#import-theme-route-plan').onclick=()=>importThemeRoutePlan(route);
+      mountRouteBudgetResults(route,true);
       root.querySelectorAll('[data-add-theme-stop]').forEach(button=>button.onclick=()=>openThemeStopPicker(route.stops[Number(button.dataset.addThemeStop)]));
     } catch(error) {
       root.innerHTML='<div class="card empty-state"><h3>요일별 저장 경로를 불러오지 못했습니다.</h3><p>'+esc(error.message||'잠시 뒤 다시 시도해 주세요.')+'</p></div>';
@@ -2406,6 +2503,7 @@
       openModal('<h2>내 계획표에 넣을까요?</h2><p>'+esc(route.title)+' · '+places.length+'곳</p><p>현재 편집 중인 계획은 이 테마 루트로 바뀝니다. 기본 방문 시각과 체류시간은 계획표에서 수정할 수 있습니다. 선택한 날짜의 운영·교통은 방문 전 확인해 주세요.</p><div class="modal-actions"><button type="button" class="btn btn-outline" data-close>취소</button><button type="button" class="btn btn-primary" id="confirm-theme-import">넣기</button></div>',()=>{
         $('#confirm-theme-import').onclick=()=>confirmPlaceReservation(places,()=>{
           state.draft={id:null,title:route.title,date:state.route.date,start:hhmm(Number(Object.keys(entries)[0])),end:'24:00',origin:null,theme:route.themeId,mealTimes:[],solo:false,entries,pending:[]};
+          attachImportedBudget(route);
           persistDraft();closeModal();nav('plan');
         });
       });
@@ -2413,7 +2511,7 @@
     function importRoute() {
     const chosen = state.route.results[state.route.selected]; if (!chosen) return;
     openModal('<h2>시간계획표에 넣으시겠습니까?</h2><p>' + esc(chosen.title) + '</p><p>현재 편집 중인 계획은 새 코스로 바뀝니다. 저장이 필요하면 먼저 계획 화면에서 저장해 주세요.</p><div class="modal-actions"><button class="btn btn-outline" data-close>취소</button><button class="btn btn-primary" id="confirm-import">넣기</button></div>', () => {
-      $('#confirm-import').onclick = () => confirmPlaceReservation(chosen.rows.map(x=>getPlace(x.placeId)), () => { const entries = {}; chosen.rows.forEach((x) => { entries[x.minute] = {placeId:x.placeId,duration:x.duration,memo:x.mode==='bus' ? routeLegText(x) : x.kind === 'meal' ? (chosen.autoSchedule ? '자동 배치한 식사' : '선택한 식사시간') : x.kind === 'snack' ? '추천 코스의 간식' : x.kind === 'cafe' ? '선택한 카페 휴식' : ''}; }); if(chosen.endWalk.mode==='bus') { const last=entries[chosen.rows.at(-1).minute]; last.memo=[last.memo,'방문 후 도착지로 '+routeLegText(chosen.endWalk)].filter(Boolean).join(' · '); } state.draft = {id:null,title:chosen.title,date:state.route.date,start:chosen.autoSchedule ? hhmm(chosen.start) : state.route.start,end:chosen.autoSchedule ? hhmm(chosen.end) : state.route.end,origin:chosen.originId,destination:chosen.destinationId,currentOrigin:chosen.originId === 'current' ? chosen.originPoint : null,currentDestination:chosen.destinationId === 'current' ? chosen.destinationPoint : null,customOrigin:(chosen.originId === 'custom' || chosen.originId?.startsWith('lodging-')) ? chosen.originPoint : null,customDestination:(chosen.destinationId === 'custom' || chosen.destinationId?.startsWith('lodging-')) ? chosen.destinationPoint : null,theme:chosen.theme,solo:state.route.solo,mealTimes:(chosen.autoSchedule ? chosen.plannedMeals.map(hhmm) : chosen.rows.filter((row) => row.kind === 'meal').map((row) => hhmm(row.minute))),entries,pending:[]}; persistDraft(); closeModal(); nav('plan'); });
+      $('#confirm-import').onclick = () => confirmPlaceReservation(chosen.rows.map(x=>getPlace(x.placeId)), () => { const entries = {}; chosen.rows.forEach((x) => { entries[x.minute] = {placeId:x.placeId,duration:x.duration,memo:x.mode==='bus' ? routeLegText(x) : x.kind === 'meal' ? (chosen.autoSchedule ? '자동 배치한 식사' : '선택한 식사시간') : x.kind === 'snack' ? '추천 코스의 간식' : x.kind === 'cafe' ? '선택한 카페 휴식' : ''}; }); if(chosen.endWalk.mode==='bus') { const last=entries[chosen.rows.at(-1).minute]; last.memo=[last.memo,'방문 후 도착지로 '+routeLegText(chosen.endWalk)].filter(Boolean).join(' · '); } state.draft = {id:null,title:chosen.title,date:state.route.date,start:chosen.autoSchedule ? hhmm(chosen.start) : state.route.start,end:chosen.autoSchedule ? hhmm(chosen.end) : state.route.end,origin:chosen.originId,destination:chosen.destinationId,currentOrigin:chosen.originId === 'current' ? chosen.originPoint : null,currentDestination:chosen.destinationId === 'current' ? chosen.destinationPoint : null,customOrigin:(chosen.originId === 'custom' || chosen.originId?.startsWith('lodging-')) ? chosen.originPoint : null,customDestination:(chosen.destinationId === 'custom' || chosen.destinationId?.startsWith('lodging-')) ? chosen.destinationPoint : null,theme:chosen.theme,solo:state.route.solo,mealTimes:(chosen.autoSchedule ? chosen.plannedMeals.map(hhmm) : chosen.rows.filter((row) => row.kind === 'meal').map((row) => hhmm(row.minute))),entries,pending:[]}; attachImportedBudget(chosen); persistDraft(); closeModal(); nav('plan'); });
     });
   }
   function showJourney(minute) {

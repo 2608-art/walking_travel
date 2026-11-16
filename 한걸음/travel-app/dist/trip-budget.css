@@ -1,0 +1,25 @@
+.budget-settings,.budget-detail,.budget-profiles { margin:var(--space-4) 0; padding:var(--space-5); border:1px solid var(--line); border-radius:var(--radius-card); background:var(--surface); }
+.budget-fields,.budget-totals,.budget-profile-grid { display:grid; gap:var(--space-3); grid-template-columns:repeat(2,minmax(0,1fr)); }
+.budget-settings [hidden] { display:none; }
+.budget-fields input { width:100%; min-width:0; }
+.budget-fields { margin:var(--space-4) 0; }
+.budget-summary { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:var(--space-3); }
+.budget-summary h2,.budget-profiles h2 { margin:0; }
+.budget-summary>strong { font-size:var(--type-section); }
+.budget-status { font-weight:700; }
+.budget-totals>div { display:flex; flex-direction:column; padding:var(--space-3); background:var(--surface-soft); border-radius:var(--radius-sm); }
+.budget-evidence summary { cursor:pointer; font-weight:700; padding:var(--space-3) 0; }
+.budget-line { border-top:1px solid var(--line); padding:var(--space-4) 0; overflow-wrap:anywhere; }
+.budget-line p { margin:var(--space-2) 0; }
+.budget-override { display:flex; align-items:end; flex-wrap:wrap; gap:var(--space-2); }
+.budget-override label { flex:1; min-width:160px; }
+.budget-override input { width:100%; }
+.budget-compact { display:block; margin-top:var(--space-2); }
+.budget-compact small { display:block; }
+.budget-profile-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.budget-profile { display:flex; flex-direction:column; align-items:flex-start; white-space:normal; text-align:left; gap:var(--space-2); min-width:0; }
+.budget-profile>strong { font-size:var(--type-card); }
+.budget-profile small { line-height:1.5; }
+.budget-route-details,.budget-route-profiles { display:block; }
+@media(max-width:600px) { .budget-settings,.budget-detail,.budget-profiles { padding:var(--space-4); } .budget-profile-grid { grid-template-columns:1fr; } }
+@media(max-width:360px) { .budget-fields { grid-template-columns:1fr; } }
