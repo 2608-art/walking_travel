@@ -388,7 +388,7 @@
     $('.planner-grid').before(host);
     const settingsHost=document.createElement('div');host.append(settingsHost);
     budgetUI.mountSettings(settingsHost,d.budget,value=>{d.budget=value;persistDraft();renderPlan();},true);
-    if(!tripBudget.settings(d.budget).enabled)return;
+    if(!tripBudget.settings(d.budget).enabled){mountPlanSpending(host,null);return;}
     const rows=Object.entries(d.entries).sort((a,b)=>Number(a[0])-Number(b[0])).map(([at,entry])=>({placeId:entry.placeId||'custom-'+at,name:entryLabel(entry),category:entryPlace(entry)?.category}));
     const model=tripBudget.routeItems({rows},getPlace), previous=d.budgetRoute;
     const same=previous && previous.signature===budgetPlanSignature(d);
@@ -403,6 +403,15 @@
       d.budget=config;state.budgetPlanDetailsOpen=true;persistDraft();renderPlan();
     });
     if(state.budgetPlanDetailsOpen)details.querySelector('details').open=true;
+    mountPlanSpending(host,tripBudget.estimate(model,d.budget));
+  }
+  function mountPlanSpending(host,estimate) {
+    if(!window.HangeoreumSpendingUI)return;
+    const section=document.createElement('div');section.id='plan-spending';host.append(section);
+    window.HangeoreumSpendingUI.mount(section,state.draft.spending,estimate,state.draft,value=>{
+      state.draft.spending=value;persistDraft();renderPlan();
+      document.querySelector('#plan-spending')?.scrollIntoView({block:'start'});
+    });
   }
   function statusConnection() { const el = $('#connection'); if (!el) return; el.textContent = navigator.onLine ? '온라인' : '오프라인 · 저장한 글만'; el.classList.toggle('offline', !navigator.onLine); }
   function nav(view) { closeMapQuickAdd(); if (state.view === 'region' && view !== 'region') { if(state.mapProvider === 'leaflet') state.map?.remove(); state.map=null; } if (state.view === 'routes' && view !== 'routes') { state.resultMap?.remove(); state.resultMap=null; } if (state.view === 'plan' && view !== 'plan') { state.planMap?.remove(); state.planMap=null; } if (view !== 'destination' && state.themeCandidateMap) { state.themeCandidateMap.remove(); state.themeCandidateMap=null; } state.view = view; render(); window.scrollTo(0, 0); }
