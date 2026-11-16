@@ -23,3 +23,14 @@
 .budget-route-details,.budget-route-profiles { display:block; }
 @media(max-width:600px) { .budget-settings,.budget-detail,.budget-profiles { padding:var(--space-4); } .budget-profile-grid { grid-template-columns:1fr; } }
 @media(max-width:360px) { .budget-fields { grid-template-columns:1fr; } }
+.spending-panel { margin-top:var(--space-5); padding:var(--space-5); border:1px solid var(--line); border-radius:var(--radius-card); background:var(--surface); overflow-wrap:anywhere; }
+.spending-panel summary { font-weight:700; cursor:pointer; padding:var(--space-2) 0; }
+.spending-panel .budget-fields label { display:flex; flex-direction:column; gap:var(--space-2); min-width:0; }
+.spending-panel .budget-fields input,.spending-panel select { width:100%; min-width:0; }
+.spending-panel button { white-space:normal; }
+.spending-panel [hidden] { display:none; }
+.spending-table-wrap { overflow-x:auto; }
+.spending-panel table { border-collapse:collapse; width:100%; font-size:var(--type-small); }
+.spending-panel th,.spending-panel td { text-align:left; padding:var(--space-2); border-bottom:1px solid var(--line); }
+.spending-panel caption { text-align:left; font-weight:700; padding:var(--space-3) 0; }
+@media(max-width:600px) { .spending-panel { padding:var(--space-3); } .spending-panel .budget-fields { grid-template-columns:1fr; } }
