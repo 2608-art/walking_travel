@@ -29,6 +29,17 @@ assert(temp.startsWith(base + path.sep), 'temporary checkout must stay inside ve
 try {
   fs.mkdirSync(path.join(temp, 'public'));
   fs.mkdirSync(path.join(temp, 'scripts'));
+  // Historical closures must be evaluated at their fixture date, not the host clock.
+  // Only the isolated child processes get this clock; production still uses KST today.
+  fs.writeFileSync(path.join(temp, 'fixture-clock.mjs'), `
+const RealDate = Date;
+globalThis.Date = class extends RealDate {
+  constructor(...args) { super(...(args.length ? args : ['2026-10-07T15:00:00.000Z'])); }
+  static now() { return RealDate.parse('2026-10-07T15:00:00.000Z'); }
+};
+`);
+  const runFixture = (script) => spawnSync(process.execPath, ['--import', './fixture-clock.mjs', script],
+    { cwd: temp, encoding: 'utf8', timeout: 120000 });
   for (const name of ['places.json','gangneung-places.json','gyeongju-places.json','theme-weekday-routes.json',
     'theme-courses.json','gangneung-theme-review-routes.json','gyeongju-six-theme-routes.geojson',
     'theme-route-updates.json','theme-place-drafts.json','gangneung-theme-place-picks.json','gyeongju-theme-candidates.geojson'])
@@ -41,9 +52,10 @@ try {
   target.availability = { status: 'construction', from: '2026-10-08', through: '2026-10-09',
     source: 'https://example.com/test-fixture', checkedAt: '2026-10-08' };
   fs.writeFileSync(file, JSON.stringify(data));
-  const run = spawnSync(process.execPath, ['scripts/refresh-theme-route-changes.mjs'], { cwd: temp, encoding: 'utf8', timeout: 120000 });
+  const run = runFixture('scripts/refresh-theme-route-changes.mjs');
   assert.equal(run.status, 0, run.stderr || run.stdout);
   const result = JSON.parse(fs.readFileSync(path.join(temp, 'public', 'theme-route-updates.json'), 'utf8'));
+  assert.equal(result.checkedOn, '2026-10-08', 'fixture uses KST date at the UTC day boundary');
   const verifyFirst = spawnSync(process.execPath, ['scripts/verify-theme-route-updates.mjs'], { cwd: temp, encoding: 'utf8' });
   assert.equal(verifyFirst.status, 0, verifyFirst.stderr || verifyFirst.stdout);
   const changed = result.overrides.filter((route) => route.region === 'gyeongju' && route.themeId === 'bulguksa' &&
@@ -56,7 +68,7 @@ try {
     status: 'construction', from: '2026-10-08', through: '2026-10-09',
     source: 'https://example.com/second-test-fixture', checkedAt: '2026-10-08' };
   fs.writeFileSync(file, JSON.stringify(laterData));
-  const later = spawnSync(process.execPath, ['scripts/refresh-theme-route-changes.mjs'], { cwd: temp, encoding: 'utf8', timeout: 120000 });
+  const later = runFixture('scripts/refresh-theme-route-changes.mjs');
   assert.equal(later.status, 0, later.stderr || later.stdout);
   const laterRoutes = JSON.parse(fs.readFileSync(path.join(temp, 'public', 'theme-route-updates.json'), 'utf8')).overrides;
   const verifyLater = spawnSync(process.execPath, ['scripts/verify-theme-route-updates.mjs'], { cwd: temp, encoding: 'utf8' });
@@ -66,7 +78,7 @@ try {
     'same-theme verified candidate should replace a closed stop when reachable');
   assert(laterRoutes.some((route) => route.themeId === 'bulguksa'), 'unrelated existing closure alternatives must be retained');
   const saved = fs.readFileSync(path.join(temp, 'public', 'theme-route-updates.json'), 'utf8');
-  const second = spawnSync(process.execPath, ['scripts/refresh-theme-route-changes.mjs'], { cwd: temp, encoding: 'utf8', timeout: 120000 });
+  const second = runFixture('scripts/refresh-theme-route-changes.mjs');
   assert.equal(second.status, 0, second.stderr || second.stdout);
   assert.equal(fs.readFileSync(path.join(temp, 'public', 'theme-route-updates.json'), 'utf8'), saved,
     'no material change must reuse saved route output');
